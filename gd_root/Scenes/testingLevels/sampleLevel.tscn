@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv0oc1p4fj42o"]
+
+[ext_resource type="PackedScene" uid="uid://ck45mx5q40t17" path="res://Assets/roomTemplates/sample_base.tscn" id="1_lgprr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="sampleRoom" parent="." instance=ExtResource("1_lgprr")]
+
+[editable path="sampleRoom"]

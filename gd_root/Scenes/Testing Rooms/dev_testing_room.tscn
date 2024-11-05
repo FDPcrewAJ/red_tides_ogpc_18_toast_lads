@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpxrxmy5ojitx"]
+
+[ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_5ta5x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jwltp"]
+
+[sub_resource type="Sky" id="Sky_jfwn4"]
+sky_material = SubResource("ProceduralSkyMaterial_jwltp")
+
+[sub_resource type="Environment" id="Environment_fe3ho"]
+background_mode = 2
+sky = SubResource("Sky_jfwn4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_alo7f"]
+size = Vector3(30, 0.5, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nld32"]
+albedo_texture = ExtResource("1_0i53s")
+uv1_triplanar = true
+
+[node name="dev_testing_room" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("2_5ta5x")]
+
+[node name="world_env" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fe3ho")
+
+[node name="directional_world_light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.953879, -0.012047, -0.29995, 0.262047, 0.520866, 0.812422, 0.146447, -0.853553, 0.5, 0, 5, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+collision_layer = 2
+collision_mask = 7
+mesh = SubResource("BoxMesh_alo7f")
+material = SubResource("StandardMaterial3D_nld32")

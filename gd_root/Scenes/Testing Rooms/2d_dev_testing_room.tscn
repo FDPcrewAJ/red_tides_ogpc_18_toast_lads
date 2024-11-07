@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://lvcqi2a1rx2c"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/2DPlayer/2dplayer.gd" id="1_nvqt5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gt8jc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v4egk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xni71"]
+size = Vector2(244, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n7ru7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aohfy"]
+size = Vector2(20, 56)
+
+[sub_resource type="GDScript" id="GDScript_u8qf2"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="BoxMesh" id="BoxMesh_6lx6h"]
+
+[node name="2d_dev_testing_room" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_nvqt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_gt8jc")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_gt8jc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+position = Vector2(-6.55651e-07, -16)
+scale = Vector2(20, 14.5)
+mesh = SubResource("CapsuleMesh_v4egk")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(54, 10)
+shape = SubResource("RectangleShape2D_xni71")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
+position = Vector2(54, 10.5)
+scale = Vector2(244, 21)
+mesh = SubResource("BoxMesh_n7ru7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(160, -28)
+shape = SubResource("RectangleShape2D_aohfy")
+script = SubResource("GDScript_u8qf2")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(159.625, -27.875)
+scale = Vector2(20.75, 56.25)
+mesh = SubResource("BoxMesh_6lx6h")
+
+[connection signal="area_entered" from="StaticBody2D/Area2D" to="Player" method="_on_area_2d_area_entered"]

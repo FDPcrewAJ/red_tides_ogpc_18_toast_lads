@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+
 const mouse_sens = 0.5
 
 @onready var head = $head
@@ -13,8 +12,13 @@ var allow_control = true
 
 # Player Movement Variables
 var direction = Vector3.ZERO
-var lerp_speed = 7.0
-var current_speed = 3.0
+const move_lerp_speed = 7.0
+var current_speed = 0.0
+
+# Constants for player speed and jump
+const walk_speed = 3.0
+const sprint_speed = 7.0
+const jump_velocity = 4.5
 
 
 
@@ -32,16 +36,13 @@ func _input(event):
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-
-
-	
-	# Handle jump.
+	# Jump
 	if Input.is_action_just_pressed("space") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jump_velocity
 
 	# Get the input direction in which player is moving 
 	# (in Vector 2: 
@@ -62,12 +63,12 @@ func _physics_process(delta: float) -> void:
 	# All of that is then normalized, which sets the distance of the vector3 to one.
 	# [Input 3]: The rate of change is the set lerp speed, effects how slowly or quickly you speed up,
 	# multiplied by delta so that it sticks with frame time and does not go out of sync.
-	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * lerp_speed)
+	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * move_lerp_speed)
 	
 	if Input.is_action_pressed("shift"):
-		current_speed = 7.0
+		current_speed = sprint_speed
 	else:
-		current_speed = 3.0
+		current_speed = walk_speed
 	
 	if direction:
 		velocity.x = direction.x * current_speed
@@ -81,8 +82,3 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	move_and_slide()
-
-
-func _on_resume_button_pressed():
-	allow_control = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

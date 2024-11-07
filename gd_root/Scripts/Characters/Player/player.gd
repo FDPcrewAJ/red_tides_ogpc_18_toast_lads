@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-
-
 const mouse_sens = 0.5
 
 @onready var head = $head

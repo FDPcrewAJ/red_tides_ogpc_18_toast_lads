@@ -63,7 +63,9 @@ func _physics_process(delta: float) -> void:
 	# All of that is then normalized, which sets the distance of the vector3 to one.
 	# [Input 3]: The rate of change is the set lerp speed, effects how slowly or quickly you speed up,
 	# multiplied by delta so that it sticks with frame time and does not go out of sync.
-	direction = lerp(direction,(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta * move_lerp_speed)
+	direction = lerp(direction,
+					(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), 
+					delta * move_lerp_speed)
 	
 	if Input.is_action_pressed("shift"):
 		current_speed = sprint_speed

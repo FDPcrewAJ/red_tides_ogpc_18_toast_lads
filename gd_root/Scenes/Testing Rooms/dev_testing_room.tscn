@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpxrxmy5ojitx"]
+[gd_scene load_steps=13 format=3 uid="uid://bpxrxmy5ojitx"]
 
 [ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
+[ext_resource type="Script" path="res://Scripts/Misc/dev_testing_room.gd" id="1_rft86"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_5ta5x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7n5e2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jwltp"]
 
@@ -19,9 +22,35 @@ size = Vector3(30, 0.5, 30)
 albedo_texture = ExtResource("1_0i53s")
 uv1_triplanar = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_atl10"]
+size = Vector3(3, 3, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_32pvx"]
+points = PackedVector3Array(-1.45426, -1.45426, -0.5, 1.45426, 1.45426, 0.5, 1.45426, -1.45426, 0.5, 1.45426, 1.45426, -0.5, -1.45426, 1.45426, 0.5, 1.45426, -1.45426, -0.5, -1.45426, -1.45426, 0.5, -1.45426, 1.45426, -0.5)
+
+[sub_resource type="GDScript" id="GDScript_xffm7"]
+script/source = "extends CollisionShape3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="dev_testing_room" type="Node3D"]
+script = ExtResource("1_rft86")
 
 [node name="player" parent="." instance=ExtResource("2_5ta5x")]
+
+[node name="Area3D" type="Area3D" parent="player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D"]
+shape = SubResource("CapsuleShape3D_7n5e2")
 
 [node name="world_env" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fe3ho")
@@ -36,3 +65,15 @@ collision_layer = 2
 collision_mask = 7
 mesh = SubResource("BoxMesh_alo7f")
 material = SubResource("StandardMaterial3D_nld32")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+mesh = SubResource("BoxMesh_atl10")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+shape = SubResource("ConvexPolygonShape3D_32pvx")
+script = SubResource("GDScript_xffm7")
+
+[connection signal="area_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_area_entered"]

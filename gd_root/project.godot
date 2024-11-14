@@ -17,12 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalAutoload="*res://Scripts/global_autoload.gd"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+Global="*res://Scripts/global.gd"
 
 [input]
 

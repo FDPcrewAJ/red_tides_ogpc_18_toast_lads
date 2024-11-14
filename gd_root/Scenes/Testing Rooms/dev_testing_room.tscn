@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpxrxmy5ojitx"]
+[gd_scene load_steps=16 format=3 uid="uid://bpxrxmy5ojitx"]
 
 [ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
 [ext_resource type="Script" path="res://Scripts/Misc/dev_testing_room.gd" id="1_rft86"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_5ta5x"]
+[ext_resource type="Script" path="res://Scenes/Testing Rooms/gate.gd" id="4_badsc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7n5e2"]
 
@@ -42,6 +43,12 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="BoxMesh" id="BoxMesh_0ecad"]
+size = Vector3(30, 5, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cs71w"]
+points = PackedVector3Array(-15.2381, -2.7381, -0.738095, 15.2381, 2.97619, 0.690476, 15.2381, 2.97619, -0.738095, -15.2381, 2.97619, 0.690476, 15.2381, -2.7381, 0.690476, 15.2381, -2.7381, -0.738095, -15.2381, 2.97619, -0.738095, -15.2381, -2.7381, 0.690476)
+
 [node name="dev_testing_room" type="Node3D"]
 script = ExtResource("1_rft86")
 
@@ -66,14 +73,25 @@ collision_mask = 7
 mesh = SubResource("BoxMesh_alo7f")
 material = SubResource("StandardMaterial3D_nld32")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="portal" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
 mesh = SubResource("BoxMesh_atl10")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="portal"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_32pvx")
 script = SubResource("GDScript_xffm7")
 
-[connection signal="area_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_area_entered"]
+[node name="gate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 3.799)
+mesh = SubResource("BoxMesh_0ecad")
+skeleton = NodePath("../portal")
+script = ExtResource("4_badsc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gate/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cs71w")
+
+[connection signal="area_entered" from="portal/Area3D" to="." method="_on_area_3d_area_entered"]

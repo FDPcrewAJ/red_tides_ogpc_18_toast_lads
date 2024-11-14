@@ -25,5 +25,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_portal_area_2d_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/dev_testing_room.tscn")
+	
+func _on_item_area_2d_area_entered(area: Area2D) -> void:
+	Global.room_completed = true

@@ -69,7 +69,8 @@ theme_override_font_sizes/font_size = 50
 text = "Select Save"
 flat = true
 
-[node name="options" type="Button" parent="."]
+[node name="settings" type="Button" parent="."]
+layout_mode = 0
 offset_left = -136.0
 offset_right = 129.0
 offset_bottom = 92.0
@@ -78,10 +79,11 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
-text = "Options"
+text = "Settings"
 flat = true
 
 [node name="credits" type="Button" parent="."]
+layout_mode = 0
 offset_left = -136.0
 offset_top = 93.0
 offset_right = 129.0
@@ -117,4 +119,5 @@ flat = true
 
 [connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

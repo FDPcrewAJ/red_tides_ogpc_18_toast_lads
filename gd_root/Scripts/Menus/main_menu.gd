@@ -19,4 +19,5 @@ func _on_continue_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	pass
+	GlobalAutoload.previous_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://Scenes/Menus/settings.tscn")

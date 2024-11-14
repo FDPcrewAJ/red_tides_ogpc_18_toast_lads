@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://lvcqi2a1rx2c"]
+[gd_scene load_steps=15 format=3 uid="uid://lvcqi2a1rx2c"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/2DPlayer/2dplayer.gd" id="1_nvqt5"]
 [ext_resource type="Texture2D" uid="uid://g6knvs1othdf" path="res://Textures/Temp Dev Textures/Dark/texture_01.png" id="2_okxjf"]
 [ext_resource type="Script" path="res://Scenes/Testing Rooms/item.gd" id="3_lr6rl"]
+[ext_resource type="Texture2D" uid="uid://bcdm33h46gf8b" path="res://Textures/Temp Dev Textures/Purple/texture_09.png" id="3_r1utt"]
+[ext_resource type="Texture2D" uid="uid://cvgath02y1r71" path="res://Textures/Temp Dev Textures/Green/texture_09.png" id="5_tqhgb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gt8jc"]
 
@@ -84,6 +86,7 @@ script = SubResource("GDScript_u8qf2")
 position = Vector2(159.625, -27.875)
 scale = Vector2(20.75, 56.25)
 mesh = SubResource("BoxMesh_6lx6h")
+texture = ExtResource("3_r1utt")
 
 [node name="Item" type="StaticBody2D" parent="."]
 script = ExtResource("3_lr6rl")
@@ -98,6 +101,7 @@ shape = SubResource("RectangleShape2D_yofuw")
 position = Vector2(85, -20)
 scale = Vector2(20.75, 12.125)
 mesh = SubResource("BoxMesh_308a5")
+texture = ExtResource("5_tqhgb")
 
 [connection signal="area_entered" from="Portal/PortalArea2D" to="Player" method="_on_portal_area_2d_area_entered"]
 [connection signal="area_entered" from="Item/ItemArea2D" to="Player" method="_on_item_area_2d_area_entered"]

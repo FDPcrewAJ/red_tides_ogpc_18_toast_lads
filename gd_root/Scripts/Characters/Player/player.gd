@@ -4,6 +4,7 @@ const mouse_sens = 0.5
 
 @onready var head = $head
 @onready var neck = $head/neck
+@onready var pause_menu = $pause_menu
 
 # Wether or not to allow user to control the player
 var allow_control = true
@@ -30,8 +31,6 @@ func _input(event):
 			rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 			head.rotation.x = clamp(head.rotation.x,deg_to_rad(-89),deg_to_rad(89))
-	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 
 
 
@@ -82,5 +81,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		allow_control = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		pause_menu.show()
 
 	move_and_slide()

@@ -48,7 +48,7 @@ theme_override_font_sizes/font_size = 50
 text = "New Game"
 flat = true
 
-[node name="select_save" type="Button" parent="."]
+[node name="load_game" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -66,7 +66,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
-text = "Select Save"
+text = "Load Game"
 flat = true
 
 [node name="settings" type="Button" parent="."]

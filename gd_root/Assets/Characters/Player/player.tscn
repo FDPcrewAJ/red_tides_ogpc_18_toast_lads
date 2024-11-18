@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=6 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
+[ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_i72bv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
 
@@ -15,7 +16,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_mask = 7
 script = ExtResource("1_h3d68")
 
-[node name="pause_menu" type="Control" parent="."]
+[node name="pause_menu" parent="." instance=ExtResource("2_i72bv")]
+visible = false
+
+[node name="pause_menu_old" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,7 +34,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="pause_label" type="Label" parent="pause_menu"]
+[node name="pause_label" type="Label" parent="pause_menu_old"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,7 +50,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Game Paused"
 
-[node name="resume" type="Button" parent="pause_menu"]
+[node name="resume" type="Button" parent="pause_menu_old"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,7 +70,7 @@ theme_override_font_sizes/font_size = 50
 text = "Resume Game"
 flat = true
 
-[node name="save_game" type="Button" parent="pause_menu"]
+[node name="save_game" type="Button" parent="pause_menu_old"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,7 +90,7 @@ theme_override_font_sizes/font_size = 50
 text = "Save Game"
 flat = true
 
-[node name="settings" type="Button" parent="pause_menu"]
+[node name="settings" type="Button" parent="pause_menu_old"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -105,7 +110,7 @@ theme_override_font_sizes/font_size = 50
 text = "Settings"
 flat = true
 
-[node name="main_menu" type="Button" parent="pause_menu"]
+[node name="main_menu" type="Button" parent="pause_menu_old"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,7 +130,7 @@ theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 flat = true
 
-[node name="quit_game" type="Button" parent="pause_menu"]
+[node name="quit_game" type="Button" parent="pause_menu_old"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

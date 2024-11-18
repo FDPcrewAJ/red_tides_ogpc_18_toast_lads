@@ -2,6 +2,10 @@
 
 [sub_resource type="GDScript" id="GDScript_q6bu8"]
 script/source = "extends Control
+
+
+func _on_resume_pressed() -> void:
+	pass # Replace with function body.
 "
 
 [node name="pause_menu" type="Control"]
@@ -130,3 +134,5 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Quit Game"
 flat = true
+
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]

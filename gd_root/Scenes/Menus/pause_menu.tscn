@@ -3,9 +3,23 @@
 [sub_resource type="GDScript" id="GDScript_q6bu8"]
 script/source = "extends Control
 
+signal resume
 
 func _on_resume_pressed() -> void:
-	pass
+	resume.emit()
+
+
+func _on_settings_pressed() -> void:
+	Global.previous_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/Menus/main_menu.tscn\")
+
+
+func _on_quit_game_pressed() -> void:
+	get_tree().quit()
 "
 
 [node name="pause_menu" type="Control"]
@@ -152,3 +166,6 @@ text = "Quit Game"
 flat = true
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]

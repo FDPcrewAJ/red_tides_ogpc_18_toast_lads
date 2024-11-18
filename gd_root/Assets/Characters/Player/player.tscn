@@ -31,3 +31,5 @@ shape = SubResource("CapsuleShape3D_k6ler")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_dp1qy")
+
+[connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]

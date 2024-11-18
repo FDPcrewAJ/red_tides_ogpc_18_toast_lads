@@ -85,3 +85,8 @@ func _physics_process(delta: float) -> void:
 		pause_menu.show()
 
 	move_and_slide()
+
+
+func _on_pause_menu_resume() -> void:
+	pause_menu.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

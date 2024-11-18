@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpxrxmy5ojitx"]
+[gd_scene load_steps=22 format=3 uid="uid://bpxrxmy5ojitx"]
 
 [ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
 [ext_resource type="Script" path="res://Scripts/Misc/dev_testing_room.gd" id="1_rft86"]
@@ -59,10 +59,20 @@ size = Vector3(30, 5, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cs71w"]
 points = PackedVector3Array(-15.2381, -2.7381, -0.738095, 15.2381, 2.97619, 0.690476, 15.2381, 2.97619, -0.738095, -15.2381, 2.97619, 0.690476, 15.2381, -2.7381, 0.690476, 15.2381, -2.7381, -0.738095, -15.2381, 2.97619, -0.738095, -15.2381, -2.7381, 0.690476)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6rnb"]
+radius = 0.4
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ncri6"]
+radius = 0.4
+height = 1.5
+
 [node name="dev_testing_room" type="Node3D"]
 script = ExtResource("1_rft86")
 
 [node name="player" parent="." instance=ExtResource("2_5ta5x")]
+collision_layer = 2
+collision_mask = 3
 
 [node name="Area3D" type="Area3D" parent="player"]
 
@@ -78,7 +88,6 @@ transform = Transform3D(0.953879, -0.012047, -0.29995, 0.262047, 0.520866, 0.812
 [node name="Floor" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
-collision_layer = 2
 collision_mask = 7
 mesh = SubResource("BoxMesh_alo7f")
 material = SubResource("StandardMaterial3D_nld32")
@@ -103,5 +112,19 @@ script = ExtResource("4_badsc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_cs71w")
+
+[node name="WorldObjects" type="Node3D" parent="."]
+
+[node name="TestingBean" type="RigidBody3D" parent="WorldObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 0)
+collision_layer = 4
+collision_mask = 7
+center_of_mass_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldObjects/TestingBean"]
+shape = SubResource("CapsuleShape3D_g6rnb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldObjects/TestingBean"]
+mesh = SubResource("CapsuleMesh_ncri6")
 
 [connection signal="area_entered" from="Portal/Area3D" to="." method="_on_area_3d_area_entered"]

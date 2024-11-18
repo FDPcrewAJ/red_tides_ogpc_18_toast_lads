@@ -1,10 +1,11 @@
 extends CharacterBody3D
+class_name Player
 
 const mouse_sens = 0.5
 
-@onready var head = $head
-@onready var neck = $head/neck
-@onready var pause_menu = $pause_menu
+@onready var head = $Head
+@onready var neck = $Head/Neck
+@onready var pause_menu = $PauseMenu
 
 # Wether or not to allow user to control the player
 var allow_control = true

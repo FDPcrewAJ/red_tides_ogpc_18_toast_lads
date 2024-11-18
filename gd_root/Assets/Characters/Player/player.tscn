@@ -16,149 +16,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_mask = 7
 script = ExtResource("1_h3d68")
 
-[node name="pause_menu" parent="." instance=ExtResource("2_i72bv")]
+[node name="PauseMenu" parent="." instance=ExtResource("2_i72bv")]
 visible = false
 
-[node name="pause_menu_old" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="pause_label" type="Label" parent="pause_menu_old"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -165.5
-offset_top = -508.0
-offset_right = 165.5
-offset_bottom = -439.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "Game Paused"
-
-[node name="resume" type="Button" parent="pause_menu_old"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = -215.0
-offset_right = 178.0
-offset_bottom = -138.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
-theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Resume Game"
-flat = true
-
-[node name="save_game" type="Button" parent="pause_menu_old"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = -123.0
-offset_right = 178.0
-offset_bottom = -46.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
-theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Save Game"
-flat = true
-
-[node name="settings" type="Button" parent="pause_menu_old"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = -28.0
-offset_right = 178.0
-offset_bottom = 49.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
-theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Settings"
-flat = true
-
-[node name="main_menu" type="Button" parent="pause_menu_old"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = 71.0
-offset_right = 178.0
-offset_bottom = 148.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
-theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Main Menu"
-flat = true
-
-[node name="quit_game" type="Button" parent="pause_menu_old"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = 163.0
-offset_right = 178.0
-offset_bottom = 240.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
-theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Quit Game"
-flat = true
-
-[node name="head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
-[node name="neck" type="Node3D" parent="head"]
+[node name="Neck" type="Node3D" parent="Head"]
 
-[node name="player_camera" type="Camera3D" parent="head/neck"]
+[node name="PlayerCamera" type="Camera3D" parent="Head/Neck"]
 
-[node name="player_collision" type="CollisionShape3D" parent="."]
+[node name="PlayerCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_k6ler")
 
-[node name="player_mesh" type="MeshInstance3D" parent="."]
+[node name="PlayerMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_dp1qy")

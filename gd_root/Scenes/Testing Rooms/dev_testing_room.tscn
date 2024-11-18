@@ -69,13 +69,13 @@ script = ExtResource("1_rft86")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D"]
 shape = SubResource("CapsuleShape3D_7n5e2")
 
-[node name="world_env" type="WorldEnvironment" parent="."]
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fe3ho")
 
-[node name="directional_world_light" type="DirectionalLight3D" parent="."]
+[node name="DirectionalWorldLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.953879, -0.012047, -0.29995, 0.262047, 0.520866, 0.812422, 0.146447, -0.853553, 0.5, 0, 5, 0)
 
-[node name="floor" type="CSGMesh3D" parent="."]
+[node name="Floor" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 collision_layer = 2
@@ -83,25 +83,25 @@ collision_mask = 7
 mesh = SubResource("BoxMesh_alo7f")
 material = SubResource("StandardMaterial3D_nld32")
 
-[node name="portal" type="MeshInstance3D" parent="."]
+[node name="Portal" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
 mesh = SubResource("BoxMesh_atl10")
 
-[node name="Area3D" type="Area3D" parent="portal"]
+[node name="Area3D" type="Area3D" parent="Portal"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="portal/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_32pvx")
 script = SubResource("GDScript_xffm7")
 
-[node name="gate" type="MeshInstance3D" parent="."]
+[node name="Gate" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 3.799)
 mesh = SubResource("BoxMesh_0ecad")
-skeleton = NodePath("../portal")
+skeleton = NodePath("../Portal")
 script = ExtResource("4_badsc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="gate"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gate/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_cs71w")
 
-[connection signal="area_entered" from="portal/Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Portal/Area3D" to="." method="_on_area_3d_area_entered"]

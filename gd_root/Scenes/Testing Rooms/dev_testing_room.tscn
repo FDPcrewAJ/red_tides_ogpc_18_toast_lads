@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
 [ext_resource type="Script" path="res://Scripts/Misc/dev_testing_room.gd" id="1_rft86"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_5ta5x"]
-[ext_resource type="Script" path="res://Scenes/Testing Rooms/gate.gd" id="4_badsc"]
+[ext_resource type="Script" path="res://Scripts/Misc/gate.gd" id="4_badsc"]
 [ext_resource type="Texture2D" uid="uid://bcdm33h46gf8b" path="res://Textures/Temp Dev Textures/Purple/texture_09.png" id="4_qtvld"]
 [ext_resource type="Texture2D" uid="uid://c2hpiago2s8fm" path="res://Textures/Temp Dev Textures/Dark/texture_04.png" id="5_4co0y"]
 

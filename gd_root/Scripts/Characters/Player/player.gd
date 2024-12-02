@@ -1,9 +1,11 @@
 extends CharacterBody3D
+class_name Player
 
 const mouse_sens = 0.5
 
-@onready var head = $head
-@onready var neck = $head/neck
+@onready var head = $Head
+@onready var neck = $Head/Neck
+@onready var pause_menu = $PauseMenu
 
 # Wether or not to allow user to control the player
 var allow_control = true
@@ -80,5 +82,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		allow_control = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		pause_menu.show()
 
 	move_and_slide()
+
+
+func _on_pause_menu_resume() -> void:
+	pause_menu.hide()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

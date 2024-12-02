@@ -1,8 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpxrxmy5ojitx"]
+[gd_scene load_steps=20 format=3 uid="uid://bpxrxmy5ojitx"]
 
 [ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
 [ext_resource type="Script" path="res://Scripts/Misc/dev_testing_room.gd" id="1_rft86"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_5ta5x"]
+[ext_resource type="Script" path="res://Scenes/Testing Rooms/gate.gd" id="4_badsc"]
+[ext_resource type="Texture2D" uid="uid://bcdm33h46gf8b" path="res://Textures/Temp Dev Textures/Purple/texture_09.png" id="4_qtvld"]
+[ext_resource type="Texture2D" uid="uid://c2hpiago2s8fm" path="res://Textures/Temp Dev Textures/Dark/texture_04.png" id="5_4co0y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7n5e2"]
 
@@ -22,7 +25,11 @@ size = Vector3(30, 0.5, 30)
 albedo_texture = ExtResource("1_0i53s")
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ibdc"]
+albedo_texture = ExtResource("4_qtvld")
+
 [sub_resource type="BoxMesh" id="BoxMesh_atl10"]
+material = SubResource("StandardMaterial3D_0ibdc")
 size = Vector3(3, 3, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_32pvx"]
@@ -42,6 +49,16 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ut50"]
+albedo_texture = ExtResource("5_4co0y")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ecad"]
+material = SubResource("StandardMaterial3D_3ut50")
+size = Vector3(30, 5, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cs71w"]
+points = PackedVector3Array(-15.2381, -2.7381, -0.738095, 15.2381, 2.97619, 0.690476, 15.2381, 2.97619, -0.738095, -15.2381, 2.97619, 0.690476, 15.2381, -2.7381, 0.690476, 15.2381, -2.7381, -0.738095, -15.2381, 2.97619, -0.738095, -15.2381, -2.7381, 0.690476)
+
 [node name="dev_testing_room" type="Node3D"]
 script = ExtResource("1_rft86")
 
@@ -52,13 +69,13 @@ script = ExtResource("1_rft86")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D"]
 shape = SubResource("CapsuleShape3D_7n5e2")
 
-[node name="world_env" type="WorldEnvironment" parent="."]
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fe3ho")
 
-[node name="directional_world_light" type="DirectionalLight3D" parent="."]
+[node name="DirectionalWorldLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.953879, -0.012047, -0.29995, 0.262047, 0.520866, 0.812422, 0.146447, -0.853553, 0.5, 0, 5, 0)
 
-[node name="floor" type="CSGMesh3D" parent="."]
+[node name="Floor" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 collision_layer = 2
@@ -66,14 +83,25 @@ collision_mask = 7
 mesh = SubResource("BoxMesh_alo7f")
 material = SubResource("StandardMaterial3D_nld32")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Portal" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
 mesh = SubResource("BoxMesh_atl10")
 
-[node name="Area3D" type="Area3D" parent="MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Portal"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_32pvx")
 script = SubResource("GDScript_xffm7")
 
-[connection signal="area_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_area_entered"]
+[node name="Gate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 3.799)
+mesh = SubResource("BoxMesh_0ecad")
+skeleton = NodePath("../Portal")
+script = ExtResource("4_badsc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cs71w")
+
+[connection signal="area_entered" from="Portal/Area3D" to="." method="_on_area_3d_area_entered"]

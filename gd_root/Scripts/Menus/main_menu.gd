@@ -22,3 +22,8 @@ func _on_continue_pressed() -> void:
 func _on_settings_pressed() -> void:
 	Global.previous_scene = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file("res://Scenes/Menus/settings.tscn")
+
+
+func _on_level_select_pressed() -> void:
+	Global.previous_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://Scenes/Menus/level_select_menu.tscn")

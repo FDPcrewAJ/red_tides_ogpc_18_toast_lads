@@ -234,10 +234,10 @@ label_settings = SubResource("LabelSettings_tt6jo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StormTimer" parent="." instance=ExtResource("5_n8fnt")]
+
 [node name="player" parent="." instance=ExtResource("3_crk3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 0)
-
-[node name="StormTimer" parent="." instance=ExtResource("5_n8fnt")]
 
 [connection signal="area_entered" from="Rooms/hub_room/ReactorDoor/Portal/ReactorPortal" to="." method="_on_reactor_portal_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/DetectionDoor/Portal/DetectionPortal" to="." method="_on_detection_portal_area_entered"]

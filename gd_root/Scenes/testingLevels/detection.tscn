@@ -150,6 +150,8 @@ label_settings = SubResource("LabelSettings_tt6jo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StormTimer" parent="." instance=ExtResource("4_ftj46")]
+
 [node name="player" parent="." instance=ExtResource("3_nsoao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.48328)
 
@@ -157,7 +159,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.48328)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D2"]
 shape = SubResource("CapsuleShape3D_pwo1q")
-
-[node name="StormTimer" parent="." instance=ExtResource("4_ftj46")]
 
 [connection signal="area_entered" from="Rooms/reactor_room/HubDoor/Portal/HubPortal" to="." method="_on_hub_portal_area_entered"]

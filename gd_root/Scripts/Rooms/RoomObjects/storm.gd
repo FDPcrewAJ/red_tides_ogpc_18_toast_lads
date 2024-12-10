@@ -1,9 +1,11 @@
 extends Timer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Global.timer_started == true:
+		$".".wait_time = Global.storm_time
+	Global.timer_started = true
+	$".".start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

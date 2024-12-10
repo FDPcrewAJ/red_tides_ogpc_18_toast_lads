@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=7 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
 [ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_i72bv"]
@@ -10,6 +10,8 @@ albedo_color = Color(0.717647, 0.572549, 0.407843, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dp1qy"]
 material = SubResource("StandardMaterial3D_dg7xg")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -31,5 +33,10 @@ shape = SubResource("CapsuleShape3D_k6ler")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_dp1qy")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_gpw4u")
 
 [connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]

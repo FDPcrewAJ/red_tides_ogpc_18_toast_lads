@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ni32flrmson3"
-path.s3tc="res://.godot/imported/texture_01.png-ca46be3a42b286ce80618e8b544d5bcb.s3tc.ctex"
+uid="uid://c4sgxcup0rinb"
+path.s3tc="res://.godot/imported/playerTest.png-79be3d94c9c24cd636789bba89d138cc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Temp Dev Textures/Red/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-ca46be3a42b286ce80618e8b544d5bcb.s3tc.ctex"]
+source_file="res://Assets/Characters/Player/playerTest.png"
+dest_files=["res://.godot/imported/playerTest.png-79be3d94c9c24cd636789bba89d138cc.s3tc.ctex"]
 
 [params]
 

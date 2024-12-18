@@ -1,0 +1,163 @@
+[gd_scene load_steps=16 format=3 uid="uid://d1uxtso0kcmys"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_oik6j"]
+[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_ae3vd"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_1ct1n"]
+[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="4_oo2vc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_xgpjm"]
+sky_material = SubResource("ProceduralSkyMaterial_of3o3")
+
+[sub_resource type="Environment" id="Environment_rbggt"]
+background_mode = 2
+sky = SubResource("Sky_xgpjm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gq2th"]
+size = Vector3(19, 39, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v0b6v"]
+data = PackedVector3Array(-9.5, 19.5, 2, 9.5, 19.5, 2, -9.5, -19.5, 2, 9.5, 19.5, 2, 9.5, -19.5, 2, -9.5, -19.5, 2, 9.5, 19.5, -2, -9.5, 19.5, -2, 9.5, -19.5, -2, -9.5, 19.5, -2, -9.5, -19.5, -2, 9.5, -19.5, -2, 9.5, 19.5, 2, 9.5, 19.5, -2, 9.5, -19.5, 2, 9.5, 19.5, -2, 9.5, -19.5, -2, 9.5, -19.5, 2, -9.5, 19.5, -2, -9.5, 19.5, 2, -9.5, -19.5, -2, -9.5, 19.5, 2, -9.5, -19.5, 2, -9.5, -19.5, -2, 9.5, 19.5, 2, -9.5, 19.5, 2, 9.5, 19.5, -2, -9.5, 19.5, 2, -9.5, 19.5, -2, 9.5, 19.5, -2, -9.5, -19.5, 2, 9.5, -19.5, 2, -9.5, -19.5, -2, 9.5, -19.5, 2, 9.5, -19.5, -2, -9.5, -19.5, -2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6mwos"]
+viewport_path = NodePath("Rooms/reactor_room/Sign1/SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tt6jo"]
+font_size = 60
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n7ukc"]
+viewport_path = NodePath("Rooms/reactor_room/Sign2/SubViewport")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pwo1q"]
+
+[node name="Reactor" type="Node3D"]
+script = ExtResource("1_oik6j")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rbggt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="reactor_room" type="Node3D" parent="Rooms"]
+
+[node name="Floor" type="MeshInstance3D" parent="Rooms/reactor_room"]
+mesh = SubResource("PlaneMesh_5ftc0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qnkde")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 10, 0)
+mesh = SubResource("PlaneMesh_5ftc0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Ceiling/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qnkde")
+
+[node name="Wall1" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 0, 5, -5)
+mesh = SubResource("PlaneMesh_5ftc0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qnkde")
+
+[node name="Wall2" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 5)
+mesh = SubResource("PlaneMesh_5ftc0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qnkde")
+
+[node name="Wall3" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -5, 5, 0)
+mesh = SubResource("PlaneMesh_5ftc0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qnkde")
+
+[node name="Wall4" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 5, 5, 0)
+mesh = SubResource("PlaneMesh_5ftc0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qnkde")
+
+[node name="HubDoor" type="CSGMesh3D" parent="Rooms/reactor_room"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.5, 5)
+mesh = ExtResource("2_ae3vd")
+
+[node name="Portal" type="MeshInstance3D" parent="Rooms/reactor_room/HubDoor"]
+mesh = SubResource("BoxMesh_gq2th")
+
+[node name="HubPortal" type="Area3D" parent="Rooms/reactor_room/HubDoor/Portal"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/HubDoor/Portal/HubPortal"]
+shape = SubResource("ConcavePolygonShape3D_v0b6v")
+
+[node name="Sign1" type="Sprite3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+texture = SubResource("ViewportTexture_6mwos")
+
+[node name="SubViewport" type="SubViewport" parent="Rooms/reactor_room/Sign1"]
+size = Vector2i(300, 100)
+
+[node name="Label" type="Label" parent="Rooms/reactor_room/Sign1/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Dock"
+label_settings = SubResource("LabelSettings_tt6jo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sign2" type="Sprite3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.666, 4.9)
+texture = SubResource("ViewportTexture_n7ukc")
+
+[node name="SubViewport" type="SubViewport" parent="Rooms/reactor_room/Sign2"]
+size = Vector2i(300, 100)
+
+[node name="Label" type="Label" parent="Rooms/reactor_room/Sign2/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hub"
+label_settings = SubResource("LabelSettings_tt6jo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StormTimer" parent="." instance=ExtResource("4_oo2vc")]
+
+[node name="player" parent="." instance=ExtResource("3_1ct1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.48328)
+
+[node name="Area3D2" type="Area3D" parent="player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D2"]
+shape = SubResource("CapsuleShape3D_pwo1q")
+
+[connection signal="area_entered" from="Rooms/reactor_room/HubDoor/Portal/HubPortal" to="." method="_on_hub_portal_area_entered"]

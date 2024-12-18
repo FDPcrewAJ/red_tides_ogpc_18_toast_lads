@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://4j6k3kptq054"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm.gd" id="1_lyl70"]
+[ext_resource type="PackedScene" uid="uid://dfuyp25nf60m1" path="res://Scenes/Menus/hud.tscn" id="2_ix7o0"]
+
+[node name="StormTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="storm_timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+script = ExtResource("1_lyl70")
+
+[node name="HUD" parent="." instance=ExtResource("2_ix7o0")]
+
+[connection signal="timeout" from="storm_timer" to="storm_timer" method="_on_timeout"]

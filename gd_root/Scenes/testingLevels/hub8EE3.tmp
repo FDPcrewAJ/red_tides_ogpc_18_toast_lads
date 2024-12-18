@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cv0oc1p4fj42o"]
+[gd_scene load_steps=17 format=3 uid="uid://cv0oc1p4fj42o"]
 
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="1_8mukf"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_lcgre"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="2_ippcw"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_crk3d"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="5_n8fnt"]
+[ext_resource type="Script" path="res://Scenes/testingLevels/storm.gd" id="4_kcw8k"]
+[ext_resource type="PackedScene" uid="uid://dfuyp25nf60m1" path="res://Scenes/Menus/hud.tscn" id="5_866vn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,12 +25,6 @@ size = Vector2(10, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]
 points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
-[sub_resource type="BoxMesh" id="BoxMesh_gq2th"]
-size = Vector3(19, 39, 4)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v0b6v"]
-data = PackedVector3Array(-9.5, 19.5, 2, 9.5, 19.5, 2, -9.5, -19.5, 2, 9.5, 19.5, 2, 9.5, -19.5, 2, -9.5, -19.5, 2, 9.5, 19.5, -2, -9.5, 19.5, -2, 9.5, -19.5, -2, -9.5, 19.5, -2, -9.5, -19.5, -2, 9.5, -19.5, -2, 9.5, 19.5, 2, 9.5, 19.5, -2, 9.5, -19.5, 2, 9.5, 19.5, -2, 9.5, -19.5, -2, 9.5, -19.5, 2, -9.5, 19.5, -2, -9.5, 19.5, 2, -9.5, -19.5, -2, -9.5, 19.5, 2, -9.5, -19.5, 2, -9.5, -19.5, -2, 9.5, 19.5, 2, -9.5, 19.5, 2, 9.5, 19.5, -2, -9.5, 19.5, 2, -9.5, 19.5, -2, 9.5, 19.5, -2, -9.5, -19.5, 2, 9.5, -19.5, 2, -9.5, -19.5, -2, 9.5, -19.5, 2, 9.5, -19.5, -2, -9.5, -19.5, -2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_5nlea"]
 size = Vector3(75, 80, 50)
 
@@ -50,7 +44,6 @@ viewport_path = NodePath("Rooms/hub_room/Sign3/SubViewport")
 viewport_path = NodePath("Rooms/hub_room/Sign4/SubViewport")
 
 [node name="Hub" type="Node3D"]
-script = ExtResource("1_lcgre")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rbggt")
@@ -116,53 +109,21 @@ mesh = SubResource("PlaneMesh_5ftc0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Wall4/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_qnkde")
 
-[node name="ReactorDoor" type="CSGMesh3D" parent="Rooms/hub_room"]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.5, -5)
+[node name="Door" type="CSGMesh3D" parent="Rooms/hub_room"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.6, -5)
 mesh = ExtResource("1_8mukf")
 
-[node name="Portal" type="MeshInstance3D" parent="Rooms/hub_room/ReactorDoor"]
-mesh = SubResource("BoxMesh_gq2th")
-
-[node name="ReactorPortal" type="Area3D" parent="Rooms/hub_room/ReactorDoor/Portal"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/ReactorDoor/Portal/ReactorPortal"]
-shape = SubResource("ConcavePolygonShape3D_v0b6v")
-
-[node name="DetectionDoor" type="CSGMesh3D" parent="Rooms/hub_room"]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.5, 5)
+[node name="Door2" type="CSGMesh3D" parent="Rooms/hub_room"]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.6, 5)
 mesh = ExtResource("1_8mukf")
 
-[node name="Portal" type="MeshInstance3D" parent="Rooms/hub_room/DetectionDoor"]
-mesh = SubResource("BoxMesh_gq2th")
-
-[node name="DetectionPortal" type="Area3D" parent="Rooms/hub_room/DetectionDoor/Portal"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/DetectionDoor/Portal/DetectionPortal"]
-shape = SubResource("ConcavePolygonShape3D_v0b6v")
-
-[node name="DockDoor" type="CSGMesh3D" parent="Rooms/hub_room"]
-transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, 5, 1.5, 0)
+[node name="Door3" type="CSGMesh3D" parent="Rooms/hub_room"]
+transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, 5, 1.6, 0)
 mesh = ExtResource("1_8mukf")
 
-[node name="Portal" type="MeshInstance3D" parent="Rooms/hub_room/DockDoor"]
-mesh = SubResource("BoxMesh_gq2th")
-
-[node name="DockPortal" type="Area3D" parent="Rooms/hub_room/DockDoor/Portal"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/DockDoor/Portal/DockPortal"]
-shape = SubResource("ConcavePolygonShape3D_v0b6v")
-
-[node name="StorageDoor" type="CSGMesh3D" parent="Rooms/hub_room"]
-transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, -5, 1.5, 0)
+[node name="Door4" type="CSGMesh3D" parent="Rooms/hub_room"]
+transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, -5, 1.6, 0)
 mesh = ExtResource("1_8mukf")
-
-[node name="Portal" type="MeshInstance3D" parent="Rooms/hub_room/StorageDoor"]
-mesh = SubResource("BoxMesh_gq2th")
-
-[node name="StoragePortal" type="Area3D" parent="Rooms/hub_room/StorageDoor/Portal"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/StorageDoor/Portal/StoragePortal"]
-shape = SubResource("ConcavePolygonShape3D_v0b6v")
 
 [node name="Console" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 1.5, -1.5)
@@ -234,12 +195,14 @@ label_settings = SubResource("LabelSettings_tt6jo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StormTimer" parent="." instance=ExtResource("5_n8fnt")]
-
 [node name="player" parent="." instance=ExtResource("3_crk3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 0)
 
-[connection signal="area_entered" from="Rooms/hub_room/ReactorDoor/Portal/ReactorPortal" to="." method="_on_reactor_portal_area_entered"]
-[connection signal="area_entered" from="Rooms/hub_room/DetectionDoor/Portal/DetectionPortal" to="." method="_on_detection_portal_area_entered"]
-[connection signal="area_entered" from="Rooms/hub_room/DockDoor/Portal/DockPortal" to="." method="_on_dock_portal_area_entered"]
-[connection signal="area_entered" from="Rooms/hub_room/StorageDoor/Portal/StoragePortal" to="." method="_on_storage_portal_area_entered"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1200.0
+one_shot = true
+script = ExtResource("4_kcw8k")
+
+[node name="HUD" parent="." instance=ExtResource("5_866vn")]
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

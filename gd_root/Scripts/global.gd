@@ -10,7 +10,7 @@ var storm_time = "0"
 
 var timer_started = false
 
-func _process(delta: float) -> void:
+func _process(_delta):
 	if new_game == true:
 		room_completed = false
 		new_game = false

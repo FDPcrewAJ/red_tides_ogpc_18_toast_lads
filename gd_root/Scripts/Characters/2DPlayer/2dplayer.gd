@@ -5,7 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_portal_area_2d_area_entered(area: Area2D) -> void:
+func _on_portal_area_2d_area_entered(_area):
 	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/dev_testing_room.tscn")
 	
-func _on_item_area_2d_area_entered(area: Area2D) -> void:
+func _on_item_area_2d_area_entered(_area):
 	Global.room_completed = true

@@ -11,4 +11,4 @@ func _process(_delta) -> void:
 	pass
 
 func _on_area_3d_area_entered(_area):
-	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/2d_dev_testing_room.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Testing Rooms/2d_dev_testing_room.tscn")

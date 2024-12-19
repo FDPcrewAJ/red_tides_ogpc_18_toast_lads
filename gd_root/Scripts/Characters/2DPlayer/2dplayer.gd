@@ -26,7 +26,8 @@ func _physics_process(delta: float):
 
 
 func _on_portal_area_2d_area_entered(_area):
-	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/dev_testing_room.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Testing Rooms/dev_testing_room.tscn")
+	
 	
 func _on_item_area_2d_area_entered(_area):
 	Global.room_completed = true

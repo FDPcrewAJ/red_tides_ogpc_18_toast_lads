@@ -7,7 +7,9 @@ const mouse_sens = 0.5
 @onready var neck = $Head/Neck
 @onready var pause_menu = $PauseMenu
 
-# Wether or not to allow user to control the player
+var save_system = save_resource.new()
+
+# Whether or not to allow user to control the player
 var allow_control = true
 
 # Player Movement Variables
@@ -44,25 +46,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y = jump_velocity
 
-	# Get the input direction in which player is moving 
-	# (in Vector 2: 
-	# Left: (-1, 0)
-	# Right: (1, 0)
-	# Forward: (0, -1)
-	# Backward (0, 1)
-	# when moving diagonally, you get a fancy decimal 0.707 something)
+	## Get the input direction in which player is moving 
+	## (in Vector 2: 
+	## Left: (-1, 0)
+	## Right: (1, 0)
+	## Forward: (0, -1)
+	## Backward (0, 1)
+	## when moving diagonally, you get a fancy decimal 0.707 something)
 	var input_dir := Input.get_vector("a", "d", "w", "s")
 	
-	# Direction varible to store x and z direction that the player is moving
-	# (Is not the players actual velocity, that is different and gets put in later)
-	# Lerp: goes from first input to second input smoothly
-	# [Input 1]: Current direction of the player, changes as the player moves. (in Vector3)
-	# [Input 2]: Mouse position of the player (transform.basis), gets where the player is looking, (in Vector3)
-	# so that we know what direction we need to move in. This is then multiplied by a Vector3 conversion
-	# of the input direction, with y being 0 as we are not moving vertical.
-	# All of that is then normalized, which sets the distance of the vector3 to one.
-	# [Input 3]: The rate of change is the set lerp speed, effects how slowly or quickly you speed up,
-	# multiplied by delta so that it sticks with frame time and does not go out of sync.
+	## Direction varible to store x and z direction that the player is moving
+	## (Is not the players actual velocity, that is different and gets put in later)
+	## Lerp: goes from first input to second input smoothly
+	## [Input 1]: Current direction of the player, changes as the player moves. (in Vector3)
+	## [Input 2]: Mouse position of the player (transform.basis), gets where the player is looking, 
+	## (in Vector3) so that we know what direction we need to move in. This is then multiplied by a
+	## Vector3 conversion of the input direction, with y being 0 as we are not moving vertical.
+	## All of that is then normalized, which sets the distance of the vector3 to one.
+	## [Input 3]: The rate of change is the set lerp speed, effects how slowly or quickly you speed 
+	## up, multiplied by delta so that it sticks with frame time and does not go out of sync.
 	direction = lerp(direction,
 					(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), 
 					delta * move_lerp_speed)
@@ -83,7 +85,10 @@ func _physics_process(delta: float) -> void:
 		allow_control = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause_menu.show()
-
+	
+	print(global_position)
+	save_system.save_pos(global_position)
+	
 	move_and_slide()
 
 

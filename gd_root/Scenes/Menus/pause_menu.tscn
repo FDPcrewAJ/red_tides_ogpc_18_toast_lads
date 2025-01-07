@@ -4,6 +4,7 @@
 script/source = "extends Control
 
 signal resume
+signal save_game
 
 func _on_resume_pressed() -> void:
 	resume.emit()
@@ -20,6 +21,10 @@ func _on_main_menu_pressed() -> void:
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_save_game_pressed() -> void:
+	save_game.emit()
 "
 
 [node name="pause_menu" type="Control"]
@@ -166,6 +171,7 @@ text = "Quit Game"
 flat = true
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]

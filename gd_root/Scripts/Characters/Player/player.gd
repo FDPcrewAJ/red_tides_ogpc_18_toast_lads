@@ -26,6 +26,7 @@ const jump_velocity = 4.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	verify_save_directory(scene_file_path)
 
 
 func _input(event):
@@ -86,12 +87,20 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause_menu.show()
 	
-	print(global_position)
-	save_system.save_pos(global_position)
-	
 	move_and_slide()
 
 
-func _on_pause_menu_resume() -> void:
+func _on_pause_menu_resume():
 	pause_menu.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_pause_menu_save_game():
+	save_system.save_pos(global_position)
+	save_system.save_scene(get_scene_file_path())
+
+func verify_save_directory(path):
+	DirAccess.make_dir_absolute(path)
+
+func load_data():
+	scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)

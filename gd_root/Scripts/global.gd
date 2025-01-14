@@ -10,6 +10,8 @@ var storm_time = "0"
 
 var timer_started = false
 
+var current_object = "none"
+
 func _process(_delta):
 	if new_game == true:
 		room_completed = false

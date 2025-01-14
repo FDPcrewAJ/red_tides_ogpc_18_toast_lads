@@ -1,4 +1,4 @@
-extends CSGMesh3D
+extends StaticBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,6 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.current_object == "StaticBody3D:<StaticBody3D#37782291843>":
-		if Input.is_action_just_pressed("click"):
-			get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/storage.tscn")
+	pass
+
+
+func _on_item_area_2d_area_entered(area: Area2D) -> void:
+	$"../StormTimer"._timer_reset()
+	queue_free()

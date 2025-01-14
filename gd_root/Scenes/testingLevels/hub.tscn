@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_lcgre"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="2_ippcw"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_crk3d"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/console.gd" id="4_5k78a"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/console.gd" id="4_5k78a"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="5_n8fnt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
@@ -176,9 +176,9 @@ script = ExtResource("4_5k78a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_5nlea")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/hub_room/Console"]
+[node name="ConsoleBody" type="StaticBody3D" parent="Rooms/hub_room/Console"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Console/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Console/ConsoleBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_5nlea")
 
@@ -251,4 +251,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 0)
 [connection signal="area_entered" from="Rooms/hub_room/DetectionDoor/Portal/DetectionPortal" to="." method="_on_detection_portal_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/DockDoor/Portal/DockPortal" to="." method="_on_dock_portal_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/StorageDoor/Portal/StoragePortal" to="." method="_on_storage_portal_area_entered"]
-[connection signal="input_event" from="Rooms/hub_room/Console/Area3D" to="Rooms/hub_room/Console" method="_on_area_3d_input_event"]

@@ -1,0 +1,97 @@
+[gd_scene load_steps=16 format=3 uid="uid://bsckqlff832le"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/2d_player_storm_interface.gd" id="1_4tmdk"]
+[ext_resource type="Texture2D" uid="uid://g6knvs1othdf" path="res://Textures/Temp Dev Textures/Dark/texture_01.png" id="2_u1820"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_interface_portal.gd" id="3_kdutr"]
+[ext_resource type="Texture2D" uid="uid://bcdm33h46gf8b" path="res://Textures/Temp Dev Textures/Purple/texture_09.png" id="4_k18x7"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_item.gd" id="5_7wah4"]
+[ext_resource type="Texture2D" uid="uid://cvgath02y1r71" path="res://Textures/Temp Dev Textures/Green/texture_09.png" id="6_ouw5w"]
+[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_qx72p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gt8jc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_v4egk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xni71"]
+size = Vector2(244, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n7ru7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aohfy"]
+size = Vector2(20, 56)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6lx6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yofuw"]
+size = Vector2(20, 11.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_308a5"]
+
+[node name="2d_dev_testing_room" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4tmdk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_gt8jc")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_gt8jc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Player"]
+position = Vector2(-6.55651e-07, -16)
+scale = Vector2(20, 14.5)
+mesh = SubResource("CapsuleMesh_v4egk")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(54, 10)
+shape = SubResource("RectangleShape2D_xni71")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Floor"]
+position = Vector2(54, 10.5)
+scale = Vector2(244, 21)
+mesh = SubResource("BoxMesh_n7ru7")
+texture = ExtResource("2_u1820")
+
+[node name="Portal" type="StaticBody2D" parent="."]
+script = ExtResource("3_kdutr")
+
+[node name="PortalArea2D" type="Area2D" parent="Portal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/PortalArea2D"]
+position = Vector2(160, -28)
+shape = SubResource("RectangleShape2D_aohfy")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Portal"]
+position = Vector2(159.625, -27.875)
+scale = Vector2(20.75, 56.25)
+mesh = SubResource("BoxMesh_6lx6h")
+texture = ExtResource("4_k18x7")
+
+[node name="Item" type="StaticBody2D" parent="."]
+script = ExtResource("5_7wah4")
+
+[node name="ItemArea2D" type="Area2D" parent="Item"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/ItemArea2D"]
+position = Vector2(85, -20.25)
+shape = SubResource("RectangleShape2D_yofuw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Item"]
+position = Vector2(85, -20)
+scale = Vector2(20.75, 12.125)
+mesh = SubResource("BoxMesh_308a5")
+texture = ExtResource("6_ouw5w")
+
+[node name="StormTimer" parent="." instance=ExtResource("7_qx72p")]
+
+[connection signal="area_entered" from="Portal/PortalArea2D" to="Portal" method="_on_portal_area_2d_area_entered"]
+[connection signal="area_entered" from="Item/ItemArea2D" to="Item" method="_on_item_area_2d_area_entered"]

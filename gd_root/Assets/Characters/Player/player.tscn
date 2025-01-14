@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
 [ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_i72bv"]
-[ext_resource type="Script" path="res://Assets/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
 

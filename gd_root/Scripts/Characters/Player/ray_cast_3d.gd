@@ -10,12 +10,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if is_colliding() == true:
-		cur_object = get_collider()
+		cur_object = get_collider().get_name()
 		cur_object = str(cur_object)
 		Global.current_object = cur_object
-		print(cur_object)
 	if is_colliding() == false:
 		cur_object = "none"
 		cur_object = str(cur_object)
 		Global.current_object = cur_object
-		print(cur_object)

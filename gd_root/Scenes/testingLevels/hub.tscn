@@ -21,11 +21,11 @@ sky = SubResource("Sky_xgpjm")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5qx3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aive5"]
 albedo_texture = ExtResource("2_22s7d")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
-material = SubResource("StandardMaterial3D_f5qx3")
+material = SubResource("StandardMaterial3D_aive5")
 size = Vector2(5, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]

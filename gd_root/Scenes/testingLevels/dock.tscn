@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1uxtso0kcmys"]
+[gd_scene load_steps=18 format=3 uid="uid://d1uxtso0kcmys"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_oik6j"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="2_6srv3"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_ae3vd"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_1ct1n"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="4_oo2vc"]
@@ -18,10 +19,14 @@ sky = SubResource("Sky_xgpjm")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
-size = Vector2(10, 10)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5qx3"]
+albedo_texture = ExtResource("2_6srv3")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_lgk0j"]
+material = SubResource("StandardMaterial3D_f5qx3")
+size = Vector2(5, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fj042"]
 points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gq2th"]
@@ -47,66 +52,148 @@ script = ExtResource("1_oik6j")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rbggt")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_color = Color(1, 1, 0.698039, 1)
+light_energy = 16.0
 shadow_enabled = true
+spot_range = 13.4022
+spot_angle = 43.3159
 
 [node name="Rooms" type="Node" parent="."]
 
 [node name="reactor_room" type="Node3D" parent="Rooms"]
 
 [node name="Floor" type="MeshInstance3D" parent="Rooms/reactor_room"]
-mesh = SubResource("PlaneMesh_5ftc0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Floor"]
+[node name="Floor2" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Floor/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qnkde")
+[node name="Floor3" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="Ceiling" type="MeshInstance3D" parent="Rooms/reactor_room"]
+[node name="Floor4" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fj042")
+
+[node name="Ceiling1" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, -1.19209e-07, 0, 1.19209e-07, -1, 0, 0, 0, 1, 2.5, 10, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Ceiling2" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, -1.19209e-07, 0, 1.19209e-07, -1, 0, 0, 0, 1, -2.5, 10, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Ceiling3" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, -1.19209e-07, 0, 1.19209e-07, -1, 0, 0, 0, 1, 2.5, 10, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Ceiling4" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, -1.19209e-07, 0, 1.19209e-07, -1, 0, 0, 0, 1, -2.5, 10, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 10, 0)
-mesh = SubResource("PlaneMesh_5ftc0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Ceiling"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Ceiling/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qnkde")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/StaticBody3D6"]
+shape = SubResource("ConvexPolygonShape3D_fj042")
 
 [node name="Wall1" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, -2.5, 2.5, -5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall5" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 2.5, 2.5, -5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall6" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 2.5, 7.5, -5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall7" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, -2.5, 7.5, -5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 0, 5, -5)
-mesh = SubResource("PlaneMesh_5ftc0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_fj042")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall1/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qnkde")
+[node name="Wall8" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, 8.74228e-08, 1.04251e-15, 0, 1.19249e-08, -1, -8.74228e-08, -1, -1.19249e-08, 2.5, 2.5, 5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="Wall2" type="MeshInstance3D" parent="Rooms/reactor_room"]
+[node name="Wall9" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, 8.74228e-08, 1.04251e-15, 0, 1.19249e-08, -1, -8.74228e-08, -1, -1.19249e-08, -2.5, 2.5, 5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall10" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, 8.74228e-08, 1.04251e-15, 0, 1.19249e-08, -1, -8.74228e-08, -1, -1.19249e-08, -2.5, 7.5, 5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall11" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-1, 8.74228e-08, 1.04251e-15, 0, 1.19249e-08, -1, -8.74228e-08, -1, -1.19249e-08, 2.5, 7.5, 5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 5)
-mesh = SubResource("PlaneMesh_5ftc0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/StaticBody3D3"]
+shape = SubResource("ConvexPolygonShape3D_fj042")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall2/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qnkde")
+[node name="Wall12" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, -1, -1.19249e-08, 0, 1.19249e-08, -1, 1, -4.37114e-08, -5.21254e-16, 5, 2.5, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="Wall3" type="MeshInstance3D" parent="Rooms/reactor_room"]
-transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -5, 5, 0)
-mesh = SubResource("PlaneMesh_5ftc0")
+[node name="Wall13" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, -1, -1.19249e-08, 0, 1.19249e-08, -1, 1, -4.37114e-08, -5.21254e-16, 5, 2.5, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall3"]
+[node name="Wall14" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, -1, -1.19249e-08, 0, 1.19249e-08, -1, 1, -4.37114e-08, -5.21254e-16, 5, 7.5, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall3/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qnkde")
+[node name="Wall15" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, -1, -1.19249e-08, 0, 1.19249e-08, -1, 1, -4.37114e-08, -5.21254e-16, 5, 7.5, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
 
-[node name="Wall4" type="MeshInstance3D" parent="Rooms/reactor_room"]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Rooms/reactor_room"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 5, 5, 0)
-mesh = SubResource("PlaneMesh_5ftc0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room/Wall4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/StaticBody3D4"]
+shape = SubResource("ConvexPolygonShape3D_fj042")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/Wall4/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_qnkde")
+[node name="Wall16" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, 1, 1.19249e-08, 0, 1.19249e-08, -1, -1, -4.37114e-08, -5.21254e-16, -5, 2.5, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall17" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, 1, 1.19249e-08, 0, 1.19249e-08, -1, -1, -4.37114e-08, -5.21254e-16, -5, 2.5, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall18" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, 1, 1.19249e-08, 0, 1.19249e-08, -1, -1, -4.37114e-08, -5.21254e-16, -5, 7.5, 2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="Wall19" type="MeshInstance3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, 1, 1.19249e-08, 0, 1.19249e-08, -1, -1, -4.37114e-08, -5.21254e-16, -5, 7.5, -2.5)
+mesh = SubResource("PlaneMesh_lgk0j")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Rooms/reactor_room"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -5, 5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/reactor_room/StaticBody3D5"]
+shape = SubResource("ConvexPolygonShape3D_fj042")
 
 [node name="HubDoor" type="CSGMesh3D" parent="Rooms/reactor_room"]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.5, 5)

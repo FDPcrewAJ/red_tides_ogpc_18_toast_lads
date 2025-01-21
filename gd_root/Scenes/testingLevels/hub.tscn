@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://cv0oc1p4fj42o"]
+[gd_scene load_steps=31 format=3 uid="uid://cv0oc1p4fj42o"]
 
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="1_8mukf"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_lcgre"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="2_22s7d"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="2_ippcw"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/FLOOR_TILE_V2.png" id="2_o5iii"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_crk3d"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/console.gd" id="4_5k78a"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="5_n8fnt"]
@@ -21,15 +22,43 @@ sky = SubResource("Sky_xgpjm")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
+albedo_texture = ExtResource("2_o5iii")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xoadi"]
+material = SubResource("StandardMaterial3D_21ts2")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sglxe"]
+albedo_texture = ExtResource("2_o5iii")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n3n73"]
+material = SubResource("StandardMaterial3D_sglxe")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3b2o"]
+albedo_texture = ExtResource("2_o5iii")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_klcjh"]
+material = SubResource("StandardMaterial3D_f3b2o")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vgku"]
+albedo_texture = ExtResource("2_o5iii")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d4vbq"]
+material = SubResource("StandardMaterial3D_4vgku")
+size = Vector2(5, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aive5"]
 albedo_texture = ExtResource("2_22s7d")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
 material = SubResource("StandardMaterial3D_aive5")
 size = Vector2(5, 5)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]
-points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gq2th"]
 size = Vector3(19, 39, 4)
@@ -75,19 +104,19 @@ spot_angle = 43.3159
 
 [node name="Floor" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
-mesh = SubResource("PlaneMesh_5ftc0")
+mesh = SubResource("PlaneMesh_xoadi")
 
 [node name="Floor2" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
-mesh = SubResource("PlaneMesh_5ftc0")
+mesh = SubResource("PlaneMesh_n3n73")
 
 [node name="Floor3" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
-mesh = SubResource("PlaneMesh_5ftc0")
+mesh = SubResource("PlaneMesh_klcjh")
 
 [node name="Floor4" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
-mesh = SubResource("PlaneMesh_5ftc0")
+mesh = SubResource("PlaneMesh_d4vbq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/hub_room"]
 

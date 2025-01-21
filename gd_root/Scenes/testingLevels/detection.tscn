@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://u6i5ubi5xyve"]
+[gd_scene load_steps=27 format=3 uid="uid://u6i5ubi5xyve"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_p336e"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="2_ad60u"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/FLOOR_TILE_V2.png" id="2_scf1j"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_yi372"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_nsoao"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="4_ftj46"]
@@ -19,15 +20,43 @@ sky = SubResource("Sky_xgpjm")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uony3"]
+albedo_texture = ExtResource("2_scf1j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4rch8"]
+material = SubResource("StandardMaterial3D_uony3")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ks22c"]
+albedo_texture = ExtResource("2_scf1j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cxugd"]
+material = SubResource("StandardMaterial3D_ks22c")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_224oj"]
+albedo_texture = ExtResource("2_scf1j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u1vvf"]
+material = SubResource("StandardMaterial3D_224oj")
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lc2s"]
+albedo_texture = ExtResource("2_scf1j")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_12k88"]
+material = SubResource("StandardMaterial3D_6lc2s")
+size = Vector2(5, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eamxx"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu4sx"]
 albedo_texture = ExtResource("2_ad60u")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gomt7"]
 material = SubResource("StandardMaterial3D_lu4sx")
 size = Vector2(5, 5)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eamxx"]
-points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gq2th"]
 size = Vector3(19, 39, 4)
@@ -66,19 +95,19 @@ spot_angle = 43.3159
 
 [node name="Floor" type="MeshInstance3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
-mesh = SubResource("PlaneMesh_gomt7")
+mesh = SubResource("PlaneMesh_4rch8")
 
 [node name="Floor2" type="MeshInstance3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
-mesh = SubResource("PlaneMesh_gomt7")
+mesh = SubResource("PlaneMesh_cxugd")
 
 [node name="Floor3" type="MeshInstance3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
-mesh = SubResource("PlaneMesh_gomt7")
+mesh = SubResource("PlaneMesh_u1vvf")
 
 [node name="Floor4" type="MeshInstance3D" parent="Rooms/reactor_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
-mesh = SubResource("PlaneMesh_gomt7")
+mesh = SubResource("PlaneMesh_12k88")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/reactor_room"]
 

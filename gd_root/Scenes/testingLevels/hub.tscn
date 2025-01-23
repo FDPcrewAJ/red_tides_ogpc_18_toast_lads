@@ -24,6 +24,7 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
 albedo_texture = ExtResource("2_o5iii")
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xoadi"]
 material = SubResource("StandardMaterial3D_21ts2")
@@ -31,6 +32,7 @@ size = Vector2(5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sglxe"]
 albedo_texture = ExtResource("2_o5iii")
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n3n73"]
 material = SubResource("StandardMaterial3D_sglxe")
@@ -38,6 +40,7 @@ size = Vector2(5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3b2o"]
 albedo_texture = ExtResource("2_o5iii")
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_klcjh"]
 material = SubResource("StandardMaterial3D_f3b2o")
@@ -45,6 +48,8 @@ size = Vector2(5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vgku"]
 albedo_texture = ExtResource("2_o5iii")
+uv1_triplanar = true
+uv2_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_d4vbq"]
 material = SubResource("StandardMaterial3D_4vgku")
@@ -55,6 +60,7 @@ points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aive5"]
 albedo_texture = ExtResource("2_22s7d")
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
 material = SubResource("StandardMaterial3D_aive5")

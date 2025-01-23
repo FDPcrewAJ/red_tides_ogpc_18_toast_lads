@@ -7,3 +7,6 @@ func _on_back_button_pressed() -> void:
 
 func _on_hub_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/testingLevels/hub.tscn")
+
+func _on_fire_puzzle_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/testingLevels/firepuzzle.tscn")

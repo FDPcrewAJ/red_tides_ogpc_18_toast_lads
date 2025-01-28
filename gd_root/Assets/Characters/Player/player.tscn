@@ -46,3 +46,4 @@ mesh = SubResource("CapsuleMesh_dp1qy")
 shape = SubResource("CapsuleShape3D_gpw4u")
 
 [connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]
+[connection signal="save_game" from="PauseMenu" to="." method="_on_pause_menu_save_game"]

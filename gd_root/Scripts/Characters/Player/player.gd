@@ -102,5 +102,5 @@ func _on_pause_menu_save_game():
 func verify_save_directory(path):
 	DirAccess.make_dir_absolute(path)
 
-func load_data():
-	scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+#func load_data():
+	#scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)

@@ -90,3 +90,6 @@ func _physics_process(delta: float) -> void:
 func _on_pause_menu_resume() -> void:
 	pause_menu.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+func _set_last_pos() -> void:
+	position = Global.lastpos

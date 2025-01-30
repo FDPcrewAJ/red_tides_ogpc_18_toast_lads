@@ -1,0 +1,130 @@
+[gd_scene load_steps=19 format=3 uid="uid://cp3oisrnu3ldt"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_wa5fb"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/boat.gd" id="5_7w7o2"]
+[ext_resource type="ArrayMesh" uid="uid://wxcqumky5rpm" path="res://Assets/Models/Objects/Boat/Boat.obj" id="5_g2tvr"]
+[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_finki"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_0ijr6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1nn21"]
+size = Vector3(8, 30, 8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nw1wt"]
+points = PackedVector3Array(4, 14.0529, 4, -4, -14.3915, -4, -3.90476, -14.0529, 4, -4, 14.3915, -4, 4, -14.0529, -3.90476, 4, -14.0529, 4, -3.90476, 14.0529, 4, 4, 14.0529, -3.90476)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hytku"]
+points = PackedVector3Array(4, 14.0529, 4, -4, -14.3915, -4, -3.90476, -14.0529, 4, -4, 14.3915, -4, 4, -14.0529, -3.90476, 4, -14.0529, 4, -3.90476, 14.0529, 4, 4, 14.0529, -3.90476)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwjwq"]
+points = PackedVector3Array(4, 14.0529, 4, -4, -14.3915, -4, -3.90476, -14.0529, 4, -4, 14.3915, -4, 4, -14.0529, -3.90476, 4, -14.0529, 4, -3.90476, 14.0529, 4, 4, 14.0529, -3.90476)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m1w63"]
+points = PackedVector3Array(4, 14.0529, 4, -4, -14.3915, -4, -3.90476, -14.0529, 4, -4, 14.3915, -4, 4, -14.0529, -3.90476, 4, -14.0529, 4, -3.90476, 14.0529, 4, 4, 14.0529, -3.90476)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t6fl3"]
+size = Vector3(150, 1, 170)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_joc13"]
+points = PackedVector3Array(-76.3492, -1.84921, -86.3492, 77.4603, 0.849206, 86.3492, 77.4603, -1.84921, 86.3492, 77.4603, 0.849206, -86.3492, -76.3492, 0.849206, 86.3492, -76.3492, -1.84921, 86.3492, 77.4603, -1.84921, -86.3492, -76.3492, 0.849206, -86.3492)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_xgpjm"]
+sky_material = SubResource("ProceduralSkyMaterial_of3o3")
+
+[sub_resource type="Environment" id="Environment_rbggt"]
+background_mode = 2
+sky = SubResource("Sky_xgpjm")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3ivo4"]
+points = PackedVector3Array(-2.11905, -0.619048, -7.61905, 2.16667, 0.571429, 7.61905, 2.16667, -0.619048, 7.61905, 2.16667, 0.571429, -7.61905, -2.11905, 0.571429, 7.61905, -2.11905, -0.619048, 7.61905, 2.16667, -0.619048, -7.61905, -2.11905, 0.571429, -7.61905)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uybp"]
+albedo_color = Color(0.185163, 0.40457, 0.680154, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2grpb"]
+material = SubResource("StandardMaterial3D_6uybp")
+size = Vector2(500, 500)
+
+[node name="OutsideRig" type="Node3D"]
+script = ExtResource("1_wa5fb")
+
+[node name="Rig" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.9152, 0)
+
+[node name="Pillar" type="MeshInstance3D" parent="Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 15, -70)
+mesh = SubResource("BoxMesh_1nn21")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rig/Pillar"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Pillar/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nw1wt")
+
+[node name="Pillar2" type="MeshInstance3D" parent="Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 15, 70)
+mesh = SubResource("BoxMesh_1nn21")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rig/Pillar2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Pillar2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hytku")
+
+[node name="Pillar3" type="MeshInstance3D" parent="Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 15, -70)
+mesh = SubResource("BoxMesh_1nn21")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rig/Pillar3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Pillar3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hwjwq")
+
+[node name="Pillar4" type="MeshInstance3D" parent="Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 15, 70)
+mesh = SubResource("BoxMesh_1nn21")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rig/Pillar4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Pillar4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m1w63")
+
+[node name="Floor" type="MeshInstance3D" parent="Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 30, 0)
+mesh = SubResource("BoxMesh_t6fl3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rig/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rig/Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_joc13")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rbggt")
+
+[node name="StormTimer" parent="." instance=ExtResource("7_finki")]
+
+[node name="player" parent="." instance=ExtResource("8_0ijr6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.30323, 4.31726, 0)
+
+[node name="Boat" type="AnimatableBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.252245, 0)
+script = ExtResource("5_7w7o2")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Boat"]
+transform = Transform3D(-3.5, 0, 3.0598e-07, 0, 3.5, 0, -3.0598e-07, 0, -3.5, 0, 0, 0)
+mesh = ExtResource("5_g2tvr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81617e-08, 2.34573, -1.10181)
+shape = SubResource("ConvexPolygonShape3D_3ivo4")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_2grpb")
+skeleton = NodePath("../Rig")

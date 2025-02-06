@@ -8,4 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	translate(Vector3(0,0,0.1 * 1))
+	if self.position.x > -62:
+		translate(Vector3(0,0,0.1 * 1))

@@ -11,7 +11,7 @@ func _on_quit_pressed() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/dev_testing_room.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Building Floors/main_floor.tscn")
 	Global.new_game = true
 
 

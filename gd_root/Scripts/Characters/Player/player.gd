@@ -103,4 +103,8 @@ func verify_save_directory(path):
 	DirAccess.make_dir_absolute(path)
 
 func load_data():
-	scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	pass
+	#scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	
+func _set_last_pos() -> void:
+	position = Global.lastpos

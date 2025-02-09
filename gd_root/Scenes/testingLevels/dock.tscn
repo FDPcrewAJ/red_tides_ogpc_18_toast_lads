@@ -1,9 +1,9 @@
 [gd_scene load_steps=27 format=3 uid="uid://d1uxtso0kcmys"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_oik6j"]
-[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="2_6srv3"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_6srv3"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_ae3vd"]
-[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/Floors/FLOOR_TILE_V2.png" id="2_wxa4g"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_wxa4g"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_1ct1n"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="4_oo2vc"]
 

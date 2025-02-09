@@ -1,9 +1,8 @@
 extends MeshInstance3D
-var deadly = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Global.one_watered == true:
+	if Global.five_watered == true:
 		queue_free()
 
 

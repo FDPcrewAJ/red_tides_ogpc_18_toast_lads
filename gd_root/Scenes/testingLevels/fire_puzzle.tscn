@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
-[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/FLOOR_TILE_V2.png" id="2_46jx2"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/Floors/FLOOR_TILE_V2.png" id="2_46jx2"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="3_omovr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire.gd" id="4_rnf6b"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="5_8h3pe"]

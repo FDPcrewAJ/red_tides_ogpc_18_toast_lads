@@ -30,6 +30,8 @@ var fire_console_one_water = 1
 var fire_console_two_water = 1
 var fire_console_three_water = 1
 
+var entry_door_open = false
+
 func _process(_delta):
 	if new_game == true:
 		room_completed = false

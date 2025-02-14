@@ -1,12 +1,12 @@
 [gd_scene load_steps=27 format=3 uid="uid://djyaet7n8s1jw"]
 
-[ext_resource type="Script" path="res://Scenes/testingLevels/entry_chamber.gd" id="1_di3ye"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/entry_chamber.gd" id="1_di3ye"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/Floors/FLOOR_TILE_V2.png" id="2_lwjvp"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="3_ww8n7"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="4_isti7"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="5_hr3t2"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/entry_room_computer.gd" id="6_v2ya8"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/door_close.gd" id="8_5yi7n"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/entry_room_computer.gd" id="6_v2ya8"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/door_close.gd" id="8_5yi7n"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_kgtsj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]

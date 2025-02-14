@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://djyaet7n8s1jw"]
+[gd_scene load_steps=29 format=3 uid="uid://djyaet7n8s1jw"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/entry_chamber.gd" id="1_di3ye"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/RoomTextures/Floors/FLOOR_TILE_V2.png" id="2_lwjvp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/entry_room_computer.gd" id="6_v2ya8"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/door_close.gd" id="8_5yi7n"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_kgtsj"]
+[ext_resource type="PackedScene" uid="uid://1vstisoeox23" path="res://Scenes/Objects/text_popup.tscn" id="9_wyyk3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -74,6 +75,9 @@ size = Vector3(3, 6, 1)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_piycp"]
 points = PackedVector3Array(-1.5, -3, -0.5, -1.5, -3, 0.5, -1.5, 3, -0.5, 1.5, -3, -0.5, 1.5, -3, 0.5, -1.5, 3, 0.5, 1.5, 3, -0.5, 1.5, 3, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ojmnv"]
+points = PackedVector3Array(5, 5, 0.5, 5, 5, -0.5, -5, 5, 0.5, 5, -5, 0.5, 5, -5, -0.5, -5, 5, -0.5, -5, -5, 0.5, -5, -5, -0.5)
 
 [node name="EntryChamber" type="Node3D"]
 script = ExtResource("1_di3ye")
@@ -248,4 +252,21 @@ script = ExtResource("8_5yi7n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorClose/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_piycp")
 
+[node name="TextPopup" parent="." instance=ExtResource("9_wyyk3")]
+
+[node name="JumpTextPopup" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpTextPopup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+shape = SubResource("ConvexPolygonShape3D_ojmnv")
+
+[node name="ComputerTextPopup" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ComputerTextPopup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+shape = SubResource("ConvexPolygonShape3D_ojmnv")
+
 [connection signal="area_entered" from="HubDoor/Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="JumpTextPopup" to="." method="_on_jump_text_popup_area_entered"]
+[connection signal="area_entered" from="ComputerTextPopup" to="." method="_on_computer_text_popup_area_entered"]

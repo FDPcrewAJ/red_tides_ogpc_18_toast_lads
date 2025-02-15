@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://1vstisoeox23"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/text_popup.gd" id="1_1ey4t"]
+[ext_resource type="Script" path="res://Scripts/Menus/popup_label.gd" id="2_b8gy0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r3bx2"]
+font_size = 80
+
+[node name="TextPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ey4t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 784.0
+offset_right = 1918.0
+offset_bottom = 1074.0
+label_settings = SubResource("LabelSettings_r3bx2")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+script = ExtResource("2_b8gy0")

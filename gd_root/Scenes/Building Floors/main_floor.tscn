@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://30um067857vk"]
 
-[ext_resource type="Texture2D" uid="uid://lfrvbnwt4xsh" path="res://Textures/Interior Textures/Floors/floor_tile_weathered.png" id="1_og3d1"]
+[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_7l3kh"]
 [ext_resource type="Texture2D" uid="uid://pwjuqxpfetwp" path="res://Textures/Interior Textures/Walls/c_wall_undamaged_1.png" id="2_5n8nm"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_batpk"]
 [ext_resource type="Texture2D" uid="uid://3n20bfhg18ky" path="res://Imports/images/main_floor_layout.png" id="3_31hju"]
@@ -25,7 +25,7 @@ volumetric_fog_density = 0.0001
 volumetric_fog_albedo = Color(0.310617, 0.310617, 0.310617, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dneyv"]
-albedo_texture = ExtResource("1_og3d1")
+albedo_texture = ExtResource("1_7l3kh")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8c34"]

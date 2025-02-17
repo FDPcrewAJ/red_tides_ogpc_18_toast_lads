@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfuyp25nf60m1"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/storm_timer.gd" id="1_ra4lr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2bl7"]
+font_size = 100
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 755.0
+offset_top = 4.0
+offset_right = 1088.0
+offset_bottom = 95.0
+label_settings = SubResource("LabelSettings_d2bl7")
+script = ExtResource("1_ra4lr")

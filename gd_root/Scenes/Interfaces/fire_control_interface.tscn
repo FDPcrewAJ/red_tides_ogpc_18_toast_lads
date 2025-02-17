@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfk2h83axywy1"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/fire_control_interface.gd" id="1_iliv8"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/water_lable.gd" id="2_80cb6"]
+[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_bvfj6"]
+
+[node name="fire_control_interface" type="Node2D"]
+script = ExtResource("1_iliv8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = -172.0
+offset_top = -13.0
+offset_right = -117.0
+offset_bottom = 18.0
+text = "Water"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 100.0
+offset_top = -16.0
+offset_right = 155.0
+offset_bottom = 15.0
+text = "Water"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 263.0
+offset_top = -19.0
+offset_right = 318.0
+offset_bottom = 12.0
+text = "Water"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = -20.0
+offset_top = -57.0
+offset_right = 35.0
+offset_bottom = -26.0
+text = "Water"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = -25.0
+offset_top = -107.0
+offset_right = 30.0
+offset_bottom = -76.0
+text = "Water"
+
+[node name="Button6" type="Button" parent="."]
+offset_left = -24.0
+offset_top = -167.0
+offset_right = 31.0
+offset_bottom = -136.0
+text = "Water"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -27.0
+offset_top = 83.0
+offset_right = 28.0
+offset_bottom = 114.0
+text = "Back"
+
+[node name="WaterLable" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -289.0
+offset_right = 20.0
+offset_bottom = -266.0
+script = ExtResource("2_80cb6")
+
+[node name="StormTimer" parent="." instance=ExtResource("7_bvfj6")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

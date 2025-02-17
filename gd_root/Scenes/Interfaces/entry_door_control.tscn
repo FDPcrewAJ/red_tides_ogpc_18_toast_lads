@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmcbel757r5t1"]
+
+[ext_resource type="Script" path="res://Scenes/Interfaces/entry_door_control.gd" id="1_c6m2t"]
+
+[node name="entry_door_control_interface" type="Node2D"]
+script = ExtResource("1_c6m2t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = -480.0
+offset_top = -129.0
+offset_right = 480.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 90
+text = "Open Door"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -108.0
+offset_top = 300.0
+offset_right = 108.0
+offset_bottom = 438.0
+theme_override_font_sizes/font_size = 90
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

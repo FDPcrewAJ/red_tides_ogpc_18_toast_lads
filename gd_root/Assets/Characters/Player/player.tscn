@@ -1,29 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=7 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
+[ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_i72bv"]
+[ext_resource type="Script" path="res://Scripts/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
+[ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg7xg"]
-albedo_color = Color(0.717647, 0.572549, 0.407843, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_dp1qy"]
-material = SubResource("StandardMaterial3D_dg7xg")
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_mask = 7
 script = ExtResource("1_h3d68")
 
-[node name="head" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+[node name="PauseMenu" parent="." instance=ExtResource("2_i72bv")]
+visible = false
 
-[node name="neck" type="Node3D" parent="head"]
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
-[node name="player_camera" type="Camera3D" parent="head/neck"]
+[node name="Neck" type="Node3D" parent="Head"]
 
-[node name="player_collision" type="CollisionShape3D" parent="."]
+[node name="PlayerCamera" type="Camera3D" parent="Head/Neck"]
+fov = 90.0
+near = 0.2
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Neck/PlayerCamera"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("3_xxlw0")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_k6ler")
 
-[node name="player_mesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_dp1qy")
+[node name="playerModel" parent="." instance=ExtResource("4_gwj64")]
+transform = Transform3D(-1.4, 1.49158e-08, -1.2148e-07, 0, 1.38956, 0.170617, 1.22392e-07, 0.170617, -1.38956, 0, -1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_gpw4u")
+
+[connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]
+[connection signal="save_game" from="PauseMenu" to="." method="_on_pause_menu_save_game"]

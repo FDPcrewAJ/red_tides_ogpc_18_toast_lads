@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceb8ih8cqry46"]
+
+[ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_nvqk3"]
+[ext_resource type="Texture2D" uid="uid://dtrkm01sxy6um" path="res://Assets/Models/Objects/Box/MetalBox.png" id="2_vta5f"]
+[ext_resource type="Texture2D" uid="uid://bdjus13vh8wln" path="res://Assets/Models/Objects/Box/MetalBoxNormal.png" id="3_bwthf"]
+[ext_resource type="ArrayMesh" uid="uid://bg1w3pvmlqno1" path="res://Assets/Models/Objects/Pipes/pipeStraight.obj" id="4_arw3x"]
+[ext_resource type="Texture2D" uid="uid://c7gtww0d4tm4g" path="res://Assets/Models/Objects/Pipes/pipeStraight.png" id="5_ybott"]
+[ext_resource type="Texture2D" uid="uid://c6mp80uescbvf" path="res://Assets/Models/Objects/Pipes/pipeStraightNormal.png" id="6_lemjd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7c4x"]
+albedo_texture = ExtResource("2_vta5f")
+roughness_texture = ExtResource("3_bwthf")
+normal_enabled = true
+normal_texture = ExtResource("3_bwthf")
+texture_repeat = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqarp"]
+disable_fog = true
+albedo_texture = ExtResource("5_ybott")
+normal_enabled = true
+normal_texture = ExtResource("6_lemjd")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.871203, -0.204226, 0.446428, 0.00405993, 0.912329, 0.409438, -0.490907, -0.354891, 0.795652, 0, 0, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.232436, -0.253017, -0.939125, -0.731827, 0.590492, -0.340219, 0.640628, 0.766356, -0.0479131, -2.18623, -0.0613858, 1.96335)
+mesh = ExtResource("1_nvqk3")
+material = SubResource("StandardMaterial3D_m7c4x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.432192, -0.876975, -0.210059, -0.390313, -0.0280704, 0.920254, -0.812937, 0.479715, -0.330163, -0.816779, 1.30522, 3.88738)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.912565, -0.408607, -0.0162955, 0.279509, 0.65234, -0.704505, 0.298495, 0.638352, 0.709512, 0.413836, -1.22419, 2.7237)
+light_energy = 16.0
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+mesh = ExtResource("4_arw3x")
+material = SubResource("StandardMaterial3D_eqarp")

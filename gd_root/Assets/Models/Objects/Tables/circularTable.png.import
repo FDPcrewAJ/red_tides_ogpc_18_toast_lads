@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dht0v3ox2kbv1"
-path="res://.godot/imported/MetalBox.png-311c288cb479a24059c18286e1f3d2ae.ctex"
+uid="uid://bcuechnb2bk3x"
+path="res://.godot/imported/circularTable.png-1b698892d5f7706682ff4eb16aaadae3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Box/MetalBox.png"
-dest_files=["res://.godot/imported/MetalBox.png-311c288cb479a24059c18286e1f3d2ae.ctex"]
+source_file="res://Assets/Models/Objects/Tables/circularTable.png"
+dest_files=["res://.godot/imported/circularTable.png-1b698892d5f7706682ff4eb16aaadae3.ctex"]
 
 [params]
 
@@ -20,8 +20,8 @@ compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=1
-mipmaps/generate=true
+compress/channel_pack=0
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

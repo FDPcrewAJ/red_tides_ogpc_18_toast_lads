@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddlkba0d6208i"
-path="res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"
+uid="uid://bcuechnb2bk3x"
+path="res://.godot/imported/circularTable.png-1b698892d5f7706682ff4eb16aaadae3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionCross.png"
-dest_files=["res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"]
+source_file="res://Assets/Models/Objects/Tables/circularTable.png"
+dest_files=["res://.godot/imported/circularTable.png-1b698892d5f7706682ff4eb16aaadae3.ctex"]
 
 [params]
 

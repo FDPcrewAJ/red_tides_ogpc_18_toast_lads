@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddlkba0d6208i"
-path="res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"
+uid="uid://b8j8asapfybeo"
+path="res://.godot/imported/joystick.png-de3168484d59f16708533b9870bf428b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionCross.png"
-dest_files=["res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"]
+source_file="res://Assets/Models/Objects/Joystick/joystick.png"
+dest_files=["res://.godot/imported/joystick.png-de3168484d59f16708533b9870bf428b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddlkba0d6208i"
-path="res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"
+uid="uid://dhva4wxkhr3up"
+path="res://.godot/imported/BoatBatteryClean.png-00a27adb235e426b8e2015f686537f70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionCross.png"
-dest_files=["res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"]
+source_file="res://Assets/Models/Objects/Battery/BoatBatteryClean.png"
+dest_files=["res://.godot/imported/BoatBatteryClean.png-00a27adb235e426b8e2015f686537f70.ctex"]
 
 [params]
 

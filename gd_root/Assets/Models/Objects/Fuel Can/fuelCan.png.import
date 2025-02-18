@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddlkba0d6208i"
-path="res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"
+uid="uid://gepulr83fdyo"
+path="res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionCross.png"
-dest_files=["res://.godot/imported/pipeJunctionCross.png-18d8637e21a3737be1bcfec7081999f6.ctex"]
+source_file="res://Assets/Models/Objects/Fuel Can/fuelCan.png"
+dest_files=["res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.ctex"]
 
 [params]
 

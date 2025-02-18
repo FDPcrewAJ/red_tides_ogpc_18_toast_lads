@@ -13,6 +13,7 @@ var timer_started = false
 var current_object = "none"
 var current_object_parent = "none"
 
+# Fire puzzle section states
 var one_watered = false
 var two_watered = false
 var three_watered = false

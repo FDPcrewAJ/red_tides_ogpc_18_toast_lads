@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://ceb8ih8cqry46"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_nvqk3"]
-[ext_resource type="Texture2D" uid="uid://dtrkm01sxy6um" path="res://Assets/Models/Objects/Box/MetalBox.png" id="2_vta5f"]
+[ext_resource type="Texture2D" uid="uid://dht0v3ox2kbv1" path="res://Assets/Models/Objects/Box/MetalBox.png" id="2_vta5f"]
 [ext_resource type="Texture2D" uid="uid://bdjus13vh8wln" path="res://Assets/Models/Objects/Box/MetalBoxNormal.png" id="3_bwthf"]
 [ext_resource type="ArrayMesh" uid="uid://bg1w3pvmlqno1" path="res://Assets/Models/Objects/Pipes/pipeStraight.obj" id="4_arw3x"]
-[ext_resource type="Texture2D" uid="uid://c7gtww0d4tm4g" path="res://Assets/Models/Objects/Pipes/pipeStraight.png" id="5_ybott"]
+[ext_resource type="Texture2D" uid="uid://boo47w7v7j0lp" path="res://Assets/Models/Objects/Pipes/pipeStraight.png" id="5_ybott"]
 [ext_resource type="Texture2D" uid="uid://c6mp80uescbvf" path="res://Assets/Models/Objects/Pipes/pipeStraightNormal.png" id="6_lemjd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7c4x"]

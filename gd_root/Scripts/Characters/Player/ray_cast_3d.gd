@@ -3,12 +3,7 @@ extends RayCast3D
 var cur_object = "none"
 var cur_object_parent = "none"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if is_colliding() == true:
 		cur_object = get_collider().get_name()

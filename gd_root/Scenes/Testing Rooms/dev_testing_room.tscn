@@ -121,15 +121,23 @@ shape = SubResource("CapsuleShape3D_g6rnb")
 mesh = SubResource("CapsuleMesh_ncri6")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, -8, 1.1611, 2.3761)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8, 3.72003, -3.42379)
 light_color = Color(0.855972, 0.731195, 0.437735, 1)
-light_energy = 2.398
-light_indirect_energy = 2.02
-spot_range = 1.436
-spot_attenuation = -5.6
-spot_angle = 36.74
+light_energy = 0.07
+spot_range = 5.00372
+spot_attenuation = -4.79
+spot_angle = 38.8
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8, 1.1611, 1.90543)
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 4.1907, -3.42379)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94217, 0.972784, -5.10349)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87026, 2.23307, -8.75799)
+use_collision = true
+collision_mask = 7
+size = Vector3(1, 1, 2)
 
 [connection signal="area_entered" from="Portal/Area3D" to="." method="_on_area_3d_area_entered"]

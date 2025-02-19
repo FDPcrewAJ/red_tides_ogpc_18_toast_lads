@@ -6,6 +6,9 @@ const mouse_sens = 0.5
 @onready var head = $Head
 @onready var neck = $Head/Neck
 @onready var pause_menu = $PauseMenu
+@onready var collision_check = $CollisionCheck
+@onready var standing_collision = $StandingCollision
+@onready var crouching_collision = $CrouchingCollision
 
 var save_system = save_resource.new()
 
@@ -16,12 +19,19 @@ var allow_control = true
 var direction = Vector3.ZERO
 const move_lerp_speed = 7.0
 var current_speed = 0.0
+var crouch_height = -0.0005
+var stand_height = 0.8
+
+
+var walking = false
+var sprinting = false
+var crouching = false
 
 # Constants for player speed and jump
 const walk_speed = 3.0
 const sprint_speed = 7.0
+const crouch_speed = 1.5
 const jump_velocity = 4.5
-
 
 
 func _ready():
@@ -37,8 +47,7 @@ func _input(event):
 			head.rotation.x = clamp(head.rotation.x,deg_to_rad(-60),deg_to_rad(89))
 
 
-
-func _physics_process(delta: float) -> void:
+func _physics_process(delta):
 	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -46,6 +55,20 @@ func _physics_process(delta: float) -> void:
 	# Jump
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y = jump_velocity
+	
+	if Input.is_action_pressed("ctrl"):
+		crouching = true
+	if Input.is_action_just_released("ctrl"):
+		crouching = false
+	
+	if crouching:
+		standing_collision.disabled = true
+		crouching_collision.disabled = false
+		head.position.y = lerp(head.position.y, crouch_height, delta * move_lerp_speed)
+	elif !crouching && !collision_check.is_colliding():
+		standing_collision.disabled = false
+		crouching_collision.disabled = true
+		head.position.y = lerp(head.position.y, stand_height, delta * move_lerp_speed)
 
 	## Get the input direction in which player is moving 
 	## (in Vector 2: 
@@ -70,7 +93,9 @@ func _physics_process(delta: float) -> void:
 					(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), 
 					delta * move_lerp_speed)
 	
-	if Input.is_action_pressed("shift"):
+	if crouching:
+		current_speed = crouch_speed
+	elif Input.is_action_pressed("shift"):
 		current_speed = sprint_speed
 	else:
 		current_speed = walk_speed
@@ -99,12 +124,15 @@ func _on_pause_menu_save_game():
 	save_system.save_pos(global_position)
 	save_system.save_scene(get_scene_file_path())
 
+
 func verify_save_directory(path):
 	DirAccess.make_dir_absolute(path)
+
 
 func load_data():
 	pass
 	#scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
-	
-func _set_last_pos() -> void:
+
+
+func _set_last_pos():
 	position = Global.lastpos

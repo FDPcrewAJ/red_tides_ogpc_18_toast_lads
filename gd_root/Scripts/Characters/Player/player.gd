@@ -19,7 +19,7 @@ var allow_control = true
 var direction = Vector3.ZERO
 const move_lerp_speed = 7.0
 var current_speed = 0.0
-var crouch_height = -0.0005
+var crouch_height = 0.5
 var stand_height = 0.8
 
 

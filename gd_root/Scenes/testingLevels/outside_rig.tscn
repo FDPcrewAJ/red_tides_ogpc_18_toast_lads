@@ -1,7 +1,7 @@
 [gd_scene load_steps=65 format=3 uid="uid://cp3oisrnu3ldt"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/outside_rig.gd" id="1_60s7s"]
-[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/RoomTextures/Concrete undamaged-1.png" id="2_4lqhw"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_4lqhw"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_jt8e3"]
 [ext_resource type="Texture2D" uid="uid://bn8cn3li8rmvr" path="res://Textures/Temp Dev Textures/Light/texture_03.png" id="4_jgbfn"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/boat.gd" id="5_7w7o2"]
@@ -434,6 +434,8 @@ shape = SubResource("ConvexPolygonShape3D_5w0uj")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rbggt")
 
+[node name="TextPopup" parent="." instance=ExtResource("9_nlv1f")]
+
 [node name="player" parent="." instance=ExtResource("8_0ijr6")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.30323, 4.31726, -74)
 
@@ -457,8 +459,6 @@ skeleton = NodePath("../..")
 [node name="Water" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_2grpb")
 skeleton = NodePath("../Rig")
-
-[node name="TextPopup" parent="." instance=ExtResource("9_nlv1f")]
 
 [node name="SprintTrigger" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 7, -68)

@@ -3,31 +3,53 @@
 [sub_resource type="GDScript" id="GDScript_q6bu8"]
 script/source = "extends Control
 
-signal resume
-signal save_game
+@onready var menu = $\".\"
 
-func _on_resume_pressed() -> void:
-	resume.emit()
-
-
-func _on_settings_pressed() -> void:
-	Global.previous_scene = get_tree().current_scene.scene_file_path
-	get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
+func _unhandled_key_input(event):
+	if event.is_action_pressed(\"esc\"):
+		menu.show()
+		pause()
 
 
-func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file(\"res://Scenes/Menus/main_menu.tscn\")
+func pause():
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
-func _on_quit_game_pressed() -> void:
-	get_tree().quit()
+func unpause():
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-func _on_save_game_pressed() -> void:
-	save_game.emit()
+#Global.previous_scene = get_tree().current_scene.scene_file_path
+#get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
+
+#get_tree().change_scene_to_file(\"res://Scenes/Menus/main_menu.tscn\")
+
+
+func _on_resume_pressed():
+	menu.hide()
+	unpause()
+
+
+func _on_save_game_pressed():
+	pass 
+
+
+func _on_settings_pressed():
+	pass
+
+
+func _on_main_menu_pressed():
+	pass
+
+
+func _on_quit_game_pressed():
+	pass
 "
 
 [node name="pause_menu" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

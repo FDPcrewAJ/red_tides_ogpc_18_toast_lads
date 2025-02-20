@@ -5,15 +5,11 @@ const mouse_sens = 0.5
 
 @onready var head = $Head
 @onready var neck = $Head/Neck
-@onready var pause_menu = $PauseMenu
 @onready var collision_check = $CollisionCheck
 @onready var standing_collision = $StandingCollision
 @onready var crouching_collision = $CrouchingCollision
 
 var save_system = save_resource.new()
-
-# Whether or not to allow user to control the player
-var allow_control = true
 
 # Player Movement Variables
 var direction = Vector3.ZERO
@@ -36,15 +32,13 @@ const jump_velocity = 4.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	verify_save_directory(scene_file_path)
 
 
 func _input(event):
-	if allow_control:
-		if event is InputEventMouseMotion:
-			rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
-			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
-			head.rotation.x = clamp(head.rotation.x,deg_to_rad(-60),deg_to_rad(89))
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
+		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
+		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-60),deg_to_rad(89))
 
 
 func _physics_process(delta):
@@ -106,32 +100,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
-		
-	if Input.is_action_just_pressed("esc"):
-		allow_control = false
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		pause_menu.show()
+	
 	
 	move_and_slide()
-
-
-func _on_pause_menu_resume():
-	pause_menu.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-
-func _on_pause_menu_save_game():
-	save_system.save_pos(global_position)
-	save_system.save_scene(get_scene_file_path())
-
-
-func verify_save_directory(path):
-	DirAccess.make_dir_absolute(path)
-
-
-func load_data():
-	pass
-	#scene_to_load = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
 
 
 func _set_last_pos():

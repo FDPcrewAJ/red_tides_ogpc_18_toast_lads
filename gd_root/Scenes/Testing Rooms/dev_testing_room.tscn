@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bpxrxmy5ojitx"]
+[gd_scene load_steps=22 format=3 uid="uid://bpxrxmy5ojitx"]
 
 [ext_resource type="Texture2D" uid="uid://dbuwj3f0h8now" path="res://Textures/Temp Dev Textures/Dark/texture_08.png" id="1_0i53s"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/dev_testing_room.gd" id="1_rft86"]
@@ -65,6 +65,12 @@ height = 1.5
 radius = 0.4
 height = 1.5
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvj0w"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 4.03
+grow_amount = 0.337
+
 [node name="dev_testing_room" type="Node3D"]
 script = ExtResource("1_rft86")
 
@@ -130,6 +136,7 @@ spot_angle = 38.8
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 4.1907, -3.42379)
+material = SubResource("StandardMaterial3D_mvj0w")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94217, 0.972784, -5.10349)

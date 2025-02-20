@@ -21,12 +21,6 @@ func unpause():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
-#Global.previous_scene = get_tree().current_scene.scene_file_path
-#get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
-
-#get_tree().change_scene_to_file(\"res://Scenes/Menus/main_menu.tscn\")
-
-
 func _on_resume_pressed():
 	menu.hide()
 	unpause()
@@ -37,15 +31,18 @@ func _on_save_game_pressed():
 
 
 func _on_settings_pressed():
-	pass
+	unpause()
+	Global.previous_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
 
 
 func _on_main_menu_pressed():
-	pass
+	unpause()
+	get_tree().change_scene_to_file(\"res://Scenes/Menus/main_menu.tscn\")
 
 
 func _on_quit_game_pressed():
-	pass
+	get_tree().quit()
 "
 
 [node name="pause_menu" type="Control"]
@@ -93,6 +90,7 @@ theme_override_font_sizes/font_size = 50
 text = "Game Paused"
 
 [node name="Resume" type="Button" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,6 +111,7 @@ text = "Resume Game"
 flat = true
 
 [node name="SaveGame" type="Button" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -133,6 +132,7 @@ text = "Save Game"
 flat = true
 
 [node name="Settings" type="Button" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -153,6 +153,7 @@ text = "Settings"
 flat = true
 
 [node name="MainMenu" type="Button" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -173,6 +174,7 @@ text = "Main Menu"
 flat = true
 
 [node name="QuitGame" type="Button" parent="."]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -15,7 +15,7 @@ var save_system = save_resource.new()
 var direction = Vector3.ZERO
 const move_lerp_speed = 7.0
 var current_speed = 0.0
-var crouch_height = 0.5
+var crouch_height = 0.4
 var stand_height = 0.8
 
 

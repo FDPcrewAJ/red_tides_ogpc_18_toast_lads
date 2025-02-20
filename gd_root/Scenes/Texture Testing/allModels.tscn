@@ -1,0 +1,114 @@
+[gd_scene load_steps=30 format=3 uid="uid://b5jdi5yv070sr"]
+
+[ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
+[ext_resource type="Material" uid="uid://c7gljd2b8y7o3" path="res://Assets/Materials/woodenBox.tres" id="2_6fbbl"]
+[ext_resource type="Texture2D" uid="uid://dht0v3ox2kbv1" path="res://Assets/Models/Objects/Box/MetalBox.png" id="2_cs0yj"]
+[ext_resource type="Material" uid="uid://btv15dpxqjiuq" path="res://Assets/Materials/cardboardBox.tres" id="2_wcgik"]
+[ext_resource type="ArrayMesh" uid="uid://bg1w3pvmlqno1" path="res://Assets/Models/Objects/Pipes/pipeStraight.obj" id="3_ug73l"]
+[ext_resource type="Material" uid="uid://c2sc8uaaj7ruj" path="res://Assets/Materials/PipeStraight.tres" id="4_etxyj"]
+[ext_resource type="ArrayMesh" uid="uid://dwkrrhwamxoo2" path="res://Assets/Models/Objects/Pipes/pipeTurn90.obj" id="5_wkxsn"]
+[ext_resource type="Material" uid="uid://brb0h8lhfai6q" path="res://Assets/Materials/PipeTurn90.tres" id="6_t8blh"]
+[ext_resource type="ArrayMesh" uid="uid://cnwuyhvgjmr1f" path="res://Assets/Models/Objects/Pipes/PipeJunctionCross.obj" id="7_r71m3"]
+[ext_resource type="Material" uid="uid://cv7yjbhna2624" path="res://Assets/Materials/PipeJunctionCross.tres" id="8_ecxxm"]
+[ext_resource type="ArrayMesh" uid="uid://c7b2temne3phe" path="res://Assets/Models/Objects/Pipes/pipeJunctionT.obj" id="9_8e1yp"]
+[ext_resource type="Material" uid="uid://ce4tstcj1fu7h" path="res://Assets/Materials/PipeJunctionT.tres" id="10_wwxkc"]
+[ext_resource type="ArrayMesh" uid="uid://hurqub085ijb" path="res://Assets/Models/Objects/Pipes/pipeLever.obj" id="11_0n8o8"]
+[ext_resource type="Material" uid="uid://dnspcoiy7tgop" path="res://Assets/Materials/PipeLever.tres" id="12_xtnv4"]
+[ext_resource type="ArrayMesh" uid="uid://cgyj2iyvptpop" path="res://Assets/Models/Objects/Pipes/pipeValve.obj" id="13_viwly"]
+[ext_resource type="Material" uid="uid://dcu07nbcyowr4" path="res://Assets/Materials/PipeValve.tres" id="14_0ekjh"]
+[ext_resource type="ArrayMesh" uid="uid://6t3o0y8vo1gs" path="res://Assets/Models/Objects/Tables/circularTable.obj" id="15_7ua5l"]
+[ext_resource type="Material" uid="uid://coj5u7y6iywex" path="res://Assets/Materials/CircularTable.tres" id="16_7c3bu"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
+[ext_resource type="ArrayMesh" uid="uid://bev2himdow7bg" path="res://Assets/Models/Objects/Computer/ComputerScreen.obj" id="18_j7agk"]
+[ext_resource type="Material" uid="uid://c0j60m1nfq6y1" path="res://Assets/Materials/computerScreen.tres" id="19_aj4q5"]
+[ext_resource type="ArrayMesh" uid="uid://bpi6sq78kn7de" path="res://Assets/Models/Objects/Battery/Boat Battery.obj" id="20_xq44t"]
+[ext_resource type="Material" uid="uid://dfw8n34ush582" path="res://Assets/Materials/oldBattery.tres" id="21_1qepu"]
+[ext_resource type="Material" uid="uid://c2bu4nfrqd0t6" path="res://Assets/Materials/newBattery.tres" id="21_wsylh"]
+[ext_resource type="ArrayMesh" uid="uid://c2n60njy1raq8" path="res://Assets/Models/Objects/Battery/FuelCan.obj" id="25_jrfcw"]
+[ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="26_it72r"]
+[ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Assets/Models/Objects/Joystick/Joystick.obj" id="27_6qk6g"]
+[ext_resource type="Material" uid="uid://dxnajj5b2unbx" path="res://Assets/Materials/joystick.tres" id="28_8wubg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj5ya"]
+albedo_texture = ExtResource("2_cs0yj")
+texture_filter = 0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WoodenBox" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.945636, 0, 0, 0, 0.945636, 0, 0, 0, 0.945636, 6.02785, -0.0372752, 12.0314)
+mesh = ExtResource("1_icd8g")
+material = ExtResource("2_6fbbl")
+
+[node name="CardboardBox" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.919572, 0, 0, 0, 0.919572, 0, 0, 0, 0.919572, 7.50571, -0.0551458, 11.7541)
+mesh = ExtResource("1_icd8g")
+material = ExtResource("2_wcgik")
+
+[node name="MetalBox" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.972438, 0, 0, 0, 0.972438, 0, 0, 0, 0.972438, 4.24203, -0.018898, 12.2204)
+mesh = ExtResource("1_icd8g")
+material = SubResource("StandardMaterial3D_mj5ya")
+
+[node name="PipeStraight" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 1.4533, 0.658648, 12.7613)
+mesh = ExtResource("3_ug73l")
+material = ExtResource("4_etxyj")
+
+[node name="PipeTurn90" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 2.10378, 0.00418365, 12.7597)
+mesh = ExtResource("5_wkxsn")
+material = ExtResource("6_t8blh")
+
+[node name="PipeJunctionCross" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 1.4533, 0.00418365, 12.7583)
+mesh = ExtResource("7_r71m3")
+material = ExtResource("8_ecxxm")
+
+[node name="PipeJunctionT" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 0.796224, 0.00418365, 12.7571)
+mesh = ExtResource("9_8e1yp")
+material = ExtResource("10_wwxkc")
+
+[node name="PipeLever" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 1.4533, 1.23244, 12.7613)
+mesh = ExtResource("11_0n8o8")
+material = ExtResource("12_xtnv4")
+
+[node name="PipeValve" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 1.4533, 1.80805, 12.7614)
+mesh = ExtResource("13_viwly")
+material = ExtResource("14_0ekjh")
+
+[node name="CircularTable" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.07549, 0, 0, 0, 1.07549, 0, 0, 0, 1.07549, 1.4533, 0.00418365, 9.95916)
+mesh = ExtResource("15_7ua5l")
+material = ExtResource("16_7c3bu")
+
+[node name="player" parent="." instance=ExtResource("17_kx1ri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2319, 1, 11.5744)
+
+[node name="ComputerScreen" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.645094, 0, 0, 0, 0.645094, 0, 0, 0, 0.645094, 1.45951, 1.08744, 9.83907)
+mesh = ExtResource("18_j7agk")
+material = ExtResource("19_aj4q5")
+
+[node name="OldBattery" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5932, 0, 9.24793)
+mesh = ExtResource("20_xq44t")
+material = ExtResource("21_1qepu")
+
+[node name="NewBattery" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5932, 0, 7.11207)
+mesh = ExtResource("20_xq44t")
+material = ExtResource("21_wsylh")
+
+[node name="FuelCan" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.516894, 0, 0, 0, 0.516894, 0, 0, 0, 0.516894, 3.82095, -4.76837e-07, 9.75233)
+mesh = ExtResource("25_jrfcw")
+material = ExtResource("26_it72r")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51584, 0, 7.46609)
+mesh = ExtResource("27_6qk6g")
+material = ExtResource("28_8wubg")

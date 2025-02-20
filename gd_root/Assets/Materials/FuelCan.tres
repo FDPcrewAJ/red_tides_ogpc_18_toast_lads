@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvh7acn33xrb2"]
+
+[ext_resource type="Texture2D" uid="uid://76ug5txxnvjc" path="res://Assets/Models/Objects/Battery/fuelCan.png" id="1_hr76n"]
+
+[resource]
+albedo_texture = ExtResource("1_hr76n")
+texture_filter = 0

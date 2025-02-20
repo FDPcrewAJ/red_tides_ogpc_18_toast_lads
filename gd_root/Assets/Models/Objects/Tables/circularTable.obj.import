@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6t3o0y8vo1gs"
+path="res://.godot/imported/circularTable.obj-ec41af014dc64d954ca3fa20f284e77e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/circularTable.obj-ec41af014dc64d954ca3fa20f284e77e.mesh"]
+
+source_file="res://Assets/Models/Objects/Tables/circularTable.obj"
+dest_files=["res://.godot/imported/circularTable.obj-ec41af014dc64d954ca3fa20f284e77e.mesh", "res://.godot/imported/circularTable.obj-ec41af014dc64d954ca3fa20f284e77e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0j60m1nfq6y1"]
+
+[ext_resource type="Texture2D" uid="uid://bdi6lhmrqqnv2" path="res://Assets/Models/Objects/Computer/Computer Screen.png" id="1_dwd6u"]
+
+[resource]
+albedo_texture = ExtResource("1_dwd6u")
+texture_filter = 0

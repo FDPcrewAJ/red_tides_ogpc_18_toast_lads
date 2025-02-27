@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=38 format=3 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
 [ext_resource type="Material" uid="uid://c7gljd2b8y7o3" path="res://Assets/Materials/woodenBox.tres" id="2_6fbbl"]
@@ -28,6 +28,14 @@
 [ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="26_it72r"]
 [ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Assets/Models/Objects/Joystick/Joystick.obj" id="27_6qk6g"]
 [ext_resource type="Material" uid="uid://dxnajj5b2unbx" path="res://Assets/Materials/joystick.tres" id="28_8wubg"]
+[ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Assets/Models/Objects/Motor/Motor.obj" id="29_h0fxu"]
+[ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
+[ext_resource type="ArrayMesh" uid="uid://ixv3bnd03tdn" path="res://Assets/Models/Objects/Lights/industialLight1.obj" id="31_varro"]
+[ext_resource type="Material" uid="uid://y0dxojnld4dd" path="res://Assets/Materials/industrialLight1.tres" id="32_lu1wl"]
+[ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="33_vsbd1"]
+[ext_resource type="Material" uid="uid://b87aa3c8e612t" path="res://Assets/Materials/industrialLight0.tres" id="34_xqvqh"]
+[ext_resource type="ArrayMesh" uid="uid://7o2smkr75rxh" path="res://Assets/Models/Objects/Lights/industialLight2.obj" id="35_ryqe0"]
+[ext_resource type="Material" uid="uid://cxujgew8xptb1" path="res://Assets/Materials/industrialLight2.tres" id="36_f61us"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj5ya"]
 albedo_texture = ExtResource("2_cs0yj")
@@ -104,11 +112,31 @@ mesh = ExtResource("20_xq44t")
 material = ExtResource("21_wsylh")
 
 [node name="FuelCan" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.516894, 0, 0, 0, 0.516894, 0, 0, 0, 0.516894, 3.82095, -4.76837e-07, 9.75233)
+transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 3.82095, -4.76837e-07, 9.75233)
 mesh = ExtResource("25_jrfcw")
 material = ExtResource("26_it72r")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+[node name="joystick" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51584, 0, 7.46609)
 mesh = ExtResource("27_6qk6g")
 material = ExtResource("28_8wubg")
+
+[node name="Motor" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32497, -0.0302026, 9.00021)
+mesh = ExtResource("29_h0fxu")
+material = ExtResource("30_eifxb")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61503, 4.76837e-07, 5.0364)
+mesh = ExtResource("31_varro")
+material = ExtResource("32_lu1wl")
+
+[node name="IndustrialLight0" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8293, 0, 4.81102)
+mesh = ExtResource("33_vsbd1")
+material = ExtResource("34_xqvqh")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37386, 0, 5.08412)
+mesh = ExtResource("35_ryqe0")
+material = ExtResource("36_f61us")

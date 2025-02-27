@@ -17,13 +17,13 @@ func _on_back_button_pressed() -> void:
 
 func _on_dial_pressed() -> void:
 	$Dial/Sprite2D._rotate()
-	print($Dial/Sprite2D.rotation)
+	# print($Dial/Sprite2D.rotation)
 
 
 func _on_dial_2_pressed() -> void:
 	$Dial2/Sprite2D._rotate()
-	print($Dial2/Sprite2D.rotation)
+	# print($Dial2/Sprite2D.rotation)
 
 func _on_dial_3_pressed() -> void:
 	$Dial3/Sprite2D._rotate()
-	print($Dial3/Sprite2D.rotation)
+	# print($Dial3/Sprite2D.rotation)

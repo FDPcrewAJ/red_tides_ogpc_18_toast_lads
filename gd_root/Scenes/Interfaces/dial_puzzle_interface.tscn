@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=7 format=3 uid="uid://cvp6iu0ltf4p5"]
 
 [ext_resource type="Script" path="res://Scenes/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
-[ext_resource type="Texture2D" uid="uid://6og0d5ncmbyt" path="res://Assets/Images/dialtempart.png" id="2_0b8gm"]
+[ext_resource type="Texture2D" uid="uid://6og0d5ncmbyt" path="res://Imports/images/dialtempart.png" id="2_0b8gm"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/dial.gd" id="3_oet22"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/dial_sprite.gd" id="4_bis6o"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/dial_puzzle_label.gd" id="5_com21"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ojsi"]
+radius = 85.0
 
 [node name="dial_puzzle_interface" type="Node2D"]
 script = ExtResource("1_7i68q")
@@ -24,6 +27,12 @@ position = Vector2(100, 100)
 texture = ExtResource("2_0b8gm")
 script = ExtResource("4_bis6o")
 
+[node name="Area2D1" type="Area2D" parent="Dial"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dial/Area2D1"]
+position = Vector2(100, 100)
+shape = SubResource("CircleShape2D_8ojsi")
+
 [node name="Dial2" type="Button" parent="."]
 offset_left = -101.0
 offset_top = -91.0
@@ -37,6 +46,12 @@ position = Vector2(100, 100)
 texture = ExtResource("2_0b8gm")
 script = ExtResource("4_bis6o")
 
+[node name="Area2D2" type="Area2D" parent="Dial2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dial2/Area2D2"]
+position = Vector2(100, 100)
+shape = SubResource("CircleShape2D_8ojsi")
+
 [node name="Dial3" type="Button" parent="."]
 offset_left = 725.0
 offset_top = -104.0
@@ -49,6 +64,12 @@ script = ExtResource("3_oet22")
 position = Vector2(100, 100)
 texture = ExtResource("2_0b8gm")
 script = ExtResource("4_bis6o")
+
+[node name="Area2D3" type="Area2D" parent="Dial3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dial3/Area2D3"]
+position = Vector2(100, 100)
+shape = SubResource("CircleShape2D_8ojsi")
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = -108.0
@@ -67,6 +88,12 @@ theme_override_font_sizes/font_size = 25
 script = ExtResource("5_com21")
 
 [connection signal="pressed" from="Dial" to="." method="_on_dial_pressed"]
+[connection signal="mouse_entered" from="Dial/Area2D1" to="." method="_on_area_2d_1_mouse_entered"]
+[connection signal="mouse_exited" from="Dial/Area2D1" to="." method="_on_area_2d_1_mouse_exited"]
 [connection signal="pressed" from="Dial2" to="." method="_on_dial_2_pressed"]
+[connection signal="mouse_entered" from="Dial2/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
+[connection signal="mouse_exited" from="Dial2/Area2D2" to="." method="_on_area_2d_2_mouse_exited"]
 [connection signal="pressed" from="Dial3" to="." method="_on_dial_3_pressed"]
+[connection signal="mouse_entered" from="Dial3/Area2D3" to="." method="_on_area_2d_3_mouse_entered"]
+[connection signal="mouse_exited" from="Dial3/Area2D3" to="." method="_on_area_2d_3_mouse_exited"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

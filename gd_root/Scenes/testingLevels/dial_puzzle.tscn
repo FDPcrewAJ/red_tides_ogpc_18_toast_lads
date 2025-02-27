@@ -1,14 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://3edlbtmdtf5h"]
+[gd_scene load_steps=21 format=3 uid="uid://b52pvxrn1jrll"]
 
-[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_3lo58"]
-[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="3_161eq"]
-[ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="5_nurqx"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_computer.gd" id="7_6qlh1"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_door_blocker.gd" id="8_u5y5w"]
-[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="9_8uffq"]
-[ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="10_dfrpj"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="12_dgoe5"]
-[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="13_mindn"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_bqpbj"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_t5ra5"]
+[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="3_30k6v"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_4me4v"]
+[ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="6_q6nk1"]
+[ext_resource type="Script" path="res://Scenes/testingLevels/dial_computer.gd" id="6_yka2e"]
+[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="9_icvyy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -24,7 +22,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
-albedo_texture = ExtResource("2_3lo58")
+albedo_texture = ExtResource("1_bqpbj")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xoadi"]
@@ -35,7 +33,7 @@ size = Vector2(10, 10)
 points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pjtw"]
-albedo_texture = ExtResource("3_161eq")
+albedo_texture = ExtResource("2_t5ra5")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lbe6c"]
@@ -43,18 +41,12 @@ material = SubResource("StandardMaterial3D_8pjtw")
 size = Vector2(10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mipji"]
-albedo_texture = ExtResource("3_161eq")
+albedo_texture = ExtResource("2_t5ra5")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qkk0a"]
 material = SubResource("StandardMaterial3D_mipji")
 size = Vector2(10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo8vm"]
-albedo_texture = ExtResource("5_nurqx")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_0u1dg"]
-size = Vector2(4, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_okoi4"]
 size = Vector3(75, 80, 50)
@@ -65,7 +57,7 @@ size = Vector3(3, 5, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w0nbp"]
 points = PackedVector3Array(1.55556, 2.53869, 0.571429, -1.42914, -2.35735, -0.5, -1.53968, -2.53869, 0.571429, 1.55556, -2.53869, 0.571429, -1.53968, 2.53869, 0.571429, 1.44501, 2.35735, -0.5, 1.44501, -2.35735, -0.5, -1.42914, 2.35735, -0.5)
 
-[node name="TilePuzzleRoom" type="Node3D"]
+[node name="DialPuzzleRoom" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rbggt")
@@ -139,37 +131,31 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomParts/Ceiling/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rb3fy")
 
-[node name="StormTimer" parent="." instance=ExtResource("12_dgoe5")]
+[node name="StormTimer" parent="." instance=ExtResource("3_30k6v")]
 
-[node name="player" parent="." instance=ExtResource("13_mindn")]
+[node name="player" parent="." instance=ExtResource("4_4me4v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.32548)
 
-[node name="Poster" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.31134e-07, -1, -7.64274e-15, -4.37114e-08, 1.91069e-15, -1, 1, 1.31134e-07, -4.37114e-08, 4.9, 2, -3)
-material_override = SubResource("StandardMaterial3D_bo8vm")
-mesh = SubResource("PlaneMesh_0u1dg")
-
-[node name="TileComputer" type="MeshInstance3D" parent="."]
+[node name="DialComputer" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 4, 1.5, 0)
-mesh = ExtResource("10_dfrpj")
-script = ExtResource("7_6qlh1")
+mesh = ExtResource("6_q6nk1")
+script = ExtResource("6_yka2e")
 
-[node name="Area3D" type="Area3D" parent="TileComputer"]
+[node name="Area3D" type="Area3D" parent="DialComputer"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TileComputer/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialComputer/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_okoi4")
 
-[node name="ConsoleBody" type="StaticBody3D" parent="TileComputer"]
+[node name="ConsoleBody" type="StaticBody3D" parent="DialComputer"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TileComputer/ConsoleBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialComputer/ConsoleBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_okoi4")
 
 [node name="DoorBlocker" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
 mesh = SubResource("BoxMesh_hlt5s")
-script = ExtResource("8_u5y5w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorBlocker"]
 
@@ -178,4 +164,4 @@ shape = SubResource("ConvexPolygonShape3D_w0nbp")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.5, -5)
-mesh = ExtResource("9_8uffq")
+mesh = ExtResource("9_icvyy")

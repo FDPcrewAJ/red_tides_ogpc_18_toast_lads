@@ -2,26 +2,25 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsbw0l54evj28"
-path.s3tc="res://.godot/imported/c_wall_undamaged_3.png-9cd584a15ec459e177ceb6b9476ff666.s3tc.ctex"
+uid="uid://dht0v3ox2kbv1"
+path="res://.godot/imported/MetalBox.png-311c288cb479a24059c18286e1f3d2ae.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Interior Textures/Walls/c_wall_undamaged_3.png"
-dest_files=["res://.godot/imported/c_wall_undamaged_3.png-9cd584a15ec459e177ceb6b9476ff666.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Box/MetalBox.png"
+dest_files=["res://.godot/imported/MetalBox.png-311c288cb479a24059c18286e1f3d2ae.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0

@@ -17,3 +17,7 @@ func _on_outside_rig_pressed() -> void:
 
 func _on_tile_puzzle_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/testingLevels/tile_puzzle.tscn")
+
+
+func _on_pipe_puzzle_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/pipe_puzzle_test.tscn")

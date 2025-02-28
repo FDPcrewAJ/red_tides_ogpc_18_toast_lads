@@ -1,0 +1,186 @@
+[gd_scene load_steps=22 format=3 uid="uid://c1b3tl70snhpk"]
+
+[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
+[ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/Walls/c_wall_undamaged_3.png" id="2_dcjq1"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="3_vetux"]
+[ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="5_tj7u0"]
+[ext_resource type="ArrayMesh" uid="uid://bg1w3pvmlqno1" path="res://Assets/Models/Objects/Pipes/pipeStraight.obj" id="6_tts35"]
+[ext_resource type="ArrayMesh" uid="uid://hurqub085ijb" path="res://Assets/Models/Objects/Pipes/pipeLever.obj" id="7_qy7ty"]
+[ext_resource type="ArrayMesh" uid="uid://cnwuyhvgjmr1f" path="res://Assets/Models/Objects/Pipes/PipeJunctionCross.obj" id="8_h51ft"]
+[ext_resource type="ArrayMesh" uid="uid://dwkrrhwamxoo2" path="res://Assets/Models/Objects/Pipes/pipeTurn90.obj" id="9_4bsxx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nmc32"]
+
+[sub_resource type="Sky" id="Sky_jfwn4"]
+sky_material = SubResource("ProceduralSkyMaterial_nmc32")
+
+[sub_resource type="Environment" id="Environment_8e80k"]
+background_mode = 2
+sky = SubResource("Sky_jfwn4")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt2wt"]
+albedo_texture = ExtResource("1_mk05i")
+uv1_triplanar = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_yn24k"]
+material = SubResource("StandardMaterial3D_nt2wt")
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su21g"]
+albedo_texture = ExtResource("2_dcjq1")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cu627"]
+material = SubResource("StandardMaterial3D_su21g")
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6tpb"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g0gi"]
+size = Vector3(1, 5, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv0fk"]
+albedo_texture = ExtResource("3_vetux")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eraur"]
+material = SubResource("StandardMaterial3D_pv0fk")
+size = Vector2(5, 20)
+
+[node name="pipe_puzzle_test" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.355314, 0.355314, 0.355314, 1)
+light_energy = 0.1
+light_bake_mode = 1
+directional_shadow_mode = 1
+sky_mode = 1
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8e80k")
+
+[node name="player" parent="." instance=ExtResource("2_4i20w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Building" type="Node3D" parent="World"]
+
+[node name="Floor" type="StaticBody3D" parent="World/Building"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Floor"]
+shape = SubResource("BoxShape3D_hampm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Floor"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("QuadMesh_yn24k")
+
+[node name="Ceiling" type="StaticBody3D" parent="World/Building"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Ceiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_cu627")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Ceiling"]
+shape = SubResource("BoxShape3D_t6tpb")
+
+[node name="Wall1" type="StaticBody3D" parent="World/Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall1"]
+shape = SubResource("BoxShape3D_6g0gi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall1"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("PlaneMesh_eraur")
+
+[node name="Wall2" type="StaticBody3D" parent="World/Building"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall2"]
+shape = SubResource("BoxShape3D_6g0gi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("PlaneMesh_eraur")
+
+[node name="Wall3" type="StaticBody3D" parent="World/Building"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.37114e-07, 3, 10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall3"]
+shape = SubResource("BoxShape3D_6g0gi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall3"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("PlaneMesh_eraur")
+
+[node name="Wall4" type="StaticBody3D" parent="World/Building"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -4.37114e-07, 3, -10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall4"]
+shape = SubResource("BoxShape3D_6g0gi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall4"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("PlaneMesh_eraur")
+
+[node name="Lights" type="Node3D" parent="World"]
+
+[node name="IndustrialLight0" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, 4)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+
+[node name="IndustrialLight1" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, -5)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.994382, 0.761722, 0.130269, 1)
+light_energy = 1.5
+light_size = 0.732
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="Pipes" type="Node3D" parent="World"]
+
+[node name="PipeStraight" type="MeshInstance3D" parent="World/Pipes"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.73816, 3.65486, 0)
+mesh = ExtResource("6_tts35")
+skeleton = NodePath("../..")
+
+[node name="PipeStraight2" type="MeshInstance3D" parent="World/Pipes"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -8.73816, 1.32698, 0.810789)
+mesh = ExtResource("6_tts35")
+skeleton = NodePath("../..")
+
+[node name="PipeLever" type="MeshInstance3D" parent="World/Pipes"]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -8.73816, 2.15094, 0)
+mesh = ExtResource("7_qy7ty")
+skeleton = NodePath("../..")
+
+[node name="PipeJunctionCross" type="MeshInstance3D" parent="World/Pipes"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -8.73816, 0.473381, 0)
+mesh = ExtResource("8_h51ft")
+
+[node name="PipeTurn90" type="MeshInstance3D" parent="World/Pipes"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -8.73808, 1.3278, 2.28363)
+mesh = ExtResource("9_4bsxx")

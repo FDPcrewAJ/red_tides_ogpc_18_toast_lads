@@ -9,12 +9,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jwltp"]
 
-[sub_resource type="Sky" id="Sky_jfwn4"]
+[sub_resource type="Sky" id="Sky_0t3t5"]
 sky_material = SubResource("ProceduralSkyMaterial_jwltp")
 
 [sub_resource type="Environment" id="Environment_fe3ho"]
 background_mode = 2
-sky = SubResource("Sky_jfwn4")
+sky = SubResource("Sky_0t3t5")
 
 [sub_resource type="BoxMesh" id="BoxMesh_alo7f"]
 size = Vector3(30, 0.5, 30)

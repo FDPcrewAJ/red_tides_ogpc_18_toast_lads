@@ -33,6 +33,8 @@ var fire_console_three_water = 1
 
 var entry_door_open = false
 
+var tile_puzzle_level = 1
+
 func _process(_delta):
 	if new_game == true:
 		room_completed = false

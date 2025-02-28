@@ -92,4 +92,4 @@ func _on_button_6_pressed() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/testingLevels/firepuzzle.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")

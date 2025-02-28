@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ixv3bnd03tdn"
+path="res://.godot/imported/industialLight1.obj-3b7cc2a7bebea2048451d58a83c1ffef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/industialLight1.obj-3b7cc2a7bebea2048451d58a83c1ffef.mesh"]
+
+source_file="res://Assets/Models/Objects/Lights/industialLight1.obj"
+dest_files=["res://.godot/imported/industialLight1.obj-3b7cc2a7bebea2048451d58a83c1ffef.mesh", "res://.godot/imported/industialLight1.obj-3b7cc2a7bebea2048451d58a83c1ffef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

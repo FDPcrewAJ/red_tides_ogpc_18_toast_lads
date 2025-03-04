@@ -1,14 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=25 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/Walls/c_wall_undamaged_3.png" id="2_dcjq1"]
-[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="3_vetux"]
+[ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/Walls/c_wall_undamaged_2.png" id="4_lvbh8"]
 [ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="5_tj7u0"]
-[ext_resource type="ArrayMesh" uid="uid://bg1w3pvmlqno1" path="res://Assets/Models/Objects/Pipes/pipeStraight.obj" id="6_tts35"]
-[ext_resource type="ArrayMesh" uid="uid://hurqub085ijb" path="res://Assets/Models/Objects/Pipes/pipeLever.obj" id="7_qy7ty"]
-[ext_resource type="ArrayMesh" uid="uid://cnwuyhvgjmr1f" path="res://Assets/Models/Objects/Pipes/PipeJunctionCross.obj" id="8_h51ft"]
-[ext_resource type="ArrayMesh" uid="uid://dwkrrhwamxoo2" path="res://Assets/Models/Objects/Pipes/pipeTurn90.obj" id="9_4bsxx"]
+[ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="6_vkgry"]
+[ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="7_87lxj"]
+[ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_ixnkp"]
+[ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="9_kj76a"]
+[ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="10_vauyr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nmc32"]
 
@@ -47,12 +48,18 @@ size = Vector3(20, 1, 20)
 size = Vector3(1, 5, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv0fk"]
-albedo_texture = ExtResource("3_vetux")
+albedo_texture = ExtResource("4_lvbh8")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eraur"]
 material = SubResource("StandardMaterial3D_pv0fk")
 size = Vector2(5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdl8g"]
+size = Vector3(5.5, 3.5, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_184nn"]
+size = Vector3(5.5, 3.5, 2)
 
 [node name="pipe_puzzle_test" type="Node3D"]
 
@@ -68,7 +75,7 @@ sky_mode = 1
 environment = SubResource("Environment_8e80k")
 
 [node name="player" parent="." instance=ExtResource("2_4i20w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
 
 [node name="World" type="Node3D" parent="."]
 
@@ -146,6 +153,7 @@ light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
 light_size = 0.922
 light_bake_mode = 1
+omni_range = 7.0
 
 [node name="IndustrialLight1" type="MeshInstance3D" parent="World/Lights"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, -5)
@@ -154,33 +162,61 @@ skeleton = NodePath("../../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
-light_color = Color(0.994382, 0.761722, 0.130269, 1)
-light_energy = 1.5
-light_size = 0.732
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
 [node name="Pipes" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8288, 0.5, 0)
 
-[node name="PipeStraight" type="MeshInstance3D" parent="World/Pipes"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.73816, 3.65486, 0)
-mesh = ExtResource("6_tts35")
-skeleton = NodePath("../..")
+[node name="PipeStraight2" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0.568993, -0.677731)
 
-[node name="PipeStraight2" type="MeshInstance3D" parent="World/Pipes"]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -8.73816, 1.32698, 0.810789)
-mesh = ExtResource("6_tts35")
-skeleton = NodePath("../..")
+[node name="PipeStraight5" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 0.677166, 1.92959, 0.00662658)
 
-[node name="PipeLever" type="MeshInstance3D" parent="World/Pipes"]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -8.73816, 2.15094, 0)
-mesh = ExtResource("7_qy7ty")
-skeleton = NodePath("../..")
+[node name="PipeStraight3" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 4.49324, 0.682129)
 
-[node name="PipeJunctionCross" type="MeshInstance3D" parent="World/Pipes"]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -8.73816, 0.473381, 0)
-mesh = ExtResource("8_h51ft")
+[node name="PipeStraight4" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+transform = Transform3D(0.4, 0, 0, 0, -0.4, 3.49691e-08, 0, -3.49691e-08, -0.4, 0, 3.83457, 2.55473)
 
-[node name="PipeTurn90" type="MeshInstance3D" parent="World/Pipes"]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -8.73808, 1.3278, 2.28363)
-mesh = ExtResource("9_4bsxx")
+[node name="PipeValve" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0.4, 0, -1.74846e-08, 0, -0.4, 0, 0, 0.569616, -1.87489)
+
+[node name="PipeJunctionT" parent="World/Pipes" instance=ExtResource("8_ixnkp")]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0.4, -1.74846e-08, 1.74846e-08, 1.74846e-08, 0.4, 7.64274e-16, 0, 0.567645, -0.68025)
+
+[node name="PipeJunctionT3" parent="World/Pipes" instance=ExtResource("8_ixnkp")]
+transform = Transform3D(-1.74846e-08, 8.47033e-23, 0.4, 0, 0.4, -1.05879e-22, -0.4, 0, -1.74846e-08, 0, 3.81011, 0.00516002)
+
+[node name="PipeJunctionT2" parent="World/Pipes" instance=ExtResource("8_ixnkp")]
+transform = Transform3D(1.74846e-08, -0.4, -1.74846e-08, -0.4, -1.74846e-08, -1.74846e-08, 1.74846e-08, 1.74846e-08, -0.4, 0.684004, 1.92838, 0.00413555)
+
+[node name="PipeTurn90" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(7.64274e-16, 0.4, -1.74846e-08, 1.74846e-08, -1.74846e-08, -0.4, -0.4, 0, -1.74846e-08, -0.685193, 0.570521, -3.75396)
+
+[node name="PipeTurn91" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -1.52855e-15, -0.4, 3.49691e-08, -0.4, -8.47033e-23, -1.74846e-08, -0.000353813, 5.17264, -1.35516)
+
+[node name="PipeTurn92" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.49691e-08, 0.4, 3.49691e-08, 1.74846e-08, -0.000353813, 3.81139, 2.5564)
+
+[node name="PipeLever" parent="World/Pipes" instance=ExtResource("10_vauyr")]
+transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0, 2.60976, 0.00485198)
+
+[node name="PipeValve2" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+transform = Transform3D(-1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0, 0, 0.4, 1.87536, 1.93036, 0.00666582)
+
+[node name="Machines" type="Node3D" parent="World"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Machines"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.37515, 2.21703, 4.57467)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Machines/StaticBody3D"]
+shape = SubResource("BoxShape3D_fdl8g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Machines/StaticBody3D"]
+mesh = SubResource("BoxMesh_184nn")

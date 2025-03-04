@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=26 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_ixnkp"]
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="9_kj76a"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="10_vauyr"]
+[ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="11_y6dm5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nmc32"]
 
@@ -204,6 +205,12 @@ transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -1.52855e-15, -0.4, 3.4
 [node name="PipeTurn92" parent="World/Pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.49691e-08, 0.4, 3.49691e-08, 1.74846e-08, -0.000353813, 3.81139, 2.5564)
 
+[node name="PipeTurn93" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.49691e-08, 0.4, 3.49691e-08, 1.74846e-08, 3.75535, 1.24456, 1.35193)
+
+[node name="PipeTurn94" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(-5.24537e-08, 0.4, -3.49691e-08, -0.4, -5.24537e-08, -3.49692e-08, -3.49692e-08, 3.49691e-08, 0.4, 3.06882, 0.56704, 1.35193)
+
 [node name="PipeLever" parent="World/Pipes" instance=ExtResource("10_vauyr")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0, 2.60976, 0.00485198)
 
@@ -220,3 +227,6 @@ shape = SubResource("BoxShape3D_fdl8g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Machines/StaticBody3D"]
 mesh = SubResource("BoxMesh_184nn")
+
+[node name="PipeJunctionCross" parent="." instance=ExtResource("11_y6dm5")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -5.07165, 2.43074, -0.674342)

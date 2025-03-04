@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=29 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
@@ -56,6 +56,17 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_pv0fk")
 size = Vector2(5, 20)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7d45a"]
+size = Vector3(1, 5, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbu02"]
+albedo_texture = ExtResource("4_lvbh8")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_a8ttr"]
+material = SubResource("StandardMaterial3D_qbu02")
+size = Vector3(1, 5, 9)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdl8g"]
 size = Vector3(5.5, 3.5, 2)
 
@@ -67,7 +78,7 @@ size = Vector3(5.5, 3.5, 2)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_color = Color(0.355314, 0.355314, 0.355314, 1)
-light_energy = 0.1
+light_energy = 0.2
 light_bake_mode = 1
 directional_shadow_mode = 1
 sky_mode = 1
@@ -141,6 +152,15 @@ shape = SubResource("BoxShape3D_6g0gi")
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
 mesh = SubResource("PlaneMesh_eraur")
 
+[node name="InteriorWall1" type="StaticBody3D" parent="World/Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/InteriorWall1"]
+shape = SubResource("BoxShape3D_7d45a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/InteriorWall1"]
+mesh = SubResource("BoxMesh_a8ttr")
+
 [node name="Lights" type="Node3D" parent="World"]
 
 [node name="IndustrialLight0" type="MeshInstance3D" parent="World/Lights"]
@@ -151,10 +171,10 @@ skeleton = NodePath("../../..")
 [node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
-light_energy = 2.087
+light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
-omni_range = 7.0
+omni_range = 9.13347
 
 [node name="IndustrialLight1" type="MeshInstance3D" parent="World/Lights"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, -5)
@@ -162,6 +182,105 @@ mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight2" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.5, 5, -5)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight3" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.5, 5, 4)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight4" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, 4)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight5" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, -5)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight6" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 1.48962, 5, 4.26556)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="World/Lights/IndustrialLight6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight7" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.5, 5, 4)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.087
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 7.0
+
+[node name="IndustrialLight9" type="MeshInstance3D" parent="World/Lights"]
+transform = Transform3D(9.55343e-15, -2.18557e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -2.18557e-07, -0.0925555, 5, -9.51603)
+mesh = ExtResource("5_tj7u0")
+skeleton = NodePath("../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -208,14 +327,29 @@ transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.4
 [node name="PipeTurn93" parent="World/Pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.49691e-08, 0.4, 3.49691e-08, 1.74846e-08, 3.75535, 1.24456, 1.35193)
 
+[node name="PipeTurn96" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(0.4, -7.10543e-15, 4.92424e-14, -7.10543e-15, -0.4, 3.49691e-08, 4.61853e-14, -3.49691e-08, -0.4, 5.11382, 2.61287, 0.0104967)
+
+[node name="PipeTurn97" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(-0.4, 3.49691e-08, -5.22995e-14, 3.49691e-08, 0.4, -3.49691e-08, 4.61853e-14, -3.49691e-08, -0.4, 5.11571, 3.80358, 0.00592415)
+
 [node name="PipeTurn94" parent="World/Pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-5.24537e-08, 0.4, -3.49691e-08, -0.4, -5.24537e-08, -3.49692e-08, -3.49692e-08, 3.49691e-08, 0.4, 3.06882, 0.56704, 1.35193)
+
+[node name="PipeTurn95" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(1.74846e-08, -0.4, 1.74846e-08, -3.49692e-08, 1.74846e-08, 0.4, -0.4, -1.74846e-08, -3.49692e-08, 1.87995, 0.56704, 1.35193)
 
 [node name="PipeLever" parent="World/Pipes" instance=ExtResource("10_vauyr")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0, 2.60976, 0.00485198)
 
+[node name="PipeLever2" parent="World/Pipes" instance=ExtResource("10_vauyr")]
+transform = Transform3D(0.4, 0, -3.72529e-08, 0, 0.4, 0, 3.72529e-08, 0, 0.4, 5.11232, 2.60976, 0.00485198)
+
 [node name="PipeValve2" parent="World/Pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0, 0, 0.4, 1.87536, 1.93036, 0.00666582)
+
+[node name="PipeValve3" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+transform = Transform3D(-1.74846e-08, 0.4, 0, 0.282843, 1.23635e-08, -0.282843, -0.282843, -1.23635e-08, -0.282843, 1.87287, 0.568333, 1.35182)
 
 [node name="Machines" type="Node3D" parent="World"]
 

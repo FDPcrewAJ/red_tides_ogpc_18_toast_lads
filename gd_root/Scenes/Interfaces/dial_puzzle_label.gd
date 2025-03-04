@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $"../Dial/Sprite2D".rotation == 2 and $"../Dial2/Sprite2D".rotation == 3 and $"../Dial3/Sprite2D".rotation == 4:
+	if ($"../Dial/Sprite2D".rotation_degrees < -85 and $"../Dial/Sprite2D".rotation_degrees > -95) and ($"../Dial2/Sprite2D".rotation_degrees < -40 and $"../Dial2/Sprite2D".rotation_degrees > -50) and ($"../Dial3/Sprite2D".rotation_degrees < -175 and $"../Dial3/Sprite2D".rotation_degrees > -185):
 		text = "Wow u did it congrats u are the best wow u did the puzzle wow"
 	else:
 		text = ""

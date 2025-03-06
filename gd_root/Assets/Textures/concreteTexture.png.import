@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctaisqyygdkmk"
-path="res://.godot/imported/toaster.png-0b85c37fc6196263a5d4882c1920cb5c.ctex"
+uid="uid://cpgalsytd85jv"
+path="res://.godot/imported/concreteTexture.png-a7b6d15b068691931000de12af5a2550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Toaster/toaster.png"
-dest_files=["res://.godot/imported/toaster.png-0b85c37fc6196263a5d4882c1920cb5c.ctex"]
+source_file="res://Assets/Textures/concreteTexture.png"
+dest_files=["res://.godot/imported/concreteTexture.png-a7b6d15b068691931000de12af5a2550.ctex"]
 
 [params]
 

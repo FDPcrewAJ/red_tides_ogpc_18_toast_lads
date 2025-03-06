@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="6_q6nk1"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_computer.gd" id="6_yka2e"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_puzzle_door_blocker.gd" id="7_w0jne"]
-[ext_resource type="Texture2D" path="res://Imports/images/dialPuzzleHint.png" id="8_k5y5n"]
+[ext_resource type="Texture2D" uid="uid://dnaiseeho6cox" path="res://Imports/images/dialPuzzleHint.png" id="8_k5y5n"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="9_icvyy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]

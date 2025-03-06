@@ -6,7 +6,7 @@ script/source = "extends Control
 @onready var menu = $\".\"
 
 func _unhandled_key_input(event):
-	if event.is_action_pressed(\"esc\"):
+	if event.is_action_pressed(\"exit\"):
 		menu.show()
 		pause()
 

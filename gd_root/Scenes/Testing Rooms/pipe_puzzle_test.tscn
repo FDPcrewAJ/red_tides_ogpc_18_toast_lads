@@ -297,6 +297,12 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 
 [node name="PipeStraight5" parent="World/Pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 0.677166, 1.92959, 0.00662658)
 
+[node name="PipeStraight6" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 5.79782, 4.48515, 0.00662658)
+
+[node name="PipeStraight7" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 9.54018, 4.48515, 1.36412)
+
 [node name="PipeStraight3" parent="World/Pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 4.49324, 0.682129)
 
@@ -330,8 +336,20 @@ transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.4
 [node name="PipeTurn96" parent="World/Pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(0.4, -7.10543e-15, 4.92424e-14, -7.10543e-15, -0.4, 3.49691e-08, 4.61853e-14, -3.49691e-08, -0.4, 5.11382, 2.61287, 0.0104967)
 
+[node name="PipeTurn101" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(0.4, -7.10543e-15, 4.92424e-14, 7.10543e-15, 0.4, -6.99382e-08, -4.61853e-14, 6.99382e-08, 0.4, 5.11382, 1.24805, -1.35172)
+
+[node name="PipeTurn100" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(-0.4, -3.49691e-08, 1.74845e-08, -1.74845e-08, -3.49691e-08, -0.4, 3.49691e-08, -0.4, 3.49691e-08, 3.75763, 1.9312, -0.668524)
+
 [node name="PipeTurn97" parent="World/Pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-0.4, 3.49691e-08, -5.22995e-14, 3.49691e-08, 0.4, -3.49691e-08, 4.61853e-14, -3.49691e-08, -0.4, 5.11571, 3.80358, 0.00592415)
+
+[node name="PipeTurn98" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(5.24537e-08, 0.4, -3.49691e-08, -1.74845e-08, -3.49691e-08, -0.4, -0.4, 5.24537e-08, 1.74845e-08, 8.18208, 4.485, 0.00711684)
+
+[node name="PipeTurn99" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+transform = Transform3D(-8.74228e-08, -0.4, 3.49691e-08, -1.74845e-08, -3.49691e-08, -0.4, 0.4, -8.74228e-08, -1.74845e-08, 9.54611, 4.485, 1.36453)
 
 [node name="PipeTurn94" parent="World/Pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-5.24537e-08, 0.4, -3.49691e-08, -0.4, -5.24537e-08, -3.49692e-08, -3.49692e-08, 3.49691e-08, 0.4, 3.06882, 0.56704, 1.35193)
@@ -343,13 +361,19 @@ transform = Transform3D(1.74846e-08, -0.4, 1.74846e-08, -3.49692e-08, 1.74846e-0
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0, 2.60976, 0.00485198)
 
 [node name="PipeLever2" parent="World/Pipes" instance=ExtResource("10_vauyr")]
-transform = Transform3D(0.4, 0, -3.72529e-08, 0, 0.4, 0, 3.72529e-08, 0, 0.4, 5.11232, 2.60976, 0.00485198)
+transform = Transform3D(-0.4, 0, 2.28379e-09, 0, 0.4, 0, -2.28379e-09, 0, -0.4, 5.11232, 2.60976, 0.00485198)
+
+[node name="PipeLever3" parent="World/Pipes" instance=ExtResource("10_vauyr")]
+transform = Transform3D(0.4, 0, -3.72529e-08, 0, 0.4, 0, 3.72529e-08, 0, 0.4, 5.11336, 0.0491962, -1.3506)
 
 [node name="PipeValve2" parent="World/Pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0, 0, 0.4, 1.87536, 1.93036, 0.00666582)
 
 [node name="PipeValve3" parent="World/Pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, 0.282843, 1.23635e-08, -0.282843, -0.282843, -1.23635e-08, -0.282843, 1.87287, 0.568333, 1.35182)
+
+[node name="PipeValve4" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+transform = Transform3D(-1.74846e-08, 0.4, 0, 0, 0, 0.4, 0.4, 1.74846e-08, 0, 6.99408, 4.48515, 0.00736925)
 
 [node name="Machines" type="Node3D" parent="World"]
 

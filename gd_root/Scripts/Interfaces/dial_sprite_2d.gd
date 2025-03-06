@@ -25,5 +25,4 @@ func _process(delta: float) -> void:
 	
 func _rotate():
 	rotation_degrees += (mouse_offset_x - get_global_mouse_position().x) / 2
-	print(rotation_degrees)
 	

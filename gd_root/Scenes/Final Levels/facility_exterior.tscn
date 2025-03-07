@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu8sd2enacj3e"]
+
+[ext_resource type="Shader" uid="uid://cxiyh66gmdybx" path="res://Scripts/Shaders/water_shader.tres" id="1_o0p1y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqwgq"]
+render_priority = 0
+shader = ExtResource("1_o0p1y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1nesq"]
+material = SubResource("ShaderMaterial_uqwgq")
+
+[node name="facility_exterior" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1nesq")

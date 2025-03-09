@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cp3oisrnu3ldt"]
+[gd_scene load_steps=66 format=3 uid="uid://cp3oisrnu3ldt"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/outside_rig.gd" id="1_60s7s"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_4lqhw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cvgath02y1r71" path="res://Textures/Temp Dev Textures/Green/texture_09.png" id="7_gh0qf"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_0ijr6"]
 [ext_resource type="PackedScene" uid="uid://1vstisoeox23" path="res://Scenes/Objects/text_popup.tscn" id="9_nlv1f"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="10_h00yj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1nn21"]
 size = Vector3(8, 60, 8)
@@ -185,11 +186,17 @@ albedo_texture = ExtResource("7_gh0qf")
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_psxoa"]
 material = SubResource("StandardMaterial3D_xrkg5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6uybp"]
-albedo_color = Color(0.185163, 0.40457, 0.680154, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vka"]
+render_priority = 0
+shader = ExtResource("10_h00yj")
+shader_parameter/color1 = Color(0, 0.27451, 0.376471, 1)
+shader_parameter/color2 = Color(1.14311e-07, 0.160532, 0.227225, 1)
+shader_parameter/color3 = Color(0, 0.348882, 0.473856, 1)
+shader_parameter/x_amount = 512.0
+shader_parameter/y_amount = 512.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2grpb"]
-material = SubResource("StandardMaterial3D_6uybp")
+material = SubResource("ShaderMaterial_u4vka")
 size = Vector2(500, 500)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d5edg"]

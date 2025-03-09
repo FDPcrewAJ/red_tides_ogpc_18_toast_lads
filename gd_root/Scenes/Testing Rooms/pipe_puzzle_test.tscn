@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=30 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
-[ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/Walls/c_wall_undamaged_3.png" id="2_dcjq1"]
-[ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/Walls/c_wall_undamaged_2.png" id="4_lvbh8"]
+[ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
+[ext_resource type="Texture2D" uid="uid://dibcmejstmlm0" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamaged.png" id="4_5oyvk"]
+[ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="4_lvbh8"]
 [ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="5_tj7u0"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="6_vkgry"]
 [ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="7_87lxj"]
@@ -49,7 +50,7 @@ size = Vector3(20, 1, 20)
 size = Vector3(1, 5, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv0fk"]
-albedo_texture = ExtResource("4_lvbh8")
+albedo_texture = ExtResource("4_5oyvk")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eraur"]

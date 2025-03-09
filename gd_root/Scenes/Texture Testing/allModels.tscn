@@ -97,15 +97,10 @@ transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 1.4533, 
 mesh = ExtResource("11_0n8o8")
 material = ExtResource("12_xtnv4")
 
-<<<<<<< Updated upstream
 [node name="PipeValve" type="CSGMesh3D" parent="."]
 transform = Transform3D(0.193091, 0, 0, 0, 0.193091, 0, 0, 0, 0.193091, 1.4533, 1.80805, 12.7614)
 mesh = ExtResource("13_viwly")
 material = ExtResource("14_0ekjh")
-=======
-[node name="PipeValve" parent="." instance=ExtResource("10_785gw")]
-transform = Transform3D(0.40354, 0, 0, 0, 0.40354, 0, 0, 0, 0.40354, -0.386086, 0, 12.8061)
->>>>>>> Stashed changes
 
 [node name="CircularTable" type="CSGMesh3D" parent="."]
 transform = Transform3D(1.07549, 0, 0, 0, 1.07549, 0, 0, 0, 1.07549, 1.4533, 0.00418365, 9.95916)

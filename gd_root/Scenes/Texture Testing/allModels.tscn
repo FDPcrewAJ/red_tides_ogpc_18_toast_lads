@@ -26,15 +26,27 @@
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
 [ext_resource type="ArrayMesh" uid="uid://ixv3bnd03tdn" path="res://Assets/Models/Objects/Lights/industialLight1.obj" id="31_varro"]
 [ext_resource type="Material" uid="uid://y0dxojnld4dd" path="res://Assets/Materials/industrialLight1.tres" id="32_lu1wl"]
+[ext_resource type="ArrayMesh" uid="uid://bsc4yw264kqtk" path="res://Assets/Models/Objects/Doors/doorFacility.obj" id="33_14xgv"]
 [ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="33_vsbd1"]
+[ext_resource type="Material" uid="uid://co7oqg42mkhwi" path="res://Assets/Materials/doorFacility.tres" id="34_s8b82"]
 [ext_resource type="Material" uid="uid://b87aa3c8e612t" path="res://Assets/Materials/industrialLight0.tres" id="34_xqvqh"]
 [ext_resource type="ArrayMesh" uid="uid://drgqdimxfppkx" path="res://Assets/Models/Objects/Toaster/toastLadsToaster.obj" id="35_g7qrw"]
 [ext_resource type="ArrayMesh" uid="uid://7o2smkr75rxh" path="res://Assets/Models/Objects/Lights/industialLight2.obj" id="35_ryqe0"]
+[ext_resource type="ArrayMesh" uid="uid://01br3q5xxc0y" path="res://Assets/Models/Objects/Doors/doorFacilityOpen.obj" id="35_whkwn"]
 [ext_resource type="Material" uid="uid://cxujgew8xptb1" path="res://Assets/Materials/industrialLight2.tres" id="36_f61us"]
 [ext_resource type="Material" uid="uid://b7wv6qr71u5f1" path="res://Assets/Materials/toaster.tres" id="36_foe0e"]
+[ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj5ya"]
 albedo_texture = ExtResource("2_cs0yj")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a2lou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05tm8"]
+albedo_texture = ExtResource("36_rved8")
+uv1_triplanar = true
+uv1_world_triplanar = true
 texture_filter = 0
 
 [node name="Node3D" type="Node3D"]
@@ -78,7 +90,7 @@ mesh = ExtResource("15_7ua5l")
 material = ExtResource("16_7c3bu")
 
 [node name="player" parent="." instance=ExtResource("17_kx1ri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2319, 1, 11.5744)
+transform = Transform3D(1.07579, 0, 0, 0, 1.07579, 0, 0, 0, 1.07579, 2.34332, 1, 11.6245)
 
 [node name="ComputerScreen" type="CSGMesh3D" parent="."]
 transform = Transform3D(0.645094, 0, 0, 0, 0.645094, 0, 0, 0, 0.645094, 1.45951, 1.08744, 9.83907)
@@ -101,7 +113,7 @@ mesh = ExtResource("25_jrfcw")
 material = ExtResource("26_it72r")
 
 [node name="joystick" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51584, 0, 7.46609)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.99216, 1.08374, 10.4401)
 mesh = ExtResource("27_6qk6g")
 material = ExtResource("28_8wubg")
 
@@ -121,7 +133,7 @@ mesh = ExtResource("33_vsbd1")
 material = ExtResource("34_xqvqh")
 
 [node name="Toaster" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.618689, 0, 1.23031)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.18093, 1.06789, 9.32306)
 mesh = ExtResource("35_g7qrw")
 material = ExtResource("36_foe0e")
 
@@ -129,3 +141,18 @@ material = ExtResource("36_foe0e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37386, 0, 5.08412)
 mesh = ExtResource("35_ryqe0")
 material = ExtResource("36_f61us")
+
+[node name="DoorFacility" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 10.6018, 0, 10.2282)
+mesh = ExtResource("33_14xgv")
+material = ExtResource("34_s8b82")
+
+[node name="DoorFacilityOpen" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 11.5921, 4.76837e-07, 12.2628)
+mesh = ExtResource("35_whkwn")
+material = ExtResource("34_s8b82")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
+transform = Transform3D(30.3294, 0, 0, 0, 1.00078, 0, 0, 0, 29.7303, -1.30502, 0, -0.100344)
+mesh = SubResource("PlaneMesh_a2lou")
+material = SubResource("StandardMaterial3D_05tm8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=40 format=3 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
 [ext_resource type="Material" uid="uid://c7gljd2b8y7o3" path="res://Assets/Materials/woodenBox.tres" id="2_6fbbl"]

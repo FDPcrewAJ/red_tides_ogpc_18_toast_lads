@@ -1,11 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://b52pvxrn1jrll"]
+[gd_scene load_steps=23 format=3 uid="uid://b52pvxrn1jrll"]
 
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_bqpbj"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_t5ra5"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="3_30k6v"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_4me4v"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="6_q6nk1"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/dial_computer.gd" id="6_yka2e"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_computer.gd" id="6_yka2e"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_puzzle_door_blocker.gd" id="7_w0jne"]
+[ext_resource type="Texture2D" uid="uid://dnaiseeho6cox" path="res://Imports/images/dialPuzzleHint.png" id="8_k5y5n"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="9_icvyy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
@@ -151,11 +153,13 @@ shape = SubResource("BoxShape3D_okoi4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DialComputer/ConsoleBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
+visible = false
 shape = SubResource("BoxShape3D_okoi4")
 
 [node name="DoorBlocker" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
 mesh = SubResource("BoxMesh_hlt5s")
+script = ExtResource("7_w0jne")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorBlocker"]
 
@@ -165,3 +169,7 @@ shape = SubResource("ConvexPolygonShape3D_w0nbp")
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, 1.5, -5)
 mesh = ExtResource("9_icvyy")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 4.99, 2, -3)
+texture = ExtResource("8_k5y5n")

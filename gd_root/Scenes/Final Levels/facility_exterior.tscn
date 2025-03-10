@@ -24,7 +24,11 @@ size = Vector2(50, 50)
 environment = ExtResource("1_v7dol")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707107, 0.612372, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 10, 0)
+transform = Transform3D(0.866026, 0.482963, -0.12941, -0.12941, 0.466506, 0.875, 0.482963, -0.741025, 0.466506, 0, 10, 0)
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.0
+directional_shadow_max_distance = 0.0
+directional_shadow_pancake_size = 0.0
 
 [node name="world" type="Node3D" parent="."]
 

@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
-radius = 0.38
+radius = 0.35
 height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
-radius = 0.38
+radius = 0.35
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 
@@ -27,6 +27,7 @@ target_position = Vector3(0, 2, 0)
 
 [node name="CrouchingCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_5nd2e")
 disabled = true
 

@@ -16,6 +16,9 @@ data = PackedVector3Array(-0.0938, 0.148, -0.1563, 0.0938, 0.148, 0.0868, -0.093
 
 [node name="boat" instance=ExtResource("1_ibsua")]
 
+[node name="Cockpit" parent="Node/Boat" index="5"]
+transform = Transform3D(-0.7, 0, 8.74228e-08, 0, 1, 0, -6.11959e-08, 0, -1, 0, 0.75, -0.5)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="hullCol" type="CollisionShape3D" parent="StaticBody3D" index="0"]

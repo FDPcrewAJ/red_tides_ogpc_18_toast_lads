@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=7 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
+[ext_resource type="Environment" uid="uid://cispr80jd18kp" path="res://Scripts/World Env/defaultEnv.tres" id="1_v7dol"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
+[ext_resource type="PackedScene" uid="uid://bssfh6x5ko83s" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p8pmp"]
 render_priority = 0
@@ -8,13 +11,35 @@ shader = ExtResource("1_svdwr")
 shader_parameter/color1 = Color(0, 0, 0.658824, 1)
 shader_parameter/color2 = Color(0, 0.215686, 0.792157, 1)
 shader_parameter/color3 = Color(0.105882, 0.207843, 0.74902, 1)
-shader_parameter/x_amount = 32.0
-shader_parameter/y_amount = 32.0
+shader_parameter/x_amount = 128.0
+shader_parameter/y_amount = 128.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1nesq"]
 material = SubResource("ShaderMaterial_p8pmp")
+size = Vector2(50, 50)
 
 [node name="facility_exterior" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_v7dol")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0.612372, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 10, 0)
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="Water" type="MeshInstance3D" parent="world"]
 mesh = SubResource("PlaneMesh_1nesq")
+skeleton = NodePath("../..")
+
+[node name="player" parent="world" instance=ExtResource("2_o63d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66678, 2.2784)
+
+[node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="boat2" parent="world" instance=ExtResource("2_rhyc4")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 5.46677, 0, 0)
+
+[node name="boat3" parent="world" instance=ExtResource("2_rhyc4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 11.7428, 0, 0)

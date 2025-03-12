@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=30 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
 [ext_resource type="PackedScene" uid="uid://bssfh6x5ko83s" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
+[ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1yhw"]
@@ -108,6 +109,8 @@ size = Vector3(8, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
 size = Vector3(3, 0.4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rm2wl"]
 
 [node name="facility_exterior" type="Node3D"]
 
@@ -281,3 +284,11 @@ skeleton = NodePath("../../staircase")
 [node name="stairsTopCol" type="CollisionShape3D" parent="world/mainSupports/stairs/stairsBottom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
 shape = SubResource("BoxShape3D_b2kg4")
+
+[node name="exteriorDoor" type="StaticBody3D" parent="world/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -15)
+
+[node name="doorCol" type="CollisionShape3D" parent="world/mainSupports/exteriorDoor"]
+shape = SubResource("BoxShape3D_rm2wl")
+
+[node name="DoorFacility" parent="world/mainSupports/exteriorDoor" instance=ExtResource("6_tbgqa")]

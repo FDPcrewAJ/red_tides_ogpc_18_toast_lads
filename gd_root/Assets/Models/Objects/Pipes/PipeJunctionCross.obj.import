@@ -3,15 +3,15 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
-uid="uid://cnwuyhvgjmr1f"
-path="res://.godot/imported/PipeJunctionCross.obj-a639e5ce85e46ce1f3c465408fc3ab78.mesh"
+uid="uid://bxxy1a01nsi68"
+path="res://.godot/imported/pipeJunctionCross.obj-0061a7bbf764371b82b71c864a39b89f.mesh"
 
 [deps]
 
-files=["res://.godot/imported/PipeJunctionCross.obj-a639e5ce85e46ce1f3c465408fc3ab78.mesh"]
+files=["res://.godot/imported/pipeJunctionCross.obj-0061a7bbf764371b82b71c864a39b89f.mesh"]
 
-source_file="res://Assets/Models/Objects/Pipes/PipeJunctionCross.obj"
-dest_files=["res://.godot/imported/PipeJunctionCross.obj-a639e5ce85e46ce1f3c465408fc3ab78.mesh", "res://.godot/imported/PipeJunctionCross.obj-a639e5ce85e46ce1f3c465408fc3ab78.mesh"]
+source_file="res://Assets/Models/Objects/Pipes/pipeJunctionCross.obj"
+dest_files=["res://.godot/imported/pipeJunctionCross.obj-0061a7bbf764371b82b71c864a39b89f.mesh", "res://.godot/imported/pipeJunctionCross.obj-0061a7bbf764371b82b71c864a39b89f.mesh"]
 
 [params]
 

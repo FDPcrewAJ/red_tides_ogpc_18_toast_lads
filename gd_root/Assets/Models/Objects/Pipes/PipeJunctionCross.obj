@@ -1,5 +1,5 @@
-# Made in Blockbench 4.12.2
-mtllib PipeJunctionCross.mtl
+# Made in Blockbench 4.12.3
+mtllib pipeJunctionCross.mtl
 
 o cylinder
 v -6.938893903907228e-18 0.1875 1.3877787807814457e-17

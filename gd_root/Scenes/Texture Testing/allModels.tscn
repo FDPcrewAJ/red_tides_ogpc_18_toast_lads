@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="6_8p4gx"]
 [ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="7_tnebd"]
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_0mfee"]
+[ext_resource type="ArrayMesh" uid="uid://bxxy1a01nsi68" path="res://Assets/Models/Objects/Pipes/pipeJunctionCross.obj" id="8_4jcw2"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="9_wtww1"]
 [ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="10_785gw"]
 [ext_resource type="ArrayMesh" uid="uid://6t3o0y8vo1gs" path="res://Assets/Models/Objects/Tables/circularTable.obj" id="15_7ua5l"]
@@ -75,6 +76,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.47137, 0, 12.8061)
 
 [node name="PipeJunctionCross" parent="." instance=ExtResource("7_tnebd")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.46145, 0, 12.8061)
+mesh = ExtResource("8_4jcw2")
 
 [node name="PipeJunctionT" parent="." instance=ExtResource("8_0mfee")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.30425, 0, 12.8061)

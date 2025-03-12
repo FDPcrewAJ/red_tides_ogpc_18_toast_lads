@@ -184,7 +184,7 @@ shader_parameter/y_amount = 512.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bmhk4"]
 material = SubResource("ShaderMaterial_u4vka")
-size = Vector2(1500, 1500)
+size = Vector2(2000, 2000)
 
 [node name="TitleScreen" type="Node3D"]
 

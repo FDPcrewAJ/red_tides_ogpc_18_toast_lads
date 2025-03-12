@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmx210mgl7pa"
-path.s3tc="res://.godot/imported/pipeJunctionT.png-020a9c367f37b0789f6aefa6088bf2f4.s3tc.ctex"
+uid="uid://pwjuqxpfetwp"
+path.s3tc="res://.godot/imported/c_wall_undamaged_1.png-0b716dac6e6eaa39392f302d2589adb2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionT.png"
-dest_files=["res://.godot/imported/pipeJunctionT.png-020a9c367f37b0789f6aefa6088bf2f4.s3tc.ctex"]
+source_file="res://Textures/Interior Textures/c_wall_undamaged_1.png"
+dest_files=["res://.godot/imported/c_wall_undamaged_1.png-0b716dac6e6eaa39392f302d2589adb2.s3tc.ctex"]
 
 [params]
 

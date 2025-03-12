@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmx210mgl7pa"
-path.s3tc="res://.godot/imported/pipeJunctionT.png-020a9c367f37b0789f6aefa6088bf2f4.s3tc.ctex"
+uid="uid://bq4msdmcx0qp3"
+path.s3tc="res://.godot/imported/PlayerCharacter_0.png-62e790c56b5e9674d77743ecac0a0b59.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f886c08120c32e24b07c6d037331a58f"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionT.png"
-dest_files=["res://.godot/imported/pipeJunctionT.png-020a9c367f37b0789f6aefa6088bf2f4.s3tc.ctex"]
+source_file="res://Assets/Characters/Player/PlayerCharacter_0.png"
+dest_files=["res://.godot/imported/PlayerCharacter_0.png-62e790c56b5e9674d77743ecac0a0b59.s3tc.ctex"]
 
 [params]
 

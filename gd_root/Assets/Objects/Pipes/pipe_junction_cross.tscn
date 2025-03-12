@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmew4hftfph65"]
 
-[ext_resource type="ArrayMesh" uid="uid://cnwuyhvgjmr1f" path="res://Assets/Models/Objects/Pipes/PipeJunctionCross.obj" id="1_auure"]
+[ext_resource type="ArrayMesh" uid="uid://cnwuyhvgjmr1f" path="res://Assets/Models/Objects/Pipes/pipeJunctionCross.obj" id="1_auure"]
 [ext_resource type="Material" uid="uid://cv7yjbhna2624" path="res://Assets/Materials/PipeJunctionCross.tres" id="2_5tv3t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3clgx"]

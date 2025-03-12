@@ -1,11 +1,11 @@
-[gd_scene load_steps=57 format=3 uid="uid://b2dys6xlmewp3"]
+[gd_scene load_steps=57 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_gbl1d"]
 [ext_resource type="Texture2D" uid="uid://bn8cn3li8rmvr" path="res://Textures/Temp Dev Textures/Light/texture_03.png" id="3_hn0jv"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_etr80"]
-[ext_resource type="PackedScene" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
-[ext_resource type="FontFile" path="res://Imports/fonts/kremlin.ttf" id="6_pks4f"]
+[ext_resource type="PackedScene" uid="uid://dqjbnuea3t06a" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
+[ext_resource type="FontFile" uid="uid://yfq8gr7jpx2n" path="res://Imports/fonts/kremlin.ttf" id="6_pks4f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_suoet"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

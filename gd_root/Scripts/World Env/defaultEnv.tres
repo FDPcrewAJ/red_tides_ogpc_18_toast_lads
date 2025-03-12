@@ -1,0 +1,11 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cispr80jd18kp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nmc32"]
+
+[sub_resource type="Sky" id="Sky_jfwn4"]
+sky_material = SubResource("ProceduralSkyMaterial_nmc32")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_jfwn4")
+ambient_light_sky_contribution = 0.0

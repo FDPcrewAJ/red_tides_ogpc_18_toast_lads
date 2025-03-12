@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctmx210mgl7pa"
-path.s3tc="res://.godot/imported/pipeJunctionT.png-020a9c367f37b0789f6aefa6088bf2f4.s3tc.ctex"
+uid="uid://c0cbhgowrb7px"
+path="res://.godot/imported/lightSwitch.png-1f66d8b7dd68c4b8cabf84e8e3739a18.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Pipes/pipeJunctionT.png"
-dest_files=["res://.godot/imported/pipeJunctionT.png-020a9c367f37b0789f6aefa6088bf2f4.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Lightswitch/lightSwitch.png"
+dest_files=["res://.godot/imported/lightSwitch.png-1f66d8b7dd68c4b8cabf84e8e3739a18.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

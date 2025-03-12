@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=22 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Water Movement/water_movement_test.gd" id="1_h7mff"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
 [ext_resource type="PackedScene" uid="uid://bssfh6x5ko83s" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="4_465gm"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00kn4"]
 
@@ -27,7 +28,7 @@ shader_parameter/y_amount = 512.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_1nesq"]
 lightmap_size_hint = Vector2i(252, 252)
 material = SubResource("ShaderMaterial_p8pmp")
-size = Vector2(50, 50)
+size = Vector2(500, 500)
 subdivide_width = 2
 subdivide_depth = 2
 
@@ -45,6 +46,45 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfder"]
+albedo_texture = ExtResource("6_ebpvy")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wmm7g"]
+material = SubResource("StandardMaterial3D_vfder")
+top_radius = 10.0
+bottom_radius = 10.0
+height = 40.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ttpx"]
+albedo_color = Color(0.478431, 0.498039, 0.501961, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_n1fk1"]
+material = SubResource("StandardMaterial3D_0ttpx")
+top_radius = 5.0
+bottom_radius = 5.0
+height = 7.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1bilv"]
+height = 40.0
+radius = 40.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45dlq"]
+albedo_texture = ExtResource("6_ebpvy")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_avsak"]
+material = SubResource("StandardMaterial3D_45dlq")
+top_radius = 40.0
+bottom_radius = 40.0
+height = 40.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g3pi4"]
+height = 2.5
+radius = 45.0
+
 [node name="facility_exterior" type="Node3D"]
 script = ExtResource("1_h7mff")
 
@@ -58,6 +98,9 @@ directional_shadow_fade_start = 0.0
 directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
+[node name="player" parent="." instance=ExtResource("2_o63d5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66678, 2.2784)
+
 [node name="world" type="Node3D" parent="."]
 
 [node name="Water" type="MeshInstance3D" parent="world"]
@@ -65,9 +108,6 @@ mesh = SubResource("PlaneMesh_1nesq")
 skeleton = NodePath("../..")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="world/Water"]
-
-[node name="player" parent="world" instance=ExtResource("2_o63d5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.66678, 2.2784)
 
 [node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -83,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3695, 1.35001, 4.10554)
 curve = SubResource("Curve3D_usqxl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="world/Path3D"]
-transform = Transform3D(0.993127, 0.00447832, -0.116903, -2.32829e-10, 0.999261, 0.0382797, 0.116989, -0.0380168, 0.992401, 1.50411, -0.155705, 15.6342)
+transform = Transform3D(0.993127, 0.00447832, -0.116903, -2.32829e-10, 0.99926, 0.0382797, 0.116989, -0.0380167, 0.9924, 1.50411, -0.155705, 15.6342)
 
 [node name="Box" type="MeshInstance3D" parent="world/Path3D/PathFollow3D"]
 transform = Transform3D(0.993133, 0, 0.116989, 0.00447827, 0.999267, -0.0380166, -0.116903, 0.0382795, 0.992405, 0, 0, 0)
@@ -95,9 +135,64 @@ transform = Transform3D(1, -4.65661e-10, 0, 1.86265e-09, 1, 3.72529e-09, -1.4901
 curve = SubResource("Curve3D_6bf8h")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="world/Path3D/PathFollow3D/Path3D"]
-transform = Transform3D(0.597907, 0.0788036, 0.797681, -3.72529e-09, 0.995154, -0.0983122, -0.801564, 0.0587816, 0.59501, 4.04686, -0.562074, 1.03733)
+transform = Transform3D(0.597907, 0.0788036, 0.797681, -3.72529e-09, 0.995154, -0.0983121, -0.801564, 0.0587816, 0.59501, 4.04686, -0.562074, 1.03733)
 
 [node name="Box" type="MeshInstance3D" parent="world/Path3D/PathFollow3D/Path3D/PathFollow3D"]
 transform = Transform3D(0.687511, -0.0306837, -0.725534, 0.0758481, 0.996684, 0.0297219, 0.722213, -0.0754642, 0.687552, -1.58816, 0.179467, -3.9006)
 mesh = ExtResource("4_465gm")
 skeleton = NodePath("../..")
+
+[node name="mainSupports" type="Node3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)
+
+[node name="support1" type="MeshInstance3D" parent="world/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5.5, 0)
+mesh = SubResource("CylinderMesh_wmm7g")
+
+[node name="support1Extra" type="MeshInstance3D" parent="world/mainSupports/support1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
+mesh = SubResource("CylinderMesh_n1fk1")
+skeleton = NodePath("../..")
+
+[node name="support2" type="MeshInstance3D" parent="world/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.5, 0)
+mesh = SubResource("CylinderMesh_wmm7g")
+
+[node name="support2Extra" type="MeshInstance3D" parent="world/mainSupports/support2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
+mesh = SubResource("CylinderMesh_n1fk1")
+skeleton = NodePath("../..")
+
+[node name="support3" type="MeshInstance3D" parent="world/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5.5, -110)
+mesh = SubResource("CylinderMesh_wmm7g")
+
+[node name="support3Extra" type="MeshInstance3D" parent="world/mainSupports/support3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
+mesh = SubResource("CylinderMesh_n1fk1")
+skeleton = NodePath("../..")
+
+[node name="support4" type="MeshInstance3D" parent="world/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.5, -110)
+mesh = SubResource("CylinderMesh_wmm7g")
+
+[node name="support4Extra" type="MeshInstance3D" parent="world/mainSupports/support4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
+mesh = SubResource("CylinderMesh_n1fk1")
+skeleton = NodePath("../..")
+
+[node name="centerPillar" type="StaticBody3D" parent="world/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
+
+[node name="pillarCol" type="CollisionShape3D" parent="world/mainSupports/centerPillar"]
+shape = SubResource("CylinderShape3D_1bilv")
+
+[node name="pillarMesh" type="MeshInstance3D" parent="world/mainSupports/centerPillar/pillarCol"]
+mesh = SubResource("CylinderMesh_avsak")
+skeleton = NodePath("../..")
+
+[node name="mainCatwalkCol" type="CollisionShape3D" parent="world/mainSupports/centerPillar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("CylinderShape3D_g3pi4")
+
+[node name="mainCatwalkMesh" type="MeshInstance3D" parent="world/mainSupports/centerPillar/mainCatwalkCol"]

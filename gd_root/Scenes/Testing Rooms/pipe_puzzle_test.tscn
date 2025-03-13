@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=28 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Environment" uid="uid://cispr80jd18kp" path="res://Scripts/World Env/defaultEnv.tres" id="1_8fqro"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_ixnkp"]
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="9_kj76a"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="10_vauyr"]
+[ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="11_hwl8q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)
@@ -395,6 +396,9 @@ transform = Transform3D(-1.74846e-08, 0.4, 0, 0.282843, 1.23635e-08, -0.282843, 
 
 [node name="PipeValve4" parent="World/Pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, 0, 0, 0.4, 0.4, 1.74846e-08, 0, 6.99408, 4.48515, 0.00736925)
+
+[node name="pipeJunctionCross" parent="World/Pipes" instance=ExtResource("11_hwl8q")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 3.75535, 1.9267, 0.689219)
 
 [node name="Machines" type="Node3D" parent="World"]
 

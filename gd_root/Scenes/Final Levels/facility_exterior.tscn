@@ -1,5 +1,6 @@
-[gd_scene load_steps=47 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=48 format=3 uid="uid://cu8sd2enacj3e"]
 
+[ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
@@ -184,6 +185,7 @@ material = SubResource("StandardMaterial3D_6god1")
 size = Vector3(60, 45, 80)
 
 [node name="facility_exterior" type="Node3D"]
+script = ExtResource("1_mup67")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gkvph")
@@ -195,13 +197,13 @@ directional_shadow_fade_start = 0.0
 directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
-[node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7457, 3.17834, -41.6063)
-
 [node name="world" type="Node3D" parent="."]
 
 [node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.6057, -0.311629, -43.1465)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, 47.3968)
+
+[node name="player" parent="world/boat" instance=ExtResource("2_o63d5")]
+transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -0.286767, 1.16345, 0.489746)
 
 [node name="Water" type="MeshInstance3D" parent="world"]
 mesh = SubResource("PlaneMesh_1nesq")

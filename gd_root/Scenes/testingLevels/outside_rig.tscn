@@ -26,57 +26,57 @@ points = PackedVector3Array(4, 14.0529, 4, -4, -14.3915, -4, -3.90476, -14.0529,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m1w63"]
 points = PackedVector3Array(4, 14.0529, 4, -4, -14.3915, -4, -3.90476, -14.0529, 4, -4, 14.3915, -4, 4, -14.0529, -3.90476, 4, -14.0529, 4, -3.90476, 14.0529, 4, 4, 14.0529, -3.90476)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bg1s6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f36s"]
 albedo_texture = ExtResource("2_4lqhw")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_t6fl3"]
-material = SubResource("StandardMaterial3D_bg1s6")
+material = SubResource("StandardMaterial3D_0f36s")
 size = Vector3(150, 1, 170)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_woa1r"]
 points = PackedVector3Array(75, 0.5, 85, 75, -0.5, 85, 75, 0.5, -85, -75, 0.5, 85, -75, -0.5, 85, 75, -0.5, -85, -75, 0.5, -85, -75, -0.5, -85)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_notjp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqv45"]
 albedo_texture = ExtResource("2_4lqhw")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_s8t6f"]
-material = SubResource("StandardMaterial3D_notjp")
+material = SubResource("StandardMaterial3D_eqv45")
 size = Vector3(100, 49, 90)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qyv83"]
 points = PackedVector3Array(-50, -25, -45, -50, 25, -45, 50, -25, -45, -50, -25, 45, -50, 25, 45, 50, 25, -45, 50, -25, 45, 50, 25, 45)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eyfu8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s3wbe"]
 albedo_color = Color(0.720467, 0.720468, 0.720467, 1)
 albedo_texture = ExtResource("2_4lqhw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_io138"]
-material = SubResource("StandardMaterial3D_eyfu8")
+material = SubResource("StandardMaterial3D_s3wbe")
 size = Vector3(50, 100, 100)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b16r8"]
 points = PackedVector3Array(25, 50, 50, -25, 50, 50, 25, -50, 50, 25, 50, -50, -25, 50, -50, -25, -50, 50, 25, -50, -50, -25, -50, -50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ies5r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y3sh"]
 albedo_color = Color(0.721569, 0.721569, 0.721569, 1)
 albedo_texture = ExtResource("2_4lqhw")
 
 [sub_resource type="PrismMesh" id="PrismMesh_5vhtl"]
-material = SubResource("StandardMaterial3D_ies5r")
+material = SubResource("StandardMaterial3D_3y3sh")
 left_to_right = 0.0
 size = Vector3(30, 50.5, 100)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p6dc0"]
 points = PackedVector3Array(-15, -25.25, -50, 15, -25.25, -50, -15, -25.25, 50, -15, 25.25, -50, 15, -25.25, 50, -15, 25.25, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rghp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucuhe"]
 albedo_color = Color(0.721569, 0.721569, 0.721569, 1)
 albedo_texture = ExtResource("2_4lqhw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_soymt"]
-material = SubResource("StandardMaterial3D_5rghp")
+material = SubResource("StandardMaterial3D_ucuhe")
 size = Vector3(30, 49, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kxipb"]
@@ -91,12 +91,12 @@ size = Vector3(19, 39, 4)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_grndr"]
 data = PackedVector3Array(-9.5, 19.5, 2, 9.5, 19.5, 2, -9.5, -19.5, 2, 9.5, 19.5, 2, 9.5, -19.5, 2, -9.5, -19.5, 2, 9.5, 19.5, -2, -9.5, 19.5, -2, 9.5, -19.5, -2, -9.5, 19.5, -2, -9.5, -19.5, -2, 9.5, -19.5, -2, 9.5, 19.5, 2, 9.5, 19.5, -2, 9.5, -19.5, 2, 9.5, 19.5, -2, 9.5, -19.5, -2, 9.5, -19.5, 2, -9.5, 19.5, -2, -9.5, 19.5, 2, -9.5, -19.5, -2, -9.5, 19.5, 2, -9.5, -19.5, 2, -9.5, -19.5, -2, 9.5, 19.5, 2, -9.5, 19.5, 2, 9.5, 19.5, -2, -9.5, 19.5, 2, -9.5, 19.5, -2, 9.5, 19.5, -2, -9.5, -19.5, 2, 9.5, -19.5, 2, -9.5, -19.5, -2, 9.5, -19.5, 2, 9.5, -19.5, -2, -9.5, -19.5, -2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfjq0"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvyh2"]
 albedo_texture = ExtResource("4_jgbfn")
 uv1_triplanar = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_cqq36"]
-material = SubResource("StandardMaterial3D_vfjq0")
+material = SubResource("StandardMaterial3D_cvyh2")
 radius = 25.0
 height = 50.0
 rings = 5
@@ -138,21 +138,21 @@ size = Vector3(1, 1, 5)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gshbn"]
 points = PackedVector3Array(0.5, -0.5, 2.5, -0.5, 0.5, 2.5, -0.5, -0.5, 2.5, 0.5, -0.5, -2.5, -0.5, 0.5, -2.5, -0.5, -0.5, -2.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r802i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yfkp"]
 albedo_texture = ExtResource("2_4lqhw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_1eivc"]
-material = SubResource("StandardMaterial3D_r802i")
+material = SubResource("StandardMaterial3D_0yfkp")
 size = Vector3(50, 70, 100)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ik6c0"]
 points = PackedVector3Array(-25, -35, -50, 25, -35, -50, -25, -35, 50, -25, 35, -50, 25, 35, -50, 25, -35, 50, -25, 35, 50, 25, 35, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ukij"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfnvj"]
 albedo_texture = ExtResource("2_4lqhw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_k0168"]
-material = SubResource("StandardMaterial3D_1ukij")
+material = SubResource("StandardMaterial3D_nfnvj")
 size = Vector3(5, 100, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4g5bw"]
@@ -186,7 +186,7 @@ albedo_texture = ExtResource("7_gh0qf")
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_psxoa"]
 material = SubResource("StandardMaterial3D_xrkg5")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vka"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_657tx"]
 render_priority = 0
 shader = ExtResource("10_h00yj")
 shader_parameter/color1 = Color(0, 0.27451, 0.376471, 1)
@@ -196,7 +196,7 @@ shader_parameter/x_amount = 512.0
 shader_parameter/y_amount = 512.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2grpb"]
-material = SubResource("ShaderMaterial_u4vka")
+material = SubResource("ShaderMaterial_657tx")
 size = Vector2(500, 500)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d5edg"]

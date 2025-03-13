@@ -211,6 +211,7 @@ environment = SubResource("Environment_1s8gg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
+directional_shadow_max_distance = 1000.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.580703, -0.198331, 0.789588, 0, 0.969872, 0.243615, -0.814116, -0.141468, 0.563208, 42.297, 118, 191)
@@ -423,6 +424,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 24, -10)
 [node name="extMainWall" type="MeshInstance3D" parent="oilRig/mainBuilding/extentionWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 6)
 mesh = SubResource("BoxMesh_wkq7f")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="oilRig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.122002, 13.7321, -51.1475)
+light_color = Color(1, 0.172549, 0.0745098, 1)
+light_energy = 8.758
+omni_range = 10.1151
 
 [node name="boat" parent="." instance=ExtResource("10_kvm1t")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.6183, -0.300161, 107.543)

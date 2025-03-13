@@ -1,11 +1,14 @@
-[gd_scene load_steps=34 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=47 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
+[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="7_r818k"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
+[ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1yhw"]
 
@@ -122,12 +125,63 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_3qply")
 size = Vector3(130, 5, 130)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcys2"]
+albedo_texture = ExtResource("7_r818k")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_gq6kj"]
+material = SubResource("StandardMaterial3D_jcys2")
 size = Vector3(50, 50, 110)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbuba"]
+albedo_texture = ExtResource("7_r818k")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_pu1m5"]
+material = SubResource("StandardMaterial3D_nbuba")
+size = Vector3(30, 20, 110)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksvtp"]
+albedo_texture = ExtResource("7_r818k")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
 [sub_resource type="PrismMesh" id="PrismMesh_yt76b"]
+material = SubResource("StandardMaterial3D_ksvtp")
 left_to_right = 0.0
 size = Vector3(20, 20, 110)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfbj7"]
+albedo_texture = ExtResource("8_6dvrx")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fe38a"]
+material = SubResource("StandardMaterial3D_tfbj7")
+top_radius = 12.0
+bottom_radius = 12.0
+height = 12.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bue7y"]
+albedo_texture = ExtResource("7_y44iw")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_5q6ys"]
+material = SubResource("StandardMaterial3D_bue7y")
+radius = 25.0
+height = 50.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6god1"]
+albedo_texture = ExtResource("8_gwiof")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ygsum"]
+material = SubResource("StandardMaterial3D_6god1")
+size = Vector3(60, 45, 80)
 
 [node name="facility_exterior" type="Node3D"]
 
@@ -142,12 +196,12 @@ directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7457, 3.17834, -41.4598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7457, 3.17834, -41.6063)
 
 [node name="world" type="Node3D" parent="."]
 
 [node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.6057, -0.311629, -43)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.6057, -0.311629, -43.1465)
 
 [node name="Water" type="MeshInstance3D" parent="world"]
 mesh = SubResource("PlaneMesh_1nesq")
@@ -317,9 +371,31 @@ mesh = SubResource("BoxMesh_lqa6c")
 [node name="towerWalls" type="Node3D" parent="world/oilRig/mainBuilding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 28, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls"]
+[node name="mainWall" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls"]
 mesh = SubResource("BoxMesh_gq6kj")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls"]
+[node name="mainWall2" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 35, 0)
+mesh = SubResource("BoxMesh_pu1m5")
+
+[node name="mainWallSlant" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 35, 0)
 mesh = SubResource("PrismMesh_yt76b")
+
+[node name="Dome" type="Node3D" parent="world/oilRig/mainBuilding/towerWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 46, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls/Dome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("CylinderMesh_fe38a")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/oilRig/mainBuilding/towerWalls/Dome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
+mesh = SubResource("SphereMesh_5q6ys")
+
+[node name="extentionWalls" type="Node3D" parent="world/oilRig/mainBuilding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 24, -10)
+
+[node name="extMainWall" type="MeshInstance3D" parent="world/oilRig/mainBuilding/extentionWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 6)
+mesh = SubResource("BoxMesh_ygsum")

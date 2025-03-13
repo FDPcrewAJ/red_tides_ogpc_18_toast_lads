@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi83kmoysb530"
-path.s3tc="res://.godot/imported/v2_c_wall_undamaged.png-96f293c9a434613cebdccb51fbb48966.s3tc.ctex"
+uid="uid://bqftjmygmi6qc"
+path.s3tc="res://.godot/imported/v1_c_wall_undamage.png-f776f0e8a198a718418cf1e43248ea21.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Interior Textures/Walls/v2_c_wall_undamaged.png"
-dest_files=["res://.godot/imported/v2_c_wall_undamaged.png-96f293c9a434613cebdccb51fbb48966.s3tc.ctex"]
+source_file="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png"
+dest_files=["res://.godot/imported/v1_c_wall_undamage.png-f776f0e8a198a718418cf1e43248ea21.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bsc4yw264kqtk" path="res://Assets/Models/Objects/Doors/doorFacility.obj" id="1_ndpgk"]
 [ext_resource type="Material" uid="uid://co7oqg42mkhwi" path="res://Assets/Materials/doorFacility.tres" id="2_667hb"]
 
-[node name="DoorFacility" type="CSGMesh3D"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+[node name="wood_door_closed" type="CSGMesh3D"]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 mesh = ExtResource("1_ndpgk")
 material = ExtResource("2_667hb")

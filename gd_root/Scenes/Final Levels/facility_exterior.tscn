@@ -36,22 +36,22 @@ size = Vector2(500, 500)
 subdivide_width = 2
 subdivide_depth = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfder"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxa3n"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_wmm7g"]
-material = SubResource("StandardMaterial3D_vfder")
+material = SubResource("StandardMaterial3D_dxa3n")
 top_radius = 10.0
 bottom_radius = 10.0
 height = 40.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ttpx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg0ep"]
 albedo_color = Color(0.478431, 0.498039, 0.501961, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n1fk1"]
-material = SubResource("StandardMaterial3D_0ttpx")
+material = SubResource("StandardMaterial3D_mg0ep")
 top_radius = 5.0
 bottom_radius = 5.0
 height = 7.0
@@ -60,13 +60,13 @@ height = 7.0
 height = 40.0
 radius = 40.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45dlq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eovev"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_avsak"]
-material = SubResource("StandardMaterial3D_45dlq")
+material = SubResource("StandardMaterial3D_eovev")
 top_radius = 40.0
 bottom_radius = 40.0
 height = 50.0
@@ -75,14 +75,14 @@ height = 50.0
 height = 0.5
 radius = 50.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyb3d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jofcr"]
 transparency = 1
 albedo_texture = ExtResource("7_y44iw")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_o8e6n"]
-material = SubResource("StandardMaterial3D_pyb3d")
+material = SubResource("StandardMaterial3D_jofcr")
 top_radius = 50.0
 bottom_radius = 50.0
 height = 0.5
@@ -90,25 +90,25 @@ height = 0.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
 size = Vector3(3, 0.5, 15.6611)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8pwb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlywa"]
 transparency = 1
 albedo_texture = ExtResource("7_y44iw")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_881vr"]
-material = SubResource("StandardMaterial3D_j8pwb")
+material = SubResource("StandardMaterial3D_tlywa")
 size = Vector3(3, 0.3, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vjulk"]
-material = SubResource("StandardMaterial3D_j8pwb")
+material = SubResource("StandardMaterial3D_tlywa")
 size = Vector3(3, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hrsm"]
 size = Vector3(3, 0.4, 3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aow4s"]
-material = SubResource("StandardMaterial3D_j8pwb")
+material = SubResource("StandardMaterial3D_tlywa")
 size = Vector3(8, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
@@ -117,71 +117,71 @@ size = Vector3(3, 0.4, 8)
 [sub_resource type="BoxShape3D" id="BoxShape3D_rm2wl"]
 size = Vector3(1.75, 2.75, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qply"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n247r"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_lqa6c"]
-material = SubResource("StandardMaterial3D_3qply")
+material = SubResource("StandardMaterial3D_n247r")
 size = Vector3(130, 5, 130)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcys2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h1rw"]
 albedo_texture = ExtResource("7_r818k")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_gq6kj"]
-material = SubResource("StandardMaterial3D_jcys2")
+material = SubResource("StandardMaterial3D_6h1rw")
 size = Vector3(50, 50, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbuba"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gpan"]
 albedo_texture = ExtResource("7_r818k")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_pu1m5"]
-material = SubResource("StandardMaterial3D_nbuba")
+material = SubResource("StandardMaterial3D_0gpan")
 size = Vector3(30, 20, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksvtp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1sia"]
 albedo_texture = ExtResource("7_r818k")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="PrismMesh" id="PrismMesh_yt76b"]
-material = SubResource("StandardMaterial3D_ksvtp")
+material = SubResource("StandardMaterial3D_v1sia")
 left_to_right = 0.0
 size = Vector3(20, 20, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfbj7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q10sx"]
 albedo_texture = ExtResource("8_6dvrx")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_fe38a"]
-material = SubResource("StandardMaterial3D_tfbj7")
+material = SubResource("StandardMaterial3D_q10sx")
 top_radius = 12.0
 bottom_radius = 12.0
 height = 12.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bue7y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e43s3"]
 albedo_texture = ExtResource("7_y44iw")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_5q6ys"]
-material = SubResource("StandardMaterial3D_bue7y")
+material = SubResource("StandardMaterial3D_e43s3")
 radius = 25.0
 height = 50.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6god1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6rbi"]
 albedo_texture = ExtResource("8_gwiof")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ygsum"]
-material = SubResource("StandardMaterial3D_6god1")
+material = SubResource("StandardMaterial3D_i6rbi")
 size = Vector3(60, 45, 80)
 
 [node name="facility_exterior" type="Node3D"]

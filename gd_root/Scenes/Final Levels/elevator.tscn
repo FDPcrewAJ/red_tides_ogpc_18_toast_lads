@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcrwco2xn1qus"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ml41g"]
+
+[node name="Elevator" type="Node3D"]
+
+[node name="StaticBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_ml41g")

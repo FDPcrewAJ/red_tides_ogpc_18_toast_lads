@@ -25,3 +25,11 @@ func _on_pipe_puzzle_pressed() -> void:
 
 func _on_dial_puzzle_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/testingLevels/dial_puzzle.tscn")
+
+
+func _on_facility_exterior_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Final Levels/facility_exterior.tscn")
+
+
+func _on_underwater_floor_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Final Levels/underwater_floor.tscn")

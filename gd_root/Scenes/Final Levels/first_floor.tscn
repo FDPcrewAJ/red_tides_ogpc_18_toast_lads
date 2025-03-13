@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cj5pgxmo6cd4m"]
+
+[node name="first_floor" type="Node3D"]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world"]

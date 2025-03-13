@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://dld7f50f4ron0"]
+
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
+[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_8g0uk"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_qmcjf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hdvv"]
+size = Vector3(40, 1, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w22b8"]
+albedo_texture = ExtResource("2_8g0uk")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6lqty"]
+material = SubResource("StandardMaterial3D_w22b8")
+size = Vector2(40, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qbqy"]
+albedo_texture = ExtResource("3_qmcjf")
+rim = 0.0
+uv1_scale = Vector3(0.15, 0.15, 0.15)
+uv1_triplanar = true
+proximity_fade_distance = 0.01
+
+[node name="underwater_floor" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_tvhvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="floor" type="StaticBody3D" parent="world"]
+
+[node name="floorCol" type="CollisionShape3D" parent="world/floor"]
+shape = SubResource("BoxShape3D_2hdvv")
+
+[node name="floorMesh" type="MeshInstance3D" parent="world/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_6lqty")
+
+[node name="exteriorWall" type="CSGCombiner3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+operation = 2
+use_collision = true
+collision_mask = 7
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world/exteriorWall"]
+size = Vector3(45, 10, 45)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="world/exteriorWall"]
+operation = 2
+radius = 20.0
+height = 12.0
+sides = 32
+material = SubResource("StandardMaterial3D_0qbqy")

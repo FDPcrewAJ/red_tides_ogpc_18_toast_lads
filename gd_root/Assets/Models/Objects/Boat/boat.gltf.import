@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cda44pm8p6sko"
-path="res://.godot/imported/Boat.gltf-7422ccfc4973325db481a2e4c59f6a31.scn"
+uid="uid://1hchnovgiiof"
+path="res://.godot/imported/boat.gltf-f881e631cb9927d12676972b0657e060.scn"
 
 [deps]
 
-source_file="res://Assets/Objects/Boat/Boat.gltf"
-dest_files=["res://.godot/imported/Boat.gltf-7422ccfc4973325db481a2e4c59f6a31.scn"]
+source_file="res://Assets/Models/Objects/Boat/boat.gltf"
+dest_files=["res://.godot/imported/boat.gltf-f881e631cb9927d12676972b0657e060.scn"]
 
 [params]
 

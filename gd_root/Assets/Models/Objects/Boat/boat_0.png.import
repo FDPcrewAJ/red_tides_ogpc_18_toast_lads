@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hy6bccxo2nwg"
-path.s3tc="res://.godot/imported/boatTexture.png-8176f474e81c6f67eae00cf66bd78717.s3tc.ctex"
+uid="uid://da8cb6nn5qsof"
+path.s3tc="res://.godot/imported/boat_0.png-595cadb119aefcc6186bf934aad370ee.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "dfb3fc97fea58b5b28a1174c7b1b51aa"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Boat/boatTexture.png"
-dest_files=["res://.godot/imported/boatTexture.png-8176f474e81c6f67eae00cf66bd78717.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Boat/boat_0.png"
+dest_files=["res://.godot/imported/boat_0.png-595cadb119aefcc6186bf934aad370ee.s3tc.ctex"]
 
 [params]
 

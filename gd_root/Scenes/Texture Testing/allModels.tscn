@@ -33,8 +33,8 @@
 [ext_resource type="ArrayMesh" uid="uid://7o2smkr75rxh" path="res://Assets/Models/Objects/Lights/industialLight2.obj" id="35_ryqe0"]
 [ext_resource type="Material" uid="uid://cxujgew8xptb1" path="res://Assets/Materials/industrialLight2.tres" id="36_f61us"]
 [ext_resource type="Material" uid="uid://b7wv6qr71u5f1" path="res://Assets/Materials/toaster.tres" id="36_foe0e"]
+[ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Assets/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
-[ext_resource type="PackedScene" uid="uid://cda44pm8p6sko" path="res://Assets/Objects/Boat/Boat.gltf" id="37_v4i8u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj5ya"]
 albedo_texture = ExtResource("2_cs0yj")
@@ -149,5 +149,5 @@ transform = Transform3D(30.3294, 0, 0, 0, 1.00078, 0, 0, 0, 29.7303, -1.30502, 0
 mesh = SubResource("PlaneMesh_a2lou")
 material = SubResource("StandardMaterial3D_05tm8")
 
-[node name="blockbench_export" parent="." instance=ExtResource("37_v4i8u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37823, 0, -6.11243)
+[node name="boat" parent="." instance=ExtResource("36_hrt4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55013, 0, -6.09034)

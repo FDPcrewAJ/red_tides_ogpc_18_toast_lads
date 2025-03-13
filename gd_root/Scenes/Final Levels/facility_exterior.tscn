@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
-[ext_resource type="PackedScene" uid="uid://bssfh6x5ko83s" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
+[ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
@@ -125,24 +125,18 @@ directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7457, 3.36194, -41.6394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7457, 3.17834, -41.4598)
 
 [node name="world" type="Node3D" parent="."]
+
+[node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.6057, -0.311629, -43)
 
 [node name="Water" type="MeshInstance3D" parent="world"]
 mesh = SubResource("PlaneMesh_1nesq")
 skeleton = NodePath("../..")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="world/Water"]
-
-[node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 19.7457, -0.304836, -43.9178)
-
-[node name="boat2" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 5.46677, 0, 0)
-
-[node name="boat3" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 11.7428, 0, 0)
 
 [node name="mainSupports" type="Node3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)

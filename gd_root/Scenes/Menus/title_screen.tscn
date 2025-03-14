@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=53 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_etr80"]
@@ -55,152 +55,174 @@ shader_parameter/y_amount = 1024.0
 material = SubResource("ShaderMaterial_u4vka")
 size = Vector2(2500, 2500)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfder"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxa3n"]
 albedo_texture = ExtResource("1_bhrb0")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_t2qnc"]
-material = SubResource("StandardMaterial3D_vfder")
+[sub_resource type="CylinderMesh" id="CylinderMesh_p85w8"]
+material = SubResource("StandardMaterial3D_dxa3n")
 top_radius = 10.0
 bottom_radius = 10.0
 height = 40.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ttpx"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg0ep"]
 albedo_color = Color(0.478431, 0.498039, 0.501961, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_6k0x5"]
-material = SubResource("StandardMaterial3D_0ttpx")
+[sub_resource type="CylinderMesh" id="CylinderMesh_e56sv"]
+material = SubResource("StandardMaterial3D_mg0ep")
 top_radius = 5.0
 bottom_radius = 5.0
 height = 7.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_fx44n"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p1ey8"]
 height = 40.0
 radius = 40.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45dlq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eovev"]
 albedo_texture = ExtResource("1_bhrb0")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_kp4qp"]
-material = SubResource("StandardMaterial3D_45dlq")
+[sub_resource type="CylinderMesh" id="CylinderMesh_wqn86"]
+material = SubResource("StandardMaterial3D_eovev")
 top_radius = 40.0
 bottom_radius = 40.0
 height = 50.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_hhcvh"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l20bv"]
 height = 0.5
 radius = 50.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyb3d"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jofcr"]
 transparency = 1
 albedo_texture = ExtResource("5_owl5n")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_veu6m"]
-material = SubResource("StandardMaterial3D_pyb3d")
+[sub_resource type="CylinderMesh" id="CylinderMesh_cd81k"]
+material = SubResource("StandardMaterial3D_jofcr")
 top_radius = 50.0
 bottom_radius = 50.0
 height = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8jwih"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_gojme"]
 size = Vector3(3, 0.5, 15.6611)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j8pwb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlywa"]
 transparency = 1
 albedo_texture = ExtResource("5_owl5n")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_5pi0o"]
-material = SubResource("StandardMaterial3D_j8pwb")
+[sub_resource type="BoxMesh" id="BoxMesh_1rbqr"]
+material = SubResource("StandardMaterial3D_tlywa")
 size = Vector3(3, 0.3, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_wgh0y"]
-material = SubResource("StandardMaterial3D_j8pwb")
+[sub_resource type="BoxMesh" id="BoxMesh_ek6ya"]
+material = SubResource("StandardMaterial3D_tlywa")
 size = Vector3(3, 0.3, 3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uvpa5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_i1p0t"]
 size = Vector3(3, 0.4, 3)
 
-[sub_resource type="BoxMesh" id="BoxMesh_iednt"]
-material = SubResource("StandardMaterial3D_j8pwb")
+[sub_resource type="BoxMesh" id="BoxMesh_b7ey8"]
+material = SubResource("StandardMaterial3D_tlywa")
 size = Vector3(8, 0.3, 3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yfug5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j4gf"]
 size = Vector3(3, 0.4, 8)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kpua1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xf8mr"]
 size = Vector3(1.75, 2.75, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qply"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n247r"]
 albedo_texture = ExtResource("1_bhrb0")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_cnmaj"]
-material = SubResource("StandardMaterial3D_3qply")
+[sub_resource type="BoxMesh" id="BoxMesh_kdkmc"]
+material = SubResource("StandardMaterial3D_n247r")
 size = Vector3(130, 5, 130)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcys2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h1rw"]
 albedo_texture = ExtResource("7_pepri")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_cnk8r"]
-material = SubResource("StandardMaterial3D_jcys2")
+[sub_resource type="BoxMesh" id="BoxMesh_tbxf4"]
+material = SubResource("StandardMaterial3D_6h1rw")
 size = Vector3(50, 50, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbuba"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gpan"]
 albedo_texture = ExtResource("7_pepri")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_76qov"]
-material = SubResource("StandardMaterial3D_nbuba")
+[sub_resource type="BoxMesh" id="BoxMesh_xd7l8"]
+material = SubResource("StandardMaterial3D_0gpan")
 size = Vector3(30, 20, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksvtp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1sia"]
 albedo_texture = ExtResource("7_pepri")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
-[sub_resource type="PrismMesh" id="PrismMesh_beay1"]
-material = SubResource("StandardMaterial3D_ksvtp")
+[sub_resource type="PrismMesh" id="PrismMesh_v64yo"]
+material = SubResource("StandardMaterial3D_v1sia")
 left_to_right = 0.0
 size = Vector3(20, 20, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfbj7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q10sx"]
 albedo_texture = ExtResource("8_waxk8")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_v6tdf"]
-material = SubResource("StandardMaterial3D_tfbj7")
+[sub_resource type="CylinderMesh" id="CylinderMesh_cs1sj"]
+material = SubResource("StandardMaterial3D_q10sx")
 top_radius = 12.0
 bottom_radius = 12.0
 height = 12.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bue7y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e43s3"]
 albedo_texture = ExtResource("5_owl5n")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
-[sub_resource type="SphereMesh" id="SphereMesh_3lh1n"]
-material = SubResource("StandardMaterial3D_bue7y")
+[sub_resource type="SphereMesh" id="SphereMesh_7w5l5"]
+material = SubResource("StandardMaterial3D_e43s3")
 radius = 25.0
 height = 50.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6god1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xcj2y"]
+albedo_color = Color(0.851769, 0.851769, 0.851769, 1)
+albedo_texture = ExtResource("7_pepri")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_3du7c"]
+material = SubResource("StandardMaterial3D_xcj2y")
+size = Vector3(5, 70, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d261x"]
+material = SubResource("StandardMaterial3D_xcj2y")
+size = Vector3(5, 50, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t23pt"]
+material = SubResource("StandardMaterial3D_xcj2y")
+size = Vector3(5, 65, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xe1cx"]
+material = SubResource("StandardMaterial3D_xcj2y")
+size = Vector3(5, 48, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6rbi"]
 albedo_texture = ExtResource("9_u6wbv")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_wkq7f"]
-material = SubResource("StandardMaterial3D_6god1")
+[sub_resource type="BoxMesh" id="BoxMesh_cwf6l"]
+material = SubResource("StandardMaterial3D_i6rbi")
 size = Vector3(60, 45, 80)
 
 [node name="TitleScreen" type="Node3D"]
@@ -233,203 +255,300 @@ theme_override_fonts/font = ExtResource("6_pks4f")
 theme_override_font_sizes/font_size = 200
 text = "rEd TidEs"
 
-[node name="oilRig" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.7131, 0, 67.2892)
+[node name="boat" parent="." instance=ExtResource("10_kvm1t")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.6183, -0.300161, 107.543)
 
-[node name="mainSupports" type="Node3D" parent="oilRig"]
+[node name="facilityModel" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81, 0, 67)
+
+[node name="mainSupports" type="Node3D" parent="facilityModel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)
 
-[node name="support1" type="MeshInstance3D" parent="oilRig/mainSupports"]
+[node name="support1" type="MeshInstance3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5.5, 0)
-mesh = SubResource("CylinderMesh_t2qnc")
+mesh = SubResource("CylinderMesh_p85w8")
 
-[node name="support1Extra" type="MeshInstance3D" parent="oilRig/mainSupports/support1"]
+[node name="support1Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_6k0x5")
+mesh = SubResource("CylinderMesh_e56sv")
 skeleton = NodePath("../..")
 
-[node name="support2" type="MeshInstance3D" parent="oilRig/mainSupports"]
+[node name="support2" type="MeshInstance3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.5, 0)
-mesh = SubResource("CylinderMesh_t2qnc")
+mesh = SubResource("CylinderMesh_p85w8")
 
-[node name="support2Extra" type="MeshInstance3D" parent="oilRig/mainSupports/support2"]
+[node name="support2Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_6k0x5")
+mesh = SubResource("CylinderMesh_e56sv")
 skeleton = NodePath("../..")
 
-[node name="support3" type="MeshInstance3D" parent="oilRig/mainSupports"]
+[node name="support3" type="MeshInstance3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5.5, -110)
-mesh = SubResource("CylinderMesh_t2qnc")
+mesh = SubResource("CylinderMesh_p85w8")
 
-[node name="support3Extra" type="MeshInstance3D" parent="oilRig/mainSupports/support3"]
+[node name="support3Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_6k0x5")
+mesh = SubResource("CylinderMesh_e56sv")
 skeleton = NodePath("../..")
 
-[node name="support4" type="MeshInstance3D" parent="oilRig/mainSupports"]
+[node name="support4" type="MeshInstance3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.5, -110)
-mesh = SubResource("CylinderMesh_t2qnc")
+mesh = SubResource("CylinderMesh_p85w8")
 
-[node name="support4Extra" type="MeshInstance3D" parent="oilRig/mainSupports/support4"]
+[node name="support4Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_6k0x5")
+mesh = SubResource("CylinderMesh_e56sv")
 skeleton = NodePath("../..")
 
-[node name="centerPillar" type="StaticBody3D" parent="oilRig/mainSupports"]
+[node name="centerPillar" type="StaticBody3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
 
-[node name="pillarCol" type="CollisionShape3D" parent="oilRig/mainSupports/centerPillar"]
-shape = SubResource("CylinderShape3D_fx44n")
+[node name="pillarCol" type="CollisionShape3D" parent="facilityModel/mainSupports/centerPillar"]
+shape = SubResource("CylinderShape3D_p1ey8")
 
-[node name="pillarMesh" type="MeshInstance3D" parent="oilRig/mainSupports/centerPillar/pillarCol"]
-mesh = SubResource("CylinderMesh_kp4qp")
+[node name="pillarMesh" type="MeshInstance3D" parent="facilityModel/mainSupports/centerPillar/pillarCol"]
+mesh = SubResource("CylinderMesh_wqn86")
 skeleton = NodePath("../..")
 
-[node name="mainCatwalkCol" type="CollisionShape3D" parent="oilRig/mainSupports/centerPillar"]
+[node name="mainCatwalkCol" type="CollisionShape3D" parent="facilityModel/mainSupports/centerPillar"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
-shape = SubResource("CylinderShape3D_hhcvh")
+shape = SubResource("CylinderShape3D_l20bv")
 
-[node name="mainCatwalkMesh" type="MeshInstance3D" parent="oilRig/mainSupports/centerPillar/mainCatwalkCol"]
-mesh = SubResource("CylinderMesh_veu6m")
+[node name="mainCatwalkMesh" type="MeshInstance3D" parent="facilityModel/mainSupports/centerPillar/mainCatwalkCol"]
+mesh = SubResource("CylinderMesh_cd81k")
 
-[node name="stairs" type="Node3D" parent="oilRig/mainSupports"]
+[node name="stairs" type="Node3D" parent="facilityModel/mainSupports"]
 
-[node name="staircase" type="StaticBody3D" parent="oilRig/mainSupports/stairs"]
+[node name="staircase" type="StaticBody3D" parent="facilityModel/mainSupports/stairs"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -4.90707, -3.60119)
 
-[node name="stairsCol" type="CollisionShape3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stairsCol" type="CollisionShape3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, -1.46983e-09, 7.19183e-10, 1.63605e-09, 0.889855, -0.456244, 3.06279e-11, 0.456244, 0.889855, 0, -3.6443, 8.35842)
-shape = SubResource("BoxShape3D_8jwih")
+shape = SubResource("BoxShape3D_gojme")
 
-[node name="stair2" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair2" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 2)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair3" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair3" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 3)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair4" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair4" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 4)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair5" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair5" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 5)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair6" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair6" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 6)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair7" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair7" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 7)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair8" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair8" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 8)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair9" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair9" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 9)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair10" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair10" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 10)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair11" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair11" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 11)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair12" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair12" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 12)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair13" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair13" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 13)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stair14" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/staircase"]
+[node name="stair14" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/staircase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 14)
-mesh = SubResource("BoxMesh_5pi0o")
+mesh = SubResource("BoxMesh_1rbqr")
 
-[node name="stairsTop" type="StaticBody3D" parent="oilRig/mainSupports/stairs"]
+[node name="stairsTop" type="StaticBody3D" parent="facilityModel/mainSupports/stairs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90707, -4.60119)
 
-[node name="stair" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/stairsTop"]
+[node name="stair" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/stairsTop"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
-mesh = SubResource("BoxMesh_wgh0y")
+mesh = SubResource("BoxMesh_ek6ya")
 skeleton = NodePath("../../staircase")
 
-[node name="stairsTopCol" type="CollisionShape3D" parent="oilRig/mainSupports/stairs/stairsTop"]
+[node name="stairsTopCol" type="CollisionShape3D" parent="facilityModel/mainSupports/stairs/stairsTop"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
-shape = SubResource("BoxShape3D_uvpa5")
+shape = SubResource("BoxShape3D_i1p0t")
 
-[node name="stairsBottom" type="StaticBody3D" parent="oilRig/mainSupports/stairs"]
+[node name="stairsBottom" type="StaticBody3D" parent="facilityModel/mainSupports/stairs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -12, -5.601)
 
-[node name="stair" type="MeshInstance3D" parent="oilRig/mainSupports/stairs/stairsBottom"]
+[node name="stair" type="MeshInstance3D" parent="facilityModel/mainSupports/stairs/stairsBottom"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
-mesh = SubResource("BoxMesh_iednt")
+mesh = SubResource("BoxMesh_b7ey8")
 skeleton = NodePath("../../staircase")
 
-[node name="stairsTopCol" type="CollisionShape3D" parent="oilRig/mainSupports/stairs/stairsBottom"]
+[node name="stairsTopCol" type="CollisionShape3D" parent="facilityModel/mainSupports/stairs/stairsBottom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
-shape = SubResource("BoxShape3D_yfug5")
+shape = SubResource("BoxShape3D_5j4gf")
 
-[node name="exteriorDoor" type="StaticBody3D" parent="oilRig/mainSupports"]
+[node name="exteriorDoor" type="StaticBody3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.79761, -14.9568)
 
-[node name="doorCol" type="CollisionShape3D" parent="oilRig/mainSupports/exteriorDoor"]
+[node name="doorCol" type="CollisionShape3D" parent="facilityModel/mainSupports/exteriorDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_kpua1")
+shape = SubResource("BoxShape3D_xf8mr")
 
-[node name="wood_door_closed" parent="oilRig/mainSupports/exteriorDoor" instance=ExtResource("6_r08ag")]
+[node name="wood_door_closed" parent="facilityModel/mainSupports/exteriorDoor" instance=ExtResource("6_r08ag")]
 
-[node name="mainBuilding" type="Node3D" parent="oilRig"]
+[node name="mainBuilding" type="Node3D" parent="facilityModel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.5, -91)
 
-[node name="floor" type="MeshInstance3D" parent="oilRig/mainBuilding"]
+[node name="floor" type="MeshInstance3D" parent="facilityModel/mainBuilding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-mesh = SubResource("BoxMesh_cnmaj")
+mesh = SubResource("BoxMesh_kdkmc")
 
-[node name="towerWalls" type="Node3D" parent="oilRig/mainBuilding"]
+[node name="towerWalls" type="Node3D" parent="facilityModel/mainBuilding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 28, 0)
 
-[node name="mainWall" type="MeshInstance3D" parent="oilRig/mainBuilding/towerWalls"]
-mesh = SubResource("BoxMesh_cnk8r")
+[node name="mainWall" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls"]
+mesh = SubResource("BoxMesh_tbxf4")
 
-[node name="mainWall2" type="MeshInstance3D" parent="oilRig/mainBuilding/towerWalls"]
+[node name="mainWall2" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 35, 0)
-mesh = SubResource("BoxMesh_76qov")
+mesh = SubResource("BoxMesh_xd7l8")
 
-[node name="mainWallSlant" type="MeshInstance3D" parent="oilRig/mainBuilding/towerWalls"]
+[node name="mainWallSlant" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 35, 0)
-mesh = SubResource("PrismMesh_beay1")
+mesh = SubResource("PrismMesh_v64yo")
 
-[node name="Dome" type="Node3D" parent="oilRig/mainBuilding/towerWalls"]
+[node name="Dome" type="Node3D" parent="facilityModel/mainBuilding/towerWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 46, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="oilRig/mainBuilding/towerWalls/Dome"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/Dome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-mesh = SubResource("CylinderMesh_v6tdf")
+mesh = SubResource("CylinderMesh_cs1sj")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="oilRig/mainBuilding/towerWalls/Dome"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/Dome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
-mesh = SubResource("SphereMesh_3lh1n")
+mesh = SubResource("SphereMesh_7w5l5")
 
-[node name="extentionWalls" type="Node3D" parent="oilRig/mainBuilding"]
+[node name="detailPillars" type="Node3D" parent="facilityModel/mainBuilding/towerWalls"]
+
+[node name="towerPillar" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, 56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar2" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, 56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar3" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 11, 56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar4" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 11, 56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar5" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 56)
+mesh = SubResource("BoxMesh_d261x")
+skeleton = NodePath("../..")
+
+[node name="towerPillar6" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, 56)
+mesh = SubResource("BoxMesh_t23pt")
+skeleton = NodePath("../..")
+
+[node name="towerPillar7" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, -56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar13" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, 0)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar14" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, -38)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar15" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, -19)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar16" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, 19)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar17" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 11, 38)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar8" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 11, -56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar9" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 11, -56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar10" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 11, -56)
+mesh = SubResource("BoxMesh_3du7c")
+skeleton = NodePath("../..")
+
+[node name="towerPillar11" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -56)
+mesh = SubResource("BoxMesh_d261x")
+skeleton = NodePath("../..")
+
+[node name="towerPillar12" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -56)
+mesh = SubResource("BoxMesh_t23pt")
+skeleton = NodePath("../..")
+
+[node name="towerPillar18" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 35)
+mesh = SubResource("BoxMesh_xe1cx")
+skeleton = NodePath("../..")
+
+[node name="towerPillar19" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/detailPillars"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, -43)
+mesh = SubResource("BoxMesh_xe1cx")
+skeleton = NodePath("../..")
+
+[node name="extentionWalls" type="Node3D" parent="facilityModel/mainBuilding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 24, -10)
 
-[node name="extMainWall" type="MeshInstance3D" parent="oilRig/mainBuilding/extentionWalls"]
+[node name="extMainWall" type="MeshInstance3D" parent="facilityModel/mainBuilding/extentionWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 6)
-mesh = SubResource("BoxMesh_wkq7f")
+mesh = SubResource("BoxMesh_cwf6l")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="oilRig"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.122002, 13.7321, -51.1475)
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.0496, 13.9437, 16.1417)
 light_color = Color(1, 0.172549, 0.0745098, 1)
 light_energy = 8.758
 omni_range = 10.1151
-
-[node name="boat" parent="." instance=ExtResource("10_kvm1t")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.6183, -0.300161, 107.543)

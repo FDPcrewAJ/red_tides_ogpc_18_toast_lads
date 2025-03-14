@@ -1,13 +1,17 @@
-[gd_scene load_steps=28 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=36 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Environment" uid="uid://cispr80jd18kp" path="res://Scripts/World Env/defaultEnv.tres" id="1_8fqro"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
+[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="5_kjqka"]
 [ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="5_tj7u0"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="6_jo8y4"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="6_vkgry"]
 [ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="7_87lxj"]
+[ext_resource type="Texture2D" uid="uid://bi83kmoysb530" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamaged.png" id="7_abfld"]
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_ixnkp"]
+[ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_m7bys"]
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="9_kj76a"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="10_vauyr"]
 [ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="11_hwl8q"]
@@ -37,25 +41,49 @@ size = Vector3(20, 1, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6g0gi"]
 size = Vector3(1, 5, 20)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enr6f"]
+albedo_texture = ExtResource("5_kjqka")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_eraur"]
+material = SubResource("StandardMaterial3D_enr6f")
 size = Vector2(5, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7d45a"]
 size = Vector3(1, 5, 9)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxxnx"]
+albedo_texture = ExtResource("6_jo8y4")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_a8ttr"]
+material = SubResource("StandardMaterial3D_bxxnx")
 size = Vector3(1, 5, 9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tog6l"]
 size = Vector3(1, 5, 4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edg7b"]
+albedo_texture = ExtResource("7_abfld")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_21ch3"]
+material = SubResource("StandardMaterial3D_edg7b")
 size = Vector3(1, 5, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rcj7n"]
 size = Vector3(1, 3, 3.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmh01"]
+albedo_texture = ExtResource("8_m7bys")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
 [sub_resource type="BoxMesh" id="BoxMesh_kwye3"]
+material = SubResource("StandardMaterial3D_hmh01")
 size = Vector3(1, 3, 3.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdl8g"]
@@ -162,7 +190,7 @@ shape = SubResource("BoxShape3D_tog6l")
 mesh = SubResource("BoxMesh_21ch3")
 
 [node name="InteriorWall3" type="StaticBody3D" parent="World/Building"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 3.56948, 1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 4.56948, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/InteriorWall3"]
 shape = SubResource("BoxShape3D_rcj7n")
@@ -199,7 +227,7 @@ light_bake_mode = 1
 omni_range = 7.0
 
 [node name="IndustrialLight2" type="MeshInstance3D" parent="World/Lights"]
-transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 5.41931, 5.15235, -1.13726)
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.54815, 5.15235, -1.13726)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b75p33f38ketc"]
+
+[ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Assets/Models/Objects/Lights/v3_industrial_light.gltf" id="1_lkgs6"]
+
+[node name="wide_industrial_light" instance=ExtResource("1_lkgs6")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

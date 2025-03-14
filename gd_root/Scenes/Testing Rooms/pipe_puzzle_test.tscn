@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=47 format=4 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Environment" uid="uid://cispr80jd18kp" path="res://Scripts/World Env/defaultEnv.tres" id="1_8fqro"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="9_kj76a"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="10_vauyr"]
 [ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="11_hwl8q"]
+[ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="16_u6cfx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)
@@ -92,6 +93,79 @@ size = Vector3(5.5, 3.5, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_184nn"]
 size = Vector3(5.5, 3.5, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2tx7"]
+resource_name = "color_15277357"
+albedo_color = Color(0.913725, 0.113725, 0.176471, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pk35u"]
+_surfaces = [{
+"aabb": AABB(-40, -50.625, -25.75, 70.75, 84.75, 51.5),
+"format": 34359742471,
+"index_count": 1404,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABQAHAAYACAAJAAoACwAMAA0ADAAOAA0ADQAOAAkADwAKAAkACQAOAA8AEAARABIAEwAUABUAFgAXABUAGAAZABoAGgAZABsAHAAYAB0AHQAYABoAHgAfACAAIQAiACMAJAAcACUAJQAcAB0AJgAkACcAJwAkACUAKAApACoAIAAUACsAEQAsABIAEgAsACkALQAqACkAKQAsAC0ALgAmAC8ALwAmACcAMAAxAC8ALwAxAC4AMgAzAAIAMwA0AAAAMwAAAAIAKwAUADUAHwAeADYANwA4ADkAOgA5ADgAFAAgABUAJgAuADgAOAA7ACQAPAA9AD4APgA9AAYAPwAVAB8AHwAVACAAQAA7AEEANgAeAEIAQQA3AEMAQwA3AEQARAA3AEUARgBFADcAQQBDAEcASABJAEoAQQBHAEsAQQBLAEwAQgBNAEkASQA2AEIAQQBMAE4ATgBAAEEATwBQAFEAUgBRAFAAUwBPAFEAVABVAFMAAQAAAFYAAAA0AFYAVgBXAAEAOwBAAFgASgBJAE0AOAAxADoAWQBKAFoANwA5AFsAWgBKAFwAXQBXAF4AXgBXAFYANwBbAEYAXwBgAGEAYQBgAGIAYwBaAFwAAgBkADIAOwBYABkAZQBZAFoASgBZAEgAWgBjAGUAZgBlAGMAOwAZABgAOwAYABwAHAAkADsAAgADAGQAOAAkACYAOAAuADEAZwAzAGgAaAAzADIANwBpAGoANwBBAGkANgBIAB8AIAArAB4ASAA2AEkAKwBrAGwAbAAeACsAOABtADsAOwBtAG4AYQAPAF8AXwAPAA4ADgBpAG4AbgBfAA4ANQBrACsAbwAfAEgAcAAtACwAcQBwACwAbQBqAC0AagAOAC0ALQBwAG0AcABfAG0AaAByAGIAYABnAGgAaABiAGAAagBpAA4APgBnAGAAbgBtAF8ADwBhAHEAcQAsAA8AcwB0AHUAdQB0AHYAYgByAHEAcQBhAGIAdwB4AHkAeQB4AHoAEABzABEAEQBzAHUAaQBBADsAKgB3ACgAKAB3AHkAOwBuAGkAdwAqAHgABAB7AAUABQB7AHwAEAASAHMAcwASAHQAdQB2ABEAeQB6ACgAKAB6ACkAfQB+AH8AfwB+AIAAPQCBAAQABgA9AAQAggCDAIQAhACDAIUAfwAIAH0AfQAIAAoABQCGAAcAhwBcAIgAiABNAIcATQBCAIcAhwCJAFwAQgCKAIcAiwCMAIcAiwAjAIwAhwCNAIsAhwCKAI0AhAAMAIIAggAMAAsAhACFAAwABQB8AIYAhgB8AI4AfwCAAAgACACAAAkAfQAKAH4AewAEAIEACwANAIIAggANAIMAeACFAHoAgAB0AHoAfgB2AHQAgAB+AHQAgwCAAHoAegCFAIMAKQB6ABIAEgB6AHQAjwBjAJAAkQCJAIcAkgCRAIcAhwCTAJIAkgCTAJQAlACTAJUAlQCTAJYAlgCTAJcAlwCTAJgAmACTAJkAgwANAIAAgAANAAkAKgAtAHgADgCFAHgADgAMAIUAeAAtAA4AkABjAJEAmgCbAJwAmgCdAJsAIgBrAJ0ACgAPAH4ALAB2AH4ALAARAHYAfgAPACwAngCQAJ8AUACeAFIAoAChAI4AjgChAIYAcQByAHAAcAByAKIAnwCQAJEAngCfAFIAUgCfAJQAjgBdAKAAUQBSAJUAlQBSAJQAlQCWAFQAVABRAJUAPAA+AKIAogByADwAogA+AGAAowCkAKUAUQBUAFMAPAByAGgAYABfAHAAcACiAGAAlgBVAFQAmgCHAIwApQBVAKYAbQA4ADcANwBqAG0AjAAjAJoAIQAjAIsAAQBXAI4ApwCoAKkAqQCqAKcAiwCNAGwAbAAhAIsAjQCKAB4AHgBsAI0AoABdAKEAHgCKAEIAoQBWAIYAqwCnAKoABwA0ADMASgBNAIgAMgBkAIEAPgAGADMAXABKAIgAAQB8AHsAewADAAEAYwBcAIkAVgA0AAcABwCGAFYAjgB8AAEAYwCJAJEAZAADAIEAkwCsAKMAgQADAHsAXQBeAKEAXgBWAKEAjgBXAF0AnwCRAJIArQCsAJMAkwCHAK0AMwAGAAcAlACfAJIAgQA9ADIAqACuAK8ArwCpAKgAZwA+ADMArwCcAJsAaAAyADwAPAAyAD0AsACxALIAsQCzALIAlwBVAJYAtABTAFUAVQClALQAtQCcAK8AmACmAJcAlwCmAFUAqQCvAJsApgCYAJkAmQCjAKYAqgCpAJsATwBTALAAmQCTAKMAtACzAFMAtQCuAKQArwCuALUAtAClALMAnACtAJoAhwCaAK0AUwCxALAAnAC1AKwArACtAJwAtQCkAKwArACkAKMApQCmAKMAsQBTALMAtgC3ALgAuQC6ALgAuwC8AL0AvgC/AMAAvQC+AMAAnQCaACIAIQBsAGsAYwCPAGYAkACeAI8APwAfAG8AmgAjACIAawAiACEAuABlAGYAwQDCAMMAxADDALwAuABmAI8ANQCqAJ0AngDFAMYAbwBIAFkAWQDHAG8AtwDHAGUAuAC3AGUAuACPAMYAyADJAMoAxwBZAGUALwAnAMsAzAAaABsAzQDOAM8AswDPAM4AzgCyALMAxgCPAJ4A0ADRANIApADKAM8AxQCeAFAAygCuAMgAsADTAFAA1ADVANYA1gDXANgAwgDBANgAqADIAK4AygDJAM0A1gDYANQAUABPALAApQDPALMA1QDUANkA2gDbANUA3ACqADUANQAUABMA1QDZANoApQCkAM8AzQDPAMoA2ADXAMIAmwCdAKoAFQAXABMAwwDdAMEAFQA/ABYA3gDfANIA0gDgAN4ArgDKAKQAnQBrADUA0gDfANAA0ADhABsAGwDRANAAPwBvABYA4gAWAG8A3gDgANsA3ACrAKoA2wDaAN4ANQATANwAGwDhAMwA4wDiAG8AbwDHAOMAqwDcANoAGgDMAOQAtgDjAMcAxwC3ALYAHQAaAOQAEwDaANwAJQDlAMsAuAC6ALYAJwAlAMsAMAAvAOYAywDmAC8AvwAwAOcA6AC5AMUAxgDFALkAuADGALkA5gDpADAA6QDnADAAUADTAMUA0wDqAOgA6ADFANMAvQDAALsAvAC7AMQAwwDEAN0A6wDqANMA5wDAAL8A0wCwAOsA6wCwALIA5ADlACUAJQAdAOQAQwDXAEcARwDXANYASwBHANUA1QBHANYAzQDEAM4ATABLANsA2wBLANUATgBMAOAA4ABMANsAyQDEAM0AQABOANIA0gBOAOAA2ACoAKcAWABAANEA0QBAANIAGQBYABsAGwBYANEAvwA6ADAAMAA6ADEAvgA5AL8AvwA5ADoAvQBbAL4AvgBbADkAvABGAL0AvQBGAFsAwwBFALwAvABFAEYAwgBEAMMAwwBEAEUAQwBEAMIAwgDXAEMA2QCrANoAzADiAOMAtgDkAMwAugDkALYA6ADmALkA5gDoAOoA6gDpAOYA6wDnAOoA6gDnAOkA5wDrALIAsgDAAOcAzgC7ALIAsgC7AMAAuwDOAMQAxADJAN0ApwDUANgA2QDUAKcApwCrANkAwQDdAMkAyQDIAMEA2ADBAMgAyACoANgAEwAXAN8A3wDeABMAFwAWANAA0ADfABcA0AAWAOIA2gATAN4A0ADiAOEAzADhAOIAzADjALYA5QDkALoA5QC6AMsAywC6ALkA5gDLALkA"),
+"material": SubResource("StandardMaterial3D_e2tx7"),
+"name": "color_15277357",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 236,
+"vertex_data": PackedByteArray("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KVwHwJqZvcB/ag5BKVwHwM3MnL9/ag5BuB4VwM3MnL/b+QpBK4cmwJqZvcCDwAhBI9s5wJqZvcAAAAhBK4dewJqZvcDb+QpBGy91wJqZvcCcxBJBK4dewM3MnL/b+QpBuklswJqZvcB/ag5BuklswM3MnL9/ag5BGy91wM3MnL+cxBJBmZnMTP///7//n/+f////v/+/qir///+/ZeZl5v///7/MTJkZ////v1RVVFX///+/qmqqKv///7//f/8/////v5mZzEz///+/VNWqav///79l5jIz////v1TVqir///+/qqpUVf///79s29s2////v+iiLbr///+//7//3////79UVVRV////v6oqqir///+/JEltW////7+TtfRG////vynBi1L///+/E7hHNf///78TsRAl////v/jNJEr///+/DtYh3v///7+H1jPQ////v3fKqd7///+/0cCu2P///7+M0pXu////vx3Upuj///+/k79mwP///7/Zz6fD////vxLK/7H///+/4a93qf///7/YmazC////v6utopP///+/wD66/P///78UuDD9////v+Arouj///+/ci2T7v///78yM5kZ////v1UVVVX///+/zExmZv///7/uszS4////v6oqVNX///+//1//v////7/JNcLg////vxMtF93///+/LT+u2P///793KTPQ////v9q2SRL///+/cZzjOP///7//f/8/////vxKw6FL///+/Ebo21P///7+5aHPR////v41jxvH///+/wD4Dwv///7/hKznD////v4quuej///+//z+p6v///7//P6oq////v21b2rb///+/88aeNf///78+wQPC////vziOjeP///+/Vdshu////7+7fL++////v6Jo4Kv///+/QVl2qf///7/QS+6p////v2GWr6T///+/PLS04f///78O1svL////v+rSG93///+/u6Z3qf///78utO6p////v4fWMtD///+/IcFxrf///78HOWzK////vxMt+M////+/6k7s2v///78NNi7T////v2ZAYsD///+/BDLhtf///7/rTxXD////v/9v/5////+/zExmZv///78d1DnD////v3XKst7///+/Ebq18f///7/dPnGt////v1Xbh+n///+/ZmbMTP///7//P/+f////v0iSbNv///+//5//v////7/MzMzM////v8zMZeb///+/ZkD5/////7//vwAA////v9nPfOz///+/Y0D7/////7//n/+/////v9q2bNv///+/qqqqqv///79mZsvM////v0mewcv///+/2bMquP///7//P//f////vzKzZeb///+/McoFK////7//X/+/////v/8/qer///+//z9U1f///7+ZmcxM////v5Gk2zb///+//9//P////79l5pkZ////v/+f/z////+/kaS2bf///7//3/8/////v6qqOA7///+/qipU1f///79mZpmZ////v/8//x////+//x//H////7//P/9f////v/9v/y////+//78AAP///78yM5kZ////v/8/qir///+//z//X////7+qalRV////v1SVVJX///+/ZoG64////780ysbg////v2ZA+f////+/k79mwP///7/jrA22////v12RCrn///+/C8Flrf///7+RpG1b////v+U5PPH///+/60Wy8f///7+oJIHp////v61CPeb///+/+HLOyv///793KUjQ////v7IkCrv///+/6DX/sf///783Q+Kr////vwNVybX///+/x1G9mP///79dkQq5////v2GWr6T///+//X+s1f///79VoYe1////vzE/jeb///+/DCKJ2P///7+qqlRV////v6qqqqr///+/ZmbLzP///7/oYg22////vxpdE63///+/r1gsv////7+TSQyi////v6GT4U////+//H9RKv///785jgo6////v4GZ0kD///+/wKaIVv///7/5c+jO////vxZ8/7H///+/D2zPR////7/6f/xU////vyIwSTz///+/ZkCcP////79oQJs/////v7hD3k////+/bkoFuf///7+RbnCt////v6G+YhH///+/88ZWEf///79jQAMA////v1xBZBH///+/ACsFAP///7+5SN65////v95WhrX///+/IUwvuP///7/oNQCy////v+Q5rcj///+/sFWt1f///78CbCu4////vzRx47n///+/emYrv////7/+TxKt////v4k1TCH///+/5StDF////7/tyQcd////vyVxIEb///+/blj0Xf///78CakA0////vxlDL/P///+/7NIT3f///79+XFQ9////vylM00f///+/3VZ3Sv///7/yxmnK////v4zS277///+/RbXpx////7+/S0Me////v0SO8MX///+/gZksv////785jvTF////v+eDALL///+/+39jwP///7/noe2p////vwCwEq3///+/IKmGtf///7+Ao1Q9////v75gyLX///+/D6Xpzv///78dygGy////v8G84Kv///+/NsoI1f///7/z3WM2////v1O90xn///+/47wz8////79gQPr/////vxItE93///+/HjC/w////7+rQtMZ////v8g1CNX///+/CyJjNv///7/xRckr////vw==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="GDScript" id="GDScript_4cnwu"]
+script/source = "extends MeshInstance3D
+
+func _ready():
+	if typeof(Global.lastpos) != TYPE_INT:
+		$\"../player\"._set_last_pos()
+
+func _process(_delta):
+	if Global.current_object == \"ConsoleBody\":
+		if Input.is_action_just_pressed(\"interact\"):
+			Global.lastpos = $\"../player\".position
+			get_tree().call_deferred(\"change_scene_to_file\", \"res://Scenes/Interfaces/dial_puzzle_interface.tscn\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bykm1"]
+size = Vector3(75, 80, 50)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fg3u"]
+load_path = "res://.godot/imported/dialPuzzleHint.png-dc96282c93bf3c454bdc1adfbc1946ed.s3tc.ctex"
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sbofw"]
+_surfaces = [{
+"aabb": AABB(-40, -50.625, -25.75, 70.75, 84.75, 51.5),
+"format": 34359742471,
+"index_count": 1404,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABQAHAAYACAAJAAoACwAMAA0ADAAOAA0ADQAOAAkADwAKAAkACQAOAA8AEAARABIAEwAUABUAFgAXABUAGAAZABoAGgAZABsAHAAYAB0AHQAYABoAHgAfACAAIQAiACMAJAAcACUAJQAcAB0AJgAkACcAJwAkACUAKAApACoAIAAUACsAEQAsABIAEgAsACkALQAqACkAKQAsAC0ALgAmAC8ALwAmACcAMAAxAC8ALwAxAC4AMgAzAAIAMwA0AAAAMwAAAAIAKwAUADUAHwAeADYANwA4ADkAOgA5ADgAFAAgABUAJgAuADgAOAA7ACQAPAA9AD4APgA9AAYAPwAVAB8AHwAVACAAQAA7AEEANgAeAEIAQQA3AEMAQwA3AEQARAA3AEUARgBFADcAQQBDAEcASABJAEoAQQBHAEsAQQBLAEwAQgBNAEkASQA2AEIAQQBMAE4ATgBAAEEATwBQAFEAUgBRAFAAUwBPAFEAVABVAFMAAQAAAFYAAAA0AFYAVgBXAAEAOwBAAFgASgBJAE0AOAAxADoAWQBKAFoANwA5AFsAWgBKAFwAXQBXAF4AXgBXAFYANwBbAEYAXwBgAGEAYQBgAGIAYwBaAFwAAgBkADIAOwBYABkAZQBZAFoASgBZAEgAWgBjAGUAZgBlAGMAOwAZABgAOwAYABwAHAAkADsAAgADAGQAOAAkACYAOAAuADEAZwAzAGgAaAAzADIANwBpAGoANwBBAGkANgBIAB8AIAArAB4ASAA2AEkAKwBrAGwAbAAeACsAOABtADsAOwBtAG4AYQAPAF8AXwAPAA4ADgBpAG4AbgBfAA4ANQBrACsAbwAfAEgAcAAtACwAcQBwACwAbQBqAC0AagAOAC0ALQBwAG0AcABfAG0AaAByAGIAYABnAGgAaABiAGAAagBpAA4APgBnAGAAbgBtAF8ADwBhAHEAcQAsAA8AcwB0AHUAdQB0AHYAYgByAHEAcQBhAGIAdwB4AHkAeQB4AHoAEABzABEAEQBzAHUAaQBBADsAKgB3ACgAKAB3AHkAOwBuAGkAdwAqAHgABAB7AAUABQB7AHwAEAASAHMAcwASAHQAdQB2ABEAeQB6ACgAKAB6ACkAfQB+AH8AfwB+AIAAPQCBAAQABgA9AAQAggCDAIQAhACDAIUAfwAIAH0AfQAIAAoABQCGAAcAhwBcAIgAiABNAIcATQBCAIcAhwCJAFwAQgCKAIcAiwCMAIcAiwAjAIwAhwCNAIsAhwCKAI0AhAAMAIIAggAMAAsAhACFAAwABQB8AIYAhgB8AI4AfwCAAAgACACAAAkAfQAKAH4AewAEAIEACwANAIIAggANAIMAeACFAHoAgAB0AHoAfgB2AHQAgAB+AHQAgwCAAHoAegCFAIMAKQB6ABIAEgB6AHQAjwBjAJAAkQCJAIcAkgCRAIcAhwCTAJIAkgCTAJQAlACTAJUAlQCTAJYAlgCTAJcAlwCTAJgAmACTAJkAgwANAIAAgAANAAkAKgAtAHgADgCFAHgADgAMAIUAeAAtAA4AkABjAJEAmgCbAJwAmgCdAJsAIgBrAJ0ACgAPAH4ALAB2AH4ALAARAHYAfgAPACwAngCQAJ8AUACeAFIAoAChAI4AjgChAIYAcQByAHAAcAByAKIAnwCQAJEAngCfAFIAUgCfAJQAjgBdAKAAUQBSAJUAlQBSAJQAlQCWAFQAVABRAJUAPAA+AKIAogByADwAogA+AGAAowCkAKUAUQBUAFMAPAByAGgAYABfAHAAcACiAGAAlgBVAFQAmgCHAIwApQBVAKYAbQA4ADcANwBqAG0AjAAjAJoAIQAjAIsAAQBXAI4ApwCoAKkAqQCqAKcAiwCNAGwAbAAhAIsAjQCKAB4AHgBsAI0AoABdAKEAHgCKAEIAoQBWAIYAqwCnAKoABwA0ADMASgBNAIgAMgBkAIEAPgAGADMAXABKAIgAAQB8AHsAewADAAEAYwBcAIkAVgA0AAcABwCGAFYAjgB8AAEAYwCJAJEAZAADAIEAkwCsAKMAgQADAHsAXQBeAKEAXgBWAKEAjgBXAF0AnwCRAJIArQCsAJMAkwCHAK0AMwAGAAcAlACfAJIAgQA9ADIAqACuAK8ArwCpAKgAZwA+ADMArwCcAJsAaAAyADwAPAAyAD0AsACxALIAsQCzALIAlwBVAJYAtABTAFUAVQClALQAtQCcAK8AmACmAJcAlwCmAFUAqQCvAJsApgCYAJkAmQCjAKYAqgCpAJsATwBTALAAmQCTAKMAtACzAFMAtQCuAKQArwCuALUAtAClALMAnACtAJoAhwCaAK0AUwCxALAAnAC1AKwArACtAJwAtQCkAKwArACkAKMApQCmAKMAsQBTALMAtgC3ALgAuQC6ALgAuwC8AL0AvgC/AMAAvQC+AMAAnQCaACIAIQBsAGsAYwCPAGYAkACeAI8APwAfAG8AmgAjACIAawAiACEAuABlAGYAwQDCAMMAxADDALwAuABmAI8ANQCqAJ0AngDFAMYAbwBIAFkAWQDHAG8AtwDHAGUAuAC3AGUAuACPAMYAyADJAMoAxwBZAGUALwAnAMsAzAAaABsAzQDOAM8AswDPAM4AzgCyALMAxgCPAJ4A0ADRANIApADKAM8AxQCeAFAAygCuAMgAsADTAFAA1ADVANYA1gDXANgAwgDBANgAqADIAK4AygDJAM0A1gDYANQAUABPALAApQDPALMA1QDUANkA2gDbANUA3ACqADUANQAUABMA1QDZANoApQCkAM8AzQDPAMoA2ADXAMIAmwCdAKoAFQAXABMAwwDdAMEAFQA/ABYA3gDfANIA0gDgAN4ArgDKAKQAnQBrADUA0gDfANAA0ADhABsAGwDRANAAPwBvABYA4gAWAG8A3gDgANsA3ACrAKoA2wDaAN4ANQATANwAGwDhAMwA4wDiAG8AbwDHAOMAqwDcANoAGgDMAOQAtgDjAMcAxwC3ALYAHQAaAOQAEwDaANwAJQDlAMsAuAC6ALYAJwAlAMsAMAAvAOYAywDmAC8AvwAwAOcA6AC5AMUAxgDFALkAuADGALkA5gDpADAA6QDnADAAUADTAMUA0wDqAOgA6ADFANMAvQDAALsAvAC7AMQAwwDEAN0A6wDqANMA5wDAAL8A0wCwAOsA6wCwALIA5ADlACUAJQAdAOQAQwDXAEcARwDXANYASwBHANUA1QBHANYAzQDEAM4ATABLANsA2wBLANUATgBMAOAA4ABMANsAyQDEAM0AQABOANIA0gBOAOAA2ACoAKcAWABAANEA0QBAANIAGQBYABsAGwBYANEAvwA6ADAAMAA6ADEAvgA5AL8AvwA5ADoAvQBbAL4AvgBbADkAvABGAL0AvQBGAFsAwwBFALwAvABFAEYAwgBEAMMAwwBEAEUAQwBEAMIAwgDXAEMA2QCrANoAzADiAOMAtgDkAMwAugDkALYA6ADmALkA5gDoAOoA6gDpAOYA6wDnAOoA6gDnAOkA5wDrALIAsgDAAOcAzgC7ALIAsgC7AMAAuwDOAMQAxADJAN0ApwDUANgA2QDUAKcApwCrANkAwQDdAMkAyQDIAMEA2ADBAMgAyACoANgAEwAXAN8A3wDeABMAFwAWANAA0ADfABcA0AAWAOIA2gATAN4A0ADiAOEAzADhAOIAzADjALYA5QDkALoA5QC6AMsAywC6ALkA5gDLALkA"),
+"material": SubResource("StandardMaterial3D_e2tx7"),
+"name": "color_15277357",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 236,
+"vertex_data": PackedByteArray("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KVwHwJqZvcB/ag5BKVwHwM3MnL9/ag5BuB4VwM3MnL/b+QpBK4cmwJqZvcCDwAhBI9s5wJqZvcAAAAhBK4dewJqZvcDb+QpBGy91wJqZvcCcxBJBK4dewM3MnL/b+QpBuklswJqZvcB/ag5BuklswM3MnL9/ag5BGy91wM3MnL+cxBJBmZnMTP///7//n/+f////v/+/qir///+/ZeZl5v///7/MTJkZ////v1RVVFX///+/qmqqKv///7//f/8/////v5mZzEz///+/VNWqav///79l5jIz////v1TVqir///+/qqpUVf///79s29s2////v+iiLbr///+//7//3////79UVVRV////v6oqqir///+/JEltW////7+TtfRG////vynBi1L///+/E7hHNf///78TsRAl////v/jNJEr///+/DtYh3v///7+H1jPQ////v3fKqd7///+/0cCu2P///7+M0pXu////vx3Upuj///+/k79mwP///7/Zz6fD////vxLK/7H///+/4a93qf///7/YmazC////v6utopP///+/wD66/P///78UuDD9////v+Arouj///+/ci2T7v///78yM5kZ////v1UVVVX///+/zExmZv///7/uszS4////v6oqVNX///+//1//v////7/JNcLg////vxMtF93///+/LT+u2P///793KTPQ////v9q2SRL///+/cZzjOP///7//f/8/////vxKw6FL///+/Ebo21P///7+5aHPR////v41jxvH///+/wD4Dwv///7/hKznD////v4quuej///+//z+p6v///7//P6oq////v21b2rb///+/88aeNf///78+wQPC////vziOjeP///+/Vdshu////7+7fL++////v6Jo4Kv///+/QVl2qf///7/QS+6p////v2GWr6T///+/PLS04f///78O1svL////v+rSG93///+/u6Z3qf///78utO6p////v4fWMtD///+/IcFxrf///78HOWzK////vxMt+M////+/6k7s2v///78NNi7T////v2ZAYsD///+/BDLhtf///7/rTxXD////v/9v/5////+/zExmZv///78d1DnD////v3XKst7///+/Ebq18f///7/dPnGt////v1Xbh+n///+/ZmbMTP///7//P/+f////v0iSbNv///+//5//v////7/MzMzM////v8zMZeb///+/ZkD5/////7//vwAA////v9nPfOz///+/Y0D7/////7//n/+/////v9q2bNv///+/qqqqqv///79mZsvM////v0mewcv///+/2bMquP///7//P//f////vzKzZeb///+/McoFK////7//X/+/////v/8/qer///+//z9U1f///7+ZmcxM////v5Gk2zb///+//9//P////79l5pkZ////v/+f/z////+/kaS2bf///7//3/8/////v6qqOA7///+/qipU1f///79mZpmZ////v/8//x////+//x//H////7//P/9f////v/9v/y////+//78AAP///78yM5kZ////v/8/qir///+//z//X////7+qalRV////v1SVVJX///+/ZoG64////780ysbg////v2ZA+f////+/k79mwP///7/jrA22////v12RCrn///+/C8Flrf///7+RpG1b////v+U5PPH///+/60Wy8f///7+oJIHp////v61CPeb///+/+HLOyv///793KUjQ////v7IkCrv///+/6DX/sf///783Q+Kr////vwNVybX///+/x1G9mP///79dkQq5////v2GWr6T///+//X+s1f///79VoYe1////vzE/jeb///+/DCKJ2P///7+qqlRV////v6qqqqr///+/ZmbLzP///7/oYg22////vxpdE63///+/r1gsv////7+TSQyi////v6GT4U////+//H9RKv///785jgo6////v4GZ0kD///+/wKaIVv///7/5c+jO////vxZ8/7H///+/D2zPR////7/6f/xU////vyIwSTz///+/ZkCcP////79oQJs/////v7hD3k////+/bkoFuf///7+RbnCt////v6G+YhH///+/88ZWEf///79jQAMA////v1xBZBH///+/ACsFAP///7+5SN65////v95WhrX///+/IUwvuP///7/oNQCy////v+Q5rcj///+/sFWt1f///78CbCu4////vzRx47n///+/emYrv////7/+TxKt////v4k1TCH///+/5StDF////7/tyQcd////vyVxIEb///+/blj0Xf///78CakA0////vxlDL/P///+/7NIT3f///79+XFQ9////vylM00f///+/3VZ3Sv///7/yxmnK////v4zS277///+/RbXpx////7+/S0Me////v0SO8MX///+/gZksv////785jvTF////v+eDALL///+/+39jwP///7/noe2p////vwCwEq3///+/IKmGtf///7+Ao1Q9////v75gyLX///+/D6Xpzv///78dygGy////v8G84Kv///+/NsoI1f///7/z3WM2////v1O90xn///+/47wz8////79gQPr/////vxItE93///+/HjC/w////7+rQtMZ////v8g1CNX///+/CyJjNv///7/xRckr////vw==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="GDScript" id="GDScript_ahsnp"]
+script/source = "extends MeshInstance3D
+
+func _process(_delta):
+	if Global.current_object == \"ConsoleBody\":
+		if Input.is_action_just_pressed(\"interact\"):
+			Global.lastpos = $\"../player\".position
+			get_tree().call_deferred(\"change_scene_to_file\", \"res://Scenes/Interfaces/tile_puzzle_interface.tscn\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvime"]
+size = Vector3(75, 80, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dn56"]
+albedo_texture = ExtResource("16_u6cfx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2ichs"]
+size = Vector2(4, 2)
+
 [node name="pipe_puzzle_test" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -108,104 +182,104 @@ environment = ExtResource("1_8fqro")
 [node name="player" parent="." instance=ExtResource("2_4i20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3)
 
-[node name="World" type="Node3D" parent="."]
+[node name="world" type="Node3D" parent="."]
 
-[node name="Building" type="Node3D" parent="World"]
+[node name="building" type="Node3D" parent="world"]
 
-[node name="Floor" type="StaticBody3D" parent="World/Building"]
+[node name="Floor" type="StaticBody3D" parent="world/building"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/Floor"]
 shape = SubResource("BoxShape3D_hampm")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Floor"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/Floor"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
 mesh = SubResource("QuadMesh_yn24k")
 
-[node name="Ceiling" type="StaticBody3D" parent="World/Building"]
+[node name="Ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Ceiling"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/Ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_cu627")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Ceiling"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/Ceiling"]
 shape = SubResource("BoxShape3D_t6tpb")
 
-[node name="Wall1" type="StaticBody3D" parent="World/Building"]
+[node name="Wall1" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/Wall1"]
 shape = SubResource("BoxShape3D_6g0gi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/Wall1"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
 mesh = SubResource("PlaneMesh_eraur")
 
-[node name="Wall2" type="StaticBody3D" parent="World/Building"]
+[node name="Wall2" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10, 3, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/Wall2"]
 shape = SubResource("BoxShape3D_6g0gi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/Wall2"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
 mesh = SubResource("PlaneMesh_eraur")
 
-[node name="Wall3" type="StaticBody3D" parent="World/Building"]
+[node name="Wall3" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.37114e-07, 3, 10)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/Wall3"]
 shape = SubResource("BoxShape3D_6g0gi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/Wall3"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
 mesh = SubResource("PlaneMesh_eraur")
 
-[node name="Wall4" type="StaticBody3D" parent="World/Building"]
+[node name="Wall4" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -4.37114e-07, 3, -10)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/Wall4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/Wall4"]
 shape = SubResource("BoxShape3D_6g0gi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/Wall4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/Wall4"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.5, 0, 0)
 mesh = SubResource("PlaneMesh_eraur")
 
-[node name="InteriorWall1" type="StaticBody3D" parent="World/Building"]
+[node name="InteriorWall1" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/InteriorWall1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/InteriorWall1"]
 shape = SubResource("BoxShape3D_7d45a")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/InteriorWall1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/InteriorWall1"]
 mesh = SubResource("BoxMesh_a8ttr")
 
-[node name="InteriorWall2" type="StaticBody3D" parent="World/Building"]
+[node name="InteriorWall2" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 3, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/InteriorWall2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/InteriorWall2"]
 shape = SubResource("BoxShape3D_tog6l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/InteriorWall2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/InteriorWall2"]
 mesh = SubResource("BoxMesh_21ch3")
 
-[node name="InteriorWall3" type="StaticBody3D" parent="World/Building"]
+[node name="InteriorWall3" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 4.56948, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Building/InteriorWall3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/InteriorWall3"]
 shape = SubResource("BoxShape3D_rcj7n")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Building/InteriorWall3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/InteriorWall3"]
 mesh = SubResource("BoxMesh_kwye3")
 
-[node name="Lights" type="Node3D" parent="World"]
+[node name="lights" type="Node3D" parent="world"]
 
-[node name="IndustrialLight0" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight0" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, 4)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight0"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
@@ -213,12 +287,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="IndustrialLight1" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight1" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, -5)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight1"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -226,12 +300,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight2" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight2" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.54815, 5.15235, -1.13726)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight2"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -239,12 +313,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight8" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight8" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 8.55102, 5.15235, -7.71993)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight8"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -252,12 +326,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight3" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight3" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.5, 5, 4)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight3"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -265,12 +339,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight4" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight4" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, 4)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -278,12 +352,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight5" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight5" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -9.5, 5, -5)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight5"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -291,12 +365,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight6" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight6" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 1.48962, 5, 4.26556)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight6"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -304,7 +378,7 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="World/Lights/IndustrialLight6"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="world/lights/IndustrialLight6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -312,12 +386,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight7" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight7" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 9.5, 5, 4)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight7"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -325,12 +399,12 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="IndustrialLight9" type="MeshInstance3D" parent="World/Lights"]
+[node name="IndustrialLight9" type="MeshInstance3D" parent="world/lights"]
 transform = Transform3D(9.55343e-15, -2.18557e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -2.18557e-07, -0.0925555, 5, -9.51603)
 mesh = ExtResource("5_tj7u0")
 skeleton = NodePath("../../..")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights/IndustrialLight9"]
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/IndustrialLight9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661804, 0)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.087
@@ -338,103 +412,150 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 7.0
 
-[node name="Pipes" type="Node3D" parent="World"]
+[node name="pipes" type="Node3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8288, 0.5, 0)
 
-[node name="PipeStraight2" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+[node name="PipeStraight2" parent="world/pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0.568993, -0.677731)
 
-[node name="PipeStraight5" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+[node name="PipeStraight5" parent="world/pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 0.677166, 1.92959, 0.00662658)
 
-[node name="PipeStraight6" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+[node name="PipeStraight6" parent="world/pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 5.79782, 4.48515, 0.00662658)
 
-[node name="PipeStraight7" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+[node name="PipeStraight7" parent="world/pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, 9.54018, 4.48515, 1.36412)
 
-[node name="PipeStraight3" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+[node name="PipeStraight3" parent="world/pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 4.49324, 0.682129)
 
-[node name="PipeStraight4" parent="World/Pipes" instance=ExtResource("6_vkgry")]
+[node name="PipeStraight4" parent="world/pipes" instance=ExtResource("6_vkgry")]
 transform = Transform3D(0.4, 0, 0, 0, -0.4, 3.49691e-08, 0, -3.49691e-08, -0.4, 0, 3.83457, 2.55473)
 
-[node name="PipeValve" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+[node name="PipeValve" parent="world/pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0.4, 0, -1.74846e-08, 0, -0.4, 0, 0, 0.569616, -1.87489)
 
-[node name="PipeJunctionT" parent="World/Pipes" instance=ExtResource("8_ixnkp")]
+[node name="PipeJunctionT" parent="world/pipes" instance=ExtResource("8_ixnkp")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0.4, -1.74846e-08, 1.74846e-08, 1.74846e-08, 0.4, 7.64274e-16, 0, 0.567645, -0.68025)
 
-[node name="PipeJunctionT3" parent="World/Pipes" instance=ExtResource("8_ixnkp")]
+[node name="PipeJunctionT3" parent="world/pipes" instance=ExtResource("8_ixnkp")]
 transform = Transform3D(-1.74846e-08, 8.47033e-23, 0.4, 0, 0.4, -1.05879e-22, -0.4, 0, -1.74846e-08, 0, 3.81011, 0.00516002)
 
-[node name="PipeJunctionT2" parent="World/Pipes" instance=ExtResource("8_ixnkp")]
+[node name="PipeJunctionT2" parent="world/pipes" instance=ExtResource("8_ixnkp")]
 transform = Transform3D(1.74846e-08, -0.4, -1.74846e-08, -0.4, -1.74846e-08, -1.74846e-08, 1.74846e-08, 1.74846e-08, -0.4, 0.684004, 1.92838, 0.00413555)
 
-[node name="PipeTurn90" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn90" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(7.64274e-16, 0.4, -1.74846e-08, 1.74846e-08, -1.74846e-08, -0.4, -0.4, 0, -1.74846e-08, -0.685193, 0.570521, -3.75396)
 
-[node name="PipeTurn91" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn91" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -1.52855e-15, -0.4, 3.49691e-08, -0.4, -8.47033e-23, -1.74846e-08, -0.000353813, 5.17264, -1.35516)
 
-[node name="PipeTurn92" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn92" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.49691e-08, 0.4, 3.49691e-08, 1.74846e-08, -0.000353813, 3.81139, 2.5564)
 
-[node name="PipeTurn93" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn93" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(1.74846e-08, -3.49691e-08, -0.4, -3.49691e-08, 0.4, -3.49691e-08, 0.4, 3.49691e-08, 1.74846e-08, 3.75535, 1.24456, 1.35193)
 
-[node name="PipeTurn96" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn96" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(0.4, -7.10543e-15, 4.92424e-14, -7.10543e-15, -0.4, 3.49691e-08, 4.61853e-14, -3.49691e-08, -0.4, 5.11382, 2.61287, 0.0104967)
 
-[node name="PipeTurn101" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn101" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(0.4, -7.10543e-15, 4.92424e-14, 7.10543e-15, 0.4, -6.99382e-08, -4.61853e-14, 6.99382e-08, 0.4, 5.11382, 1.24805, -1.35172)
 
-[node name="PipeTurn100" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn100" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-0.4, -3.49691e-08, 1.74845e-08, -1.74845e-08, -3.49691e-08, -0.4, 3.49691e-08, -0.4, 3.49691e-08, 3.75763, 1.9312, -0.668524)
 
-[node name="PipeTurn97" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn97" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-0.4, 3.49691e-08, -5.22995e-14, 3.49691e-08, 0.4, -3.49691e-08, 4.61853e-14, -3.49691e-08, -0.4, 5.11571, 3.80358, 0.00592415)
 
-[node name="PipeTurn98" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn98" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(5.24537e-08, 0.4, -3.49691e-08, -1.74845e-08, -3.49691e-08, -0.4, -0.4, 5.24537e-08, 1.74845e-08, 8.18208, 4.485, 0.00711684)
 
-[node name="PipeTurn99" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn99" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-8.74228e-08, -0.4, 3.49691e-08, -1.74845e-08, -3.49691e-08, -0.4, 0.4, -8.74228e-08, -1.74845e-08, 9.54611, 4.485, 1.36453)
 
-[node name="PipeTurn94" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn94" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(-5.24537e-08, 0.4, -3.49691e-08, -0.4, -5.24537e-08, -3.49692e-08, -3.49692e-08, 3.49691e-08, 0.4, 3.06882, 0.56704, 1.35193)
 
-[node name="PipeTurn95" parent="World/Pipes" instance=ExtResource("9_kj76a")]
+[node name="PipeTurn95" parent="world/pipes" instance=ExtResource("9_kj76a")]
 transform = Transform3D(1.74846e-08, -0.4, 1.74846e-08, -3.49692e-08, 1.74846e-08, 0.4, -0.4, -1.74846e-08, -3.49692e-08, 1.87995, 0.56704, 1.35193)
 
-[node name="PipeLever" parent="World/Pipes" instance=ExtResource("10_vauyr")]
+[node name="PipeLever" parent="world/pipes" instance=ExtResource("10_vauyr")]
 transform = Transform3D(-1.74846e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.74846e-08, 0, 2.60976, 0.00485198)
 
-[node name="PipeLever2" parent="World/Pipes" instance=ExtResource("10_vauyr")]
+[node name="PipeLever2" parent="world/pipes" instance=ExtResource("10_vauyr")]
 transform = Transform3D(-0.4, 0, 2.28379e-09, 0, 0.4, 0, -2.28379e-09, 0, -0.4, 5.11232, 2.60976, 0.00485198)
 
-[node name="PipeLever3" parent="World/Pipes" instance=ExtResource("10_vauyr")]
+[node name="PipeLever3" parent="world/pipes" instance=ExtResource("10_vauyr")]
 transform = Transform3D(0.4, 0, -3.72529e-08, 0, 0.4, 0, 3.72529e-08, 0, 0.4, 5.11336, 0.0491962, -1.3506)
 
-[node name="PipeValve2" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+[node name="PipeValve2" parent="world/pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0, 0, 0.4, 1.87536, 1.93036, 0.00666582)
 
-[node name="PipeValve3" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+[node name="PipeValve3" parent="world/pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, 0.282843, 1.23635e-08, -0.282843, -0.282843, -1.23635e-08, -0.282843, 1.87287, 0.568333, 1.35182)
 
-[node name="PipeValve4" parent="World/Pipes" instance=ExtResource("7_87lxj")]
+[node name="PipeValve4" parent="world/pipes" instance=ExtResource("7_87lxj")]
 transform = Transform3D(-1.74846e-08, 0.4, 0, 0, 0, 0.4, 0.4, 1.74846e-08, 0, 6.99408, 4.48515, 0.00736925)
 
-[node name="pipeJunctionCross" parent="World/Pipes" instance=ExtResource("11_hwl8q")]
+[node name="pipeJunctionCross" parent="world/pipes" instance=ExtResource("11_hwl8q")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 3.75535, 1.9267, 0.689219)
 
-[node name="Machines" type="Node3D" parent="World"]
+[node name="machines" type="Node3D" parent="world"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Machines"]
+[node name="StaticBody3D" type="StaticBody3D" parent="world/machines"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.37515, 2.21703, 4.57467)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Machines/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/machines/StaticBody3D"]
 shape = SubResource("BoxShape3D_fdl8g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Machines/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/machines/StaticBody3D"]
 mesh = SubResource("BoxMesh_184nn")
+
+[node name="puzzleObjects" type="Node3D" parent="world"]
+
+[node name="DialComputer" type="MeshInstance3D" parent="world/puzzleObjects"]
+transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 8.64038, 1.99311, -4.12904)
+mesh = SubResource("ArrayMesh_pk35u")
+skeleton = NodePath("../../..")
+script = SubResource("GDScript_4cnwu")
+
+[node name="Area3D" type="Area3D" parent="world/puzzleObjects/DialComputer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/puzzleObjects/DialComputer/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
+shape = SubResource("BoxShape3D_bykm1")
+
+[node name="ConsoleBody" type="StaticBody3D" parent="world/puzzleObjects/DialComputer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/puzzleObjects/DialComputer/ConsoleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
+visible = false
+shape = SubResource("BoxShape3D_bykm1")
+
+[node name="Sprite3D" type="Sprite3D" parent="world/puzzleObjects/DialComputer"]
+transform = Transform3D(25, 0, 2.98023e-06, 0, 25, 0, -2.98023e-06, 0, 25, -74.383, 21.3379, -28.4456)
+texture = SubResource("CompressedTexture2D_2fg3u")
+
+[node name="TileComputer" type="MeshInstance3D" parent="world/puzzleObjects"]
+transform = Transform3D(0.03, 0, 1.55431e-15, 0, 0.03, 0, -1.55431e-15, 0, 0.03, -5.37883, 1.88618, -8.84161)
+mesh = SubResource("ArrayMesh_sbofw")
+script = SubResource("GDScript_ahsnp")
+
+[node name="Area3D" type="Area3D" parent="world/puzzleObjects/TileComputer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/puzzleObjects/TileComputer/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
+shape = SubResource("BoxShape3D_bvime")
+
+[node name="ConsoleBody" type="StaticBody3D" parent="world/puzzleObjects/TileComputer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/puzzleObjects/TileComputer/ConsoleBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
+shape = SubResource("BoxShape3D_bvime")
+
+[node name="Poster" type="MeshInstance3D" parent="world/puzzleObjects/TileComputer"]
+transform = Transform3D(20, 2.38418e-06, -1.04216e-13, 0, -8.74228e-07, -20, -2.38418e-06, 20, -8.74228e-07, -92.912, 16.4547, -21.751)
+material_override = SubResource("StandardMaterial3D_4dn56")
+mesh = SubResource("PlaneMesh_2ichs")

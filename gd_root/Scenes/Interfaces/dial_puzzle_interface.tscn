@@ -12,12 +12,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aos3k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pux5x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aos3k"]
-
 [node name="dial_puzzle_interface" type="Node2D"]
 script = ExtResource("1_7i68q")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=54 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
 [ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
+[ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_i8itn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1yhw"]
 
@@ -19,6 +20,8 @@ sky_material = SubResource("ProceduralSkyMaterial_n1yhw")
 [sub_resource type="Environment" id="Environment_gkvph"]
 background_mode = 2
 sky = SubResource("Sky_ehbyn")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.83
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p8pmp"]
 render_priority = 0
@@ -214,6 +217,8 @@ environment = SubResource("Environment_gkvph")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866026, 0.482963, -0.12941, -0.12941, 0.466506, 0.875, 0.482963, -0.741025, 0.466506, 0, 10, 0)
+shadow_enabled = true
+shadow_bias = 0.0
 directional_shadow_mode = 0
 directional_shadow_fade_start = 0.0
 directional_shadow_max_distance = 0.0
@@ -520,3 +525,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 24, -10)
 [node name="extMainWall" type="MeshInstance3D" parent="world/facilityModel/mainBuilding/extentionWalls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 6)
 mesh = SubResource("BoxMesh_ygsum")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025607, 13.354, -50.9126)
+light_color = Color(1, 0.172549, 0.0745098, 1)
+light_energy = 8.758
+omni_range = 10.1151
+
+[node name="wide_industrial_light" parent="OmniLight3D" instance=ExtResource("11_i8itn")]
+transform = Transform3D(-3.0598e-08, 3.0598e-08, 0.7, 0.7, -3.0598e-08, 3.0598e-08, 3.0598e-08, 0.7, -3.0598e-08, 0, 0, -0.763237)

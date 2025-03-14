@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=43 format=3 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
 [ext_resource type="Material" uid="uid://c7gljd2b8y7o3" path="res://Assets/Materials/woodenBox.tres" id="2_6fbbl"]
@@ -36,6 +36,9 @@
 [ext_resource type="Material" uid="uid://b7wv6qr71u5f1" path="res://Assets/Materials/toaster.tres" id="36_foe0e"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Assets/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
+[ext_resource type="PackedScene" uid="uid://ppc0n5mmy0xc" path="res://Assets/Models/Objects/Lights/v1_industrial_light.gltf" id="37_ln1xf"]
+[ext_resource type="PackedScene" uid="uid://cisw4yc3qdyjb" path="res://Assets/Models/Objects/Lights/v2_industrial_light.gltf" id="38_krue1"]
+[ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Assets/Models/Objects/Lights/v3_industrial_light.gltf" id="39_4vs5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj5ya"]
 albedo_texture = ExtResource("2_cs0yj")
@@ -156,3 +159,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55013, 0, -6.09034)
 [node name="PipeJunctionCross" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.63833, 0, 12.8057)
 mesh = ExtResource("36_ad2f4")
+
+[node name="small_industrial_light" parent="." instance=ExtResource("37_ln1xf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58386, 0, 2.90971)
+
+[node name="long_industrial_light" parent="." instance=ExtResource("38_krue1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65436, 0, 2.84233)
+
+[node name="wide_industrial_light" parent="." instance=ExtResource("39_4vs5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85648, 0, 2.88343)

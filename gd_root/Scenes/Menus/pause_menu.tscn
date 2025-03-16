@@ -31,10 +31,9 @@ func _on_save_game_pressed():
 
 
 func _on_settings_pressed():
-	pass
-	#unpause()
-	#Global.previous_scene = get_tree().current_scene.scene_file_path
-	#get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
+	unpause()
+	Global.previous_scene = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
 
 
 func _on_main_menu_pressed():

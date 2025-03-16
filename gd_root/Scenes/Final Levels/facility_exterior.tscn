@@ -21,7 +21,13 @@ sky_material = SubResource("ProceduralSkyMaterial_n1yhw")
 background_mode = 2
 sky = SubResource("Sky_ehbyn")
 ambient_light_source = 3
-ambient_light_sky_contribution = 0.83
+ambient_light_sky_contribution = 0.28
+fog_enabled = true
+fog_light_color = Color(0.375519, 0.407209, 0.457021, 1)
+fog_light_energy = 0.17
+fog_sun_scatter = 0.49
+fog_density = 0.0025
+volumetric_fog_density = 0.0089
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p8pmp"]
 render_priority = 0
@@ -40,7 +46,7 @@ subdivide_width = 2
 subdivide_depth = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_esghb"]
-size = Vector3(100, 1, 150)
+size = Vector3(100, 1, 200)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u228j"]
 albedo_texture = ExtResource("6_ebpvy")
@@ -227,7 +233,7 @@ directional_shadow_pancake_size = 0.0
 [node name="world" type="Node3D" parent="."]
 
 [node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, -40.2811)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, 98.817)
 
 [node name="player" parent="world/boat" instance=ExtResource("2_o63d5")]
 transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -0.286767, 1.16345, 0.489746)
@@ -244,6 +250,7 @@ disable_mode = 1
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/Water/waterCol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.6908)
 shape = SubResource("BoxShape3D_esghb")
 
 [node name="facilityModel" type="Node3D" parent="world"]
@@ -389,11 +396,8 @@ skeleton = NodePath("../../staircase")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
 shape = SubResource("BoxShape3D_b2kg4")
 
-[node name="exteriorDoor" type="Area3D" parent="world/facilityModel/mainSupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.79761, -14.9568)
-collision_mask = 7
-
-[node name="wood_door_closed" parent="world/facilityModel/mainSupports/exteriorDoor" instance=ExtResource("6_tbgqa")]
+[node name="wood_door_closed" parent="world/facilityModel/mainSupports" instance=ExtResource("6_tbgqa")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, -4.79761, -14.9568)
 
 [node name="mainBuilding" type="Node3D" parent="world/facilityModel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.5, -91)

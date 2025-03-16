@@ -1,6 +1,7 @@
-[gd_scene load_steps=54 format=3 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=52 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
+[ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="1_s0mk4"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_etr80"]
 [ext_resource type="PackedScene" uid="uid://dqjbnuea3t06a" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="5_owl5n"]
@@ -11,37 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="9_u6wbv"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="10_kvm1t"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_k617b"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_suoet"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_lj47l"]
-sky_material = SubResource("ProceduralSkyMaterial_suoet")
-
-[sub_resource type="Environment" id="Environment_1s8gg"]
-background_mode = 2
-sky = SubResource("Sky_lj47l")
-ambient_light_sky_contribution = 0.55
-tonemap_mode = 2
-ssr_fade_in = 0.047796
-ssr_fade_out = 23.4254
-ssr_depth_tolerance = 36.61
-glow_enabled = true
-fog_light_energy = 0.16
-fog_sky_affect = 0.168
-fog_height = -39.95
-fog_height_density = -12.1263
-volumetric_fog_density = 0.009
-volumetric_fog_albedo = Color(0.41598, 0.41598, 0.41598, 1)
-volumetric_fog_emission = Color(0.303233, 0.303233, 0.303233, 1)
-volumetric_fog_emission_energy = 2.05
-volumetric_fog_gi_inject = 1.85
-volumetric_fog_anisotropy = -0.9
-volumetric_fog_length = 96.34
-volumetric_fog_detail_spread = 2.52269
-adjustment_contrast = 1.5
-adjustment_saturation = 0.75
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vka"]
 render_priority = 0
@@ -229,7 +199,7 @@ size = Vector3(60, 45, 80)
 [node name="TitleScreen" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1s8gg")
+environment = ExtResource("1_s0mk4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -257,7 +227,7 @@ theme_override_font_sizes/font_size = 200
 text = "rEd TidEs"
 
 [node name="boat" parent="." instance=ExtResource("10_kvm1t")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.6183, -0.300161, 107.543)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.6183, 1.00351, 107.543)
 
 [node name="facilityModel" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81, 0, 67)

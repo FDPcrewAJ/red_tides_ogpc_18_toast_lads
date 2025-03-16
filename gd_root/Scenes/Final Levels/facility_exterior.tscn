@@ -1,9 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=52 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
+[ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="2_uhreo"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="7_r818k"]
@@ -11,23 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_i8itn"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1yhw"]
-
-[sub_resource type="Sky" id="Sky_ehbyn"]
-sky_material = SubResource("ProceduralSkyMaterial_n1yhw")
-
-[sub_resource type="Environment" id="Environment_gkvph"]
-background_mode = 2
-sky = SubResource("Sky_ehbyn")
-ambient_light_source = 3
-ambient_light_sky_contribution = 0.28
-fog_enabled = true
-fog_light_color = Color(0.375519, 0.407209, 0.457021, 1)
-fog_light_energy = 0.17
-fog_sun_scatter = 0.49
-fog_density = 0.0025
-volumetric_fog_density = 0.0089
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p8pmp"]
 render_priority = 0
@@ -219,7 +203,7 @@ size = Vector3(60, 45, 80)
 script = ExtResource("1_mup67")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_gkvph")
+environment = ExtResource("2_uhreo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866026, 0.482963, -0.12941, -0.12941, 0.466506, 0.875, 0.482963, -0.741025, 0.466506, 0, 10, 0)

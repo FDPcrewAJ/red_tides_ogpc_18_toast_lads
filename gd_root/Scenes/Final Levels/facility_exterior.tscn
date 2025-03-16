@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=55 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
@@ -38,6 +38,9 @@ material = SubResource("ShaderMaterial_p8pmp")
 size = Vector2(500, 500)
 subdivide_width = 2
 subdivide_depth = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esghb"]
+size = Vector3(100, 1, 150)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u228j"]
 albedo_texture = ExtResource("6_ebpvy")
@@ -237,6 +240,14 @@ mesh = SubResource("PlaneMesh_1nesq")
 skeleton = NodePath("../..")
 
 [node name="Skeleton3D" type="Skeleton3D" parent="world/Water"]
+
+[node name="waterCol" type="Area3D" parent="world/Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+disable_mode = 1
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Water/waterCol"]
+shape = SubResource("BoxShape3D_esghb")
 
 [node name="facilityModel" type="Node3D" parent="world"]
 
@@ -534,3 +545,5 @@ omni_range = 10.1151
 
 [node name="wide_industrial_light" parent="OmniLight3D" instance=ExtResource("11_i8itn")]
 transform = Transform3D(-3.0598e-08, 3.0598e-08, 0.7, 0.7, -3.0598e-08, 3.0598e-08, 3.0598e-08, 0.7, -3.0598e-08, 0, 0, -0.763237)
+
+[connection signal="area_entered" from="world/Water/waterCol" to="." method="_on_water_col_area_entered"]

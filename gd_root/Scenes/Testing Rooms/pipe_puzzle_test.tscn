@@ -281,7 +281,7 @@ shape = SubResource("BoxShape3D_tog6l")
 mesh = SubResource("BoxMesh_21ch3")
 
 [node name="InteriorWall3" type="StaticBody3D" parent="world/building"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 4.56948, 1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.25, 5.56948, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/InteriorWall3"]
 shape = SubResource("BoxShape3D_rcj7n")
@@ -519,6 +519,12 @@ omni_range = 1.43287
 
 [node name="wood_door_closed2" parent="world" instance=ExtResource("17_wwapo")]
 transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.43917, 0.5, 5.48302)
+
+[node name="Label3D" type="Label3D" parent="world/wood_door_closed2"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 3.20205, -0.0446701)
+pixel_size = 0.014
+modulate = Color(1, 0, 0, 1)
+text = "EXIT"
 
 [node name="small_industrial_light2" parent="world" instance=ExtResource("17_ewl6r")]
 transform = Transform3D(3.0598e-08, -0.7, -6.11959e-08, -0.7, -3.0598e-08, -3.0598e-08, 3.0598e-08, 6.11959e-08, -0.7, 9.52998, 3.85982, 5.47082)

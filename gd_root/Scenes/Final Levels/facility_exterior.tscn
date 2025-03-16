@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=54 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
@@ -120,9 +120,6 @@ size = Vector3(8, 0.3, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
 size = Vector3(3, 0.4, 8)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rm2wl"]
-size = Vector3(1.75, 2.75, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaoxi"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
@@ -230,7 +227,7 @@ directional_shadow_pancake_size = 0.0
 [node name="world" type="Node3D" parent="."]
 
 [node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, 47.3968)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, -40.2811)
 
 [node name="player" parent="world/boat" instance=ExtResource("2_o63d5")]
 transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -0.286767, 1.16345, 0.489746)
@@ -392,12 +389,9 @@ skeleton = NodePath("../../staircase")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
 shape = SubResource("BoxShape3D_b2kg4")
 
-[node name="exteriorDoor" type="StaticBody3D" parent="world/facilityModel/mainSupports"]
+[node name="exteriorDoor" type="Area3D" parent="world/facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.79761, -14.9568)
-
-[node name="doorCol" type="CollisionShape3D" parent="world/facilityModel/mainSupports/exteriorDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_rm2wl")
+collision_mask = 7
 
 [node name="wood_door_closed" parent="world/facilityModel/mainSupports/exteriorDoor" instance=ExtResource("6_tbgqa")]
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=48 format=4 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=51 format=4 uid="uid://c1b3tl70snhpk"]
 
-[ext_resource type="Environment" uid="uid://cispr80jd18kp" path="res://Scripts/World Env/defaultEnv.tres" id="1_8fqro"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
@@ -16,7 +15,24 @@
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="10_vauyr"]
 [ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="11_hwl8q"]
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="16_u6cfx"]
+[ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="17_ewl6r"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="17_wwapo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nmc32"]
+
+[sub_resource type="Sky" id="Sky_jfwn4"]
+sky_material = SubResource("ProceduralSkyMaterial_nmc32")
+
+[sub_resource type="Environment" id="Environment_x2saq"]
+background_mode = 2
+sky = SubResource("Sky_jfwn4")
+ambient_light_source = 2
+ambient_light_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_light_energy = 0.1
+fog_sun_scatter = 1.0
+fog_density = 0.007
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)
@@ -178,7 +194,7 @@ directional_shadow_mode = 1
 sky_mode = 1
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_8fqro")
+environment = SubResource("Environment_x2saq")
 
 [node name="player" parent="." instance=ExtResource("2_4i20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69587, 1.5, 8.45738)
@@ -320,7 +336,7 @@ light_bake_mode = 1
 omni_range = 9.13347
 
 [node name="wide_industrial_light5" parent="world/lights" instance=ExtResource("9_sebl2")]
-transform = Transform3D(3.0598e-08, -0.7, 6.11959e-08, -0.7, -3.0598e-08, -1.48231e-22, 2.67496e-15, -6.11959e-08, -0.7, 9.5424, 5.0099, 5.45964)
+transform = Transform3D(-4.01244e-15, 9.17939e-08, 0.7, -0.7, -3.0598e-08, -5.92923e-22, 3.0598e-08, -0.7, 9.17939e-08, 6.03568, 5.0099, 9.50575)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="world/lights/wide_industrial_light5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
@@ -331,7 +347,7 @@ light_bake_mode = 1
 omni_range = 9.13347
 
 [node name="wide_industrial_light6" parent="world/lights" instance=ExtResource("9_sebl2")]
-transform = Transform3D(-4.01244e-15, 9.17939e-08, 0.7, -0.7, -3.0598e-08, -5.92923e-22, 3.0598e-08, -0.7, 9.17939e-08, -3.01903, 5.0099, 9.56233)
+transform = Transform3D(-4.01244e-15, 9.17939e-08, 0.7, -0.7, -3.0598e-08, -5.92923e-22, 3.0598e-08, -0.7, 9.17939e-08, -5.2829, 5.0099, 9.56233)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="world/lights/wide_industrial_light6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
@@ -490,4 +506,28 @@ material_override = SubResource("StandardMaterial3D_4dn56")
 mesh = SubResource("PlaneMesh_2ichs")
 
 [node name="wood_door_closed" parent="world" instance=ExtResource("17_wwapo")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -0.69035, 0.5, 9.44488)
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.69035, 0.5, 9.44488)
+
+[node name="small_industrial_light" parent="world" instance=ExtResource("17_ewl6r")]
+transform = Transform3D(-3.0598e-08, -3.0598e-08, 0.7, -0.7, -3.0598e-08, -3.0598e-08, 3.0598e-08, -0.7, -3.0598e-08, -0.69035, 3.85982, 9.52589)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/small_industrial_light"]
+transform = Transform3D(1.42857, 9.69273e-23, 1.34931e-29, 4.23516e-22, 1.42857, 0, 9.25625e-30, 0, 1.42857, 0, 0.736303, 5.96046e-08)
+light_color = Color(1, 0.172549, 0.0745098, 1)
+light_energy = 1.152
+omni_range = 1.43287
+
+[node name="wood_door_closed2" parent="world" instance=ExtResource("17_wwapo")]
+transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.43917, 0.5, 5.48302)
+
+[node name="small_industrial_light2" parent="world" instance=ExtResource("17_ewl6r")]
+transform = Transform3D(3.0598e-08, -0.7, -6.11959e-08, -0.7, -3.0598e-08, -3.0598e-08, 3.0598e-08, 6.11959e-08, -0.7, 9.52998, 3.85982, 5.47082)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/small_industrial_light2"]
+transform = Transform3D(1.42857, 9.69273e-23, 1.34931e-29, 4.23516e-22, 1.42857, 0, 9.25625e-30, 0, 1.42857, 0, 0.736303, 5.96046e-08)
+light_color = Color(1, 0.172549, 0.0745098, 1)
+light_energy = 1.152
+omni_range = 1.43287
+
+[node name="wood_door_closed" parent="." instance=ExtResource("17_wwapo")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 3.41487, 0.5, -9.49384)

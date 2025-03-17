@@ -11,7 +11,7 @@ func _ready():
 func _process(_delta):
 	Global.storm_time = int(time_left)
 	if Global.storm_time < 1:
-		get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Menus/title_screen.tscn")
 
 
 func _timer_restart():

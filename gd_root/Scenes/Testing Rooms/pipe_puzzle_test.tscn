@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=54 format=4 uid="uid://c1b3tl70snhpk"]
 
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
@@ -184,7 +185,11 @@ albedo_texture = ExtResource("16_u6cfx")
 [sub_resource type="PlaneMesh" id="PlaneMesh_2ichs"]
 size = Vector2(4, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2njc"]
+size = Vector3(1, 2, 0.5)
+
 [node name="pipe_puzzle_test" type="Node3D"]
+script = ExtResource("1_dtvxa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -520,14 +525,20 @@ light_color = Color(1, 0.172549, 0.0745098, 1)
 light_energy = 1.152
 omni_range = 1.43287
 
-[node name="wood_door_closed2" parent="world" instance=ExtResource("17_wwapo")]
+[node name="exitDoor" parent="world" instance=ExtResource("17_wwapo")]
 transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.43917, 0.5, 5.48302)
 
-[node name="Label3D" type="Label3D" parent="world/wood_door_closed2"]
+[node name="Label3D" type="Label3D" parent="world/exitDoor"]
 transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 3.20205, -0.0446701)
 pixel_size = 0.014
 modulate = Color(1, 0, 0, 1)
 text = "EXIT"
+
+[node name="Area3D" type="Area3D" parent="world/exitDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/exitDoor/Area3D"]
+transform = Transform3D(0.999987, 0, -3.69482e-13, 0, 0.999987, 0, 3.69482e-13, 0, 0.999987, 0, 1, 0.332972)
+shape = SubResource("BoxShape3D_u2njc")
 
 [node name="small_industrial_light2" parent="world" instance=ExtResource("17_ewl6r")]
 transform = Transform3D(3.0598e-08, -0.7, -6.11959e-08, -0.7, -3.0598e-08, -3.0598e-08, 3.0598e-08, 6.11959e-08, -0.7, 9.52998, 3.85982, 5.47082)

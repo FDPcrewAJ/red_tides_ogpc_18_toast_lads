@@ -217,7 +217,7 @@ directional_shadow_pancake_size = 0.0
 [node name="world" type="Node3D" parent="."]
 
 [node name="boat" parent="world" instance=ExtResource("2_rhyc4")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, 98.817)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 20.2841, -0.300169, 113.398)
 
 [node name="player" parent="world/boat" instance=ExtResource("2_o63d5")]
 transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, -0.286767, 1.16345, 0.489746)

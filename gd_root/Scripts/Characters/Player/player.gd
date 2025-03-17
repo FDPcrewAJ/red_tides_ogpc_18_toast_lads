@@ -9,6 +9,9 @@ const mouse_sens = 0.5
 @onready var standing_collision = $StandingCollision
 @onready var crouching_collision = $CrouchingCollision
 
+# Save system
+var save_file_path = "user://saves/"
+var save_file_name = "playerSave.tres"
 var save_system = save_resource.new()
 
 # Player Movement Variables
@@ -32,6 +35,8 @@ const jump_velocity = 4.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	verify_save_directory(save_file_path)
 
 
 func _input(event):
@@ -105,5 +110,19 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+func verify_save_directory(path):
+	DirAccess.make_dir_absolute(path)
+
+
 func _set_last_pos():
 	position = Global.lastpos
+
+
+func load_data():
+	save_system = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	print("loaded")
+
+
+func save():
+	ResourceSaver.save(save_system, save_file_path + save_file_name)
+	print("save")

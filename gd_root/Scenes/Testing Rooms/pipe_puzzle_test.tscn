@@ -1,8 +1,9 @@
-[gd_scene load_steps=51 format=4 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=52 format=4 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
+[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_klx6h"]
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="5_kjqka"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="6_jo8y4"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="6_vkgry"]
@@ -195,6 +196,8 @@ sky_mode = 1
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_x2saq")
+
+[node name="StormTimer" parent="." instance=ExtResource("2_klx6h")]
 
 [node name="player" parent="." instance=ExtResource("2_4i20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69587, 1.5, 8.45738)
@@ -535,5 +538,5 @@ light_color = Color(1, 0.172549, 0.0745098, 1)
 light_energy = 1.152
 omni_range = 1.43287
 
-[node name="wood_door_closed" parent="." instance=ExtResource("17_wwapo")]
+[node name="wood_door_closed3" parent="world" instance=ExtResource("17_wwapo")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 3.41487, 0.5, -9.49384)

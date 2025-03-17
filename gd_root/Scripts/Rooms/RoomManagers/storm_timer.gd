@@ -1,4 +1,4 @@
 extends Label
 
 func _process(_delta):
-	text = str(Global.storm_time)
+	text = "Storm approaching in: " + str(Global.storm_time)

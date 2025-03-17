@@ -3,14 +3,16 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/storm_timer.gd" id="1_ra4lr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d2bl7"]
-font_size = 100
+font_size = 40
+font_color = Color(0.352572, 4.42201e-07, 1.44392e-07, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 755.0
-offset_top = 4.0
-offset_right = 1088.0
-offset_bottom = 95.0
+offset_left = 30.0
+offset_right = 426.0
+offset_bottom = 137.0
 label_settings = SubResource("LabelSettings_d2bl7")
 script = ExtResource("1_ra4lr")

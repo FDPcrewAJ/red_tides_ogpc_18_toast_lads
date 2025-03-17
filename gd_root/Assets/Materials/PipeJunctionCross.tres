@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cv7yjbhna2624"]
 
-[ext_resource type="Texture2D" uid="uid://ddlkba0d6208i" path="res://Assets/Models/Objects/Pipes/pipeJunctionCross.png" id="1_2638s"]
+[ext_resource type="Texture2D" uid="uid://c8buxxaw7c1x0" path="res://Assets/Models/Objects/Pipes/pipeJunctionCross.png" id="1_2638s"]
 
 [resource]
 albedo_texture = ExtResource("1_2638s")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=31 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
 [ext_resource type="Material" uid="uid://btv15dpxqjiuq" path="res://Assets/Materials/cardboardBox.tres" id="2_wcgik"]
@@ -11,6 +11,8 @@
 [ext_resource type="Material" uid="uid://coj5u7y6iywex" path="res://Assets/Materials/CircularTable.tres" id="16_7c3bu"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="26_it72r"]
+[ext_resource type="PackedScene" uid="uid://tuvhpvgqnvix" path="res://Assets/Models/Objects/Desks/desk.gltf" id="26_n0n3e"]
+[ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Assets/Models/Objects/Computer/ComputerScreen.gltf" id="27_3te7t"]
 [ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Assets/Models/Objects/Joystick/Joystick.obj" id="27_6qk6g"]
 [ext_resource type="Material" uid="uid://dxnajj5b2unbx" path="res://Assets/Materials/joystick.tres" id="28_8wubg"]
 [ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Assets/Models/Objects/Motor/Motor.obj" id="29_h0fxu"]
@@ -136,3 +138,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65436, 0, 2.84233)
 
 [node name="wide_industrial_light" parent="." instance=ExtResource("39_4vs5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85648, 0, 2.88343)
+
+[node name="wooden_desk" parent="." instance=ExtResource("26_n0n3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7174, -9.53674e-07, 6.57247)
+
+[node name="computer" parent="." instance=ExtResource("27_3te7t")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

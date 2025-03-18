@@ -231,12 +231,12 @@ directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 19.4238, 3.19018, 114.867)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, 114.867)
 
 [node name="world" type="Node3D" parent="."]
 
 [node name="boatAnimated" type="AnimatableBody3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.538, -0.439833, 113.135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, 113.177)
 
 [node name="boat" parent="world/boatAnimated" instance=ExtResource("2_rhyc4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -404,7 +404,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
 shape = SubResource("BoxShape3D_2hrsm")
 
 [node name="stairsBottom" type="StaticBody3D" parent="world/facilityModel/mainSupports/stairs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -12, -5.601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -12.0795, -5.601)
 
 [node name="stair" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairsBottom"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)

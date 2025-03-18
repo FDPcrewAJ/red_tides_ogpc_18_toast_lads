@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
-radius = 0.3
+radius = 0.32
 height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
-radius = 0.3
+radius = 0.32
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 
@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="PlayerCamera" type="Camera3D" parent="Head/Neck"]
 fov = 90.0
-near = 0.23
+near = 0.215
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Neck/PlayerCamera"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)

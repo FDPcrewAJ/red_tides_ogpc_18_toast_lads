@@ -25,5 +25,7 @@ func _process(_delta):
 
 
 func _on_water_col_area_entered(_area):
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Final Levels/facility_exterior.tscn")
+	player.position.x = boat.position.x
+	player.position.z = boat.position.z + 2
+	player.position.y = boat.position.y + 3.5
 	

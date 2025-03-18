@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=29 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
 [ext_resource type="Material" uid="uid://btv15dpxqjiuq" path="res://Assets/Materials/cardboardBox.tres" id="2_wcgik"]
@@ -15,17 +15,10 @@
 [ext_resource type="Material" uid="uid://dxnajj5b2unbx" path="res://Assets/Materials/joystick.tres" id="28_8wubg"]
 [ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Assets/Models/Objects/Motor/Motor.obj" id="29_h0fxu"]
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
-[ext_resource type="ArrayMesh" uid="uid://ixv3bnd03tdn" path="res://Assets/Models/Objects/Lights/industialLight1.obj" id="31_varro"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="32_8j3kc"]
-[ext_resource type="Material" uid="uid://y0dxojnld4dd" path="res://Assets/Materials/industrialLight1.tres" id="32_lu1wl"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="33_21cgc"]
-[ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="33_vsbd1"]
-[ext_resource type="Material" uid="uid://b87aa3c8e612t" path="res://Assets/Materials/industrialLight0.tres" id="34_xqvqh"]
-[ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Assets/Models/Objects/Box/WoodenBox.gltf" id="35_bslan"]
 [ext_resource type="ArrayMesh" uid="uid://drgqdimxfppkx" path="res://Assets/Models/Objects/Toaster/toastLadsToaster.obj" id="35_g7qrw"]
-[ext_resource type="ArrayMesh" uid="uid://7o2smkr75rxh" path="res://Assets/Models/Objects/Lights/industialLight2.obj" id="35_ryqe0"]
 [ext_resource type="ArrayMesh" uid="uid://bl0lnilg7lu7i" path="res://Assets/Models/Objects/Pipes/pipeJunctionCross.obj" id="36_ad2f4"]
-[ext_resource type="Material" uid="uid://cxujgew8xptb1" path="res://Assets/Materials/industrialLight2.tres" id="36_f61us"]
 [ext_resource type="Material" uid="uid://b7wv6qr71u5f1" path="res://Assets/Materials/toaster.tres" id="36_foe0e"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Assets/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
@@ -112,25 +105,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32497, -0.0302026, 9.00021)
 mesh = ExtResource("29_h0fxu")
 material = ExtResource("30_eifxb")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61503, 4.76837e-07, 5.0364)
-mesh = ExtResource("31_varro")
-material = ExtResource("32_lu1wl")
-
-[node name="IndustrialLight0" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8293, 0, 4.81102)
-mesh = ExtResource("33_vsbd1")
-material = ExtResource("34_xqvqh")
-
 [node name="Toaster" type="CSGMesh3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.18093, 1.06789, 9.32306)
 mesh = ExtResource("35_g7qrw")
 material = ExtResource("36_foe0e")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37386, 0, 5.08412)
-mesh = ExtResource("35_ryqe0")
-material = ExtResource("36_f61us")
 
 [node name="DoorFacility" parent="." instance=ExtResource("32_8j3kc")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 9.88888, 0, 9.77634)

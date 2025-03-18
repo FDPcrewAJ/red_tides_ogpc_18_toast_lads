@@ -25,6 +25,7 @@ data = PackedVector3Array(0.0378, 0.9844, -2.7348, -0.0378, 0.9844, -2.7348, 0, 
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.75, -0.5)
 
 [node name="boatCol" type="StaticBody3D" parent="." index="1"]
+visible = false
 physics_material_override = SubResource("PhysicsMaterial_f65ko")
 
 [node name="shellCol" type="CollisionShape3D" parent="boatCol" index="0"]

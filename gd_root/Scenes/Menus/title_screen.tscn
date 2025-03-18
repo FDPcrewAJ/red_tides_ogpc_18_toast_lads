@@ -1,7 +1,7 @@
-[gd_scene load_steps=52 format=3 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=55 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
-[ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="1_s0mk4"]
+[ext_resource type="Texture2D" uid="uid://c4qnydty8wkwn" path="res://Textures/Exterior Textures/sky_panorama.png" id="1_igluk"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_etr80"]
 [ext_resource type="PackedScene" uid="uid://dqjbnuea3t06a" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="5_owl5n"]
@@ -12,6 +12,24 @@
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="9_u6wbv"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="10_kvm1t"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_k617b"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hl1ea"]
+panorama = ExtResource("1_igluk")
+
+[sub_resource type="Sky" id="Sky_ehbyn"]
+sky_material = SubResource("PanoramaSkyMaterial_hl1ea")
+
+[sub_resource type="Environment" id="Environment_8vbwh"]
+background_mode = 2
+sky = SubResource("Sky_ehbyn")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.28
+fog_enabled = true
+fog_light_color = Color(0.375519, 0.407209, 0.457021, 1)
+fog_light_energy = 0.17
+fog_sun_scatter = 0.49
+fog_density = 0.006
+volumetric_fog_density = 0.0089
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vka"]
 render_priority = 0
@@ -199,7 +217,7 @@ size = Vector3(60, 45, 80)
 [node name="TitleScreen" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_s0mk4")
+environment = SubResource("Environment_8vbwh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -413,6 +431,16 @@ mesh = SubResource("CylinderMesh_cs1sj")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="facilityModel/mainBuilding/towerWalls/Dome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
 mesh = SubResource("SphereMesh_7w5l5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="facilityModel/mainBuilding/towerWalls/Dome/MeshInstance3D2"]
+transform = Transform3D(-0.236824, 0.792264, 0.562346, -0.885731, 0.0617907, -0.460067, -0.399242, -0.607042, 0.687099, 40.4576, -10.9782, 43.8405)
+light_color = Color(0, 0.501961, 0.501961, 1)
+light_energy = 200.0
+light_size = 0.798
+light_bake_mode = 1
+spot_range = 133.294
+spot_angle = 39.5384
+spot_angle_attenuation = 1e-05
 
 [node name="detailPillars" type="Node3D" parent="facilityModel/mainBuilding/towerWalls"]
 

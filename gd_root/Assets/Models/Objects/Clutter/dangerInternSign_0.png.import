@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76ug5txxnvjc"
-path.s3tc="res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"
+uid="uid://b3skpoew4motm"
+path.s3tc="res://.godot/imported/dangerInternSign_0.png-77f89e6fc44f7f14992a5ef8e26ff6d5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "cd147f328509512306182833156eee57"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Fuel Can/fuelCan.png"
-dest_files=["res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Clutter/dangerInternSign_0.png"
+dest_files=["res://.godot/imported/dangerInternSign_0.png-77f89e6fc44f7f14992a5ef8e26ff6d5.s3tc.ctex"]
 
 [params]
 

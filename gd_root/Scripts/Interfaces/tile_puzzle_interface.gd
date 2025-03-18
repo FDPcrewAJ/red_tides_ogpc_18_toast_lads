@@ -21,4 +21,4 @@ func _process(_delta) -> void:
 
 
 func _on_tile_button_37_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/testingLevels/tile_puzzle.tscn")
+	get_tree().call_deferred("change_scene_to_file", Global.previous_scene)

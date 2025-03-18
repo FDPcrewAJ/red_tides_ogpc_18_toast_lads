@@ -7,6 +7,13 @@ extends Node3D
 var boat_end_pos = -44.0
 
 
+func _ready() -> void:
+	if Global.consistent_positioning == true:
+		if typeof(Global.new_position) != TYPE_INT:
+			#You need to change the $player node referenced here to the player in the current scene
+			player._set_new_pos()
+			Global.consistent_positioning = false
+
 func _process(_delta):
 	if boat.position.z > boat_end_pos:
 		boat.translate(Vector3(0,0,-0.04 * 1))

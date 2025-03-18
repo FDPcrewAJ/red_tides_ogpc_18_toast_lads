@@ -1,18 +1,19 @@
 extends Node3D
 
-var dial_puzzle = false
-var tile_puzzle = false
-var fire_puzzle = false
-
 
 func _ready():
-	dial_puzzle = true
-	tile_puzzle = true
-	fire_puzzle = true
+	pass
 
 
 func _process(_delta):
-	if dial_puzzle and tile_puzzle and fire_puzzle:
-		if Global.current_object == "doorCol":
+	if Global.dial_puzzle and Global.tile_puzzle and Global.fire_puzzle:
+		if Global.current_object_parent == "exitDoor":
 			if Input.is_action_just_pressed("interact"):
 				get_tree().call_deferred("change_scene_to_file", "res://Scenes/Menus/title_screen.tscn")
+	if Global.current_object_parent == "firePuzzleDoor":
+		if Input.is_action_just_pressed("interact"):
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")
+	if Global.current_object_parent == "entryDoor":
+		if Input.is_action_just_pressed("interact"):
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Final Levels/facility_exterior.tscn")
+			Global.new_position = Vector3(0,0,0)

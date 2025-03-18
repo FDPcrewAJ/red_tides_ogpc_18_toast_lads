@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire.gd" id="4_rnf6b"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="5_8h3pe"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_2.gd" id="5_yh3cq"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_console.gd" id="6_ulpcg"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="6_ulpcg"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_3.gd" id="6_vdwiv"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_2r685"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]

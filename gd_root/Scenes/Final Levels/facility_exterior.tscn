@@ -160,6 +160,11 @@ height = 12.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8g83"]
 albedo_texture = ExtResource("7_y44iw")
+emission_enabled = true
+emission = Color(0, 0.440284, 0.396889, 1)
+emission_energy_multiplier = 0.65
+backlight_enabled = true
+backlight = Color(0, 0.439216, 0.396078, 1)
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -414,6 +419,16 @@ mesh = SubResource("CylinderMesh_fe38a")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
 mesh = SubResource("SphereMesh_5q6ys")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome/MeshInstance3D2"]
+transform = Transform3D(-0.171305, 0.792264, 0.585639, -0.947233, 0.0310212, -0.31904, -0.270931, -0.60939, 0.745144, 34.9661, -10.1348, 45.5453)
+visible = false
+light_color = Color(1, 1, 0.686275, 1)
+light_energy = 150.0
+light_size = 0.798
+light_bake_mode = 1
+spot_range = 75.1217
+spot_angle = 36.9762
 
 [node name="detailPillars" type="Node3D" parent="world/facilityModel/mainBuilding/towerWalls"]
 

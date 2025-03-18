@@ -194,6 +194,26 @@ theme_override_font_sizes/font_size = 45
 text = "underwater_floor"
 flat = true
 
+[node name="facility_enterance" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 555.0
+offset_top = -331.0
+offset_right = 949.0
+offset_bottom = -227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "facility_enterance"
+flat = true
+
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Hub" to="." method="_on_hub_pressed"]
 [connection signal="pressed" from="Fire Puzzle" to="." method="_on_fire_puzzle_pressed"]
@@ -203,3 +223,4 @@ flat = true
 [connection signal="pressed" from="Dial Puzzle" to="." method="_on_dial_puzzle_pressed"]
 [connection signal="pressed" from="facilityExterior" to="." method="_on_facility_exterior_pressed"]
 [connection signal="pressed" from="underwater_floor" to="." method="_on_underwater_floor_pressed"]
+[connection signal="pressed" from="facility_enterance" to="." method="_on_facility_enterance_pressed"]

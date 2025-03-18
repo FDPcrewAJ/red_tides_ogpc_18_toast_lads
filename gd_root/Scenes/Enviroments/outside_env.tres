@@ -1,9 +1,12 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dbve5ph7sqr2v"]
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dbve5ph7sqr2v"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1yhw"]
+[ext_resource type="Texture2D" uid="uid://c4qnydty8wkwn" path="res://Textures/Exterior Textures/sky_panorama.png" id="1_msbp7"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hl1ea"]
+panorama = ExtResource("1_msbp7")
 
 [sub_resource type="Sky" id="Sky_ehbyn"]
-sky_material = SubResource("ProceduralSkyMaterial_n1yhw")
+sky_material = SubResource("PanoramaSkyMaterial_hl1ea")
 
 [resource]
 background_mode = 2
@@ -14,5 +17,6 @@ fog_enabled = true
 fog_light_color = Color(0.375519, 0.407209, 0.457021, 1)
 fog_light_energy = 0.17
 fog_sun_scatter = 0.49
-fog_density = 0.0025
+fog_density = 0.006
+fog_sky_affect = 0.822
 volumetric_fog_density = 0.0089

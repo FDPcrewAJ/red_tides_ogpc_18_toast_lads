@@ -1,25 +1,16 @@
-[gd_scene load_steps=41 format=3 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=45 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Assets/Models/Objects/Box/Box.obj" id="1_icd8g"]
-[ext_resource type="Material" uid="uid://c7gljd2b8y7o3" path="res://Assets/Materials/woodenBox.tres" id="2_6fbbl"]
-[ext_resource type="Texture2D" uid="uid://dht0v3ox2kbv1" path="res://Assets/Models/Objects/Box/MetalBox.png" id="2_cs0yj"]
 [ext_resource type="Material" uid="uid://btv15dpxqjiuq" path="res://Assets/Materials/cardboardBox.tres" id="2_wcgik"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="5_fgcqh"]
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="6_8p4gx"]
 [ext_resource type="PackedScene" uid="uid://bmew4hftfph65" path="res://Assets/Objects/Pipes/pipe_junction_cross.tscn" id="7_tnebd"]
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_0mfee"]
-[ext_resource type="ArrayMesh" uid="uid://bxxy1a01nsi68" path="res://Assets/Models/Objects/Pipes/pipeJunctionCross.obj" id="8_4jcw2"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="9_wtww1"]
 [ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="10_785gw"]
 [ext_resource type="ArrayMesh" uid="uid://6t3o0y8vo1gs" path="res://Assets/Models/Objects/Tables/circularTable.obj" id="15_7ua5l"]
 [ext_resource type="Material" uid="uid://coj5u7y6iywex" path="res://Assets/Materials/CircularTable.tres" id="16_7c3bu"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
-[ext_resource type="ArrayMesh" uid="uid://bev2himdow7bg" path="res://Assets/Models/Objects/Computer/ComputerScreen.obj" id="18_j7agk"]
-[ext_resource type="Material" uid="uid://c0j60m1nfq6y1" path="res://Assets/Materials/computerScreen.tres" id="19_aj4q5"]
-[ext_resource type="ArrayMesh" uid="uid://bpi6sq78kn7de" path="res://Assets/Models/Objects/Battery/Boat Battery.obj" id="20_xq44t"]
-[ext_resource type="Material" uid="uid://dfw8n34ush582" path="res://Assets/Materials/oldBattery.tres" id="21_1qepu"]
-[ext_resource type="Material" uid="uid://c2bu4nfrqd0t6" path="res://Assets/Materials/newBattery.tres" id="21_wsylh"]
-[ext_resource type="ArrayMesh" uid="uid://c2n60njy1raq8" path="res://Assets/Models/Objects/Battery/FuelCan.obj" id="25_jrfcw"]
 [ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="26_it72r"]
 [ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Assets/Models/Objects/Joystick/Joystick.obj" id="27_6qk6g"]
 [ext_resource type="Material" uid="uid://dxnajj5b2unbx" path="res://Assets/Materials/joystick.tres" id="28_8wubg"]
@@ -27,20 +18,55 @@
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
 [ext_resource type="ArrayMesh" uid="uid://ixv3bnd03tdn" path="res://Assets/Models/Objects/Lights/industialLight1.obj" id="31_varro"]
 [ext_resource type="Material" uid="uid://y0dxojnld4dd" path="res://Assets/Materials/industrialLight1.tres" id="32_lu1wl"]
-[ext_resource type="ArrayMesh" uid="uid://bsc4yw264kqtk" path="res://Assets/Models/Objects/Doors/doorFacility.obj" id="33_14xgv"]
 [ext_resource type="ArrayMesh" uid="uid://itfblyldlsy4" path="res://Assets/Models/Objects/Lights/IndustrialLight0.obj" id="33_vsbd1"]
-[ext_resource type="Material" uid="uid://co7oqg42mkhwi" path="res://Assets/Materials/doorFacility.tres" id="34_s8b82"]
 [ext_resource type="Material" uid="uid://b87aa3c8e612t" path="res://Assets/Materials/industrialLight0.tres" id="34_xqvqh"]
+[ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Assets/Models/Objects/Box/WoodenBox.gltf" id="35_bslan"]
 [ext_resource type="ArrayMesh" uid="uid://drgqdimxfppkx" path="res://Assets/Models/Objects/Toaster/toastLadsToaster.obj" id="35_g7qrw"]
 [ext_resource type="ArrayMesh" uid="uid://7o2smkr75rxh" path="res://Assets/Models/Objects/Lights/industialLight2.obj" id="35_ryqe0"]
-[ext_resource type="ArrayMesh" uid="uid://01br3q5xxc0y" path="res://Assets/Models/Objects/Doors/doorFacilityOpen.obj" id="35_whkwn"]
 [ext_resource type="Material" uid="uid://cxujgew8xptb1" path="res://Assets/Materials/industrialLight2.tres" id="36_f61us"]
 [ext_resource type="Material" uid="uid://b7wv6qr71u5f1" path="res://Assets/Materials/toaster.tres" id="36_foe0e"]
+[ext_resource type="PackedScene" uid="uid://b58leoi83gsdb" path="res://Assets/Models/Objects/Box/MetalBox.gltf" id="36_r5pq7"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
+[ext_resource type="PackedScene" uid="uid://dixq4mqfagy4a" path="res://Assets/Models/Objects/Battery/BoatBatteryNew.gltf" id="37_esd7o"]
+[ext_resource type="PackedScene" uid="uid://c3qp0csungpo3" path="res://Assets/Models/Objects/Clutter/clutterPileSmall.gltf" id="38_1ddci"]
+[ext_resource type="PackedScene" uid="uid://ccg2utxubgawk" path="res://Assets/Models/Objects/Battery/BoatBatteryOld.gltf" id="38_fq4jr"]
+[ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Assets/Models/Objects/Computer/ComputerScreen.gltf" id="39_4yrbv"]
+[ext_resource type="PackedScene" uid="uid://cbuon457absyv" path="res://Assets/Models/Objects/Clutter/dangerInternSign.gltf" id="39_dtfda"]
+[ext_resource type="PackedScene" uid="uid://b1rmgbys07i4h" path="res://Assets/Models/Objects/Doors/doorFacility.gltf" id="40_8gx6n"]
+[ext_resource type="PackedScene" uid="uid://ddqmjn6j77v1q" path="res://Assets/Models/Objects/Clutter/wetFloorSign.gltf" id="40_asp2m"]
+[ext_resource type="PackedScene" uid="uid://c2gw461dy8vg3" path="res://Assets/Models/Objects/Clutter/desk.gltf" id="41_0x88f"]
+[ext_resource type="PackedScene" uid="uid://db2cvdvj7km2m" path="res://Assets/Models/Objects/Doors/DoorFacilityOpen.gltf" id="41_li0j6"]
+[ext_resource type="PackedScene" uid="uid://c3vjpa8mtw18c" path="res://Assets/Models/Objects/Clutter/sodaCup.gltf" id="42_1kmeh"]
+[ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Assets/Models/Objects/Clutter/coffeeCup.gltf" id="43_eqewn"]
+[ext_resource type="PackedScene" uid="uid://wwlxchixubor" path="res://Assets/Models/Objects/Clutter/bananaPeel.gltf" id="44_guvnt"]
+[ext_resource type="PackedScene" uid="uid://k3ygya7ok4mf" path="res://Assets/Models/Objects/Antennas/Antennas.gltf" id="45_ex4h0"]
+[ext_resource type="PackedScene" uid="uid://bxjfsda88ml7g" path="res://Assets/Models/Objects/Clutter/spinnyChair.gltf" id="45_n38q7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mj5ya"]
-albedo_texture = ExtResource("2_cs0yj")
-texture_filter = 0
+[sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
+_surfaces = [{
+"aabb": AABB(-0.1875, 0, -0.5625, 0.375, 1.4375, 1.125),
+"attribute_data": PackedByteArray("/7f/V/+f/1f/t/9T/5//U/9f/3f/X/+7/0f/d/9H/7v/e/9j/3v/p/9j/2P/Y/+nFlFhFxZVYRcWUWBbFlVgXxaVYF8WjWEPFplgWxaZYReqAPkYqgz5EKoA+FyqBPhgqkT5GKpI+RiqRPhgqkj4XP9X/2P/T/9j/7//T/+f/0//v/9H/5//R/+H/wf/hwAA/4//B/+PAAD/k/8D/5MAAP+b/wP/mwAAwLD/Nz7B/zfAsP8/PsH/P8Cg/zfAsP83wKD/P8Cw/z//C/8H/wsAAP8T/wf/EwAAqkT5GKpEfwiqSPkYqkj4GKpEfwhVSXEDJUVJBv/H/zP/x/8r/8v/M//L/ytVSXEDGEVRBlhFIQMCVYEE6FBwAedUTwEWVecGkFFtFRZV5wYWVWEXFlFhF/50dQMCVYEE4nwAAOdUTwExJdADdx0AABhFUQZYRSED/5//K/+f/zN3HQAAMSXQA9oYqQexJDIK4nwAACSB3Qf+dHUDM3XbCRZlYRcZaWEXqjT5GP8//2f/P/9/AAD/ZwAA/3+oMPkYjyRlDI40CAzYMD4Z2jQmGY40CAyqRH8I2jQmGapEyxgWZWEXFlVhFxZlQgoWVRYHFnVCChlpYRcWZUIKFmVhF/8UpZD/HP+D/yylkP8k/4P/LBGf/xQRn/8spZD/FKWQ5qmYZMa0/2/Pnf9j/4//b2ar3wr/q/YWHqEAAB6hxyT/n/9f/5//W/+3/1//t/9b"),
+"format": 34896613399,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGgAZABsAHAAEAB0AHQAEAAYAHgAfACAAIAAfACEAIgAjACQAJAAjACUAJgAnACgAKAAnACkAKgArACwALAArAC0ALgAvADAAMAAvADEAMgAzADQANAAzADUANgA3ADgAOQA6ADsAOwA6ADwAPQA+AD8APwA+AEAAQQBCAEMARABFAEYARABHAEUARQBHAEgASQBKAEsATABNAE4ATgBNAE8AUABRAFIAUgBRAFMAPgA9AFQAVAA9AFUAVgBXAFgAWABXAFkAWgBbAFwAXABbAF0ADQBeAA8AEQAQAF8AXwAQAA8AXgBfAA8AGAAaAGAAYAAaABcAYQBiAGMAYwBiAGQAZQBgABcAFQBlABcAZgBnAGgAaABnAGkAagBrAGwAbABrAG0AbgBvAHAAcABvAHEAcgBzAHQAdABzAHUAdgB3AHgAeAB3AHkAegB7AHwAfAB7AH0AfgB/AIAAgAB/AIEAggCDAIQAhACDAIUAhgCHAIgAiACHAIkA"),
+"name": "m_da4f7814-ce8e-3d9a-81cf-dd20584df1c3",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 138,
+"vertex_data": PackedByteArray("//8AAMbx/58AAAAAxvH/n///IQv///+fAAAhC////5///1jI//8AgP//IQv//wCAAABYyP//AIAAACEL//8AgAAAWMgAAP//AAAhCwAA/////1jIAAD/////IQsAAP////9YyP///7///1jIxvH/v///IQv///+///8AAMbx/7///wAAOA7/v///mt6qKv+///8hCwAA/7///1jIAAD/vwAAWMgAAP+/AACa3qoq/78AACELAAD/vwAAAAA4Dv+/AABYyMbx/78AAFjI////vwAAAADG8f+/AAAhC////7+qqv////8AgFVV/////wCAqqoX98bxVNWqqhf3/39U1VVVF/fG8VTVVVUX9/9/VNWqqrzpVVX//6qq//+NY///VVW86VVV//9VVf//jWP//6qqafDG8f//qqoX98bx//9VVWnwxvH//1VVF/fG8f//qqpI5eK4T9uqqmnwxvFP21VVSOXiuE/bVVVp8MbxT9uqqkjl/39U1aqqSOXiuFTVVVVI5f9/VNVVVUjl4rhU1VVVSOX/fwCAVVUX9/9/AICqqkjl/38AgKqqF/f/fwCAAABYyMbxj8JVVWnwxvGPwgAAWMj//4/CAABYyP//SNRVVWnwxvFI1FVV/////0jUVVUX98bxSNRVVf//xvFU1aqq///G8VTVVVX/////VNWqqv////9U1VVV/////w/AVVUX98bxD8BVVf//xvEPwKqqF/fG8QLAqqr/////AsCqqv//xvECwKqqafDG8QLA//9YyP//AsCqqmnwxvGPwv//WMjG8Y/C//9YyP//j8Kqqhf3/38CwKqqF/fG8QLAqqr//41jAsCqqv//xvECwFVVF/f/fw/AVVX//41jD8BVVRf3xvEPwFVV///G8Q/Aqqr//41jVNVVVf//jWNU1VVV//+NYw/AVVUX9/9/D8BVVbzpVVUPwFVVSOX/fw/Aqqr//41jAsCqqrzpVVUCwKqqF/f/fwLAqqpI5f9/AsD//1jI4rj/v///WMihqv+/AABYyOK4/78AAAAAxvFU1f//AADG8VTVAAAAADgOVNX//wAAOA5U1QAAWMikqv+/VVVI5f9/g8RVVUjl4riDxAAAWMikqoPEAABYyOK4g8RVVUjl4rgRylVVafDG8RHKAABYyOK4EcoAAFjIxvERyv//WMjiuDrE//9YyMbxOsSqqkjl4rg6xKqqafDG8TrEqqpI5f9/OsT//1jIoao6xKqqSOXiuDrE//9YyOK4OsT//5reqir//6qqvOlVVf//AACa3qoq//9VVbzpVVX//wAAWMgAAP////9YyAAA//8AAJreqir/////mt6qKv//qqq86VVVjsf//5reqiqdx6qqSOX/f6TH//9YyKGqqMdVVbzpVVUvvlVVSOX/fy++AACa3qoqL74AAFjIpKovvv//AAA4Dv////8hCwAA//8AAAAAOA7//wAAIQsAAP//AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f////3////9/////f///qipU1aoqVNWqKlTVqipU1f9/jOf/f4zn/3+M5/9/jOf/f////3////9/////f///B64HrgeuB64HrgeuB64Hrqqqqqqqqqqqqqqqqqqqqqr/f////3////9/////f///2JVN1NiVTdTYlU3USZQ44UmUOOFJlDjhSpQ44aqqqqqqqqqqqqqqqqqqqqpMiVj7TIlY+0yJWPsGgg4EBoIOBAaCDgQGgg4EBoIOBLCr2BWwq9gVsKvYFQaCDgQGgg4EBoIOBAaCDgRMiVj7TIlY+0yJWPtMiVj7qqqqqqqqqqpMiVj7TIlY+0yJWPtMiVj7BoIOBAaCDgQGgg4EBoIOBP9/AAD/fwAA/3///6oqVNWqKlTVqipU1aoqVNX/f////ZhLzP2YS8z9mEvM/ZhLzL+Zms6/mZrOv5mazr+Zms7Rs+gZ0bPoGdGz6BnRs+gZ0bPoGdGz6BnRs+gZ0bPoGf9/Ycr/f2HK/39hyv9/Ycr/f1/T/39f0/9/X9P/f1/TTMKOG0fCdBtFwmkbQ8JhG4HierOA4nqzgeJ6s4DierN8pf//fKX//3yl//98pf//")
+}, {
+"aabb": AABB(-0.0625, 1.14945, -1.06104, 0.125, 0.62938, 0.673123),
+"attribute_data": PackedByteArray("/5Oapf+bmqX/k5qp/5uaqf8zmrX/O5q1/zOauf87mrn/B/8HAAD/B/8HAAAAAAAAmZVLjWWaS42ZlUuhZZpLoZk1S51mOkudmTVLsWY6S7Flmkuh/5uapZmVS6H/k5qlZjpLsf87mrWZNUux/zOatQAA/wv/A/8LAAD/D/8D/w+Zlf9zZZr/c5mVS41lmkuNmTX/g2Y6/4OZNUudZjpLnTKPTpQyj06YModOlDKHTpiZjf97mY3/j8yI/3vMiP+PMo9OlDKHTpSZjf+PzIj/j5mF/2PMgP9jzABOtMwITrTMAE64zAhOuGYC/5szB/+bZgL/rzMH/6/MAE60ZgL/r8wITrQzB/+vZgr/gzMP/4M="),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGgAZABsAHAAdAB4AHgAdAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtAC4ALgAtAC8AMAAxADIAMgAxADMANAAsADUANQAsAC4ANgA3ADgAOAA3ADkAOgA7ADwAPAA7AD0APgA/AEAAQAA/AEEAQgBDADoAOgBDADsA"),
+"name": "m_da4f7814-ce8e-3d9a-81cf-dd20584df1c3",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 68,
+"vertex_data": PackedByteArray("//8rFM/L//8AACsUz8v/////AABH2v//AAAAAEfa//8AAB4zhvGqmv//HjOG8aqaAADzHv//qpr///Me//+qmv//AABH2lSlAAAAAEfaVKX///Me//9UpQAA8x7//1SlzMxek4h8//8yM16TiHz//8zMhi7ixP//MjOGLuLE//8yM/ClKZOqmszM8KUpk6qaMjMYQYPbqprMzBhBg9uqmjIzhi7ixP//AAArFM/L///MzIYu4sT/////KxTPy///zMwYQYPbKqr//x4zhvEqqjIzGEGD2yqqAAAeM4bxKqoyM2ztAACp2szMbO0AAKnaMjP//6EWqdrMzP//oRap2szMbO0AAP//MjNs7QAA///MzF6TiHz//zIzXpOIfP//MjP//6EWxafMzP//oRbFpzIz8KUpk8WnzMzwpSmTxacAAB4zhvE2xAAA8x7//zbEAAArFM/LNsQAAAAAR9o2xDIz8KUpkzbEMjMYQYPbNsQyM16TiHw2xDIzhi7ixDbEAAAeM4bxEsoAACsUz8sSyjIzGEGD2xLKMjOGLuLEEsoyM///oRY2xDIzbO0AADbE//8eM4bxNsT//ysUz8s2xP//8x7//zbE//8AAEfaNsTMzPClKZM2xMzMXpOIfDbEzMwYQYPbNsTMzIYu4sQ2xP//HjOG8RLKzMwYQYPbEsr//ysUz8sSyszMhi7ixBLKzMz//6EWNsTMzGztAAA2xG+g//9voP//b6D//2+g//////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f2+g//9voP//b6D//2+g//////9/////f////3////9/gY///4GP//+Bj///gY///////3////9/////f////3////9/////f////3////9/ZKz//2Ss//9krP//ZKz//////3////9/////f////3/Bsx3mwbMd5sGzHebBsx3mwbMd5sGzHebBsx3mwbMd5tGx9NjRsfTY0bH02NGx9NjBsx3mwbMd5uCZwjPgmcIz4JnCM+CZwjPgmcIz4JnCM+CZwjPgmcIzCqfRMQqn0TEKp9ExCqfRMeCZwjPgmcIz")
+}]
+blend_shape_mode = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a2lou"]
 
@@ -52,20 +78,10 @@ texture_filter = 0
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WoodenBox" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.945636, 0, 0, 0, 0.945636, 0, 0, 0, 0.945636, 6.02785, -0.0372752, 12.0314)
-mesh = ExtResource("1_icd8g")
-material = ExtResource("2_6fbbl")
-
 [node name="CardboardBox" type="CSGMesh3D" parent="."]
 transform = Transform3D(0.919572, 0, 0, 0, 0.919572, 0, 0, 0, 0.919572, 7.50571, -0.0551458, 11.7541)
 mesh = ExtResource("1_icd8g")
 material = ExtResource("2_wcgik")
-
-[node name="MetalBox" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.972438, 0, 0, 0, 0.972438, 0, 0, 0, 0.972438, 4.24203, -0.018898, 12.2204)
-mesh = ExtResource("1_icd8g")
-material = SubResource("StandardMaterial3D_mj5ya")
 
 [node name="PipeStraight" parent="." instance=ExtResource("5_fgcqh")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.300716, 0, 12.8061)
@@ -75,7 +91,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.47137, 0, 12.8061)
 
 [node name="PipeJunctionCross" parent="." instance=ExtResource("7_tnebd")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.46145, 0, 12.8061)
-mesh = ExtResource("8_4jcw2")
 
 [node name="PipeJunctionT" parent="." instance=ExtResource("8_0mfee")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.30425, 0, 12.8061)
@@ -94,28 +109,13 @@ material = ExtResource("16_7c3bu")
 [node name="player" parent="." instance=ExtResource("17_kx1ri")]
 transform = Transform3D(1.07579, 0, 0, 0, 1.07579, 0, 0, 0, 1.07579, 2.34332, 1, 11.6245)
 
-[node name="ComputerScreen" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.645094, 0, 0, 0, 0.645094, 0, 0, 0, 0.645094, 1.45951, 1.08744, 9.83907)
-mesh = ExtResource("18_j7agk")
-material = ExtResource("19_aj4q5")
-
-[node name="OldBattery" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5932, 0, 9.24793)
-mesh = ExtResource("20_xq44t")
-material = ExtResource("21_1qepu")
-
-[node name="NewBattery" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5932, 0, 7.11207)
-mesh = ExtResource("20_xq44t")
-material = ExtResource("21_wsylh")
-
 [node name="FuelCan" type="CSGMesh3D" parent="."]
 transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 3.82095, -4.76837e-07, 9.75233)
-mesh = ExtResource("25_jrfcw")
+mesh = SubResource("ArrayMesh_kg6tg")
 material = ExtResource("26_it72r")
 
 [node name="joystick" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.99216, 1.08374, 10.4401)
+transform = Transform3D(0.249986, 0.00156755, -0.00216184, -0.00156035, 0.249994, 0.000838355, 0.00216704, -0.000824813, 0.249989, 7.04426, 1.11467, 5.70928)
 mesh = ExtResource("27_6qk6g")
 material = ExtResource("28_8wubg")
 
@@ -144,17 +144,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37386, 0, 5.08412)
 mesh = ExtResource("35_ryqe0")
 material = ExtResource("36_f61us")
 
-[node name="DoorFacility" type="CSGMesh3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 10.6018, 0, 10.2282)
-mesh = ExtResource("33_14xgv")
-material = ExtResource("34_s8b82")
-
-[node name="DoorFacilityOpen" type="CSGMesh3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 11.5921, 4.76837e-07, 12.2628)
-mesh = ExtResource("35_whkwn")
-material = ExtResource("34_s8b82")
-
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="."]
 transform = Transform3D(30.3294, 0, 0, 0, 1.00078, 0, 0, 0, 29.7303, -1.30502, 0, -0.100344)
 mesh = SubResource("PlaneMesh_a2lou")
 material = SubResource("StandardMaterial3D_05tm8")
+
+[node name="grossPatch" parent="." instance=ExtResource("38_1ddci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73524, 0, 7.47345)
+
+[node name="dangerInternSign" parent="." instance=ExtResource("39_dtfda")]
+transform = Transform3D(0.437049, 0, 0, 0, 0.437049, 0, 0, 0, 0.437049, 1.66188, 0, 5.641)
+
+[node name="wetFloodSign" parent="." instance=ExtResource("40_asp2m")]
+transform = Transform3D(0.437049, 0, 0, 0, 0.437049, 0, 0, 0, 0.437049, 3.55607, 0, 5.63579)
+
+[node name="desk" parent="." instance=ExtResource("41_0x88f")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.91509, 0, 5.43199)
+
+[node name="sodaCup" parent="." instance=ExtResource("42_1kmeh")]
+transform = Transform3D(0.838632, 0, 0, 0, 0.838632, 0, 0, 0, 0.838632, 1.62508, 1.07371, 10.356)
+
+[node name="coffeeCup" parent="." instance=ExtResource("43_eqewn")]
+transform = Transform3D(0.720387, 0, 0, 0, 0.720387, 0, 0, 0, 0.720387, 1.32175, 1.07856, 9.97902)
+
+[node name="bananaPeel" parent="." instance=ExtResource("44_guvnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.04289, 0, 5.69032)
+
+[node name="spinnyChair" parent="." instance=ExtResource("45_n38q7")]
+transform = Transform3D(0.787311, 0, 0, 0, 0.787311, 0, 0, 0, 0.787311, 6.77536, 0, 5.78277)
+
+[node name="antennas" parent="." instance=ExtResource("45_ex4h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.12192, 0, 3.96969)
+
+[node name="woodenBox" parent="." instance=ExtResource("35_bslan")]
+transform = Transform3D(0.767027, 0, 0, 0, 0.767027, 0, 0, 0, 0.767027, -0.186497, 0, 6.99184)
+
+[node name="metalBox" parent="." instance=ExtResource("36_r5pq7")]
+transform = Transform3D(0.767027, 0, 0, 0, 0.767027, 0, 0, 0, 0.767027, -1.51459, 0, 8.04592)
+
+[node name="boatBatteryNew" parent="." instance=ExtResource("37_esd7o")]
+transform = Transform3D(0.625473, 0, 0, 0, 0.625473, 0, 0, 0, 0.625473, 6.42297, 0, 9.5589)
+
+[node name="boatBatteryOld" parent="." instance=ExtResource("38_fq4jr")]
+transform = Transform3D(0.625473, 0, 0, 0, 0.625473, 0, 0, 0, 0.625473, 6.40697, 0, 8.82503)
+
+[node name="computer" parent="." instance=ExtResource("39_4yrbv")]
+transform = Transform3D(0.754418, 0, 0, 0, 0.754418, 0, 0, 0, 0.754418, 6.64016, 1.12257, 5.07446)
+
+[node name="blockbench_export" parent="." instance=ExtResource("40_8gx6n")]
+transform = Transform3D(1.11751, 0, 0, 0, 1.11751, 0, 0, 0, 1.11751, 12.2422, 0, 7.41403)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("41_li0j6")]
+transform = Transform3D(1.11751, 0, 0, 0, 1.11751, 0, 0, 0, 1.11751, 10.0492, 0, 7.06193)

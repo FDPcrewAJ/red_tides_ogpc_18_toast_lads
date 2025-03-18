@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76ug5txxnvjc"
-path.s3tc="res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"
+uid="uid://df3yxw0ak01n8"
+path.s3tc="res://.godot/imported/coffeeCup_0.png-617485aeb7b14ade20065c1e5f395bd0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8c1a3a404437bd440a31ab10c4427440"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Fuel Can/fuelCan.png"
-dest_files=["res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Clutter/coffeeCup_0.png"
+dest_files=["res://.godot/imported/coffeeCup_0.png-617485aeb7b14ade20065c1e5f395bd0.s3tc.ctex"]
 
 [params]
 

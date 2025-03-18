@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76ug5txxnvjc"
-path.s3tc="res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"
+uid="uid://cop0fm7jm1wir"
+path="res://.godot/imported/bananaPeel_0.png-b642d91be9e0c417affd43a9acf7fd3f.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "b7b6dc1f9ae03d80778caf0c81486680"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Fuel Can/fuelCan.png"
-dest_files=["res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Clutter/bananaPeel_0.png"
+dest_files=["res://.godot/imported/bananaPeel_0.png-b642d91be9e0c417affd43a9acf7fd3f.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

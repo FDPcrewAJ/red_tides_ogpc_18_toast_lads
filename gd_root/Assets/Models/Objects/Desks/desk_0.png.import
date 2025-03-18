@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76ug5txxnvjc"
-path.s3tc="res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"
+uid="uid://btwhgkp6alto7"
+path.s3tc="res://.godot/imported/desk_0.png-9b4f85a86df5a389db42c48545707f41.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "d985c35fb3da056643c11ea0d60bda12"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Fuel Can/fuelCan.png"
-dest_files=["res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Desks/desk_0.png"
+dest_files=["res://.godot/imported/desk_0.png-9b4f85a86df5a389db42c48545707f41.s3tc.ctex"]
 
 [params]
 

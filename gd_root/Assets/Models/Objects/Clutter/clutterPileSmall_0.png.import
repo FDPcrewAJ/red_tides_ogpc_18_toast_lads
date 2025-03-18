@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76ug5txxnvjc"
-path.s3tc="res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"
+uid="uid://8nmv1xm2j617"
+path="res://.godot/imported/clutterPileSmall_0.png-4e0f8aacbd949abfce65e8874252c49d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "4467345f07e2c71cf2cdfe22c062005a"
 }
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Fuel Can/fuelCan.png"
-dest_files=["res://.godot/imported/fuelCan.png-917fc25fa88d4ac509880d3cef7bfac8.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Clutter/clutterPileSmall_0.png"
+dest_files=["res://.godot/imported/clutterPileSmall_0.png-4e0f8aacbd949abfce65e8874252c49d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

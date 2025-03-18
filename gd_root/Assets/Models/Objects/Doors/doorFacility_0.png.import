@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://76ug5txxnvjc"
-path.s3tc="res://.godot/imported/fuelCan.png-5edb257158c00296478130a868ec3f7f.s3tc.ctex"
+uid="uid://c8l76ubbywfqq"
+path.s3tc="res://.godot/imported/doorFacility_0.png-07dacb2f3a2e59a215ba090f6a5ec373.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "2fa6e1a089841c64a7e3be6bee63cd71"
+}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Battery/fuelCan.png"
-dest_files=["res://.godot/imported/fuelCan.png-5edb257158c00296478130a868ec3f7f.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Doors/doorFacility_0.png"
+dest_files=["res://.godot/imported/doorFacility_0.png-07dacb2f3a2e59a215ba090f6a5ec373.s3tc.ctex"]
 
 [params]
 

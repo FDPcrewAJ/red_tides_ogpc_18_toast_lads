@@ -45,6 +45,13 @@ var dial_3_rotation = 0
 
 var dial_puzzle_completed = false
 
+var dial_puzzle = false
+var tile_puzzle = false
+var fire_puzzle = false
+
+var consistent_positioning = true
+var new_position = 0
+
 func _process(_delta):
 	if new_game == true:
 		room_completed = false

@@ -136,13 +136,16 @@ script/source = "extends MeshInstance3D
 
 func _ready():
 	if typeof(Global.lastpos) != TYPE_INT:
-		$\"../player\"._set_last_pos()
+		#You need to change the $player node referenced here to the player in the current scene
+		$\"../../../player\"._set_last_pos()
 
 func _process(_delta):
 	if Global.current_object == \"ConsoleBody\":
 		if Input.is_action_just_pressed(\"interact\"):
-			Global.lastpos = $\"../player\".position
-			get_tree().call_deferred(\"change_scene_to_file\", \"res://Scenes/Interfaces/dial_puzzle_interface.tscn\")
+			#You need to change the $player node referenced here to the player in the current scene
+			Global.lastpos = $\"../../../player\".position
+			Global.previous_scene = get_tree().current_scene.scene_file_path
+			get_tree().call_deferred(\"change_scene_to_file\", \"res://Scenes/Interfaces/tile_puzzle_interface.tscn\")
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bykm1"]
@@ -172,7 +175,9 @@ script/source = "extends MeshInstance3D
 func _process(_delta):
 	if Global.current_object == \"ConsoleBody\":
 		if Input.is_action_just_pressed(\"interact\"):
-			Global.lastpos = $\"../player\".position
+			#You need to change the $player node referenced here to the player in the current scene
+			Global.lastpos = $\"../../../player\".position
+			Global.previous_scene = get_tree().current_scene.scene_file_path
 			get_tree().call_deferred(\"change_scene_to_file\", \"res://Scenes/Interfaces/tile_puzzle_interface.tscn\")
 "
 
@@ -513,7 +518,7 @@ transform = Transform3D(20, 2.38418e-06, -1.04216e-13, 0, -8.74228e-07, -20, -2.
 material_override = SubResource("StandardMaterial3D_4dn56")
 mesh = SubResource("PlaneMesh_2ichs")
 
-[node name="wood_door_closed" parent="world" instance=ExtResource("17_wwapo")]
+[node name="entryDoor" parent="world" instance=ExtResource("17_wwapo")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.69035, 0.5, 9.44488)
 
 [node name="small_industrial_light" parent="world" instance=ExtResource("17_ewl6r")]
@@ -549,5 +554,5 @@ light_color = Color(1, 0.172549, 0.0745098, 1)
 light_energy = 1.152
 omni_range = 1.43287
 
-[node name="wood_door_closed3" parent="world" instance=ExtResource("17_wwapo")]
+[node name="firePuzzleDoor" parent="world" instance=ExtResource("17_wwapo")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 3.41487, 0.5, -9.49384)

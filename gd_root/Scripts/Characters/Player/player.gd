@@ -117,6 +117,9 @@ func verify_save_directory(path):
 func _set_last_pos():
 	position = Global.lastpos
 
+func _set_new_pos():
+	position = Global.new_position
+
 
 func load_data():
 	save_system = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://77pqqyxlsm38"]
+
+[ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="1_5s7l4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cs2ix"]
+
+[node name="wooden_box" instance=ExtResource("1_5s7l4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_cs2ix")

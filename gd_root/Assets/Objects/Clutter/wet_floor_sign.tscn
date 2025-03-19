@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crhlmbfm2nywb"]
+
+[ext_resource type="PackedScene" uid="uid://ddqmjn6j77v1q" path="res://Imports/Models/Objects/Clutter/wetFloorSign.gltf" id="1_cmgqj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_krbua"]
+size = Vector3(1, 2.15314, 0.901367)
+
+[node name="wet_floor_sign" instance=ExtResource("1_cmgqj")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10605, 0.0493164)
+shape = SubResource("BoxShape3D_krbua")

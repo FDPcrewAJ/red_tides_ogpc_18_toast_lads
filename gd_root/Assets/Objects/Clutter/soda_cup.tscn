@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw3vtqs02fnpv"]
+
+[ext_resource type="PackedScene" uid="uid://c3vjpa8mtw18c" path="res://Imports/Models/Objects/Clutter/sodaCup.gltf" id="1_cxgrk"]
+
+[node name="soda_cup" instance=ExtResource("1_cxgrk")]

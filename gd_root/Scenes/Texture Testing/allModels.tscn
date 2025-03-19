@@ -1,27 +1,30 @@
-[gd_scene load_steps=31 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=34 format=4 uid="uid://b5jdi5yv070sr"]
 
-[ext_resource type="ArrayMesh" uid="uid://uf3m063wiskh" path="res://Imports/Models/Objects/Box/Box.obj" id="1_icd8g"]
-[ext_resource type="Material" uid="uid://btv15dpxqjiuq" path="res://Assets/Materials/cardboardBox.tres" id="2_wcgik"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="5_fgcqh"]
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/Pipes/pipe_turn_90.tscn" id="6_8p4gx"]
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/Pipes/pipe_junction_t.tscn" id="8_0mfee"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="9_wtww1"]
 [ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="10_785gw"]
-[ext_resource type="ArrayMesh" uid="uid://6t3o0y8vo1gs" path="res://Imports/Models/Objects/Tables/circularTable.obj" id="15_7ua5l"]
-[ext_resource type="Material" uid="uid://coj5u7y6iywex" path="res://Assets/Materials/CircularTable.tres" id="16_7c3bu"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
+[ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
+[ext_resource type="PackedScene" uid="uid://b58leoi83gsdb" path="res://Imports/Models/Objects/Box/MetalBox.gltf" id="21_xxu8m"]
+[ext_resource type="PackedScene" uid="uid://cgulikcbwdefo" path="res://Imports/Models/Objects/Tables/circular_table.gltf" id="22_2xxq5"]
+[ext_resource type="PackedScene" uid="uid://wwlxchixubor" path="res://Imports/Models/Objects/Clutter/bananaPeel.gltf" id="23_nlpkp"]
+[ext_resource type="PackedScene" uid="uid://c3qp0csungpo3" path="res://Imports/Models/Objects/Clutter/clutterPileSmall.gltf" id="24_8wd8n"]
+[ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Clutter/coffeeCup.gltf" id="25_cchwj"]
 [ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="26_it72r"]
 [ext_resource type="PackedScene" uid="uid://tuvhpvgqnvix" path="res://Imports/Models/Objects/Desks/desk.gltf" id="26_n0n3e"]
+[ext_resource type="PackedScene" uid="uid://cbuon457absyv" path="res://Imports/Models/Objects/Clutter/dangerInternSign.gltf" id="26_xh1v8"]
 [ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Imports/Models/Objects/Computer/ComputerScreen.gltf" id="27_3te7t"]
-[ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Imports/Models/Objects/Joystick/Joystick.obj" id="27_6qk6g"]
-[ext_resource type="Material" uid="uid://dxnajj5b2unbx" path="res://Assets/Materials/joystick.tres" id="28_8wubg"]
+[ext_resource type="PackedScene" uid="uid://c3vjpa8mtw18c" path="res://Imports/Models/Objects/Clutter/sodaCup.gltf" id="27_noxka"]
+[ext_resource type="PackedScene" uid="uid://bxjfsda88ml7g" path="res://Imports/Models/Objects/Clutter/spinnyChair.gltf" id="28_33olt"]
 [ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Imports/Models/Objects/Motor/Motor.obj" id="29_h0fxu"]
+[ext_resource type="PackedScene" uid="uid://dg236qj65r1bv" path="res://Imports/Models/Objects/Clutter/toast_lads_toaster.gltf" id="29_oqijh"]
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
+[ext_resource type="PackedScene" uid="uid://ddqmjn6j77v1q" path="res://Imports/Models/Objects/Clutter/wetFloorSign.gltf" id="30_jvgn2"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="32_8j3kc"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="33_21cgc"]
-[ext_resource type="ArrayMesh" uid="uid://drgqdimxfppkx" path="res://Imports/Models/Objects/Toaster/toastLadsToaster.obj" id="35_g7qrw"]
 [ext_resource type="ArrayMesh" uid="uid://bl0lnilg7lu7i" path="res://Imports/Models/Objects/Pipes/pipeJunctionCross.obj" id="36_ad2f4"]
-[ext_resource type="Material" uid="uid://b7wv6qr71u5f1" path="res://Assets/Materials/toaster.tres" id="36_foe0e"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Imports/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
 [ext_resource type="PackedScene" uid="uid://ppc0n5mmy0xc" path="res://Imports/Models/Objects/Lights/v1_industrial_light.gltf" id="37_ln1xf"]
@@ -64,11 +67,6 @@ texture_filter = 0
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CardboardBox" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.919572, 0, 0, 0, 0.919572, 0, 0, 0, 0.919572, 7.50571, -0.0551458, 11.7541)
-mesh = ExtResource("1_icd8g")
-material = ExtResource("2_wcgik")
-
 [node name="PipeStraight" parent="." instance=ExtResource("5_fgcqh")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.300716, 0, 12.8061)
 
@@ -84,11 +82,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.02824, 0, 12.8061)
 [node name="PipeValve" parent="." instance=ExtResource("10_785gw")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.386086, 0, 12.8061)
 
-[node name="CircularTable" type="CSGMesh3D" parent="."]
-transform = Transform3D(1.07549, 0, 0, 0, 1.07549, 0, 0, 0, 1.07549, 1.4533, 0.00418365, 9.95916)
-mesh = ExtResource("15_7ua5l")
-material = ExtResource("16_7c3bu")
-
 [node name="player" parent="." instance=ExtResource("17_kx1ri")]
 transform = Transform3D(1.07579, 0, 0, 0, 1.07579, 0, 0, 0, 1.07579, 2.34332, 1, 11.6245)
 
@@ -97,20 +90,10 @@ transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 3.82095,
 mesh = SubResource("ArrayMesh_kg6tg")
 material = ExtResource("26_it72r")
 
-[node name="joystick" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.249986, 0.00156755, -0.00216184, -0.00156035, 0.249994, 0.000838355, 0.00216704, -0.000824813, 0.249989, 7.04426, 1.11467, 5.70928)
-mesh = ExtResource("27_6qk6g")
-material = ExtResource("28_8wubg")
-
 [node name="Motor" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32497, -0.0302026, 9.00021)
 mesh = ExtResource("29_h0fxu")
 material = ExtResource("30_eifxb")
-
-[node name="Toaster" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.18093, 1.06789, 9.32306)
-mesh = ExtResource("35_g7qrw")
-material = ExtResource("36_foe0e")
 
 [node name="DoorFacility" parent="." instance=ExtResource("32_8j3kc")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 9.88888, 0, 9.77634)
@@ -144,3 +127,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7174, -9.53674e-07, 6.5724
 
 [node name="computer" parent="." instance=ExtResource("27_3te7t")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.35101, 1.07319, 9.9908)
+
+[node name="wooden_box" parent="." instance=ExtResource("20_1e0bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21871, -4.76837e-07, 13.6045)
+
+[node name="metal_box" parent="." instance=ExtResource("21_xxu8m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92899, 0, 13.5896)
+
+[node name="blockbench_export" parent="." instance=ExtResource("22_2xxq5")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.50709, 0, 9.51018)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("23_nlpkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36866, 0, 7.13193)
+
+[node name="blockbench_export3" parent="." instance=ExtResource("24_8wd8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22897, 1.19209e-07, 4.78932)
+
+[node name="blockbench_export4" parent="." instance=ExtResource("25_cchwj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42182, 0, 6.56739)
+
+[node name="blockbench_export5" parent="." instance=ExtResource("26_xh1v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56969, 1.19209e-07, 4.60994)
+
+[node name="blockbench_export6" parent="." instance=ExtResource("27_noxka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75292, 0, 6.19055)
+
+[node name="blockbench_export7" parent="." instance=ExtResource("28_33olt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60543, 2.38419e-07, 10.6181)
+
+[node name="blockbench_export8" parent="." instance=ExtResource("29_oqijh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353883, 0, 4.37899)
+
+[node name="blockbench_export9" parent="." instance=ExtResource("30_jvgn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87329, 0, 3.8124)

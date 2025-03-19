@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=39 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_k2snt"]
@@ -15,11 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
-[ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Desks/wooden_desk_1.tscn" id="14_318wx"]
+[ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="14_318wx"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_wiqht"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_ht1ol"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
-[ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Imports/Models/Objects/Joystick/Joystick.obj" id="16_g6cvp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
 albedo_texture = ExtResource("2_k2snt")
@@ -621,10 +620,6 @@ transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1
 [node name="computer" parent="Rooms/hub_room/FireConsole" instance=ExtResource("15_jt1wt")]
 transform = Transform3D(26.6667, 0, -1.38161e-12, 0, 26.6667, 0, 1.38161e-12, 0, 26.6667, 13.8803, -12.9527, -1.72409)
 
-[node name="Joystick" type="MeshInstance3D" parent="Rooms/hub_room/FireConsole"]
-transform = Transform3D(5, 0, -2.59052e-13, 0, 5, 0, 2.59052e-13, 0, 5, -11.125, -12.9059, 18.2439)
-mesh = ExtResource("16_g6cvp")
-
 [node name="FireConsole2" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 33, 1.5, 0)
 script = ExtResource("11_i3baf")
@@ -647,10 +642,6 @@ transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1
 [node name="computer" parent="Rooms/hub_room/FireConsole2" instance=ExtResource("15_jt1wt")]
 transform = Transform3D(26.6667, 0, -1.47793e-12, 0, 26.6667, 0, 1.47793e-12, 0, 26.6667, 13.8803, -13.0389, -1.72412)
 
-[node name="Joystick" type="MeshInstance3D" parent="Rooms/hub_room/FireConsole2"]
-transform = Transform3D(5, 0, -2.55795e-13, 0, 5, 0, 2.55795e-13, 0, 5, -11.125, -12.992, 18.2439)
-mesh = ExtResource("16_g6cvp")
-
 [node name="FireConsole3" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, -23, 1.5, 0)
 script = ExtResource("11_i3baf")
@@ -672,10 +663,6 @@ transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1
 
 [node name="computer" parent="Rooms/hub_room/FireConsole3" instance=ExtResource("15_jt1wt")]
 transform = Transform3D(26.6667, 0, -1.36424e-12, 0, 26.6667, 0, 1.36424e-12, 0, 26.6667, 13.8803, -13.8527, -1.72412)
-
-[node name="Joystick" type="MeshInstance3D" parent="Rooms/hub_room/FireConsole3"]
-transform = Transform3D(5, 0, -2.41585e-13, 0, 5, 0, 2.41585e-13, 0, 5, -11.125, -13.8058, 18.244)
-mesh = ExtResource("16_g6cvp")
 
 [node name="StormTimer" parent="." instance=ExtResource("7_2r685")]
 

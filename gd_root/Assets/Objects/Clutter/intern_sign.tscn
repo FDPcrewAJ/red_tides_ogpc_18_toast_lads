@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drxiydnsv34hj"]
+
+[ext_resource type="PackedScene" uid="uid://cbuon457absyv" path="res://Imports/Models/Objects/Clutter/dangerInternSign.gltf" id="1_20gk5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpahu"]
+size = Vector3(1, 2.15314, 0.901367)
+
+[node name="intern_sign" instance=ExtResource("1_20gk5")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10605, 0.0493164)
+shape = SubResource("BoxShape3D_mpahu")

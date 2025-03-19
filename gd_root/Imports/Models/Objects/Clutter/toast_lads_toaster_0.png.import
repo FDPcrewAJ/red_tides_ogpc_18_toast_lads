@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctaisqyygdkmk"
-path="res://.godot/imported/toaster.png-6eec621433a90676d3bbbbe2838bf76d.ctex"
+uid="uid://clfbuvq54y7ux"
+path.s3tc="res://.godot/imported/toast_lads_toaster_0.png-4e10f10bdd7b53a2becee4dc7b41cbd7.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a55b6bc4a57e32df7fb05c294c4d2d92"
 }
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Toaster/toaster.png"
-dest_files=["res://.godot/imported/toaster.png-6eec621433a90676d3bbbbe2838bf76d.ctex"]
+source_file="res://Imports/Models/Objects/Clutter/toast_lads_toaster_0.png"
+dest_files=["res://.godot/imported/toast_lads_toaster_0.png-4e10f10bdd7b53a2becee4dc7b41cbd7.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

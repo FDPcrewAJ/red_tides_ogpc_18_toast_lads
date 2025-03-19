@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcuechnb2bk3x"
-path.s3tc="res://.godot/imported/circularTable.png-56a5a8e8553099fdc66109a9ebda8bf8.s3tc.ctex"
+uid="uid://bdjjqows0kjuc"
+path.s3tc="res://.godot/imported/joystick_0.png-a01336b5d05ebc827ef9d9bb3374af8a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a22cc471db56af83160fc6702b362417"
+}
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Tables/circularTable.png"
-dest_files=["res://.godot/imported/circularTable.png-56a5a8e8553099fdc66109a9ebda8bf8.s3tc.ctex"]
+source_file="res://Imports/Models/Objects/Joystick/joystick_0.png"
+dest_files=["res://.godot/imported/joystick_0.png-a01336b5d05ebc827ef9d9bb3374af8a.s3tc.ctex"]
 
 [params]
 

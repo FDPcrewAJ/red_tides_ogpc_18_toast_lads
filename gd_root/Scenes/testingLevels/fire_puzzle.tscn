@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=38 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_46jx2"]
@@ -6,15 +6,15 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire.gd" id="4_rnf6b"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Assets/Models/placeholders/PlaceholderTable/tinker.obj" id="5_8h3pe"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_2.gd" id="5_yh3cq"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="6_ulpcg"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_3.gd" id="6_vdwiv"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_2r685"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_5.gd" id="8_4rpbl"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_wiqht"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/mc_guffin.gd" id="15_fod5s"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_fod5s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -73,7 +73,11 @@ size = Vector2(60, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ylkc8"]
 points = PackedVector3Array(30.2027, -0.202703, 5.33784, -30.2027, -0.202703, -5.2027, 30.2027, -0.202703, -5.2027, -30.2027, -0.202703, 5.33784)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ccjm"]
+albedo_color = Color(0.784092, 0, 0.128263, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_psncc"]
+material = SubResource("StandardMaterial3D_2ccjm")
 size = Vector3(10, 1, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ylig5"]
@@ -409,9 +413,9 @@ script = ExtResource("4_rnf6b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/hub_room/Fire"]
 
-[node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire/StaticBody3D"]
+[node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire/StaticBody3D/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_ylig5")
 
 [node name="Fire2" type="MeshInstance3D" parent="Rooms/hub_room"]
@@ -477,7 +481,7 @@ shape = SubResource("ConvexPolygonShape3D_ylig5")
 [node name="FireConsole" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 1.5, -1.5)
 mesh = ExtResource("5_8h3pe")
-script = ExtResource("6_ulpcg")
+script = ExtResource("11_i3baf")
 
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/FireConsole"]
 
@@ -494,7 +498,7 @@ shape = SubResource("BoxShape3D_5nlea")
 [node name="FireConsole2" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 33, 1.5, 0)
 mesh = ExtResource("5_8h3pe")
-script = ExtResource("6_ulpcg")
+script = ExtResource("11_i3baf")
 
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/FireConsole2"]
 
@@ -511,7 +515,7 @@ shape = SubResource("BoxShape3D_5nlea")
 [node name="FireConsole3" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, -23, 1.5, 0)
 mesh = ExtResource("5_8h3pe")
-script = ExtResource("6_ulpcg")
+script = ExtResource("11_i3baf")
 
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/FireConsole3"]
 
@@ -531,7 +535,7 @@ shape = SubResource("BoxShape3D_5nlea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.32548)
 
 [node name="entryDoor" parent="." instance=ExtResource("14_wiqht")]
-transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.69035, 0.5, 4.93961)
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.69035, -0.0290135, 4.93961)
 
 [node name="McGuffin" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -31)
@@ -543,7 +547,7 @@ script = ExtResource("15_fod5s")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="McGuffin/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_0nmmd")
 
-[connection signal="area_entered" from="Rooms/hub_room/Fire/StaticBody3D/Area3D" to="Rooms/hub_room/Fire" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Rooms/hub_room/Fire/Area3D" to="Rooms/hub_room/Fire" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire2/StaticBody3D/Area3D" to="Rooms/hub_room/Fire2" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire3/StaticBody3D/Area3D" to="Rooms/hub_room/Fire3" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire4/StaticBody3D/Area3D" to="Rooms/hub_room/Fire4" method="_on_area_3d_area_entered"]

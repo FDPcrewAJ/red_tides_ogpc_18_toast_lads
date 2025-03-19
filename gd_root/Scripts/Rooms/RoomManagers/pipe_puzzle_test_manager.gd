@@ -1,10 +1,6 @@
 extends Node3D
 
 
-func _ready():
-	pass
-
-
 func _process(_delta):
 	if Global.dial_puzzle and Global.tile_puzzle and Global.fire_puzzle:
 		if Global.current_object_parent == "exitDoor":

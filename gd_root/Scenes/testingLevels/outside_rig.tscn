@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/outside_rig.gd" id="1_60s7s"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_4lqhw"]
-[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_jt8e3"]
+[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Imports/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_jt8e3"]
 [ext_resource type="Texture2D" uid="uid://bn8cn3li8rmvr" path="res://Textures/Temp Dev Textures/Light/texture_03.png" id="4_jgbfn"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/boat.gd" id="5_7w7o2"]
-[ext_resource type="ArrayMesh" uid="uid://wxcqumky5rpm" path="res://Assets/Models/Objects/Boat/Boat.obj" id="5_g2tvr"]
+[ext_resource type="ArrayMesh" uid="uid://wxcqumky5rpm" path="res://Imports/Models/Objects/Boat/Boat.obj" id="5_g2tvr"]
 [ext_resource type="Texture2D" uid="uid://cvgath02y1r71" path="res://Textures/Temp Dev Textures/Green/texture_09.png" id="7_gh0qf"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_0ijr6"]
 [ext_resource type="PackedScene" uid="uid://1vstisoeox23" path="res://Scenes/Objects/text_popup.tscn" id="9_nlv1f"]

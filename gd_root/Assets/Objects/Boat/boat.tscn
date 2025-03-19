@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ub6vt1a1p48n"]
 
-[ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Assets/Models/Objects/Boat/boat.gltf" id="1_h14fy"]
+[ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Imports/Models/Objects/Boat/boat.gltf" id="1_h14fy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f65ko"]
 friction = 100.0

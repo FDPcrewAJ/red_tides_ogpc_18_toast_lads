@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c52i7w48gs3p1"]
 
-[ext_resource type="ArrayMesh" uid="uid://dwkrrhwamxoo2" path="res://Assets/Models/Objects/Pipes/pipeTurn90.obj" id="1_8np30"]
+[ext_resource type="ArrayMesh" uid="uid://dwkrrhwamxoo2" path="res://Imports/Models/Objects/Pipes/pipeTurn90.obj" id="1_8np30"]
 [ext_resource type="Material" uid="uid://brb0h8lhfai6q" path="res://Assets/Materials/PipeTurn90.tres" id="2_8n2u5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ae34"]

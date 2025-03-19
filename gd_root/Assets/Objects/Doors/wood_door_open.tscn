@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://lpwe413bhd4c"]
 
-[ext_resource type="ArrayMesh" uid="uid://01br3q5xxc0y" path="res://Assets/Models/Objects/Doors/doorFacilityOpen.obj" id="1_48kir"]
+[ext_resource type="ArrayMesh" uid="uid://01br3q5xxc0y" path="res://Imports/Models/Objects/Doors/doorFacilityOpen.obj" id="1_48kir"]
 [ext_resource type="Material" uid="uid://co7oqg42mkhwi" path="res://Assets/Materials/doorFacility.tres" id="2_mhbah"]
 
 [node name="DoorFacilityOpen" type="CSGMesh3D"]

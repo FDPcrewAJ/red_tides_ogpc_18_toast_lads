@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://748edak1pdw5"]
 
-[ext_resource type="PackedScene" uid="uid://tuvhpvgqnvix" path="res://Assets/Models/Objects/Desks/desk.gltf" id="1_8qnh0"]
+[ext_resource type="PackedScene" uid="uid://tuvhpvgqnvix" path="res://Imports/Models/Objects/Desks/desk.gltf" id="1_8qnh0"]
 
 [node name="wooden_desk_1" instance=ExtResource("1_8qnh0")]

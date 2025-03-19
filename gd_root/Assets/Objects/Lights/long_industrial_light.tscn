@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbbq5y4o8457k"]
 
-[ext_resource type="PackedScene" uid="uid://cisw4yc3qdyjb" path="res://Assets/Models/Objects/Lights/v2_industrial_light.gltf" id="1_17abi"]
+[ext_resource type="PackedScene" uid="uid://cisw4yc3qdyjb" path="res://Imports/Models/Objects/Lights/v2_industrial_light.gltf" id="1_17abi"]
 
 [node name="long_industrial_light" instance=ExtResource("1_17abi")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_wiqht"]
 [ext_resource type="Script" path="res://Scenes/testingLevels/mc_guffin.gd" id="15_fod5s"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
-[ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Assets/Models/Objects/Joystick/Joystick.obj" id="16_g6cvp"]
+[ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Imports/Models/Objects/Joystick/Joystick.obj" id="16_g6cvp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
 albedo_texture = ExtResource("2_k2snt")

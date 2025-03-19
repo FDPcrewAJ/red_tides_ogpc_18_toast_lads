@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxxav20r04vkn"]
 
-[ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Assets/Models/Objects/Computer/ComputerScreen.gltf" id="1_wio8x"]
+[ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Imports/Models/Objects/Computer/ComputerScreen.gltf" id="1_wio8x"]
 
 [node name="computer" instance=ExtResource("1_wio8x")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)

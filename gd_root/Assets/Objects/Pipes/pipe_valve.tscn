@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dex0sl2xb54l2"]
 
-[ext_resource type="ArrayMesh" uid="uid://cgyj2iyvptpop" path="res://Assets/Models/Objects/Pipes/pipeValve.obj" id="1_tatn2"]
+[ext_resource type="ArrayMesh" uid="uid://cgyj2iyvptpop" path="res://Imports/Models/Objects/Pipes/pipeValve.obj" id="1_tatn2"]
 [ext_resource type="Material" uid="uid://dcu07nbcyowr4" path="res://Assets/Materials/PipeValve.tres" id="2_nh38b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6g7lu"]

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwkrrhwamxoo2"
+path="res://.godot/imported/pipeTurn90.obj-25fcfbe35b054d6ca0a8ada86063c60f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipeTurn90.obj-25fcfbe35b054d6ca0a8ada86063c60f.mesh"]
+
+source_file="res://Imports/Models/Objects/Pipes/pipeTurn90.obj"
+dest_files=["res://.godot/imported/pipeTurn90.obj-25fcfbe35b054d6ca0a8ada86063c60f.mesh", "res://.godot/imported/pipeTurn90.obj-25fcfbe35b054d6ca0a8ada86063c60f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

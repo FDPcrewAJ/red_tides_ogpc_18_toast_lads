@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_p336e"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_ad60u"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_scf1j"]
-[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Assets/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_yi372"]
+[ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Imports/Models/placeholders/PlaceholderDoor/tinker.obj" id="2_yi372"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_nsoao"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="4_ftj46"]
 

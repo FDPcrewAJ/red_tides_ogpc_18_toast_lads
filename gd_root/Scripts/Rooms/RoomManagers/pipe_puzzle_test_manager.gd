@@ -12,4 +12,6 @@ func _process(_delta):
 				get_tree().call_deferred("change_scene_to_file", "res://Scenes/Menus/title_screen.tscn")
 	if Global.current_object_parent == "firePuzzleDoor":
 		if Input.is_action_just_pressed("interact"):
+			#Set lastpos to 0 before loading a new room
+			Global.lastpos = 0
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")

@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_wiqht"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_fod5s"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_ht1ol"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -540,7 +540,7 @@ transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.69035, -0.0290135
 [node name="McGuffin" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -31)
 mesh = SubResource("SphereMesh_xbqch")
-script = ExtResource("15_fod5s")
+script = ExtResource("15_ht1ol")
 
 [node name="Area3D" type="Area3D" parent="McGuffin"]
 

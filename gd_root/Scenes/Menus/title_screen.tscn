@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=54 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
 [ext_resource type="Texture2D" uid="uid://c4qnydty8wkwn" path="res://Textures/Exterior Textures/sky_panorama.png" id="1_igluk"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_k617b"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hl1ea"]
-panorama = ExtResource("1_igluk")
 
 [sub_resource type="Sky" id="Sky_ehbyn"]
 sky_material = SubResource("PanoramaSkyMaterial_hl1ea")

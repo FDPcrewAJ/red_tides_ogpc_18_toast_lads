@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Desks/wooden_desk_1.tscn" id="14_318wx"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_wiqht"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/mc_guffin.gd" id="15_fod5s"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_ht1ol"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
 [ext_resource type="ArrayMesh" uid="uid://7wni4sjr3k1" path="res://Imports/Models/Objects/Joystick/Joystick.obj" id="16_g6cvp"]
 
@@ -689,7 +689,7 @@ transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.69035, -0.0290135
 [node name="McGuffin" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -31)
 mesh = SubResource("SphereMesh_xbqch")
-script = ExtResource("15_fod5s")
+script = ExtResource("15_ht1ol")
 
 [node name="Area3D" type="Area3D" parent="McGuffin"]
 

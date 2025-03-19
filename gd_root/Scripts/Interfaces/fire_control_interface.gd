@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta):
 	if Global.fire_console_number == 1:
 		if Global.water_amount == 0:
 			Global.fire_console_one_water = 0

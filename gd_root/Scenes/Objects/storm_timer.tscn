@@ -14,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_dpbmb")
 
 [node name="storm_timer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 240.0
 one_shot = true
 script = ExtResource("1_lyl70")
 

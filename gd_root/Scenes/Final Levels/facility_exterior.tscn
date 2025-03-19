@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=62 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="7_r818k"]
+[ext_resource type="Texture2D" uid="uid://ckwi351xwbfxe" path="res://Textures/Exterior Textures/v1_rust.png" id="7_vlv12"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
 [ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
@@ -57,6 +58,9 @@ height = 40.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlt03"]
 albedo_color = Color(0.478431, 0.498039, 0.501961, 1)
+albedo_texture = ExtResource("7_vlv12")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_n1fk1"]
 material = SubResource("StandardMaterial3D_hlt03")
@@ -121,6 +125,27 @@ size = Vector3(8, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
 size = Vector3(3, 0.4, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5q621"]
+albedo_texture = ExtResource("7_vlv12")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_58fmq"]
+material = SubResource("StandardMaterial3D_5q621")
+size = Vector3(16, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hufkl"]
+material = SubResource("StandardMaterial3D_5q621")
+size = Vector3(15, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_84vxg"]
+material = SubResource("StandardMaterial3D_5q621")
+size = Vector3(7, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_77hei"]
+material = SubResource("StandardMaterial3D_5q621")
+size = Vector3(2, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaoxi"]
 albedo_texture = ExtResource("6_ebpvy")
@@ -231,12 +256,12 @@ directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, 114.867)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, 112.155)
 
 [node name="world" type="Node3D" parent="."]
 
 [node name="boatAnimated" type="AnimatableBody3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, 113.177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, 110.465)
 
 [node name="boat" parent="world/boatAnimated" instance=ExtResource("2_rhyc4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -415,6 +440,40 @@ skeleton = NodePath("../../staircase")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
 shape = SubResource("BoxShape3D_b2kg4")
 
+[node name="stairSupports" type="Node3D" parent="world/facilityModel/mainSupports/stairs"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(0.894139, 0.44779, 0, -0.44779, 0.894139, 0, 0, 0, 1, 8.20152, -8.92407, -2.86106)
+mesh = SubResource("BoxMesh_58fmq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.951056, -5.29236, -9.65619)
+mesh = SubResource("BoxMesh_hufkl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.03657, -5.29236, -9.65619)
+mesh = SubResource("BoxMesh_hufkl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.1258, -12.4065, -4.62679)
+mesh = SubResource("BoxMesh_84vxg")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.1111, -12.4082, -2.86127)
+mesh = SubResource("BoxMesh_77hei")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(0.894139, 0.44779, 0, -0.44779, 0.894139, 0, 0, 0, 1, 8.20152, -8.92407, -4.32079)
+mesh = SubResource("BoxMesh_58fmq")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.1111, -12.4082, -4.32099)
+mesh = SubResource("BoxMesh_77hei")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="world/facilityModel/mainSupports/stairs/stairSupports"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.1112, -12.4065, -4.62679)
+mesh = SubResource("BoxMesh_84vxg")
+
 [node name="wood_door_closed" parent="world/facilityModel/mainSupports" instance=ExtResource("6_tbgqa")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, -4.79761, -14.9568)
 
@@ -451,7 +510,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
 mesh = SubResource("SphereMesh_5q6ys")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome/MeshInstance3D2"]
-transform = Transform3D(-0.236824, 0.792264, 0.562346, -0.904783, 0.0310212, -0.42474, -0.353951, -0.60939, 0.70948, 36.5143, -10.9782, 47.5152)
+transform = Transform3D(-0.236824, 0.792264, 0.562346, -0.904783, 0.0310208, -0.424741, -0.353951, -0.60939, 0.70948, 31.4881, -10.9782, 41.7834)
+light_color = Color(0, 0.501961, 0.501961, 1)
+light_energy = 200.0
+light_size = 0.798
+light_bake_mode = 1
+spot_range = 133.294
+spot_angle = 39.5384
+spot_angle_attenuation = 1e-05
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome/MeshInstance3D2"]
+transform = Transform3D(0.214062, 0.895324, -0.390605, -0.904783, 0.0310208, -0.424741, -0.368164, 0.444334, 0.816715, -27.9565, -10.9782, 47.4884)
 light_color = Color(0, 0.501961, 0.501961, 1)
 light_energy = 200.0
 light_size = 0.798

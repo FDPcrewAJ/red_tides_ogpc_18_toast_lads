@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
-radius = 0.32
+radius = 0.38
 height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
-radius = 0.32
+radius = 0.38
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 

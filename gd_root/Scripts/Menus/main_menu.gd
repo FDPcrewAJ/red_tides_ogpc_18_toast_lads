@@ -1,9 +1,15 @@
 extends Control
 
+@onready var devTools = $"Level Select"
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func _process(_delta):
+	if Input.is_action_pressed("devKey"):
+		devTools.visible = true
+	else:
+		devTools.visible = false
 
 
 func _on_quit_pressed() -> void:
@@ -16,7 +22,7 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_continue_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/dev_testing_room.tscn")
+	pass
 
 
 func _on_settings_pressed() -> void:

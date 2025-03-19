@@ -118,6 +118,7 @@ text = "Quit Game"
 flat = true
 
 [node name="Level Select" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

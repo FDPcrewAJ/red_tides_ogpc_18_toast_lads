@@ -53,7 +53,7 @@ Shift -- Sprint
 Ctrl -- Crouch
 Space -- Jump
 E/Left Mouse -- Interact (3D)
-Left Mouse -- Interact (2D
+Left Mouse -- Interact (2D)
 Exit/Cancel -- Escape"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

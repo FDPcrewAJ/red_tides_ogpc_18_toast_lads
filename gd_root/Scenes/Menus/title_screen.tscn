@@ -1,7 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
-[ext_resource type="Texture2D" uid="uid://c4qnydty8wkwn" path="res://Textures/Exterior Textures/sky_panorama.png" id="1_igluk"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_etr80"]
 [ext_resource type="PackedScene" uid="uid://dqjbnuea3t06a" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="5_owl5n"]

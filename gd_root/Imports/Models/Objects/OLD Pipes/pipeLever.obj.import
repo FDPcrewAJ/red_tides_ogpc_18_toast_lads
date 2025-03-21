@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hurqub085ijb"
+path="res://.godot/imported/pipeLever.obj-8259164c0ca92080dabe205733e1daeb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipeLever.obj-8259164c0ca92080dabe205733e1daeb.mesh"]
+
+source_file="res://Imports/Models/Objects/OLD Pipes/pipeLever.obj"
+dest_files=["res://.godot/imported/pipeLever.obj-8259164c0ca92080dabe205733e1daeb.mesh", "res://.godot/imported/pipeLever.obj-8259164c0ca92080dabe205733e1daeb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

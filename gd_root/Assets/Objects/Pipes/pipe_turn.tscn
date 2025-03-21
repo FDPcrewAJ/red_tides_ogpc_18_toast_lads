@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1lmt8g3vnnis"]
+
+[ext_resource type="PackedScene" uid="uid://di3mhbndwet00" path="res://Imports/Models/Objects/Pipes/pipe_turn.gltf" id="1_842sy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgqxt"]
+size = Vector3(2, 2.25, 1)
+
+[node name="pipe_turn" instance=ExtResource("1_842sy")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.11328, 0)
+shape = SubResource("BoxShape3D_kgqxt")

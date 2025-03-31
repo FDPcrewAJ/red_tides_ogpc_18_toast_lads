@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://0vldhh4ok64r"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/menu_prompt.gd" id="1_subil"]
+[ext_resource type="Script" path="res://Scenes/Menus/prompt_label.gd" id="2_ttcvi"]
+
+[node name="MenuPrompt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_subil")
+
+[node name="PromptLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1750.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_ttcvi")
+
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 1800.0
+offset_right = 1900.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 60
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

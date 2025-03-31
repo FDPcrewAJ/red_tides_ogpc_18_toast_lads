@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=67 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://bw3vtqs02fnpv" path="res://Assets/Objects/Clutter/soda_cup.tscn" id="32_8t5j8"]
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="33_25psr"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="34_cb4h5"]
+[ext_resource type="Script" path="res://Scenes/Testing Rooms/dial_puzzle_note.gd" id="37_conjl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)
@@ -130,6 +131,16 @@ size = Vector2(4, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u2njc"]
 size = Vector3(1, 2, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7kei"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_srkvd"]
+material = SubResource("StandardMaterial3D_a7kei")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f6qtv"]
+points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
 
 [node name="pipe_puzzle_test" type="Node3D"]
 script = ExtResource("1_dtvxa")
@@ -604,3 +615,19 @@ transform = Transform3D(0.627324, 0, 0.310588, 0, 0.7, 0, -0.310588, 0, 0.627324
 
 [node name="banana_peel3" parent="world/Clutter" instance=ExtResource("27_gybio")]
 transform = Transform3D(0.677498, 0.176058, 0, -0.173215, 0.666557, -0.125294, -0.0315129, 0.121266, 0.688696, 0.58765, 1.66742, -4.0327)
+
+[node name="DialPuzzleNote" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 9.4, 2.5, -2)
+mesh = SubResource("PlaneMesh_srkvd")
+script = ExtResource("37_conjl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DialPuzzleNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="DialPuzzleNoteBody" type="StaticBody3D" parent="DialPuzzleNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialPuzzleNote/DialPuzzleNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_f6qtv")

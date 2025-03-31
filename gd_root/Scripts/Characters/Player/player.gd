@@ -129,3 +129,6 @@ func load_data():
 func save():
 	ResourceSaver.save(save_system, save_file_path + save_file_name)
 	print("save")
+
+func _set_menu_prompt_text(new_text):
+	$MenuPrompt._set_label_prompt_text(new_text)

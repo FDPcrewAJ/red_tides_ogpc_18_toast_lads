@@ -7,9 +7,9 @@ script/source = "extends Control
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed(\"exit\"):
-		menu.show()
-		pause()
-
+		if Global.in_menu == false:
+			menu.show()
+			pause()
 
 func pause():
 	get_tree().paused = true

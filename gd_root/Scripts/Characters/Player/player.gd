@@ -9,6 +9,9 @@ const mouse_sens = 0.5
 @onready var standing_collision = $StandingCollision
 @onready var crouching_collision = $CrouchingCollision
 
+# Save system
+var save_file_path = "user://saves/"
+var save_file_name = "playerSave.tres"
 var save_system = save_resource.new()
 
 # Player Movement Variables
@@ -32,6 +35,8 @@ const jump_velocity = 4.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	verify_save_directory(save_file_path)
 
 
 func _input(event):
@@ -47,12 +52,12 @@ func _physics_process(delta):
 		velocity += get_gravity() * delta
 	
 	# Jump
-	if Input.is_action_just_pressed("space") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 	
-	if Input.is_action_pressed("ctrl"):
+	if Input.is_action_pressed("crouch"):
 		crouching = true
-	if Input.is_action_just_released("ctrl"):
+	if Input.is_action_just_released("crouch"):
 		crouching = false
 	
 	if crouching:
@@ -71,7 +76,7 @@ func _physics_process(delta):
 	## Forward: (0, -1)
 	## Backward (0, 1)
 	## when moving diagonally, you get a fancy decimal 0.707 something)
-	var input_dir := Input.get_vector("a", "d", "w", "s")
+	var input_dir := Input.get_vector("left", "right", "forward", "backward")
 	
 	## Direction varible to store x and z direction that the player is moving
 	## (Is not the players actual velocity, that is different and gets put in later)
@@ -89,7 +94,7 @@ func _physics_process(delta):
 	
 	if crouching:
 		current_speed = crouch_speed
-	elif Input.is_action_pressed("shift"):
+	elif Input.is_action_pressed("sprint"):
 		current_speed = sprint_speed
 	else:
 		current_speed = walk_speed
@@ -105,5 +110,22 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+func verify_save_directory(path):
+	DirAccess.make_dir_absolute(path)
+
+
 func _set_last_pos():
 	position = Global.lastpos
+
+func _set_new_pos():
+	position = Global.new_position
+
+
+func load_data():
+	save_system = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	print("loaded")
+
+
+func save():
+	ResourceSaver.save(save_system, save_file_path + save_file_name)
+	print("save")

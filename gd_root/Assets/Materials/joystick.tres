@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dxnajj5b2unbx"]
-
-[ext_resource type="Texture2D" uid="uid://b8j8asapfybeo" path="res://Assets/Models/Objects/Joystick/joystick.png" id="1_i34e8"]
-
-[resource]
-albedo_texture = ExtResource("1_i34e8")
-texture_filter = 0

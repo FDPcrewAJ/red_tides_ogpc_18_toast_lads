@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmsiy8jnrtqi0"]
+
+[ext_resource type="ArrayMesh" uid="uid://c7b2temne3phe" path="res://Imports/Models/Objects/Pipes/pipeJunctionT.obj" id="1_gxjy0"]
+[ext_resource type="Material" uid="uid://ce4tstcj1fu7h" path="res://Assets/Materials/PipeJunctionT.tres" id="2_eajvx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdb3m"]
+size = Vector3(3, 2, 1)
+
+[node name="PipeJunctionT" type="CSGMesh3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = ExtResource("1_gxjy0")
+material = ExtResource("2_eajvx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_tdb3m")

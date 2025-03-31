@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
+radius = 0.38
 height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
+radius = 0.38
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 
@@ -25,6 +27,7 @@ target_position = Vector3(0, 2, 0)
 
 [node name="CrouchingCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_5nd2e")
 disabled = true
 
@@ -38,14 +41,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="PlayerCamera" type="Camera3D" parent="Head/Neck"]
 fov = 90.0
-near = 0.25
+near = 0.215
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Neck/PlayerCamera"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 script = ExtResource("3_xxlw0")
 
 [node name="playerModel" parent="." instance=ExtResource("4_gwj64")]
-transform = Transform3D(-1.4, 1.49158e-08, -1.2148e-07, 0, 1.38956, 0.170617, 1.22392e-07, 0.170617, -1.38956, 0, -1, 0)
+transform = Transform3D(-1.4, 2.57624e-08, -2.09818e-07, 0, 1.38956, 0.170617, 2.11394e-07, 0.170617, -1.38956, 0, -1, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 

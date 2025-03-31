@@ -1,0 +1,127 @@
+[gd_scene load_steps=17 format=3 uid="uid://i54i4wmroxw1"]
+
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
+[ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_nm8n5"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_rv7vl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ub6pl"]
+
+[sub_resource type="Sky" id="Sky_jfwn4"]
+sky_material = SubResource("ProceduralSkyMaterial_ub6pl")
+
+[sub_resource type="Environment" id="Environment_ncvlc"]
+background_mode = 2
+sky = SubResource("Sky_jfwn4")
+ambient_light_source = 2
+ambient_light_color = Color(0.321728, 0.321728, 0.321728, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 2.27
+fog_light_energy = 0.1
+fog_sun_scatter = 1.0
+fog_density = 0.007
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qv5ek"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhutw"]
+albedo_texture = ExtResource("2_nm8n5")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tifrv"]
+material = SubResource("StandardMaterial3D_vhutw")
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxuk3"]
+size = Vector3(5, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xapjx"]
+albedo_texture = ExtResource("3_rv7vl")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v3qph"]
+material = SubResource("StandardMaterial3D_xapjx")
+size = Vector2(5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbcbh"]
+size = Vector3(5, 1, 15)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_frhrq"]
+material = SubResource("StandardMaterial3D_xapjx")
+size = Vector2(5, 15)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qs8vn"]
+points = PackedVector3Array(2.5, 0.5, 5, -2.5, 0.5, 5, 2.5, 0.5, -5, -2.5, 0.5, -5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rsaru"]
+material = SubResource("StandardMaterial3D_xapjx")
+size = Vector2(5, 10)
+
+[node name="facility_enterance" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.96877, 0)
+light_color = Color(0.355314, 0.355314, 0.355314, 1)
+light_energy = 5.048
+light_bake_mode = 1
+directional_shadow_mode = 1
+sky_mode = 1
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ncvlc")
+
+[node name="player" parent="." instance=ExtResource("1_fe63g")]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="building" type="Node3D" parent="world"]
+
+[node name="floor" type="StaticBody3D" parent="world/building"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/floor"]
+shape = SubResource("BoxShape3D_qv5ek")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_tifrv")
+
+[node name="wall" type="StaticBody3D" parent="world/building"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/wall"]
+shape = SubResource("BoxShape3D_hxuk3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_v3qph")
+
+[node name="wall2" type="StaticBody3D" parent="world/building"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 3, 3, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/wall2"]
+shape = SubResource("BoxShape3D_gbcbh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_frhrq")
+
+[node name="wall3" type="StaticBody3D" parent="world/building"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 3, 3, -3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/wall3"]
+shape = SubResource("BoxShape3D_gbcbh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_frhrq")
+
+[node name="wall4" type="StaticBody3D" parent="world/building"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 12, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/wall4"]
+shape = SubResource("ConvexPolygonShape3D_qs8vn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_rsaru")

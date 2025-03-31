@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvaqdhmixfi41"]
+
+[ext_resource type="PackedScene" uid="uid://b58leoi83gsdb" path="res://Imports/Models/Objects/Box/MetalBox.gltf" id="1_bov08"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m31ui"]
+
+[node name="metal_box" instance=ExtResource("1_bov08")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_m31ui")

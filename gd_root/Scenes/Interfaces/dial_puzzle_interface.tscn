@@ -1,13 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=9 format=3 uid="uid://cvp6iu0ltf4p5"]
 
-[ext_resource type="Script" path="res://Scenes/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
-[ext_resource type="Texture2D" uid="uid://6og0d5ncmbyt" path="res://Imports/images/dialtempart.png" id="2_0b8gm"]
-[ext_resource type="Script" path="res://Scenes/Interfaces/dial.gd" id="3_oet22"]
-[ext_resource type="Script" path="res://Scenes/Interfaces/dial_sprite.gd" id="4_bis6o"]
-[ext_resource type="Script" path="res://Scenes/Interfaces/dial_puzzle_label.gd" id="5_com21"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
+[ext_resource type="Texture2D" uid="uid://cyl8g6pb7siy7" path="res://Imports/images/Dial-1.png.png" id="3_4aejo"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial.gd" id="3_oet22"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_sprite_2d.gd" id="4_h3xx3"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="5_com21"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8ojsi"]
-radius = 85.0
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pux5x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aos3k"]
 
 [node name="dial_puzzle_interface" type="Node2D"]
 script = ExtResource("1_7i68q")
@@ -15,61 +18,49 @@ script = ExtResource("1_7i68q")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Dial" type="Button" parent="."]
-offset_left = -724.0
+offset_left = -750.0
 offset_top = -99.0
-offset_right = -516.0
+offset_right = -542.0
 offset_bottom = 109.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ceuvr")
 flat = true
 script = ExtResource("3_oet22")
 
-[node name="Sprite2D" type="Sprite2D" parent="Dial"]
+[node name="Sprite2D1" type="Sprite2D" parent="Dial"]
 position = Vector2(100, 100)
-texture = ExtResource("2_0b8gm")
-script = ExtResource("4_bis6o")
-
-[node name="Area2D1" type="Area2D" parent="Dial"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dial/Area2D1"]
-position = Vector2(100, 100)
-shape = SubResource("CircleShape2D_8ojsi")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_4aejo")
+script = ExtResource("4_h3xx3")
 
 [node name="Dial2" type="Button" parent="."]
 offset_left = -101.0
 offset_top = -91.0
 offset_right = 107.0
 offset_bottom = 117.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pux5x")
 flat = true
 script = ExtResource("3_oet22")
 
-[node name="Sprite2D" type="Sprite2D" parent="Dial2"]
+[node name="Sprite2D2" type="Sprite2D" parent="Dial2"]
 position = Vector2(100, 100)
-texture = ExtResource("2_0b8gm")
-script = ExtResource("4_bis6o")
-
-[node name="Area2D2" type="Area2D" parent="Dial2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dial2/Area2D2"]
-position = Vector2(100, 100)
-shape = SubResource("CircleShape2D_8ojsi")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_4aejo")
+script = ExtResource("4_h3xx3")
 
 [node name="Dial3" type="Button" parent="."]
-offset_left = 725.0
+offset_left = 525.0
 offset_top = -104.0
-offset_right = 933.0
+offset_right = 733.0
 offset_bottom = 104.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_aos3k")
 flat = true
 script = ExtResource("3_oet22")
 
-[node name="Sprite2D" type="Sprite2D" parent="Dial3"]
+[node name="Sprite2D3" type="Sprite2D" parent="Dial3"]
 position = Vector2(100, 100)
-texture = ExtResource("2_0b8gm")
-script = ExtResource("4_bis6o")
-
-[node name="Area2D3" type="Area2D" parent="Dial3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dial3/Area2D3"]
-position = Vector2(100, 100)
-shape = SubResource("CircleShape2D_8ojsi")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_4aejo")
+script = ExtResource("4_h3xx3")
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = -108.0
@@ -80,20 +71,12 @@ theme_override_font_sizes/font_size = 90
 text = "Back"
 
 [node name="DialPuzzleLabel" type="Label" parent="."]
-offset_left = -373.0
+offset_left = -478.0
 offset_top = -466.0
-offset_right = 500.0
+offset_right = 518.0
 offset_bottom = -168.0
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 100
+text = "Incorrect Calibration"
 script = ExtResource("5_com21")
 
-[connection signal="pressed" from="Dial" to="." method="_on_dial_pressed"]
-[connection signal="mouse_entered" from="Dial/Area2D1" to="." method="_on_area_2d_1_mouse_entered"]
-[connection signal="mouse_exited" from="Dial/Area2D1" to="." method="_on_area_2d_1_mouse_exited"]
-[connection signal="pressed" from="Dial2" to="." method="_on_dial_2_pressed"]
-[connection signal="mouse_entered" from="Dial2/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
-[connection signal="mouse_exited" from="Dial2/Area2D2" to="." method="_on_area_2d_2_mouse_exited"]
-[connection signal="pressed" from="Dial3" to="." method="_on_dial_3_pressed"]
-[connection signal="mouse_entered" from="Dial3/Area2D3" to="." method="_on_area_2d_3_mouse_entered"]
-[connection signal="mouse_exited" from="Dial3/Area2D3" to="." method="_on_area_2d_3_mouse_exited"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

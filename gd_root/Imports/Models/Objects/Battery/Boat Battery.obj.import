@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpi6sq78kn7de"
+path="res://.godot/imported/Boat Battery.obj-1921765900f29ac2d789dae0b2062c9b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Boat Battery.obj-1921765900f29ac2d789dae0b2062c9b.mesh"]
+
+source_file="res://Imports/Models/Objects/Battery/Boat Battery.obj"
+dest_files=["res://.godot/imported/Boat Battery.obj-1921765900f29ac2d789dae0b2062c9b.mesh", "res://.godot/imported/Boat Battery.obj-1921765900f29ac2d789dae0b2062c9b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

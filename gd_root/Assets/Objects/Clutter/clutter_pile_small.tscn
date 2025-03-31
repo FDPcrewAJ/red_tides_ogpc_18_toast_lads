@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2oxgj7dmcwsc"]
+
+[ext_resource type="PackedScene" uid="uid://c3qp0csungpo3" path="res://Imports/Models/Objects/Clutter/clutterPileSmall.gltf" id="1_byfmk"]
+
+[node name="clutter_pile_small" instance=ExtResource("1_byfmk")]

@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://coj5u7y6iywex"]
-
-[ext_resource type="Texture2D" uid="uid://bcuechnb2bk3x" path="res://Assets/Models/Objects/Tables/circularTable.png" id="1_6mfsc"]
-
-[resource]
-albedo_texture = ExtResource("1_6mfsc")
-texture_filter = 0

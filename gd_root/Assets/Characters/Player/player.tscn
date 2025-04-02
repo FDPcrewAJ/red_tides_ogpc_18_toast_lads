@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=8 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
 [ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_detwj"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
-[ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_wg48n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
 radius = 0.38
@@ -56,9 +55,3 @@ transform = Transform3D(-1.4, 2.57624e-08, -2.09818e-07, 0, 1.38956, 0.170617, 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 visible = false
 shape = SubResource("CapsuleShape3D_gpw4u")
-
-[node name="MenuPrompt" parent="." instance=ExtResource("5_wg48n")]
-offset_left = 1670.21
-offset_top = 139.411
-offset_right = 1670.21
-offset_bottom = 139.411

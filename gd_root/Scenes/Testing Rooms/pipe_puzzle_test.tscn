@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=69 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_klx6h"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_sapbw"]
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="5_kjqka"]
+[ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_mewol"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="6_jo8y4"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="6_vkgry"]
 [ext_resource type="PackedScene" uid="uid://dex0sl2xb54l2" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="7_87lxj"]
@@ -37,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="33_25psr"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="34_cb4h5"]
 [ext_resource type="Script" path="res://Scenes/Testing Rooms/dial_puzzle_note.gd" id="37_conjl"]
+[ext_resource type="Script" path="res://Scenes/Testing Rooms/tile_puzzle_note.gd" id="39_jrrph"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)
@@ -132,11 +134,11 @@ size = Vector2(4, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_u2njc"]
 size = Vector3(1, 2, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7kei"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjlxo"]
 albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_srkvd"]
-material = SubResource("StandardMaterial3D_a7kei")
+material = SubResource("StandardMaterial3D_wjlxo")
 size = Vector2(0.7, 0.7)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f6qtv"]
@@ -157,6 +159,8 @@ sky_mode = 1
 environment = ExtResource("2_sapbw")
 
 [node name="StormTimer" parent="." instance=ExtResource("2_klx6h")]
+
+[node name="MenuPrompt" parent="." instance=ExtResource("5_mewol")]
 
 [node name="player" parent="." instance=ExtResource("2_4i20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69587, 1.5, 8.45738)
@@ -630,4 +634,20 @@ omni_range = 1.29291
 [node name="DialPuzzleNoteBody" type="StaticBody3D" parent="DialPuzzleNote"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DialPuzzleNote/DialPuzzleNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_f6qtv")
+
+[node name="TilePuzzleNote" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -3.6, 2.5, -9.4366)
+mesh = SubResource("PlaneMesh_srkvd")
+script = ExtResource("39_jrrph")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TilePuzzleNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="TilePuzzleNoteBody" type="StaticBody3D" parent="TilePuzzleNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TilePuzzleNote/TilePuzzleNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_f6qtv")

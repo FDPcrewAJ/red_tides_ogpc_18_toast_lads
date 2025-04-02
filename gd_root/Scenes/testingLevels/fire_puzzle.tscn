@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=46 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_k2snt"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_wiqht"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_ht1ol"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="17_ld0ud"]
 [ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="21_nmg6w"]
 [ext_resource type="Script" path="res://Scenes/testingLevels/fire_puzzle_note.gd" id="22_7ep3d"]
@@ -102,6 +103,10 @@ size = Vector2(0.7, 0.7)
 points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
 
 [node name="FirePuzzleRoom" type="Node3D"]
+
+[node name="InteractablesDisplay" parent="." instance=ExtResource("16_xrgdq")]
+
+[node name="FirePuzzleRoomManager" type="Node3D" parent="."]
 script = ExtResource("1_2g241")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=70 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_klx6h"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_sapbw"]
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="3_8g421"]
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="5_kjqka"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_mewol"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="6_jo8y4"]
@@ -145,7 +146,6 @@ size = Vector2(0.7, 0.7)
 points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
 
 [node name="pipe_puzzle_test" type="Node3D"]
-script = ExtResource("1_dtvxa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -158,12 +158,17 @@ sky_mode = 1
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_sapbw")
 
+[node name="InteractablesDisplay" parent="." instance=ExtResource("3_8g421")]
+
 [node name="StormTimer" parent="." instance=ExtResource("2_klx6h")]
 
 [node name="MenuPrompt" parent="." instance=ExtResource("5_mewol")]
 
 [node name="player" parent="." instance=ExtResource("2_4i20w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.69587, 1.5, 8.45738)
+
+[node name="PipeRoomManager" type="Node3D" parent="."]
+script = ExtResource("1_dtvxa")
 
 [node name="world" type="Node3D" parent="."]
 

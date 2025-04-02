@@ -24,3 +24,6 @@ script = ExtResource("1_2lm4e")
 [node name="water_mesh" type="MeshInstance3D" parent="water_body"]
 mesh = SubResource("PlaneMesh_80gbk")
 skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.826492, 0.562949, 0, -0.562949, 0.826492, 7.62939e-06, 35.7612, 72.5233)

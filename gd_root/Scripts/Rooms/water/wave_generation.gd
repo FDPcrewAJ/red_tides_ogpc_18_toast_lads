@@ -12,4 +12,4 @@ func _physics_process(_delta):
 		gen_water = false
 
 func generate_water():
-	print("worked")
+	pass

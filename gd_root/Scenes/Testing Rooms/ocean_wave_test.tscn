@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcead5xl6alc2"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/water/wave_generation.gd" id="1_2lm4e"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="2_rqxs0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0x8j"]
+render_priority = 0
+shader = ExtResource("2_rqxs0")
+shader_parameter/color1 = Color(0, 0.27451, 0.376471, 1)
+shader_parameter/color2 = Color(0, 0.160784, 0.227451, 1)
+shader_parameter/color3 = Color(0, 0.34902, 0.47451, 1)
+shader_parameter/x_amount = 512.0
+shader_parameter/y_amount = 512.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_80gbk"]
+material = SubResource("ShaderMaterial_p0x8j")
+size = Vector2(100, 100)
+
+[node name="ocean_wave_test" type="Node3D"]
+
+[node name="water_body" type="StaticBody3D" parent="."]
+script = ExtResource("1_2lm4e")
+
+[node name="water_mesh" type="MeshInstance3D" parent="water_body"]
+mesh = SubResource("PlaneMesh_80gbk")
+skeleton = NodePath("../..")

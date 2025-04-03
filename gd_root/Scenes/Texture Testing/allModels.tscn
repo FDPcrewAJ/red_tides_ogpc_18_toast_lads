@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=35 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -18,6 +18,7 @@
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
 [ext_resource type="PackedScene" uid="uid://ddqmjn6j77v1q" path="res://Imports/Models/Objects/Clutter/wetFloorSign.gltf" id="30_jvgn2"]
 [ext_resource type="PackedScene" uid="uid://8l1ltdwbe0cx" path="res://Imports/Models/Objects/Pipes/pipe_junction_cross.gltf" id="31_j3k20"]
+[ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="31_kumtv"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="32_8j3kc"]
 [ext_resource type="PackedScene" uid="uid://cuoa2vj8p07s8" path="res://Imports/Models/Objects/Pipes/pipe_junction_t.gltf" id="32_d3jgn"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="33_21cgc"]
@@ -107,7 +108,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85648, 0, 2.88343)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7174, -9.53674e-07, 6.57247)
 
 [node name="computer" parent="." instance=ExtResource("27_3te7t")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.35101, 1.07319, 9.9908)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.35101, 1.2744, 9.9908)
 
 [node name="wooden_box" parent="." instance=ExtResource("20_1e0bp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21871, -4.76837e-07, 13.6045)
@@ -115,31 +116,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21871, -4.76837e-07, 13.604
 [node name="metal_box" parent="." instance=ExtResource("21_xxu8m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92899, 0, 13.5896)
 
-[node name="blockbench_export" parent="." instance=ExtResource("22_2xxq5")]
+[node name="lunch_table" parent="." instance=ExtResource("22_2xxq5")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.50709, 0, 9.51018)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("23_nlpkp")]
+[node name="banana_peel" parent="." instance=ExtResource("23_nlpkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36866, 0, 7.13193)
 
-[node name="blockbench_export3" parent="." instance=ExtResource("24_8wd8n")]
+[node name="the_glob" parent="." instance=ExtResource("24_8wd8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22897, 1.19209e-07, 4.78932)
 
-[node name="blockbench_export4" parent="." instance=ExtResource("25_cchwj")]
+[node name="coffee_cup" parent="." instance=ExtResource("25_cchwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42182, 0, 6.56739)
 
-[node name="blockbench_export5" parent="." instance=ExtResource("26_xh1v8")]
+[node name="danger_intern_sign" parent="." instance=ExtResource("26_xh1v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56969, 1.19209e-07, 4.60994)
 
-[node name="blockbench_export6" parent="." instance=ExtResource("27_noxka")]
+[node name="soda_cup" parent="." instance=ExtResource("27_noxka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75292, 0, 6.19055)
 
-[node name="blockbench_export7" parent="." instance=ExtResource("28_33olt")]
+[node name="spinny_chair" parent="." instance=ExtResource("28_33olt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60543, 2.38419e-07, 10.6181)
 
-[node name="blockbench_export8" parent="." instance=ExtResource("29_oqijh")]
+[node name="toaster" parent="." instance=ExtResource("29_oqijh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353883, 0, 4.37899)
 
-[node name="blockbench_export9" parent="." instance=ExtResource("30_jvgn2")]
+[node name="wet_floor_sign" parent="." instance=ExtResource("30_jvgn2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87329, 0, 3.8124)
 
 [node name="blockbench_export10" parent="." instance=ExtResource("31_j3k20")]
@@ -159,3 +160,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.65194, 0, 15.8327)
 
 [node name="blockbench_export15" parent="." instance=ExtResource("36_i0pwb")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.81289, 0, 15.8868)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88512, 3.65669, 0)
+texture = ExtResource("31_kumtv")

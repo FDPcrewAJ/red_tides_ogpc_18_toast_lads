@@ -1,15 +1,10 @@
 @tool
 extends StaticBody3D
 
-@export var gen_water = false
+@export var execute_button: bool = false:
+	set = _set_execute_button
 
-@onready var water_mesh = $water_mesh
+@onready var old_water_mesh = $water_mesh
 
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("jump"):
-		gen_water = true
-		generate_water()
-		gen_water = false
-
-func generate_water():
-	pass
+func _set_execute_button(__):
+	execute_button = false

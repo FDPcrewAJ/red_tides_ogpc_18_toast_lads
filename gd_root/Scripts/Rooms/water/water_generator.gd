@@ -8,6 +8,7 @@ extends MeshInstance3D
 # Height and intenisty adjustments
 @export var terrain_height = 5
 @export var noise_intensity = 0.2
+@export var vert_distance = 5
 
 # Control variables to update and reset changed meshes
 @export var update = false
@@ -36,8 +37,8 @@ func generate_terrain():
 			uv.y = inverse_lerp(0, zSize, z)
 			surftool.set_uv(uv)
 			
-			surftool.add_vertex(Vector3(x,y,z))
-			#draw_sphere(Vector3(x,y,z))
+			surftool.add_vertex(vert_distance * Vector3(x,y,z))
+			#draw_sphere(vert_distance * Vector3(x,y,z))
 	
 	var vert = 0
 	for z in zSize:

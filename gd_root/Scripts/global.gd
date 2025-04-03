@@ -52,6 +52,8 @@ var fire_puzzle = false
 var consistent_positioning = true
 var new_position = 0
 
+var in_menu = false
+
 func _process(_delta):
 	if new_game == true:
 		room_completed = false

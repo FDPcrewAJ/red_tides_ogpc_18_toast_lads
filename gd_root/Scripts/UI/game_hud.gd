@@ -2,18 +2,33 @@ extends Control
 
 @onready var label = $stopwatch_dial/stopwatch_countdown
 @onready var needle = $stopwatch_dial/stopwatch_needle
+@onready var list = $parts_list
+#These variables are for the stopwatch
 var rotation_speed = TAU #/ 60
-var double_digit = 0
+var double_digit = 20
 var single_digit = ""
-# Called when the node enters the scene tree for the first time.
+var countdown_active = true
+#These variables are for the parts list
+var list_open = true 
+
 func _ready() -> void:
 	pass
 #node.rotate(Vector3(0, 0, 1), deg2rad(90))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _input(_event) -> void:
+	
+	if Global.list_in_hand:
+		if Input.is_action_just_pressed("open_list"):
+			if list.visible:
+				list.visible = false
+			elif !list.visible:
+				list.visible = true
+
 func _process(delta: float) -> void:
-	count_up(delta)
-	#count_down(delta)
+	
+	#Countdown activation
+	if countdown_active:
+		count_down(delta)
 	
 func count_up(delta):
 	needle.rotate(rotation_speed * delta)
@@ -31,9 +46,13 @@ func count_down(delta):
 	if needle.rotation_degrees >= 360:
 		needle.rotation_degrees = 1
 		double_digit -= 1
-		if double_digit < 10:
+		if double_digit <= 0:
+			countdown_active = false
+			label.text = "00"
+		elif double_digit < 10:
 			single_digit = "0" + str(double_digit)
 			label.text = str(single_digit)
 		else:
 			label.text = str(double_digit)	
+		
 	

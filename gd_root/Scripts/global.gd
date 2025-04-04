@@ -10,6 +10,9 @@ var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
 var storm_time = "0"
 var timer_started = false
 
+#List pickup boolean
+var list_in_hand = false
+
 # Player ray cast collision range for interaction
 var current_object = "none"
 var current_object_parent = "none"

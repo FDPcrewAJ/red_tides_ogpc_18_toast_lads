@@ -7,7 +7,8 @@ var room_completed = false
 var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
 
 # Storm system control 
-var storm_time = "0"
+var storm_time = 10
+var storm_active = true
 var timer_started = false
 
 #List pickup boolean

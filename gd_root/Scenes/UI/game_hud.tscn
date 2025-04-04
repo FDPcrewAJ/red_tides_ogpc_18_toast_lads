@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://clgttbebmbc6a"]
+[gd_scene load_steps=7 format=3 uid="uid://clgttbebmbc6a"]
 
 [ext_resource type="Texture2D" uid="uid://b0sg2jme0f0x3" path="res://Imports/ui/stopwatch_dial.png" id="1_ie0vo"]
 [ext_resource type="Script" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
 [ext_resource type="Texture2D" uid="uid://bdxp3k3edhv5b" path="res://Imports/ui/stopwatch_needle.png" id="2_v440k"]
 [ext_resource type="Texture2D" uid="uid://dqqp821hkipxt" path="res://Imports/Models/Objects/Doors/doorFacility.png" id="4_dpgn7"]
+[ext_resource type="Script" path="res://Scripts/UI/storm_timer.gd" id="5_uwt6j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo3mm"]
 
@@ -63,3 +64,14 @@ visible = false
 position = Vector2(-1791.78, 760.111)
 scale = Vector2(1.61979, 2.20573)
 texture = ExtResource("4_dpgn7")
+
+[node name="storm_control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="storm_timer" type="Timer" parent="storm_control"]
+wait_time = 240.0
+script = ExtResource("5_uwt6j")
+
+[connection signal="timeout" from="storm_control/storm_timer" to="." method="_on_storm_timer_timeout"]

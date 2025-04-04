@@ -56,3 +56,7 @@ func count_down(delta):
 			label.text = str(double_digit)	
 		
 	
+
+
+func _on_storm_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Menus/title_screen.tscn")

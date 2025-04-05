@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=73 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -14,7 +14,9 @@
 [ext_resource type="Shader" uid="uid://vvin5ees2f00" path="res://Scripts/Shaders/random_texture_tiler.tres" id="7_mwl0a"]
 [ext_resource type="PackedScene" uid="uid://cmsiy8jnrtqi0" path="res://Assets/Objects/OLD Pipes/pipe_junction_t.tscn" id="8_ixnkp"]
 [ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_m7bys"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/triplanar_wall_with_noise.gdshader" id="9_hboep"]
 [ext_resource type="PackedScene" uid="uid://c52i7w48gs3p1" path="res://Assets/Objects/OLD Pipes/pipe_turn_90.tscn" id="9_kj76a"]
+[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="9_qph0k"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="9_sebl2"]
 [ext_resource type="PackedScene" uid="uid://b3n2ltlcrpx67" path="res://Assets/Objects/OLD Pipes/pipe_lever.tscn" id="10_vauyr"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="11_6doxk"]
@@ -77,13 +79,31 @@ size = Vector2(5, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7d45a"]
 size = Vector3(1, 5, 9)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxxnx"]
-albedo_texture = ExtResource("6_jo8y4")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kbywa"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yuk02"]
+noise = SubResource("FastNoiseLite_kbywa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1806"]
+render_priority = 0
+shader = ExtResource("9_hboep")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.5, 0.5, 0.5)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("9_qph0k")
+shader_parameter/tex_frg_2 = ExtResource("9_qph0k")
+shader_parameter/tex_frg_3 = ExtResource("6_jo8y4")
+shader_parameter/tex_frg_14 = SubResource("NoiseTexture2D_yuk02")
 
 [sub_resource type="BoxMesh" id="BoxMesh_a8ttr"]
-material = SubResource("StandardMaterial3D_bxxnx")
+material = SubResource("ShaderMaterial_p1806")
 size = Vector3(1, 5, 9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tog6l"]

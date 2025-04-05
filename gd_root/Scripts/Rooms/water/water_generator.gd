@@ -1,4 +1,3 @@
-@tool
 extends MeshInstance3D
 
 # X and Z size of the mesh
@@ -13,6 +12,11 @@ extends MeshInstance3D
 # Control variables to update and reset changed meshes
 @export var update = false
 @export var clear_vert_vis = false
+
+var time = 0.0
+var speed = 0.2
+
+var jitter = 10
 
 
 func _ready():
@@ -30,7 +34,7 @@ func generate_terrain():
 	
 	for z in range(zSize + 1):
 		for x in range(xSize + 1):
-			var y = noise.get_noise_2d(x * noise_intensity, z * noise_intensity) * terrain_height
+			var y = clamp(noise.get_noise_2d((x * noise_intensity + time) / jitter, (z * noise_intensity + time) / jitter) * terrain_height, 0.0, 0.5)
 			
 			var uv = Vector2()
 			uv.x = inverse_lerp(0, xSize, x)
@@ -69,7 +73,10 @@ func draw_sphere(pos:Vector3):
 	ins.mesh = sphere
 
 
-func _process(delta):
+func _process(_delta):
+	if Engine.get_process_frames() % 20 == 0:
+		generate_terrain()
+		time += speed
 	if update:
 		generate_terrain()
 		update = false

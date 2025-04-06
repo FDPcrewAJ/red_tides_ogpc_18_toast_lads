@@ -58,7 +58,7 @@ func count_down(delta):
 			single_digit = "0" + str(double_digit)
 			label.text = str(single_digit)
 		else:
-			label.text = str(double_digit)	
+			label.text = str(double_digit)
 
 
 func _on_storm_timer_timeout():

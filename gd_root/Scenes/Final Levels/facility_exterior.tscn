@@ -280,12 +280,12 @@ directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, -34.4884)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, 29.4516)
 
 [node name="world" type="Node3D" parent="."]
 
 [node name="boatAnimated" type="AnimatableBody3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, -36.1784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, 27.7616)
 
 [node name="boat" parent="world/boatAnimated" instance=ExtResource("2_rhyc4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

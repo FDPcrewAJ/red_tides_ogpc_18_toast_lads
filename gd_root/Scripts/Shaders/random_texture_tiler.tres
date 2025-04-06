@@ -99,7 +99,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1055.06, 4.89136)
 flags/world_vertex_coords = true
 flags/ensure_correct_normals = true
 nodes/fragment/0/position = Vector2(880, 200)

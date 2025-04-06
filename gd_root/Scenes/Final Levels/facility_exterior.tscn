@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=67 format=4 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="1_svdwr"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
 [ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
+[ext_resource type="Texture2D" uid="uid://b76skvgqq3eih" path="res://Textures/Exterior Textures/metal_grate.png" id="9_psfmp"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_i8itn"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t1hbw"]
@@ -109,29 +110,26 @@ top_radius = 40.0
 bottom_radius = 40.0
 height = 50.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_g3pi4"]
-height = 0.5
-radius = 50.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpvtb"]
+size = Vector3(15, 0.3, 12)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fi0oh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
 transparency = 1
-albedo_texture = ExtResource("7_y44iw")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_o8e6n"]
-material = SubResource("StandardMaterial3D_fi0oh")
-top_radius = 50.0
-bottom_radius = 50.0
-height = 0.5
+[sub_resource type="BoxMesh" id="BoxMesh_gfmt2"]
+material = SubResource("StandardMaterial3D_gufqm")
+size = Vector3(15, 0.3, 12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
 size = Vector3(3, 0.5, 15.6611)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
 transparency = 1
-albedo_texture = ExtResource("7_y44iw")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_881vr"]
@@ -282,12 +280,12 @@ directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, 112.155)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 20.3468, 3.19018, -34.4884)
 
 [node name="world" type="Node3D" parent="."]
 
 [node name="boatAnimated" type="AnimatableBody3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, 110.465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.305, -0.439833, -36.1784)
 
 [node name="boat" parent="world/boatAnimated" instance=ExtResource("2_rhyc4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -392,11 +390,11 @@ mesh = SubResource("CylinderMesh_avsak")
 skeleton = NodePath("../..")
 
 [node name="mainCatwalkCol" type="CollisionShape3D" parent="world/facilityModel/mainSupports/centerPillar"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
-shape = SubResource("CylinderShape3D_g3pi4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90719, 43.9097)
+shape = SubResource("BoxShape3D_hpvtb")
 
 [node name="mainCatwalkMesh" type="MeshInstance3D" parent="world/facilityModel/mainSupports/centerPillar/mainCatwalkCol"]
-mesh = SubResource("CylinderMesh_o8e6n")
+mesh = SubResource("BoxMesh_gfmt2")
 
 [node name="stairs" type="Node3D" parent="world/facilityModel/mainSupports"]
 

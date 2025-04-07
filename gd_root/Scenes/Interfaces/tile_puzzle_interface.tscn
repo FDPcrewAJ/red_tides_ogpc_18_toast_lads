@@ -32,6 +32,7 @@ offset_left = -516.0
 offset_top = 20.0
 offset_right = -416.0
 offset_bottom = 120.0
+toggle_mode = true
 script = ExtResource("1_4ebpr")
 metadata/_edit_use_anchors_ = true
 

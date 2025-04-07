@@ -311,6 +311,7 @@ transform = Transform3D(1, 0, 0, 0, 0.825862, -0.563872, 0, 0.563872, 0.825862, 
 shape = SubResource("BoxShape3D_s14hp")
 
 [node name="Water" type="MeshInstance3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 240.195, 0)
 visible = false
 mesh = SubResource("PlaneMesh_1nesq")
 skeleton = NodePath("../..")

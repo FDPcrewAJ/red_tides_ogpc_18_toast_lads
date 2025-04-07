@@ -69,7 +69,6 @@ func generate_terrain():
 	surftool.generate_normals()
 	a_mesh = surftool.commit()
 	mesh = a_mesh
-	
 
 
 

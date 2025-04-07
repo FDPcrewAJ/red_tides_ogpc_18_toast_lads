@@ -38,25 +38,13 @@ func _physics_process(delta: float) -> void:
 	if countdown_active:
 		count_down(delta)
 
-
-func count_up(delta):
-	needle.rotate(rotation_speed * delta)
-	if needle.rotation_degrees % 360 == 0:
-		#needle.rotation_degrees = 1
-		double_digit += 1
-		if double_digit < 10:
-			single_digit = "0" + str(double_digit)
-			label.text = str(single_digit)
-		else:
-			label.text = str(double_digit)
-
 func update_time():
 	double_digit = Global.time_left
 	Global.storm_timer.wait_time = double_digit
 
 func count_down(delta):
 	needle.rotate(rotation_speed * delta)
-	if needle.rotation_degrees >= 360:
+	if needle.rotation_degrees >= 360.0:
 		needle.rotation_degrees = 1
 		double_digit -= 1
 		if double_digit <= 0:

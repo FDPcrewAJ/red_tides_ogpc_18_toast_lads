@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_klx6h"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_sapbw"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="3_8g421"]
-[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="5_kjqka"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_mewol"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="6_jo8y4"]
 [ext_resource type="PackedScene" uid="uid://dnarg2uopj3e4" path="res://Assets/Objects/OLD Pipes/pipe_straight.tscn" id="6_vkgry"]

@@ -23,6 +23,8 @@ script = ExtResource("1_h3d68")
 [node name="pause_menu" parent="." instance=ExtResource("2_detwj")]
 
 [node name="game_hud" parent="." instance=ExtResource("3_2x2ge")]
+offset_left = -909.84
+offset_right = -909.84
 
 [node name="CollisionCheck" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

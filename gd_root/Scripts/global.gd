@@ -54,6 +54,13 @@ var new_position = 0
 
 var in_menu = false
 
+var one_fire_acess = 0
+var two_fire_acess = 0
+var three_fire_acess = 0
+var four_fire_acess = 0
+var five_fire_acess = 0
+var six_fire_acess = 0
+
 func _process(_delta):
 	if new_game == true:
 		room_completed = false

@@ -8,7 +8,7 @@ var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
 
 # Storm system control 
 var storm_timer = Timer.new()
-var time_left = 100
+var time_left = 20
 var storm_active = true
 var timer_started = false
 

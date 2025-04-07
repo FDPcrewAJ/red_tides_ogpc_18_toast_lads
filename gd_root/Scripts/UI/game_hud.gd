@@ -5,7 +5,7 @@ extends Control
 @onready var list = $parts_list
 #These variables are for the stopwatch
 var rotation_speed = TAU #/ 60
-var double_digit = 20
+var double_digit = 0
 var single_digit = ""
 var countdown_active = true
 #These variables are for the parts list
@@ -14,7 +14,12 @@ var list_open = true
 
 func _ready() -> void:
 	Global.storm_timer.connect("timeout", _on_storm_timer_timeout)
-	#node.rotate(Vector3(0, 0, 1), deg2rad(90))
+	update_time()
+	
+	if double_digit <= 0:
+		countdown_active = false
+		
+	label.text = str(double_digit)
 
 
 func _input(_event) -> void:
@@ -27,28 +32,19 @@ func _input(_event) -> void:
 				list.visible = true
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	#Countdown activation
 	if countdown_active:
 		count_down(delta)
 
-
-func count_up(delta):
-	needle.rotate(rotation_speed * delta)
-	if needle.rotation_degrees >= 360:
-		needle.rotation_degrees = 1
-		double_digit += 1
-		if double_digit < 10:
-			single_digit = "0" + str(double_digit)
-			label.text = str(single_digit)
-		else:
-			label.text = str(double_digit)
-
+func update_time():
+	double_digit = Global.time_left
+	Global.storm_timer.wait_time = double_digit
 
 func count_down(delta):
 	needle.rotate(rotation_speed * delta)
-	if needle.rotation_degrees >= 360:
+	if needle.rotation_degrees >= 360.0:
 		needle.rotation_degrees = 1
 		double_digit -= 1
 		if double_digit <= 0:

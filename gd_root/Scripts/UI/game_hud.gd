@@ -13,7 +13,6 @@ var list_open = true
 
 
 func _ready() -> void:
-	Global.storm_timer.connect("timeout", _on_storm_timer_timeout)
 	update_time()
 	
 	if double_digit <= 0:
@@ -40,7 +39,6 @@ func _physics_process(delta: float) -> void:
 
 func update_time():
 	double_digit = Global.time_left
-	Global.storm_timer.wait_time = double_digit
 
 func count_down(delta):
 	needle.rotate(rotation_speed * delta)

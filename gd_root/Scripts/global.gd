@@ -7,9 +7,7 @@ var room_completed = false
 var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
 
 # Storm system control 
-var storm_timer = Timer.new()
 var time_left = 20
-var storm_active = true
 var timer_started = false
 
 #List pickup boolean
@@ -58,11 +56,6 @@ var consistent_positioning = true
 var new_position = 0
 
 var in_menu = false
-
-func _ready():
-	add_child(storm_timer)
-	storm_timer.wait_time = time_left
-	storm_timer.start()
 
 func _process(_delta):
 	if new_game == true:

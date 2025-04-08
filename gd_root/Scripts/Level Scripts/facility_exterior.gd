@@ -1,6 +1,5 @@
 extends Node3D
 
-@onready var water_hitbox = $world/Water/waterCol
 @onready var player = $player
 
 @onready var boat = $world/boatAnimated

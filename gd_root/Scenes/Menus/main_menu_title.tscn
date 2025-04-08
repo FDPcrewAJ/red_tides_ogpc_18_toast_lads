@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqjbnuea3t06a"]
+[gd_scene load_steps=3 format=3 uid="uid://dqjbnuea3t06a"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_j0o3k"]
+[ext_resource type="FontFile" uid="uid://yfq8gr7jpx2n" path="res://Imports/fonts/kremlin.ttf" id="2_a0ehs"]
 
-[node name="main_menu" type="Control"]
+[node name="main_menu_title" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,6 +139,16 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Level Select (For Testing!!!)"
 flat = true
+
+[node name="GameTitle" type="Label" parent="."]
+modulate = Color(0.737255, 0, 0, 1)
+offset_left = -205.0
+offset_top = -498.0
+offset_right = 860.0
+offset_bottom = -268.0
+theme_override_fonts/font = ExtResource("2_a0ehs")
+theme_override_font_sizes/font_size = 200
+text = "rEd TidEs"
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]

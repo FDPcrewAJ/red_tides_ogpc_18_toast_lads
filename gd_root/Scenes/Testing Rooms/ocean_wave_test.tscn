@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://dcead5xl6alc2"]
+[gd_scene load_steps=20 format=4 uid="uid://dcead5xl6alc2"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/water/water_generator.gd" id="1_6mwv2"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="2_rqxs0"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/ocean_generation.gdshader" id="3_q7i4j"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/water.gdshader" id="4_5abh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ewc64"]
 render_priority = 0
@@ -49,6 +50,65 @@ shader_parameter/noise_tex = SubResource("NoiseTexture2D_61edl")
 material = SubResource("ShaderMaterial_xs2a8")
 size = Vector3(10, 2, 10)
 
+[sub_resource type="QuadMesh" id="QuadMesh_nyx4x"]
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x8nqh"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yp1wm"]
+seamless = true
+as_normal_map = true
+bump_strength = 1.5
+noise = SubResource("FastNoiseLite_x8nqh")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_whysj"]
+noise_type = 3
+seed = 10
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vampg"]
+seamless = true
+as_normal_map = true
+bump_strength = 1.5
+noise = SubResource("FastNoiseLite_whysj")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kbm4j"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b7jhs"]
+seamless = true
+noise = SubResource("FastNoiseLite_kbm4j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_igb0p"]
+render_priority = 0
+shader = ExtResource("4_5abh3")
+shader_parameter/albedo = Color(0, 0.321569, 0.431373, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.025
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.15
+shader_parameter/albedo2 = Color(0, 0.47451, 0.764706, 1)
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = null
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = 1.5
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_yp1wm")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_vampg")
+shader_parameter/wave = SubResource("NoiseTexture2D_b7jhs")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pp6hl"]
+size = Vector3(0.2, 0.2, 0.2)
+
 [node name="ocean_wave_test" type="Node3D"]
 
 [node name="water_mesh" type="MeshInstance3D" parent="."]
@@ -64,3 +124,13 @@ terrain_height = 2
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("BoxMesh_grxgb")
+
+[node name="water_plane" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_nyx4x")
+surface_material_override/0 = SubResource("ShaderMaterial_igb0p")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118342, 0)
+mesh = SubResource("BoxMesh_pp6hl")
+skeleton = NodePath("../water_plane")

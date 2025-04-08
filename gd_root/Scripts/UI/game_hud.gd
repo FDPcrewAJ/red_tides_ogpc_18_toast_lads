@@ -4,21 +4,19 @@ extends Control
 @onready var needle = $stopwatch_dial/stopwatch_needle
 @onready var list = $parts_list
 #These variables are for the stopwatch
-var rotation_speed = TAU #/ 60
+var rotation_speed = TAU / 60
 var double_digit = 0
 var single_digit = ""
-var countdown_active = true
 #These variables are for the parts list
 var list_open = true 
 
 
 func _ready() -> void:
-	update_time()
+	set_time()
 	
 	if double_digit <= 0:
-		countdown_active = false
+		Global.timer_active = false	
 		
-	label.text = str(double_digit)
 
 
 func _input(_event) -> void:
@@ -34,19 +32,24 @@ func _input(_event) -> void:
 func _physics_process(delta: float) -> void:
 	
 	#Countdown activation
-	if countdown_active:
+	if Global.timer_active:
 		count_down(delta)
 
-func update_time():
+func set_time():
 	double_digit = Global.time_left
+	if double_digit < 10:
+		single_digit = "0" + str(double_digit)
+		label.text = str(single_digit)
+	else:
+		label.text = str(double_digit)
 
 func count_down(delta):
 	needle.rotate(rotation_speed * delta)
 	if needle.rotation_degrees >= 360.0:
 		needle.rotation_degrees = 1
 		double_digit -= 1
+		Global.time_left = double_digit
 		if double_digit <= 0:
-			countdown_active = false
 			label.text = "00"
 		elif double_digit < 10:
 			single_digit = "0" + str(double_digit)

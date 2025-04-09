@@ -1,19 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnarg2uopj3e4"]
+[gd_scene load_steps=3 format=3 uid="uid://detuhqp3qxbj8"]
 
-[ext_resource type="ArrayMesh" uid="uid://bg1w3pvmlqno1" path="res://Imports/Models/Objects/Pipes/pipeStraight.obj" id="1_dtfme"]
-[ext_resource type="Material" uid="uid://c2sc8uaaj7ruj" path="res://Assets/Materials/PipeStraight.tres" id="2_lth6h"]
+[ext_resource type="PackedScene" uid="uid://bx2c5x7ee2tfp" path="res://Imports/Models/Objects/Pipes/pipe_straight.gltf" id="1_p4c0t"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qjhwq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewrxb"]
 size = Vector3(1, 3, 1)
 
-[node name="PipeStraight" type="CSGMesh3D"]
+[node name="pipe_straight" instance=ExtResource("1_p4c0t")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-mesh = ExtResource("1_dtfme")
-material = ExtResource("2_lth6h")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 collision_mask = 7
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_qjhwq")
+shape = SubResource("BoxShape3D_ewrxb")

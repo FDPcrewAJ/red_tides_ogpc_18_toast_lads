@@ -35,6 +35,7 @@ shader = ExtResource("1_xocds")
 shader_parameter/albedo = Color(0, 0.321569, 0.431373, 1)
 shader_parameter/metallic = 0.3
 shader_parameter/roughness = 0.2
+shader_parameter/wave_time = 0.0
 shader_parameter/wave_direction = Vector2(2, 0)
 shader_parameter/wave_direction2 = Vector2(0, 1)
 shader_parameter/time_scale = 0.025

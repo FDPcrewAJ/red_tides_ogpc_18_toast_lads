@@ -9,6 +9,7 @@ uniform sampler2D texture_normal;
 uniform sampler2D texture_normal2;
 
 // Wave direction and speed control
+uniform float wave_time = 0;
 uniform vec2 wave_direction = vec2(2.0, 0.0);
 uniform vec2 wave_direction2 = vec2(0.0, 1.0);
 uniform float time_scale : hint_range(0.0, 0.2, 0.005) = 0.025;
@@ -54,7 +55,7 @@ float edge(float depth)
 
 void vertex() {
 	world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	height = texture(wave, world_pos.xz / noise_scale + TIME * time_scale).r;
+	height = texture(wave, world_pos.xz / noise_scale + wave_time * time_scale).r;
 	VERTEX.y += height * height_scale;
 }
 

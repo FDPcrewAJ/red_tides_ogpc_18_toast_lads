@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=66 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Scene Objects/water_plane.gd" id="5_4vmig"]
 [ext_resource type="Material" uid="uid://besr6d88tc006" path="res://Scripts/Shaders/water_shader_main.tres" id="5_ao2o6"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
+[ext_resource type="Script" path="res://Scripts/Scene Objects/boat_bouyancy.gd" id="6_ohgcl"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="7_r818k"]
 [ext_resource type="Texture2D" uid="uid://ckwi351xwbfxe" path="res://Textures/Exterior Textures/v1_rust.png" id="7_vlv12"]
@@ -233,6 +234,8 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_ma47x")
 size = Vector2(1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_83t6i"]
+
 [node name="facility_exterior" type="Node3D"]
 script = ExtResource("1_mup67")
 
@@ -261,6 +264,7 @@ script = ExtResource("5_4vmig")
 
 [node name="boat" type="RigidBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0948, 9.61001, 0.825291)
+script = ExtResource("6_ohgcl")
 
 [node name="boat_mesh" parent="world/boat" instance=ExtResource("2_rhyc4")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -627,3 +631,9 @@ transform = Transform3D(-3.0598e-08, 3.0598e-08, 0.7, 0.7, -3.0598e-08, 3.0598e-
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -35.356, 0)
 mesh = SubResource("PlaneMesh_h3cy4")
 skeleton = NodePath("../../water_plane")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3963, 1.61914, 29.4708)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
+shape = SubResource("BoxShape3D_83t6i")

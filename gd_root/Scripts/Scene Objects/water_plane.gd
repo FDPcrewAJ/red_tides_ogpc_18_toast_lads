@@ -23,9 +23,9 @@ func _process(delta):
 	material.set_shader_parameter("wave_time", time)
 
 
-func get_height(world_pos: Vector3) -> float:
-	var uv_x = wrapf(world_pos.x / noise_scale + time * wave_speed, 0, 1)
-	var uv_y = wrapf(world_pos.z / noise_scale + time * wave_speed, 0 ,1)
-	
+func get_height(world_position: Vector3) -> float:
+	var uv_x = wrapf(world_position.x / noise_scale + time * wave_speed, 0, 1)
+	var uv_y = wrapf(world_position.z / noise_scale + time * wave_speed, 0, 1)
+
 	var pixel_pos = Vector2(uv_x * noise.get_width(), uv_y * noise.get_height())
 	return global_position.y + noise.get_pixelv(pixel_pos).r * height_scale

@@ -14,8 +14,8 @@ func _ready():
 			Global.consistent_positioning = false
 
 func _process(_delta):
-	if boat.position.z > boat_end_pos:
-		boat.translate(Vector3(0,0,-0.1 * 1))
+	#if boat.position.z > boat_end_pos:
+		#boat.translate(Vector3(0,0,-0.1 * 1))
 	
 	
 	if Global.current_object == "doorCol":
@@ -24,7 +24,8 @@ func _process(_delta):
 
 
 func _on_water_col_area_entered(_area):
-	player.position.x = boat.position.x
-	player.position.z = boat.position.z + 2
-	player.position.y = boat.position.y + 3.5
+	pass
+	#player.position.x = boat.position.x
+	#player.position.z = boat.position.z + 2
+	#player.position.y = boat.position.y + 3.5
 	

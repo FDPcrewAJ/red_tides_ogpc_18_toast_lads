@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=37 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -21,8 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="31_kumtv"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="32_8j3kc"]
 [ext_resource type="PackedScene" uid="uid://cuoa2vj8p07s8" path="res://Imports/Models/Objects/Pipes/pipe_junction_t.gltf" id="32_d3jgn"]
+[ext_resource type="PackedScene" uid="uid://dbphnf7buj5wp" path="res://Imports/Models/Objects/Railings/outsideRailingFiveSegment.gltf" id="32_x14yy"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="33_21cgc"]
 [ext_resource type="PackedScene" uid="uid://dowyy8sd08g1b" path="res://Imports/Models/Objects/Pipes/pipe_lever.gltf" id="33_50ega"]
+[ext_resource type="PackedScene" uid="uid://dbw3j71s1y8e3" path="res://Imports/Models/Objects/Backup Generator/backup generator.gltf" id="33_omm3l"]
 [ext_resource type="PackedScene" uid="uid://bx2c5x7ee2tfp" path="res://Imports/Models/Objects/Pipes/pipe_straight.gltf" id="34_lb4ss"]
 [ext_resource type="PackedScene" uid="uid://di3mhbndwet00" path="res://Imports/Models/Objects/Pipes/pipe_turn.gltf" id="35_oyy0f"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Imports/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
@@ -164,3 +166,9 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.81289, 0, 15.8868)
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88512, 3.65669, 0)
 texture = ExtResource("31_kumtv")
+
+[node name="blockbench_export" parent="." instance=ExtResource("32_x14yy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.612145, 0, 13.5343)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("33_omm3l")]
+transform = Transform3D(0.633088, 0, 0, 0, 0.633088, 0, 0, 0, 0.633088, -1.53097, 0, 5.53975)

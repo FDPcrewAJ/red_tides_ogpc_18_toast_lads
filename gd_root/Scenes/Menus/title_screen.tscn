@@ -1,6 +1,7 @@
-[gd_scene load_steps=53 format=3 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=55 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
+[ext_resource type="Material" uid="uid://besr6d88tc006" path="res://Scripts/Shaders/water_shader_main.tres" id="2_dqmq5"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_etr80"]
 [ext_resource type="PackedScene" uid="uid://dqjbnuea3t06a" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="5_owl5n"]
@@ -41,6 +42,11 @@ shader_parameter/y_amount = 1024.0
 material = SubResource("ShaderMaterial_u4vka")
 size = Vector2(2500, 2500)
 
+[sub_resource type="QuadMesh" id="QuadMesh_p2q3h"]
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxa3n"]
 albedo_texture = ExtResource("1_bhrb0")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
@@ -50,7 +56,7 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_dxa3n")
 top_radius = 10.0
 bottom_radius = 10.0
-height = 40.0
+height = 70.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg0ep"]
 albedo_color = Color(0.478431, 0.498039, 0.501961, 1)
@@ -74,7 +80,7 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_eovev")
 top_radius = 40.0
 bottom_radius = 40.0
-height = 50.0
+height = 70.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_l20bv"]
 height = 0.5
@@ -226,8 +232,15 @@ transform = Transform3D(0.580703, -0.198331, 0.789588, 0, 0.969872, 0.243615, -0
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.788075, 0, -0.615579, 0, 1, 0, 0.615579, 0, 0.788075, -961.89, 1, -601.857)
+visible = false
 mesh = SubResource("PlaneMesh_bmhk4")
 skeleton = NodePath("")
+
+[node name="water_plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(859.888, 0, -685.997, 0, 1100, 0, 685.997, 0, 859.888, -411.908, -3.66127, -170.996)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_p2q3h")
+surface_material_override/0 = ExtResource("2_dqmq5")
 
 [node name="boat" parent="." instance=ExtResource("10_kvm1t")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -55.6183, 1.00351, 107.543)
@@ -239,40 +252,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81, 0, 67)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)
 
 [node name="support1" type="MeshInstance3D" parent="facilityModel/mainSupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -20.1546, 0)
 mesh = SubResource("CylinderMesh_p85w8")
-
-[node name="support1Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_e56sv")
-skeleton = NodePath("../..")
 
 [node name="support2" type="MeshInstance3D" parent="facilityModel/mainSupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -20.1546, 0)
 mesh = SubResource("CylinderMesh_p85w8")
-
-[node name="support2Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_e56sv")
-skeleton = NodePath("../..")
 
 [node name="support3" type="MeshInstance3D" parent="facilityModel/mainSupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -5.5, -110)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, -20.1546, -110)
 mesh = SubResource("CylinderMesh_p85w8")
-
-[node name="support3Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
-mesh = SubResource("CylinderMesh_e56sv")
-skeleton = NodePath("../..")
 
 [node name="support4" type="MeshInstance3D" parent="facilityModel/mainSupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.5, -110)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -20.1546, -110)
 mesh = SubResource("CylinderMesh_p85w8")
 
-[node name="support4Extra" type="MeshInstance3D" parent="facilityModel/mainSupports/support4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.5, 0)
+[node name="support1Extra" type="MeshInstance3D" parent="facilityModel/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 17.6373, 0)
 mesh = SubResource("CylinderMesh_e56sv")
-skeleton = NodePath("../..")
+
+[node name="support2Extra" type="MeshInstance3D" parent="facilityModel/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 17.6373, 0)
+mesh = SubResource("CylinderMesh_e56sv")
+
+[node name="support3Extra" type="MeshInstance3D" parent="facilityModel/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 17.6373, -110)
+mesh = SubResource("CylinderMesh_e56sv")
+
+[node name="support4Extra" type="MeshInstance3D" parent="facilityModel/mainSupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 17.6373, -110)
+mesh = SubResource("CylinderMesh_e56sv")
 
 [node name="centerPillar" type="StaticBody3D" parent="facilityModel/mainSupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
@@ -281,6 +290,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
 shape = SubResource("CylinderShape3D_p1ey8")
 
 [node name="pillarMesh" type="MeshInstance3D" parent="facilityModel/mainSupports/centerPillar/pillarCol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.3768, 0)
 mesh = SubResource("CylinderMesh_wqn86")
 skeleton = NodePath("../..")
 

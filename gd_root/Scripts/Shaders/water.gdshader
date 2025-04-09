@@ -18,7 +18,6 @@ uniform float noise_scale = 10.0;
 uniform float height_scale = 0.15;
 uniform sampler2D wave;
 
-
 // Fresnel effect
 uniform vec3 albedo2 : source_color;
 
@@ -48,7 +47,7 @@ float fresnel(float amount, vec3 normal, vec3 view)
 
 float edge(float depth)
 {
-	depth = 2.0 * depth - 1.0;
+	depth = 1.0 - 2.0 * depth;
 	return near * far / (far + depth * (near - far));
 }
 
@@ -88,8 +87,8 @@ void fragment() {
 	
 	vec3 depth_color_adj = mix(edge_color, color, step(edge_scale, z_dif));
 	
-	ALBEDO = mix(surface_color, color, 0.75);
-	//ALBEDO = clamp(surface_color + depth_color_adj, vec3(0.0), vec3(1.0));
+	//ALBEDO = mix(surface_color, color, 0.75);
+	ALBEDO = clamp(surface_color + depth_color_adj, vec3(0.0), vec3(1.0));
 	METALLIC = metallic;
 	ROUGHNESS = roughness;
 	NORMAL_MAP = normal_blend;

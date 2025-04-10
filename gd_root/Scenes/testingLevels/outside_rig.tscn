@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cvgath02y1r71" path="res://Textures/Temp Dev Textures/Green/texture_09.png" id="7_gh0qf"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_0ijr6"]
 [ext_resource type="PackedScene" uid="uid://1vstisoeox23" path="res://Scenes/Objects/text_popup.tscn" id="9_nlv1f"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="10_h00yj"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/pixel_water_shader.gdshader" id="10_h00yj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1nn21"]
 size = Vector3(8, 60, 8)

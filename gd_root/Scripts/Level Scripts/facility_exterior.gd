@@ -1,11 +1,13 @@
 extends Node3D
 
 @onready var player = $player
+@onready var boat = $world/boat
 
 var boat_end_pos = -44.0
 
 
 func _ready():
+	boat.axis_lock_linear_x = true
 	if Global.consistent_positioning == true:
 		if typeof(Global.new_position) != TYPE_INT:
 			#You need to change the $player node referenced here to the player in the current scene
@@ -16,8 +18,14 @@ func _process(_delta):
 	if Global.current_object == "doorCol":
 		if Input.is_action_just_pressed("interact"):
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Testing Rooms/pipe_puzzle_test.tscn")
+	print(boat.global_position.z)
+	if boat.global_position.z > boat_end_pos:
+		boat.apply_central_force(Vector3(0,0,-5))
+	else:
+		boat.axis_lock_linear_z = true
 
 
-func _on_water_col_area_entered(_area):
-	pass
-	
+func _on_death_col_area_entered(area: Area3D) -> void:
+	player.position.x = boat.position.x
+	player.position.y = boat.position.y + 5
+	player.position.z = boat.position.z + 3

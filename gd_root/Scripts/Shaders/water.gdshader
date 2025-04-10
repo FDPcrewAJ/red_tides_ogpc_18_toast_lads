@@ -1,4 +1,5 @@
 shader_type spatial;
+render_mode depth_draw_always;
 
 uniform vec3 albedo : source_color;
 uniform float metallic : hint_range(0.0, 1.0, 0.1) = 0;

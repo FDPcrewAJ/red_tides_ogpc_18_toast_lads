@@ -285,7 +285,7 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_g07lk")
 
 [node name="railingCol" type="CollisionShape3D" parent="world/boat"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.00317359, -0.00223446)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.00317383, -0.00223446)
 visible = false
 shape = SubResource("ConcavePolygonShape3D_njp7o")
 
@@ -669,3 +669,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3963, 1.61914, 29.4708)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
 shape = SubResource("BoxShape3D_83t6i")
+
+[node name="Node3D" type="Node3D" parent="."]

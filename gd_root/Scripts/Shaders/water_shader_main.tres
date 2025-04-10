@@ -3,13 +3,11 @@
 [ext_resource type="Shader" path="res://Scripts/Shaders/water.gdshader" id="1_xocds"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jodhb"]
-noise_type = 3
 fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yp1wm"]
 seamless = true
 as_normal_map = true
-bump_strength = 1.5
 noise = SubResource("FastNoiseLite_jodhb")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_i1gkq"]
@@ -20,10 +18,11 @@ fractal_type = 2
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vampg"]
 seamless = true
 as_normal_map = true
-bump_strength = 1.5
 noise = SubResource("FastNoiseLite_i1gkq")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4qm3l"]
+frequency = 0.0011
+fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b7jhs"]
 seamless = true
@@ -39,8 +38,8 @@ shader_parameter/wave_time = 0.0
 shader_parameter/wave_direction = Vector2(2, 0)
 shader_parameter/wave_direction2 = Vector2(0, 1)
 shader_parameter/time_scale = 0.025
-shader_parameter/noise_scale = 1000.0
-shader_parameter/height_scale = 0.01
+shader_parameter/noise_scale = 75.0
+shader_parameter/height_scale = 5.0
 shader_parameter/albedo2 = Color(0, 0.47451, 0.764706, 1)
 shader_parameter/color_deep = Color(0.105882, 0.294118, 0.329412, 1)
 shader_parameter/color_shallow = Color(0, 0.552941, 0.65098, 1)

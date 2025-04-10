@@ -110,6 +110,7 @@ light_energy = 1.78
 transform = Transform3D(1, 0, 0, 0, 0.931456, 0.363853, 0, -0.363853, 0.931456, -0.193694, 7.75322, 13.6585)
 
 [node name="latest_test" type="Node3D" parent="."]
+visible = false
 
 [node name="water_plane" type="MeshInstance3D" parent="latest_test"]
 mesh = SubResource("PlaneMesh_045eu")

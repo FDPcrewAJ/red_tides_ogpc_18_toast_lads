@@ -7,7 +7,7 @@
 size = Vector3(1, 2, 0.12)
 
 [node name="DoorFacilityOpen" type="CSGMesh3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0)
+transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0)
 mesh = ExtResource("1_48kir")
 material = ExtResource("2_mhbah")
 

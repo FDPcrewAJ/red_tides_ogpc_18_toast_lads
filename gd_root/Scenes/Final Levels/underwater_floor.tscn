@@ -26,11 +26,11 @@ size = Vector2(40, 40)
 
 [node name="underwater_floor" type="Node3D"]
 
-[node name="WorldEnv" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_34okx")
-
 [node name="player" parent="." instance=ExtResource("1_tvhvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_34okx")
 
 [node name="world" type="Node3D" parent="."]
 

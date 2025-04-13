@@ -241,6 +241,10 @@ size = Vector2(1, 1)
 [node name="facility_exterior" type="Node3D"]
 script = ExtResource("1_mup67")
 
+[node name="player" parent="." instance=ExtResource("2_o63d5")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 21.8612, 5.76558, 51.2537)
+collision_layer = 2
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_uhreo")
 
@@ -252,10 +256,6 @@ directional_shadow_mode = 0
 directional_shadow_fade_start = 0.0
 directional_shadow_max_distance = 0.0
 directional_shadow_pancake_size = 0.0
-
-[node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 21.8612, 5.76558, 51.2537)
-collision_layer = 2
 
 [node name="world" type="Node3D" parent="."]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqjbnuea3t06a"]
+[gd_scene load_steps=4 format=3 uid="uid://dqjbnuea3t06a"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_j0o3k"]
-[ext_resource type="FontFile" uid="uid://yfq8gr7jpx2n" path="res://Imports/fonts/kremlin.ttf" id="2_a0ehs"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_boyo4"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="2_col8b"]
 
 [node name="main_menu_title" type="Control"]
 layout_mode = 3
@@ -17,13 +18,14 @@ script = ExtResource("1_j0o3k")
 [node name="Continue" type="Button" parent="."]
 layout_mode = 1
 offset_left = -800.0
-offset_top = -278.0
+offset_top = -226.0
 offset_right = -535.0
-offset_bottom = -186.0
-theme_override_colors/font_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
+offset_bottom = -134.0
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.75339, 2.38247e-06, 5.77569e-07, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
 theme_override_font_sizes/font_size = 50
 text = "Continue"
 flat = true
@@ -36,49 +38,31 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -800.0
-offset_top = -184.0
+offset_top = -132.0
 offset_right = -528.0
-offset_bottom = -92.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
 theme_override_font_sizes/font_size = 50
 text = "New Game"
-flat = true
-
-[node name="LoadGame" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -800.0
-offset_top = -89.0
-offset_right = -519.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Load Game"
 flat = true
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 0
 offset_left = -800.0
+offset_top = -44.0
 offset_right = -535.0
-offset_bottom = 92.0
-theme_override_colors/font_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
+offset_bottom = 48.0
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 flat = true
@@ -86,13 +70,14 @@ flat = true
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = -800.0
-offset_top = 93.0
+offset_top = 49.0
 offset_right = -535.0
-offset_bottom = 185.0
-theme_override_colors/font_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
+offset_bottom = 141.0
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 flat = true
@@ -105,15 +90,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -800.0
-offset_top = 183.0
+offset_top = 139.0
 offset_right = -532.0
-offset_bottom = 275.0
+offset_bottom = 231.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
 theme_override_font_sizes/font_size = 50
 text = "Quit Game"
 flat = true
@@ -143,13 +129,13 @@ flat = true
 [node name="GameTitle" type="Label" parent="."]
 modulate = Color(0.737255, 0, 0, 1)
 layout_mode = 0
-offset_left = -205.0
-offset_top = -498.0
-offset_right = 860.0
-offset_bottom = -268.0
-theme_override_fonts/font = ExtResource("2_a0ehs")
-theme_override_font_sizes/font_size = 200
-text = "rEd TidEs"
+offset_left = -297.0
+offset_top = -488.0
+offset_right = 939.0
+offset_bottom = -258.0
+theme_override_fonts/font = ExtResource("2_col8b")
+theme_override_font_sizes/font_size = 220
+text = "RED TIDES"
 
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]

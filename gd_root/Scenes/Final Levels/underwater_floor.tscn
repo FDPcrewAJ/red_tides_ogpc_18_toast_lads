@@ -2,7 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_8g0uk"]
-[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_qmcjf"]
+[ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="3_gyahu"]
+
+[sub_resource type="Environment" id="Environment_34okx"]
+ambient_light_sky_contribution = 0.0
+reflected_light_source = 1
+fog_light_energy = 0.1
+fog_sun_scatter = 1.0
+fog_density = 0.007
+adjustment_enabled = true
+adjustment_brightness = 0.75
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hdvv"]
 size = Vector3(40, 1, 40)
@@ -15,41 +24,43 @@ uv1_triplanar = true
 material = SubResource("StandardMaterial3D_w22b8")
 size = Vector2(40, 40)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qbqy"]
-albedo_texture = ExtResource("3_qmcjf")
-rim = 0.0
-uv1_scale = Vector3(0.15, 0.15, 0.15)
-uv1_triplanar = true
-proximity_fade_distance = 0.01
-
 [node name="underwater_floor" type="Node3D"]
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_34okx")
 
 [node name="player" parent="." instance=ExtResource("1_tvhvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="world" type="Node3D" parent="."]
 
-[node name="floor" type="StaticBody3D" parent="world"]
+[node name="building" type="Node3D" parent="world"]
 
-[node name="floorCol" type="CollisionShape3D" parent="world/floor"]
+[node name="floor" type="StaticBody3D" parent="world/building"]
+
+[node name="floorCol" type="CollisionShape3D" parent="world/building/floor"]
 shape = SubResource("BoxShape3D_2hdvv")
 
-[node name="floorMesh" type="MeshInstance3D" parent="world/floor"]
+[node name="floorMesh" type="MeshInstance3D" parent="world/building/floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_6lqty")
 
-[node name="exteriorWall" type="CSGCombiner3D" parent="world"]
+[node name="exteriorWall" type="CSGCombiner3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 operation = 2
 use_collision = true
 collision_mask = 7
 
-[node name="CSGBox3D" type="CSGBox3D" parent="world/exteriorWall"]
+[node name="CSGBox3D" type="CSGBox3D" parent="world/building/exteriorWall"]
 size = Vector3(45, 10, 45)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="world/exteriorWall"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="world/building/exteriorWall"]
 operation = 2
 radius = 20.0
 height = 12.0
 sides = 32
-material = SubResource("StandardMaterial3D_0qbqy")
+material = ExtResource("3_gyahu")
+
+[node name="walls" type="Node3D" parent="world/building"]
+
+[node name="decorations" type="Node3D" parent="world"]

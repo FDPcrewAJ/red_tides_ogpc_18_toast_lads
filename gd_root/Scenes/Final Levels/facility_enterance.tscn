@@ -108,22 +108,19 @@ size = Vector2(5, 7)
 
 [node name="facility_enterance" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.96877, 0)
-visible = false
-light_color = Color(0.355314, 0.355314, 0.355314, 1)
-light_energy = 5.048
-light_bake_mode = 1
-directional_shadow_mode = 1
-sky_mode = 1
-
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ncvlc")
 
 [node name="player" parent="." instance=ExtResource("1_fe63g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.544, 1.6, 0)
 
 [node name="world" type="Node3D" parent="."]
+
+[node name="open_generator_door" parent="world" instance=ExtResource("8_ltams")]
+transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)
+
+[node name="exit_door" parent="world" instance=ExtResource("4_ieqvj")]
+transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.5, 0.5, 0)
 
 [node name="building" type="Node3D" parent="world"]
 
@@ -373,12 +370,6 @@ omni_range = 9.13347
 
 [node name="small_industrial_light" parent="world/building/lights/wall_light_7" instance=ExtResource("5_3cw6y")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
-
-[node name="open_generator_door" parent="world" instance=ExtResource("8_ltams")]
-transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)
-
-[node name="exit_door" parent="world" instance=ExtResource("4_ieqvj")]
-transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.5, 0.5, 0)
 
 [node name="decorations" type="Node3D" parent="world"]
 

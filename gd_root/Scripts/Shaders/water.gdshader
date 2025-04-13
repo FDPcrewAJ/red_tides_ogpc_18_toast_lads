@@ -67,28 +67,28 @@ void fragment() {
 	float depth_blend = exp((depth + VERTEX.z + depth_offset) * -beers_law);
 	depth_blend = clamp(1.0 - depth_blend, 0.0, 1.0);
 	float depth_blend_power = clamp(pow(depth_blend, 2.5), 0.0, 1.0);
-	
+
 	vec3 screen_color = textureLod(SCREEN_TEXTURE, SCREEN_UV, depth_blend_power * 2.5).rgb;
 	vec3 depth_color = mix(color_shallow.rgb, color_deep.rgb, depth_blend_power);
 	vec3 color = mix(screen_color * depth_color, depth_color * 0.25, depth_blend_power * 0.5);
-	
+
 	// Getting edge depth scale
 	float z_depth = edge(texture(DEPTH_TEXTURE, SCREEN_UV).x);
 	float z_pos = edge(FRAGCOORD.z);
 	float z_dif = z_depth - z_pos;
-	
+
 	// Time calculations for wave (normal map/perlin noise) movement
 	vec2 time = (TIME * wave_direction) * time_scale; // Movement rate of first wave
 	vec2 time2 = (TIME * wave_direction2) * time_scale; // Movement rate of second wave
-	
+
 	// Blend Normal maps into one (both niose textures)
 	vec3 normal_blend = mix(texture(texture_normal, world_pos.xz + time).rgb, texture(texture_normal2, world_pos.xz + time2).rgb, 0.5);
 	// Calculate fresnel effect
 	float fresnel = fresnel(5.0, NORMAL, VIEW);
 	vec3 surface_color = mix(albedo, albedo2, fresnel); // Interpolate albedo values by fresnel
-	
+
 	vec3 depth_color_adj = mix(edge_color, color, step(edge_scale, z_dif));
-	
+
 	//ALBEDO = mix(surface_color, color, 0.75);
 	ALBEDO = clamp(surface_color + depth_color_adj, vec3(0.0), vec3(1.0));
 	METALLIC = metallic;

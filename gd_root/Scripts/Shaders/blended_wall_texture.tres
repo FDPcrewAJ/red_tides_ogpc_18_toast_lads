@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://davrxawn1d8rc"]
+
+[ext_resource type="Shader" path="res://Scripts/Shaders/triplanar_wall_with_noise.gdshader" id="1_nk00f"]
+[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="2_5df0w"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_y3eil"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kbywa"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yuk02"]
+noise = SubResource("FastNoiseLite_kbywa")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nk00f")
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(0.25, 0.25, 0.25)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("2_5df0w")
+shader_parameter/tex_frg_2 = ExtResource("2_5df0w")
+shader_parameter/tex_frg_3 = ExtResource("3_y3eil")
+shader_parameter/tex_frg_14 = SubResource("NoiseTexture2D_yuk02")

@@ -1,17 +1,21 @@
-[gd_scene load_steps=26 format=3 uid="uid://i54i4wmroxw1"]
+[gd_scene load_steps=27 format=3 uid="uid://i54i4wmroxw1"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_nm8n5"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_rv7vl"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="3_rxs1b"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="4_ieqvj"]
+[ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="5_1j8oq"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="5_3cw6y"]
 
 [sub_resource type="Environment" id="Environment_ncvlc"]
 ambient_light_sky_contribution = 0.0
+reflected_light_source = 1
 fog_light_energy = 0.1
 fog_sun_scatter = 1.0
 fog_density = 0.007
+adjustment_enabled = true
+adjustment_brightness = 0.75
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qv5ek"]
 size = Vector3(20, 1, 20)
@@ -50,7 +54,7 @@ size = Vector2(5, 18)
 size = Vector3(5, 1, 15)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_frhrq"]
-material = SubResource("StandardMaterial3D_xapjx")
+material = ExtResource("5_1j8oq")
 size = Vector2(5, 15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fy0vh"]
@@ -206,12 +210,89 @@ mesh = SubResource("PlaneMesh_e3fvd")
 [node name="lights" type="Node3D" parent="world/building"]
 
 [node name="wall_light_1" type="OmniLight3D" parent="world/building/lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -2.39869, 4.67509, -2.0474)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
 
 [node name="small_industrial_light" parent="world/building/lights/wall_light_1" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_2" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 6.30713, 4.67509, -2.0474)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_2" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_3" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91069e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, 6.30713, 4.67509, 2.03637)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_3" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_4" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91069e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, -2.39869, 4.67509, 2.03637)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_4" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_5" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(1.91069e-15, 1, -8.35187e-23, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 0, 1, -9.03113, 4.67509, 4.03115)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_5" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_6" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(1.91069e-15, 1, -8.35187e-23, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 0, 1, -9.03113, 4.67509, -4.67541)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_6" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_7" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91069e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, -7.58875, 4.67509, 9.04457)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_7" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="generator_door" parent="world" instance=ExtResource("4_ieqvj")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)
 
 [node name="exit_door" parent="world" instance=ExtResource("4_ieqvj")]
 transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.5, 0.5, 0)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.54366, 2.02467, 9.33316)
+pixel_size = 0.01
+text = "Elevator"

@@ -18,14 +18,13 @@ func _process(_delta):
 	if Global.current_object == "doorCol":
 		if Input.is_action_just_pressed("interact"):
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Testing Rooms/pipe_puzzle_test.tscn")
-	print(boat.global_position.z)
 	if boat.global_position.z > boat_end_pos:
 		boat.apply_central_force(Vector3(0,0,-5))
 	else:
 		boat.axis_lock_linear_z = true
 
 
-func _on_death_col_area_entered(area: Area3D) -> void:
+func _on_death_col_area_entered(_area):
 	player.position.x = boat.position.x
 	player.position.y = boat.position.y + 5
 	player.position.z = boat.position.z + 3

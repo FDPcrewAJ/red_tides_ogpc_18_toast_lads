@@ -6,6 +6,7 @@
 [sub_resource type="GDScript" id="GDScript_q6bu8"]
 script/source = "extends Control
 
+
 @onready var menu = $\".\"
 
 func _unhandled_key_input(event):
@@ -30,7 +31,7 @@ func _on_resume_pressed():
 
 
 func _on_save_game_pressed():
-	pass 
+	pass
 
 
 func _on_settings_pressed():

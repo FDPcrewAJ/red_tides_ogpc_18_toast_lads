@@ -1,8 +1,9 @@
-[gd_scene load_steps=46 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=51 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_8g0uk"]
+[ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="2_d2p0f"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="3_gyahu"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="5_ipvhp"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="5_n6bfl"]
@@ -15,6 +16,7 @@
 [ext_resource type="Script" path="res://Scenes/Final Levels/reset_button.gd" id="11_404ax"]
 [ext_resource type="Script" path="res://Scenes/Final Levels/reactor_label.gd" id="11_uvfqq"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_elevator_doors.gd" id="11_ykamr"]
+[ext_resource type="Script" path="res://Scenes/Final Levels/reactor_puzzle_note.gd" id="17_vul3n"]
 
 [sub_resource type="Environment" id="Environment_34okx"]
 ambient_light_sky_contribution = 0.0
@@ -130,9 +132,21 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_pge1e")
 size = Vector2(0.1, 4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7kei"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wm3ql"]
+material = SubResource("StandardMaterial3D_a7kei")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nx3h5"]
+points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
+
 [node name="underwater_floor" type="Node3D"]
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_sf2df")]
+
+[node name="MenuPrompt" parent="." instance=ExtResource("2_d2p0f")]
 
 [node name="player" parent="." instance=ExtResource("1_tvhvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15468, 17)
@@ -463,3 +477,19 @@ shape = SubResource("ConvexPolygonShape3D_6oy6k")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 3.55271e-15, 0, -4.37114e-08, -1, 0, -1, 4.37114e-08, -3.72529e-09, 5, 19.6606)
 mesh = SubResource("PlaneMesh_leb4v")
+
+[node name="ReactorPuzzleNote" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.59961e-08, -0.365949, 0.930635, 1, -4.37114e-08, -8.23731e-16, 4.06794e-08, 0.930635, 0.365949, -1.48437, 4.5, 5.72055)
+mesh = SubResource("PlaneMesh_wm3ql")
+script = ExtResource("17_vul3n")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ReactorPuzzleNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="ReactorPuzzleNoteBody" type="StaticBody3D" parent="ReactorPuzzleNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReactorPuzzleNote/ReactorPuzzleNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_nx3h5")

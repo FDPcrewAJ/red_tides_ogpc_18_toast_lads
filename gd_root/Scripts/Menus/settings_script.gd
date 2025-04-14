@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file(Global.previous_scene)
+	self.visible = false

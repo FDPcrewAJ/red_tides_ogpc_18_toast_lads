@@ -8,6 +8,8 @@ script/source = "extends Control
 
 
 @onready var menu = $\".\"
+@onready var settings: Control = $\"../settings\"
+
 
 func _unhandled_key_input(event):
 	if event.is_action_pressed(\"exit\"):
@@ -35,9 +37,10 @@ func _on_save_game_pressed():
 
 
 func _on_settings_pressed():
-	unpause()
-	Global.previous_scene = get_tree().current_scene.scene_file_path
-	get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
+	settings.visible = true
+	#unpause()
+	#Global.previous_scene = get_tree().current_scene.scene_file_path
+	#get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
 
 
 func _on_main_menu_pressed():

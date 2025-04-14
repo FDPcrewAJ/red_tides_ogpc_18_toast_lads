@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=8 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
 [ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_detwj"]
-[ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="3_2x2ge"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 
@@ -21,10 +20,6 @@ collision_mask = 7
 script = ExtResource("1_h3d68")
 
 [node name="pause_menu" parent="." instance=ExtResource("2_detwj")]
-
-[node name="game_hud" parent="." instance=ExtResource("3_2x2ge")]
-offset_left = -909.84
-offset_right = -909.84
 
 [node name="CollisionCheck" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

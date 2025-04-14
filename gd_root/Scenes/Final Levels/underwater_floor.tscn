@@ -1,10 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=31 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_8g0uk"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_qmcjf"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/water_shader.gdshader" id="4_1epno"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="5_ipvhp"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="5_n6bfl"]
 [ext_resource type="Texture2D" uid="uid://pwjuqxpfetwp" path="res://Textures/Interior Textures/c_wall_undamaged_1.png" id="5_vyykx"]
@@ -36,17 +35,11 @@ size = Vector3(5, 0.1, 50)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g75cd"]
 points = PackedVector3Array(-2.64124, 0.0912429, -25.1314, 2.72599, 0.0912429, 25.1314, 2.72599, 0.0912429, -25.1314, -2.64124, 0.0912429, 25.1314)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vka"]
-render_priority = 0
-shader = ExtResource("4_1epno")
-shader_parameter/color1 = Color(0, 0.27451, 0.376471, 1)
-shader_parameter/color2 = Color(1.14311e-07, 0.160532, 0.227225, 1)
-shader_parameter/color3 = Color(0, 0.348882, 0.473856, 1)
-shader_parameter/x_amount = 1024.0
-shader_parameter/y_amount = 1024.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk057"]
+albedo_color = Color(0, 0.155335, 0.42041, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4pbi"]
-material = SubResource("ShaderMaterial_u4vka")
+material = SubResource("StandardMaterial3D_fk057")
 size = Vector2(50, 50)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_rcq5c"]

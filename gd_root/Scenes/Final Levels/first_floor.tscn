@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=38 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="Texture2D" uid="uid://c3skeplrwm2dh" path="res://Textures/Temp Dev Textures/floor_1_schematic.png" id="1_tifgq"]
@@ -14,6 +14,10 @@ fog_sun_scatter = 1.0
 fog_density = 0.007
 adjustment_enabled = true
 adjustment_brightness = 0.75
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iojdy"]
+material = ExtResource("4_vj5kr")
+size = Vector2(5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4hmqv"]
 size = Vector3(50, 1, 50)
@@ -48,6 +52,13 @@ size = Vector3(5, 1, 12)
 material = ExtResource("4_vj5kr")
 size = Vector2(5, 12)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4gvt"]
+size = Vector3(5, 1, 6)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dw2sn"]
+material = ExtResource("4_vj5kr")
+size = Vector2(5, 6)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_boofy"]
 size = Vector3(1, 5, 10)
 
@@ -62,6 +73,9 @@ size = Vector3(0.5, 5, 3)
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 3)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dnhj"]
+size = Vector3(0.5, 5, 5.5)
+
 [sub_resource type="BoxMesh" id="BoxMesh_je318"]
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 5.5)
@@ -73,12 +87,44 @@ size = Vector3(0.5, 5, 17.5)
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 17.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1sbfi"]
+size = Vector3(0.5, 5, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b3wkx"]
+material = ExtResource("4_vj5kr")
+size = Vector3(0.5, 5, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r41d8"]
+material = ExtResource("4_vj5kr")
+size = Vector3(0.5, 5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stjqb"]
+size = Vector3(0.5, 5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ka8yq"]
+size = Vector3(0.5, 5, 13)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tdpbh"]
+material = ExtResource("4_vj5kr")
+size = Vector3(0.5, 5, 13)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nhga"]
 size = Vector3(0.5, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fmfi2"]
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m3o74"]
+material = ExtResource("4_vj5kr")
+size = Vector3(0.5, 5, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6hguk"]
+material = ExtResource("4_vj5kr")
+size = Vector3(0.5, 5, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m0c00"]
+size = Vector3(0.5, 5, 18)
 
 [node name="first_floor" type="Node3D"]
 
@@ -94,6 +140,11 @@ pixel_size = 0.05
 texture = ExtResource("1_tifgq")
 
 [node name="world" type="Node3D" parent="."]
+
+[node name="5mWall" type="MeshInstance3D" parent="world"]
+transform = Transform3D(-4.37114e-08, 1, -1.74846e-07, -1, -4.37114e-08, 0, -7.64274e-15, 1.74846e-07, 1, -1.5, 3, 2.75)
+mesh = SubResource("PlaneMesh_iojdy")
+skeleton = NodePath("")
 
 [node name="floor" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
@@ -159,6 +210,26 @@ shape = SubResource("BoxShape3D_xhmri")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_ccy2c")
 
+[node name="wall6" type="StaticBody3D" parent="world/walls/exterior_walls"]
+transform = Transform3D(-4.37114e-08, 1, -1.74846e-07, -1, -4.37114e-08, 0, -7.64274e-15, 1.74846e-07, 1, 31, 3, 1.75)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/exterior_walls/wall6"]
+shape = SubResource("BoxShape3D_h4gvt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/exterior_walls/wall6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_dw2sn")
+
+[node name="wall7" type="StaticBody3D" parent="world/walls/exterior_walls"]
+transform = Transform3D(-5.73205e-15, 1.31135e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, 1.31135e-07, 28.5, 3, -0.75)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/exterior_walls/wall7"]
+shape = SubResource("BoxShape3D_h4gvt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/exterior_walls/wall7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_dw2sn")
+
 [node name="interior_walls" type="Node3D" parent="world/walls"]
 
 [node name="top_left_rooms" type="Node3D" parent="world/walls/interior_walls"]
@@ -185,7 +256,7 @@ mesh = SubResource("BoxMesh_cth3t")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.25, 3, 12.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall4"]
-shape = SubResource("BoxShape3D_mctl2")
+shape = SubResource("BoxShape3D_5dnhj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall4"]
 mesh = SubResource("BoxMesh_je318")
@@ -198,6 +269,33 @@ shape = SubResource("BoxShape3D_jmcmd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall5"]
 mesh = SubResource("BoxMesh_mn85e")
+
+[node name="sep_wall6" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.25, 3, 10.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall6"]
+shape = SubResource("BoxShape3D_1sbfi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall6"]
+mesh = SubResource("BoxMesh_b3wkx")
+
+[node name="sep_wall7" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.25, 3, -3.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall7"]
+mesh = SubResource("BoxMesh_r41d8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall7"]
+shape = SubResource("BoxShape3D_stjqb")
+
+[node name="sep_wall8" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32, 3, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall8"]
+shape = SubResource("BoxShape3D_ka8yq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall8"]
+mesh = SubResource("BoxMesh_tdpbh")
 
 [node name="door_top" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.5, 4.5, 12.5)
@@ -217,10 +315,60 @@ shape = SubResource("BoxShape3D_8nhga")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/door_top2"]
 mesh = SubResource("BoxMesh_fmfi2")
 
+[node name="door_top3" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.25, 4.5, 7.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/door_top3"]
+shape = SubResource("BoxShape3D_8nhga")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/door_top3"]
+mesh = SubResource("BoxMesh_fmfi2")
+
+[node name="door_top4" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.5, 4.5, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/door_top4"]
+shape = SubResource("BoxShape3D_8nhga")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/door_top4"]
+mesh = SubResource("BoxMesh_fmfi2")
+
+[node name="kitchen_center_rooms" type="Node3D" parent="world/walls/interior_walls"]
+
+[node name="sep_wall9" type="StaticBody3D" parent="world/walls/interior_walls/kitchen_center_rooms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.25, 3, -10.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/kitchen_center_rooms/sep_wall9"]
+shape = SubResource("BoxShape3D_5dnhj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/kitchen_center_rooms/sep_wall9"]
+mesh = SubResource("BoxMesh_m3o74")
+
+[node name="sep_wall10" type="StaticBody3D" parent="world/walls/interior_walls/kitchen_center_rooms"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.75, 3, -1.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/kitchen_center_rooms/sep_wall10"]
+mesh = SubResource("BoxMesh_6hguk")
+skeleton = NodePath("../../sep_wall10")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/kitchen_center_rooms/sep_wall10"]
+shape = SubResource("BoxShape3D_m0c00")
+
 [node name="doors" type="Node3D" parent="world"]
 
 [node name="water_pump_door" parent="world/doors" instance=ExtResource("5_w7ncp")]
 transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 14.5, 0.5, 12.5)
 
+[node name="water_pump_door2" parent="world/doors" instance=ExtResource("5_w7ncp")]
+transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 14.5, 0.5, -14.5)
+
 [node name="big_store_door" parent="world/doors" instance=ExtResource("5_w7ncp")]
 transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 22, 0.5, 12.5)
+
+[node name="kitchen_store_door" parent="world/doors" instance=ExtResource("5_w7ncp")]
+transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, 25.25, 0.5, 7.5)
+
+[node name="kitchen_store_door2" parent="world/doors" instance=ExtResource("5_w7ncp")]
+transform = Transform3D(1.55, 0, 3.55271e-15, 0, 1.35, 0, 0, 0, 1.35, 39.5, 0.5, 5)
+
+[node name="decorations" type="Node3D" parent="world"]

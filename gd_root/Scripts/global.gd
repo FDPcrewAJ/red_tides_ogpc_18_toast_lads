@@ -41,11 +41,6 @@ var entry_door_open = false
 # Tile Puzzle
 var tile_puzzle_level = 1
 
-# Dial Puzzle
-var dial_1_rotation = 0
-var dial_2_rotation = 0
-var dial_3_rotation = 0
-
 var dial_puzzle_completed = false
 
 var dial_puzzle = false
@@ -56,6 +51,15 @@ var consistent_positioning = true
 var new_position = 0
 
 var in_menu = false
+
+var one_fire_acess = 0
+var two_fire_acess = 0
+var three_fire_acess = 0
+var four_fire_acess = 0
+var five_fire_acess = 0
+var six_fire_acess = 0
+
+var floor = "null"
 
 func _process(_delta):
 	if timer_active && time_left == 0:

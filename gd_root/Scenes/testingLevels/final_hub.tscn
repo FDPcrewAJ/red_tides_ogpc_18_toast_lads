@@ -1,0 +1,137 @@
+[gd_scene load_steps=20 format=3 uid="uid://b3nfo5bfv0dpo"]
+
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_5k3tk"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_ysswv"]
+[ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="4_rj5dd"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="6_jv2l5"]
+[ext_resource type="Shader" uid="uid://vvin5ees2f00" path="res://Scripts/Shaders/random_texture_tiler.tres" id="6_p22kh"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/hub_elevator_doors.gd" id="7_223jq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdcov"]
+albedo_texture = ExtResource("4_rj5dd")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v6kts"]
+material = SubResource("StandardMaterial3D_fdcov")
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kfob8"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_514wt"]
+render_priority = 0
+shader = ExtResource("6_p22kh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n1j5g"]
+material = SubResource("ShaderMaterial_514wt")
+size = Vector2(6, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r2jee"]
+points = PackedVector3Array(-3.07937, -0.079334, -5.07738, 3.11111, 0.079334, 5.07738, 3.11111, -0.079334, 5.07738, 3.11111, 0.079334, -5.07738, -3.07937, 0.079334, 5.07738, -3.07937, -0.079334, 5.07738, 3.11111, -0.079334, -5.07738, -3.07937, 0.079334, -5.07738)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mocma"]
+albedo_texture = ExtResource("6_jv2l5")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iadg7"]
+material = SubResource("StandardMaterial3D_mocma")
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v2s5y"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
+[sub_resource type="BoxMesh" id="BoxMesh_spir8"]
+size = Vector3(3, 4, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qmg2b"]
+points = PackedVector3Array(1.51557, 2.03175, 0.122173, -1.53145, -2.03175, -0.131696, -1.53145, -2.03175, 0.122173, -1.53145, 2.03175, -0.131696, 1.51557, -2.03175, -0.131696, 1.51557, -2.03175, 0.122173, -1.53145, 2.03175, 0.122173, 1.51557, 2.03175, -0.131696)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aknob"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xbac"]
+material = SubResource("StandardMaterial3D_aknob")
+size = Vector2(0.1, 4)
+
+[node name="FinalHub" type="Node3D"]
+
+[node name="InteractablesDisplay" parent="." instance=ExtResource("1_5k3tk")]
+
+[node name="player" parent="." instance=ExtResource("3_ysswv")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, -4)
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room"]
+mesh = SubResource("PlaneMesh_v6kts")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_kfob8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -5, 3, 0)
+mesh = SubResource("PlaneMesh_n1j5g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r2jee")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 3, -5)
+mesh = SubResource("PlaneMesh_n1j5g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r2jee")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 5, 3, 0)
+mesh = SubResource("PlaneMesh_n1j5g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r2jee")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, 1.31134e-07, 0, 3, 5)
+mesh = SubResource("PlaneMesh_n1j5g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_r2jee")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+mesh = SubResource("PlaneMesh_iadg7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_v2s5y")
+
+[node name="HubElevatorDoors" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+mesh = SubResource("BoxMesh_spir8")
+script = ExtResource("7_223jq")
+
+[node name="ElevatorDoorBody" type="StaticBody3D" parent="HubElevatorDoors"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HubElevatorDoors/ElevatorDoorBody"]
+shape = SubResource("ConvexPolygonShape3D_qmg2b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -4.85)
+mesh = SubResource("PlaneMesh_0xbac")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.64342, 0)
+light_color = Color(1, 1, 0.635294, 1)
+light_energy = 4.232
+spot_range = 9.64049

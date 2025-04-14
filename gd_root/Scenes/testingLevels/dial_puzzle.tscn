@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://b52pvxrn1jrll"]
+[gd_scene load_steps=22 format=3 uid="uid://b52pvxrn1jrll"]
 
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_bqpbj"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_t5ra5"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="3_30k6v"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_4me4v"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Imports/Models/placeholders/PlaceholderTable/tinker.obj" id="6_q6nk1"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_computer.gd" id="6_yka2e"]
@@ -132,8 +131,6 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomParts/Ceiling/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rb3fy")
-
-[node name="StormTimer" parent="." instance=ExtResource("3_30k6v")]
 
 [node name="player" parent="." instance=ExtResource("4_4me4v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.32548)

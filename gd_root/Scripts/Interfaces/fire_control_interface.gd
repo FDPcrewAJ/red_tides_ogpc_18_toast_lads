@@ -36,9 +36,11 @@ func _on_button_pressed() -> void:
 		if Global.water_amount > 0:
 			Global.water_amount -= 1
 			Global.one_watered = true
+			Global.one_fire_acess = Global.fire_console_number
 	else:
-		Global.water_amount += 1
-		Global.one_watered = false
+		if Global.one_fire_acess == Global.fire_console_number:
+			Global.water_amount += 1
+			Global.one_watered = false
 
 
 func _on_button_2_pressed() -> void:
@@ -46,9 +48,11 @@ func _on_button_2_pressed() -> void:
 		if Global.water_amount > 0:
 			Global.water_amount -= 1
 			Global.two_watered = true
+			Global.two_fire_acess = Global.fire_console_number
 	else:
-		Global.water_amount += 1
-		Global.two_watered = false
+		if Global.two_fire_acess == Global.fire_console_number:
+			Global.water_amount += 1
+			Global.two_watered = false
 
 
 func _on_button_3_pressed() -> void:
@@ -56,9 +60,11 @@ func _on_button_3_pressed() -> void:
 		if Global.water_amount > 0:
 			Global.water_amount -= 1
 			Global.three_watered = true
+			Global.three_fire_acess = Global.fire_console_number
 	else:
-		Global.water_amount += 1
-		Global.three_watered = false
+		if Global.three_fire_acess == Global.fire_console_number:
+			Global.water_amount += 1
+			Global.three_watered = false
 
 
 func _on_button_4_pressed() -> void:
@@ -66,9 +72,11 @@ func _on_button_4_pressed() -> void:
 		if Global.water_amount > 0:
 			Global.water_amount -= 1
 			Global.four_watered = true
+			Global.four_fire_acess = Global.fire_console_number
 	else:
-		Global.water_amount += 1
-		Global.four_watered = false
+		if Global.four_fire_acess == Global.fire_console_number:
+			Global.water_amount += 1
+			Global.four_watered = false
 
 
 func _on_button_5_pressed() -> void:
@@ -76,9 +84,11 @@ func _on_button_5_pressed() -> void:
 		if Global.water_amount > 0:
 			Global.water_amount -= 1
 			Global.five_watered = true
+			Global.five_fire_acess = Global.fire_console_number
 	else:
-		Global.water_amount += 1
-		Global.five_watered = false
+		if Global.five_fire_acess == Global.fire_console_number:
+			Global.water_amount += 1
+			Global.five_watered = false
 
 
 func _on_button_6_pressed() -> void:
@@ -86,9 +96,11 @@ func _on_button_6_pressed() -> void:
 		if Global.water_amount > 0:
 			Global.water_amount -= 1
 			Global.six_watered = true
+			Global.six_fire_acess = Global.fire_console_number
 	else:
-		Global.water_amount += 1
-		Global.six_watered = false
+		if Global.six_fire_acess == Global.fire_console_number:
+			Global.water_amount += 1
+			Global.six_watered = false
 
 
 func _on_back_button_pressed() -> void:

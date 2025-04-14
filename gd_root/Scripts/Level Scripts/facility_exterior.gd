@@ -17,6 +17,7 @@ func _ready():
 func _process(_delta):
 	if Global.current_object == "doorCol":
 		if Input.is_action_just_pressed("interact"):
+			Global.floor = "Hub"
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Testing Rooms/pipe_puzzle_test.tscn")
 	if boat.global_position.z > boat_end_pos:
 		boat.apply_central_force(Vector3(0,0,-5))

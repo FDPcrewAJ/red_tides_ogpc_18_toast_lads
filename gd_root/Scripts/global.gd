@@ -61,6 +61,8 @@ var six_fire_acess = 0
 
 var floor = "null"
 
+var reactorStable = false
+
 func _process(_delta):
 	if timer_active && time_left == 0:
 		queue_free()

@@ -97,22 +97,19 @@ vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -85.0
-offset_top = -512.0
 offset_right = 85.0
-offset_bottom = -408.0
+offset_bottom = 104.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x8u3j")
 theme_override_font_sizes/font_size = 70
-text = "Back"
+text = "BACK"
 flat = true
 
 [node name="TextEdit" type="TextEdit" parent="."]

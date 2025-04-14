@@ -242,7 +242,7 @@ size = Vector2(1, 1)
 script = ExtResource("1_mup67")
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 21.8612, 5.76558, 51.2537)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 21.0405, 4.54227, 51.0896)
 collision_layer = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -273,7 +273,7 @@ shape = SubResource("BoxShape3D_dq8vp")
 
 [node name="boat" type="RigidBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9335, 0.44623, 49.4091)
-collision_mask = 7
+collision_mask = 5
 script = ExtResource("6_ohgcl")
 float_force = 1.3
 water_angular_drag = 1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=56 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
 [ext_resource type="Script" path="res://Scripts/Scene Objects/boat_bouyancy.gd" id="2_8yslp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="9_u6wbv"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="10_kvm1t"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_k617b"]
+[ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings.tscn" id="12_4qr3l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hl1ea"]
 
@@ -612,3 +613,7 @@ omni_range = 10.1151
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 0, 0, -0.784121)
 
 [node name="main_menu_title" parent="." instance=ExtResource("5_o57ks")]
+
+[node name="settings" parent="." instance=ExtResource("12_4qr3l")]
+process_mode = 3
+visible = false

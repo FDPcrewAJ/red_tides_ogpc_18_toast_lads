@@ -1,18 +1,26 @@
-[gd_scene load_steps=39 format=3 uid="uid://e13jqylpcqm6"]
+[gd_scene load_steps=51 format=3 uid="uid://e13jqylpcqm6"]
 
+[ext_resource type="Script" path="res://Scenes/testingLevels/systems_room.gd" id="1_dt4co"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_hgd88"]
+[ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="3_1u0vv"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_ytjax"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="4_k2tk8"]
 [ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="5_j7dj1"]
 [ext_resource type="Shader" uid="uid://vvin5ees2f00" path="res://Scripts/Shaders/random_texture_tiler.tres" id="6_my3ma"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="7_l1knt"]
+[ext_resource type="Script" path="res://Scenes/testingLevels/systems_blocked_door.gd" id="8_q1uhv"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/hub_elevator_doors.gd" id="8_yx0me"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="9_fivy8"]
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="9_tj2et"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="10_vfpe4"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="13_pg0mj"]
+[ext_resource type="Script" path="res://Assets/Objects/Computer/dial_computer.gd" id="14_4p1cb"]
 [ext_resource type="Texture2D" uid="uid://b3dttcnlsqgew" path="res://Imports/images/dials_puzzle_hint.png" id="14_a3ti1"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="15_3fiho"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_puzzle_note.gd" id="16_n5qcx"]
+[ext_resource type="Script" path="res://Assets/Objects/Computer/computer.gd" id="16_p7woj"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_note.gd" id="17_85hd1"]
+[ext_resource type="Script" path="res://Scenes/testingLevels/systems_room_note.gd" id="18_xw4iv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41vkj"]
 albedo_texture = ExtResource("4_k2tk8")
@@ -102,9 +110,25 @@ albedo_texture = ExtResource("13_pg0mj")
 material = SubResource("StandardMaterial3D_12j33")
 size = Vector2(1, 1.5)
 
-[node name="StorageRoom" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouuct"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r048x"]
+material = SubResource("StandardMaterial3D_ouuct")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ynwat"]
+points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5p4ue"]
+points = PackedVector3Array(-0.74404, 0.744042, -0.5, 0.74404, 0.744188, 0.5, 0.74404, 0.744188, -0.5, 0.74404, -0.744039, 0.5, 0.74404, -0.744039, -0.5, -0.74404, -0.744039, 0.5, -0.74404, -0.744039, -0.5, -0.74404, 0.744042, 0.5)
+
+[node name="SystemsRoom" type="Node3D"]
+script = ExtResource("1_dt4co")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_hgd88")]
+
+[node name="MenuPrompt" parent="." instance=ExtResource("3_1u0vv")]
 
 [node name="player" parent="." instance=ExtResource("3_ytjax")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, -4)
@@ -214,6 +238,7 @@ shape = SubResource("ConvexPolygonShape3D_mq7bv")
 [node name="BlockedDoor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 9)
 mesh = SubResource("BoxMesh_gksmf")
+script = ExtResource("8_q1uhv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BlockedDoor"]
 
@@ -337,14 +362,76 @@ mesh = SubResource("PlaneMesh_uayi2")
 transform = Transform3D(-0.5, 0, -1.58933e-08, 0, 0.5, 0, 1.58933e-08, 0, -0.5, 3.29844, 2, 8.94255)
 texture = ExtResource("14_a3ti1")
 
+[node name="DialPuzzleNote" type="MeshInstance3D" parent="Items"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.91754, 1.5, 5.67444)
+mesh = SubResource("PlaneMesh_r048x")
+script = ExtResource("16_n5qcx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Items/DialPuzzleNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="DialPuzzleNoteBody" type="StaticBody3D" parent="Items/DialPuzzleNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/DialPuzzleNote/DialPuzzleNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_ynwat")
+
+[node name="TilePuzzleNote" type="MeshInstance3D" parent="Items"]
+transform = Transform3D(4.37114e-08, 1, 1.19209e-07, 1, -4.37114e-08, -1.53837e-15, -1.77636e-15, 1.19209e-07, -1, -4.86024, 1.5, 4.67444)
+mesh = SubResource("PlaneMesh_r048x")
+script = ExtResource("17_85hd1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Items/TilePuzzleNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="TilePuzzleNoteBody" type="StaticBody3D" parent="Items/TilePuzzleNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/TilePuzzleNote/TilePuzzleNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_ynwat")
+
+[node name="SystemsRoomNote" type="MeshInstance3D" parent="Items"]
+transform = Transform3D(-3.68704e-15, 7.54979e-08, -1, 1, -4.37114e-08, -1.53837e-15, -4.37114e-08, -1, -7.54979e-08, -2.42977, 1.5, 8.78913)
+mesh = SubResource("PlaneMesh_r048x")
+script = ExtResource("18_xw4iv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Items/SystemsRoomNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="SystemsNoteBody" type="StaticBody3D" parent="Items/SystemsRoomNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Items/SystemsRoomNote/SystemsNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_ynwat")
+
 [node name="wooden_desk_1" parent="." instance=ExtResource("10_vfpe4")]
 transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 3, 0, 6)
 
-[node name="computer" parent="wooden_desk_1" instance=ExtResource("9_fivy8")]
+[node name="DialComputer" parent="wooden_desk_1" instance=ExtResource("9_fivy8")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 8.9407e-08, 1, 1)
+script = ExtResource("14_4p1cb")
+
+[node name="DialComputerBody" type="StaticBody3D" parent="wooden_desk_1/DialComputer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wooden_desk_1/DialComputer/DialComputerBody"]
+shape = SubResource("ConvexPolygonShape3D_5p4ue")
 
 [node name="wooden_desk_2" parent="." instance=ExtResource("10_vfpe4")]
 transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, -2, 0, 6)
 
-[node name="computer" parent="wooden_desk_2" instance=ExtResource("9_fivy8")]
+[node name="TileComputer" parent="wooden_desk_2" instance=ExtResource("9_fivy8")]
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 8.9407e-08, 1, 1)
+script = ExtResource("16_p7woj")
+
+[node name="TileComputerBody" type="StaticBody3D" parent="wooden_desk_2/TileComputer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wooden_desk_2/TileComputer/TileComputerBody"]
+shape = SubResource("ConvexPolygonShape3D_5p4ue")

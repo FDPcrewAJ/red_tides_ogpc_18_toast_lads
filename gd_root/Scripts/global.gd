@@ -42,10 +42,7 @@ var entry_door_open = false
 var tile_puzzle_level = 1
 
 var dial_puzzle_completed = false
-
-var dial_puzzle = false
-var tile_puzzle = false
-var fire_puzzle = false
+var tile_puzzle_completed = false
 
 var consistent_positioning = true
 var new_position = 0
@@ -62,6 +59,8 @@ var six_fire_acess = 0
 var floor = "null"
 
 var reactorStable = false
+
+var keypadPositive = false
 
 func _process(_delta):
 	if timer_active && time_left == 0:

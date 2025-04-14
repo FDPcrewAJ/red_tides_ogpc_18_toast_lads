@@ -17,9 +17,7 @@ func _process(_delta) -> void:
 				Global.tile_puzzle_level += 1
 	elif Global.tile_puzzle_level == 3:
 		if $TileButton.on == true and $TileButton2.on == true and $TileButton5.on == true and $TileButton6.on == true and $TileButton9.on == true and $TileButton10.on == true and $TileButton7.on == true and $TileButton8.on == true and $TileButton31.on == true and $TileButton32.on == true and $TileButton35.on == true and $TileButton34.on == true and $TileButton33.on == true and $TileButton29.on == true:
-			if $TileButton3.on == false and $TileButton4.on == false and $TileButton11.on == false and $TileButton12.on == false and $TileButton13.on == false and $TileButton14.on == false and $TileButton15.on == false and $TileButton16.on == false and $TileButton17.on == false and $TileButton18.on == false and $TileButton19.on == false and $TileButton20.on == false and $TileButton21.on == false and  $TileButton22.on == false and $TileButton23.on == false and $TileButton24.on == false and $TileButton25.on == false and $TileButton26.on == false and $TileButton27.on == false and $TileButton28.on == false and $TileButton30.on == false and $TileButton34.on == false and $TileButton35.on == false and $TileButton36.on == false and $TileButton37.on == false:
-				if wrong_button == false:
-					Global.tile_puzzle_level += 1
+			Global.tile_puzzle_level += 1
 	else:
 		if $TileButton4.on == true and $TileButton5.on == true and $TileButton11.on == true and $TileButton20.on == true and $TileButton22.on == true and $TileButton29.on == true and $TileButton32.on == true and $TileButton36.on == true:
 			if wrong_button == false:

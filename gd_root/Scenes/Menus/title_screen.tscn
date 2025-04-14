@@ -615,4 +615,5 @@ transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-0
 [node name="main_menu_title" parent="." instance=ExtResource("5_o57ks")]
 
 [node name="settings" parent="." instance=ExtResource("12_4qr3l")]
+process_mode = 3
 visible = false

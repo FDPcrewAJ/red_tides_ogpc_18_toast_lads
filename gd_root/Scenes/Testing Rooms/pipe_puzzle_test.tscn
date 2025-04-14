@@ -34,7 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="33_25psr"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="34_cb4h5"]
 [ext_resource type="Texture2D" uid="uid://b2heqf7suu2aj" path="res://Imports/images/id_card_placeholder.png" id="35_rchbq"]
-[ext_resource type="Script" path="res://Scenes/Testing Rooms/pipe_elevator_doors.gd" id="36_fufeu"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/pipe_elevator_doors.gd" id="36_fufeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)

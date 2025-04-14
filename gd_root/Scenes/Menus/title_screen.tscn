@@ -29,7 +29,7 @@ fog_sun_scatter = 0.49
 fog_density = 0.006
 volumetric_fog_density = 0.0089
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4vka"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lumna"]
 render_priority = 0
 shader = ExtResource("4_etr80")
 shader_parameter/color1 = Color(0, 0.27451, 0.376471, 1)
@@ -39,7 +39,7 @@ shader_parameter/x_amount = 1024.0
 shader_parameter/y_amount = 1024.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bmhk4"]
-material = SubResource("ShaderMaterial_u4vka")
+material = SubResource("ShaderMaterial_lumna")
 size = Vector2(2500, 2500)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxa3n"]

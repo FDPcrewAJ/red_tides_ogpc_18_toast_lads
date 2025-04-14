@@ -38,11 +38,6 @@ var entry_door_open = false
 # Tile Puzzle
 var tile_puzzle_level = 1
 
-# Dial Puzzle
-var dial_1_rotation = 0
-var dial_2_rotation = 0
-var dial_3_rotation = 0
-
 var dial_puzzle_completed = false
 
 var dial_puzzle = false
@@ -60,6 +55,8 @@ var three_fire_acess = 0
 var four_fire_acess = 0
 var five_fire_acess = 0
 var six_fire_acess = 0
+
+var floor = "null"
 
 func _process(_delta):
 	if new_game == true:

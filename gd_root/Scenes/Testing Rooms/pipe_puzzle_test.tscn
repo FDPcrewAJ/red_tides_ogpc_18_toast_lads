@@ -1,10 +1,9 @@
-[gd_scene load_steps=67 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=66 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_klx6h"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_sapbw"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="3_8g421"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_mewol"]
@@ -161,8 +160,6 @@ sky_mode = 1
 environment = ExtResource("2_sapbw")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("3_8g421")]
-
-[node name="StormTimer" parent="." instance=ExtResource("2_klx6h")]
 
 [node name="MenuPrompt" parent="." instance=ExtResource("5_mewol")]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=49 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_k2snt"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_2.gd" id="5_yh3cq"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="6_2u4dh"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_3.gd" id="6_vdwiv"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_2r685"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_5.gd" id="8_4rpbl"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
@@ -694,8 +693,6 @@ transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1
 
 [node name="computer" parent="Rooms/hub_room/FireConsole3" instance=ExtResource("15_jt1wt")]
 transform = Transform3D(26.6667, 0, -1.36424e-12, 0, 26.6667, 0, 1.36424e-12, 0, 26.6667, 13.8803, -13.8527, -1.72412)
-
-[node name="StormTimer" parent="." instance=ExtResource("7_2r685")]
 
 [node name="MenuPrompt" parent="." instance=ExtResource("17_ld0ud")]
 

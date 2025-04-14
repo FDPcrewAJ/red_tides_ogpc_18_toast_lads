@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfk2h83axywy1"]
+[gd_scene load_steps=4 format=3 uid="uid://bfk2h83axywy1"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/fire_control_interface.gd" id="1_iliv8"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/water_lable.gd" id="2_80cb6"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/fire_info_label.gd" id="4_lxqwj"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_bvfj6"]
 
 [node name="fire_control_interface" type="Node2D"]
 script = ExtResource("1_iliv8")
@@ -79,8 +78,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 script = ExtResource("2_80cb6")
-
-[node name="StormTimer" parent="." instance=ExtResource("7_bvfj6")]
 
 [node name="fire_info_label1" type="Label" parent="."]
 offset_left = -575.0

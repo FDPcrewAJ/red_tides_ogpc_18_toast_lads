@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bsckqlff832le"]
+[gd_scene load_steps=15 format=3 uid="uid://bsckqlff832le"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/2d_player_storm_interface.gd" id="1_4tmdk"]
 [ext_resource type="Texture2D" uid="uid://g6knvs1othdf" path="res://Textures/Temp Dev Textures/Dark/texture_01.png" id="2_u1820"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bcdm33h46gf8b" path="res://Textures/Temp Dev Textures/Purple/texture_09.png" id="4_k18x7"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_item.gd" id="5_7wah4"]
 [ext_resource type="Texture2D" uid="uid://cvgath02y1r71" path="res://Textures/Temp Dev Textures/Green/texture_09.png" id="6_ouw5w"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="7_qx72p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gt8jc"]
 
@@ -90,8 +89,6 @@ position = Vector2(85, -20)
 scale = Vector2(20.75, 12.125)
 mesh = SubResource("BoxMesh_308a5")
 texture = ExtResource("6_ouw5w")
-
-[node name="StormTimer" parent="." instance=ExtResource("7_qx72p")]
 
 [connection signal="area_entered" from="Portal/PortalArea2D" to="Portal" method="_on_portal_area_2d_area_entered"]
 [connection signal="area_entered" from="Item/ItemArea2D" to="Item" method="_on_item_area_2d_area_entered"]

@@ -1,9 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bcrwco2xn1qus"]
+[gd_scene load_steps=23 format=3 uid="uid://bcrwco2xn1qus"]
 
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_h6pvi"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uccvb"]
 [ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="2_6o8v6"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_tqraq"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_5b5p7"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_controls.gd" id="6_2wut2"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_doors.gd" id="6_uubdo"]
@@ -64,8 +63,6 @@ points = PackedVector3Array(0.0998541, 0.5, 0.843277, -0.113471, -0.513492, -0.8
 [node name="Elevator" type="Node3D"]
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_uccvb")]
-
-[node name="StormTimer" parent="." instance=ExtResource("2_tqraq")]
 
 [node name="player" parent="." instance=ExtResource("3_5b5p7")]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://blpljk5u3hc1k"]
+[gd_scene load_steps=22 format=3 uid="uid://blpljk5u3hc1k"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_iuea6"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="2_4vd3p"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_jqf5o"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="4_2fk4h"]
 [ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="5_nhmnr"]
@@ -59,8 +58,6 @@ size = Vector2(0.1, 4)
 [node name="StorageRoom" type="Node3D"]
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_iuea6")]
-
-[node name="StormTimer" parent="." instance=ExtResource("2_4vd3p")]
 
 [node name="player" parent="." instance=ExtResource("3_jqf5o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, -4)

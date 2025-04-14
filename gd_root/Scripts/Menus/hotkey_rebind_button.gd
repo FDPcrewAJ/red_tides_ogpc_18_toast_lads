@@ -59,7 +59,7 @@ func _on_button_toggled(button_pressed):
 				i.button.toggle_mode = true
 				i.set_process_unhandled_input(true)
 		
-		set_text_for_key()
+		
 
 
 func _unhandled_key_input(event):
@@ -68,9 +68,10 @@ func _unhandled_key_input(event):
 
 
 func rebind_action_key(event):
-	InputMap.action_erase_events(action_name)
-	InputMap.action_add_event(action_name, event)
-	
-	set_process_unhandled_key_input(false)
-	set_text_for_key()
-	set_action_name()
+	if button.button_pressed:
+		InputMap.action_erase_events(action_name)
+		InputMap.action_add_event(action_name, event)
+		
+		set_process_unhandled_key_input(false)
+		set_text_for_key()
+		set_action_name()

@@ -6,6 +6,7 @@
 size = Vector3(2.5387, 2.88647, 0.344971)
 
 [node name="elevator" instance=ExtResource("1_djglq")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 

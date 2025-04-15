@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://i54i4wmroxw1"]
+[gd_scene load_steps=35 format=3 uid="uid://i54i4wmroxw1"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_nm8n5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="5_1j8oq"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="5_3cw6y"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_ltams"]
+[ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="9_lgp1y"]
 
 [sub_resource type="Environment" id="Environment_ncvlc"]
 ambient_light_sky_contribution = 0.0
@@ -361,7 +362,7 @@ omni_range = 9.13347
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="wall_light_7" type="OmniLight3D" parent="world/building/lights"]
-transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91069e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, -7.58875, 4.67509, 9.04457)
+transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91068e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, -7.48558, 4.67509, 9.04457)
 light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
 light_energy = 0.621
 light_size = 0.922
@@ -373,7 +374,5 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="decorations" type="Node3D" parent="world"]
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.54366, 2.02467, 9.33316)
-pixel_size = 0.01
-text = "Elevator"
+[node name="elevator" parent="." instance=ExtResource("9_lgp1y")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7.48814, 0.5, 9.40793)

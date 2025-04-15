@@ -1,15 +1,22 @@
-[gd_scene load_steps=31 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=51 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_8g0uk"]
+[ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="2_d2p0f"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="3_gyahu"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="5_ipvhp"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="5_n6bfl"]
 [ext_resource type="Texture2D" uid="uid://pwjuqxpfetwp" path="res://Textures/Interior Textures/c_wall_undamaged_1.png" id="5_vyykx"]
+[ext_resource type="PackedScene" uid="uid://c5chqamjkvdor" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="6_7rtsi"]
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="6_ap3cq"]
+[ext_resource type="Script" path="res://Assets/Objects/Pipes/pipe_valve.gd" id="7_da12h"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/valve_body.gd" id="8_h5ur3"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="10_in15x"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reset_button.gd" id="11_404ax"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_label.gd" id="11_uvfqq"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_elevator_doors.gd" id="11_ykamr"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_puzzle_note.gd" id="17_vul3n"]
 
 [sub_resource type="Environment" id="Environment_34okx"]
 ambient_light_sky_contribution = 0.0
@@ -52,6 +59,31 @@ height = 0.1
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e41p0"]
 points = PackedVector3Array(1.19906, 0.05, 6.4, -1.33203, -0.161089, -7.10972, -2.22144, -0.161089, -6.88702, 1.33203, -0.161089, 7.10972, 7.10972, -0.161089, -1.33203, 3.39922, 0.05, -5.59937, -6.4, 0.05, 1.19906, -6.22031, -0.161089, 3.77617, 5.99906, 0.05, 2.59984, -5.19969, 0.05, -3.99937, -6.88702, -0.161089, -2.22144, -3.39922, 0.05, 5.59937, 5.7763, -0.161089, 4.44288, 4.44288, -0.161089, -5.7763, 5.99906, 0.05, -2.59984, -1.19906, 0.05, -6.4, -2.88815, -0.161089, 6.66432, 3.99937, 0.05, 5.19969, -4.44288, -0.161089, -5.7763, 1.33203, -0.161089, -7.10972, -7.10972, -0.161089, 1.33203, 7.10972, -0.161089, 1.33203, -6.4, 0.05, -1.19906, 6.4, 0.05, -1.19906, -5.19969, 0.05, 3.99937, 3.77617, -0.161089, 6.22031, -1.19906, 0.05, 6.4, 5.7763, -0.161089, -4.44288, -3.39922, 0.05, -5.59937, -4.44288, -0.161089, 5.7763, 1.19906, 0.05, -6.4, 5.19969, 0.05, -3.99937)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w0wta"]
+points = PackedVector3Array(-0.75, -1.47734, -0.749999, 0.749964, 1.43118, 0.75, 0.75, 1.43125, -0.726227, -0.75, 1.47734, -0.749999, -0.726192, -1.43118, 0.75, 0.75, -1.43125, -0.726227, -0.726192, 1.43118, 0.75, 0.749964, -1.43118, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tovu"]
+albedo_color = Color(0.786247, 0.00322974, 0.198994, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yuo51"]
+material = SubResource("StandardMaterial3D_8tovu")
+height = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2e742"]
+size = Vector3(0.7, 1, 0.7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fx0sh"]
+points = PackedVector3Array(-0.34996, -0.496649, -0.35, 0.35, 0.498906, 0.35, -0.35, 0.496706, 0.348453, 0.35, -0.498906, 0.35, 0.348413, 0.496649, -0.35, -0.35, -0.496706, 0.348453, -0.34996, 0.496649, -0.35, 0.348413, -0.496649, -0.35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf420"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gkakh"]
+material = SubResource("StandardMaterial3D_qf420")
+top_radius = 0.1
+bottom_radius = 0.12
+height = 0.2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tld2n"]
 albedo_texture = ExtResource("5_vyykx")
 uv1_triplanar = true
@@ -77,6 +109,16 @@ material = SubResource("StandardMaterial3D_fnbrb")
 top_radius = 0.8
 bottom_radius = 0.8
 
+[sub_resource type="BoxMesh" id="BoxMesh_7uigd"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_555l6"]
+albedo_color = Color(0.205117, 0.205117, 0.205117, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x665p"]
+material = SubResource("StandardMaterial3D_555l6")
+size = Vector3(2.9, 0.9, 0.9)
+
 [sub_resource type="BoxMesh" id="BoxMesh_wj12p"]
 size = Vector3(3, 4, 0.2)
 
@@ -90,9 +132,21 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_pge1e")
 size = Vector2(0.1, 4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7kei"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wm3ql"]
+material = SubResource("StandardMaterial3D_a7kei")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nx3h5"]
+points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
+
 [node name="underwater_floor" type="Node3D"]
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_sf2df")]
+
+[node name="MenuPrompt" parent="." instance=ExtResource("2_d2p0f")]
 
 [node name="player" parent="." instance=ExtResource("1_tvhvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15468, 17)
@@ -136,9 +190,10 @@ collision_mask = 7
 
 [node name="decorations" type="Node3D" parent="world"]
 
-[node name="world_floor#floorMesh2" type="MeshInstance3D" parent="."]
+[node name="world_floor#floorMesh2" type="MeshInstance3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, -1, -2.98023e-08, 0, 2.98023e-08, -1, 0, 9.5, 0)
 mesh = SubResource("PlaneMesh_6lqty")
+skeleton = NodePath("../..")
 
 [node name="items" type="Node3D" parent="."]
 
@@ -182,8 +237,20 @@ transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0
 [node name="pipe_straight2" parent="items/Pipeline" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -2.84377, 5, 0.165223)
 
-[node name="pipe_straight3" parent="items/Pipeline" instance=ExtResource("5_n6bfl")]
+[node name="pipe_valve" parent="items/Pipeline" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -3.63205, 5, -0.642421)
+script = ExtResource("7_da12h")
+
+[node name="ValveBody" type="StaticBody3D" parent="items/Pipeline/pipe_valve"]
+transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
+script = ExtResource("8_h5ur3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="items/Pipeline/pipe_valve/ValveBody"]
+shape = SubResource("ConvexPolygonShape3D_w0wta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="items/Pipeline/pipe_valve"]
+transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
+mesh = SubResource("CylinderMesh_yuo51")
 
 [node name="pipe_straight4" parent="items/Pipeline" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -4.50207, 5, -1.4762)
@@ -206,8 +273,20 @@ transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0
 [node name="pipe_straight2" parent="items/Pipeline2" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -2.84377, 5, 0.165223)
 
-[node name="pipe_straight3" parent="items/Pipeline2" instance=ExtResource("5_n6bfl")]
+[node name="pipe_valve2" parent="items/Pipeline2" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -3.63205, 5, -0.642421)
+script = ExtResource("7_da12h")
+
+[node name="ValveBody2" type="StaticBody3D" parent="items/Pipeline2/pipe_valve2"]
+transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
+script = ExtResource("8_h5ur3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="items/Pipeline2/pipe_valve2/ValveBody2"]
+shape = SubResource("ConvexPolygonShape3D_w0wta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="items/Pipeline2/pipe_valve2"]
+transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
+mesh = SubResource("CylinderMesh_yuo51")
 
 [node name="pipe_straight4" parent="items/Pipeline2" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -4.50207, 5, -1.4762)
@@ -230,8 +309,20 @@ transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0
 [node name="pipe_straight2" parent="items/Pipeline3" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -2.84377, 5, 0.165223)
 
-[node name="pipe_straight3" parent="items/Pipeline3" instance=ExtResource("5_n6bfl")]
+[node name="pipe_valve3" parent="items/Pipeline3" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -3.63205, 5, -0.642421)
+script = ExtResource("7_da12h")
+
+[node name="ValveBody3" type="StaticBody3D" parent="items/Pipeline3/pipe_valve3"]
+transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
+script = ExtResource("8_h5ur3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="items/Pipeline3/pipe_valve3/ValveBody3"]
+shape = SubResource("ConvexPolygonShape3D_w0wta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="items/Pipeline3/pipe_valve3"]
+transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
+mesh = SubResource("CylinderMesh_yuo51")
 
 [node name="pipe_straight4" parent="items/Pipeline3" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -4.50207, 5, -1.4762)
@@ -254,8 +345,20 @@ transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0
 [node name="pipe_straight2" parent="items/Pipeline4" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -2.84377, 5, 0.165223)
 
-[node name="pipe_straight3" parent="items/Pipeline4" instance=ExtResource("5_n6bfl")]
+[node name="pipe_valve4" parent="items/Pipeline4" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -3.63205, 5, -0.642421)
+script = ExtResource("7_da12h")
+
+[node name="ValveBody4" type="StaticBody3D" parent="items/Pipeline4/pipe_valve4"]
+transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
+script = ExtResource("8_h5ur3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="items/Pipeline4/pipe_valve4/ValveBody4"]
+shape = SubResource("ConvexPolygonShape3D_w0wta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="items/Pipeline4/pipe_valve4"]
+transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
+mesh = SubResource("CylinderMesh_yuo51")
 
 [node name="pipe_straight4" parent="items/Pipeline4" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.23634e-08, -0.282843, -0.282843, 0.4, -1.74846e-08, 0, -1.23634e-08, -0.282843, 0.282843, -4.50207, 5, -1.4762)
@@ -304,6 +407,26 @@ omni_range = 11.5744
 [node name="wet_floor_sign" parent="items" instance=ExtResource("10_in15x")]
 transform = Transform3D(-0.606218, 0, -0.35, 0, 0.7, 0, 0.35, 0, -0.606218, -1.64275, 3.01906, 14.6841)
 
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="items"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55, 9)
+mesh = SubResource("BoxMesh_2e742")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="items/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="items/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_fx0sh")
+
+[node name="ResetButton" type="MeshInstance3D" parent="items/MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601992, 0)
+mesh = SubResource("CylinderMesh_gkakh")
+skeleton = NodePath("../..")
+script = ExtResource("11_404ax")
+
+[node name="ButtonBody" type="StaticBody3D" parent="items/MeshInstance3D4/ResetButton"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="items/MeshInstance3D4/ResetButton/ButtonBody"]
+shape = SubResource("ConvexPolygonShape3D_fx0sh")
+
 [node name="reactor" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="reactor"]
@@ -327,6 +450,20 @@ mesh = SubResource("CylinderMesh_y3uow")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55016, -4.76837e-07)
 light_color = Color(0, 1, 0, 1)
 
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="reactor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 5.65193)
+mesh = SubResource("BoxMesh_7uigd")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="reactor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 5.74597)
+mesh = SubResource("BoxMesh_x665p")
+
+[node name="ReactorLabel" type="Label3D" parent="reactor/MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.454151)
+text = "Coolant: 0/100"
+font_size = 80
+script = ExtResource("11_uvfqq")
+
 [node name="ReactorElevatorDoors" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 3.72529e-09, 5, 19.8106)
 mesh = SubResource("BoxMesh_wj12p")
@@ -340,3 +477,19 @@ shape = SubResource("ConvexPolygonShape3D_6oy6k")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 3.55271e-15, 0, -4.37114e-08, -1, 0, -1, 4.37114e-08, -3.72529e-09, 5, 19.6606)
 mesh = SubResource("PlaneMesh_leb4v")
+
+[node name="ReactorPuzzleNote" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.59961e-08, -0.365949, 0.930635, 1, -4.37114e-08, -8.23731e-16, 4.06794e-08, 0.930635, 0.365949, -1.48437, 4.5, 5.72055)
+mesh = SubResource("PlaneMesh_wm3ql")
+script = ExtResource("17_vul3n")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ReactorPuzzleNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="ReactorPuzzleNoteBody" type="StaticBody3D" parent="ReactorPuzzleNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ReactorPuzzleNote/ReactorPuzzleNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_nx3h5")

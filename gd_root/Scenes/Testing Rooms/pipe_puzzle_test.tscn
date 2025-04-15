@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c1b3tl70snhpk"]
+[gd_scene load_steps=68 format=3 uid="uid://c1b3tl70snhpk"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
@@ -33,7 +33,8 @@
 [ext_resource type="PackedScene" uid="uid://bw3vtqs02fnpv" path="res://Assets/Objects/Clutter/soda_cup.tscn" id="32_8t5j8"]
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="33_25psr"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="34_cb4h5"]
-[ext_resource type="Script" path="res://Scenes/Testing Rooms/pipe_elevator_doors.gd" id="36_fufeu"]
+[ext_resource type="Texture2D" uid="uid://b2heqf7suu2aj" path="res://Imports/images/id_card_placeholder.png" id="35_rchbq"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/pipe_elevator_doors.gd" id="36_fufeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)
@@ -141,6 +142,13 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_eu7af"]
 material = SubResource("StandardMaterial3D_kfqob")
 size = Vector2(0.1, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3j3nk"]
+albedo_texture = ExtResource("35_rchbq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bykk6"]
+material = SubResource("StandardMaterial3D_3j3nk")
+size = Vector2(0.5, 0.3)
 
 [node name="pipe_puzzle_test" type="Node3D"]
 
@@ -578,3 +586,7 @@ shape = SubResource("ConvexPolygonShape3D_03p1r")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.52893, 2.50154, -9.37805)
 mesh = SubResource("PlaneMesh_eu7af")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 7.2528, 1.62162, 8.43656)
+mesh = SubResource("PlaneMesh_bykk6")

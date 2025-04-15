@@ -9,4 +9,5 @@ func _process(_delta):
 		#Must correspond to the interactables display node in the current scene
 		$"../InteractablesDisplay"._show_interactable()
 		if Input.is_action_just_pressed("interact"):
+			Global.lastpos = 0
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Final Levels/elevator.tscn")

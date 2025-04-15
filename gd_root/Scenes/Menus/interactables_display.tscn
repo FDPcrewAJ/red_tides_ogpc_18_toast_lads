@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://saucqu061brl"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/interactables_display.gd" id="1_wqd0l"]
+[ext_resource type="Script" path="res://Scripts/UI/interactables_display.gd" id="1_wqd0l"]
 
 [node name="InteractablesDisplay" type="Control"]
 layout_mode = 3

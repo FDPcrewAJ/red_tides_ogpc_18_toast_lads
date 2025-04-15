@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhf4kepu4rrs"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/audio_slider_setting.gd" id="1_6w22e"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="1_nffbu"]
+
+[node name="audio_slider_setting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6w22e")
+
+[node name="master_vol_cont" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 0)
+theme_override_constants/separation = 40
+
+[node name="audio_name" type="Label" parent="master_vol_cont"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_nffbu")
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+
+[node name="VSeparator" type="VSeparator" parent="master_vol_cont"]
+layout_mode = 2
+
+[node name="audio_slider" type="HSlider" parent="master_vol_cont"]
+custom_minimum_size = Vector2(250, 32)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[connection signal="value_changed" from="master_vol_cont/audio_slider" to="." method="_on_audio_slider_value_changed"]

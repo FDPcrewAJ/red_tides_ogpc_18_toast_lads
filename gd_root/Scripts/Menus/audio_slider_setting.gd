@@ -1,0 +1,29 @@
+extends Control
+
+@onready var audio_name: Label = $master_vol_cont/audio_name
+@onready var audio_slider: HSlider = $master_vol_cont/audio_slider
+
+@export_enum("Master", "Music", "Sfx", "Voice", "Ambient") var bus_name : String
+
+var bus_index : int = 0
+
+func _ready():
+	get_bus_index_name()
+	set_label_text()
+	set_slider_value()
+
+
+func set_label_text():
+	audio_name.text = str(bus_name) + " Volume"
+
+
+func get_bus_index_name():
+	bus_index = AudioServer.get_bus_index(bus_name)
+
+
+func set_slider_value():
+	audio_slider.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+
+
+func _on_audio_slider_value_changed(value: float):
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))

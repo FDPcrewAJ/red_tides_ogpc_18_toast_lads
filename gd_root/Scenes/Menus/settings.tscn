@@ -38,7 +38,7 @@ theme_override_constants/margin_bottom = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 400
+theme_override_constants/separation = 500
 alignment = 1
 
 [node name="keybinds_container" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]

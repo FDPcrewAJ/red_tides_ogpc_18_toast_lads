@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_j0o3k")
 
 [node name="Continue" type="Button" parent="."]
+visible = false
 layout_mode = 1
 offset_left = -800.0
 offset_top = -226.0

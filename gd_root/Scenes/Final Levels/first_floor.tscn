@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=108 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="Texture2D" uid="uid://c3skeplrwm2dh" path="res://Textures/Temp Dev Textures/floor_1_schematic.png" id="1_tifgq"]
@@ -22,10 +22,6 @@ fog_sun_scatter = 1.0
 fog_density = 0.007
 adjustment_enabled = true
 adjustment_brightness = 0.75
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_iojdy"]
-material = ExtResource("4_vj5kr")
-size = Vector2(5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4hmqv"]
 size = Vector3(72, 1, 48)
@@ -384,11 +380,6 @@ pixel_size = 0.05
 texture = ExtResource("1_tifgq")
 
 [node name="world" type="Node3D" parent="."]
-
-[node name="5mWall" type="MeshInstance3D" parent="world"]
-transform = Transform3D(-1.58529e-14, 2.69213e-07, 1, -1, -4.37114e-08, 9.81107e-16, 4.37114e-08, -1, 2.69213e-07, -50.7167, 3, 10.8256)
-mesh = SubResource("PlaneMesh_iojdy")
-skeleton = NodePath("")
 
 [node name="floor" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)

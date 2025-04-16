@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=40 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="33_h7xkm"]
 [ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="34_ke1c7"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="35_u3kj3"]
+[ext_resource type="PackedScene" uid="uid://c0tjfph3crxbf" path="res://Imports/Models/Objects/IBeam/i_beam.gltf" id="36_55dm8"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Imports/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
 [ext_resource type="PackedScene" uid="uid://ppc0n5mmy0xc" path="res://Imports/Models/Objects/Lights/v1_industrial_light.gltf" id="37_ln1xf"]
@@ -180,3 +181,6 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.41647, 0, 10.0748)
 
 [node name="elevator" parent="." instance=ExtResource("35_u3kj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
+
+[node name="blockbench_export" parent="." instance=ExtResource("36_55dm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977955, 0, 0.573248)

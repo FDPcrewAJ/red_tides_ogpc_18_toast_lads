@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="KeybindResource" load_steps=12 format=3 uid="uid://cnhcfnfcvxlij"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/settings/keybind_resource.gd" id="1_177s3"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_txvgu"]
+device = -1
+physical_keycode = 4194326
+
+[sub_resource type="InputEventKey" id="InputEventKey_jvylc"]
+device = -1
+physical_keycode = 4194305
+
+[sub_resource type="InputEventKey" id="InputEventKey_0fe4b"]
+device = -1
+physical_keycode = 69
+unicode = 101
+
+[sub_resource type="InputEventKey" id="InputEventKey_eiqq5"]
+device = -1
+physical_keycode = 32
+unicode = 32
+
+[sub_resource type="InputEventKey" id="InputEventKey_i7m3a"]
+device = -1
+physical_keycode = 83
+unicode = 115
+
+[sub_resource type="InputEventKey" id="InputEventKey_adbm1"]
+device = -1
+physical_keycode = 87
+unicode = 119
+
+[sub_resource type="InputEventKey" id="InputEventKey_n2cju"]
+device = -1
+physical_keycode = 65
+unicode = 97
+
+[sub_resource type="InputEventKey" id="InputEventKey_l25jo"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="InputEventKey" id="InputEventKey_ol5lt"]
+device = -1
+physical_keycode = 4194306
+
+[sub_resource type="InputEventKey" id="InputEventKey_ridmm"]
+device = -1
+physical_keycode = 4194325
+
+[resource]
+script = ExtResource("1_177s3")
+DEFAULT_MOVE_FORWARD_KEY = SubResource("InputEventKey_adbm1")
+DEFAULT_MOVE_BACKWARD_KEY = SubResource("InputEventKey_i7m3a")
+DEFAULT_MOVE_LEFT_KEY = SubResource("InputEventKey_n2cju")
+DEFAULT_MOVE_RIGHT_KEY = SubResource("InputEventKey_l25jo")
+DEFAULT_JUMP_KEY = SubResource("InputEventKey_eiqq5")
+DEFAULT_SPRINT_KEY = SubResource("InputEventKey_ridmm")
+DEFAULT_CROUCH_KEY = SubResource("InputEventKey_txvgu")
+DEFAULT_EXIT_KEY = SubResource("InputEventKey_jvylc")
+DEFAULT_INTERACT_KEY = SubResource("InputEventKey_0fe4b")
+DEFAULT_OPEN_LIST_KEY = SubResource("InputEventKey_ol5lt")

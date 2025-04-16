@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=43 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -30,12 +30,15 @@
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="33_h7xkm"]
 [ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="34_ke1c7"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="35_u3kj3"]
-[ext_resource type="PackedScene" uid="uid://c0tjfph3crxbf" path="res://Imports/Models/Objects/IBeam/i_beam.gltf" id="36_55dm8"]
+[ext_resource type="PackedScene" uid="uid://b7rvy4bjmejtb" path="res://Assets/Objects/Pipes/valve.tscn" id="36_0m5nk"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Imports/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
 [ext_resource type="PackedScene" uid="uid://ppc0n5mmy0xc" path="res://Imports/Models/Objects/Lights/v1_industrial_light.gltf" id="37_ln1xf"]
+[ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="37_v0d77"]
 [ext_resource type="PackedScene" uid="uid://cisw4yc3qdyjb" path="res://Imports/Models/Objects/Lights/v2_industrial_light.gltf" id="38_krue1"]
+[ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="38_wda1v"]
 [ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Imports/Models/Objects/Lights/v3_industrial_light.gltf" id="39_4vs5a"]
+[ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="39_rfvr8"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -182,5 +185,14 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.41647, 0, 10.0748)
 [node name="elevator" parent="." instance=ExtResource("35_u3kj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
 
-[node name="blockbench_export" parent="." instance=ExtResource("36_55dm8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977955, 0, 0.573248)
+[node name="pipeValve" parent="." instance=ExtResource("36_0m5nk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73407, 0, 1.48032)
+
+[node name="wooden_chair" parent="." instance=ExtResource("37_v0d77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87809, 0, 9.12777)
+
+[node name="portable_chair" parent="." instance=ExtResource("38_wda1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38928, 0, 11.5375)
+
+[node name="clock" parent="." instance=ExtResource("39_rfvr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80858, 0, 0.109151)

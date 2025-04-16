@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="9_u6wbv"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="10_kvm1t"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_k617b"]
-[ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings.tscn" id="12_4qr3l"]
+[ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings/settings.tscn" id="12_4qr3l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hl1ea"]
 

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dyuhtn3qc3lec" path="res://Scenes/Menus/pause_menu.tscn" id="2_detwj"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
-[ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings.tscn" id="4_ncupa"]
+[ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings/settings.tscn" id="4_ncupa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
 radius = 0.38

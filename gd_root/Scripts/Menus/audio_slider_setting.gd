@@ -3,7 +3,7 @@ extends Control
 @onready var audio_name: Label = $master_vol_cont/audio_name
 @onready var audio_slider: HSlider = $master_vol_cont/audio_slider
 
-@export_enum("Master", "Music", "Sfx", "Voice", "Ambient") var bus_name : String
+@export_enum("Master", "Music", "Sfx", "Voice") var bus_name : String
 
 var bus_index : int = 0
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://qm70q85pxxiv"]
+[gd_scene load_steps=7 format=3 uid="uid://qm70q85pxxiv"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/settings_script.gd" id="1_4fobu"]
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="2_x8u3j"]
-[ext_resource type="PackedScene" uid="uid://cvtioegf8qro0" path="res://Scenes/Menus/hotkey_rebind_button.tscn" id="3_qtfw6"]
-[ext_resource type="PackedScene" uid="uid://bhf4kepu4rrs" path="res://Scenes/Menus/audio_slider_setting.tscn" id="4_5k0wn"]
+[ext_resource type="PackedScene" uid="uid://cvtioegf8qro0" path="res://Scenes/Menus/settings/hotkey_rebind_button.tscn" id="3_qtfw6"]
+[ext_resource type="PackedScene" uid="uid://bhf4kepu4rrs" path="res://Scenes/Menus/settings/audio_slider_setting.tscn" id="4_5k0wn"]
+[ext_resource type="PackedScene" uid="uid://c02gaposdakmg" path="res://Scenes/Menus/settings/window_mode_button.tscn" id="4_f4aru"]
+[ext_resource type="PackedScene" uid="uid://c73e5qdve4j61" path="res://Scenes/Menus/settings/resolution_button.tscn" id="5_tvx3j"]
 
 [node name="settings" type="Control"]
 process_mode = 2
@@ -94,7 +96,22 @@ action_name = "exit"
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/audio_container"]
+[node name="video_label" type="Label" parent="MarginContainer/HBoxContainer/audio_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_x8u3j")
+theme_override_font_sizes/font_size = 60
+text = "Video"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="window_mode_button" parent="MarginContainer/HBoxContainer/audio_container" instance=ExtResource("4_f4aru")]
+layout_mode = 2
+
+[node name="resolution_button" parent="MarginContainer/HBoxContainer/audio_container" instance=ExtResource("5_tvx3j")]
+layout_mode = 2
+
+[node name="audio_label" type="Label" parent="MarginContainer/HBoxContainer/audio_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_x8u3j")
@@ -118,10 +135,6 @@ bus_name = "Sfx"
 [node name="audio_slider_setting4" parent="MarginContainer/HBoxContainer/audio_container" instance=ExtResource("4_5k0wn")]
 layout_mode = 2
 bus_name = "Voice"
-
-[node name="audio_slider_setting5" parent="MarginContainer/HBoxContainer/audio_container" instance=ExtResource("4_5k0wn")]
-layout_mode = 2
-bus_name = "Ambient"
 
 [node name="BackButton" type="Button" parent="."]
 process_mode = 3

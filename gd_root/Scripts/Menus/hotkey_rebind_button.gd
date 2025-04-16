@@ -34,6 +34,8 @@ func set_action_name():
 			key_text.text = "Exit/Return"
 		"interact":
 			key_text.text = "Interact"
+		"open_list":
+			key_text.text = "Toggle List"
 
 
 func set_text_for_key():

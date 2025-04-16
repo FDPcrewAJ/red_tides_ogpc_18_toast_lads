@@ -27,3 +27,13 @@ func set_slider_value():
 
 func _on_audio_slider_value_changed(value: float):
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+	
+	match bus_index:
+		0:
+			SignalBus.emit_on_master_sound_set(value)
+		1:
+			SignalBus.emit_on_music_sound_set(value)
+		2:
+			SignalBus.emit_on_sfx_sound_set(value)
+		3:
+			SignalBus.emit_on_voice_sound_set(value)

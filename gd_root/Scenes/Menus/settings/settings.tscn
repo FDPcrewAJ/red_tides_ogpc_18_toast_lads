@@ -88,6 +88,10 @@ action_name = "crouch"
 layout_mode = 2
 action_name = "interact"
 
+[node name="hotkey_rebind_button10" parent="MarginContainer/HBoxContainer/keybinds_container" instance=ExtResource("3_qtfw6")]
+layout_mode = 2
+action_name = "open_list"
+
 [node name="hotkey_rebind_button8" parent="MarginContainer/HBoxContainer/keybinds_container" instance=ExtResource("3_qtfw6")]
 layout_mode = 2
 action_name = "exit"

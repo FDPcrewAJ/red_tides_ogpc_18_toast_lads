@@ -20,6 +20,9 @@ config/icon="res://Sturgei_Large.png"
 [autoload]
 
 Global="*res://Scripts/global.gd"
+SignalBus="*res://Scripts/settings_signal_bus.gd"
+SettingsContainer="*res://Scripts/settings_data_container.gd"
+SaveManager="*res://Scripts/save_manager.gd"
 
 [display]
 

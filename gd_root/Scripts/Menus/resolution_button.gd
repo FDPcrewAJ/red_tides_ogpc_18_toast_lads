@@ -20,4 +20,5 @@ func add_resolution_items() -> void:
 
 
 func on_resolution_selected(index : int) -> void:
+	SignalBus.emit_on_resolution_selected(index)
 	DisplayServer.window_set_size(RESOLUTION_DICTIONARY.values()[index])

@@ -12,6 +12,6 @@ func _process(_delta):
 	if Global.current_object == "DialPuzzleNoteBody":
 		#Must correspond to the interactables display node in the current scene
 		$"../../InteractablesDisplay"._show_interactable()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			#This needs to correspond to the menu prompt node in the current scene.
 			$"../../MenuPrompt"._set_label_prompt_text("If this terminal is still in calibration mode, you just need to turn the dials to the corresponding angles. The angles you need to turn them to are written down... somewhere around this place.  \n \n -Engineering")

@@ -10,7 +10,7 @@ func _process(_delta):
 	if Global.current_object == "DialConsoleBody":
 		#Must correspond to the interactables display node in the current scene
 		$"../../../InteractablesDisplay"._show_interactable()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			#You need to change the $player node referenced here to the player in the current scene
 			Global.lastpos = $"../../../player".position
 			Global.previous_scene = get_tree().current_scene.scene_file_path

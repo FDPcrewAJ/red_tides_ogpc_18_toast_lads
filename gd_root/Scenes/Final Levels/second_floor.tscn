@@ -70,7 +70,7 @@ size = Vector2(16, 25)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ljss"]
 material = SubResource("StandardMaterial3D_1doj0")
-size = Vector2(18, 7)
+size = Vector2(15, 13)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enovm"]
 albedo_texture = ExtResource("6_ised5")
@@ -84,7 +84,7 @@ size = Vector2(30, 13)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jc5od"]
 material = SubResource("StandardMaterial3D_enovm")
-size = Vector2(33, 10)
+size = Vector2(23, 12)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0ccyk"]
 material = SubResource("StandardMaterial3D_enovm")
@@ -385,7 +385,6 @@ skeleton = NodePath("")
 
 [node name="floor" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 0)
@@ -412,7 +411,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0.5, 0)
 mesh = SubResource("PlaneMesh_ikw25")
 
 [node name="floor_tile2" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 0.5, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0.5, 9)
 mesh = SubResource("PlaneMesh_7ljss")
 
 [node name="concrete_floor" type="MeshInstance3D" parent="world/floor"]
@@ -420,7 +419,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.499, -17)
 mesh = SubResource("PlaneMesh_a4prs")
 
 [node name="concrete_floor2" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.499, 17.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.499, 16.5)
 mesh = SubResource("PlaneMesh_jc5od")
 
 [node name="concrete_floor3" type="MeshInstance3D" parent="world/floor"]

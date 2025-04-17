@@ -144,12 +144,12 @@ size = Vector2(0.1, 4)
 
 [node name="underwater_floor" type="Node3D"]
 
+[node name="player" parent="." instance=ExtResource("1_tvhvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15468, 17)
+
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_sf2df")]
 
 [node name="MenuPrompt" parent="." instance=ExtResource("2_d2p0f")]
-
-[node name="player" parent="." instance=ExtResource("1_tvhvi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15468, 17)
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_34okx")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://eghpo28o77o5"]
+
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
+[ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="2_pcjbw"]
+[ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_vawf6"]
+[ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="5_7dhnt"]
+[ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="6_048w4"]
+
+[sub_resource type="Environment" id="Environment_2iafm"]
+ambient_light_sky_contribution = 0.0
+reflected_light_source = 1
+fog_light_energy = 0.1
+fog_sun_scatter = 1.0
+fog_density = 0.007
+adjustment_enabled = true
+adjustment_brightness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gpb7g"]
+albedo_texture = ExtResource("2_vawf6")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_440p2"]
+material = SubResource("StandardMaterial3D_gpb7g")
+size = Vector2(50, 35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fynni"]
+size = Vector3(40, 1, 30)
+
+[node name="control_floor" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_rhvyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2iafm")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.99317, 0.36174, -3.03212)
+pixel_size = 0.0445
+axis = 1
+texture = ExtResource("2_pcjbw")
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="floor" type="StaticBody3D" parent="world"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.991993, -0.720312, 1.48146)
+mesh = SubResource("PlaneMesh_440p2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/floor"]
+shape = SubResource("BoxShape3D_fynni")
+
+[node name="walls" type="Node3D" parent="world"]
+
+[node name="elevator" type="Node3D" parent="world/walls"]
+
+[node name="lights" type="Node3D" parent="world"]
+
+[node name="elevator" parent="world" instance=ExtResource("5_7dhnt")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 1.14502)
+
+[node name="red_wall_light" type="OmniLight3D" parent="world/elevator"]
+transform = Transform3D(-3.64262e-08, -3.64262e-08, 0.833333, -0.833333, 1.59224e-15, -3.64262e-08, 0, -0.833333, -3.64262e-08, 0, 3.33333, -0.732282)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/elevator/red_wall_light" instance=ExtResource("6_048w4")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)

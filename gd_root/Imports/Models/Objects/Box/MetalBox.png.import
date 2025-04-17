@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/MetalBox.png-2cce90f805e1c35762261e72ea79efe2
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

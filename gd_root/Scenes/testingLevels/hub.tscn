@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cv0oc1p4fj42o"]
+[gd_scene load_steps=30 format=3 uid="uid://cv0oc1p4fj42o"]
 
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Imports/Models/placeholders/PlaceholderDoor/tinker.obj" id="1_8mukf"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_lcgre"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_o5iii"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_crk3d"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/console.gd" id="4_5k78a"]
-[ext_resource type="PackedScene" uid="uid://4j6k3kptq054" path="res://Scenes/Objects/storm_timer.tscn" id="5_n8fnt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -363,8 +362,6 @@ text = "Dock"
 label_settings = SubResource("LabelSettings_tt6jo")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="StormTimer" parent="." instance=ExtResource("5_n8fnt")]
 
 [node name="player" parent="." instance=ExtResource("3_crk3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 0)

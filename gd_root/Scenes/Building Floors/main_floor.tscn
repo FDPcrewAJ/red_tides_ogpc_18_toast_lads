@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_7l3kh"]
 [ext_resource type="Texture2D" uid="uid://pwjuqxpfetwp" path="res://Textures/Interior Textures/c_wall_undamaged_1.png" id="2_5n8nm"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_batpk"]
-[ext_resource type="Texture2D" uid="uid://3n20bfhg18ky" path="res://Imports/images/main_floor_layout.png" id="3_31hju"]
+[ext_resource type="Texture2D" uid="uid://3n20bfhg18ky" path="res://Imports/images/layouts/main_floor_layout.png" id="3_31hju"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qusqf"]
 sky_top_color = Color(0.402357, 0.46015, 0.478915, 1)

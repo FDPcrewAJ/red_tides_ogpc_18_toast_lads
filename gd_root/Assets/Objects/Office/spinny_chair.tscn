@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://njv446pupgiu"]
+
+[ext_resource type="PackedScene" uid="uid://bxjfsda88ml7g" path="res://Imports/Models/Objects/Chairs/spinnyChair.gltf" id="1_auyjq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgosr"]
+size = Vector3(1, 1.87512, 1)
+
+[node name="spinnyChair" instance=ExtResource("1_auyjq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.931702, 0)
+shape = SubResource("BoxShape3D_mgosr")

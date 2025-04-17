@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://0kiq1tsf87gk"]
 
-[ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Clutter/coffeeCup.gltf" id="1_ryeaa"]
+[ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="1_ryeaa"]
 
 [node name="coffe_cup" instance=ExtResource("1_ryeaa")]

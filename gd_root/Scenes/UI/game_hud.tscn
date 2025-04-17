@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://clgttbebmbc6a"]
+
+[ext_resource type="Texture2D" uid="uid://b0sg2jme0f0x3" path="res://Imports/ui/stopwatch_dial.png" id="1_ie0vo"]
+[ext_resource type="Script" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
+[ext_resource type="Texture2D" uid="uid://bdxp3k3edhv5b" path="res://Imports/ui/stopwatch_needle.png" id="2_v440k"]
+[ext_resource type="Texture2D" uid="uid://dqqp821hkipxt" path="res://Imports/Models/Objects/Doors/doorFacility.png" id="4_dpgn7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo3mm"]
+
+[node name="game_hud" type="Control"]
+layout_mode = 3
+anchor_left = 0.552
+anchor_top = 0.398
+anchor_right = 0.552
+anchor_bottom = 0.5
+offset_left = 741.16
+offset_top = -283.84
+offset_right = 741.16
+offset_bottom = -394.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_m2c60")
+
+[node name="stopwatch_dial" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2000.0
+offset_top = -151.0
+offset_right = -1697.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_ie0vo")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="stopwatch_needle" type="Sprite2D" parent="stopwatch_dial"]
+position = Vector2(151.5, 151.5)
+scale = Vector2(0.235, 0.235)
+texture = ExtResource("2_v440k")
+
+[node name="stopwatch_countdown" type="Label" parent="stopwatch_dial"]
+layout_mode = 0
+offset_left = 140.25
+offset_top = 57.0
+offset_right = 165.25
+offset_bottom = 85.0
+scale = Vector2(0.9, 0.9)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oo3mm")
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="parts_list" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1791.78, 760.111)
+scale = Vector2(1.61979, 2.20573)
+texture = ExtResource("4_dpgn7")

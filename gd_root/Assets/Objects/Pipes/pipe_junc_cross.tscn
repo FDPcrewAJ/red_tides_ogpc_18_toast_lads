@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2xw7k4d8fr1r"]
+
+[ext_resource type="PackedScene" uid="uid://8l1ltdwbe0cx" path="res://Imports/Models/Objects/Pipes/pipe_junction_cross.gltf" id="1_884vr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8djn3"]
+size = Vector3(3, 3, 1)
+
+[node name="pipe_junc_cross" instance=ExtResource("1_884vr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_8djn3")

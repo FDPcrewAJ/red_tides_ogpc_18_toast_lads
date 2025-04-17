@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwmyiotwhjhy6"]
+
+[ext_resource type="PackedScene" uid="uid://cuoa2vj8p07s8" path="res://Imports/Models/Objects/Pipes/pipe_junction_t.gltf" id="1_vlwol"]
+
+[node name="pipe_junc_t" instance=ExtResource("1_vlwol")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]

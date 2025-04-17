@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://578v7wa0ivcb"]
 
-[ext_resource type="PackedScene" uid="uid://dg236qj65r1bv" path="res://Imports/Models/Objects/Clutter/toast_lads_toaster.gltf" id="1_l4map"]
+[ext_resource type="PackedScene" uid="uid://dg236qj65r1bv" path="res://Imports/Models/Objects/Kitchen Items/toast_lads_toaster.gltf" id="1_l4map"]
 
 [node name="tl_toaster" instance=ExtResource("1_l4map")]

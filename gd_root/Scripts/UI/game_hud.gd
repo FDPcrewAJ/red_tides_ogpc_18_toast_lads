@@ -1,0 +1,62 @@
+extends Control
+
+@onready var label = $stopwatch_dial/stopwatch_countdown
+@onready var needle = $stopwatch_dial/stopwatch_needle
+@onready var list = $parts_list
+#These variables are for the stopwatch
+var rotation_speed = TAU / 60
+var double_digit = 0
+var single_digit = ""
+#These variables are for the parts list
+var list_open = true 
+
+
+func _ready() -> void:
+	set_time()
+	
+	if double_digit <= 0:
+		Global.timer_active = false	
+		
+
+
+func _input(_event) -> void:
+	
+	if Global.list_in_hand:
+		if Input.is_action_just_pressed("open_list"):
+			if list.visible:
+				list.visible = false
+			elif !list.visible:
+				list.visible = true
+
+
+func _physics_process(delta: float) -> void:
+	
+	#Countdown activation
+	if Global.timer_active:
+		count_down(delta)
+
+func set_time():
+	double_digit = Global.time_left
+	if double_digit < 10:
+		single_digit = "0" + str(double_digit)
+		label.text = str(single_digit)
+	else:
+		label.text = str(double_digit)
+
+func count_down(delta):
+	needle.rotate(rotation_speed * delta)
+	if needle.rotation_degrees >= 360.0:
+		needle.rotation_degrees = 1
+		double_digit -= 1
+		Global.time_left = double_digit
+		if double_digit <= 0:
+			label.text = "00"
+		elif double_digit < 10:
+			single_digit = "0" + str(double_digit)
+			label.text = str(single_digit)
+		else:
+			label.text = str(double_digit)
+
+
+func _on_storm_timer_timeout():
+	get_tree().change_scene_to_file("res://Scenes/Menus/title_screen.tscn")

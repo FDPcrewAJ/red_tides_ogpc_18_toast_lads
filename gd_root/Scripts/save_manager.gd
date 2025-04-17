@@ -33,3 +33,4 @@ func load_settings_data():
 		loaded_data = json.get_data()
 	
 	SignalBus.emit_load_settings_data(loaded_data)
+	loaded_data = {}

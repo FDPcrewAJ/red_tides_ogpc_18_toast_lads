@@ -7,9 +7,15 @@ extends Control
 @export var action_name : String = ""
 
 func _ready():
+	load_keybinds()
 	set_process_unhandled_input(false)
 	set_action_name()
 	set_text_for_key()
+	
+
+
+func load_keybinds():
+	rebind_action_key(SettingsContainer.get_keybind(action_name))
 
 
 func set_action_name():
@@ -60,8 +66,6 @@ func _on_button_toggled(button_pressed):
 			if i.action_name != self.action_name:
 				i.button.toggle_mode = true
 				i.set_process_unhandled_input(true)
-		
-		
 
 
 func _unhandled_key_input(event):
@@ -70,10 +74,10 @@ func _unhandled_key_input(event):
 
 
 func rebind_action_key(event):
-	if button.button_pressed:
-		InputMap.action_erase_events(action_name)
-		InputMap.action_add_event(action_name, event)
-		
-		set_process_unhandled_key_input(false)
-		set_text_for_key()
-		set_action_name()
+	InputMap.action_erase_events(action_name)
+	InputMap.action_add_event(action_name, event)
+	SettingsContainer.set_keybind(action_name, event)
+	
+	set_process_unhandled_key_input(false)
+	set_text_for_key()
+	set_action_name()

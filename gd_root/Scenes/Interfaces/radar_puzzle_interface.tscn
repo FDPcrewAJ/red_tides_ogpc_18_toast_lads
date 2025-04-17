@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://chsm0jgs0uxer"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/radar_puzzle_interface.gd" id="1_17h1u"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/radar_dot.gd" id="2_1a1eu"]
+[ext_resource type="Texture2D" uid="uid://c4vdr6qghii0t" path="res://Imports/images/radarDot-removebg-preview-green.png" id="2_glelx"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/radar_label.gd" id="4_dbtnt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5yf3"]
+radius = 323.883
+
+[node name="RadarPuzzleInterface" type="Node2D"]
+script = ExtResource("1_17h1u")
+
+[node name="RadarDot" type="Sprite2D" parent="."]
+position = Vector2(1000, 500)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_glelx")
+script = ExtResource("2_1a1eu")
+
+[node name="Area2D" type="Area2D" parent="RadarDot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RadarDot/Area2D"]
+shape = SubResource("CircleShape2D_v5yf3")
+
+[node name="RadarDot2" type="Sprite2D" parent="."]
+position = Vector2(1774, 239)
+scale = Vector2(0.3, 0.3)
+
+[node name="RadarLabel" type="Label" parent="."]
+offset_right = 1919.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_dbtnt")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 900.0
+offset_top = 930.0
+offset_right = 1116.0
+offset_bottom = 1068.0
+theme_override_font_sizes/font_size = 90
+text = "Back"
+
+[connection signal="mouse_entered" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

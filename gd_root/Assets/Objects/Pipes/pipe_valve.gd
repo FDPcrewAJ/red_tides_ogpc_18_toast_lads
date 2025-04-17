@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	if Global.current_object == "ValveBody":
 		#Must correspond to the interactables display node in the current scene
 		$"../../../InteractablesDisplay"._show_interactable()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			if coolantProvided < maxCoolant:
 				if self.name == "pipe_valve":
 					$"../../../reactor/MeshInstance3D5/ReactorLabel".coolant += 10
@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	if Global.current_object == "ValveBody2":
 		#Must correspond to the interactables display node in the current scene
 		$"../../../InteractablesDisplay"._show_interactable()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			if coolantProvided < maxCoolant:
 				if self.name == "pipe_valve2":
 					$"../../../reactor/MeshInstance3D5/ReactorLabel".coolant += 15
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	if Global.current_object == "ValveBody3":
 		#Must correspond to the interactables display node in the current scene
 		$"../../../InteractablesDisplay"._show_interactable()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			if coolantProvided < maxCoolant:
 				if self.name == "pipe_valve3":
 					$"../../../reactor/MeshInstance3D5/ReactorLabel".coolant += 2
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 	if Global.current_object == "ValveBody4":
 		#Must correspond to the interactables display node in the current scene
 		$"../../../InteractablesDisplay"._show_interactable()
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			if coolantProvided < maxCoolant:
 				if self.name == "pipe_valve4":
 					$"../../../reactor/MeshInstance3D5/ReactorLabel".coolant += 20

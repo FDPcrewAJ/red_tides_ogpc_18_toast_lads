@@ -10,7 +10,6 @@ func _ready() -> void:
 
 func _process(_delta):
 	mouse_offset_x = get_global_mouse_position().x
-	print(rotation_degrees)
 	
 func _rotate():
 	rotation_degrees += (mouse_offset_x - get_global_mouse_position().x) / 2

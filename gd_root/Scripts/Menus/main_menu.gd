@@ -1,7 +1,7 @@
 extends Control
 
-@onready var devTools: Button = $"MarginContainer/VBoxContainer/Level Select"
-@onready var settings: Button = $MarginContainer/VBoxContainer/Settings
+@onready var devTools: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Level Select"
+@onready var settings: Control = $settings
 
 
 func _ready() -> void:

@@ -1,11 +1,12 @@
 extends Control
 
-@onready var devTools = $"Level Select"
-@onready var settings: Control = $"../settings"
+@onready var devTools: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Level Select"
+@onready var settings: Control = $settings
 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _process(_delta):
 	if Input.is_action_pressed("devKey"):

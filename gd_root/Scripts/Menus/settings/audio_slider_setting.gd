@@ -9,8 +9,21 @@ var bus_index : int = 0
 
 func _ready():
 	get_bus_index_name()
+	load_data()
 	set_label_text()
 	set_slider_value()
+
+
+func load_data():
+	match bus_name:
+		"Master":
+			_on_audio_slider_value_changed(SettingsContainer.get_master_volume())
+		"Music":
+			_on_audio_slider_value_changed(SettingsContainer.get_music_volume())
+		"Sfx":
+			_on_audio_slider_value_changed(SettingsContainer.get_sfx_volume())
+		"Voice":
+			_on_audio_slider_value_changed(SettingsContainer.get_voice_volume())
 
 
 func set_label_text():

@@ -1,10 +1,17 @@
 extends Control
 #This should be above any interactable nodes
+@onready var label: Label = $Label
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update_text()
+
+
+func update_text():
+	var event_array = InputMap.action_get_events("interact")
+	var event = event_array[0]
+	var interact_key = OS.get_keycode_string(event.physical_keycode)
+	label.text = "Press " + str(interact_key) + " or Left Mouse to interact"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,4 +19,5 @@ func _process(delta: float) -> void:
 	$Label.hide()
 
 func _show_interactable():
+	update_text()
 	$Label.show()

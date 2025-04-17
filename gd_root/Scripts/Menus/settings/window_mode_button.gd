@@ -12,6 +12,12 @@ const WINDOW_MODE_ARRAY : Array[String] = [
 func _ready():
 	add_window_mode_items()
 	button.item_selected.connect(on_window_mode_selected)
+	load_data()
+
+
+func load_data():
+	on_window_mode_selected(SettingsContainer.get_window_mode_index())
+	button.select(SettingsContainer.get_window_mode_index())
 
 
 func add_window_mode_items() -> void:

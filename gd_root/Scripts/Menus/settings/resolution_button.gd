@@ -9,9 +9,15 @@ const RESOLUTION_DICTIONARY : Dictionary = {
 	"3840 x 2160" : Vector2i(3840, 2160)
 }
 
-func _ready() -> void:
+func _ready():
 	button.item_selected.connect(on_resolution_selected)
 	add_resolution_items()
+	load_data()
+
+
+func load_data():
+	on_resolution_selected(SettingsContainer.get_resolution_index())
+	button.select(SettingsContainer.get_resolution_index())
 
 
 func add_resolution_items() -> void:

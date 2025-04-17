@@ -18,11 +18,13 @@
 [sub_resource type="Sky" id="Sky_ehbyn"]
 sky_material = SubResource("PanoramaSkyMaterial_hl1ea")
 
-[sub_resource type="Environment" id="Environment_8vbwh"]
+[sub_resource type="Environment" id="Environment_a26iq"]
 background_mode = 2
 sky = SubResource("Sky_ehbyn")
 ambient_light_source = 3
-ambient_light_sky_contribution = 0.28
+ambient_light_color = Color(0.0509114, 0.280284, 0.347416, 1)
+ambient_light_sky_contribution = 0.93
+ambient_light_energy = 2.2
 fog_enabled = true
 fog_light_color = Color(0.375519, 0.407209, 0.457021, 1)
 fog_light_energy = 0.17
@@ -247,18 +249,21 @@ size = Vector3(60, 45, 80)
 [node name="TitleScreen" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_8vbwh")
+environment = SubResource("Environment_a26iq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.584651, -0.413933, -0.697741, -0.439865, -0.560928, 0.701341, -0.68169, 0.716952, 0.145873, -56.6628, 53.0018, 98.1428)
+light_energy = 0.345
+light_bake_mode = 1
 shadow_enabled = true
+directional_shadow_split_1 = 0.281
 directional_shadow_max_distance = 1000.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.580703, -0.198331, 0.789588, 0, 0.969872, 0.243615, -0.814116, -0.141468, 0.563208, 42.297, 118, 191)
+transform = Transform3D(0.580703, -0.198331, 0.789588, 0, 0.969872, 0.243615, -0.814116, -0.141468, 0.563208, 15.0767, 125.712, 225.826)
 
 [node name="water_plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.588773, 0, 0.808298, 0, 1, 0, -0.808298, 0, 0.588773, -293.318, -1.42498, -79.8023)
+transform = Transform3D(0.588773, 0, 0.808298, 0, 1, 0, -0.808298, 0, 0.588773, -327.447, -1.42498, -44.5275)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_xheti")
 skeleton = NodePath("../main_menu_title")

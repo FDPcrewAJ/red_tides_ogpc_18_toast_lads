@@ -1,9 +1,8 @@
-[gd_scene load_steps=106 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=104 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_gl2mt"]
 [ext_resource type="Texture2D" uid="uid://ea5nc6kal33" path="res://Imports/images/layouts/floor_2_schematic.png" id="2_2sv3j"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="3_6sppc"]
-[ext_resource type="Texture2D" uid="uid://c1x1srbr1m2cw" path="res://Imports/images/layouts/partial_floor_2_map.png" id="3_8bnoi"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="4_f7qmu"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="5_yb4ao"]
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_ised5"]
@@ -39,7 +38,7 @@ uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mc7g8"]
 material = SubResource("StandardMaterial3D_tmn23")
-size = Vector2(18, 23)
+size = Vector2(23, 13)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_381s5"]
 albedo_texture = ExtResource("4_f7qmu")
@@ -47,17 +46,13 @@ uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_71ep3"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_1myv4"]
 material = SubResource("StandardMaterial3D_381s5")
-size = Vector2(19, 5.5)
+size = Vector2(45, 7.25)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ddit5"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_jmfyh"]
 material = SubResource("StandardMaterial3D_381s5")
-size = Vector2(6, 12)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_kcvdn"]
-material = SubResource("StandardMaterial3D_381s5")
-size = Vector2(24, 14)
+size = Vector2(40, 26)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1doj0"]
 albedo_texture = ExtResource("5_yb4ao")
@@ -66,11 +61,19 @@ uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ikw25"]
 material = SubResource("StandardMaterial3D_1doj0")
-size = Vector2(16, 25)
+size = Vector2(23, 16)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j7bnl"]
+material = SubResource("StandardMaterial3D_1doj0")
+size = Vector2(15, 13)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yrqa3"]
+material = SubResource("StandardMaterial3D_1doj0")
+size = Vector2(4.5, 8)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ljss"]
 material = SubResource("StandardMaterial3D_1doj0")
-size = Vector2(15, 13)
+size = Vector2(19, 6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enovm"]
 albedo_texture = ExtResource("6_ised5")
@@ -80,19 +83,11 @@ uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_a4prs"]
 material = SubResource("StandardMaterial3D_enovm")
-size = Vector2(30, 13)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_jc5od"]
-material = SubResource("StandardMaterial3D_enovm")
-size = Vector2(23, 12)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_0ccyk"]
-material = SubResource("StandardMaterial3D_enovm")
-size = Vector2(12, 12)
+size = Vector2(23.5, 17)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xh4l5"]
 material = SubResource("StandardMaterial3D_enovm")
-size = Vector2(12.5, 13.5)
+size = Vector2(16, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0oa5"]
 albedo_texture = ExtResource("7_m7n5d")
@@ -369,17 +364,10 @@ visible = false
 pixel_size = 0.039
 texture = ExtResource("2_2sv3j")
 
-[node name="map" type="Sprite3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 4.385, 0.507, -0.723)
-visible = false
-pixel_size = 0.0575
-texture = ExtResource("3_8bnoi")
-
 [node name="world" type="Node3D" parent="."]
 
 [node name="5mWall" type="MeshInstance3D" parent="world"]
 transform = Transform3D(4.37114e-08, -1, 3.8743e-07, -1, -4.37114e-08, 2.2702e-15, 2.04281e-14, -3.8743e-07, -1, 44.2231, 11, -3.53825)
-visible = false
 mesh = SubResource("PlaneMesh_iojdy")
 skeleton = NodePath("")
 
@@ -391,48 +379,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 0)
 shape = SubResource("BoxShape3D_4hmqv")
 
 [node name="carpet" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.5, 17)
 mesh = SubResource("PlaneMesh_mc7g8")
 
 [node name="carpet2" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 0.5, 5.75)
-mesh = SubResource("PlaneMesh_71ep3")
-
-[node name="carpet4" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 0.5, 9.5)
-mesh = SubResource("PlaneMesh_ddit5")
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.119, 0.499, 0)
+mesh = SubResource("PlaneMesh_1myv4")
 
 [node name="carpet3" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5, 0.5, -3.5)
-mesh = SubResource("PlaneMesh_kcvdn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 0.499, 2.61911)
+mesh = SubResource("PlaneMesh_jmfyh")
 
 [node name="floor_tile" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.5, -14.5)
 mesh = SubResource("PlaneMesh_ikw25")
 
 [node name="floor_tile2" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0.5, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.25, 0.5, 9)
+mesh = SubResource("PlaneMesh_j7bnl")
+
+[node name="floor_tile4" type="MeshInstance3D" parent="world/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0.5, 6.5)
+mesh = SubResource("PlaneMesh_yrqa3")
+
+[node name="floor_tile3" type="MeshInstance3D" parent="world/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0.5, -7.5)
 mesh = SubResource("PlaneMesh_7ljss")
 
 [node name="concrete_floor" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 0.499, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9958, 0.5, 2)
 mesh = SubResource("PlaneMesh_a4prs")
 
-[node name="concrete_floor2" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.499, 16.5)
-mesh = SubResource("PlaneMesh_jc5od")
-
-[node name="concrete_floor3" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 0.499, 9.5)
-mesh = SubResource("PlaneMesh_0ccyk")
-
 [node name="concrete_floor4" type="MeshInstance3D" parent="world/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.25, 0.499, -3.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0.5, -7)
 mesh = SubResource("PlaneMesh_xh4l5")
 
 [node name="ceiling" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 0)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/ceiling"]
 shape = SubResource("BoxShape3D_4hmqv")
@@ -853,7 +836,7 @@ shape = SubResource("BoxShape3D_xcq1p")
 mesh = SubResource("BoxMesh_q7adw")
 
 [node name="sep_wall37" type="StaticBody3D" parent="world/walls/interior_walls/left_rooms"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.2343, 3, 10.5003)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.226, 3, 10.5003)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/left_rooms/sep_wall37"]
 shape = SubResource("BoxShape3D_xcq1p")
@@ -1027,10 +1010,9 @@ transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-0
 transform = Transform3D(-5.94291e-10, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.94291e-10, 10.6676, 0.5, -18.6938)
 
 [node name="lights" type="Node3D" parent="world"]
-visible = false
 
 [node name="red_wall_light" type="OmniLight3D" parent="world/lights"]
-transform = Transform3D(-5.73206e-15, -1, -8.74228e-08, -1, 1.91068e-15, 4.37114e-08, -4.37114e-08, 8.74228e-08, -1, 24.5623, 4.67509, 1.92986)
+transform = Transform3D(-5.73206e-15, -1, -8.74228e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, 8.74228e-08, -1, 25.8074, 4.67509, 1.92986)
 light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
 light_energy = 0.621
 light_size = 0.922
@@ -1041,7 +1023,7 @@ omni_range = 9.13347
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="wall_light_1" type="OmniLight3D" parent="world/lights"]
-transform = Transform3D(1.91069e-15, 1, -1.06581e-14, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 1.06581e-14, 1, -11.8078, 4.67509, -1.75914)
+transform = Transform3D(1.91068e-15, -1, 8.74228e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -8.74228e-08, -1, 32.0045, 4.67509, -15.7551)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
@@ -1051,8 +1033,217 @@ omni_range = 9.13347
 [node name="small_industrial_light" parent="world/lights/wall_light_1" instance=ExtResource("10_yhc4x")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
+[node name="wall_light_2" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(1.91068e-15, -1, 8.74228e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -8.74228e-08, -1, 40.0483, 4.67509, 2.31352)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_2" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_3" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-5.73205e-15, 1, -1.74846e-07, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, 10.9596, 4.67509, -6.11512)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_3" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_8" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, -2.08616e-07, -1, -1, 7.34255e-15, 4.37114e-08, -1.77636e-15, 1, -2.08616e-07, 8.28771, 4.67509, -2.78903)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_8" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_9" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, -2.08616e-07, -1, -1, 7.34255e-15, 4.37114e-08, -1.77636e-15, 1, -2.08616e-07, -4.6102, 4.67509, -2.78903)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_9" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_10" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, -2.08616e-07, -1, -1, 7.34255e-15, 4.37114e-08, -1.77636e-15, 1, -2.08616e-07, -16.2268, 4.67509, -3.69414)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_10" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_11" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-8.88178e-16, 1, -2.08616e-07, -1, 8.23073e-15, 4.37114e-08, 4.37114e-08, 2.08616e-07, 1, -29.0413, 4.67509, -1.50781)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_11" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_12" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, -2.52328e-07, -1, -1, 8.23073e-15, 4.37114e-08, -2.79886e-15, 1, -2.52328e-07, -27.0722, 4.67509, -9.80521)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_12" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_13" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, 3.3975e-07, 1, -1, 8.23073e-15, 4.37114e-08, 6.62024e-15, -1, 3.3975e-07, -21.7226, 4.67509, 0.286729)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_13" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_14" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, 3.3975e-07, 1, -1, 8.23073e-15, 4.37114e-08, 6.62024e-15, -1, 3.3975e-07, 1.55621, 4.67509, 1.80187)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_14" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_15" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.70955e-15, -1, 2.96039e-07, -1, 8.23073e-15, 4.37114e-08, -4.37114e-08, -2.96039e-07, -1, -9.98856, 4.67509, 6.73317)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_15" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_17" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-8.88179e-16, 1, -2.08616e-07, -1, 8.23073e-15, 4.37114e-08, 4.37114e-08, 2.08616e-07, 1, -14.3106, 4.67509, 10.5596)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_17" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_16" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, 3.3975e-07, 1, -1, 8.23073e-15, 4.37114e-08, 6.62024e-15, -1, 3.3975e-07, -8.27927, 4.67509, 15.0517)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_16" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_5" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-5.73205e-15, 1, -1.74846e-07, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, 10.9596, 4.67509, 7.10621)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_5" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_7" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(8.88178e-16, -1, 8.9407e-08, -1, 3.01993e-15, 4.37114e-08, -4.37114e-08, -8.9407e-08, -1, 16.7738, 4.67509, 13.3495)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_7" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_19" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, -8.9407e-08, -1, -1, -5.32789e-16, 4.37114e-08, -4.44089e-15, 1, -8.9407e-08, 21.4546, 4.67509, 11.2159)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_19" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_20" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, 1.7683e-07, 1, -1, -5.3279e-16, 4.37114e-08, 8.26226e-15, -1, 1.7683e-07, 21.4546, 4.67509, 22.0528)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_20" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_6" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-5.73205e-15, 1, -1.74846e-07, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, 10.9596, 4.67509, 20.328)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_6" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_4" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-5.73205e-15, 1, -1.74846e-07, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, 10.9596, 4.67509, -15.8553)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_4" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_18" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(9.55343e-15, -1, 2.62268e-07, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -2.62268e-07, -1, 16.7827, 4.67509, -11.927)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/lights/wall_light_18" instance=ExtResource("10_yhc4x")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
 [node name="thick_wall_light_1" type="OmniLight3D" parent="world/lights"]
-transform = Transform3D(4.37114e-08, 1.39091e-08, 1, -1, -2.19088e-15, 4.37114e-08, 2.79886e-15, -1, 1.39091e-08, -7.15655, 4.67509, 14.4618)
+transform = Transform3D(4.37114e-08, 1.39091e-08, 1, -1, -2.19087e-15, 4.37114e-08, 2.79886e-15, -1, 1.39091e-08, -2.27175, 4.67509, 14.4618)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 1.466
 light_size = 0.922
@@ -1062,8 +1253,129 @@ omni_range = 9.13347
 [node name="wide_industrial_light" parent="world/lights/thick_wall_light_1" instance=ExtResource("11_j4fym")]
 transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
 
+[node name="thick_wall_light_2" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, 1.39091e-08, 1, -1, -2.19087e-15, 4.37114e-08, 2.79886e-15, -1, 1.39091e-08, 8.16541, 4.67509, 14.4618)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_2" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_3" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.70955e-15, 1, -5.76205e-08, -1, -2.19087e-15, 4.37114e-08, 4.37114e-08, 5.76205e-08, 1, 1.52359, 4.67509, 6.40876)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_3" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_4" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(0, -1, -2.98023e-08, -1, -1.3027e-15, 4.37114e-08, -4.37114e-08, 2.98023e-08, -1, -1.0495, 4.67509, 6.40876)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_4" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_5" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 7.35137e-08, -1, -1, -1.3027e-15, 4.37114e-08, 1.91069e-15, 1, 7.35137e-08, -10.1827, 4.67509, -9.23174)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_5" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_6" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 7.35137e-08, -1, -1, -1.3027e-15, 4.37114e-08, 1.91069e-15, 1, 7.35137e-08, -19.6031, 4.67509, -9.23174)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_6" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_7" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 7.35137e-08, -1, -1, -1.3027e-15, 4.37114e-08, 1.91069e-15, 1, 7.35137e-08, -22.2567, 4.67509, 2.28257)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_7" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_8" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, 1.39091e-08, 1, -1, -1.3027e-15, 4.37114e-08, 1.91069e-15, -1, 1.39091e-08, -22.2567, 4.67509, 14.4667)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_8" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_9" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(3.82137e-15, 1, 1.17225e-07, -1, -1.3027e-15, 4.37114e-08, 4.37114e-08, -1.17225e-07, 1, -28.4803, 4.67509, 8.37465)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_9" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_10" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(8.47033e-22, -1, -2.98023e-08, -1, -1.3027e-15, 4.37114e-08, -4.37114e-08, 2.98023e-08, -1, -16.2784, 4.67509, 8.37465)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_10" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_11" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(8.47033e-22, -1, -2.98023e-08, -1, -1.3027e-15, 4.37114e-08, -4.37114e-08, 2.98023e-08, -1, 31.2068, 4.67509, 16.7634)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_11" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
+[node name="thick_wall_light_12" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-3.82137e-15, 1, -5.76205e-08, -1, -1.3027e-15, 4.37114e-08, 4.37114e-08, 5.76205e-08, 1, 33.7312, 4.67509, 16.7634)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 1.466
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="wide_industrial_light" parent="world/lights/thick_wall_light_12" instance=ExtResource("11_j4fym")]
+transform = Transform3D(-0.7, -3.28626e-15, -8.56396e-23, -1.9592e-15, 0.7, 2.08616e-08, -3.55271e-15, 2.08616e-08, -0.7, 0, -1.04372, 0)
+
 [node name="long_wall_light_1" type="OmniLight3D" parent="world/lights"]
-transform = Transform3D(-4.37114e-08, 2.64253e-07, -1, -1, -4.79628e-15, 4.37114e-08, 6.75456e-15, 1, 2.64253e-07, 17.8878, 4.67509, -21.2247)
+transform = Transform3D(-4.37114e-08, 2.64253e-07, -1, -1, -4.79631e-15, 4.37114e-08, 6.75456e-15, 1, 2.64253e-07, 22.8878, 4.67509, -21.234)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 2.106
 light_size = 0.922
@@ -1071,6 +1383,94 @@ light_bake_mode = 1
 omni_range = 9.13347
 
 [node name="long_industrial_light" parent="world/lights/long_wall_light_1" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_9" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 2.64253e-07, -1, -1, -4.79631e-15, 4.37114e-08, 6.75456e-15, 1, 2.64253e-07, 2.6052, 4.67509, -8.99568)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_9" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_2" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 2.64253e-07, -1, -1, -4.79631e-15, 4.37114e-08, 6.75456e-15, 1, 2.64253e-07, 34.8878, 4.67509, -21.234)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_2" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_3" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, -3.51676e-07, 1, -1, -4.79631e-15, 4.37114e-08, -1.05759e-14, -1, -3.51676e-07, 34.8878, 4.67509, -8.01661)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_3" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_4" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, -3.51676e-07, 1, -1, -4.79631e-15, 4.37114e-08, -1.05759e-14, -1, -3.51676e-07, 22.8878, 4.67509, -8.01661)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_4" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_5" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 4.39099e-07, -1, -1, -4.79631e-15, 4.37114e-08, 1.43973e-14, 1, 4.39099e-07, 22.8878, 4.67509, -4.99527)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_5" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_6" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(-4.37114e-08, 4.39099e-07, -1, -1, -4.79631e-15, 4.37114e-08, 1.43973e-14, 1, 4.39099e-07, 34.8878, 4.67509, -4.99527)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_6" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_7" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, -5.26521e-07, 1, -1, -4.79631e-15, 4.37114e-08, -1.82187e-14, -1, -5.26521e-07, 34.8878, 4.67509, 8.98741)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_7" instance=ExtResource("12_wqc51")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="long_wall_light_8" type="OmniLight3D" parent="world/lights"]
+transform = Transform3D(4.37114e-08, -5.26521e-07, 1, -1, -4.79631e-15, 4.37114e-08, -1.82187e-14, -1, -5.26521e-07, 22.8878, 4.67509, 8.98741)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 2.106
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="world/lights/long_wall_light_8" instance=ExtResource("12_wqc51")]
 transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
 
 [node name="decorations" type="Node3D" parent="world"]

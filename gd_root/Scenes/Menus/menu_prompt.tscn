@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://0vldhh4ok64r"]
 
-[ext_resource type="Script" path="res://Scripts/Menus/menu_prompt.gd" id="1_subil"]
-[ext_resource type="Script" path="res://Scripts/Menus/prompt_label.gd" id="2_ttcvi"]
+[ext_resource type="Script" uid="uid://by025p3dljyv8" path="res://Scripts/Menus/menu_prompt.gd" id="1_subil"]
+[ext_resource type="Script" uid="uid://cght2de1uywfq" path="res://Scripts/Menus/prompt_label.gd" id="2_ttcvi"]
 
 [node name="MenuPrompt" type="Control"]
 process_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=68 format=3 uid="uid://c1b3tl70snhpk"]
 
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
+[ext_resource type="Script" uid="uid://kuj2vn7no7nm" path="res://Scripts/Rooms/RoomManagers/pipe_puzzle_test_manager.gd" id="1_dtvxa"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="1_mk05i"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_4i20w"]
 [ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="2_dcjq1"]
@@ -34,7 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="33_25psr"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="34_cb4h5"]
 [ext_resource type="Texture2D" uid="uid://b2heqf7suu2aj" path="res://Imports/images/id_card_placeholder.png" id="35_rchbq"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/pipe_elevator_doors.gd" id="36_fufeu"]
+[ext_resource type="Script" uid="uid://ccnaedaltia6w" path="res://Scripts/Rooms/RoomObjects/pipe_elevator_doors.gd" id="36_fufeu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hampm"]
 size = Vector3(20, 1, 20)

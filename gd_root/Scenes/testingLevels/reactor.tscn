@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dvvb0yje1y5s"]
 
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_ld5qt"]
+[ext_resource type="Script" uid="uid://c2fwdkfy8ctgc" path="res://Scripts/Rooms/RoomManagers/reactor.gd" id="1_ld5qt"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Imports/Models/placeholders/PlaceholderDoor/tinker.obj" id="1_o7yt5"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_1agsy"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_gwewk"]

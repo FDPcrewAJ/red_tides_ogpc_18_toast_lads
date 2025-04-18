@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://2o7tnodsbjo"]
 
-[ext_resource type="Script" path="res://Scripts/Interfaces/storage_puzzle_interface.gd" id="1_arey5"]
-[ext_resource type="Script" path="res://Scripts/Interfaces/keypad_label.gd" id="2_0xx60"]
-[ext_resource type="Script" path="res://Scripts/Interfaces/result_label.gd" id="3_pwbdf"]
+[ext_resource type="Script" uid="uid://bu12x5uqgh1lv" path="res://Scripts/Interfaces/storage_puzzle_interface.gd" id="1_arey5"]
+[ext_resource type="Script" uid="uid://bg7frbvr64w0q" path="res://Scripts/Interfaces/keypad_label.gd" id="2_0xx60"]
+[ext_resource type="Script" uid="uid://dxrl2b3m08ro8" path="res://Scripts/Interfaces/result_label.gd" id="3_pwbdf"]
 
 [node name="StoragePuzzleInterface" type="Node2D"]
 script = ExtResource("1_arey5")

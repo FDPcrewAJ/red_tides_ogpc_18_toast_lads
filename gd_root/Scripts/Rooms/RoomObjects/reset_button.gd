@@ -1,19 +1,21 @@
 extends MeshInstance3D
 
+@onready var interactables_display: Control = $"../../../InteractablesDisplay"
+@onready var reactor_label: Label3D = $"../../../reactor_main/central_column/MeshInstance3D5/ReactorLabel"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var pipe_valve: Node3D = $"../../Pipeline/pipe_valve"
+@onready var pipe_valve_2: Node3D = $"../../Pipeline2/pipe_valve2"
+@onready var pipe_valve_3: Node3D = $"../../Pipeline3/pipe_valve3"
+@onready var pipe_valve_4: Node3D = $"../../Pipeline4/pipe_valve4"
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Global.current_object == "ButtonBody":
 		#Must correspond to the interactables display node in the current scene
-		$"../../../InteractablesDisplay"._show_interactable()
+		interactables_display._show_interactable()
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-			$"../../Pipeline/pipe_valve".reset_pipe()
-			$"../../Pipeline2/pipe_valve2".reset_pipe()
-			$"../../Pipeline3/pipe_valve3".reset_pipe()
-			$"../../Pipeline4/pipe_valve4".reset_pipe()
-			$"../../../reactor/MeshInstance3D5/ReactorLabel".coolant = 0
+			pipe_valve.reset_pipe()
+			pipe_valve_2.reset_pipe()
+			pipe_valve_3.reset_pipe()
+			pipe_valve_4.reset_pipe()
+			reactor_label.coolant = 0

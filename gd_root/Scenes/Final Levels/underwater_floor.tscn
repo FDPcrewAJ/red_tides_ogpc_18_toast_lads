@@ -311,18 +311,18 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 [node name="pipe_straight2" parent="reactor_puzzle/Pipeline2" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -1.19535, 0, 0)
 
-[node name="pipe_valve" parent="reactor_puzzle/Pipeline2" instance=ExtResource("6_7rtsi")]
+[node name="pipe_valve2" parent="reactor_puzzle/Pipeline2" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
-[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline2/pipe_valve"]
+[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline2/pipe_valve2"]
 transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
 script = ExtResource("8_h5ur3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline2/pipe_valve/ValveBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline2/pipe_valve"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline2/pipe_valve2"]
 transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
 mesh = SubResource("CylinderMesh_yuo51")
 
@@ -347,18 +347,18 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 [node name="pipe_straight2" parent="reactor_puzzle/Pipeline3" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -1.19535, 0, 0)
 
-[node name="pipe_valve" parent="reactor_puzzle/Pipeline3" instance=ExtResource("6_7rtsi")]
+[node name="pipe_valve3" parent="reactor_puzzle/Pipeline3" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
-[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline3/pipe_valve"]
+[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
 transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
 script = ExtResource("8_h5ur3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline3/pipe_valve/ValveBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline3/pipe_valve"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
 transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
 mesh = SubResource("CylinderMesh_yuo51")
 
@@ -383,18 +383,18 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 [node name="pipe_straight2" parent="reactor_puzzle/Pipeline4" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -1.19535, 0, 0)
 
-[node name="pipe_valve" parent="reactor_puzzle/Pipeline4" instance=ExtResource("6_7rtsi")]
+[node name="pipe_valve4" parent="reactor_puzzle/Pipeline4" instance=ExtResource("6_7rtsi")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
-[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline4/pipe_valve"]
+[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]
 transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
 script = ExtResource("8_h5ur3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline4/pipe_valve/ValveBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline4/pipe_valve"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]
 transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
 mesh = SubResource("CylinderMesh_yuo51")
 

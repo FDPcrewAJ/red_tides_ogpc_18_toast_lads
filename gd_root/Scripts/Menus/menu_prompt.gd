@@ -7,7 +7,7 @@ func _ready() -> void:
 	$CloseButton.hide()
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("exit"):
 		if Global.in_menu == true:
 			_on_close_button_pressed()

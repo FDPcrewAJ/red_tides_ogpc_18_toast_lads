@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=42 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="2_pcjbw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="6_048w4"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="6_avn6a"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="7_rdx40"]
+[ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="10_ca3rm"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -675,5 +676,62 @@ transform = Transform3D(-6.77529e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90101e-0
 transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07, -5.7079, 0.5, -7.04945)
 
 [node name="decorations" type="Node3D" parent="world/building"]
+
+[node name="wooden_desk_1" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, -1.5, 0, 1, 0, 1, 0, -6.55671e-08, 0.667971, 0.5, -10.3126)
+
+[node name="wooden_desk_2" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.6731, 0.5, -10.8542)
+
+[node name="wooden_desk_3" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2128, 0.5, -10.8542)
+
+[node name="wooden_desk_4" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6588, 0.5, -10.8542)
+
+[node name="wooden_desk_5" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.6731, 0.5, -6.16914)
+
+[node name="wooden_desk_6" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2128, 0.5, -6.16914)
+
+[node name="wooden_desk_7" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6588, 0.5, -6.16914)
+
+[node name="wooden_desk_8" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.6731, 0.5, -1.8664)
+
+[node name="wooden_desk_9" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.2128, 0.5, -1.8664)
+
+[node name="wooden_desk_10" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6588, 0.5, -1.8664)
+
+[node name="wooden_desk_11" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.7278, 0.5, -10.8542)
+
+[node name="wooden_desk_12" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.1882, 0.5, -10.8542)
+
+[node name="wooden_desk_13" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.7421, 0.5, -10.8542)
+
+[node name="wooden_desk_14" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.7278, 0.5, -6.16914)
+
+[node name="wooden_desk_15" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.1882, 0.5, -6.16914)
+
+[node name="wooden_desk_16" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.7421, 0.5, -6.16914)
+
+[node name="wooden_desk_17" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.7278, 0.5, -1.8664)
+
+[node name="wooden_desk_18" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.1882, 0.5, -1.8664)
+
+[node name="wooden_desk_19" parent="world/building/decorations" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.7421, 0.5, -1.8664)
 
 [node name="interactables" type="Node3D" parent="world"]

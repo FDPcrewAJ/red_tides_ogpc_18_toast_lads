@@ -274,7 +274,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.6686, 31.7192)
 shape = SubResource("BoxShape3D_dq8vp")
 
 [node name="boat" type="RigidBody3D" parent="world"]
-transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 4.239, 169)
+transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 4.239, -36.3841)
 collision_mask = 5
 script = ExtResource("6_ohgcl")
 float_force = 1.3

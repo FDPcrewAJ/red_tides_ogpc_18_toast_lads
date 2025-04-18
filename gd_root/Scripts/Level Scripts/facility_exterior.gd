@@ -4,6 +4,8 @@ extends Node3D
 @onready var boat = $world/boat
 @onready var intro_camera: Camera3D = $intro_camera
 @onready var intro_objects: Node3D = $world/boat/intro_objects
+@onready var interactables_display: Control = $InteractablesDisplay
+
 
 var boat_end_pos = -44.0
 
@@ -20,10 +22,12 @@ func _ready():
 func _process(_delta):
 	#Room Switching
 	if Global.current_object == "doorCol":
+		interactables_display._show_interactable()
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.floor = "Hub"
-			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Testing Rooms/pipe_puzzle_test.tscn")
-	
+			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Final Levels/facility_enterance.tscn")
+
+
 	# Boat Movement Control
 	if boat.global_position.z > boat_end_pos:
 		boat.apply_central_force(Vector3(0,0,-5))

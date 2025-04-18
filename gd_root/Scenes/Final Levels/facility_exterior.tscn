@@ -1,10 +1,11 @@
-[gd_scene load_steps=68 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=69 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
 [ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="2_uhreo"]
+[ext_resource type="Script" path="res://Scripts/Menus/facility_exterior_view_interact_menu.gd" id="3_besqy"]
 [ext_resource type="Script" path="res://Scripts/Scene Objects/water_plane.gd" id="5_4vmig"]
 [ext_resource type="Material" uid="uid://besr6d88tc006" path="res://Scripts/Shaders/water_shader_main.tres" id="5_ao2o6"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
@@ -238,6 +239,9 @@ size = Vector2(1, 1)
 script = ExtResource("1_mup67")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("2_1n4xm")]
+
+[node name="view_interact_menu" type="Node3D" parent="."]
+script = ExtResource("3_besqy")
 
 [node name="intro_camera" type="Camera3D" parent="."]
 transform = Transform3D(0.685437, 0.0656887, 0.725163, 0, 0.995922, -0.0902154, -0.728132, 0.061837, 0.682642, 101.049, 15.093, 128.752)

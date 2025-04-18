@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=52 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reset_button.gd" id="11_404ax"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_label.gd" id="11_uvfqq"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_elevator_doors.gd" id="11_ykamr"]
+[ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="16_6clbt"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_puzzle_note.gd" id="17_vul3n"]
 
 [sub_resource type="Environment" id="Environment_34okx"]
@@ -119,11 +120,12 @@ albedo_color = Color(0.205117, 0.205117, 0.205117, 1)
 material = SubResource("StandardMaterial3D_555l6")
 size = Vector3(2.9, 0.9, 0.9)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7kei"]
-albedo_color = Color(1, 1, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vs72q"]
+transparency = 1
+albedo_texture = ExtResource("16_6clbt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wm3ql"]
-material = SubResource("StandardMaterial3D_a7kei")
+material = SubResource("StandardMaterial3D_vs72q")
 size = Vector2(0.7, 0.7)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nx3h5"]
@@ -144,12 +146,12 @@ size = Vector2(0.1, 4)
 
 [node name="underwater_floor" type="Node3D"]
 
-[node name="player" parent="." instance=ExtResource("1_tvhvi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15468, 17)
-
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_sf2df")]
 
 [node name="MenuPrompt" parent="." instance=ExtResource("2_d2p0f")]
+
+[node name="player" parent="." instance=ExtResource("1_tvhvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.15468, 17)
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_34okx")
@@ -469,7 +471,7 @@ font_size = 80
 script = ExtResource("11_uvfqq")
 
 [node name="ReactorPuzzleNote" type="MeshInstance3D" parent="reactor_main"]
-transform = Transform3D(-2.06572e-08, -0.472582, 0.881287, 1, -4.37114e-08, -1.64746e-15, 3.85223e-08, 0.881287, 0.472582, -1.48437, 4.5, 2.62443)
+transform = Transform3D(0.881287, -0.472582, -1.49012e-08, -4.37114e-08, -2.98023e-08, -1, 0.472582, 0.881287, 0, -1.48437, 4.5, 2.62443)
 mesh = SubResource("PlaneMesh_wm3ql")
 skeleton = NodePath("../..")
 script = ExtResource("17_vul3n")

@@ -7,9 +7,10 @@ func _ready() -> void:
 	$CloseButton.hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_released("exit"):
+		if Global.in_menu == true:
+			_on_close_button_pressed()
 
 func pause():
 	get_tree().paused = true

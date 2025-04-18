@@ -117,11 +117,8 @@ environment = SubResource("Environment_ncvlc")
 
 [node name="world" type="Node3D" parent="."]
 
-[node name="open_generator_door" parent="world" instance=ExtResource("8_ltams")]
-transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)
-
-[node name="exit_door" parent="world" instance=ExtResource("4_ieqvj")]
-transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.5, 0.5, 0)
+[node name="elevator" parent="world" instance=ExtResource("9_lgp1y")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7.48814, 0.5, 9.40793)
 
 [node name="building" type="Node3D" parent="world"]
 
@@ -372,7 +369,14 @@ omni_range = 9.13347
 [node name="small_industrial_light" parent="world/building/lights/wall_light_7" instance=ExtResource("5_3cw6y")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
-[node name="decorations" type="Node3D" parent="world"]
+[node name="doors" type="Node3D" parent="world/building"]
 
-[node name="elevator" parent="." instance=ExtResource("9_lgp1y")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7.48814, 0.5, 9.40793)
+[node name="open_generator_door" parent="world/building/doors" instance=ExtResource("8_ltams")]
+transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)
+
+[node name="exit_door" parent="world/building/doors" instance=ExtResource("4_ieqvj")]
+transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.5, 0.5, 0)
+
+[node name="decorations" type="Node3D" parent="world/building"]
+
+[node name="interactables" type="Node3D" parent="world"]

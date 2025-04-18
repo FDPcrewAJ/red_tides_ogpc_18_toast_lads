@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=70 format=3 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
@@ -21,6 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://gmxa83wi78u0" path="res://Assets/Objects/IBeam/i_beam.obj" id="10_1t6sg"]
 [ext_resource type="PackedScene" uid="uid://dig306bgkj8vt" path="res://Assets/Objects/Railings/railing_5_segment.tscn" id="11_gl631"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_i8itn"]
+[ext_resource type="AudioStream" uid="uid://rm6ahr224b0x" path="res://Audio/Sounds/ocean/loop_ocean_background.mp3" id="22_yic33"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cwpdp"]
 material = ExtResource("5_ao2o6")
@@ -873,5 +874,11 @@ transform = Transform3D(-3.0598e-08, 3.0598e-08, 0.7, 0.7, -3.0598e-08, 3.0598e-
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -35.356, 0)
 mesh = SubResource("PlaneMesh_h3cy4")
 skeleton = NodePath("../../water_plane")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_yic33")
+autoplay = true
+bus = &"Sfx"
+parameters/looping = true
 
 [connection signal="area_entered" from="world/death_col" to="." method="_on_death_col_area_entered"]

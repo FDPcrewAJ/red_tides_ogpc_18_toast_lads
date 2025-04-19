@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfk2h83axywy1"]
 
-[ext_resource type="Script" path="res://Scripts/Interfaces/fire_control_interface.gd" id="1_iliv8"]
-[ext_resource type="Script" path="res://Scripts/Interfaces/water_lable.gd" id="2_80cb6"]
-[ext_resource type="Script" path="res://Scripts/Interfaces/fire_info_label.gd" id="4_lxqwj"]
+[ext_resource type="Script" uid="uid://b0nku2h6d3o4n" path="res://Scripts/Interfaces/fire_control_interface.gd" id="1_iliv8"]
+[ext_resource type="Script" uid="uid://csgjd27q3ojk3" path="res://Scripts/Interfaces/water_lable.gd" id="2_80cb6"]
+[ext_resource type="Script" uid="uid://cykmprfb83g5g" path="res://Scripts/Interfaces/fire_info_label.gd" id="4_lxqwj"]
 
 [node name="fire_control_interface" type="Node2D"]
 script = ExtResource("1_iliv8")

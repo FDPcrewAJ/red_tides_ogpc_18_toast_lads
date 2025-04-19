@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvtioegf8qro0"]
 
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="1_7e6mr"]
-[ext_resource type="Script" path="res://Scripts/Menus/settings/hotkey_rebind_button.gd" id="1_dtt74"]
+[ext_resource type="Script" uid="uid://dmjtamijllxe0" path="res://Scripts/Menus/settings/hotkey_rebind_button.gd" id="1_dtt74"]
 
 [node name="hotkey_rebind_button" type="Control" groups=["hotkey_button"]]
 layout_mode = 3

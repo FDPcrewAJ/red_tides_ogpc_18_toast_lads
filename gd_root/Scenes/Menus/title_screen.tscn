@@ -1,7 +1,7 @@
 [gd_scene load_steps=56 format=3 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
-[ext_resource type="Script" path="res://Scripts/Scene Objects/boat_bouyancy.gd" id="2_8yslp"]
+[ext_resource type="Script" uid="uid://cei718tfpvuht" path="res://Scripts/Scene Objects/boat_bouyancy.gd" id="2_8yslp"]
 [ext_resource type="Material" uid="uid://besr6d88tc006" path="res://Scripts/Shaders/water_shader_main.tres" id="2_dqmq5"]
 [ext_resource type="PackedScene" uid="uid://dqjbnuea3t06a" path="res://Scenes/Menus/main_menu_title.tscn" id="5_o57ks"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="5_owl5n"]

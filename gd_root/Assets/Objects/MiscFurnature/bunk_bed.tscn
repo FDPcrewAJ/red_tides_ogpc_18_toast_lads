@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://jtf8g1dwclif"]
+
+[ext_resource type="PackedScene" uid="uid://b7upgwpupieqq" path="res://Imports/Models/Objects/Misc Furnature/bunkBed.gltf" id="1_60ep8"]
+
+[node name="bunkBed" instance=ExtResource("1_60ep8")]

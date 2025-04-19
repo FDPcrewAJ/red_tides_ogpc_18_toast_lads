@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="4_2fk4h"]
 [ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="5_nhmnr"]
 [ext_resource type="Shader" uid="uid://vvin5ees2f00" path="res://Scripts/Shaders/random_texture_tiler.tres" id="6_4niii"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/hub_elevator_doors.gd" id="8_bw2f4"]
+[ext_resource type="Script" uid="uid://bd0qvm5ponlnc" path="res://Scripts/Rooms/RoomObjects/hub_elevator_doors.gd" id="8_bw2f4"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="11_0pu5r"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="12_5mymx"]
 

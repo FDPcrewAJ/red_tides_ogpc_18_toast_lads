@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chlsrq4hbl467"
-path.s3tc="res://.godot/imported/metalLocker_0.png-2c76d3e3cc9f0f69ac053d921a077585.s3tc.ctex"
+path="res://.godot/imported/metalLocker_0.png-2c76d3e3cc9f0f69ac053d921a077585.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "a9660149c62f12b5e8e4ddb20d75a94c"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Imports/Models/Objects/Misc Furnature/metalLocker_0.png"
-dest_files=["res://.godot/imported/metalLocker_0.png-2c76d3e3cc9f0f69ac053d921a077585.s3tc.ctex"]
+dest_files=["res://.godot/imported/metalLocker_0.png-2c76d3e3cc9f0f69ac053d921a077585.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

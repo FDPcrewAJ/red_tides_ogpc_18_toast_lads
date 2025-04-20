@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=111 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_gl2mt"]
 [ext_resource type="Texture2D" uid="uid://ea5nc6kal33" path="res://Imports/images/layouts/floor_2_schematic.png" id="2_2sv3j"]
@@ -13,6 +13,14 @@
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_j4fym"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="12_wqc51"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="13_8ta0j"]
+[ext_resource type="PackedScene" uid="uid://jtf8g1dwclif" path="res://Assets/Objects/MiscFurnature/bunk_bed.tscn" id="14_hwenw"]
+[ext_resource type="PackedScene" uid="uid://cjw1epxc7yxt4" path="res://Assets/Objects/MiscFurnature/metal_locker.tscn" id="14_o33fy"]
+[ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="16_3k7gm"]
+[ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="17_wc5l3"]
+[ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="18_u3b05"]
+[ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="19_eqdcm"]
+[ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="20_y3vwj"]
+[ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="21_uct8y"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -346,7 +354,7 @@ size = Vector3(0.5, 5, 7.25)
 material = ExtResource("3_6sppc")
 size = Vector3(0.5, 5, 7.25)
 
-[node name="first_floor" type="Node3D"]
+[node name="second_floor" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_gl2mt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.9219, 1.6, 2.18129)
@@ -366,6 +374,8 @@ texture = ExtResource("2_2sv3j")
 transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 26.1682, 0.5, 1.95557)
 
 [node name="building" type="Node3D" parent="world"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="floor" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
@@ -412,6 +422,8 @@ mesh = SubResource("PlaneMesh_xh4l5")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 0)
+visible = false
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/ceiling"]
 shape = SubResource("BoxShape3D_4hmqv")
@@ -1472,3 +1484,226 @@ transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15
 [node name="decorations" type="Node3D" parent="world/building"]
 
 [node name="interactables" type="Node3D" parent="world"]
+
+[node name="decorations" type="Node3D" parent="world"]
+
+[node name="bunkRoom1" type="Node3D" parent="world/decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.157, 1.90735e-06, 9.6981)
+
+[node name="metal_locker" parent="world/decorations/bunkRoom1" instance=ExtResource("14_o33fy")]
+transform = Transform3D(0.0629782, 0, 0.770962, 0, 0.77353, 0, -0.770962, 0, 0.0629782, 8.47673, 0.499998, -2.09427)
+
+[node name="metal_locker2" parent="world/decorations/bunkRoom1" instance=ExtResource("14_o33fy")]
+transform = Transform3D(-0.0334038, 0, 0.772809, 0, 0.77353, 0, -0.772809, 0, -0.0334038, 8.47673, 0.499998, -0.813613)
+
+[node name="metal_locker3" parent="world/decorations/bunkRoom1" instance=ExtResource("14_o33fy")]
+transform = Transform3D(-3.38121e-08, 0, 0.77353, 0, 0.77353, 0, -0.77353, 0, -3.38121e-08, 8.47673, 0.499998, 0.732365)
+
+[node name="metal_locker4" parent="world/decorations/bunkRoom1" instance=ExtResource("14_o33fy")]
+transform = Transform3D(-0.025849, 0, 0.773098, 0, 0.77353, 0, -0.773098, 0, -0.025849, 8.47673, 2.42401, -2.09427)
+
+[node name="metal_locker5" parent="world/decorations/bunkRoom1" instance=ExtResource("14_o33fy")]
+transform = Transform3D(-0.0929831, 0, 0.767921, 0, 0.77353, 0, -0.767921, 0, -0.0929831, 8.47673, 2.42278, -0.813613)
+
+[node name="metal_locker6" parent="world/decorations/bunkRoom1" instance=ExtResource("14_o33fy")]
+transform = Transform3D(0.206717, 0, 0.745397, 0, 0.77353, 0, -0.745397, 0, 0.206717, 8.43279, 2.41329, 0.837158)
+
+[node name="bunkBedStack" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25546, 0, 4.84491)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack2" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25546, 0, 0.619338)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack2" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack2" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack4" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25546, 0, -3.36065)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack4" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack4" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack3" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25523, 0, -7.45586)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack3" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack3" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack5" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38478, 0, 4.84491)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack5" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack5" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack6" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38478, 0, 0.619338)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack6" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack6" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack7" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38478, 0, -3.36065)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack7" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack7" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack8" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.385, 0, -7.45586)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack8" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack8" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack9" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04688, 0, 4.84491)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack9" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack9" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack12" type="Node3D" parent="world/decorations/bunkRoom1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0471, 0, -7.45586)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom1/bunkBedStack12" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom1/bunkBedStack12" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkRoom2" type="Node3D" parent="world/decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4572, 3.8147e-06, 15.3495)
+
+[node name="bunkBedStack" type="Node3D" parent="world/decorations/bunkRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68277, 0, -3.50291)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom2/bunkBedStack" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom2/bunkBedStack" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack2" type="Node3D" parent="world/decorations/bunkRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68277, 0, 0.19262)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom2/bunkBedStack2" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom2/bunkBedStack2" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack3" type="Node3D" parent="world/decorations/bunkRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51549, 0, -3.50291)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom2/bunkBedStack3" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom2/bunkBedStack3" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack5" type="Node3D" parent="world/decorations/bunkRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48451, 0, -3.50291)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom2/bunkBedStack5" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom2/bunkBedStack5" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="bunkBedStack6" type="Node3D" parent="world/decorations/bunkRoom2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48451, 0, 0.19262)
+metadata/_edit_group_ = true
+
+[node name="bunkBed" parent="world/decorations/bunkRoom2/bunkBedStack6" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, -0.0165915, 0)
+
+[node name="bunkBed2" parent="world/decorations/bunkRoom2/bunkBedStack6" instance=ExtResource("14_hwenw")]
+transform = Transform3D(-5.84903e-08, 0, -1.3381, 0, 2.23076, 0, 1.3381, 0, -5.84903e-08, 0, 2.07107, 0)
+
+[node name="metal_locker" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.19032, 0, -0.0317933, 0, 1.19074, 0, 0.0317933, 0, 1.19032, 4.51302, 0.499996, 6.52798)
+
+[node name="metal_locker2" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.17302, 0, 0.204703, 0, 1.19074, 0, -0.204703, 0, 1.17302, 2.69744, 0.499996, 6.52798)
+
+[node name="metal_locker3" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.1889, 0, -0.0663032, 0, 1.19074, 0, 0.0663032, 0, 1.1889, 0.913462, 0.499996, 6.52798)
+
+[node name="metal_locker4" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.17563, 0, 0.189126, 0, 1.19074, 0, -0.189126, 0, 1.17563, -1.08654, 0.499996, 6.52798)
+
+[node name="metal_locker5" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.18962, 0, 0.0517735, 0, 1.19074, 0, -0.0517735, 0, 1.18962, -3.02686, 0.499996, 6.52798)
+
+[node name="metal_locker6" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.10069, 0, 0.454257, 0, 1.19074, 0, -0.454257, 0, 1.10069, -4.86388, 0.499996, 6.52798)
+
+[node name="metal_locker7" parent="world/decorations/bunkRoom2" instance=ExtResource("14_o33fy")]
+transform = Transform3D(1.18349, 0, -0.131244, 0, 1.19074, 0, 0.131244, 0, 1.18349, -7.10924, 0.499996, 6.47517)
+
+[node name="captainsRoom" type="Node3D" parent="world/decorations"]
+
+[node name="bunkBed" parent="world/decorations/captainsRoom" instance=ExtResource("14_hwenw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1711, 0.499999, 20.3172)
+
+[node name="metal_locker" parent="world/decorations/captainsRoom" instance=ExtResource("14_o33fy")]
+transform = Transform3D(0.988031, 0, 0.767639, 0, 1.25119, 0, -0.767639, 0, 0.988031, 39.182, 0.499999, 21.3342)
+
+[node name="wooden_desk_1" parent="world/decorations/captainsRoom" instance=ExtResource("16_3k7gm")]
+transform = Transform3D(-1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 33.6611, 0.499999, 12.4408)
+
+[node name="clock" parent="world/decorations/captainsRoom" instance=ExtResource("17_wc5l3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.8084, 2.50513, 12.1309)
+
+[node name="lightSwitch" parent="world/decorations/captainsRoom" instance=ExtResource("18_u3b05")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 35.9011, 1.95708, 10.7763)
+
+[node name="spinnyChair" parent="." instance=ExtResource("19_eqdcm")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 34.6163, 0.476178, 11.6981)
+
+[node name="boat" parent="." instance=ExtResource("20_y3vwj")]
+transform = Transform3D(0.0762289, -0.0314909, 0, 0.0314909, 0.0762289, 0, 0, 0, 0.0824775, 33.1415, 1.64225, 11.4134)
+
+[node name="pen" parent="." instance=ExtResource("21_uct8y")]
+transform = Transform3D(-2.18557e-08, 0.5, -0.866025, -1, -4.37114e-08, 0, -3.78552e-08, 0.866025, 0.5, 33.5505, 1.63479, 12.714)

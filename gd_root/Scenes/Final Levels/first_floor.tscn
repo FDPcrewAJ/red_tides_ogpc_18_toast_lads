@@ -456,7 +456,6 @@ mesh = SubResource("PlaneMesh_xh4l5")
 
 [node name="ceiling" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 0)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/ceiling"]
 shape = SubResource("BoxShape3D_4hmqv")
@@ -1671,7 +1670,7 @@ transform = Transform3D(-0.402683, 0, -0.91534, 0, 1, 0, 0.91534, 0, -0.402683, 
 transform = Transform3D(0.987526, -0.0526242, 0.148399, -0.13746, 0.171501, 0.975547, -0.076788, -0.983778, 0.162128, 0.934181, 0.5, -0.668228)
 
 [node name="metal_box" parent="world/decorations/extraStorage" instance=ExtResource("17_r33p1")]
-transform = Transform3D(-0.995751, 0, 1.219, 0, 1.574, 0, -1.219, 0, -0.995751, 1.59902, 0.5, 5.13091)
+transform = Transform3D(-0.995751, 0, 1.219, 0, 1.574, 0, -1.219, 0, -0.995751, 1.59902, 0.5, 5.44528)
 
 [node name="wooden_box" parent="world/decorations/extraStorage" instance=ExtResource("16_qiblr")]
 transform = Transform3D(1.92681, 0, 0, 0, 1.92681, 0, 0, 0, 1.92681, -2.81659, 0.5, 5.21824)

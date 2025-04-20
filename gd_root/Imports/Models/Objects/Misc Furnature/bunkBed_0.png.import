@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by37atwg4wcu0"
-path.s3tc="res://.godot/imported/bunkBed_0.png-5e5b239a3b875801a7d8abace5bbd44e.s3tc.ctex"
+path="res://.godot/imported/bunkBed_0.png-5e5b239a3b875801a7d8abace5bbd44e.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "32b108ca512beb3663e89e149205b9ce"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Imports/Models/Objects/Misc Furnature/bunkBed_0.png"
-dest_files=["res://.godot/imported/bunkBed_0.png-5e5b239a3b875801a7d8abace5bbd44e.s3tc.ctex"]
+dest_files=["res://.godot/imported/bunkBed_0.png-5e5b239a3b875801a7d8abace5bbd44e.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

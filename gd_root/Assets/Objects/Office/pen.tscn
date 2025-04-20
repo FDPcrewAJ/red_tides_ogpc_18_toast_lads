@@ -3,3 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dvmemss6hlqte" path="res://Imports/Models/Objects/Clutter/pen.gltf" id="1_2y776"]
 
 [node name="pen" instance=ExtResource("1_2y776")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(0.467909, 0, 0, 0, 0.467909, 0, 0, 0, 0.467909, 0, 0, 0)
+
+[node name="circle" parent="Node" index="0"]
+transform = Transform3D(0.477604, 0, 0, 0, 0.477604, 0, 0, 0, 0.477604, 0, -0.371516, 0)

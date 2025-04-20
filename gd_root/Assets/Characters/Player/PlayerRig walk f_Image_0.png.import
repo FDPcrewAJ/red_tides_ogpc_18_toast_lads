@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df3yxw0ak01n8"
-path="res://.godot/imported/coffeeCup_0.png-0cc12bf3a3aa81a6a7352c8718a0ee72.ctex"
+uid="uid://cugmwkbmdakl2"
+path.s3tc="res://.godot/imported/PlayerRig walk f_Image_0.png-ff49c50265664467973e44d618d5570e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "8c1a3a404437bd440a31ab10c4427440"
+"md5": "f886c08120c32e24b07c6d037331a58f"
 }
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Kitchen Items/coffeeCup_0.png"
-dest_files=["res://.godot/imported/coffeeCup_0.png-0cc12bf3a3aa81a6a7352c8718a0ee72.ctex"]
+source_file="res://Assets/Characters/Player/PlayerRig walk f_Image_0.png"
+dest_files=["res://.godot/imported/PlayerRig walk f_Image_0.png-ff49c50265664467973e44d618d5570e.s3tc.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

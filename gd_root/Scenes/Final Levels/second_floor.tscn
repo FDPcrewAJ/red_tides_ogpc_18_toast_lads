@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=125 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_gl2mt"]
 [ext_resource type="Texture2D" uid="uid://ea5nc6kal33" path="res://Imports/images/layouts/floor_2_schematic.png" id="2_2sv3j"]
@@ -21,6 +21,20 @@
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="19_eqdcm"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="20_y3vwj"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="21_uct8y"]
+[ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="22_nel6y"]
+[ext_resource type="PackedScene" uid="uid://drxiydnsv34hj" path="res://Assets/Objects/Clutter/intern_sign.tscn" id="23_o6myl"]
+[ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="24_abpck"]
+[ext_resource type="Texture2D" uid="uid://cl35vbp27vjum" path="res://Assets/Textures/posters/bestAssets.png" id="25_2omkb"]
+[ext_resource type="Texture2D" uid="uid://cg1vq7dgi3lok" path="res://Assets/Textures/posters/bringSaftey.png" id="26_pfpy0"]
+[ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="27_5m6e4"]
+[ext_resource type="PackedScene" uid="uid://b7rvy4bjmejtb" path="res://Assets/Objects/Pipes/valve.tscn" id="28_r5kwq"]
+[ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="29_63vbu"]
+[ext_resource type="PackedScene" uid="uid://dljfc2pqkh4ce" path="res://Assets/Objects/Computer/server.tscn" id="30_j0oha"]
+[ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="31_1sdm1"]
+[ext_resource type="PackedScene" uid="uid://bydyub6003sef" path="res://Assets/Objects/Clutter/banana_peel.tscn" id="32_xjavu"]
+[ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="33_5kl4k"]
+[ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="34_0c1x2"]
+[ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="35_ayxof"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -1699,11 +1713,188 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.808
 [node name="lightSwitch" parent="world/decorations/captainsRoom" instance=ExtResource("18_u3b05")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 35.9011, 1.95708, 10.7763)
 
-[node name="spinnyChair" parent="." instance=ExtResource("19_eqdcm")]
+[node name="spinnyChair" parent="world/decorations/captainsRoom" instance=ExtResource("19_eqdcm")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 34.6163, 0.476178, 11.6981)
 
-[node name="boat" parent="." instance=ExtResource("20_y3vwj")]
+[node name="boat" parent="world/decorations/captainsRoom" instance=ExtResource("20_y3vwj")]
 transform = Transform3D(0.0762289, -0.0314909, 0, 0.0314909, 0.0762289, 0, 0, 0, 0.0824775, 33.1415, 1.64225, 11.4134)
 
-[node name="pen" parent="." instance=ExtResource("21_uct8y")]
+[node name="pen" parent="world/decorations/captainsRoom" instance=ExtResource("21_uct8y")]
 transform = Transform3D(-2.18557e-08, 0.5, -0.866025, -1, -4.37114e-08, 0, -3.78552e-08, 0.866025, 0.5, 33.5505, 1.63479, 12.714)
+
+[node name="commons" type="Node3D" parent="world/decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8757, 0, 0.2726)
+
+[node name="wooden_chair" parent="world/decorations/commons" instance=ExtResource("22_nel6y")]
+transform = Transform3D(0.705043, 0, 0.709165, 0, 1, 0, -0.709165, 0, 0.705043, -2.28565, 0.5, -3.30452)
+
+[node name="wooden_chair2" parent="world/decorations/commons" instance=ExtResource("22_nel6y")]
+transform = Transform3D(0.965354, 0, -0.260943, 0, 1, 0, 0.260943, 0, 0.965354, 14.8871, 0.5, 8.49214)
+
+[node name="wooden_chair3" parent="world/decorations/commons" instance=ExtResource("22_nel6y")]
+transform = Transform3D(-0.659044, 0, -0.752104, 0, 1, 0, 0.752104, 0, -0.659044, 14.5573, 1.37822, 8.83473)
+
+[node name="wooden_chair4" parent="world/decorations/commons" instance=ExtResource("22_nel6y")]
+transform = Transform3D(0.221583, 0, -0.975142, 0, 1, 0, 0.975142, 0, 0.221583, 14.296, 0.5, 9.27083)
+
+[node name="spinnyChair" parent="world/decorations/commons" instance=ExtResource("19_eqdcm")]
+transform = Transform3D(-0.738538, 0, -0.674212, 0, 1, 0, 0.674212, 0, -0.738538, -1.45831, 0.5, 4.78955)
+
+[node name="spinnyChair2" parent="world/decorations/commons" instance=ExtResource("19_eqdcm")]
+transform = Transform3D(-0.623893, 0, 0.78151, 0, 1, 0, -0.78151, 0, -0.623893, 14.161, 0.500001, -4.06276)
+
+[node name="spinnyChair3" parent="world/decorations/commons" instance=ExtResource("19_eqdcm")]
+transform = Transform3D(0.89772, 0, 0.440566, 0, 1, 0, -0.440566, 0, 0.89772, 9.87291, 0.500001, 3.49246)
+
+[node name="metal_locker" parent="world/decorations/commons" instance=ExtResource("14_o33fy")]
+transform = Transform3D(0.983239, 0, 0.182321, 0, 1, 0, -0.182321, 0, 0.983239, 6.64843, 0.5, 9.14814)
+
+[node name="metal_locker2" parent="world/decorations/commons" instance=ExtResource("14_o33fy")]
+transform = Transform3D(0.999938, 0, 0.0111001, 0, 1, 0, -0.0111001, 0, 0.999938, 4.68138, 0.5, 9.35738)
+
+[node name="metal_locker3" parent="world/decorations/commons" instance=ExtResource("14_o33fy")]
+transform = Transform3D(0.947724, 0, -0.319092, 0, 1, 0, 0.319092, 0, 0.947724, 3.01446, 0.5, 9.10167)
+
+[node name="clock" parent="world/decorations/commons" instance=ExtResource("17_wc5l3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66059, 2.82768, 9.91148)
+
+[node name="intern_sign" parent="world/decorations/commons" instance=ExtResource("23_o6myl")]
+transform = Transform3D(0.474603, -0.029667, 0.513685, 0.104079, 0.689925, -0.0563152, -0.503905, 0.114559, 0.472183, 14.6477, 2.2958, 8.70916)
+
+[node name="wooden_desk_1" parent="world/decorations/commons" instance=ExtResource("16_3k7gm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.15934, 0.5, 1.7859)
+
+[node name="pen" parent="world/decorations/commons" instance=ExtResource("21_uct8y")]
+transform = Transform3D(0.923257, 0.384183, 1.67932e-08, 0, -4.37114e-08, 1, 0.384183, -0.923257, -4.03569e-08, 7.98676, 1.64032, 1.5305)
+
+[node name="sensePoster" type="Sprite3D" parent="world/decorations/commons"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.00102974, 1, 4.50116e-11, -1, 0.00102974, -4.37114e-08, 7.39953, 2.88278, 0.0994443)
+texture = ExtResource("24_abpck")
+
+[node name="propPoster" type="Sprite3D" parent="world/decorations/commons"]
+transform = Transform3D(-1.7586e-08, 1.30173e-17, 0.40232, 0.0392875, 0.400397, 1.71731e-09, -0.400397, 0.0392875, -1.75019e-08, 7.40582, 3.14435, 3.57454)
+texture = ExtResource("25_2omkb")
+
+[node name="propPoster2" type="Sprite3D" parent="world/decorations/commons"]
+transform = Transform3D(5.21541e-08, 9.31323e-09, -0.40232, -0.0759252, 0.395091, -6.63759e-09, 0.395091, 0.0759252, 5.96046e-08, 15.5774, 3.41814, -0.0637348)
+texture = ExtResource("26_pfpy0")
+
+[node name="serverRoom" type="Node3D" parent="world/decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56426, 0, -7.21148)
+
+[node name="lightSwitch" parent="world/decorations/serverRoom" instance=ExtResource("18_u3b05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16336, 2.51627, 3.46179)
+
+[node name="lightSwitch2" parent="world/decorations/serverRoom" instance=ExtResource("18_u3b05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37775, 2.51627, 3.46179)
+
+[node name="wooden_desk_1" parent="world/decorations/serverRoom" instance=ExtResource("16_3k7gm")]
+transform = Transform3D(-0.985862, 0, -0.16756, 0, 1, 0, 0.16756, 0, -0.985862, -5.95151, 0.5, 2.1732)
+
+[node name="floorToCeilingPipe" type="Node3D" parent="world/decorations/serverRoom"]
+transform = Transform3D(0.418907, 0, 0, 0, 0.418907, 0, 0, 0, 0.418907, -6.60375, 0.487331, -1.01167)
+metadata/_edit_group_ = true
+
+[node name="pipe_straight" parent="world/decorations/serverRoom/floorToCeilingPipe" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="pipe_straight2" parent="world/decorations/serverRoom/floorToCeilingPipe" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99805, 0)
+
+[node name="pipe_straight3" parent="world/decorations/serverRoom/floorToCeilingPipe" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.99615, 0)
+
+[node name="pipe_straight4" parent="world/decorations/serverRoom/floorToCeilingPipe" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.9942, 0)
+
+[node name="floorToCeilingPipe2" type="Node3D" parent="world/decorations/serverRoom"]
+transform = Transform3D(0.418907, 0, 0, 0, 0.418907, 0, 0, 0, 0.418907, -6.60375, 0.487331, -1.66856)
+metadata/_edit_group_ = true
+
+[node name="pipe_straight" parent="world/decorations/serverRoom/floorToCeilingPipe2" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="pipe_straight2" parent="world/decorations/serverRoom/floorToCeilingPipe2" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99805, 0)
+
+[node name="pipe_straight3" parent="world/decorations/serverRoom/floorToCeilingPipe2" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.99615, 0)
+
+[node name="pipe_straight4" parent="world/decorations/serverRoom/floorToCeilingPipe2" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.9942, 0)
+
+[node name="floorToCeilingPipe3" type="Node3D" parent="world/decorations/serverRoom"]
+transform = Transform3D(0.418907, 0, 0, 0, 0.418907, 0, 0, 0, 0.418907, -6.60375, 0.487331, -2.6357)
+metadata/_edit_group_ = true
+
+[node name="pipe_straight" parent="world/decorations/serverRoom/floorToCeilingPipe3" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="pipe_straight2" parent="world/decorations/serverRoom/floorToCeilingPipe3" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99805, 0)
+
+[node name="pipe_straight3" parent="world/decorations/serverRoom/floorToCeilingPipe3" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.99615, 0)
+
+[node name="pipe_straight4" parent="world/decorations/serverRoom/floorToCeilingPipe3" instance=ExtResource("27_5m6e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.9942, 0)
+
+[node name="pipeValve" parent="world/decorations/serverRoom" instance=ExtResource("28_r5kwq")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -6.52474, 1.19554, -1.01741)
+
+[node name="pipeValve2" parent="world/decorations/serverRoom" instance=ExtResource("28_r5kwq")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -6.52474, 2.40588, -1.64876)
+
+[node name="pipeValve3" parent="world/decorations/serverRoom" instance=ExtResource("28_r5kwq")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -6.52474, 2.40588, -2.61961)
+
+[node name="metal_locker" parent="world/decorations/serverRoom" instance=ExtResource("14_o33fy")]
+transform = Transform3D(-0.03801, 0, -0.882232, 0, 0.88305, 0, 0.882232, 0, -0.03801, -6.30185, 0.5, -0.0551147)
+
+[node name="computer" parent="world/decorations/serverRoom" instance=ExtResource("29_63vbu")]
+transform = Transform3D(-0.349052, 0, 0.719835, 0, 0.8, 0, -0.719835, 0, -0.349052, -6.09895, 1.625, 1.41035)
+
+[node name="tinyServer" parent="world/decorations/serverRoom" instance=ExtResource("30_j0oha")]
+transform = Transform3D(0.151788, 0, -0.221755, 0, 0.268728, 0, 0.221755, 0, 0.151788, -5.86529, 1.19982, 2.2021)
+
+[node name="server" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47917, 0, -0.0130376, 0, 1.47923, 0, 0.0130376, 0, -1.47917, 6.92766, 0.5, -9.49497)
+
+[node name="server2" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47851, 0, -0.0462055, 0, 1.47923, 0, 0.0462055, 0, -1.47851, 0.60172, 0.5, -9.36335)
+
+[node name="server3" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47906, 0, 0.0225378, 0, 1.47923, 0, -0.0225378, 0, -1.47906, 3.02826, 0.5, -9.47405)
+
+[node name="server4" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47844, 0, 0.0482443, 0, 1.47923, 0, -0.0482443, 0, -1.47844, 5.23496, 0.5, -9.44154)
+
+[node name="server5" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47922, 0, 0.00425994, 0, 1.47923, 0, -0.00425994, 0, -1.47922, 8.92934, 0.5, -9.44501)
+
+[node name="server7" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(1.46704, 0, 0.189468, 0, 1.47923, 0, -0.189468, 0, 1.46704, 7.02977, 0.5, -4.73717)
+
+[node name="server8" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(1.47844, 0, -0.0482441, 0, 1.47923, 0, 0.0482441, 0, 1.47844, 8.72247, 0.5, -4.79061)
+
+[node name="server9" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(1.47922, 0, -0.00425981, 0, 1.47923, 0, 0.00425981, 0, 1.47922, 5.02809, 0.5, -4.78714)
+
+[node name="server6" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47831, 0, 0.0521405, 0, 1.47923, 0, -0.0521405, 0, -1.47831, -1.50372, 0.5, -9.28679)
+
+[node name="wet_floor_sign" parent="." instance=ExtResource("31_1sdm1")]
+transform = Transform3D(0.42834, 0, 0.553647, 0, 0.7, 0, -0.553647, 0, 0.42834, 3.74462, 0.489636, -4.91736)
+
+[node name="banana_peel" parent="." instance=ExtResource("32_xjavu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29355, 0.5, -4.27137)
+
+[node name="portable_chair" parent="." instance=ExtResource("33_5kl4k")]
+transform = Transform3D(0.599179, 0, -0.318039, 0, 1, 0, 0.318039, 0, 0.599179, 1.8802, 0.512589, -4.56169)
+
+[node name="tl_toaster" parent="." instance=ExtResource("34_0c1x2")]
+transform = Transform3D(-0.0366086, 0, 0.210953, 0, 0.214106, 0, -0.210953, 0, -0.0366086, 1.86974, 1.27068, -4.6321)
+
+[node name="blockbench_export" parent="." instance=ExtResource("35_ayxof")]
+transform = Transform3D(0.296225, 0, -0.955118, 0, 1, 0, 0.955118, 0, 0.296225, 4.93088, 4.21522, -9.15234)

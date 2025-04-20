@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rov3up57dxan"
-path="res://.godot/imported/toast_lads_toaster_0.png-7f5adb2602d3d7fbb1e79142d1e8b0e3.ctex"
+uid="uid://cg1vq7dgi3lok"
+path.s3tc="res://.godot/imported/bringSaftey.png-a03dad8d8bfa6462e5fe71ab89e53485.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Kitchen Items/toast_lads_toaster_0.png"
-dest_files=["res://.godot/imported/toast_lads_toaster_0.png-7f5adb2602d3d7fbb1e79142d1e8b0e3.ctex"]
+source_file="res://Assets/Textures/posters/bringSaftey.png"
+dest_files=["res://.godot/imported/bringSaftey.png-a03dad8d8bfa6462e5fe71ab89e53485.s3tc.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

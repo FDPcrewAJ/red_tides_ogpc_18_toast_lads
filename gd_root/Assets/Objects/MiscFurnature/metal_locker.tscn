@@ -1,5 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjw1epxc7yxt4"]
+[gd_scene load_steps=3 format=3 uid="uid://cjw1epxc7yxt4"]
 
 [ext_resource type="PackedScene" uid="uid://0bodofpmlmbf" path="res://Imports/Models/Objects/Misc Furnature/metalLocker.gltf" id="1_ogbgl"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_u4cdu"]
+size = Vector3(1.25623, 2.49237, 1.12878)
+
 [node name="metal_locker" instance=ExtResource("1_ogbgl")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.471606)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000915527, 1.24997, -0.0269165)
+shape = SubResource("BoxShape3D_u4cdu")

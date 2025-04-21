@@ -35,7 +35,7 @@ func set_action_name():
 		"sprint":
 			key_text.text = "Sprint"
 		"crouch":
-			key_text.text = "crouch"
+			key_text.text = "Crouch"
 		"exit":
 			key_text.text = "Exit/Return"
 		"interact":
@@ -48,8 +48,8 @@ func set_text_for_key():
 	var action_events = InputMap.action_get_events(action_name)
 	var action_event = action_events[0]
 	var action_keycode = OS.get_keycode_string(action_event.physical_keycode)
-	
 	button.text = "%s" % action_keycode
+	print(action_name)
 
 
 func _on_button_toggled(button_pressed):

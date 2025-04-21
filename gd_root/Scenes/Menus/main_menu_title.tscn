@@ -106,6 +106,7 @@ text = "Level Select (For Testing!!!)"
 flat = true
 
 [node name="settings" parent="." instance=ExtResource("4_cpotp")]
+process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 8

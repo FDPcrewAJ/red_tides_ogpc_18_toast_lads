@@ -37,7 +37,7 @@ unicode = 97
 
 [sub_resource type="InputEventKey" id="InputEventKey_l25jo"]
 device = -1
-keycode = 68
+physical_keycode = 68
 unicode = 100
 
 [sub_resource type="InputEventKey" id="InputEventKey_ol5lt"]

@@ -27,16 +27,6 @@ func create_storage_dictionary() -> Dictionary:
 		"sfx_volume" : sfx_volume,
 		"voice_volume" : voice_volume,
 		"keybinds" : create_keybinds_dictionary()
-		#"forward" : InputMap.action_get_events("forward"),
-		#"left" : InputMap.action_get_events("left"),
-		#"backward" : InputMap.action_get_events("backward"),
-		#"right" : InputMap.action_get_events("right"),
-		#"jump" : InputMap.action_get_events("jump"),
-		#"sprint" : InputMap.action_get_events("sprint"),
-		#"crouch" : InputMap.action_get_events("crouch"),
-		#"interact" : InputMap.action_get_events("interact"),
-		#"exit" : InputMap.action_get_events("exit"),
-		#"open_list" : InputMap.action_get_events("open_list")
 	}
 	return settings_container_dict
 
@@ -49,7 +39,7 @@ func create_keybinds_dictionary() -> Dictionary:
 		keybind_resource.MOVE_RIGHT : keybind_resource.move_right_key,
 		keybind_resource.JUMP : keybind_resource.jump_key,
 		keybind_resource.SPRINT : keybind_resource.sprint_key,
-		keybind_resource.CROUCH : keybind_resource.exit_key,
+		keybind_resource.CROUCH : keybind_resource.crouch_key,
 		keybind_resource.INTERACT : keybind_resource.interact_key,
 		keybind_resource.OPEN_LIST : keybind_resource.open_list_key,
 		keybind_resource.EXIT : keybind_resource.exit_key

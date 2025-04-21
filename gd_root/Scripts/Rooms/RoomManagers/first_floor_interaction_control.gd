@@ -6,7 +6,6 @@ extends Node3D
 
 # Boat Parts
 @onready var fuel_can: Node3D = $boat_parts/fuel_can
-@onready var fuel_can_box: Node3D = $boat_parts/fuel_can_box
 
 func _ready() -> void:
 	pass

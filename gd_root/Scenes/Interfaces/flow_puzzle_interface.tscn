@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c81asm7ytontg"]
+[gd_scene load_steps=9 format=3 uid="uid://c81asm7ytontg"]
 
 [ext_resource type="Script" path="res://Scenes/Interfaces/flow_puzzle_interface.gd" id="1_wyrge"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/pipe_button.gd" id="2_qtumd"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/flow_area.gd" id="3_ebcrh"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/pipe_button_base.gd" id="3_uvasq"]
+[ext_resource type="Script" path="res://Scenes/Interfaces/start_area_2d.gd" id="5_271uy"]
+[ext_resource type="Script" path="res://Scenes/Interfaces/flow_puzzle_level_label.gd" id="5_gi073"]
+[ext_resource type="Script" path="res://Scenes/Interfaces/end_area_2d.gd" id="6_2u1m7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lc7"]
 
@@ -584,12 +587,45 @@ toggle_mode = true
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
-[node name="TilePuzzleLevelLabel" type="Label" parent="."]
+[node name="FlowPuzzleLevelLabel" type="Label" parent="."]
 offset_left = -950.0
 offset_top = -525.0
 offset_right = -910.0
 offset_bottom = -388.0
 theme_override_font_sizes/font_size = 100
+script = ExtResource("5_gi073")
+
+[node name="StartLabel" type="Label" parent="."]
+offset_left = -450.0
+offset_top = -375.0
+offset_right = -300.0
+offset_bottom = -225.0
+theme_override_font_sizes/font_size = 60
+text = "Start
+     >"
+
+[node name="StartArea2D" type="Area2D" parent="StartLabel"]
+position = Vector2(150, 75)
+script = ExtResource("5_271uy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartLabel/StartArea2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="EndLabel" type="Label" parent="."]
+offset_left = 300.0
+offset_top = 75.0
+offset_right = 450.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 60
+text = "End
+<"
+
+[node name="EndArea2D" type="Area2D" parent="EndLabel"]
+position = Vector2(0, 75)
+script = ExtResource("6_2u1m7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndLabel/EndArea2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
 
 [connection signal="pressed" from="PipeButtonNode/PipeButton" to="PipeButtonNode" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode2/PipeButton" to="PipeButtonNode2" method="_on_pipe_button_pressed"]

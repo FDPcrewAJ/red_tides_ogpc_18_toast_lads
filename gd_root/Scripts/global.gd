@@ -45,6 +45,7 @@ var dial_puzzle_completed = false
 var tile_puzzle_completed = false
 var radar_puzzle_completed = false
 var fire_puzzle_completed = false
+var flow_puzzle_completed = false
 
 var consistent_positioning = true
 var new_position = 0

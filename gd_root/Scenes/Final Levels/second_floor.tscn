@@ -388,8 +388,6 @@ texture = ExtResource("2_2sv3j")
 transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 26.1682, 0.5, 1.95557)
 
 [node name="building" type="Node3D" parent="world"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="floor" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
@@ -808,6 +806,15 @@ transform = Transform3D(0.999998, 0, 0.00195477, 0, 1, 0, -0.00195477, 0, 0.9999
 shape = SubResource("BoxShape3D_ctocw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/walls/interior_walls/top_restrooms/sep_wall31"]
+mesh = SubResource("BoxMesh_3ql4h")
+
+[node name="sep_wall33" type="StaticBody3D" parent="world/building/walls/interior_walls/top_restrooms"]
+transform = Transform3D(0.999998, 0, 0.00195477, 0, 1, 0, -0.00195477, 0, 0.999998, -26.2937, 3, 2.58716)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/walls/interior_walls/top_restrooms/sep_wall33"]
+shape = SubResource("BoxShape3D_ctocw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/walls/interior_walls/top_restrooms/sep_wall33"]
 mesh = SubResource("BoxMesh_3ql4h")
 
 [node name="sep_wall32" type="StaticBody3D" parent="world/building/walls/interior_walls/top_restrooms"]

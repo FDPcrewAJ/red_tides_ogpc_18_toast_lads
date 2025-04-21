@@ -450,14 +450,14 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
-[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline2/pipe_valve2"]
+[node name="ValveBody2" type="StaticBody3D" parent="reactor_puzzle/Pipeline2/pipe_valve2"]
 transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
 script = ExtResource("8_h5ur3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody2"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="pipeValve" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody" instance=ExtResource("17_0wjdq")]
+[node name="pipeValve" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody2" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -1.00177e-09, -0.130237, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline2" instance=ExtResource("5_n6bfl")]
@@ -488,14 +488,14 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
-[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
+[node name="ValveBody3" type="StaticBody3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
 transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
 script = ExtResource("8_h5ur3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody3"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="pipeValve" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody" instance=ExtResource("17_0wjdq")]
+[node name="pipeValve" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody3" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -1.00177e-09, -0.130237, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline3" instance=ExtResource("5_n6bfl")]
@@ -526,14 +526,14 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
-[node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]
+[node name="ValveBody4" type="StaticBody3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]
 transform = Transform3D(1, -8.88178e-15, 3.55271e-15, 1.77636e-15, 1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 1.55837, -0.0708189)
 script = ExtResource("8_h5ur3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody4"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="pipeValve" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody" instance=ExtResource("17_0wjdq")]
+[node name="pipeValve" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody4" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -1.00177e-09, -0.130237, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline4" instance=ExtResource("5_n6bfl")]

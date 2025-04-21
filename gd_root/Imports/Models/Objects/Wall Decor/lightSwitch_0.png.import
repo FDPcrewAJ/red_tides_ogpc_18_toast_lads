@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wpfktogv0cdg"
+uid="uid://bhc7oem0bcun1"
 path.s3tc="res://.godot/imported/lightSwitch_0.png-7981e8bbd05a06c44cc75ca5ad275b56.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "d014a992aa6f3d87fbce018be5376478"
 }
 
 [deps]

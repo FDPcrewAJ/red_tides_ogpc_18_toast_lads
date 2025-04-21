@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=58 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_label.gd" id="11_uvfqq"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="14_a3r7g"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="16_6clbt"]
+[ext_resource type="PackedScene" uid="uid://b7rvy4bjmejtb" path="res://Assets/Objects/Pipes/valve.tscn" id="17_0wjdq"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_puzzle_note.gd" id="17_vul3n"]
 [ext_resource type="ArrayMesh" uid="uid://gmxa83wi78u0" path="res://Assets/Objects/IBeam/i_beam.obj" id="20_w5w4x"]
 [ext_resource type="PackedScene" uid="uid://odho4730c5y5" path="res://Imports/Models/Objects/Elevator/Elevator.gltf" id="21_r24y0"]
@@ -99,13 +100,6 @@ height = 0.25
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w0wta"]
 points = PackedVector3Array(-0.75, -1.47734, -0.749999, 0.749964, 1.43118, 0.75, 0.75, 1.43125, -0.726227, -0.75, 1.47734, -0.749999, -0.726192, -1.43118, 0.75, 0.75, -1.43125, -0.726227, -0.726192, 1.43118, 0.75, 0.749964, -1.43118, 0.75)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tovu"]
-albedo_color = Color(0.786247, 0.00322974, 0.198994, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_yuo51"]
-material = SubResource("StandardMaterial3D_8tovu")
-height = 1.0
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fx0sh"]
 points = PackedVector3Array(-0.34996, -0.496649, -0.35, 0.35, 0.498906, 0.35, -0.35, 0.496706, 0.348453, 0.35, -0.498906, 0.35, 0.348413, 0.496649, -0.35, -0.35, -0.496706, 0.348453, -0.34996, 0.496649, -0.35, 0.348413, -0.496649, -0.35)
 
@@ -121,8 +115,9 @@ top_radius = 0.1
 bottom_radius = 0.12
 height = 0.2
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f0jcv"]
-points = PackedVector3Array(1.19223, -2.45273, 2.75074, -0.552353, -2.46345, -2.94729, -0.549895, 2.5, -2.93417, -2.85318, -2.46141, 0.920126, -1.19215, 2.49986, 2.75078, 2.93402, 2.5, -0.549726, 2.5615, -2.44662, -1.55479, -2.84282, 2.5, -0.916784, 2.37557, 2.49103, 1.82693, 2.85317, -2.46152, 0.920169, -2.29605, -2.45629, -1.92852, 1.55484, 2.49401, -2.56147, -1.19215, -2.45224, 2.75078, -2.56154, 2.49413, 1.55473, 0.549746, 2.5, 2.93417, 0.920363, -2.46182, -2.8531, -1.82734, 2.49106, -2.37526, -2.94731, -2.46347, -0.552188, -2.93417, 2.5, 0.549726, -1.82734, -2.44344, 2.37526, -0.552353, -2.46345, 2.94729, 2.94731, -2.46359, -0.552215, 2.93402, 2.5, 0.549726, 2.5615, 2.49424, -1.55479, 2.02498, -2.46137, 2.20861, 1.55484, 2.49401, 2.56147, 0.549746, 2.5, -2.93417, 2.02498, -2.46137, -2.20861, -1.19215, -2.45224, -2.75078, -2.56154, 2.49413, -1.55473, -1.82734, 2.49106, 2.37526, -2.37541, -2.44369, 1.82713)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v7xsx"]
+height = 5.0
+radius = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tld2n"]
 albedo_texture = ExtResource("14_a3r7g")
@@ -424,9 +419,8 @@ script = ExtResource("8_h5ur3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline/pipe_valve/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline/pipe_valve"]
-transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
-mesh = SubResource("CylinderMesh_yuo51")
+[node name="pipeValve" parent="reactor_puzzle/Pipeline/pipe_valve/ValveBody" instance=ExtResource("17_0wjdq")]
+transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -5.94105e-10, -0.12091, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
@@ -463,9 +457,8 @@ script = ExtResource("8_h5ur3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline2/pipe_valve2"]
-transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
-mesh = SubResource("CylinderMesh_yuo51")
+[node name="pipeValve" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody" instance=ExtResource("17_0wjdq")]
+transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -1.00177e-09, -0.130237, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline2" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
@@ -502,9 +495,8 @@ script = ExtResource("8_h5ur3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
-transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
-mesh = SubResource("CylinderMesh_yuo51")
+[node name="pipeValve" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody" instance=ExtResource("17_0wjdq")]
+transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -1.00177e-09, -0.130237, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline3" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
@@ -541,9 +533,8 @@ script = ExtResource("8_h5ur3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody"]
 shape = SubResource("ConvexPolygonShape3D_w0wta")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]
-transform = Transform3D(1, -4.37115e-08, -4.37115e-08, -4.37115e-08, 0, -1, 4.37115e-08, 1, 0, 0, 1.43983, -0.200364)
-mesh = SubResource("CylinderMesh_yuo51")
+[node name="pipeValve" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody" instance=ExtResource("17_0wjdq")]
+transform = Transform3D(2.5, -1.09279e-07, 1.09279e-07, -1.09279e-07, -1.19209e-07, 2.5, -1.09279e-07, -2.5, -2.38419e-07, -1.00177e-09, -0.130237, -0.0430293)
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline4" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
@@ -584,7 +575,8 @@ script = ExtResource("11_404ax")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="reactor_main/central_column/center_tube"]
-shape = SubResource("ConvexPolygonShape3D_f0jcv")
+shape = SubResource("CylinderShape3D_v7xsx")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="reactor_main/central_column/center_tube"]
 mesh = SubResource("CylinderMesh_7safw")

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cugmwkbmdakl2"
-path.s3tc="res://.godot/imported/PlayerRig walk f_Image_0.png-ff49c50265664467973e44d618d5570e.s3tc.ctex"
+uid="uid://bosrmomuwfxyn"
+path.s3tc="res://.godot/imported/cptn_walk_start_Image_0.png-55f1646136dcbf544511f4991a9e6c92.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f886c08120c32e24b07c6d037331a58f"
+"md5": "e063e9db6995ffa1bda99432dab0705b"
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Player/PlayerRig walk f_Image_0.png"
-dest_files=["res://.godot/imported/PlayerRig walk f_Image_0.png-ff49c50265664467973e44d618d5570e.s3tc.ctex"]
+source_file="res://Assets/Characters/Chief/Animations/cptn_walk_start_Image_0.png"
+dest_files=["res://.godot/imported/cptn_walk_start_Image_0.png-55f1646136dcbf544511f4991a9e6c92.s3tc.ctex"]
 
 [params]
 

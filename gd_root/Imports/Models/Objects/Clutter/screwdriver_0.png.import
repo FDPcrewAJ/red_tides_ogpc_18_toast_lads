@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq67cm74bxikc"
+uid="uid://djgkmm8lrov7v"
 path.s3tc="res://.godot/imported/screwdriver_0.png-902381c040ee3665f46b519060c2e118.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "1087b69bbc515298c2ae665ecae8f31d"
 }
 
 [deps]

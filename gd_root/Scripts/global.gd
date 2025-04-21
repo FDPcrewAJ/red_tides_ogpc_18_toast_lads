@@ -12,7 +12,7 @@ var timer_active = true
 var needle_rotation = 1
 
 #List pickup boolean
-var list_in_hand = false
+var list_in_hand = true
 
 # Player ray cast collision range for interaction
 var current_object = "none"

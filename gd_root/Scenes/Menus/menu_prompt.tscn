@@ -26,6 +26,7 @@ script = ExtResource("2_ttcvi")
 
 [node name="CloseButton" type="Button" parent="."]
 process_mode = 3
+visible = false
 layout_mode = 0
 offset_left = 1800.0
 offset_right = 1900.0

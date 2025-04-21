@@ -2,7 +2,16 @@ extends Control
 
 @onready var label = $stopwatch_dial/stopwatch_countdown
 @onready var needle = $stopwatch_dial/stopwatch_needle
-@onready var list = $parts_list
+@onready var list: Control = $checklist
+
+# Checkboxes for the parts list
+@onready var antenna_check: Label = $checklist/parts_list/antenna_check
+@onready var battery_check: Label = $checklist/parts_list/battery_check
+@onready var fuel_can_check: Label = $checklist/parts_list/fuel_can_check
+@onready var motor_check: Label = $checklist/parts_list/motor_check
+@onready var radar_check: Label = $checklist/parts_list/radar_check
+
+
 #These variables are for the stopwatch
 var rotation_speed = TAU / 60
 var double_digit = 0
@@ -15,7 +24,7 @@ func _ready() -> void:
 	set_time()
 	
 	if double_digit <= 0:
-		Global.timer_active = false	
+		Global.timer_active = false
 		
 
 
@@ -26,12 +35,14 @@ func _input(_event) -> void:
 				list.visible = false
 			elif !list.visible:
 				list.visible = true
+				update_list()
 
 
 func _physics_process(delta: float) -> void:
 	#Countdown activation
 	if Global.timer_active:
 		count_down(delta)
+	update_list()
 
 
 func set_time():
@@ -58,3 +69,16 @@ func count_down(delta):
 			label.text = str(single_digit)
 		else:
 			label.text = str(double_digit)
+
+
+func update_list():
+	if Global.antennas_collected:
+		antenna_check.visible = true
+	if Global.battery_collected:
+		battery_check.visible = true
+	if Global.fuel_can_collected:
+		fuel_can_check.visible = true
+	if Global.motor_collected:
+		motor_check.visible = true
+	if Global.radar_collected:
+		radar_check.visible = true

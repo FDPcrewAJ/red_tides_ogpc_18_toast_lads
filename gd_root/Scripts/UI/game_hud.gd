@@ -20,7 +20,6 @@ func _ready() -> void:
 
 
 func _input(_event) -> void:
-	
 	if Global.list_in_hand:
 		if Input.is_action_just_pressed("open_list"):
 			if list.visible:
@@ -30,21 +29,24 @@ func _input(_event) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
 	#Countdown activation
 	if Global.timer_active:
 		count_down(delta)
 
+
 func set_time():
 	double_digit = Global.time_left
+	needle.rotation = deg_to_rad(Global.needle_rotation) 
 	if double_digit < 10:
 		single_digit = "0" + str(double_digit)
 		label.text = str(single_digit)
 	else:
 		label.text = str(double_digit)
 
+
 func count_down(delta):
 	needle.rotate(rotation_speed * delta)
+	Global.needle_rotation = needle.rotation_degrees
 	if needle.rotation_degrees >= 360.0:
 		needle.rotation_degrees = 1
 		double_digit -= 1
@@ -56,7 +58,3 @@ func count_down(delta):
 			label.text = str(single_digit)
 		else:
 			label.text = str(double_digit)
-
-
-func _on_storm_timer_timeout():
-	get_tree().change_scene_to_file("res://Scenes/Menus/title_screen.tscn")

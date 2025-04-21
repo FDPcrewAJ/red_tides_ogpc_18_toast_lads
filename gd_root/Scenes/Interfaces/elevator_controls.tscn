@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bswr51itc8015"]
 
-[ext_resource type="Script" uid="uid://cbp53gejsp5ka" path="res://Scripts/Interfaces/elevator_controls.gd" id="1_ovi6k"]
-[ext_resource type="Script" uid="uid://bb1jr2fillyhp" path="res://Scripts/Interfaces/elevator_label.gd" id="2_vdihe"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/elevator_controls.gd" id="1_ovi6k"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/elevator_label.gd" id="2_vdihe"]
 
 [node name="ElevatorControls" type="Node2D"]
 script = ExtResource("1_ovi6k")

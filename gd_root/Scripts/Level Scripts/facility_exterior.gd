@@ -61,7 +61,7 @@ func _process(_delta):
 			fuel_can.visible = false
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event) -> void:
 	if boat_repair_mode:
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			if Global.antennas_collected:
@@ -80,13 +80,13 @@ func _on_death_col_area_entered(_area):
 	player.position = Vector3(16.5, 3.5, -38)
 
 
-func _on_boat_repair_col_area_entered(area: Area3D) -> void:
+func _on_boat_repair_col_area_entered(_area) -> void:
 	if Global.list_in_hand:
 		boat_repair_mode = true
 		boat_repair_label.visible = true
 
 
-func _on_boat_repair_col_area_exited(area: Area3D) -> void:
+func _on_boat_repair_col_area_exited(_area) -> void:
 	if Global.list_in_hand:
 		boat_repair_mode = false
 		boat_repair_label.visible = false

@@ -1,12 +1,14 @@
-[gd_scene load_steps=35 format=3 uid="uid://i54i4wmroxw1"]
+[gd_scene load_steps=39 format=3 uid="uid://i54i4wmroxw1"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_juil4"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_nm8n5"]
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="3_mfq2k"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="3_rxs1b"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="4_ieqvj"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="5_1j8oq"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="5_3cw6y"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/enterance_door_interaction.gd" id="8_lbbin"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_ltams"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="9_lgp1y"]
 
@@ -107,7 +109,16 @@ size = Vector3(5, 1, 7)
 material = ExtResource("5_1j8oq")
 size = Vector2(5, 7)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nx5n4"]
+size = Vector3(0.5, 3, 1.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5qlkj"]
+size = Vector3(0.7, 3.5, 3)
+
 [node name="facility_enterance" type="Node3D"]
+
+[node name="InteractablesDisplay" parent="." instance=ExtResource("1_juil4")]
+mouse_filter = 1
 
 [node name="player" parent="." instance=ExtResource("1_fe63g")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.544, 1.6, 0)
@@ -370,12 +381,27 @@ omni_range = 9.13347
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="doors" type="Node3D" parent="world/building"]
+script = ExtResource("8_lbbin")
 
 [node name="open_generator_door" parent="world/building/doors" instance=ExtResource("8_ltams")]
 transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)
 
-[node name="exit_door" parent="world/building/doors" instance=ExtResource("4_ieqvj")]
+[node name="exit_door_model" parent="world/building/doors" instance=ExtResource("4_ieqvj")]
 transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-08, 9.5, 0.5, 0)
+
+[node name="exit_door" type="StaticBody3D" parent="world/building/doors"]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 3.55271e-15, 0, 1, 9.5, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/doors/exit_door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_nx5n4")
+
+[node name="facility_enterance_elevator" type="StaticBody3D" parent="world/building/doors"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.48814, 0.5, 9.40793)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/doors/facility_enterance_elevator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_5qlkj")
 
 [node name="decorations" type="Node3D" parent="world/building"]
 

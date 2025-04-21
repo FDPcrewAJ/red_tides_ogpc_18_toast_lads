@@ -1,6 +1,7 @@
-[gd_scene load_steps=132 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=139 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
 [ext_resource type="Texture2D" uid="uid://c3skeplrwm2dh" path="res://Textures/Temp Dev Textures/floor_1_schematic.png" id="1_tifgq"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="3_3oq02"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="4_vj5kr"]
@@ -37,6 +38,9 @@
 [ext_resource type="PackedScene" uid="uid://c7vsjp7ma7tyt" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="33_nbwly"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="34_cau1u"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="36_413eg"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/first_floor_interaction_control.gd" id="39_opvwc"]
+[ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="40_smis2"]
+[ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="41_3a62q"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -389,7 +393,19 @@ size = Vector3(0.5, 5, 12.25)
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 12.25)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hyxp5"]
+size = Vector3(2.3, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjk4r"]
+albedo_texture = ExtResource("40_smis2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m571g"]
+material = SubResource("StandardMaterial3D_pjk4r")
+size = Vector2(2.2, 1.3)
+
 [node name="first_floor" type="Node3D"]
+
+[node name="InteractablesDisplay" parent="." instance=ExtResource("1_68wkg")]
 
 [node name="player" parent="." instance=ExtResource("1_1fwfb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.9219, 1.6, 2.18129)
@@ -1754,7 +1770,7 @@ transform = Transform3D(0.779732, 0, 0.626114, 0, 1, 0, -0.626114, 0, 0.779732, 
 transform = Transform3D(-0.799692, 0, -0.0221837, 0, 0.8, 0, 0.0221837, 0, -0.799692, 1.14525, 1.625, 3.55123)
 
 [node name="server" parent="world/decorations/primaryGenerator" instance=ExtResource("22_svg0u")]
-transform = Transform3D(0.788548, 0, -0.614974, 0, 1, 0, 0.614974, 0, 0.788548, -0.382946, 0.549663, 3.09059)
+transform = Transform3D(0.788548, 0, -0.614974, 0, 1, 0, 0.614974, 0, 0.788548, -0.382946, 0.50343, 3.09059)
 
 [node name="coffe_cup" parent="world/decorations/primaryGenerator" instance=ExtResource("21_hea1b")]
 transform = Transform3D(-0.0171034, 0, 0.999854, 0, 1, 0, -0.999854, 0, -0.0171034, 1.8528, 1.625, 3.16892)
@@ -1962,3 +1978,21 @@ transform = Transform3D(3.23646, 0, 0, 0, 1, 0, 0, 0, 4.46072, 37.7871, 0.5, -19
 [node name="elevator" parent="." instance=ExtResource("10_4jjp2")]
 transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 24.8894, 0.5, 1.92257)
 metadata/_edit_group_ = true
+
+[node name="puzzle_interaction" type="Node3D" parent="."]
+script = ExtResource("39_opvwc")
+
+[node name="first_floor_tile_puzzle" type="StaticBody3D" parent="puzzle_interaction"]
+transform = Transform3D(0.94464, 0, -0.328108, 0, 1, 0, 0.328108, 0, 0.94464, -21.5077, 1.47446, 14.3374)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="puzzle_interaction/first_floor_tile_puzzle"]
+shape = SubResource("BoxShape3D_hyxp5")
+
+[node name="tile_puzzle_chart" type="MeshInstance3D" parent="puzzle_interaction/first_floor_tile_puzzle"]
+transform = Transform3D(0.328306, -0.944571, -4.15955e-08, -9.65759e-10, 4.37007e-08, -1, 0.944571, 0.328306, 1.3435e-08, 2.58097, 1.23585, -3.99446)
+mesh = SubResource("PlaneMesh_m571g")
+
+[node name="boat_parts" type="Node3D" parent="puzzle_interaction"]
+
+[node name="fuel_can" parent="puzzle_interaction/boat_parts" instance=ExtResource("41_3a62q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -0.7, 5)

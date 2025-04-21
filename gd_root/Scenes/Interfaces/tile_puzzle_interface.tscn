@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckhlefc2g5yes"]
 
-[ext_resource type="Script" uid="uid://dbq86gf5ypn1o" path="res://Scripts/Interfaces/tile_button.gd" id="1_4ebpr"]
-[ext_resource type="Script" uid="uid://b8wxkf3c2b2sk" path="res://Scripts/Interfaces/tile_puzzle_interface.gd" id="1_306ms"]
-[ext_resource type="Script" uid="uid://dpv1q0sjy6gqd" path="res://Scripts/Interfaces/tile_puzzle_level_label.gd" id="3_07w82"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/tile_button.gd" id="1_4ebpr"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_interface.gd" id="1_306ms"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_level_label.gd" id="3_07w82"]
 
 [node name="TilePuzzleInterface" type="Node2D"]
 script = ExtResource("1_306ms")

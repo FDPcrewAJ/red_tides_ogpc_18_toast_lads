@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=45 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -39,6 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="38_wda1v"]
 [ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Imports/Models/Objects/Lights/v3_industrial_light.gltf" id="39_4vs5a"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="39_rfvr8"]
+[ext_resource type="PackedScene" uid="uid://k3ygya7ok4mf" path="res://Imports/Models/Objects/Antennas/Antennas.gltf" id="40_4jm2i"]
+[ext_resource type="PackedScene" uid="uid://dixq4mqfagy4a" path="res://Imports/Models/Objects/Battery/BoatBatteryNew.gltf" id="41_whhue"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -80,12 +82,12 @@ texture_filter = 0
 transform = Transform3D(1.07579, 0, 0, 0, 1.07579, 0, 0, 0, 1.07579, 2.34332, 1, 11.6245)
 
 [node name="FuelCan" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 3.82095, -4.76837e-07, 9.75233)
+transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 13.2491, -4.76837e-07, 9.75233)
 mesh = SubResource("ArrayMesh_kg6tg")
 material = ExtResource("26_it72r")
 
 [node name="Motor" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32497, -0.0302026, 9.00021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5246, -0.0302026, 9.00021)
 mesh = ExtResource("29_h0fxu")
 material = ExtResource("30_eifxb")
 
@@ -196,3 +198,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38928, 0, 11.5375)
 
 [node name="clock" parent="." instance=ExtResource("39_rfvr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80858, 0, 0.109151)
+
+[node name="antennas" parent="." instance=ExtResource("40_4jm2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0637, 0, 9.43506)
+
+[node name="blockbench_export" parent="." instance=ExtResource("41_whhue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9547, 0, 9.04835)

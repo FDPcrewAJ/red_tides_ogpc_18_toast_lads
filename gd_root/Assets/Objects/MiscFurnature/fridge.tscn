@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0x1hlqecfvof"]
+
+[ext_resource type="PackedScene" uid="uid://bx6iq5yy3vvt5" path="res://Imports/Models/Objects/Saagar Imports/Fridge + Texture.gltf" id="1_boqqi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qf40"]
+size = Vector3(0.475464, 1.28442, 0.512756)
+
+[node name="fridge" instance=ExtResource("1_boqqi")]
+
+[node name="bone" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219888, 0.929786, 0.234456)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10352e-05, 0.649536, -0.0140686)
+shape = SubResource("BoxShape3D_8qf40")

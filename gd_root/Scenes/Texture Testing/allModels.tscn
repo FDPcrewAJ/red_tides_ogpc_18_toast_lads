@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=46 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -39,6 +39,9 @@
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="38_wda1v"]
 [ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Imports/Models/Objects/Lights/v3_industrial_light.gltf" id="39_4vs5a"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="39_rfvr8"]
+[ext_resource type="PackedScene" uid="uid://dq40tqblxt18l" path="res://Imports/Models/Objects/Saagar Imports/Generic Machine #1.gltf" id="40_gmhm0"]
+[ext_resource type="PackedScene" uid="uid://cvntgdlhwppsy" path="res://Imports/Models/Objects/Saagar Imports/Info Board.gltf" id="41_wt8pk"]
+[ext_resource type="PackedScene" uid="uid://donb6kwx3hx2h" path="res://Imports/Models/Objects/Saagar Imports/Old TV + Texture.gltf" id="42_682oa"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -196,3 +199,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38928, 0, 11.5375)
 
 [node name="clock" parent="." instance=ExtResource("39_rfvr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80858, 0, 0.109151)
+
+[node name="blockbench_export3" parent="." instance=ExtResource("40_gmhm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4867, 4.76837e-07, -4.88787)
+
+[node name="blockbench_export4" parent="." instance=ExtResource("41_wt8pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28017, 1.31485, -3.42898)
+
+[node name="blockbench_export5" parent="." instance=ExtResource("42_682oa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04739, 1.75176, -3.42898)

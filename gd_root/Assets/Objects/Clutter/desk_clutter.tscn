@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://0hf5cky4njfj"]
+
+[ext_resource type="PackedScene" uid="uid://803acn4datt2" path="res://Imports/Models/Objects/Saagar Imports/Desk Clutter + Texture.gltf" id="1_ahlxj"]
+
+[node name="deskClutter" instance=ExtResource("1_ahlxj")]

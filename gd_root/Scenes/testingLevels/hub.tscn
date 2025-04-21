@@ -1,12 +1,12 @@
 [gd_scene load_steps=30 format=3 uid="uid://cv0oc1p4fj42o"]
 
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Imports/Models/placeholders/PlaceholderDoor/tinker.obj" id="1_8mukf"]
-[ext_resource type="Script" uid="uid://7cctayiik5c8" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_lcgre"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/hub.gd" id="1_lcgre"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_22s7d"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Imports/Models/placeholders/PlaceholderTable/tinker.obj" id="2_ippcw"]
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="2_o5iii"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_crk3d"]
-[ext_resource type="Script" uid="uid://bjfp4sima3ai6" path="res://Scripts/Rooms/RoomObjects/console.gd" id="4_5k78a"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/console.gd" id="4_5k78a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_of3o3"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

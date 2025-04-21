@@ -1,7 +1,5 @@
-extends MeshInstance3D
+extends Node3D
 
-func _ready():
-	pass
 
 func _process(_delta):
 	#This needs to correspond to the computer's console body node

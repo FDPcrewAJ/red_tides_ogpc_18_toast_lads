@@ -76,7 +76,7 @@ material = SubResource("StandardMaterial3D_dwtlt")
 size = Vector3(4, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hrsm"]
-size = Vector3(3, 0.4, 3)
+size = Vector3(3, 0.4, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aow4s"]
 material = SubResource("StandardMaterial3D_dwtlt")

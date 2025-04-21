@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://clgttbebmbc6a"]
 
 [ext_resource type="Texture2D" uid="uid://b0sg2jme0f0x3" path="res://Imports/ui/stopwatch_dial.png" id="1_ie0vo"]
-[ext_resource type="Script" uid="uid://yboytsyffnti" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
+[ext_resource type="Script" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
 [ext_resource type="Texture2D" uid="uid://bdxp3k3edhv5b" path="res://Imports/ui/stopwatch_needle.png" id="2_v440k"]
 [ext_resource type="Texture2D" uid="uid://dqqp821hkipxt" path="res://Imports/Models/Objects/Doors/doorFacility.png" id="4_dpgn7"]
 

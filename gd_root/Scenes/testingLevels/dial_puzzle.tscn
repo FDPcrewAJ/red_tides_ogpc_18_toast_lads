@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="2_t5ra5"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_4me4v"]
 [ext_resource type="ArrayMesh" uid="uid://hw8k1mn4oudl" path="res://Imports/Models/placeholders/PlaceholderTable/tinker.obj" id="6_q6nk1"]
-[ext_resource type="Script" uid="uid://r5b3cy3w257d" path="res://Scripts/Rooms/RoomObjects/dial_computer.gd" id="6_yka2e"]
-[ext_resource type="Script" uid="uid://bexphsf133x1j" path="res://Scripts/Rooms/RoomObjects/dial_puzzle_door_blocker.gd" id="7_w0jne"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_computer.gd" id="6_yka2e"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_puzzle_door_blocker.gd" id="7_w0jne"]
 [ext_resource type="Texture2D" uid="uid://dnaiseeho6cox" path="res://Imports/images/dialPuzzleHint.png" id="8_k5y5n"]
 [ext_resource type="ArrayMesh" uid="uid://jtty0u3mkdkr" path="res://Imports/Models/placeholders/PlaceholderDoor/tinker.obj" id="9_icvyy"]
 

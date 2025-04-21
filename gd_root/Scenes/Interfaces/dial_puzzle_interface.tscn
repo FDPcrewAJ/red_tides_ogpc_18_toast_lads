@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cvp6iu0ltf4p5"]
 
-[ext_resource type="Script" uid="uid://dm0gqo2nf12te" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
 [ext_resource type="Texture2D" uid="uid://cyl8g6pb7siy7" path="res://Imports/images/Dial-1.png.png" id="3_4aejo"]
-[ext_resource type="Script" uid="uid://cjaymolmlmxd2" path="res://Scripts/Interfaces/dial.gd" id="3_oet22"]
-[ext_resource type="Script" uid="uid://yflowyilvqta" path="res://Scripts/Interfaces/dial_sprite_2d.gd" id="4_h3xx3"]
-[ext_resource type="Script" uid="uid://cv3coe6r1crnj" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="5_com21"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial.gd" id="3_oet22"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_sprite_2d.gd" id="4_h3xx3"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="5_com21"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 

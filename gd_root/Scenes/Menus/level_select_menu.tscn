@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6i1ndys2ioer"]
 
-[ext_resource type="Script" uid="uid://caylwc2us223y" path="res://Scripts/Menus/level_select_menu.gd" id="1_h7kvm"]
+[ext_resource type="Script" path="res://Scripts/Menus/level_select_menu.gd" id="1_h7kvm"]
 
 [node name="level_select_menu" type="Control"]
 layout_mode = 3
@@ -40,10 +40,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -332.0
-offset_right = 85.0
-offset_bottom = -228.0
+offset_left = -821.5
+offset_top = -516.0
+offset_right = -651.5
+offset_bottom = -412.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -60,10 +60,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -181.0
-offset_top = -227.0
-offset_right = 187.0
-offset_bottom = -123.0
+offset_left = -917.5
+offset_top = -411.0
+offset_right = -549.5
+offset_bottom = -307.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -80,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = -140.0
-offset_right = 191.0
-offset_bottom = -36.0
+offset_left = -926.5
+offset_top = -324.0
+offset_right = -532.5
+offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -100,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = -14.0
-offset_right = 206.0
-offset_bottom = 90.0
+offset_left = -924.5
+offset_top = -198.0
+offset_right = -530.5
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -120,10 +120,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.5
-offset_top = 110.0
-offset_right = 193.5
-offset_bottom = 214.0
+offset_left = -930.0
+offset_top = -74.0
+offset_right = -543.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -140,10 +140,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.5
-offset_top = 210.0
-offset_right = 193.5
-offset_bottom = 314.0
+offset_left = -930.0
+offset_top = 26.0
+offset_right = -543.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -161,10 +161,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 555.0
-offset_top = -527.0
-offset_right = 949.0
-offset_bottom = -423.0
+offset_left = -195.0
+offset_top = -298.0
+offset_right = 199.0
+offset_bottom = -194.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -181,10 +181,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 555.0
-offset_top = -430.0
-offset_right = 949.0
-offset_bottom = -326.0
+offset_left = -195.0
+offset_top = -201.0
+offset_right = 199.0
+offset_bottom = -97.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -201,10 +201,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 555.0
-offset_top = -331.0
-offset_right = 949.0
-offset_bottom = -227.0
+offset_left = -195.0
+offset_top = -102.0
+offset_right = 199.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
@@ -212,6 +212,68 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 45
 text = "facility_enterance"
+flat = true
+
+[node name="first_floor" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -24.0
+offset_right = 199.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "first_floor"
+flat = true
+
+[node name="second_floor" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = 63.0
+offset_right = 199.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "second_floor
+"
+flat = true
+
+[node name="control_floor" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = 144.0
+offset_right = 199.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.489622, 0.489622, 0.489622, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 45
+text = "control_floor
+"
 flat = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
@@ -224,3 +286,6 @@ flat = true
 [connection signal="pressed" from="facilityExterior" to="." method="_on_facility_exterior_pressed"]
 [connection signal="pressed" from="underwater_floor" to="." method="_on_underwater_floor_pressed"]
 [connection signal="pressed" from="facility_enterance" to="." method="_on_facility_enterance_pressed"]
+[connection signal="pressed" from="first_floor" to="." method="_on_first_floor_pressed"]
+[connection signal="pressed" from="second_floor" to="." method="_on_second_floor_pressed"]
+[connection signal="pressed" from="control_floor" to="." method="_on_control_floor_pressed"]

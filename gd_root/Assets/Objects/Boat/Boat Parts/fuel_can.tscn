@@ -29,7 +29,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qm2c0"]
-size = Vector3(0.19, 0.76, 0.639526)
+size = Vector3(0.19, 1.06457, 0.639526)
 
 [node name="fuel_can" type="Node3D"]
 
@@ -38,9 +38,9 @@ transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 0, 0, 0)
 mesh = SubResource("ArrayMesh_t7j2e")
 material = ExtResource("1_oy7l1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="fuel_can_col" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368273, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393677, 0.00704348, 0.00970459)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fuel_can_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00393677, 0.15933, 0.00970459)
 shape = SubResource("BoxShape3D_qm2c0")

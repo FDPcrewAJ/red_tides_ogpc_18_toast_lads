@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=143 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -41,6 +41,10 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/first_floor_interaction_control.gd" id="39_opvwc"]
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="40_smis2"]
 [ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="41_3a62q"]
+[ext_resource type="PackedScene" uid="uid://dqnyt2b1il67q" path="res://Assets/Objects/Boat/Boat Parts/antennas.tscn" id="42_hqxe6"]
+[ext_resource type="PackedScene" uid="uid://cbtn4wxpj2woq" path="res://Assets/Objects/Boat/Boat Parts/battery.tscn" id="43_htaof"]
+[ext_resource type="PackedScene" uid="uid://dorv7f50mi4pv" path="res://Assets/Objects/Boat/Boat Parts/motor.tscn" id="44_l7bje"]
+[ext_resource type="PackedScene" uid="uid://dgo4yb6dwugpf" path="res://Assets/Objects/Boat/Boat Parts/radar.tscn" id="45_jfwp7"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -1994,10 +1998,67 @@ mesh = SubResource("PlaneMesh_m571g")
 
 [node name="boat_parts" type="Node3D" parent="puzzle_interaction"]
 
-[node name="fuel_can" parent="puzzle_interaction/boat_parts" instance=ExtResource("41_3a62q")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -1, 5)
+[node name="inventory_test" type="Node3D" parent="puzzle_interaction/boat_parts"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/fuel_can"]
+[node name="fuel_can" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("41_3a62q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.6224, 1.70979, -13.2765)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/fuel_can"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431992, 0)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.729
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 0.687
+
+[node name="antennas" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("42_hqxe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9551, 1.7, -14.194)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/antennas"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0557384, 0.0866114, -0.0628338)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.729
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 0.687
+
+[node name="battery" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("43_htaof")]
+transform = Transform3D(0.374894, 0, -0.330839, 0, 0.5, 0, 0.330839, 0, 0.374894, 16.2239, 1.7, -14.8227)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/battery"]
+transform = Transform3D(1.32336, 0, -1.49958, 0, 2, 0, 1.49958, 0, 1.32336, -0.0399043, 0.173224, -0.0178004)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.729
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 0.687
+
+[node name="motor" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("44_l7bje")]
+transform = Transform3D(0.214429, -0.97674, 0, 0.97674, 0.214429, 0, 0, 0, 1, 16.0993, 1.66028, -17.904)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/motor"]
+transform = Transform3D(-6.39047e-09, 0.97674, -0.214429, 2.91091e-08, 0.214429, 0.97674, 1, 0, -2.98023e-08, -0.185566, 1.43445, -0.236797)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.729
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 0.687
+
+[node name="radar" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("45_jfwp7")]
+transform = Transform3D(1.40855, 0, -1.41985, 0, 2, 0, 1.41985, 0, 1.40855, 15.7111, 1.7, -19.3065)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/radar"]
+transform = Transform3D(0.354964, 0, -0.352137, 0, 0.5, 0, 0.352137, 0, 0.354964, 0.000605106, 0.0433062, -0.0108089)
+light_color = Color(1, 1, 0, 1)
+light_energy = 0.729
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 0.687
+
+[node name="fuel_can_" parent="puzzle_interaction/boat_parts" instance=ExtResource("41_3a62q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 0.501757, 5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/fuel_can_"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431992, 0)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729

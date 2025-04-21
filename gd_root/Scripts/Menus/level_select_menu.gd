@@ -37,3 +37,15 @@ func _on_underwater_floor_pressed():
 
 func _on_facility_enterance_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Final Levels/facility_enterance.tscn")
+
+
+func _on_first_floor_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Final Levels/first_floor.tscn")
+
+
+func _on_second_floor_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Final Levels/second_floor.tscn")
+
+
+func _on_control_floor_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Final Levels/control_floor.tscn")

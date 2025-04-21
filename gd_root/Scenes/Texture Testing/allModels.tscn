@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=46 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -41,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="39_rfvr8"]
 [ext_resource type="PackedScene" uid="uid://k3ygya7ok4mf" path="res://Imports/Models/Objects/Antennas/Antennas.gltf" id="40_4jm2i"]
 [ext_resource type="PackedScene" uid="uid://dixq4mqfagy4a" path="res://Imports/Models/Objects/Battery/BoatBatteryNew.gltf" id="41_whhue"]
+[ext_resource type="PackedScene" uid="uid://bep0drqignitx" path="res://Imports/Models/Objects/radar/radar.gltf" id="42_iuoou"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -204,3 +205,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0637, 0, 9.43506)
 
 [node name="blockbench_export" parent="." instance=ExtResource("41_whhue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9547, 0, 9.04835)
+
+[node name="blockbench_export2" parent="." instance=ExtResource("42_iuoou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1812, 4.76837e-07, 9.32944)

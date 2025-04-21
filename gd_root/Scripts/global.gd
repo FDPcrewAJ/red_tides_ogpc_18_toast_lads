@@ -11,7 +11,7 @@ var time_left = 20
 var timer_active = true
 
 #List pickup boolean
-var list_in_hand = true
+var list_in_hand = false
 
 # Player ray cast collision range for interaction
 var current_object = "none"
@@ -25,16 +25,24 @@ var four_watered = false
 var five_watered = false
 var six_watered = false
 
+# Players position for scene changes
 var lastpos = 0
 
+# Fire Puzzle 
 var water_amount = 1
 
-# Fire Puzzle 
 var fire_console_number = 0
 
 var fire_console_one_water = 1
 var fire_console_two_water = 1
 var fire_console_three_water = 1
+
+var one_fire_acess = 0
+var two_fire_acess = 0
+var three_fire_acess = 0
+var four_fire_acess = 0
+var five_fire_acess = 0
+var six_fire_acess = 0
 
 var entry_door_open = false
 
@@ -51,18 +59,19 @@ var new_position = 0
 
 var in_menu = false
 
-var one_fire_acess = 0
-var two_fire_acess = 0
-var three_fire_acess = 0
-var four_fire_acess = 0
-var five_fire_acess = 0
-var six_fire_acess = 0
-
 var floor = "null"
 
 var reactorStable = false
 
 var keypadPositive = false
+
+
+# Inventory System
+var fuel_can_collected = false
+var antennas_collected = false
+var battery_collected = false
+var motor_collected = false
+var radar_collected = false
 
 func _process(_delta):
 	if timer_active && time_left == 0:

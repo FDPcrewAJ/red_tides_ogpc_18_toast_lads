@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvu4gclkjq2yb"]
+
+[ext_resource type="PackedScene" uid="uid://cvntgdlhwppsy" path="res://Imports/Models/Objects/Saagar Imports/Info Board.gltf" id="1_fwi5e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3y7d"]
+size = Vector3(2.50281, 2.85504, 0.199707)
+
+[node name="infoBoard" instance=ExtResource("1_fwi5e")]
+
+[node name="cuboid" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70015, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00445557, 1.41147, 0.0305176)
+shape = SubResource("BoxShape3D_r3y7d")

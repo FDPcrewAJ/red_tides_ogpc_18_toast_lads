@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dq40tqblxt18l"
-path="res://.godot/imported/Generic Machine #1.gltf-7886cd7fa23f7e41425e3f070b483028.scn"
+uid="uid://bmmr35vn0rn0t"
+path="res://.godot/imported/Generic Machine.gltf-cc65e4121db8526ff2d334e152ea8cb4.scn"
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Saagar Imports/Generic Machine #1.gltf"
-dest_files=["res://.godot/imported/Generic Machine #1.gltf-7886cd7fa23f7e41425e3f070b483028.scn"]
+source_file="res://Imports/Models/Objects/Saagar Imports/Generic Machine.gltf"
+dest_files=["res://.godot/imported/Generic Machine.gltf-cc65e4121db8526ff2d334e152ea8cb4.scn"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=51 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -39,9 +39,14 @@
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="38_wda1v"]
 [ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Imports/Models/Objects/Lights/v3_industrial_light.gltf" id="39_4vs5a"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="39_rfvr8"]
-[ext_resource type="PackedScene" uid="uid://dq40tqblxt18l" path="res://Imports/Models/Objects/Saagar Imports/Generic Machine #1.gltf" id="40_gmhm0"]
-[ext_resource type="PackedScene" uid="uid://cvntgdlhwppsy" path="res://Imports/Models/Objects/Saagar Imports/Info Board.gltf" id="41_wt8pk"]
-[ext_resource type="PackedScene" uid="uid://donb6kwx3hx2h" path="res://Imports/Models/Objects/Saagar Imports/Old TV + Texture.gltf" id="42_682oa"]
+[ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="40_ip4fa"]
+[ext_resource type="PackedScene" uid="uid://0x1hlqecfvof" path="res://Assets/Objects/MiscFurnature/fridge.tscn" id="41_yp8wg"]
+[ext_resource type="PackedScene" uid="uid://bvu4gclkjq2yb" path="res://Assets/Objects/MiscFurnature/info_board.tscn" id="42_xulot"]
+[ext_resource type="PackedScene" uid="uid://cjw1epxc7yxt4" path="res://Assets/Objects/MiscFurnature/metal_locker.tscn" id="43_7ubsb"]
+[ext_resource type="PackedScene" uid="uid://qfc6y2fal6no" path="res://Assets/Objects/MiscFurnature/old_tv.tscn" id="44_w7eyq"]
+[ext_resource type="PackedScene" uid="uid://jtf8g1dwclif" path="res://Assets/Objects/MiscFurnature/bunk_bed.tscn" id="45_vpx3l"]
+[ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="46_1trds"]
+[ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="47_5aoyv"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -200,11 +205,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38928, 0, 11.5375)
 [node name="clock" parent="." instance=ExtResource("39_rfvr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80858, 0, 0.109151)
 
-[node name="blockbench_export3" parent="." instance=ExtResource("40_gmhm0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4867, 4.76837e-07, -4.88787)
+[node name="genericMachine" parent="." instance=ExtResource("40_ip4fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98145, 0, -1.13536)
 
-[node name="blockbench_export4" parent="." instance=ExtResource("41_wt8pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28017, 1.31485, -3.42898)
+[node name="fridge" parent="." instance=ExtResource("41_yp8wg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49876, 0, -2.3974)
 
-[node name="blockbench_export5" parent="." instance=ExtResource("42_682oa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04739, 1.75176, -3.42898)
+[node name="infoBoard" parent="." instance=ExtResource("42_xulot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22811, 0, -0.950195)
+
+[node name="metal_locker" parent="." instance=ExtResource("43_7ubsb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08965, 0, -3.48593)
+
+[node name="old_tv" parent="." instance=ExtResource("44_w7eyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78944, 0, 1.22145)
+
+[node name="bunkBed" parent="." instance=ExtResource("45_vpx3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63902, 0, -3.07355)
+
+[node name="pen" parent="." instance=ExtResource("46_1trds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4042, 0, -1.61218)
+
+[node name="lightSwitch" parent="." instance=ExtResource("47_5aoyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.71466, 0, 3.03801)

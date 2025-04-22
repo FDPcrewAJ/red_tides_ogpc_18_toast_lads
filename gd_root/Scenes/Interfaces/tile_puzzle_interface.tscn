@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="4_v8csq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax307"]
-bg_color = Color(0.355313, 0.355314, 0.355314, 1)
+bg_color = Color(0.505882, 0.65098, 0.396078, 1)
 
 [node name="TilePuzzleInterface" type="Node2D"]
 script = ExtResource("1_306ms")
@@ -321,8 +321,9 @@ grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
-theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
-theme_override_constants/outline_size = 5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_v8csq")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_ax307")
@@ -335,7 +336,7 @@ offset_left = -895.0
 offset_top = -439.0
 offset_right = -855.0
 offset_bottom = -302.0
-theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_v8csq")

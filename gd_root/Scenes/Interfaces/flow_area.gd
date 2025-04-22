@@ -6,6 +6,8 @@ var filled = false
 func _ready() -> void:
 	pass
 
+func reset():
+	filled = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,12 +20,15 @@ func _process(delta: float) -> void:
 		if get_overlapping_areas()[0].filled == true:
 			if self.name == "Area2D":
 				get_parent().active1 = true
+				get_parent().neighbor1 = get_overlapping_areas()[0].get_parent()
 		if get_overlapping_areas()[0].filled == true:
 			if self.name == "Area2D2":
 				get_parent().active2 = true
+				get_parent().neighbor2 = get_overlapping_areas()[0].get_parent()
 		if get_overlapping_areas()[0].filled == true:
 			if self.name == "Area2D3":
 				get_parent().active3 = true
+				get_parent().neighbor3 = get_overlapping_areas()[0].get_parent()
 	else:
 		if self.name == "Area2D":
 			get_parent().active1 = false

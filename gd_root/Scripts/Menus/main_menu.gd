@@ -2,6 +2,7 @@ extends Control
 
 @onready var devTools: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Level Select"
 @onready var settings: Control = $settings
+@onready var credits = $credits
 
 
 func _ready() -> void:
@@ -37,3 +38,7 @@ func _on_settings_pressed() -> void:
 func _on_level_select_pressed() -> void:
 	Global.previous_scene = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file("res://Scenes/Menus/level_select_menu.tscn")
+
+
+func _on_credits_pressed():
+	credits.visible = true

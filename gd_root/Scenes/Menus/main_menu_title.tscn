@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqjbnuea3t06a"]
+[gd_scene load_steps=6 format=3 uid="uid://dqjbnuea3t06a"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/main_menu.gd" id="1_j0o3k"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_boyo4"]
 [ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings/settings.tscn" id="4_cpotp"]
 [ext_resource type="Texture2D" uid="uid://bx6orunrrx52m" path="res://Imports/images/red_tides_logo.png" id="4_x5h11"]
+[ext_resource type="PackedScene" uid="uid://cviafdl3wf71t" path="res://Scenes/Menus/credits.tscn" id="5_28aoe"]
 
 [node name="main_menu_title" type="Control"]
 layout_mode = 3
@@ -119,8 +120,13 @@ offset_top = -540.0
 offset_right = 950.0
 offset_bottom = 540.0
 
+[node name="credits" parent="." instance=ExtResource("5_28aoe")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]

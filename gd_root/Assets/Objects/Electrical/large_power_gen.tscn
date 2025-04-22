@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://g8pkwlkfydl4"]
+
+[ext_resource type="PackedScene" uid="uid://k5ey4c1xsn4n" path="res://Imports/Models/Objects/Saagar Imports/Large Power Generator (old Style).gltf" id="1_b866y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tcjrp"]
+size = Vector3(0.624451, 0.563354, 1.50574)
+
+[node name="largePowerGen" instance=ExtResource("1_b866y")]
+transform = Transform3D(1.82325, 0, 0, 0, 1.82325, 0, 0, 0, 1.82325, 0, 0, 0)
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(2.4303, 0, 0, 0, 2.4303, 0, 0, 0, 2.4303, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(2.4303, 0, 0, 0, 2.4303, 0, 0, 0, 2.4303, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015258, 0.281677, -0.0576783)
+shape = SubResource("BoxShape3D_tcjrp")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=133 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="Texture2D" uid="uid://c3skeplrwm2dh" path="res://Textures/Temp Dev Textures/floor_1_schematic.png" id="1_tifgq"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="30_mm3nu"]
 [ext_resource type="PackedScene" uid="uid://drxiydnsv34hj" path="res://Assets/Objects/Clutter/intern_sign.tscn" id="31_80r8s"]
 [ext_resource type="PackedScene" uid="uid://bwmyiotwhjhy6" path="res://Assets/Objects/Pipes/pipe_junc_t.tscn" id="32_u5bdo"]
+[ext_resource type="PackedScene" uid="uid://g8pkwlkfydl4" path="res://Assets/Objects/Electrical/large_power_gen.tscn" id="33_nawdp"]
 [ext_resource type="PackedScene" uid="uid://c7vsjp7ma7tyt" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="33_nbwly"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="34_cau1u"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="36_413eg"]
@@ -1702,11 +1703,8 @@ transform = Transform3D(-0.34921, 0, 0.937045, 0, 1, 0, -0.937045, 0, -0.34921, 
 [node name="primaryGenerator" type="Node3D" parent="world/decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9658, 0, 10.5934)
 
-[node name="(put large generator model here)" type="Node3D" parent="world/decorations/primaryGenerator"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="world/decorations/primaryGenerator/(put large generator model here)"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92629, 2.10956, 0.593185)
-size = Vector3(3.62939, 3.34863, 8.00732)
+[node name="largePowerGen" parent="world/decorations/primaryGenerator" instance=ExtResource("33_nawdp")]
+transform = Transform3D(2.33694, 0, 0, 0, 2.33694, 0, 0, 0, 2.33694, -4.83035, 0.502774, 1.83643)
 
 [node name="backupGenerator" parent="world/decorations/primaryGenerator" instance=ExtResource("26_ujxie")]
 transform = Transform3D(0.672406, 0, -0.740183, 0, 1, 0, 0.740183, 0, 0.672406, -4.29515, 0.5, -4.50519)

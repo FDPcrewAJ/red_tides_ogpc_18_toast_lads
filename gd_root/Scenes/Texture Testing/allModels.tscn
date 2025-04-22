@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=55 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
 [ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
@@ -47,6 +47,10 @@
 [ext_resource type="PackedScene" uid="uid://jtf8g1dwclif" path="res://Assets/Objects/MiscFurnature/bunk_bed.tscn" id="45_vpx3l"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="46_1trds"]
 [ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="47_5aoyv"]
+[ext_resource type="PackedScene" uid="uid://is0ykt0qbb7l" path="res://Imports/Models/Objects/Saagar Imports/Exterior HVAC unit + Texture (1).gltf" id="48_8yudt"]
+[ext_resource type="PackedScene" uid="uid://b2pgdoelxuw2b" path="res://Assets/Objects/MiscFurnature/large_hvack_unit.tscn" id="49_5w2i5"]
+[ext_resource type="PackedScene" uid="uid://g8pkwlkfydl4" path="res://Assets/Objects/Electrical/large_power_gen.tscn" id="50_syd3r"]
+[ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="51_eo7fw"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -228,3 +232,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4042, 0, -1.61218)
 
 [node name="lightSwitch" parent="." instance=ExtResource("47_5aoyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.71466, 0, 3.03801)
+
+[node name="blockbench_export3" parent="." instance=ExtResource("48_8yudt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7646, 1.19209e-07, 6.61698)
+
+[node name="largeHvackUnit" parent="." instance=ExtResource("49_5w2i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0636, 0, 2.49476)
+
+[node name="largePowerGen" parent="." instance=ExtResource("50_syd3r")]
+transform = Transform3D(1.82325, 0, 0, 0, 1.82325, 0, 0, 0, 1.82325, 14.9135, 0, 12.103)
+
+[node name="computer2" parent="." instance=ExtResource("51_eo7fw")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.79499, 0, 15.6721)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=61 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="2_pcjbw"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="10_ca3rm"]
 [ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="10_t4ucj"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="11_i2ung"]
+[ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="11_mrpe1"]
 [ext_resource type="PackedScene" uid="uid://bllhjpheko4qy" path="res://Assets/Objects/Electrical/backup_generator.tscn" id="12_2bmyb"]
 [ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="13_4hgnl"]
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="14_1sk4w"]
@@ -48,7 +49,7 @@ material = SubResource("StandardMaterial3D_gpb7g")
 size = Vector2(50, 32)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fynni"]
-size = Vector3(40, 1, 30)
+size = Vector3(52.7714, 1, 41.5254)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4i2q"]
 size = Vector3(50, 1, 32)
@@ -176,6 +177,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_440p2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.131927, 0, 3.72461)
 shape = SubResource("BoxShape3D_fynni")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
@@ -709,46 +711,259 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8548, -1.90735e-06, 7.770
 [node name="tables" type="Node3D" parent="world/decor/mainHall"]
 
 [node name="wooden_desk_1" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.0204, 0.5, -17.7867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7576, 0.5, -18.0505)
+
+[node name="wooden_desk_2" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 42.2489, 0.5, -17.2677)
+
+[node name="wooden_desk_3" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7576, 0.5, -14.2801)
+
+[node name="wooden_desk_4" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 42.2489, 0.5, -13.4973)
+
+[node name="wooden_desk_5" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7576, 0.5, -10.6991)
+
+[node name="wooden_desk_6" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 42.2489, 0.5, -9.91631)
+
+[node name="wooden_desk_7" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5451, 0.5, -18.0505)
+
+[node name="wooden_desk_8" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.0363, 0.5, -17.2677)
+
+[node name="wooden_desk_9" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5451, 0.5, -14.2801)
+
+[node name="wooden_desk_10" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.0363, 0.5, -13.4973)
+
+[node name="wooden_desk_11" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5451, 0.5, -10.6991)
+
+[node name="wooden_desk_12" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.0363, 0.5, -9.91631)
+
+[node name="wooden_desk_13" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.095, 0.5, -18.0505)
+
+[node name="wooden_desk_14" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.5862, 0.5, -17.2677)
+
+[node name="wooden_desk_15" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.095, 0.5, -14.2801)
+
+[node name="wooden_desk_16" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.5862, 0.5, -13.4973)
+
+[node name="wooden_desk_17" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.095, 0.5, -10.6991)
+
+[node name="wooden_desk_18" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.5862, 0.5, -9.91631)
+
+[node name="wooden_desk_19" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.996939, 0, -0.0781807, 0, 1, 0, 0.0781807, 0, 0.996939, 8.16419, 0.5, -18.0505)
+
+[node name="wooden_desk_20" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.65539, 0.5, -17.2677)
+
+[node name="wooden_desk_21" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17885, 0.5, -14.1968)
+
+[node name="wooden_desk_22" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.65539, 0.5, -13.4973)
+
+[node name="wooden_desk_23" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.993093, 0, -0.117329, 0, 1, 0, 0.117329, 0, 0.993093, 7.78284, 0.5, -10.5436)
+
+[node name="wooden_desk_24" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-0.994685, 0, -0.102966, 0, 1, 0, 0.102966, 0, -0.994685, 9.65539, 0.5, -9.91631)
+
+[node name="wooden_desk_40" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.72079, 0.500001, 3.88185)
+
+[node name="wooden_desk_45" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.108, 0.500001, 0.488674)
+
+[node name="wooden_desk_46" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-0.998923, 0, 0.0464091, 0, 1, 0, -0.0464091, 0, -0.998923, 33.7, 0.500001, 1.25355)
+
+[node name="wooden_desk_47" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.998354, 0, -0.0573549, 0, 1, 0, 0.0573549, 0, 0.998354, 32.108, 0.500001, 4.67244)
+
+[node name="wooden_desk_48" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 33.5992, 0.500001, 5.45523)
+
+[node name="wooden_desk_49" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.999007, 0, -0.0445435, 0, 1, 0, 0.0445435, 0, 0.999007, 27.7459, 0.500001, 0.593848)
+
+[node name="wooden_desk_50" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 29.5229, 0.500001, 1.2016)
+
+[node name="wooden_desk_51" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.879, 0.500001, 4.51379)
+
+[node name="wooden_desk_52" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-0.999493, 0, -0.0318295, 0, 1, 0, 0.0318295, 0, -0.999493, 29.3282, 0.500001, 5.22622)
+
+[node name="wooden_desk_25" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.995799, 0, 0.0915711, 0, 1, 0, -0.0915711, 0, 0.995799, 2.95163, 0.5, -18.0505)
+
+[node name="wooden_desk_26" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-0.998325, 0, -0.0578603, 0, 1, 0, 0.0578603, 0, -0.998325, 4.44284, 0.5, -17.2677)
+
+[node name="wooden_desk_27" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95163, 0.5, -14.2801)
+
+[node name="wooden_desk_28" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-0.997468, 0, 0.0711144, 0, 1, 0, -0.0711144, 0, -0.997468, 4.44284, 0.5, -13.4973)
+
+[node name="wooden_desk_29" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.999956, 0, -0.00935483, 0, 1, 0, 0.00935483, 0, 0.999956, 2.95163, 0.5, -10.6991)
+
+[node name="wooden_desk_30" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-0.999104, 0, 0.042329, 0, 1, 0, -0.042329, 0, -0.999104, 4.43359, 0.5, -10.08)
+
+[node name="wooden_desk_31" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40623, 0.5, -17.7764)
+
+[node name="wooden_desk_32" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.00724, 0.5, -17.2677)
+
+[node name="wooden_desk_33" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49844, 0.5, -14.2801)
+
+[node name="wooden_desk_34" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.02111, 0.5, -13.8228)
+
+[node name="wooden_desk_35" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(0.991488, 0, -0.130197, 0, 1, 0, 0.130197, 0, 0.991488, -2.68052, 0.5, -10.6991)
+
+[node name="wooden_desk_36" parent="world/decor/mainHall/tables" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.00724, 0.5, -9.91631)
+
+[node name="circular_table" parent="world/decor/mainHall/tables" instance=ExtResource("11_mrpe1")]
+transform = Transform3D(0.975782, 0, -0.698462, 0, 1.2, 0, 0.698462, 0, 0.975782, 11.2881, 0.500002, 4.86857)
+
+[node name="circular_table2" parent="world/decor/mainHall/tables" instance=ExtResource("11_mrpe1")]
+transform = Transform3D(1.09782, 0, -0.484561, 0, 1.2, 0, 0.484561, 0, 1.09782, 11.2881, 0.500002, 1.11907)
 
 [node name="chairs" type="Node3D" parent="world/decor/mainHall"]
 
 [node name="spinnyChair" parent="world/decor/mainHall/chairs" instance=ExtResource("23_dj0sv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.6842, 0.5, -0.278172)
+transform = Transform3D(0.303168, 0, 0.952937, 0, 1, 0, -0.952937, 0, 0.303168, 38.133, 0.5, -14.2733)
+
+[node name="spinnyChair2" parent="world/decor/mainHall/chairs" instance=ExtResource("23_dj0sv")]
+transform = Transform3D(0.213917, 0, -0.976852, 0, 1, 0, 0.976852, 0, 0.213917, 34.4135, 0.5, -9.78637)
+
+[node name="spinnyChair3" parent="world/decor/mainHall/chairs" instance=ExtResource("23_dj0sv")]
+transform = Transform3D(0.213917, 0, -0.976852, 0, 1, 0, 0.976852, 0, 0.213917, 6.36682, 0.5, -9.78637)
+
+[node name="spinnyChair4" parent="world/decor/mainHall/chairs" instance=ExtResource("23_dj0sv")]
+transform = Transform3D(-0.623607, 0, 0.781738, 0, 1, 0, -0.781738, 0, -0.623607, 8.6533, 0.5, 1.76493)
 
 [node name="portable_chair" parent="world/decor/mainHall/chairs" instance=ExtResource("19_fwduh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.6044, 0.5, 0.327096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9767, 0.5, -17.2068)
+
+[node name="portable_chair2" parent="world/decor/mainHall/chairs" instance=ExtResource("19_fwduh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5751, 0.5, -17.2693)
+
+[node name="portable_chair3" parent="world/decor/mainHall/chairs" instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.969119, 0, -0.246593, 0, 1, 0, 0.246593, 0, 0.969119, 7.16717, 0.5, -13.3878)
+
+[node name="portable_chair4" parent="world/decor/mainHall/chairs" instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.831266, 0, -0.555875, 0, 1, 0, 0.555875, 0, 0.831266, 7.16189, 0.5, 1.0031)
+
+[node name="portable_chair5" parent="world/decor/mainHall/chairs" instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.9653, 0, -0.261145, 0, 1, 0, 0.261145, 0, 0.9653, 8.43689, 0.5, 3.40538)
 
 [node name="wooden_chair" parent="world/decor/mainHall/chairs" instance=ExtResource("18_4xbtj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.9672, 0.5, -0.553699)
+transform = Transform3D(0.982791, 0, 0.184723, 0, 1, 0, -0.184723, 0, 0.982791, 38.168, 0.5, -10.635)
+
+[node name="wooden_chair2" parent="world/decor/mainHall/chairs" instance=ExtResource("18_4xbtj")]
+transform = Transform3D(0.962137, 0, -0.272566, 0, 1, 0, 0.272566, 0, 0.962137, 43.3285, 0.5, -14.1649)
+
+[node name="wooden_chair3" parent="world/decor/mainHall/chairs" instance=ExtResource("18_4xbtj")]
+transform = Transform3D(-0.997992, 0, 0.0633479, 0, 1, 0, -0.0633479, 0, -0.997992, 2.02765, 0.5, -13.6333)
+
+[node name="wooden_chair4" parent="world/decor/mainHall/chairs" instance=ExtResource("18_4xbtj")]
+transform = Transform3D(0.951089, 0, -0.308917, 0, 1, 0, 0.308917, 0, 0.951089, 7.52131, 0.5, 4.86865)
 
 [node name="misc" type="Node3D" parent="world/decor/mainHall"]
 
 [node name="fridge" parent="world/decor/mainHall/misc" instance=ExtResource("14_ecxhl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.2107, 0.5, -3.5966)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.282, 0.43245, -12.7865)
+
+[node name="fridge2" parent="world/decor/mainHall/misc" instance=ExtResource("14_ecxhl")]
+transform = Transform3D(-0.161776, 0, -0.986827, 0, 1, 0, 0.986827, 0, -0.161776, 35.0936, 0.43245, -21.5871)
+
+[node name="fridge3" parent="world/decor/mainHall/misc" instance=ExtResource("14_ecxhl")]
+transform = Transform3D(-0.847307, 0, -0.531103, 0, 1, 0, 0.531103, 0, -0.847307, 12.8628, 0.43245, -21.4802)
+
+[node name="fridge4" parent="world/decor/mainHall/misc" instance=ExtResource("14_ecxhl")]
+transform = Transform3D(-0.86845, 0, 0.495777, 0, 1, 0, -0.495777, 0, -0.86845, 13.1159, 0.43245, 6.87193)
 
 [node name="metal_box" parent="world/decor/mainHall/misc" instance=ExtResource("15_t4mmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.196, 0.5, -1.93198)
+transform = Transform3D(2.40609, 0, 0, 0, 2.40609, 0, 0, 0, 2.40609, 24.4257, 0.5, -2.53652)
 
 [node name="wooden_box" parent="world/decor/mainHall/misc" instance=ExtResource("16_nm56w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.4602, 0.5, -5.97982)
+transform = Transform3D(0.767602, 0, -0.640927, 0, 1, 0, 0.640927, 0, 0.767602, 32.7703, 1.63298, 5.03416)
 
 [node name="tech" type="Node3D" parent="world/decor/mainHall"]
 
 [node name="backupGenerator" parent="world/decor/mainHall/tech" instance=ExtResource("12_2bmyb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.0125, 0.5, -2.59467)
+transform = Transform3D(0.983851, 0, -0.178991, 0, 1, 0, 0.178991, 0, 0.983851, 43.987, 0.5, -7.4266)
 
 [node name="old_tv" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3334, 0.5, -6.38903)
+transform = Transform3D(0.869435, 0, -0.494048, 0, 1, 0, 0.494048, 0, 0.869435, 36.1997, 1.65631, -10.027)
+
+[node name="old_tv2" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
+transform = Transform3D(-0.966129, 0, -0.25806, 0, 1, 0, 0.25806, 0, -0.966129, 8.99395, 1.65631, -17.6147)
+
+[node name="old_tv3" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
+transform = Transform3D(-0.138637, 0, 0.990343, 0, 1, 0, -0.990343, 0, -0.138637, 4.5105, 1.62852, 3.62622)
 
 [node name="computer" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 54.8433, 0.5, -5.84301)
+transform = Transform3D(-0.752813, 0, -0.270688, 0, 0.8, 0, 0.270688, 0, -0.752813, 36.0338, 1.62149, -18.2713)
+
+[node name="computer2" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
+transform = Transform3D(-0.152126, 0, -0.785403, 0, 0.8, 0, 0.785403, 0, -0.152126, 30.2144, 1.62149, -13.4668)
+
+[node name="computer3" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
+transform = Transform3D(0.189308, 0, 0.777279, 0, 0.8, 0, -0.777279, 0, 0.189308, 29.452, 1.62149, 0.692057)
+
+[node name="computer4" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
+transform = Transform3D(0.122306, 0, -0.790596, 0, 0.8, 0, 0.790596, 0, 0.122306, 7.69001, 1.62149, -10.0945)
+
+[node name="computer5" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
+transform = Transform3D(0.0885091, 0, 0.795089, 0, 0.8, 0, -0.795089, 0, 0.0885091, -1.1255, 1.62149, -14.7018)
+
+[node name="computer6" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
+transform = Transform3D(0.19956, 0, -0.77471, 0, 0.8, 0, 0.77471, 0, 0.19956, 2.98858, 1.62149, -17.6334)
 
 [node name="genericMachine" parent="world/decor/mainHall/tech" instance=ExtResource("10_t4ucj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.7834, 0.5, -2.98425)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.4791, 0.5, -5.16192)
+
+[node name="genericMachine2" parent="world/decor/mainHall/tech" instance=ExtResource("10_t4ucj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2392, 0.5, -2.36105)
+
+[node name="genericMachine3" parent="world/decor/mainHall/tech" instance=ExtResource("10_t4ucj")]
+transform = Transform3D(-5.59428e-08, 0, 1.27982, 0, 1.27982, 0, -1.27982, 0, -5.59428e-08, 37.4311, 0.5, -21.6458)
 
 [node name="server" parent="world/decor/mainHall/tech" instance=ExtResource("15_jnker")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.7589, 0.5, -4.51486)
+transform = Transform3D(-1.28704, 0, -0.743071, 0, 1.48614, 0, 0.743071, 0, -1.28704, 27.0819, 0.5, -20.7724)
+
+[node name="server4" parent="world/decor/mainHall/tech" instance=ExtResource("15_jnker")]
+transform = Transform3D(-1.3615, 0, -0.59576, 0, 1.48614, 0, 0.59576, 0, -1.3615, -3.70104, 0.500001, -21.1082)
+
+[node name="server2" parent="world/decor/mainHall/tech" instance=ExtResource("15_jnker")]
+transform = Transform3D(-1.47286, 0, -0.198223, 0, 1.48614, 0, 0.198223, 0, -1.47286, 29.7648, 0.5, -21.3604)
+
+[node name="server3" parent="world/decor/mainHall/tech" instance=ExtResource("15_jnker")]
+transform = Transform3D(-1.3414, 0, 0.63973, 0, 1.48614, 0, -0.63973, 0, -1.3414, 43.612, 0.499999, -21.1668)
 
 [node name="serverRoom" type="Node3D" parent="world/decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8548, -1.90735e-06, 7.77037)
@@ -987,4 +1202,4 @@ transform = Transform3D(0.420783, 0, -0.907162, 0, 1, 0, 0.907162, 0, 0.420783, 
 transform = Transform3D(-5.87772e-08, 0, 1.34466, 0, 1.34466, 0, -1.34466, 0, -5.87772e-08, -1.55296, 0.396068, 5.63622)
 
 [node name="stairWell" parent="world/decor" instance=ExtResource("14_1sk4w")]
-transform = Transform3D(-2.18505e-07, 0, -4.9988, 0, 4.9988, 0, 4.9988, 0, -2.18505e-07, 0.271707, 0.5, 10.7657)
+transform = Transform3D(-2.18505e-07, 0, -4.9988, 0, 4.9988, 0, 4.9988, 0, -2.18505e-07, 0.144998, 0.5, 11.5259)

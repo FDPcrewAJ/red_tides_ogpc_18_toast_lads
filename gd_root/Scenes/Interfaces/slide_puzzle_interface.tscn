@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://c81asm7ytontg"]
+
+[ext_resource type="Script" path="res://Scenes/Interfaces/slide_puzzle_interface.gd" id="1_dihlm"]
+[ext_resource type="Texture2D" uid="uid://c4vdr6qghii0t" path="res://Imports/images/radarDot-removebg-preview-green.png" id="1_ehcup"]
+[ext_resource type="Script" path="res://Scenes/Interfaces/sliding_box.gd" id="2_4wu11"]
+
+[sub_resource type="GDScript" id="GDScript_qvurq"]
+script/source = "extends Label
+
+var complete = false
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if complete == true:
+		Global.flow_puzzle_completed = true
+		text = \"Flow Complete\"
+	else:
+		Global.flow_puzzle_completed = true
+		text = \"Flow Incomplete\"
+"
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_1qdhu"]
+a = Vector2(-250, 100)
+b = Vector2(250, 100)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h1jmk"]
+a = Vector2(-250, 100)
+b = Vector2(-250, -400)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ea0ak"]
+a = Vector2(250, -400)
+b = Vector2(250, 100)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fhfam"]
+a = Vector2(250, -400)
+b = Vector2(-250, -400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r63iv"]
+size = Vector2(350, 350)
+
+[node name="SlidePuzzleInterface" type="Node2D"]
+script = ExtResource("1_dihlm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = -150.0
+offset_top = 300.0
+offset_right = 150.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="FlowPuzzleLevelLabel" type="Label" parent="."]
+offset_left = -950.0
+offset_top = -525.0
+offset_right = -910.0
+offset_bottom = -388.0
+theme_override_font_sizes/font_size = 100
+script = SubResource("GDScript_qvurq")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 50)
+shape = SubResource("SegmentShape2D_1qdhu")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 50)
+shape = SubResource("SegmentShape2D_h1jmk")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(0, 50)
+shape = SubResource("SegmentShape2D_ea0ak")
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(0, 50)
+shape = SubResource("SegmentShape2D_fhfam")
+
+[node name="SlidingBox" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_ehcup")
+script = ExtResource("2_4wu11")
+
+[node name="Area2D" type="Area2D" parent="SlidingBox"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlidingBox/Area2D"]
+shape = SubResource("RectangleShape2D_r63iv")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="SlidingBox/Area2D" to="SlidingBox" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SlidingBox/Area2D" to="SlidingBox" method="_on_area_2d_mouse_exited"]

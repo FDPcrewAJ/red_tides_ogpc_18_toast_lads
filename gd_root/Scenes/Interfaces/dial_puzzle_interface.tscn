@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=11 format=3 uid="uid://cvp6iu0ltf4p5"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_en7eb"]
 [ext_resource type="Texture2D" uid="uid://cyl8g6pb7siy7" path="res://Imports/images/Dial-1.png.png" id="3_4aejo"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial.gd" id="3_oet22"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_sprite_2d.gd" id="4_h3xx3"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="5_com21"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_n8whq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 
@@ -17,10 +19,14 @@ script = ExtResource("1_7i68q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_en7eb")
+
 [node name="Dial" type="Button" parent="."]
-offset_left = -750.0
+offset_left = -815.0
 offset_top = -99.0
-offset_right = -542.0
+offset_right = -607.0
 offset_bottom = 109.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ceuvr")
 flat = true
@@ -33,9 +39,9 @@ texture = ExtResource("3_4aejo")
 script = ExtResource("4_h3xx3")
 
 [node name="Dial2" type="Button" parent="."]
-offset_left = -101.0
+offset_left = -382.0
 offset_top = -91.0
-offset_right = 107.0
+offset_right = -174.0
 offset_bottom = 117.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pux5x")
 flat = true
@@ -48,9 +54,9 @@ texture = ExtResource("3_4aejo")
 script = ExtResource("4_h3xx3")
 
 [node name="Dial3" type="Button" parent="."]
-offset_left = 525.0
+offset_left = 64.0
 offset_top = -104.0
-offset_right = 733.0
+offset_right = 272.0
 offset_bottom = 104.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_aos3k")
 flat = true
@@ -63,18 +69,27 @@ texture = ExtResource("3_4aejo")
 script = ExtResource("4_h3xx3")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -108.0
-offset_top = 300.0
-offset_right = 108.0
-offset_bottom = 438.0
+offset_left = -393.0
+offset_top = 287.0
+offset_right = -175.0
+offset_bottom = 425.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_n8whq")
 theme_override_font_sizes/font_size = 90
 text = "Back"
 
 [node name="DialPuzzleLabel" type="Label" parent="."]
-offset_left = -478.0
-offset_top = -466.0
-offset_right = 518.0
-offset_bottom = -168.0
+offset_left = -859.0
+offset_top = -426.0
+offset_right = 298.0
+offset_bottom = -128.0
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_n8whq")
 theme_override_font_sizes/font_size = 100
 text = "Incorrect Calibration"
 script = ExtResource("5_com21")

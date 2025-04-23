@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dom3y0dmm1c6h"
+path="res://.godot/imported/line_2.mp3-2b75a5c7219bb49223d91a3e6acc1cc3.mp3str"
+
+[deps]
+
+source_file="res://Audio/Tutorial Voice Lines/line_2.mp3"
+dest_files=["res://.godot/imported/line_2.mp3-2b75a5c7219bb49223d91a3e6acc1cc3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

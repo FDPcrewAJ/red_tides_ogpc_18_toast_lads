@@ -29,6 +29,10 @@ func _process(delta: float) -> void:
 			if self.name == "Area2D3":
 				get_parent().active3 = true
 				get_parent().neighbor3 = get_overlapping_areas()[0].get_parent()
+		if get_overlapping_areas()[0].filled == true:
+			if self.name == "Area2D4":
+				get_parent().active4 = true
+				get_parent().neighbor3 = get_overlapping_areas()[0].get_parent()
 	else:
 		if self.name == "Area2D":
 			get_parent().active1 = false
@@ -36,5 +40,5 @@ func _process(delta: float) -> void:
 			get_parent().active2 = false
 		if self.name == "Area2D3":
 			get_parent().active3 = false
-	if overlaps_area($"../../../StartLabel/StartArea2D") == true:
+	if overlaps_area($"../../../StartArea2D") == true:
 		get_parent().startFull = true

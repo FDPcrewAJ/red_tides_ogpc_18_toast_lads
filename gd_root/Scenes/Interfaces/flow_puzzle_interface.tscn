@@ -1,0 +1,637 @@
+[gd_scene load_steps=14 format=3 uid="uid://xuwf5i5dlbun"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/flow_puzzle_interface.gd" id="1_wyrge"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/pipe_button.gd" id="2_qtumd"]
+[ext_resource type="Texture2D" uid="uid://ckko0stcu2qk" path="res://Imports/images/straight_pipe-1.png" id="3_c71xk"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/flow_area.gd" id="3_ebcrh"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/pipe_button_base.gd" id="3_uvasq"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/start_area_2d.gd" id="5_271uy"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/flow_puzzle_level_label.gd" id="5_dgjef"]
+[ext_resource type="Texture2D" uid="uid://btmocxpiuha75" path="res://Imports/images/t_pipe-1.png" id="6_d8jfu"]
+[ext_resource type="Texture2D" uid="uid://8285s43ahkep" path="res://Imports/images/turn_pipe-1.png" id="7_6c7nm"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/end_area_2d.gd" id="7_kknyb"]
+[ext_resource type="Texture2D" uid="uid://bjpk4bdy30mv3" path="res://Imports/images/cross_pipe-1.png" id="8_ok570"]
+[ext_resource type="Texture2D" uid="uid://bflr3klbsncvs" path="res://Imports/images/turn_flip_pipe-1.png" id="9_j6cto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lc7"]
+
+[node name="FlowPuzzleInterface" type="Node2D"]
+script = ExtResource("1_wyrge")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PipeButtonNode" type="Node2D" parent="."]
+position = Vector2(-225, -300)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton" type="Button" parent="PipeButtonNode"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("3_c71xk")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode/PipeButton"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode/PipeButton/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode/PipeButton"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode/PipeButton/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode2" type="Node2D" parent="."]
+position = Vector2(-75, -300)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton2" type="Button" parent="PipeButtonNode2"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("6_d8jfu")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode2/PipeButton2"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode2/PipeButton2/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode2/PipeButton2"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode2/PipeButton2/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode2/PipeButton2"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode2/PipeButton2/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode3" type="Node2D" parent="."]
+position = Vector2(75, -300)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton3" type="Button" parent="PipeButtonNode3"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode3/PipeButton3"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode3/PipeButton3/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode3/PipeButton3"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode3/PipeButton3/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode4" type="Node2D" parent="."]
+position = Vector2(225, -300)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton4" type="Button" parent="PipeButtonNode4"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode4/PipeButton4"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode4/PipeButton4/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode4/PipeButton4"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode4/PipeButton4/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode4/PipeButton4"]
+y_sort_enabled = true
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode4/PipeButton4/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode4/PipeButton4"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode4/PipeButton4/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode5" type="Node2D" parent="."]
+position = Vector2(-225, -150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton5" type="Button" parent="PipeButtonNode5"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("9_j6cto")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode5/PipeButton5"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode5/PipeButton5/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode5/PipeButton5"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode5/PipeButton5/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode6" type="Node2D" parent="."]
+position = Vector2(-75, -150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton6" type="Button" parent="PipeButtonNode6"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode6/PipeButton6"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode6/PipeButton6/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode6/PipeButton6"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode6/PipeButton6/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode7" type="Node2D" parent="."]
+position = Vector2(75, -150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton7" type="Button" parent="PipeButtonNode7"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode7/PipeButton7"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode7/PipeButton7/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode7/PipeButton7"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode7/PipeButton7/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode8" type="Node2D" parent="."]
+position = Vector2(225, -150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton8" type="Button" parent="PipeButtonNode8"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("3_c71xk")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode8/PipeButton8"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode8/PipeButton8/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode8/PipeButton8"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode8/PipeButton8/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode9" type="Node2D" parent="."]
+position = Vector2(-225, 0)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton9" type="Button" parent="PipeButtonNode9"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode10" type="Node2D" parent="."]
+position = Vector2(-75, 0)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton10" type="Button" parent="PipeButtonNode10"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("9_j6cto")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode10/PipeButton10"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode10/PipeButton10/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode10/PipeButton10"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode10/PipeButton10/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode11" type="Node2D" parent="."]
+position = Vector2(75, 0)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton11" type="Button" parent="PipeButtonNode11"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode11/PipeButton11"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode11/PipeButton11/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode11/PipeButton11"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode11/PipeButton11/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode11/PipeButton11"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode11/PipeButton11/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode11/PipeButton11"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode11/PipeButton11/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode12" type="Node2D" parent="."]
+position = Vector2(225, 0)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton12" type="Button" parent="PipeButtonNode12"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("6_d8jfu")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode12/PipeButton12"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode12/PipeButton12/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode12/PipeButton12"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode12/PipeButton12/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode12/PipeButton12"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode12/PipeButton12/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode13" type="Node2D" parent="."]
+position = Vector2(-225, 150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton13" type="Button" parent="PipeButtonNode13"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode13/PipeButton13"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode13/PipeButton13/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode13/PipeButton13"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode13/PipeButton13/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode14" type="Node2D" parent="."]
+position = Vector2(-75, 150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton14" type="Button" parent="PipeButtonNode14"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("3_c71xk")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode14/PipeButton14"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode14/PipeButton14/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode14/PipeButton14"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode14/PipeButton14/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode15" type="Node2D" parent="."]
+position = Vector2(75, 150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton15" type="Button" parent="PipeButtonNode15"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("6_d8jfu")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode15/PipeButton15"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode15/PipeButton15/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode15/PipeButton15"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode15/PipeButton15/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode15/PipeButton15"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode15/PipeButton15/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="PipeButtonNode16" type="Node2D" parent="."]
+position = Vector2(225, 150)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton16" type="Button" parent="PipeButtonNode16"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode16/PipeButton16"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode16/PipeButton16/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode16/PipeButton16"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode16/PipeButton16/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = -150.0
+offset_top = 300.0
+offset_right = 150.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 25
+toggle_mode = true
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="FlowPuzzleLevelLabel" type="Label" parent="."]
+offset_left = -950.0
+offset_top = -525.0
+offset_right = -910.0
+offset_bottom = -388.0
+theme_override_font_sizes/font_size = 80
+script = ExtResource("5_dgjef")
+
+[node name="StartLabel" type="Label" parent="."]
+offset_left = -432.0
+offset_top = -429.0
+offset_right = -282.0
+offset_bottom = -260.0
+theme_override_font_sizes/font_size = 60
+text = "Start
+     >"
+
+[node name="StartArea2D" type="Area2D" parent="."]
+position = Vector2(-300, -300)
+script = ExtResource("5_271uy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartArea2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="EndLabel" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 22.0
+offset_right = 466.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 60
+text = "End
+<"
+
+[node name="EndArea2D" type="Area2D" parent="."]
+position = Vector2(300, 150)
+script = ExtResource("7_kknyb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[connection signal="pressed" from="PipeButtonNode/PipeButton" to="PipeButtonNode" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode2/PipeButton2" to="PipeButtonNode2" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode3/PipeButton3" to="PipeButtonNode3" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode4/PipeButton4" to="PipeButtonNode4" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode5/PipeButton5" to="PipeButtonNode5" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode6/PipeButton6" to="PipeButtonNode6" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode7/PipeButton7" to="PipeButtonNode7" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode8/PipeButton8" to="PipeButtonNode8" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode9/PipeButton9" to="PipeButtonNode9" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode10/PipeButton10" to="PipeButtonNode10" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode11/PipeButton11" to="PipeButtonNode11" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode12/PipeButton12" to="PipeButtonNode12" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode13/PipeButton13" to="PipeButtonNode13" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode14/PipeButton14" to="PipeButtonNode14" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode15/PipeButton15" to="PipeButtonNode15" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode16/PipeButton16" to="PipeButtonNode16" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

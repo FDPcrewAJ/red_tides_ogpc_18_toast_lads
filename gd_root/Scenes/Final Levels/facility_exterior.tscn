@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=93 format=4 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
@@ -305,15 +305,21 @@ size = Vector3(15, 0.3, 12)
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
 size = Vector3(3, 0.5, 15.6611)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prgmg"]
 transparency = 1
 albedo_texture = ExtResource("9_psfmp")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_881vr"]
-material = SubResource("StandardMaterial3D_dwtlt")
+material = SubResource("StandardMaterial3D_prgmg")
 size = Vector3(3, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
+transparency = 1
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_vjulk"]
 material = SubResource("StandardMaterial3D_dwtlt")

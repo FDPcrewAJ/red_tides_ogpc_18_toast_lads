@@ -54,6 +54,9 @@
 [ext_resource type="PackedScene" uid="uid://b2pgdoelxuw2b" path="res://Assets/Objects/MiscFurnature/large_hvack_unit.tscn" id="49_5w2i5"]
 [ext_resource type="PackedScene" uid="uid://g8pkwlkfydl4" path="res://Assets/Objects/Electrical/large_power_gen.tscn" id="50_syd3r"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="51_eo7fw"]
+[ext_resource type="PackedScene" uid="uid://crjk80e7qhd08" path="res://Assets/Objects/Railings/outside_railing_1_segement.tscn" id="52_j143g"]
+[ext_resource type="PackedScene" uid="uid://ckouqjf2ccc10" path="res://Assets/Objects/Railings/outside_railing_90_corner.tscn" id="53_vxu32"]
+[ext_resource type="PackedScene" uid="uid://bmopb4vq72580" path="res://Assets/Objects/Railings/outside_railing_end.tscn" id="54_5r0x4"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -162,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88512, 3.65669, 0)
 texture = ExtResource("31_kumtv")
 
 [node name="railing5Segment" parent="." instance=ExtResource("23_ab0a3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.39102, 0, 10.0843)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61192, 1.19209e-07, -6.24725)
 
 [node name="server" parent="." instance=ExtResource("24_w1qi2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27743, 0, 8.32352)
@@ -256,3 +259,12 @@ transform = Transform3D(1.82325, 0, 0, 0, 1.82325, 0, 0, 0, 1.82325, 14.9135, 0,
 
 [node name="computer2" parent="." instance=ExtResource("51_eo7fw")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.79499, 0, 15.6721)
+
+[node name="outside_railing_1_segement" parent="." instance=ExtResource("52_j143g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.636117, 0, -7.10311)
+
+[node name="outside_Railing_90_Corner" parent="." instance=ExtResource("53_vxu32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20994, 0, -7.40305)
+
+[node name="outsideRailingEnd" parent="." instance=ExtResource("54_5r0x4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42777, 0, -8.15696)

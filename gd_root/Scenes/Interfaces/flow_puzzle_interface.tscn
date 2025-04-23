@@ -583,39 +583,39 @@ offset_left = -950.0
 offset_top = -525.0
 offset_right = -910.0
 offset_bottom = -388.0
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 script = ExtResource("5_dgjef")
 
 [node name="StartLabel" type="Label" parent="."]
-offset_left = -450.0
-offset_top = -375.0
-offset_right = -300.0
-offset_bottom = -225.0
+offset_left = -432.0
+offset_top = -429.0
+offset_right = -282.0
+offset_bottom = -260.0
 theme_override_font_sizes/font_size = 60
 text = "Start
      >"
 
-[node name="StartArea2D" type="Area2D" parent="StartLabel"]
-position = Vector2(150, 75)
+[node name="StartArea2D" type="Area2D" parent="."]
+position = Vector2(-300, -300)
 script = ExtResource("5_271uy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StartLabel/StartArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartArea2D"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="EndLabel" type="Label" parent="."]
-offset_left = 300.0
-offset_top = 75.0
-offset_right = 450.0
-offset_bottom = 244.0
+offset_left = 316.0
+offset_top = 22.0
+offset_right = 466.0
+offset_bottom = 191.0
 theme_override_font_sizes/font_size = 60
 text = "End
 <"
 
-[node name="EndArea2D" type="Area2D" parent="EndLabel"]
-position = Vector2(0, 75)
+[node name="EndArea2D" type="Area2D" parent="."]
+position = Vector2(300, 150)
 script = ExtResource("7_kknyb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndLabel/EndArea2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea2D"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [connection signal="pressed" from="PipeButtonNode/PipeButton" to="PipeButtonNode" method="_on_pipe_button_pressed"]

@@ -11,4 +11,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if has_overlapping_areas() == true:
 		if get_overlapping_areas()[0].filled == true:
-			$"../../FlowPuzzleLevelLabel".complete = true
+			$"../FlowPuzzleLevelLabel".complete = true

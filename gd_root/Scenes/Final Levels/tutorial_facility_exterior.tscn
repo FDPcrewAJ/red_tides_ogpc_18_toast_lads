@@ -1,36 +1,35 @@
-[gd_scene load_steps=92 format=4 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=90 format=4 uid="uid://clrvvxkrvp8q5"]
 
-[ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
-[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
-[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="2_o63d5"]
-[ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="2_rhyc4"]
-[ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="2_uhreo"]
-[ext_resource type="Script" path="res://Scripts/Menus/facility_exterior_view_interact_menu.gd" id="3_besqy"]
-[ext_resource type="Script" path="res://Scripts/Scene Objects/water_plane.gd" id="5_4vmig"]
-[ext_resource type="Material" uid="uid://besr6d88tc006" path="res://Scripts/Shaders/water_shader_main.tres" id="5_ao2o6"]
-[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="6_ebpvy"]
-[ext_resource type="Script" path="res://Scripts/Scene Objects/boat_bouyancy.gd" id="6_ohgcl"]
-[ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="6_tbgqa"]
-[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="7_r818k"]
-[ext_resource type="Texture2D" uid="uid://ckwi351xwbfxe" path="res://Textures/Exterior Textures/v1_rust.png" id="7_vlv12"]
-[ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
-[ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
-[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
-[ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="9_jxmam"]
-[ext_resource type="Texture2D" uid="uid://b76skvgqq3eih" path="res://Textures/Exterior Textures/metal_grate.png" id="9_psfmp"]
-[ext_resource type="ArrayMesh" uid="uid://gmxa83wi78u0" path="res://Assets/Objects/IBeam/i_beam.obj" id="10_1t6sg"]
-[ext_resource type="PackedScene" uid="uid://dig306bgkj8vt" path="res://Assets/Objects/Railings/railing_5_segment.tscn" id="11_gl631"]
-[ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_i8itn"]
-[ext_resource type="Texture2D" uid="uid://da8cb6nn5qsof" path="res://Imports/Models/Objects/Boat/boat_0.png" id="11_uhwer"]
-[ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Imports/Models/Objects/Motor/Motor.obj" id="13_qv8yu"]
-[ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="14_8a6er"]
-[ext_resource type="Texture2D" uid="uid://csjxu4a1n2v7r" path="res://Imports/Models/Objects/Battery/BoatBatteryNew_0.png" id="15_afx8a"]
-[ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="15_auc1o"]
-[ext_resource type="AudioStream" uid="uid://rm6ahr224b0x" path="res://Audio/Sounds/ocean/loop_ocean_background.mp3" id="22_yic33"]
-[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="27_q35ii"]
+[ext_resource type="Script" path="res://Scripts/Level Scripts/tutorial_facility_exterior.gd" id="1_yh08u"]
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_2ekho"]
+[ext_resource type="Script" path="res://Scripts/Menus/facility_exterior_view_interact_menu.gd" id="3_p6qhm"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_fxw5f"]
+[ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="5_li80c"]
+[ext_resource type="Material" uid="uid://besr6d88tc006" path="res://Scripts/Shaders/water_shader_main.tres" id="6_h3p85"]
+[ext_resource type="Script" path="res://Scripts/Scene Objects/water_plane.gd" id="7_fjtud"]
+[ext_resource type="Script" path="res://Scripts/Scene Objects/boat_bouyancy.gd" id="8_iim3t"]
+[ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="9_7u1tf"]
+[ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="10_6brfq"]
+[ext_resource type="Texture2D" uid="uid://da8cb6nn5qsof" path="res://Imports/Models/Objects/Boat/boat_0.png" id="11_ws8pw"]
+[ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Imports/Models/Objects/Motor/Motor.obj" id="12_a5i01"]
+[ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="13_pokjt"]
+[ext_resource type="Texture2D" uid="uid://csjxu4a1n2v7r" path="res://Imports/Models/Objects/Battery/BoatBatteryNew_0.png" id="14_ubxgj"]
+[ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="15_vgwa7"]
+[ext_resource type="Texture2D" uid="uid://b76skvgqq3eih" path="res://Textures/Exterior Textures/metal_grate.png" id="16_0eil8"]
+[ext_resource type="Texture2D" uid="uid://ckwi351xwbfxe" path="res://Textures/Exterior Textures/v1_rust.png" id="17_jea1v"]
+[ext_resource type="ArrayMesh" uid="uid://gmxa83wi78u0" path="res://Assets/Objects/IBeam/i_beam.obj" id="18_kgqnq"]
+[ext_resource type="PackedScene" uid="uid://dig306bgkj8vt" path="res://Assets/Objects/Railings/railing_5_segment.tscn" id="19_3srj1"]
+[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="20_av13j"]
+[ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="21_n60ak"]
+[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="22_qerag"]
+[ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="23_bai3i"]
+[ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="24_amyna"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="25_q78k5"]
+[ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="26_vobxt"]
+[ext_resource type="AudioStream" uid="uid://rm6ahr224b0x" path="res://Audio/Sounds/ocean/loop_ocean_background.mp3" id="28_pqi50"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cwpdp"]
-material = ExtResource("5_ao2o6")
+material = ExtResource("6_h3p85")
 size = Vector2(500, 500)
 subdivide_width = 100
 subdivide_depth = 100
@@ -57,7 +56,7 @@ transparency = 2
 alpha_scissor_threshold = 0.05
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("11_uhwer")
+albedo_texture = ExtResource("11_ws8pw")
 texture_filter = 0
 texture_repeat = false
 
@@ -227,7 +226,7 @@ transparency = 2
 alpha_scissor_threshold = 0.05
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("15_afx8a")
+albedo_texture = ExtResource("14_ubxgj")
 texture_filter = 0
 texture_repeat = false
 
@@ -294,7 +293,7 @@ size = Vector3(15, 0.3, 12)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
 transparency = 1
-albedo_texture = ExtResource("9_psfmp")
+albedo_texture = ExtResource("16_0eil8")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
@@ -307,7 +306,7 @@ size = Vector3(3, 0.5, 15.6611)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
 transparency = 1
-albedo_texture = ExtResource("9_psfmp")
+albedo_texture = ExtResource("16_0eil8")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
@@ -337,13 +336,13 @@ size = Vector3(9, 0.3, 4)
 size = Vector3(4, 0.4, 9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooad8"]
-albedo_texture = ExtResource("7_vlv12")
+albedo_texture = ExtResource("17_jea1v")
 uv1_scale = Vector3(0.4, 0.4, 0.4)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u228j"]
-albedo_texture = ExtResource("6_ebpvy")
+albedo_texture = ExtResource("20_av13j")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
@@ -355,7 +354,7 @@ height = 70.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlt03"]
 albedo_color = Color(0.478431, 0.498039, 0.501961, 1)
-albedo_texture = ExtResource("7_vlv12")
+albedo_texture = ExtResource("17_jea1v")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
@@ -370,7 +369,7 @@ height = 40.0
 radius = 40.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ld3bv"]
-albedo_texture = ExtResource("6_ebpvy")
+albedo_texture = ExtResource("20_av13j")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
@@ -381,7 +380,7 @@ bottom_radius = 40.0
 height = 70.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaoxi"]
-albedo_texture = ExtResource("6_ebpvy")
+albedo_texture = ExtResource("20_av13j")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
@@ -390,7 +389,7 @@ material = SubResource("StandardMaterial3D_xaoxi")
 size = Vector3(130, 5, 130)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy2xf"]
-albedo_texture = ExtResource("7_r818k")
+albedo_texture = ExtResource("22_qerag")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -399,7 +398,7 @@ material = SubResource("StandardMaterial3D_yy2xf")
 size = Vector3(50, 50, 110)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spovb"]
-albedo_texture = ExtResource("7_r818k")
+albedo_texture = ExtResource("22_qerag")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -408,7 +407,7 @@ material = SubResource("StandardMaterial3D_spovb")
 size = Vector3(30, 20, 110)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh5f6"]
-albedo_texture = ExtResource("7_r818k")
+albedo_texture = ExtResource("22_qerag")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -418,7 +417,7 @@ left_to_right = 0.0
 size = Vector3(20, 20, 110)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o15p3"]
-albedo_texture = ExtResource("8_6dvrx")
+albedo_texture = ExtResource("23_bai3i")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -429,7 +428,7 @@ bottom_radius = 12.0
 height = 12.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8g83"]
-albedo_texture = ExtResource("7_y44iw")
+albedo_texture = ExtResource("24_amyna")
 emission = Color(0, 0.440284, 0.396889, 1)
 emission_energy_multiplier = 0.0
 backlight_enabled = true
@@ -444,7 +443,7 @@ height = 50.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6mpu"]
 albedo_color = Color(0.851769, 0.851769, 0.851769, 1)
-albedo_texture = ExtResource("7_r818k")
+albedo_texture = ExtResource("22_qerag")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
@@ -465,7 +464,7 @@ material = SubResource("StandardMaterial3D_r6mpu")
 size = Vector3(5, 48, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1mm5"]
-albedo_texture = ExtResource("8_gwiof")
+albedo_texture = ExtResource("25_q78k5")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
@@ -480,27 +479,24 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_ma47x")
 size = Vector2(1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tjocb"]
-size = Vector3(4.5, 3, 15)
-
 [node name="facility_exterior" type="Node3D"]
-script = ExtResource("1_mup67")
+script = ExtResource("1_yh08u")
 
-[node name="InteractablesDisplay" parent="." instance=ExtResource("2_1n4xm")]
+[node name="InteractablesDisplay" parent="." instance=ExtResource("2_2ekho")]
 mouse_filter = 1
 
 [node name="view_interact_menu" type="Node3D" parent="."]
-script = ExtResource("3_besqy")
+script = ExtResource("3_p6qhm")
 
 [node name="intro_camera" type="Camera3D" parent="."]
 transform = Transform3D(0.685437, 0.0656887, 0.725163, 0, 0.995922, -0.0902154, -0.728132, 0.061837, 0.682642, 101.049, 15.093, 128.752)
 
-[node name="player" parent="." instance=ExtResource("2_o63d5")]
+[node name="player" parent="." instance=ExtResource("4_fxw5f")]
 transform = Transform3D(0.707106, 0, -0.707106, 0, 0.999999, 0, 0.707106, 0, 0.707106, 16.5, 3.5, -38)
 collision_layer = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_uhreo")
+environment = ExtResource("5_li80c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866026, 0.482963, -0.12941, -0.12941, 0.466506, 0.875, 0.482963, -0.741025, 0.466506, 0, 10, 0)
@@ -517,7 +513,7 @@ directional_shadow_pancake_size = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.511, 0)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_cwpdp")
-script = ExtResource("5_4vmig")
+script = ExtResource("7_fjtud")
 
 [node name="death_col" type="Area3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.6686, 31.7192)
@@ -526,13 +522,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.6686, 31.7192)
 shape = SubResource("BoxShape3D_dq8vp")
 
 [node name="boat" type="RigidBody3D" parent="world"]
-transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 4.239, -36.3841)
+transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 4.239, -31.8178)
 collision_mask = 5
-script = ExtResource("6_ohgcl")
+script = ExtResource("8_iim3t")
 float_force = 1.3
 water_angular_drag = 1.0
 
-[node name="boat_mesh" parent="world/boat" instance=ExtResource("2_rhyc4")]
+[node name="boat_mesh" parent="world/boat" instance=ExtResource("9_7u1tf")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 
 [node name="shellCol" type="CollisionShape3D" parent="world/boat"]
@@ -582,7 +578,7 @@ transform = Transform3D(1, 0, 3.38813e-21, 0, 1, 0, -3.38813e-21, 0, 1, -4, 0.48
 
 [node name="intro_objects" type="Node3D" parent="world/boat"]
 
-[node name="player_model" parent="world/boat/intro_objects" instance=ExtResource("9_jxmam")]
+[node name="player_model" parent="world/boat/intro_objects" instance=ExtResource("10_6brfq")]
 transform = Transform3D(-1.4, 0, 1.22392e-07, 0, 1.4, 0, -1.22392e-07, 0, -1.4, -3.22514e-08, 2.44869, 2.07685)
 
 [node name="boat_parts" type="Node3D" parent="world/boat"]
@@ -621,8 +617,8 @@ skeleton = NodePath("")
 
 [node name="motor" type="CSGMesh3D" parent="world/boat/boat_parts"]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0.333075, 9.28853)
-mesh = ExtResource("13_qv8yu")
-material = ExtResource("14_8a6er")
+mesh = ExtResource("12_a5i01")
+material = ExtResource("13_pokjt")
 
 [node name="battery" type="MeshInstance3D" parent="world/boat/boat_parts"]
 transform = Transform3D(-2.18558e-08, 0, -0.500001, 0, 0.500001, 0, 0.500001, 0, -2.18558e-08, -1.24611, 2.75968, 0.37714)
@@ -632,7 +628,7 @@ skeleton = NodePath("")
 [node name="fuel_can" type="CSGMesh3D" parent="world/boat/boat_parts"]
 transform = Transform3D(0.521705, 0, -2.59486e-14, 0, 0.521705, 0, 2.59486e-14, 0, 0.521705, 1.43337, 2.62613, 0.160961)
 mesh = SubResource("ArrayMesh_1800r")
-material = ExtResource("15_auc1o")
+material = ExtResource("15_vgwa7")
 
 [node name="facilityModel" type="Node3D" parent="world"]
 
@@ -760,196 +756,196 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112269, 0)
 [node name="IBeam" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, 0, 14, 0, 1, 0, -1, 0, -6.11959e-07, 0, -5.62976, -5.19072)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam8" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 1, -5.62976, -3.10224)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam23" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-3.39242e-08, 0.447478, 13.4144, 1.95599e-08, 0.894295, -6.71217, -1, 2.31197e-09, -5.86363e-07, 7.46331, -9.40536, -3.10224)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam25" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, 1, -5.68248e-08, 0, -4.37114e-08, -1.3, -1, -4.37114e-08, 2.48389e-15, 0.62407, -5.55877, -3.10224)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam26" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 14.1676, -12.3136, -3.10224)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam9" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, -1.03635, -5.62976, -3.10224)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam2" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12, 6.38189, -5.63335, -10.5782)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam24" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 14.5379, -12.5274, -9.64739)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam27" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 17.0459, -12.5274, -9.64739)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam28" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 21, 29.5707, -12.5415, -10.4594)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam29" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, 0, 14, 0, 1, 0, -1, 0, -6.11959e-07, 24.826, -12.5274, -20.0078)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam30" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, 0, 15, 0, 1, 0, -1, 0, -6.55671e-07, 22.0451, -12.5426, -17.8935)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam4" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 5, 0, -0.5, 8.66025, 6.38189, -8.09232, -11.4432)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam5" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, 4, -1, 4.37114e-08, -1.74846e-07, 6.75346, -6.99435, -13.3935)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam6" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 5, 0, -0.5, 8.66025, -6.42594, -8.09232, -11.4432)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam7" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, 4, -1, 4.37114e-08, -1.74846e-07, -6.05438, -6.99435, -13.3935)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam3" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12, -6.42233, -5.63335, -10.5782)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam10" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, -5.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam11" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 3, -6.3, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam12" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 4, -6.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam13" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 5, -7.3, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam14" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 6, -7.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam15" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 7, -8.3, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam16" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 8, -8.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam17" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 9, -9.3, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam18" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 10, -9.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam19" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 11, -10.3, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam20" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 12, -10.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam21" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 13, -11.3, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="IBeam22" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 14, -11.8, -3.095)
 material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
+mesh = ExtResource("18_kgqnq")
 
 [node name="railings" type="Node3D" parent="world/facilityModel/catwalks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -7)
 
-[node name="railing5Segment" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36139, -0.778603, 1.89195)
 
-[node name="railing5Segment2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1909, -0.778603, 1.89195)
 
-[node name="railing5Segment9" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment9" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.56818, -0.774056, -0.485039)
 
-[node name="railing5Segment10" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment10" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.56818, -0.774056, -5.48504)
 
-[node name="railing5Segment11" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment11" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.56818, -0.774056, -10.485)
 
-[node name="railing5Segment12" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment12" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.74132, -0.774056, -0.485039)
 
-[node name="railing5Segment13" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment13" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.74132, -0.774056, -5.48504)
 
-[node name="railing5Segment14" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment14" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.74132, -0.774056, -10.485)
 
-[node name="railing5Segment3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -0.233906)
 
-[node name="railing5Segment4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -5.23391)
 
-[node name="railing5Segment5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -10.2339)
 
-[node name="railing5Segment6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.9117, -7.67093, -13.0037)
 
-[node name="railing5Segment7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.9117, -7.67093, -13.0037)
 
-[node name="railing5Segment8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+[node name="railing5Segment8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("19_3srj1")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.9117, -7.67093, -13.0037)
 
 [node name="mainSupports" type="Node3D" parent="world/facilityModel"]
@@ -998,7 +994,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.5904, 0)
 mesh = SubResource("CylinderMesh_avsak")
 skeleton = NodePath("../..")
 
-[node name="wood_door_closed" parent="world/facilityModel/mainSupports" instance=ExtResource("6_tbgqa")]
+[node name="wood_door_closed" parent="world/facilityModel/mainSupports" instance=ExtResource("21_n60ak")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, -4.79761, -14.9568)
 
 [node name="mainBuilding" type="Node3D" parent="world/facilityModel"]
@@ -1163,7 +1159,7 @@ light_color = Color(1, 0.172549, 0.0745098, 1)
 light_energy = 8.758
 omni_range = 10.1151
 
-[node name="wide_industrial_light" parent="world/facilityModel/OmniLight3D" instance=ExtResource("11_i8itn")]
+[node name="wide_industrial_light" parent="world/facilityModel/OmniLight3D" instance=ExtResource("26_vobxt")]
 transform = Transform3D(-3.0598e-08, 3.0598e-08, 0.7, 0.7, -3.0598e-08, 3.0598e-08, 3.0598e-08, 0.7, -3.0598e-08, 0, 0, -0.763237)
 
 [node name="ocean_floor" type="MeshInstance3D" parent="world/facilityModel"]
@@ -1171,56 +1167,10 @@ transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -35.356, 0)
 mesh = SubResource("PlaneMesh_h3cy4")
 skeleton = NodePath("../../water_plane")
 
-[node name="boat_repair_col" type="Area3D" parent="world"]
-transform = Transform3D(1, 0, 1.01644e-20, 0, 1, 0, -1.01644e-20, 0, 1, 16.4538, 3.7447, -45.0822)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="world/boat_repair_col"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0927124, 1.17798)
-shape = SubResource("BoxShape3D_tjocb")
-
-[node name="boat_repair_text" type="Control" parent="world"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="boat_repair_label" type="Label" parent="world/boat_repair_text"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -261.0
-offset_top = 404.0
-offset_right = 261.0
-offset_bottom = 473.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.384647, 3.91062e-07, 1.68458e-07, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("27_q35ii")
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_yic33")
+stream = ExtResource("28_pqi50")
 autoplay = true
 bus = &"Sfx"
 parameters/looping = true
 
 [connection signal="area_entered" from="world/death_col" to="." method="_on_death_col_area_entered"]
-[connection signal="area_entered" from="world/boat_repair_col" to="." method="_on_boat_repair_col_area_entered"]
-[connection signal="area_exited" from="world/boat_repair_col" to="." method="_on_boat_repair_col_area_exited"]

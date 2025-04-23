@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=132 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_gl2mt"]
 [ext_resource type="Texture2D" uid="uid://ea5nc6kal33" path="res://Imports/images/layouts/floor_2_schematic.png" id="2_2sv3j"]
@@ -1871,12 +1871,6 @@ transform = Transform3D(-0.349052, 0, 0.719835, 0, 0.8, 0, -0.719835, 0, -0.3490
 [node name="tinyServer" parent="world/decorations/serverRoom" instance=ExtResource("30_j0oha")]
 transform = Transform3D(0.151788, 0, -0.221755, 0, 0.268728, 0, 0.221755, 0, 0.151788, -5.86529, 1.19982, 2.2021)
 
-[node name="hammer" parent="world/decorations" instance=ExtResource("31_ngdac")]
-transform = Transform3D(0.258819, 0, -0.965926, -0.25, 0.965926, -0.0669873, 0.933013, 0.258819, 0.25, 6.78459, 0.5, -5.6175)
-
-[node name="server" parent="." instance=ExtResource("30_j0oha")]
-transform = Transform3D(-1.47917, 0, -0.0130376, 0, 1.47923, 0, 0.0130376, 0, -1.47917, 6.92766, 0.5, -9.49497)
-
 [node name="server2" parent="world/decorations/serverRoom" instance=ExtResource("30_j0oha")]
 transform = Transform3D(-1.47851, 0, -0.0462055, 0, 1.47923, 0, 0.0462055, 0, -1.47851, -0.96254, 0.5, -2.15187)
 
@@ -1916,6 +1910,9 @@ transform = Transform3D(-0.0366086, 0, 0.210953, 0, 0.214106, 0, -0.210953, 0, -
 [node name="blockbench_export" parent="world/decorations/serverRoom" instance=ExtResource("35_ayxof")]
 transform = Transform3D(0.296225, 0, -0.955118, 0, 1, 0, 0.955118, 0, 0.296225, 3.36662, 4.21522, -1.94086)
 
+[node name="hammer" parent="world/decorations" instance=ExtResource("31_ngdac")]
+transform = Transform3D(0.258819, 0, -0.965926, -0.25, 0.965926, -0.0669873, 0.933013, 0.258819, 0.25, 6.78459, 0.5, -5.6175)
+
 [node name="maps" type="Node3D" parent="world/decorations"]
 
 [node name="enterance_floor" type="Sprite3D" parent="world/decorations/maps"]
@@ -1939,3 +1936,6 @@ pixel_size = 0.0025
 texture = ExtResource("39_heqtb")
 
 [node name="interactables" type="Node3D" parent="world"]
+
+[node name="server" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47917, 0, -0.0130376, 0, 1.47923, 0, 0.0130376, 0, -1.47917, 6.92766, 0.5, -9.49497)

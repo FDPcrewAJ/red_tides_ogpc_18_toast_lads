@@ -5,7 +5,7 @@ extends Node3D
 @onready var interactables_display: Control = $"../InteractablesDisplay"
 
 # Boat Parts
-@onready var fuel_can: Node3D = $boat_parts/inventory_test/fuel_can
+@onready var fuel_can: Node3D = $boat_parts/fuel_can
 @onready var antennas: Node3D = $boat_parts/inventory_test/antennas
 @onready var battery: Node3D = $boat_parts/inventory_test/battery
 @onready var motor: Node3D = $boat_parts/inventory_test/motor

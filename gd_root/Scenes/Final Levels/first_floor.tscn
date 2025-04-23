@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=144 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -1998,10 +1998,10 @@ mesh = SubResource("PlaneMesh_m571g")
 
 [node name="inventory_test" type="Node3D" parent="puzzle_interaction/boat_parts"]
 
-[node name="fuel_can" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("41_3a62q")]
+[node name="fuel_can_old" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("41_3a62q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.6224, 1.70979, -13.2765)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/fuel_can"]
+[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/fuel_can_old"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431992, 0)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729
@@ -2053,10 +2053,10 @@ light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
 
-[node name="fuel_can_" parent="puzzle_interaction/boat_parts" instance=ExtResource("41_3a62q")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, 0.501757, 5)
+[node name="fuel_can" parent="puzzle_interaction/boat_parts" instance=ExtResource("41_3a62q")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21, -2, 5)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/fuel_can_"]
+[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/fuel_can"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431992, 0)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729

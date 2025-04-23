@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxxav20r04vkn"]
+[gd_scene load_steps=3 format=3 uid="uid://cxxav20r04vkn"]
 
 [ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Imports/Models/Objects/Computer/ComputerScreen.gltf" id="1_wio8x"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_iu0ek"]
+size = Vector3(1.13416, 1.25192, 0.932739)
+
 [node name="computer" instance=ExtResource("1_wio8x")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00408935, 0.635849, -0.0336304)
+shape = SubResource("BoxShape3D_iu0ek")

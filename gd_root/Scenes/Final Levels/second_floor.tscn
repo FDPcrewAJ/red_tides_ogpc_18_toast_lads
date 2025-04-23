@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="29_63vbu"]
 [ext_resource type="PackedScene" uid="uid://dljfc2pqkh4ce" path="res://Assets/Objects/Computer/server.tscn" id="30_j0oha"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="31_1sdm1"]
+[ext_resource type="PackedScene" uid="uid://we1rupekxd1" path="res://Assets/Objects/Tools/hammer.tscn" id="31_ngdac"]
 [ext_resource type="PackedScene" uid="uid://bydyub6003sef" path="res://Assets/Objects/Clutter/banana_peel.tscn" id="32_xjavu"]
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="33_5kl4k"]
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="34_0c1x2"]
@@ -445,7 +446,6 @@ mesh = SubResource("PlaneMesh_xh4l5")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 0)
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/ceiling"]
@@ -1871,8 +1871,11 @@ transform = Transform3D(-0.349052, 0, 0.719835, 0, 0.8, 0, -0.719835, 0, -0.3490
 [node name="tinyServer" parent="world/decorations/serverRoom" instance=ExtResource("30_j0oha")]
 transform = Transform3D(0.151788, 0, -0.221755, 0, 0.268728, 0, 0.221755, 0, 0.151788, -5.86529, 1.19982, 2.2021)
 
-[node name="server" parent="world/decorations/serverRoom" instance=ExtResource("30_j0oha")]
-transform = Transform3D(-1.47917, 0, -0.0130376, 0, 1.47923, 0, 0.0130376, 0, -1.47917, 5.3634, 0.5, -2.28349)
+[node name="hammer" parent="world/decorations" instance=ExtResource("31_ngdac")]
+transform = Transform3D(0.258819, 0, -0.965926, -0.25, 0.965926, -0.0669873, 0.933013, 0.258819, 0.25, 6.78459, 0.5, -5.6175)
+
+[node name="server" parent="." instance=ExtResource("30_j0oha")]
+transform = Transform3D(-1.47917, 0, -0.0130376, 0, 1.47923, 0, 0.0130376, 0, -1.47917, 6.92766, 0.5, -9.49497)
 
 [node name="server2" parent="world/decorations/serverRoom" instance=ExtResource("30_j0oha")]
 transform = Transform3D(-1.47851, 0, -0.0462055, 0, 1.47923, 0, 0.0462055, 0, -1.47851, -0.96254, 0.5, -2.15187)

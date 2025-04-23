@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djgkmm8lrov7v"
-path.s3tc="res://.godot/imported/screwdriver_0.png-902381c040ee3665f46b519060c2e118.s3tc.ctex"
+uid="uid://cq67cm74bxikc"
+path="res://.godot/imported/screwdriver_0.png-902381c040ee3665f46b519060c2e118.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Imports/Models/Objects/Clutter/screwdriver_0.png"
-dest_files=["res://.godot/imported/screwdriver_0.png-902381c040ee3665f46b519060c2e118.s3tc.ctex"]
+dest_files=["res://.godot/imported/screwdriver_0.png-902381c040ee3665f46b519060c2e118.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=11 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
 [ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="2_3v3hu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/Player/ray_cast_3d.gd" id="3_xxlw0"]
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="4_gwj64"]
 [ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings/settings.tscn" id="4_ncupa"]
+[ext_resource type="PackedScene" uid="uid://d1gvuomovmdy7" path="res://Assets/Characters/Player/animation_files/walk/walk.gltf" id="7_mr286"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
 radius = 0.38
@@ -58,6 +59,12 @@ script = ExtResource("3_xxlw0")
 
 [node name="playerModel" parent="." instance=ExtResource("4_gwj64")]
 transform = Transform3D(-1.4, 2.57624e-08, -2.09818e-07, 0, 1.38956, 0.170617, 2.11394e-07, 0.170617, -1.38956, 0, -1, 0)
+
+[node name="animation_container" type="Node3D" parent="playerModel"]
+transform = Transform3D(1, 5.57306e-14, -1.74846e-07, -2.13084e-08, 0.992545, -0.121869, 1.73542e-07, 0.121869, 0.992546, -2.15709e-07, -0.1741, 1.41793)
+
+[node name="walk" parent="playerModel/animation_container" instance=ExtResource("7_mr286")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 

@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://xuwf5i5dlbun"]
+[gd_scene load_steps=14 format=3 uid="uid://xuwf5i5dlbun"]
 
 [ext_resource type="Script" path="res://Scenes/Interfaces/flow_puzzle_interface.gd" id="1_wyrge"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/pipe_button.gd" id="2_qtumd"]
+[ext_resource type="Texture2D" uid="uid://ckko0stcu2qk" path="res://Imports/images/straight_pipe-1.png" id="3_c71xk"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/flow_area.gd" id="3_ebcrh"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/pipe_button_base.gd" id="3_uvasq"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/start_area_2d.gd" id="5_271uy"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/flow_puzzle_level_label.gd" id="5_dgjef"]
+[ext_resource type="Texture2D" uid="uid://btmocxpiuha75" path="res://Imports/images/t_pipe-1.png" id="6_d8jfu"]
+[ext_resource type="Texture2D" uid="uid://8285s43ahkep" path="res://Imports/images/turn_pipe-1.png" id="7_6c7nm"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/end_area_2d.gd" id="7_kknyb"]
+[ext_resource type="Texture2D" uid="uid://bjpk4bdy30mv3" path="res://Imports/images/cross_pipe-1.png" id="8_ok570"]
+[ext_resource type="Texture2D" uid="uid://bflr3klbsncvs" path="res://Imports/images/turn_flip_pipe-1.png" id="9_j6cto"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lc7"]
 
@@ -26,7 +31,9 @@ offset_right = 75.0
 offset_bottom = 75.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("3_c71xk")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -38,17 +45,10 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="Area2D2" type="Area2D" parent="PipeButtonNode/PipeButton"]
-position = Vector2(75, 150)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode/PipeButton/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode/PipeButton"]
 position = Vector2(150, 75)
 script = ExtResource("3_ebcrh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode/PipeButton/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode/PipeButton/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode2" type="Node2D" parent="."]
@@ -61,7 +61,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("6_d8jfu")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -96,7 +98,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -114,13 +118,6 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode3/PipeButton3/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode3/PipeButton3"]
-position = Vector2(150, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode3/PipeButton3/Area2D3"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
 [node name="PipeButtonNode4" type="Node2D" parent="."]
 position = Vector2(225, -300)
 script = ExtResource("2_qtumd")
@@ -131,7 +128,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -157,6 +156,14 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode4/PipeButton4/Area2D3"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode4/PipeButton4"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode4/PipeButton4/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
 [node name="PipeButtonNode5" type="Node2D" parent="."]
 position = Vector2(-225, -150)
 script = ExtResource("2_qtumd")
@@ -167,29 +174,24 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("9_j6cto")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="PipeButtonNode5/PipeButton5"]
-position = Vector2(0, 75)
+position = Vector2(75, 150)
 script = ExtResource("3_ebcrh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode5/PipeButton5/Area2D"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="Area2D2" type="Area2D" parent="PipeButtonNode5/PipeButton5"]
-position = Vector2(75, 150)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode5/PipeButton5/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode5/PipeButton5"]
 position = Vector2(150, 75)
 script = ExtResource("3_ebcrh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode5/PipeButton5/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode5/PipeButton5/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode6" type="Node2D" parent="."]
@@ -202,7 +204,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -220,13 +224,6 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode6/PipeButton6/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode6/PipeButton6"]
-position = Vector2(150, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode6/PipeButton6/Area2D3"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
 [node name="PipeButtonNode7" type="Node2D" parent="."]
 position = Vector2(75, -150)
 script = ExtResource("2_qtumd")
@@ -237,7 +234,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -255,13 +254,6 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode7/PipeButton7/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode7/PipeButton7"]
-position = Vector2(150, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode7/PipeButton7/Area2D3"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
 [node name="PipeButtonNode8" type="Node2D" parent="."]
 position = Vector2(225, -150)
 script = ExtResource("2_qtumd")
@@ -272,7 +264,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("3_c71xk")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -284,17 +278,10 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="Area2D2" type="Area2D" parent="PipeButtonNode8/PipeButton8"]
-position = Vector2(75, 150)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode8/PipeButton8/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode8/PipeButton8"]
 position = Vector2(150, 75)
 script = ExtResource("3_ebcrh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode8/PipeButton8/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode8/PipeButton8/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode9" type="Node2D" parent="."]
@@ -307,7 +294,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -332,6 +321,14 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D3"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
 [node name="PipeButtonNode10" type="Node2D" parent="."]
 position = Vector2(-75, 0)
 script = ExtResource("2_qtumd")
@@ -342,29 +339,24 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("9_j6cto")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="PipeButtonNode10/PipeButton10"]
-position = Vector2(0, 75)
+position = Vector2(75, 150)
 script = ExtResource("3_ebcrh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode10/PipeButton10/Area2D"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="Area2D2" type="Area2D" parent="PipeButtonNode10/PipeButton10"]
-position = Vector2(75, 150)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode10/PipeButton10/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode10/PipeButton10"]
 position = Vector2(150, 75)
 script = ExtResource("3_ebcrh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode10/PipeButton10/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode10/PipeButton10/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode11" type="Node2D" parent="."]
@@ -377,7 +369,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -402,6 +396,14 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode11/PipeButton11/Area2D3"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode11/PipeButton11"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode11/PipeButton11/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
 [node name="PipeButtonNode12" type="Node2D" parent="."]
 position = Vector2(225, 0)
 script = ExtResource("2_qtumd")
@@ -412,7 +414,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("6_d8jfu")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -447,7 +451,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -465,13 +471,6 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode13/PipeButton13/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode13/PipeButton13"]
-position = Vector2(150, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode13/PipeButton13/Area2D3"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
 [node name="PipeButtonNode14" type="Node2D" parent="."]
 position = Vector2(-75, 150)
 script = ExtResource("2_qtumd")
@@ -482,7 +481,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("3_c71xk")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -494,17 +495,10 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="Area2D2" type="Area2D" parent="PipeButtonNode14/PipeButton14"]
-position = Vector2(75, 150)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode14/PipeButton14/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode14/PipeButton14"]
 position = Vector2(150, 75)
 script = ExtResource("3_ebcrh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode14/PipeButton14/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode14/PipeButton14/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode15" type="Node2D" parent="."]
@@ -517,7 +511,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("6_d8jfu")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -552,7 +548,9 @@ offset_top = -75.0
 offset_right = 75.0
 offset_bottom = 75.0
 theme_override_font_sizes/font_size = 103
-text = "T"
+icon = ExtResource("7_6c7nm")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("3_uvasq")
 metadata/_edit_use_anchors_ = true
 
@@ -568,13 +566,6 @@ position = Vector2(75, 150)
 script = ExtResource("3_ebcrh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode16/PipeButton16/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode16/PipeButton16"]
-position = Vector2(150, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode16/PipeButton16/Area2D3"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="ExitButton" type="Button" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=62 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="2_pcjbw"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="21_nd5l7"]
 [ext_resource type="PackedScene" uid="uid://c5chqamjkvdor" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="22_hwmiu"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="23_dj0sv"]
+[ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="30_vcgmk"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -703,7 +704,7 @@ transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07,
 [node name="decor" type="Node3D" parent="world"]
 
 [node name="bossesOffice" type="Node3D" parent="world/decor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8548, -1.90735e-06, 7.77037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.361412, 1.41879, -11.5668)
 
 [node name="mainHall" type="Node3D" parent="world/decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8548, -1.90735e-06, 7.77037)
@@ -1203,3 +1204,36 @@ transform = Transform3D(-5.87772e-08, 0, 1.34466, 0, 1.34466, 0, -1.34466, 0, -5
 
 [node name="stairWell" parent="world/decor" instance=ExtResource("14_1sk4w")]
 transform = Transform3D(-2.18505e-07, 0, -4.9988, 0, 4.9988, 0, 4.9988, 0, -2.18505e-07, 0.144998, 0.5, 11.5259)
+
+[node name="wooden_desk_1" parent="." instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.411568, 0.5, -11.3381)
+
+[node name="wooden_desk_2" parent="." instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.6821, 0.5, -13.0061)
+
+[node name="wooden_chair" parent="." instance=ExtResource("18_4xbtj")]
+transform = Transform3D(0.740136, 0, -0.672457, 0, 1, 0, 0.672457, 0, 0.740136, 0.558032, 0.5, -5.45135)
+
+[node name="wooden_chair2" parent="." instance=ExtResource("18_4xbtj")]
+transform = Transform3D(0.833095, 0, 0.55313, 0, 1, 0, -0.55313, 0, 0.833095, 0.763926, 0.5, -7.96915)
+
+[node name="wooden_chair3" parent="." instance=ExtResource("18_4xbtj")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -1.87742, 0.5, -7.48653)
+
+[node name="portable_chair" parent="." instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.849644, 0, 0.527356, 0, 1, 0, -0.527356, 0, 0.849644, -3.57266, 0.5, -13.7229)
+
+[node name="portable_chair2" parent="." instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.974299, 0, -0.225257, 0, 1, 0, 0.225257, 0, 0.974299, 0.716426, 0.5, -12.7738)
+
+[node name="spinnyChair" parent="." instance=ExtResource("23_dj0sv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653651, 0.5, -10.1286)
+
+[node name="pen" parent="." instance=ExtResource("30_vcgmk")]
+transform = Transform3D(-2.06242, -1.52221, -9.01512e-08, -1.12047e-07, 4.89774e-15, 2.56334, -1.52221, 2.06242, -6.65381e-08, 0.719723, 1.66794, -11.3735)
+
+[node name="computer" parent="." instance=ExtResource("11_i2ung")]
+transform = Transform3D(0.178273, 0, 0.779884, 0, 0.8, 0, -0.779884, 0, 0.178273, -4.78158, 1.625, -13.7188)
+
+[node name="server" parent="." instance=ExtResource("15_jnker")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -4.72093, 0.5, -11.0816)

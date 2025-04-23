@@ -1,5 +1,6 @@
 extends Control
 
+@onready var stopwatch_dial: TextureRect = $stopwatch_dial
 @onready var label = $stopwatch_dial/stopwatch_countdown
 @onready var needle = $stopwatch_dial/stopwatch_needle
 @onready var list: Control = $checklist
@@ -11,11 +12,11 @@ extends Control
 @onready var motor_check: Label = $checklist/parts_list/motor_check
 @onready var radar_check: Label = $checklist/parts_list/radar_check
 
-
 #These variables are for the stopwatch
 var rotation_speed = TAU / 60
 var double_digit = 0
 var single_digit = ""
+
 #These variables are for the parts list
 var list_open = true 
 

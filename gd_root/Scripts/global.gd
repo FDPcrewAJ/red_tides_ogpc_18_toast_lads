@@ -8,8 +8,9 @@ var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
 
 # Storm system control 
 var time_left = 20
-var timer_active = true
+var timer_active = false
 var needle_rotation = 1
+var watch_collected = false
 
 #List pickup boolean
 var list_in_hand = true
@@ -67,13 +68,19 @@ var reactorStable = false
 
 var keypadPositive = false
 
-
 # Inventory System
 var fuel_can_collected = false
 var antennas_collected = false
 var battery_collected = false
 var motor_collected = false
 var radar_collected = false
+
+# Tutorial Control nodes
+var def_audio_name = "line_"
+var line_num = "0"
+var updated_line = ""
+var voice_line = "line_1"
+
 
 func _process(_delta):
 	if timer_active && time_left == 0:

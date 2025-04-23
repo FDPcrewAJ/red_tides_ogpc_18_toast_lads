@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddrrxe3s68yt0"]
+
+[ext_resource type="Texture2D" uid="uid://jt8oaj3swl30" path="res://Imports/images/dialog_box.png" id="1_gonh1"]
+[ext_resource type="Script" path="res://Scripts/Menus/tutorial_text.gd" id="1_ha42g"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_o4hge"]
+
+[node name="tutorial_text_ui" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ha42g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 383)
+scale = Vector2(10, 4)
+texture = ExtResource("1_gonh1")
+
+[node name="text_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = 263.0
+offset_right = 623.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_o4hge")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

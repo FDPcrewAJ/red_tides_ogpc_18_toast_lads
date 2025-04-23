@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmopb4vq72580"]
+
+[ext_resource type="PackedScene" uid="uid://bpbdy635k1c0e" path="res://Imports/Models/Objects/Railings/outsideRailingCorner.gltf" id="1_d5rsw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejl3p"]
+size = Vector3(0.622192, 1.10962, 0.255859)
+
+[node name="outsideRailingEnd" instance=ExtResource("1_d5rsw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188904, 0.552368, -0.00292969)
+shape = SubResource("BoxShape3D_ejl3p")

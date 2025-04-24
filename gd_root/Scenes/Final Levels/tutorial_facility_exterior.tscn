@@ -563,7 +563,7 @@ mouse_filter = 1
 script = ExtResource("3_p6qhm")
 
 [node name="intro_camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.132, 8.20552, 241.742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.132, 6.27362, 128.852)
 
 [node name="player" parent="." instance=ExtResource("4_fxw5f")]
 transform = Transform3D(0.707106, 0, -0.707106, 0, 0.999999, 0, 0.707106, 0, 0.707106, 16.5, 3.5, -38)
@@ -598,7 +598,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.6686, 31.7192)
 shape = SubResource("BoxShape3D_dq8vp")
 
 [node name="boat" type="RigidBody3D" parent="world"]
-transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 4.239, 239.815)
+transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 2.30662, 126.925)
 collision_mask = 5
 script = ExtResource("8_035we")
 
@@ -1343,5 +1343,5 @@ bus = &"Voice"
 
 [connection signal="allow_boat_movement" from="." to="world/boat" method="_on_facility_exterior_allow_boat_movement"]
 [connection signal="area_entered" from="world/death_col" to="." method="_on_death_col_area_entered"]
-[connection signal="finished" from="sfx_audio" to="." method="_on_sfx_audio_finished"]
 [connection signal="animation_finished" from="intro_animation_player" to="." method="_on_intro_animation_player_animation_finished"]
+[connection signal="finished" from="voice_audio" to="." method="_on_voice_audio_finished"]

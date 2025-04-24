@@ -39,7 +39,7 @@ func _process(_delta):
 	if update_boat:
 		allow_boat_movement.emit()
 		if boat.global_position.z > boat_end_pos:
-			boat.apply_central_force(Vector3(0,0,-5))
+			boat.apply_central_force(Vector3(0,0,-13))
 		else:
 			update_boat = false
 			boat.axis_lock_linear_z = true
@@ -63,6 +63,22 @@ func match_voice_line(line_string) -> AudioStream:
 	match line_string:
 		"line_1":
 			return load("res://Audio/Tutorial Voice Lines/line_1.mp3")
+		"line_2":
+			return load("res://Audio/Tutorial Voice Lines/line_2.mp3")
+		"line_3":
+			return load("res://Audio/Tutorial Voice Lines/line_3.mp3")
+		"line_4":
+			return load("res://Audio/Tutorial Voice Lines/line_4.mp3")
+		"line_5":
+			return load("res://Audio/Tutorial Voice Lines/line_5.mp3")
+		"line_6":
+			return load("res://Audio/Tutorial Voice Lines/line_6.mp3")
+		"line_7":
+			return load("res://Audio/Tutorial Voice Lines/line_7.mp3")
+		"line_8":
+			return load("res://Audio/Tutorial Voice Lines/line_8.mp3")
+		"line_9":
+			return load("res://Audio/Tutorial Voice Lines/line_9.mp3")
 	return load("res://Audio/Tutorial Voice Lines/line_1.mp3")
 
 
@@ -70,6 +86,22 @@ func match_text_display(line_string) -> String:
 	match line_string:
 		"line_1":
 			return "So, you must be excited, not everyone gets an opportunity like this."
+		"line_2":
+			return "A silent type then? That's going to be a *joy* to work with."
+		"line_3":
+			return "Anyway, while we’re approaching the facility, I should probably go through this handy list of propagan-ah- sorry, list of things I should tell you."
+		"line_4":
+			return "I’m going to assume you know why we’re here. Those filthy pigs over in America drilled too much, and now we have to deal with the consequences."
+		"line_5":
+			return "Anyway, we’re short staffed right now so you’re going to have to be balancing a lot."
+		"line_6":
+			return "The facility requires constant configuration, and it was a challenge to do that with 20 men."
+		"line_7":
+			return "Anyway, the government has cut funds, and now we’re just two guys against cyclones."
+		"line_8":
+			return "This is going to be so much fun!"
+		"line_9":
+			return "Alright, we’re almost here…"
 	return ""
 
 
@@ -87,6 +119,16 @@ func _on_intro_animation_player_animation_finished(anim_name: StringName) -> voi
 			tutorial_text_ui.set_text(match_text_display(Global.voice_line))
 
 
-func _on_sfx_audio_finished() -> void:
+func _on_voice_audio_finished():
 	update_line()
-	
+	if Global.line_num < 10:
+		voice_audio.set_stream(match_voice_line(Global.voice_line))
+		voice_audio.play()
+		tutorial_text_ui.set_text(match_text_display(Global.voice_line))
+	if Global.line_num == 3:
+		update_boat = true
+		intro_camera.position = Vector3(89.0, 8.0, 83.0)
+		intro_camera.rotation.x = deg_to_rad(10.0)
+		intro_camera.rotation.y = deg_to_rad(58.0)
+	if Global.line_num == 10:
+		tutorial_text_ui.hide()

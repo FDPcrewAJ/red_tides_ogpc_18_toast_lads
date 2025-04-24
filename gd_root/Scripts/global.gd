@@ -75,10 +75,9 @@ var battery_collected = false
 var motor_collected = false
 var radar_collected = false
 
-# Tutorial Control nodes
+# Tutorial Control var
 var default_audio_name = "line_"
 var line_num = 0
-var updated_line = ""
 var voice_line = ""
 
 

@@ -62,9 +62,9 @@ transform = Transform3D(-1.4, 2.57624e-08, -2.09818e-07, 0, 1.38956, 0.170617, 2
 
 [node name="animation_container" type="Node3D" parent="playerModel"]
 transform = Transform3D(1, 5.57306e-14, -1.74846e-07, -2.13084e-08, 0.992545, -0.121869, 1.73542e-07, 0.121869, 0.992546, -2.15709e-07, -0.1741, 1.41793)
+visible = false
 
 [node name="walk" parent="playerModel/animation_container" instance=ExtResource("7_mr286")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 

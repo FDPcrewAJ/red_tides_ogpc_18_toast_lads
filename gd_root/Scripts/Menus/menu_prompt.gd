@@ -26,6 +26,7 @@ func _set_label_prompt_text(new_text):
 	$PromptLabel._set_prompt_text(new_text)
 	$PromptLabel.show()
 	$CloseButton.show()
+	$PauseBG.show()
 	Global.in_menu = true
 	pause()
 
@@ -33,5 +34,6 @@ func _on_close_button_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$PromptLabel.hide()
 	$CloseButton.hide()
+	$PauseBG.hide()
 	Global.in_menu = false
 	unpause()

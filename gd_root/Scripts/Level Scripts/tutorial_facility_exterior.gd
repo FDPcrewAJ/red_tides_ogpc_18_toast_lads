@@ -24,7 +24,8 @@ var update_boat = false
 func _ready():
 	player.has_control = false
 	boat.axis_lock_linear_x = true
-	intro_animation_player.play("1_captain_turn")
+	update_line()
+	intro_animation_player.play("captain_1")
 
 
 func _process(_delta):
@@ -66,16 +67,26 @@ func match_voice_line(line_string) -> AudioStream:
 
 
 func match_text_display(line_string) -> String:
-	return "null"
+	match line_string:
+		"line_1":
+			return "So, you must be excited, not everyone gets an opportunity like this."
+	return ""
+
+
+func update_line():
+	Global.line_num += 1
+	Global.voice_line = Global.default_audio_name + str(Global.line_num)
 
 
 func _on_intro_animation_player_animation_finished(anim_name: StringName) -> void:
 	match anim_name:
-		"1_captain_turn":
+		"captain_1":
 			voice_audio.set_stream(match_voice_line(Global.voice_line))
 			voice_audio.play()
 			tutorial_text_ui.show()
+			tutorial_text_ui.set_text(match_text_display(Global.voice_line))
 
 
 func _on_sfx_audio_finished() -> void:
-	pass
+	update_line()
+	

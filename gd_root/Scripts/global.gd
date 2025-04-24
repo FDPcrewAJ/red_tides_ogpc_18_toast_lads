@@ -76,10 +76,10 @@ var motor_collected = false
 var radar_collected = false
 
 # Tutorial Control nodes
-var def_audio_name = "line_"
-var line_num = "0"
+var default_audio_name = "line_"
+var line_num = 0
 var updated_line = ""
-var voice_line = "line_1"
+var voice_line = ""
 
 
 func _process(_delta):

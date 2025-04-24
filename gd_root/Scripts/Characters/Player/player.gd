@@ -9,6 +9,13 @@ const mouse_sens = 0.5
 @onready var standing_collision = $StandingCollision
 @onready var crouching_collision = $CrouchingCollision
 
+# Player animation nodes
+@onready var walk: Node3D = $playerModel/animation_container/walk
+
+
+
+
+
 # If player can move or not (intro/cutscene control)
 var has_control = true
 
@@ -33,6 +40,10 @@ const jump_velocity = 4.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	var walk_anim = walk.get_child(1)
+	walk_anim.play("PlayerAction")
+	
+	
 
 
 func _input(event):

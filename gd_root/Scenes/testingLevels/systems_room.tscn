@@ -14,13 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="9_tj2et"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="10_vfpe4"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="13_pg0mj"]
-[ext_resource type="Script" path="res://Assets/Objects/Computer/dial_computer.gd" id="14_4p1cb"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_computer (2).gd" id="14_4p1cb"]
 [ext_resource type="Texture2D" uid="uid://b3dttcnlsqgew" path="res://Imports/images/dials_puzzle_hint.png" id="14_a3ti1"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="15_3fiho"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/dial_puzzle_note.gd" id="16_n5qcx"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_note.gd" id="17_85hd1"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/systems_room_note.gd" id="18_xw4iv"]
-[ext_resource type="Script" path="res://Assets/Objects/Computer/tile_computer.gd" id="21_5p60f"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_computer (2).gd" id="21_5p60f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41vkj"]
 albedo_texture = ExtResource("4_k2tk8")

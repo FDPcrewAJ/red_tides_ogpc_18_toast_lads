@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/first_floor.gd" id="1_s511m"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/first_floor.gd" id="1_s511m"]
 [ext_resource type="Texture2D" uid="uid://c3skeplrwm2dh" path="res://Textures/Temp Dev Textures/floor_1_schematic.png" id="1_tifgq"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="3_3oq02"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="3_8p1lb"]
@@ -34,20 +34,20 @@
 [ext_resource type="PackedScene" uid="uid://bllhjpheko4qy" path="res://Assets/Objects/Electrical/backup_generator.tscn" id="26_ujxie"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="27_lcun5"]
 [ext_resource type="PackedScene" uid="uid://bw3vtqs02fnpv" path="res://Assets/Objects/Clutter/soda_cup.tscn" id="28_w666b"]
-[ext_resource type="Script" path="res://Assets/Objects/Computer/computer.gd" id="29_lk0e2"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/computer.gd" id="29_lk0e2"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="29_y2a48"]
 [ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="30_87ia1"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="30_mm3nu"]
 [ext_resource type="PackedScene" uid="uid://drxiydnsv34hj" path="res://Assets/Objects/Clutter/intern_sign.tscn" id="31_80r8s"]
 [ext_resource type="PackedScene" uid="uid://bwmyiotwhjhy6" path="res://Assets/Objects/Pipes/pipe_junc_t.tscn" id="32_u5bdo"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/storage_puzzle_note_1.gd" id="33_a42x7"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storage_puzzle_note_1.gd" id="33_a42x7"]
 [ext_resource type="PackedScene" uid="uid://g8pkwlkfydl4" path="res://Assets/Objects/Electrical/large_power_gen.tscn" id="33_nawdp"]
 [ext_resource type="PackedScene" uid="uid://c7vsjp7ma7tyt" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="33_nbwly"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/flow_box.gd" id="34_3jexe"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="34_cau1u"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/flow_puzzle_note.gd" id="36_6j5jl"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/flow_puzzle_note.gd" id="36_6j5jl"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="36_413eg"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/flow_crate_note.gd" id="37_c0bo3"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/flow_crate_note.gd" id="37_c0bo3"]
 [ext_resource type="PackedScene" uid="uid://ugkmpmeoiwca" path="res://Assets/Objects/MiscFurnature/marble_counter.tscn" id="38_5jkm0"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/first_floor_interaction_control.gd" id="39_opvwc"]
 [ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="41_3a62q"]
@@ -55,9 +55,9 @@
 [ext_resource type="PackedScene" uid="uid://cbtn4wxpj2woq" path="res://Assets/Objects/Boat/Boat Parts/battery.tscn" id="43_htaof"]
 [ext_resource type="PackedScene" uid="uid://dgo4yb6dwugpf" path="res://Assets/Objects/Boat/Boat Parts/radar.tscn" id="45_jfwp7"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="45_mt83g"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/radar_puzzle_note.gd" id="46_f6g2q"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/cabinet_door.gd" id="47_6hesw"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/radar_cabinet_note.gd" id="48_1jbl4"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/radar_puzzle_note.gd" id="46_f6g2q"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/cabinet_door.gd" id="47_6hesw"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/radar_cabinet_note.gd" id="48_1jbl4"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -419,12 +419,12 @@ points = PackedVector3Array(0.5, 0.954305, 0.141967, -0.463492, -0.914286, -0.15
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nmo61"]
 points = PackedVector3Array(-0.74404, 0.744042, -0.5, 0.74404, 0.744188, 0.5, 0.74404, 0.744188, -0.5, 0.74404, -0.744039, 0.5, 0.74404, -0.744039, -0.5, -0.74404, -0.744039, 0.5, -0.74404, -0.744039, -0.5, -0.74404, 0.744042, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1hxg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53lv4"]
 transparency = 1
 albedo_texture = ExtResource("45_mt83g")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jrgv2"]
-material = SubResource("StandardMaterial3D_a1hxg")
+material = SubResource("StandardMaterial3D_53lv4")
 size = Vector2(0.7, 0.7)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x1e8i"]
@@ -448,11 +448,11 @@ size = Vector3(0.2, 2.5, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bfy1d"]
 points = PackedVector3Array(-0.119841, -1.26934, -0.519841, 0.118254, 1.26934, 0.511905, -0.119841, 1.26934, 0.511905, 0.118254, -1.26934, 0.511905, 0.118254, 1.26934, -0.519841, -0.119841, 1.26934, -0.519841, -0.119841, -1.26934, 0.511905, 0.118254, -1.26934, -0.519841)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jr8r"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fy805"]
 albedo_color = Color(0.577008, 0.577008, 0.577008, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_c2m8l"]
-material = SubResource("StandardMaterial3D_7jr8r")
+material = SubResource("StandardMaterial3D_fy805")
 size = Vector3(0.2, 2.5, 1.5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oi5do"]

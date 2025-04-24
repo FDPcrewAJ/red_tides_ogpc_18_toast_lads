@@ -83,6 +83,10 @@ var voice_line = "line_1"
 
 var entry_position = true
 
+var code_degrees1 = 0
+var code_degrees2 = 0
+var code_degrees3 = 0
+
 
 func _process(_delta):
 	if timer_active && time_left == 0:

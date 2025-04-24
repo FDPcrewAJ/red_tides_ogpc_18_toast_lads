@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://i54i4wmroxw1"]
 
-[ext_resource type="Script" path="res://Scenes/Final Levels/facility_enterance.gd" id="1_6wbl2"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/facility_enterance.gd" id="1_6wbl2"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_juil4"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_nm8n5"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_ltams"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="9_lgp1y"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="14_0a7uo"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/engineer_lore_note.gd" id="15_w7edc"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/engineer_lore_note.gd" id="15_w7edc"]
 
 [sub_resource type="Environment" id="Environment_ncvlc"]
 ambient_light_sky_contribution = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=12 format=3 uid="uid://cvp6iu0ltf4p5"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_en7eb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_sprite_2d.gd" id="4_h3xx3"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="5_com21"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_n8whq"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/dial_label.gd" id="7_4v4vi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 
@@ -38,6 +39,19 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")
 script = ExtResource("4_h3xx3")
 
+[node name="Dial1Label" type="Label" parent="Dial"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 222.0
+offset_right = 186.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_n8whq")
+theme_override_font_sizes/font_size = 100
+text = "123"
+script = ExtResource("7_4v4vi")
+
 [node name="Dial2" type="Button" parent="."]
 offset_left = -382.0
 offset_top = -91.0
@@ -53,6 +67,19 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")
 script = ExtResource("4_h3xx3")
 
+[node name="Dial2Label" type="Label" parent="Dial2"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 222.0
+offset_right = 186.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_n8whq")
+theme_override_font_sizes/font_size = 100
+text = "123"
+script = ExtResource("7_4v4vi")
+
 [node name="Dial3" type="Button" parent="."]
 offset_left = 64.0
 offset_top = -104.0
@@ -67,6 +94,19 @@ position = Vector2(100, 100)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")
 script = ExtResource("4_h3xx3")
+
+[node name="Dial3Label" type="Label" parent="Dial3"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 222.0
+offset_right = 186.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_n8whq")
+theme_override_font_sizes/font_size = 100
+text = "123"
+script = ExtResource("7_4v4vi")
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = -393.0

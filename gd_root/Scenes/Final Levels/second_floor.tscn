@@ -1,6 +1,6 @@
 [gd_scene load_steps=154 format=3 uid="uid://n25axs1ovbla"]
 
-[ext_resource type="Script" path="res://Scenes/Final Levels/second_floor.gd" id="1_0ggiq"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/second_floor.gd" id="1_0ggiq"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_0q36q"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_gl2mt"]
 [ext_resource type="Texture2D" uid="uid://ea5nc6kal33" path="res://Imports/images/layouts/floor_2_schematic.png" id="2_2sv3j"]
@@ -45,12 +45,12 @@
 [ext_resource type="Script" path="res://Assets/Objects/MiscFurnature/tile_locker.gd" id="34_t8nb8"]
 [ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="35_ayxof"]
 [ext_resource type="Texture2D" uid="uid://tc7aqgqbdlyh" path="res://Imports/images/Maps/enterance_floor_map.png" id="36_2g2e7"]
-[ext_resource type="Script" path="res://Assets/Objects/Computer/tile_puzzle_2_computer.gd" id="37_c0v26"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_2_computer.gd" id="37_c0v26"]
 [ext_resource type="Texture2D" uid="uid://by1uf674640ou" path="res://Imports/images/Maps/first_floor_map.png" id="37_sog28"]
 [ext_resource type="Texture2D" uid="uid://dubkb05koepuv" path="res://Imports/images/Maps/second_floor_map.png" id="38_2x5e0"]
 [ext_resource type="Texture2D" uid="uid://dsw1wr0icap40" path="res://Imports/images/Maps/control_floor_map.png" id="39_heqtb"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="42_llbh1"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/tile_locker_note.gd" id="43_7cpfe"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_locker_note.gd" id="43_7cpfe"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_note.gd" id="44_nhkwn"]
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="45_5m64c"]
 

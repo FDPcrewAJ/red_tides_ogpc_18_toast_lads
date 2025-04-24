@@ -1,13 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckhlefc2g5yes"]
+[gd_scene load_steps=16 format=3 uid="uid://ckhlefc2g5yes"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_button.gd" id="1_4ebpr"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_interface.gd" id="1_306ms"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_gtnnh"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_level_label.gd" id="3_07w82"]
+[ext_resource type="Texture2D" uid="uid://dkb0l02iowwp3" path="res://Textures/UI/square_button.png" id="3_s47j1"]
+[ext_resource type="Texture2D" uid="uid://burwpr3uj5wxy" path="res://Textures/UI/square_button_pressed.png" id="4_0p3x6"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="4_v8csq"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="5_2ipfb"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="7_vrk10"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax307"]
-bg_color = Color(0.505882, 0.65098, 0.396078, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ysxfl"]
+texture = ExtResource("3_s47j1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i5mct"]
+texture = ExtResource("4_0p3x6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1fll"]
+texture = ExtResource("3_s47j1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mf7y"]
+texture = ExtResource("5_2ipfb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8e5xa"]
+texture = ExtResource("7_vrk10")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5tj2"]
+texture = ExtResource("5_2ipfb")
 
 [node name="TilePuzzleInterface" type="Node2D"]
 script = ExtResource("1_306ms")
@@ -23,6 +42,9 @@ offset_left = -791.0
 offset_top = -215.0
 offset_right = -691.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -31,6 +53,9 @@ offset_left = -791.0
 offset_top = -105.0
 offset_right = -691.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -39,6 +64,9 @@ offset_left = -791.0
 offset_top = 5.0
 offset_right = -691.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -47,6 +75,9 @@ offset_left = -791.0
 offset_top = 115.0
 offset_right = -691.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -55,6 +86,9 @@ offset_left = -674.0
 offset_top = -215.0
 offset_right = -574.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -63,6 +97,9 @@ offset_left = -674.0
 offset_top = -105.0
 offset_right = -574.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -71,6 +108,9 @@ offset_left = -674.0
 offset_top = 5.0
 offset_right = -574.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -79,6 +119,9 @@ offset_left = -674.0
 offset_top = 115.0
 offset_right = -574.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -87,6 +130,9 @@ offset_left = -556.0
 offset_top = -215.0
 offset_right = -456.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -95,6 +141,9 @@ offset_left = -556.0
 offset_top = -105.0
 offset_right = -456.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -103,6 +152,9 @@ offset_left = -556.0
 offset_top = 5.0
 offset_right = -456.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -111,6 +163,9 @@ offset_left = -556.0
 offset_top = 115.0
 offset_right = -456.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -119,6 +174,9 @@ offset_left = -440.0
 offset_top = -215.0
 offset_right = -340.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -127,6 +185,9 @@ offset_left = -440.0
 offset_top = -105.0
 offset_right = -340.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -135,6 +196,9 @@ offset_left = -440.0
 offset_top = 5.0
 offset_right = -340.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -143,6 +207,9 @@ offset_left = -440.0
 offset_top = 115.0
 offset_right = -340.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -151,6 +218,9 @@ offset_left = -325.0
 offset_top = -215.0
 offset_right = -225.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -159,6 +229,9 @@ offset_left = -325.0
 offset_top = -105.0
 offset_right = -225.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -167,6 +240,9 @@ offset_left = -325.0
 offset_top = 5.0
 offset_right = -225.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -175,6 +251,9 @@ offset_left = -325.0
 offset_top = 115.0
 offset_right = -225.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -183,6 +262,9 @@ offset_left = -209.0
 offset_top = -215.0
 offset_right = -109.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -191,6 +273,9 @@ offset_left = -209.0
 offset_top = -105.0
 offset_right = -109.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -199,6 +284,9 @@ offset_left = -209.0
 offset_top = 5.0
 offset_right = -109.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -207,6 +295,9 @@ offset_left = -209.0
 offset_top = 115.0
 offset_right = -109.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -215,6 +306,9 @@ offset_left = -95.0
 offset_top = -215.0
 offset_right = 5.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -223,6 +317,9 @@ offset_left = -95.0
 offset_top = -105.0
 offset_right = 5.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -231,6 +328,9 @@ offset_left = -95.0
 offset_top = 5.0
 offset_right = 5.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -239,6 +339,9 @@ offset_left = -95.0
 offset_top = 115.0
 offset_right = 5.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -247,6 +350,9 @@ offset_left = 22.0
 offset_top = -215.0
 offset_right = 122.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -255,6 +361,9 @@ offset_left = 22.0
 offset_top = -105.0
 offset_right = 122.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -263,6 +372,9 @@ offset_left = 22.0
 offset_top = 5.0
 offset_right = 122.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -271,6 +383,9 @@ offset_left = 22.0
 offset_top = 115.0
 offset_right = 122.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -279,6 +394,9 @@ offset_left = 132.0
 offset_top = -215.0
 offset_right = 232.0
 offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -287,6 +405,9 @@ offset_left = 132.0
 offset_top = -105.0
 offset_right = 232.0
 offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -295,6 +416,9 @@ offset_left = 132.0
 offset_top = 5.0
 offset_right = 232.0
 offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -303,6 +427,9 @@ offset_left = 132.0
 offset_top = 115.0
 offset_right = 232.0
 offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
 
@@ -326,7 +453,9 @@ theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_v8csq")
 theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxFlat_ax307")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7mf7y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8e5xa")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x5tj2")
 toggle_mode = true
 text = "Back"
 icon_alignment = 1

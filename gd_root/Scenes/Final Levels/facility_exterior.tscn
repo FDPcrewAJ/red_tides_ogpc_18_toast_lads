@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=101 format=4 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="7_y44iw"]
 [ext_resource type="Texture2D" uid="uid://cslc8xjq0mu" path="res://Textures/Interior Textures/Walls/v3_c_wall_undamaged.png" id="8_6dvrx"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="8_gwiof"]
-[ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="9_jxmam"]
 [ext_resource type="Texture2D" uid="uid://b76skvgqq3eih" path="res://Textures/Exterior Textures/metal_grate.png" id="9_psfmp"]
 [ext_resource type="ArrayMesh" uid="uid://gmxa83wi78u0" path="res://Assets/Objects/IBeam/i_beam.obj" id="10_1t6sg"]
 [ext_resource type="PackedScene" uid="uid://dig306bgkj8vt" path="res://Assets/Objects/Railings/railing_5_segment.tscn" id="11_gl631"]
@@ -298,65 +297,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hpvtb"]
-size = Vector3(15, 0.3, 12)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
-transparency = 1
-albedo_texture = ExtResource("9_psfmp")
-uv1_scale = Vector3(0.7, 0.7, 0.7)
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_gfmt2"]
-material = SubResource("StandardMaterial3D_gufqm")
-size = Vector3(15, 0.3, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
-size = Vector3(3, 0.5, 15.6611)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prgmg"]
-transparency = 1
-albedo_texture = ExtResource("9_psfmp")
-uv1_scale = Vector3(0.7, 0.7, 0.7)
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_881vr"]
-material = SubResource("StandardMaterial3D_prgmg")
-size = Vector3(3, 0.3, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
-transparency = 1
-albedo_texture = ExtResource("9_psfmp")
-uv1_scale = Vector3(0.7, 0.7, 0.7)
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_vjulk"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(4, 0.3, 3)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2hrsm"]
-size = Vector3(3, 0.4, 4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_aow4s"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(20, 0.3, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
-size = Vector3(4, 0.4, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_hqv2q"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(9, 0.3, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yktpf"]
-size = Vector3(4, 0.4, 9)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooad8"]
-albedo_texture = ExtResource("7_vlv12")
-uv1_scale = Vector3(0.4, 0.4, 0.4)
-uv1_triplanar = true
-uv1_world_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u228j"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
@@ -563,11 +503,8 @@ mouse_filter = 1
 [node name="view_interact_menu" type="Node3D" parent="."]
 script = ExtResource("3_besqy")
 
-[node name="intro_camera" type="Camera3D" parent="."]
-transform = Transform3D(0.685437, 0.0656887, 0.725163, 0, 0.995922, -0.0902154, -0.728132, 0.061837, 0.682642, 101.049, 15.093, 128.752)
-
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(0.707106, 0, -0.707106, 0, 0.999999, 0, 0.707106, 0, 0.707106, 16.5, 3.5, -38)
+transform = Transform3D(-0.999999, 0, 0, 0, 0.999999, 0, 0, 0, -0.999999, 0.00339767, 10.3885, -50.5902)
 collision_layer = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -597,7 +534,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.6686, 31.7192)
 shape = SubResource("BoxShape3D_dq8vp")
 
 [node name="boat" type="RigidBody3D" parent="world"]
-transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 4.239, -36.3841)
+transform = Transform3D(0.999999, 0, 4.9738e-14, 0, 0.999999, 0, -4.9738e-14, 0, 0.999999, 22.132, 1.22573, -44)
 collision_mask = 5
 script = ExtResource("6_ohgcl")
 float_force = 1.3
@@ -651,15 +588,11 @@ transform = Transform3D(1, 0, 3.38813e-21, 0, 1, 0, -3.38813e-21, 0, 1, -4, 0, -
 [node name="Marker3D9" type="Marker3D" parent="world/boat/probe_container"]
 transform = Transform3D(1, 0, 3.38813e-21, 0, 1, 0, -3.38813e-21, 0, 1, -4, 0.482167, 6.84367)
 
-[node name="intro_objects" type="Node3D" parent="world/boat"]
-
-[node name="player_model" parent="world/boat/intro_objects" instance=ExtResource("9_jxmam")]
-transform = Transform3D(-1.4, 0, 1.22392e-07, 0, 1.4, 0, -1.22392e-07, 0, -1.4, -3.22514e-08, 2.44869, 2.07685)
-
 [node name="boat_parts" type="Node3D" parent="world/boat"]
 
 [node name="antennas" type="Node3D" parent="world/boat/boat_parts"]
 transform = Transform3D(3, 0, 1.21973e-19, 0, 3, 0, -1.21973e-19, 0, 3, -1.12527, 5.62595, -0.00380707)
+visible = false
 
 [node name="Antenna Base" type="MeshInstance3D" parent="world/boat/boat_parts/antennas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3125, 0.125)
@@ -678,6 +611,7 @@ skeleton = NodePath("")
 
 [node name="radar" type="Node3D" parent="world/boat/boat_parts"]
 transform = Transform3D(3, 0, 9.48677e-20, 0, 3, 0, -9.48677e-20, 0, 3, 1.0312, 5.81218, -0.279789)
+visible = false
 
 [node name="Dish2" type="Node3D" parent="world/boat/boat_parts/radar"]
 
@@ -692,16 +626,19 @@ skeleton = NodePath("")
 
 [node name="motor" type="CSGMesh3D" parent="world/boat/boat_parts"]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0.333075, 9.28853)
+visible = false
 mesh = ExtResource("13_qv8yu")
 material = ExtResource("14_8a6er")
 
 [node name="battery" type="MeshInstance3D" parent="world/boat/boat_parts"]
 transform = Transform3D(-2.18558e-08, 0, -0.500001, 0, 0.500001, 0, 0.500001, 0, -2.18558e-08, -1.24611, 2.75968, 0.37714)
+visible = false
 mesh = SubResource("ArrayMesh_033pm")
 skeleton = NodePath("")
 
 [node name="fuel_can" type="CSGMesh3D" parent="world/boat/boat_parts"]
 transform = Transform3D(0.521705, 0, -2.59486e-14, 0, 0.521705, 0, 2.59486e-14, 0, 0.521705, 1.43337, 2.62613, 0.160961)
+visible = false
 mesh = SubResource("ArrayMesh_1800r")
 material = ExtResource("15_auc1o")
 

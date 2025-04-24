@@ -46,13 +46,6 @@ func _process(_delta):
 			intro_objects.visible = false
 			intro_camera.current = false
 			player.visible = true
-			player.has_control = true
-			# Hide Boat Parts
-			antennas.visible = false
-			radar.visible = false
-			motor.visible = false
-			battery.visible = false
-			fuel_can.visible = false
 
 
 func _on_death_col_area_entered(_area):

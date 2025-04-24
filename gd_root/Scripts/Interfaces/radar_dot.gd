@@ -3,11 +3,12 @@ extends Sprite2D
 var mouse_touching = false
 var goalPositionX = 0
 var goalPositionY = 0
+var puzzle_complete = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	goalPositionX = $"..".goalPositionX
-	goalPositionY = $"..".goalPositionY
+	goalPositionX = RandomNumberGenerator.new().randf_range(200, 1800)
+	goalPositionY = RandomNumberGenerator.new().randf_range(200, 800)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 	if position.x < goalPositionX + 30 and position.x > goalPositionX - 30:
 		if position.y < goalPositionY + 30 and position.y > goalPositionY - 30:
 			texture = load("res://Imports/images/radarDot-removebg-preview-green.png")
+			puzzle_complete = true
 	else:
 		if position.x < goalPositionX + 100 and position.x > goalPositionX - 100:
 			if position.y < goalPositionY + 100 and position.y > goalPositionY - 100:

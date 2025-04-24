@@ -178,12 +178,12 @@ albedo_color = Color(0.205117, 0.205117, 0.205117, 1)
 material = SubResource("StandardMaterial3D_555l6")
 size = Vector3(2.9, 0.9, 0.9)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vs72q"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aystd"]
 transparency = 1
 albedo_texture = ExtResource("16_6clbt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wm3ql"]
-material = SubResource("StandardMaterial3D_vs72q")
+material = SubResource("StandardMaterial3D_aystd")
 size = Vector2(0.7, 0.7)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nx3h5"]

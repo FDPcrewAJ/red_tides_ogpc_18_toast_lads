@@ -1,4 +1,4 @@
-extends Label
+extends CSGMesh3D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,8 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $"../RadarDot".puzzle_complete == true:
-		text = "Calibration Complete"
-		Global.radar_puzzle_completed = true
-	else:
-		text = "Calibration Incomplete"
+	if Global.keypadPositive == true:
+		queue_free()

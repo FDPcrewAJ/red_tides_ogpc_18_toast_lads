@@ -11,9 +11,9 @@ func _process(_delta):
 	#This needs to correspond to the note's body node
 	if Global.current_object == "StorageComputerBody":
 		#Must correspond to the interactables display node in the current scene
-		$"../InteractablesDisplay"._show_interactable()
+		$"../../../../InteractablesDisplay"._show_interactable()
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			#This needs to correspond to the menu prompt node in the current scene.
-			Global.previous_scene = "res://Scenes/testingLevels/storage_room.tscn"
-			Global.lastpos = $"../player".position
+			Global.previous_scene = "res://Scenes/Final Levels/first_floor.tscn"
+			Global.lastpos = $"../../../../player".position
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Interfaces/storage_puzzle_interface.tscn")

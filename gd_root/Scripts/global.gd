@@ -80,6 +80,8 @@ var default_audio_name = "line_"
 var line_num = 0
 var voice_line = ""
 
+var entry_position = true
+
 
 func _process(_delta):
 	if timer_active && time_left == 0:

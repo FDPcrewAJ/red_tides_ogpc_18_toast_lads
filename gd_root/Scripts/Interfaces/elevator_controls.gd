@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_button_pressed() -> void:
-	Global.floor = "Underwater"
+	Global.floor = "Water Processing"
 
 
 func _on_button_2_pressed() -> void:
@@ -19,19 +19,19 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_button_3_pressed() -> void:
-	Global.floor = "Hub"
+	Global.floor = "Entrance"
 
 
 func _on_button_4_pressed() -> void:
-	Global.floor = "Storage"
+	Global.floor = "First Floor"
 
 
 func _on_button_5_pressed() -> void:
-	Global.floor = "Systems"
+	Global.floor = "Second Floor"
 
 
 func _on_button_6_pressed() -> void:
-	Global.floor = "Anti-Storm"
+	Global.floor = "Control"
 
 
 func _on_exit_button_pressed() -> void:

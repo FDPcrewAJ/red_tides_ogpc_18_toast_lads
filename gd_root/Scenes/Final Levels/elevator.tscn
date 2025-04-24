@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bcrwco2xn1qus"]
+[gd_scene load_steps=21 format=3 uid="uid://bcrwco2xn1qus"]
 
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_h6pvi"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uccvb"]
 [ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="2_6o8v6"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_5b5p7"]
+[ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="5_u4hxr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_controls.gd" id="6_2wut2"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_doors.gd" id="6_uubdo"]
 
@@ -41,18 +42,8 @@ points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_al443"]
 points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.53869, -2.53869, 0.039667, -2.53869, 2.53869, -0.039667, -2.53869, -2.53869, -0.039667, 2.53869, -2.53869, 0.039667, 2.53869, 2.53869, 0.039667, -2.53869, 2.53869, -0.039667, 2.53869)
 
-[sub_resource type="BoxMesh" id="BoxMesh_5bkyq"]
-size = Vector3(3, 4, 0.2)
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a24dp"]
 points = PackedVector3Array(1.51557, 2.03175, 0.122173, -1.53145, -2.03175, -0.131696, -1.53145, -2.03175, 0.122173, -1.53145, 2.03175, -0.131696, 1.51557, -2.03175, -0.131696, 1.51557, -2.03175, 0.122173, -1.53145, 2.03175, 0.122173, 1.51557, 2.03175, -0.131696)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hv41e"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_p5p00"]
-material = SubResource("StandardMaterial3D_hv41e")
-size = Vector2(0.1, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qrp0s"]
 size = Vector3(0.2, 1, 1.7)
@@ -134,19 +125,17 @@ shape = SubResource("ConvexPolygonShape3D_al443")
 [node name="Doors" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.5)
 
-[node name="ElevatorDoors" type="MeshInstance3D" parent="Doors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("BoxMesh_5bkyq")
+[node name="elevator" parent="Doors" instance=ExtResource("5_u4hxr")]
+transform = Transform3D(-1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, 0, -1, 0)
 script = ExtResource("6_uubdo")
+metadata/_edit_group_ = true
 
-[node name="ElevatorDoorBody" type="StaticBody3D" parent="Doors/ElevatorDoors"]
+[node name="ElevatorDoorBody" type="StaticBody3D" parent="Doors/elevator"]
+transform = Transform3D(-3.64262e-08, 0, -0.833333, 0, 0.833333, 0, 0.833333, 0, -3.64262e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/ElevatorDoors/ElevatorDoorBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/elevator/ElevatorDoorBody"]
+transform = Transform3D(-4.37114e-08, 0, -3.25692, 0, 1.72363, 0, 1, 0, -1.42365e-07, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_a24dp")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Doors"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0.15)
-mesh = SubResource("PlaneMesh_p5p00")
 
 [node name="Controls" type="Node3D" parent="."]
 

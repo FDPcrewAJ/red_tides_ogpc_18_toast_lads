@@ -81,6 +81,8 @@ var line_num = "0"
 var updated_line = ""
 var voice_line = "line_1"
 
+var entry_position = true
+
 
 func _process(_delta):
 	if timer_active && time_left == 0:

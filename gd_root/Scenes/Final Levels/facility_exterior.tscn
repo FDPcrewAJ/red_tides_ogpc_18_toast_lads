@@ -1239,8 +1239,20 @@ transform = Transform3D(0.919362, 0, 0.393412, 0, 1, 0, -0.393412, 0, 0.919362, 
 [node name="wooden_box2" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("30_drjyr")]
 transform = Transform3D(0.747152, 0, 1.21929, 0, 1.43, 0, -1.21929, 0, 0.747152, 2.42779, -4.70741, -8.37096)
 
+[node name="wooden_box4" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("30_drjyr")]
+transform = Transform3D(1.13379, 0, 1.85025, 0, 2.17, 0, -1.85025, 0, 1.13379, 29.7862, -11.6107, -18.1588)
+
+[node name="wooden_box3" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("30_drjyr")]
+transform = Transform3D(-0.438878, 0, 1.82806, 0, 1.88, 0, -1.82806, 0, -0.438878, -4.95475, -4.70741, -13.0731)
+
 [node name="metal_box" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("31_4e4nb")]
 transform = Transform3D(1.6747, 0, -0.699718, 0, 1.815, 0, 0.699718, 0, 1.6747, 5.37662, -4.74887, -10.1997)
+
+[node name="metal_box2" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("31_4e4nb")]
+transform = Transform3D(1.01492, 0, 0.485353, 0, 1.125, 0, -0.485353, 0, 1.01492, -4.64522, -4.74887, -11.307)
+
+[node name="metal_box3" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("31_4e4nb")]
+transform = Transform3D(1.05056, 0, -0.402431, 0, 1.125, 0, 0.402431, 0, 1.05056, 19.3483, -11.665, -18.8464)
 
 [node name="banana_peel" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("32_anb2o")]
 transform = Transform3D(0.948546, 0.100466, -0.300277, -0.0957812, 0.994941, 0.030321, 0.301804, 0, 0.95337, 5.74288, -4.76975, -11.4549)

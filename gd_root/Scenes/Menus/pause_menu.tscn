@@ -9,8 +9,12 @@ script/source = "extends Control
 
 @onready var menu = $\".\"
 @onready var settings: Control = $\"../settings\"
+@onready var confirm_prompt = $confirm_prompt
 
 var pause_open = false
+
+var go_main_menu = false
+var go_quit = false
 
 
 func _unhandled_key_input(event):
@@ -49,12 +53,28 @@ func _on_settings_pressed():
 
 
 func _on_main_menu_pressed():
-	unpause()
-	get_tree().change_scene_to_file(\"res://Scenes/Menus/title_screen.tscn\")
+	go_main_menu = true
+	confirm_prompt.show()
 
 
 func _on_quit_game_pressed():
-	get_tree().quit()
+	go_quit = true
+	confirm_prompt.show()
+	
+
+
+func _on_yes_pressed():
+	if go_main_menu:
+		unpause()
+		get_tree().change_scene_to_file(\"res://Scenes/Menus/title_screen.tscn\")
+	if go_quit:
+		get_tree().quit()
+
+
+func _on_no_pressed():
+	go_main_menu = false
+	go_quit = false
+	confirm_prompt.hide()
 "
 
 [node name="pause_menu" type="Control"]
@@ -213,8 +233,105 @@ theme_override_font_sizes/font_size = 50
 text = "Save Game"
 flat = true
 
+[node name="confirm_prompt" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseBG2" type="ColorRect" parent="confirm_prompt"]
+custom_minimum_size = Vector2(900, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.94902)
+
+[node name="PauseLabel2" type="Label" parent="confirm_prompt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.5
+offset_top = -196.0
+offset_right = 298.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 60
+text = "Are you Sure?
+
+All Progress will
+be LOST!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="confirm_prompt"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = 127.0
+offset_right = -94.0
+offset_bottom = 204.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 50
+text = "Yes"
+flat = true
+
+[node name="no" type="Button" parent="confirm_prompt"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 97.0
+offset_top = 127.0
+offset_right = 285.0
+offset_bottom = 204.0
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 50
+text = "No"
+flat = true
+
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
 [connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="confirm_prompt/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="confirm_prompt/no" to="." method="_on_no_pressed"]

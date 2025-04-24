@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwyhythj2470"]
+
+[ext_resource type="Script" path="res://Scenes/Interfaces/chatlog_lore_interface.gd" id="1_2cjkr"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_0tama"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_m43fb"]
+
+[node name="chatlog_lore_interface" type="Node2D"]
+script = ExtResource("1_2cjkr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_0tama")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -392.0
+offset_top = 348.0
+offset_right = -174.0
+offset_bottom = 486.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_m43fb")
+theme_override_font_sizes/font_size = 90
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -913.0
+offset_top = -451.0
+offset_right = -628.0
+offset_bottom = -428.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "OGAS Network: Chatlogs, 1969/11/08"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -916.0
+offset_top = -323.0
+offset_right = -383.0
+offset_bottom = -281.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762: I'm having some concerns about this whole project. The test
+results aren't nearly as impressive as the figures we've been presenting..."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -920.0
+offset_top = -179.0
+offset_right = -378.0
+offset_bottom = -137.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295: As long as the politburo doesn't find out, it doesn't really matter to
+me."
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -915.0
+offset_top = -62.0
+offset_right = 321.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762: But this whole storm problem isn't just some minor issue! This
+could have major impacts on millions of people! Heck, the whole world even."
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -912.0
+offset_top = 53.0
+offset_right = 320.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295: I know. But the government doesn't want to hear that. They want a
+quick bandaid solution to flaunt to the general secretary so they all get their yearly 
+bonus."
+
+[node name="Label6" type="Label" parent="."]
+offset_left = -915.0
+offset_top = 201.0
+offset_right = 354.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762: I guess you're right. Hey, this network is secure, right?"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -919.0
+offset_top = 282.0
+offset_right = 362.0
+offset_bottom = 369.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295: We're already working in Siberia. What's the worst that could happen?"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

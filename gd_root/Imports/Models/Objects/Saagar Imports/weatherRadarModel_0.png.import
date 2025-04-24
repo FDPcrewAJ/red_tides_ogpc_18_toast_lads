@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwq7p2pp4hr1"
-path.s3tc="res://.godot/imported/Old TV + Texture_0.png-39731eda47e89d42ec263821ff1e4c21.s3tc.ctex"
+uid="uid://jvs0tf0xdoun"
+path="res://.godot/imported/weatherRadarModel_0.png-dd95ffe93c59650c89b4f0ad44f6836d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "4904e832046414fd96c579cb596e6e45"
 }
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Saagar Imports/Old TV + Texture_0.png"
-dest_files=["res://.godot/imported/Old TV + Texture_0.png-39731eda47e89d42ec263821ff1e4c21.s3tc.ctex"]
+source_file="res://Imports/Models/Objects/Saagar Imports/weatherRadarModel_0.png"
+dest_files=["res://.godot/imported/weatherRadarModel_0.png-dd95ffe93c59650c89b4f0ad44f6836d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

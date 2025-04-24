@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwq7p2pp4hr1"
-path.s3tc="res://.godot/imported/Old TV + Texture_0.png-39731eda47e89d42ec263821ff1e4c21.s3tc.ctex"
+uid="uid://cb3c5mgdtyd5v"
+path="res://.godot/imported/marbleCounter_0.png-66464706cb567edd82a3426efe480138.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "8b370b9f34e9e7ea7e7e379b6a06f165"
 }
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Saagar Imports/Old TV + Texture_0.png"
-dest_files=["res://.godot/imported/Old TV + Texture_0.png-39731eda47e89d42ec263821ff1e4c21.s3tc.ctex"]
+source_file="res://Imports/Models/Objects/Counters/marbleCounter_0.png"
+dest_files=["res://.godot/imported/marbleCounter_0.png-66464706cb567edd82a3426efe480138.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

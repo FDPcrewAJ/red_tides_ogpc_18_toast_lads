@@ -1,8 +1,6 @@
-[gd_scene load_steps=58 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=65 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
-[ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
-[ext_resource type="PackedScene" uid="uid://b58leoi83gsdb" path="res://Imports/Models/Objects/Box/MetalBox.gltf" id="21_xxu8m"]
 [ext_resource type="PackedScene" uid="uid://dig306bgkj8vt" path="res://Assets/Objects/Railings/railing_5_segment.tscn" id="23_ab0a3"]
 [ext_resource type="PackedScene" uid="uid://wwlxchixubor" path="res://Imports/Models/Objects/Clutter/bananaPeel.gltf" id="23_nlpkp"]
 [ext_resource type="PackedScene" uid="uid://c3qp0csungpo3" path="res://Imports/Models/Objects/Clutter/clutterPileSmall.gltf" id="24_8wd8n"]
@@ -57,6 +55,12 @@
 [ext_resource type="PackedScene" uid="uid://crjk80e7qhd08" path="res://Assets/Objects/Railings/outside_railing_1_segement.tscn" id="52_j143g"]
 [ext_resource type="PackedScene" uid="uid://ckouqjf2ccc10" path="res://Assets/Objects/Railings/outside_railing_90_corner.tscn" id="53_vxu32"]
 [ext_resource type="PackedScene" uid="uid://bmopb4vq72580" path="res://Assets/Objects/Railings/outside_railing_end.tscn" id="54_5r0x4"]
+[ext_resource type="PackedScene" uid="uid://ugkmpmeoiwca" path="res://Assets/Objects/MiscFurnature/marble_counter.tscn" id="55_4jgc1"]
+[ext_resource type="PackedScene" uid="uid://cw864vn6mgor3" path="res://Imports/Models/Objects/Saagar Imports/weatherRadarModel.gltf" id="56_45maj"]
+[ext_resource type="PackedScene" uid="uid://bbni1p6h70qah" path="res://Imports/Models/Objects/Saagar Imports/Generic Machine #2.gltf" id="57_dlckl"]
+[ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="57_s134a"]
+[ext_resource type="PackedScene" uid="uid://cy1o5dhqbkkyh" path="res://Imports/Models/Objects/Saagar Imports/Microwave.gltf" id="58_0uch7"]
+[ext_resource type="PackedScene" uid="uid://77pqqyxlsm38" path="res://Assets/Objects/Boxes/wooden_box.tscn" id="58_1dj2t"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -132,12 +136,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85648, 0, 2.88343)
 
 [node name="computer" parent="." instance=ExtResource("27_3te7t")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.35101, 1.2744, 9.9908)
-
-[node name="wooden_box" parent="." instance=ExtResource("20_1e0bp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21871, -4.76837e-07, 13.6045)
-
-[node name="metal_box" parent="." instance=ExtResource("21_xxu8m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92899, 0, 13.5896)
 
 [node name="banana_peel" parent="." instance=ExtResource("23_nlpkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36866, 0, 7.13193)
@@ -218,10 +216,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80858, 0, 0.109151)
 [node name="antennas" parent="." instance=ExtResource("40_4jm2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0637, 0, 9.43506)
 
-[node name="blockbench_export" parent="." instance=ExtResource("41_whhue")]
+[node name="battery" parent="." instance=ExtResource("41_whhue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9547, 0, 9.04835)
 
-[node name="blockbench_export2" parent="." instance=ExtResource("42_iuoou")]
+[node name="radar" parent="." instance=ExtResource("42_iuoou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1812, 4.76837e-07, 9.32944)
 
 [node name="genericMachine" parent="." instance=ExtResource("40_ip4fa")]
@@ -248,7 +246,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4042, 0, -1.61218)
 [node name="lightSwitch" parent="." instance=ExtResource("47_5aoyv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.71466, 0, 3.03801)
 
-[node name="blockbench_export3" parent="." instance=ExtResource("48_8yudt")]
+[node name="vent" parent="." instance=ExtResource("48_8yudt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7646, 1.19209e-07, 6.61698)
 
 [node name="largeHvackUnit" parent="." instance=ExtResource("49_5w2i5")]
@@ -268,3 +266,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20994, 0, -7.40305)
 
 [node name="outsideRailingEnd" parent="." instance=ExtResource("54_5r0x4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42777, 0, -8.15696)
+
+[node name="marbleCounter" parent="." instance=ExtResource("55_4jgc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07185, 0, -9.38749)
+
+[node name="radar2" parent="." instance=ExtResource("56_45maj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8634, 0, -5.82306)
+
+[node name="control_panel" parent="." instance=ExtResource("57_dlckl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0132, 0, -7.68142)
+
+[node name="microwave" parent="." instance=ExtResource("58_0uch7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8048, 0, -6.90981)
+
+[node name="metal_box2" parent="." instance=ExtResource("57_s134a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87501, 0, 10.9005)
+
+[node name="wooden_box2" parent="." instance=ExtResource("58_1dj2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02539, 0, 10.9005)
+
+[node name="genericMachine2" parent="." instance=ExtResource("40_ip4fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3934, 0, 7.39848)

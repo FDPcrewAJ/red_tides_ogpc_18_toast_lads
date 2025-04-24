@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=145 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://c7vsjp7ma7tyt" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="33_nbwly"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="34_cau1u"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="36_413eg"]
+[ext_resource type="PackedScene" uid="uid://ugkmpmeoiwca" path="res://Assets/Objects/MiscFurnature/marble_counter.tscn" id="38_5jkm0"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/first_floor_interaction_control.gd" id="39_opvwc"]
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="40_smis2"]
 [ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="41_3a62q"]
@@ -477,6 +478,7 @@ mesh = SubResource("PlaneMesh_xh4l5")
 
 [node name="ceiling" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/ceiling"]
 shape = SubResource("BoxShape3D_4hmqv")
@@ -1895,32 +1897,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6599, 2.93079, 0.778805)
 [node name="kitchen" type="Node3D" parent="world/decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6949, 0, -1.45675)
 
-[node name="placeholders" type="Node3D" parent="world/decorations/kitchen"]
-
-[node name="placeholderCountertop" type="CSGBox3D" parent="world/decorations/kitchen/placeholders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78745, 1.38175, 2.59801)
-size = Vector3(6.7359, 1.79199, 2.09546)
-
-[node name="placeholderCountertop2" type="CSGBox3D" parent="world/decorations/kitchen/placeholders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05767, 1.39121, -2.28953)
-size = Vector3(8.16516, 1.79199, 2.09546)
-
-[node name="placeholderCountertop4" type="CSGBox3D" parent="world/decorations/kitchen/placeholders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70024, 1.39121, -5.79673)
-size = Vector3(8.16516, 1.79199, 1.54382)
-
-[node name="placeholderCountertop3" type="CSGBox3D" parent="world/decorations/kitchen/placeholders"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -4.61042, 1.39121, 3.60799)
-size = Vector3(5.74051, 1.79199, 1.31677)
-
-[node name="placeholderServingTable" type="CSGBox3D" parent="world/decorations/kitchen/placeholders"]
-transform = Transform3D(-1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, -1, -3.58692, 1.21027, -10.4082)
-size = Vector3(10.2909, 2.28204, 2.80392)
-
-[node name="placeholderCabinet" type="CSGBox3D" parent="world/decorations/kitchen/placeholders"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -4.61042, 4.31547, 3.60799)
-size = Vector3(5.74051, 1.42236, 1.31677)
-
 [node name="pipe_straight" parent="world/decorations/kitchen" instance=ExtResource("30_mm3nu")]
 transform = Transform3D(0.650627, 0, 0, 0, 0.650627, 0, 0, 0, 0.650627, -5.79678, 0.39276, -0.234253)
 
@@ -1941,6 +1917,21 @@ transform = Transform3D(-7.10995e-08, -1.62657, 0, 1.62657, -7.10995e-08, 0, 0, 
 
 [node name="pipe_straight4" parent="world/decorations/kitchen" instance=ExtResource("30_mm3nu")]
 transform = Transform3D(-0.650627, 5.68796e-08, 0, -5.68796e-08, -0.650627, 0, 0, 0, 0.650627, -9.91194, 2.32487, -0.234253)
+
+[node name="marbleCounter" parent="world/decorations/kitchen" instance=ExtResource("38_5jkm0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.4894, 0.5, 2.57695)
+
+[node name="marbleCounter3" parent="world/decorations/kitchen" instance=ExtResource("38_5jkm0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.4894, 0.5, -1.68597)
+
+[node name="marbleCounter4" parent="world/decorations/kitchen" instance=ExtResource("38_5jkm0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.18474, 0.5, -5.36105)
+
+[node name="marbleCounter5" parent="world/decorations/kitchen" instance=ExtResource("38_5jkm0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.25612, 0.5, -9.54685)
+
+[node name="marbleCounter2" parent="world/decorations/kitchen" instance=ExtResource("38_5jkm0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.80067, 0.5, 3.18037)
 
 [node name="cafeteria" type="Node3D" parent="world/decorations"]
 

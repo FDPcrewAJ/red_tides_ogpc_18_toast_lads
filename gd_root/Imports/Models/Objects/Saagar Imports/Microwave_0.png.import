@@ -2,21 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwq7p2pp4hr1"
-path.s3tc="res://.godot/imported/Old TV + Texture_0.png-39731eda47e89d42ec263821ff1e4c21.s3tc.ctex"
+uid="uid://d1fqyc5wdy7p0"
+path="res://.godot/imported/Microwave_0.png-6b347562117b3e0c207e5e28ee9b6cd6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
+}
+generator_parameters={
+"md5": "52a1f338642298b36a8f0ab478d777b8"
 }
 
 [deps]
 
-source_file="res://Imports/Models/Objects/Saagar Imports/Old TV + Texture_0.png"
-dest_files=["res://.godot/imported/Old TV + Texture_0.png-39731eda47e89d42ec263821ff1e4c21.s3tc.ctex"]
+source_file="res://Imports/Models/Objects/Saagar Imports/Microwave_0.png"
+dest_files=["res://.godot/imported/Microwave_0.png-6b347562117b3e0c207e5e28ee9b6cd6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=4 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=102 format=4 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
@@ -27,7 +27,16 @@
 [ext_resource type="Texture2D" uid="uid://csjxu4a1n2v7r" path="res://Imports/Models/Objects/Battery/BoatBatteryNew_0.png" id="15_afx8a"]
 [ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="15_auc1o"]
 [ext_resource type="AudioStream" uid="uid://rm6ahr224b0x" path="res://Audio/Sounds/ocean/loop_ocean_background.mp3" id="22_yic33"]
+[ext_resource type="PackedScene" uid="uid://bmopb4vq72580" path="res://Assets/Objects/Railings/outside_railing_end.tscn" id="27_ih6pb"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="27_q35ii"]
+[ext_resource type="PackedScene" uid="uid://ckouqjf2ccc10" path="res://Assets/Objects/Railings/outside_railing_90_corner.tscn" id="28_dgywy"]
+[ext_resource type="PackedScene" uid="uid://crjk80e7qhd08" path="res://Assets/Objects/Railings/outside_railing_1_segement.tscn" id="29_xgmi1"]
+[ext_resource type="PackedScene" uid="uid://77pqqyxlsm38" path="res://Assets/Objects/Boxes/wooden_box.tscn" id="30_drjyr"]
+[ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="31_4e4nb"]
+[ext_resource type="PackedScene" uid="uid://bydyub6003sef" path="res://Assets/Objects/Clutter/banana_peel.tscn" id="32_anb2o"]
+[ext_resource type="PackedScene" uid="uid://b2pgdoelxuw2b" path="res://Assets/Objects/MiscFurnature/large_hvack_unit.tscn" id="33_c52pv"]
+[ext_resource type="PackedScene" uid="uid://we1rupekxd1" path="res://Assets/Objects/Tools/hammer.tscn" id="34_ohaeg"]
+[ext_resource type="PackedScene" uid="uid://c2mbh310wamfj" path="res://Assets/Objects/Tools/screwdriver.tscn" id="35_mhya6"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cwpdp"]
 material = ExtResource("5_ao2o6")
@@ -289,59 +298,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hpvtb"]
-size = Vector3(15, 0.3, 12)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
-transparency = 1
-albedo_texture = ExtResource("9_psfmp")
-uv1_scale = Vector3(0.7, 0.7, 0.7)
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_gfmt2"]
-material = SubResource("StandardMaterial3D_gufqm")
-size = Vector3(15, 0.3, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
-size = Vector3(3, 0.5, 15.6611)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
-transparency = 1
-albedo_texture = ExtResource("9_psfmp")
-uv1_scale = Vector3(0.7, 0.7, 0.7)
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_881vr"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(3, 0.3, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vjulk"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(4, 0.3, 3)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2hrsm"]
-size = Vector3(3, 0.4, 4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_aow4s"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(20, 0.3, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
-size = Vector3(4, 0.4, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_hqv2q"]
-material = SubResource("StandardMaterial3D_dwtlt")
-size = Vector3(9, 0.3, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yktpf"]
-size = Vector3(4, 0.4, 9)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooad8"]
-albedo_texture = ExtResource("7_vlv12")
-uv1_scale = Vector3(0.4, 0.4, 0.4)
-uv1_triplanar = true
-uv1_world_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u228j"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
@@ -479,6 +435,62 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_h3cy4"]
 material = SubResource("StandardMaterial3D_ma47x")
 size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cso4m"]
+size = Vector3(15, 0.3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
+transparency = 1
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_0tb5p"]
+material = SubResource("StandardMaterial3D_gufqm")
+size = Vector3(15, 0.3, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_riki7"]
+size = Vector3(3, 0.5, 15.6611)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
+transparency = 1
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_bd65k"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(3, 0.3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ct4ov"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(4, 0.3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6f01"]
+size = Vector3(3, 0.4, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4kpyf"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(20, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xhdb"]
+size = Vector3(4, 0.4, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r8hpb"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(9, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yxi85"]
+size = Vector3(4, 0.4, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2bbh"]
+albedo_texture = ExtResource("7_vlv12")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvo23"]
+size = Vector3(0.75, 0.75, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tjocb"]
 size = Vector3(4.5, 3, 15)
@@ -635,322 +647,6 @@ mesh = SubResource("ArrayMesh_1800r")
 material = ExtResource("15_auc1o")
 
 [node name="facilityModel" type="Node3D" parent="world"]
-
-[node name="catwalks" type="Node3D" parent="world/facilityModel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)
-
-[node name="mainCatwalk" type="StaticBody3D" parent="world/facilityModel/catwalks"]
-
-[node name="mainCatwalkCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/mainCatwalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90719, -11.0903)
-shape = SubResource("BoxShape3D_hpvtb")
-
-[node name="mainCatwalkMesh" type="MeshInstance3D" parent="world/facilityModel/catwalks/mainCatwalk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90719, -11.0903)
-mesh = SubResource("BoxMesh_gfmt2")
-skeleton = NodePath("../mainCatwalkCol")
-
-[node name="staircase" type="StaticBody3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -4.90707, -3.09506)
-
-[node name="stairsCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, -1.46983e-09, 7.19183e-10, 1.63605e-09, 0.889855, -0.456244, 3.06279e-11, 0.456244, 0.889855, 0, -3.6443, 8.35842)
-shape = SubResource("BoxShape3D_gnwd5")
-
-[node name="stair2" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 2)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair3" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 3)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair4" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 4)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair5" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 5)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair6" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 6)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair7" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 7)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair8" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 8)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair9" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 9)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair10" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 10)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair11" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 11)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair12" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 12)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair13" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 13)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stair14" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 14)
-mesh = SubResource("BoxMesh_881vr")
-
-[node name="stairsTop" type="StaticBody3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.907, -4.1)
-
-[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsTop"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
-mesh = SubResource("BoxMesh_vjulk")
-skeleton = NodePath("../../staircase")
-
-[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsTop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
-shape = SubResource("BoxShape3D_2hrsm")
-
-[node name="stairsBottom" type="StaticBody3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, -11.8, -9.7)
-
-[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsBottom"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("BoxMesh_aow4s")
-skeleton = NodePath("../../staircase")
-
-[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsBottom"]
-shape = SubResource("BoxShape3D_b2kg4")
-
-[node name="stairsBottom3" type="StaticBody3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4696, -11.8, -10.0122)
-
-[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsBottom3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("BoxMesh_aow4s")
-skeleton = NodePath("../../staircase")
-
-[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsBottom3"]
-shape = SubResource("BoxShape3D_b2kg4")
-
-[node name="stairsBottom2" type="StaticBody3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.9931, -11.8, -18.0088)
-
-[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsBottom2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("BoxMesh_hqv2q")
-skeleton = NodePath("../../staircase")
-
-[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsBottom2"]
-shape = SubResource("BoxShape3D_yktpf")
-
-[node name="catwalksupports" type="Node3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112269, 0)
-
-[node name="IBeam" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, 0, 14, 0, 1, 0, -1, 0, -6.11959e-07, 0, -5.62976, -5.19072)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam8" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 1, -5.62976, -3.10224)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam23" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-3.39242e-08, 0.447478, 13.4144, 1.95599e-08, 0.894295, -6.71217, -1, 2.31197e-09, -5.86363e-07, 7.46331, -9.40536, -3.10224)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam25" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, 1, -5.68248e-08, 0, -4.37114e-08, -1.3, -1, -4.37114e-08, 2.48389e-15, 0.62407, -5.55877, -3.10224)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam26" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 14.1676, -12.3136, -3.10224)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam9" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, -1.03635, -5.62976, -3.10224)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam2" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12, 6.38189, -5.63335, -10.5782)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam24" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 14.5379, -12.5274, -9.64739)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam27" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 17.0459, -12.5274, -9.64739)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam28" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 21, 29.5707, -12.5415, -10.4594)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam29" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, 0, 14, 0, 1, 0, -1, 0, -6.11959e-07, 24.826, -12.5274, -20.0078)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam30" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, 0, 15, 0, 1, 0, -1, 0, -6.55671e-07, 22.0451, -12.5426, -17.8935)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam4" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 5, 0, -0.5, 8.66025, 6.38189, -8.09232, -11.4432)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam5" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, 4, -1, 4.37114e-08, -1.74846e-07, 6.75346, -6.99435, -13.3935)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam6" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 5, 0, -0.5, 8.66025, -6.42594, -8.09232, -11.4432)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam7" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, 4, -1, 4.37114e-08, -1.74846e-07, -6.05438, -6.99435, -13.3935)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam3" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12, -6.42233, -5.63335, -10.5782)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam10" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 2, -5.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam11" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 3, -6.3, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam12" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 4, -6.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam13" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 5, -7.3, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam14" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 6, -7.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam15" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 7, -8.3, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam16" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 8, -8.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam17" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 9, -9.3, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam18" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 10, -9.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam19" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 11, -10.3, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam20" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 12, -10.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam21" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 13, -11.3, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="IBeam22" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 2, 14, -11.8, -3.095)
-material_override = SubResource("StandardMaterial3D_ooad8")
-mesh = ExtResource("10_1t6sg")
-
-[node name="railings" type="Node3D" parent="world/facilityModel/catwalks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -7)
-
-[node name="railing5Segment" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36139, -0.778603, 1.89195)
-
-[node name="railing5Segment2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1909, -0.778603, 1.89195)
-
-[node name="railing5Segment9" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.56818, -0.774056, -0.485039)
-
-[node name="railing5Segment10" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.56818, -0.774056, -5.48504)
-
-[node name="railing5Segment11" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.56818, -0.774056, -10.485)
-
-[node name="railing5Segment12" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.74132, -0.774056, -0.485039)
-
-[node name="railing5Segment13" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.74132, -0.774056, -5.48504)
-
-[node name="railing5Segment14" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.74132, -0.774056, -10.485)
-
-[node name="railing5Segment3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -0.233906)
-
-[node name="railing5Segment4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -5.23391)
-
-[node name="railing5Segment5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -10.2339)
-
-[node name="railing5Segment6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.9117, -7.67093, -13.0037)
-
-[node name="railing5Segment7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.9117, -7.67093, -13.0037)
-
-[node name="railing5Segment8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.9117, -7.67093, -13.0037)
 
 [node name="mainSupports" type="Node3D" parent="world/facilityModel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)
@@ -1170,6 +866,393 @@ transform = Transform3D(-3.0598e-08, 3.0598e-08, 0.7, 0.7, -3.0598e-08, 3.0598e-
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -35.356, 0)
 mesh = SubResource("PlaneMesh_h3cy4")
 skeleton = NodePath("../../water_plane")
+
+[node name="catwalks" type="Node3D" parent="world/facilityModel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)
+
+[node name="mainCatwalk" type="StaticBody3D" parent="world/facilityModel/catwalks"]
+
+[node name="mainCatwalkCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/mainCatwalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90719, -11.0903)
+shape = SubResource("BoxShape3D_cso4m")
+
+[node name="mainCatwalkMesh" type="MeshInstance3D" parent="world/facilityModel/catwalks/mainCatwalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90719, -11.0903)
+mesh = SubResource("BoxMesh_0tb5p")
+skeleton = NodePath("../mainCatwalkCol")
+
+[node name="staircase" type="StaticBody3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.82218e-08, -4.90707, -3.51193)
+
+[node name="stairsCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, -1.46983e-09, 7.19183e-10, 1.63605e-09, 0.889855, -0.456244, 3.06279e-11, 0.456244, 0.889855, 0, -3.6443, 8.35842)
+shape = SubResource("BoxShape3D_riki7")
+
+[node name="stair2" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 2)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair3" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 3)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair4" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 4)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair5" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 5)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair6" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 6)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair7" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 7)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair8" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 8)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair9" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 9)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair10" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.5, 10)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair11" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 11)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair12" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 12)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair13" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 13)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stair14" type="MeshInstance3D" parent="world/facilityModel/catwalks/staircase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.5, 14)
+mesh = SubResource("BoxMesh_bd65k")
+
+[node name="stairsTop" type="StaticBody3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.907, -4.1)
+
+[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsTop"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
+mesh = SubResource("BoxMesh_ct4ov")
+skeleton = NodePath("../../staircase")
+
+[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsTop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536728, 1)
+shape = SubResource("BoxShape3D_l6f01")
+
+[node name="stairsBottom" type="StaticBody3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, -11.8, -9.7)
+
+[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsBottom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_4kpyf")
+skeleton = NodePath("../../staircase")
+
+[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsBottom"]
+shape = SubResource("BoxShape3D_3xhdb")
+
+[node name="stairsBottom3" type="StaticBody3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4696, -11.8, -10.0122)
+
+[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsBottom3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_4kpyf")
+skeleton = NodePath("../../staircase")
+
+[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsBottom3"]
+shape = SubResource("BoxShape3D_3xhdb")
+
+[node name="stairsBottom2" type="StaticBody3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22.9931, -11.8, -18.0088)
+
+[node name="stair" type="MeshInstance3D" parent="world/facilityModel/catwalks/stairsBottom2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_r8hpb")
+skeleton = NodePath("../../staircase")
+
+[node name="stairsTopCol" type="CollisionShape3D" parent="world/facilityModel/catwalks/stairsBottom2"]
+shape = SubResource("BoxShape3D_yxi85")
+
+[node name="catwalksupports" type="Node3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112269, 0)
+
+[node name="IBeam" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, 0, 16, 0, 1, 0, -1, 0, -6.99382e-07, 0, -5.62976, -5.19072)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam10" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, 0, 3.75, 0, 1, 0, -1, 0, -1.63918e-07, -0.0164319, -5.63726, -1.75879)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam8" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 1, -5.62976, -3.10224)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam23" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-3.39242e-08, 0.447478, 12.4307, 1.95599e-08, 0.894295, -6.21994, -1, 2.31198e-09, -5.43363e-07, 7.73962, -8.66868, -5.19443)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world/facilityModel/catwalks/catwalksupports/IBeam23"]
+transform = Transform3D(1, -1.77636e-15, -5.68434e-14, -1.33227e-15, 1, 4.76837e-07, 2.22045e-16, -1.86265e-09, 1, 0, 0.235577, -0.00848025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/facilityModel/catwalks/catwalksupports/IBeam23/StaticBody3D"]
+transform = Transform3D(1, 4.95159e-14, 5.22959e-12, -4.44089e-16, 0.999993, -1.25627e-15, 6.66134e-16, 1.30385e-08, 1, -0.00860596, 0.133302, -8.9407e-08)
+shape = SubResource("BoxShape3D_bvo23")
+
+[node name="IBeam31" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-3.39242e-08, 0.447478, 12.4307, 1.95599e-08, 0.894295, -6.21994, -1, 2.31198e-09, -5.43363e-07, 7.73962, -8.66868, -1.75146)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world/facilityModel/catwalks/catwalksupports/IBeam31"]
+transform = Transform3D(1, -1.77636e-15, -5.68434e-14, -1.33227e-15, 1, 4.76837e-07, 2.22045e-16, -1.86265e-09, 1, 0, 0.235577, -0.00848025)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/facilityModel/catwalks/catwalksupports/IBeam31/StaticBody3D"]
+transform = Transform3D(1, 4.95159e-14, 5.22959e-12, -4.44089e-16, 0.999993, -1.25627e-15, 6.66134e-16, 1.30385e-08, 1, -0.00860596, 0.133302, -8.9407e-08)
+shape = SubResource("BoxShape3D_bvo23")
+
+[node name="IBeam25" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, 1, -8.74228e-08, 0, -4.37114e-08, -2, -1, -4.37114e-08, 3.82137e-15, 13.5903, -11.6584, -5.19778)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam32" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, 1, -8.74228e-08, 0, -4.37114e-08, -2, -1, -4.37114e-08, 3.82137e-15, 13.5903, -11.6584, -1.7532)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam9" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, -1.41124, -5.62976, -3.10224)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam2" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12, 7.43893, -5.63335, -10.5782)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam24" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 14.5379, -12.5274, -9.64739)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam27" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 17.2795, -12.5274, -9.64739)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam28" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 21, 28.6074, -12.5415, -10.4594)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam33" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 21, 31.3788, -12.5415, -10.4594)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam29" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, 0, 14, 0, 1, 0, -1, 0, -6.11959e-07, 24.826, -12.5274, -20.0078)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam30" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, 0, 16.5, 0, 1, 0, -1, 0, -7.21238e-07, 22.9048, -12.5426, -17.8935)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam4" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 5, 0, -0.5, 8.66025, 7.43893, -8.09232, -11.4432)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam5" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, 4, -1, 4.37114e-08, -1.74846e-07, 7.8105, -6.99435, -13.3935)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam6" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 5, 0, -0.5, 8.66025, -7.43386, -8.09232, -11.4432)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam7" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 0, 4, -1, 4.37114e-08, -1.74846e-07, -7.0623, -6.99435, -13.3935)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="IBeam3" type="MeshInstance3D" parent="world/facilityModel/catwalks/catwalksupports"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12, -7.43025, -5.63335, -10.5782)
+material_override = SubResource("StandardMaterial3D_c2bbh")
+mesh = ExtResource("10_1t6sg")
+
+[node name="railings" type="Node3D" parent="world/facilityModel/catwalks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, -7)
+
+[node name="railing5Segment" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36139, -0.778603, 1.89195)
+
+[node name="railing5Segment2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.40891, -0.778603, 1.89195)
+
+[node name="railing5Segment9" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.40889, -0.774056, -1.02689)
+
+[node name="railing5Segment10" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.40889, -0.774056, -6.0038)
+
+[node name="outsideRailingEnd2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.4813, -7.67093, 1.27951)
+
+[node name="outside_Railing_90_Corner3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(-3.17865e-08, 0, -1, 0, 1, 0, 1, 0, -3.17865e-08, 14.4813, -7.67093, 6.95739)
+
+[node name="outsideRailingEnd3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 14.4813, -7.67093, 5.9655)
+
+[node name="outside_railing_1_segement6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 17.3165, -7.67093, 6.9655)
+
+[node name="outside_railing_1_segement7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 16.3542, -7.67093, 6.9655)
+
+[node name="outside_railing_1_segement8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 15.4314, -7.67093, 6.9655)
+
+[node name="outsideRailingEnd4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(1, 0, -1.62921e-07, 0, 1, 0, 1.62921e-07, 0, 1, 18.2075, -7.67093, 6.9655)
+
+[node name="outside_Railing_90_Corner4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(1, 0, 1.19249e-08, 0, 1, 0, -1.19249e-08, 0, 1, 31.4398, -7.67093, 6.75779)
+
+[node name="outside_Railing_90_Corner5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(-5.56363e-08, 0, 1, 0, 1, 0, -1, 0, -5.56363e-08, 31.4398, -7.67093, -13.013)
+
+[node name="outside_railing_1_segement9" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 28.6046, -7.67093, 6.74967)
+
+[node name="outside_railing_1_segement10" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 29.5668, -7.67093, 6.74967)
+
+[node name="outside_railing_1_segement11" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 30.4896, -7.67093, 6.74967)
+
+[node name="outsideRailingEnd5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(-1, 0, 7.54979e-08, 0, 1, 0, -7.54979e-08, 0, -1, 27.7136, -7.67093, 6.74967)
+
+[node name="railing5Segment3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -1.70096)
+
+[node name="railing5Segment4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -6.70096)
+
+[node name="railing5Segment15" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.438, -7.67093, 3.78844)
+
+[node name="railing5Segment16" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.438, -7.67093, -1.20378)
+
+[node name="railing5Segment17" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.438, -7.67093, -6.18451)
+
+[node name="railing5Segment18" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.438, -7.67093, -10.173)
+
+[node name="railing5Segment5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.4813, -7.67093, -11.6707)
+
+[node name="railing5Segment6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.9117, -7.67093, -13.0037)
+
+[node name="railing5Segment7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.9117, -7.67093, -13.0037)
+
+[node name="railing5Segment8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.9117, -7.67093, -13.0037)
+
+[node name="outside_railing_1_segement" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.47677, -0.776677, 4.74787)
+
+[node name="outside_railing_1_segement2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47677, -0.776677, 3.79483)
+
+[node name="outside_railing_1_segement4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.47677, -0.776677, 2.84878)
+
+[node name="outside_railing_1_segement3" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -0.562004, -0.776677, 5.63454)
+
+[node name="outside_railing_1_segement5" parent="world/facilityModel/catwalks/railings" instance=ExtResource("29_xgmi1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.26798, -0.776677, 5.63454)
+
+[node name="outsideRailingEnd" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17081, -0.779303, 5.6348)
+
+[node name="outsideRailingEnd6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.41847, -0.779303, 1.89149)
+
+[node name="outsideRailingEnd7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 7.40785, -0.779303, -9.0049)
+
+[node name="outside_Railing_90_Corner" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.47289, -0.776677, 5.63383)
+
+[node name="outside_Railing_90_Corner2" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.47289, -0.776677, 1.90141)
+
+[node name="outside_Railing_90_Corner6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 7.40758, -0.776677, 1.90141)
+
+[node name="railing5Segment11" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.34237, -0.774056, -1.02689)
+
+[node name="railing5Segment12" parent="world/facilityModel/catwalks/railings" instance=ExtResource("11_gl631")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.34237, -0.774056, -6.0038)
+
+[node name="outsideRailingEnd8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("27_ih6pb")]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, -7.34341, -0.779303, -9.0049)
+
+[node name="outside_Railing_90_Corner7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("28_dgywy")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -7.34368, -0.776677, 1.90141)
+
+[node name="decorations" type="Node3D" parent="world/facilityModel/catwalks"]
+
+[node name="wooden_box" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("30_drjyr")]
+transform = Transform3D(0.919362, 0, 0.393412, 0, 1, 0, -0.393412, 0, 0.919362, 5.12927, -4.75719, -13.6487)
+
+[node name="wooden_box2" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("30_drjyr")]
+transform = Transform3D(0.747152, 0, 1.21929, 0, 1.43, 0, -1.21929, 0, 0.747152, 2.42779, -4.70741, -8.37096)
+
+[node name="metal_box" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("31_4e4nb")]
+transform = Transform3D(1.6747, 0, -0.699718, 0, 1.815, 0, 0.699718, 0, 1.6747, 5.37662, -4.74887, -10.1997)
+
+[node name="banana_peel" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("32_anb2o")]
+transform = Transform3D(0.948546, 0.100466, -0.300277, -0.0957812, 0.994941, 0.030321, 0.301804, 0, 0.95337, 5.74288, -4.76975, -11.4549)
+
+[node name="largeHvackUnit" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("33_c52pv")]
+transform = Transform3D(-0.961761, 0, -0.273892, 0, 1, 0, 0.273892, 0, -0.961761, 10.9304, -1.30621, -15.9993)
+
+[node name="hammer" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("34_ohaeg")]
+transform = Transform3D(0.0662649, -0.781278, -0.620655, 0.996422, 0.0845126, 0, 0.0524532, -0.618435, 0.784084, 15.5307, -11.6344, -8.71348)
+
+[node name="screwdriver" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("35_mhya6")]
+transform = Transform3D(0.941347, 0, -0.33744, -0.0598889, 0.984124, -0.16707, 0.332083, 0.17748, 0.926403, 15.2052, -11.6231, -8.77363)
 
 [node name="boat_repair_col" type="Area3D" parent="world"]
 transform = Transform3D(1, 0, 1.01644e-20, 0, 1, 0, -1.01644e-20, 0, 1, 16.4538, 3.7447, -45.0822)

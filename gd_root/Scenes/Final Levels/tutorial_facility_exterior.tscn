@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://clrvvxkrvp8q5"]
+[gd_scene load_steps=104 format=4 uid="uid://clrvvxkrvp8q5"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/tutorial_facility_exterior.gd" id="1_yh08u"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_2ekho"]
@@ -29,9 +29,15 @@
 [ext_resource type="PackedScene" uid="uid://bmopb4vq72580" path="res://Assets/Objects/Railings/outside_railing_end.tscn" id="23_v4p3g"]
 [ext_resource type="Texture2D" uid="uid://bvaiqf6duo182" path="res://Textures/Exterior Textures/metal_grate_test.png" id="24_amyna"]
 [ext_resource type="PackedScene" uid="uid://ckouqjf2ccc10" path="res://Assets/Objects/Railings/outside_railing_90_corner.tscn" id="24_r7d2f"]
+[ext_resource type="PackedScene" uid="uid://77pqqyxlsm38" path="res://Assets/Objects/Boxes/wooden_box.tscn" id="25_74dtd"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="25_q78k5"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="26_vobxt"]
+[ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="26_whx0y"]
+[ext_resource type="PackedScene" uid="uid://bydyub6003sef" path="res://Assets/Objects/Clutter/banana_peel.tscn" id="27_el6ni"]
 [ext_resource type="AudioStream" uid="uid://rm6ahr224b0x" path="res://Audio/Sounds/ocean/loop_ocean_background.mp3" id="28_pqi50"]
+[ext_resource type="PackedScene" uid="uid://b2pgdoelxuw2b" path="res://Assets/Objects/MiscFurnature/large_hvack_unit.tscn" id="28_yrovu"]
+[ext_resource type="PackedScene" uid="uid://we1rupekxd1" path="res://Assets/Objects/Tools/hammer.tscn" id="29_dhlgl"]
+[ext_resource type="PackedScene" uid="uid://c2mbh310wamfj" path="res://Assets/Objects/Tools/screwdriver.tscn" id="30_7sssl"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cwpdp"]
 material = ExtResource("6_h3p85")
@@ -296,45 +302,45 @@ blend_shape_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpvtb"]
 size = Vector3(15, 0.3, 12)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eshei"]
 transparency = 1
 albedo_texture = ExtResource("16_0eil8")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_gfmt2"]
-material = SubResource("StandardMaterial3D_gufqm")
+material = SubResource("StandardMaterial3D_eshei")
 size = Vector3(15, 0.3, 12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
 size = Vector3(3, 0.5, 15.6611)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08vde"]
 transparency = 1
 albedo_texture = ExtResource("16_0eil8")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_881vr"]
-material = SubResource("StandardMaterial3D_dwtlt")
+material = SubResource("StandardMaterial3D_08vde")
 size = Vector3(3, 0.3, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vjulk"]
-material = SubResource("StandardMaterial3D_dwtlt")
+material = SubResource("StandardMaterial3D_08vde")
 size = Vector3(4, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hrsm"]
 size = Vector3(3, 0.4, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aow4s"]
-material = SubResource("StandardMaterial3D_dwtlt")
+material = SubResource("StandardMaterial3D_08vde")
 size = Vector3(20, 0.3, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
 size = Vector3(4, 0.4, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hqv2q"]
-material = SubResource("StandardMaterial3D_dwtlt")
+material = SubResource("StandardMaterial3D_08vde")
 size = Vector3(9, 0.3, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yktpf"]
@@ -1049,6 +1055,29 @@ transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, -7.343
 
 [node name="outside_Railing_90_Corner7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("24_r7d2f")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -7.34368, -0.776677, 1.90141)
+
+[node name="decorations" type="Node3D" parent="world/facilityModel/catwalks"]
+
+[node name="wooden_box" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("25_74dtd")]
+transform = Transform3D(0.919362, 0, 0.393412, 0, 1, 0, -0.393412, 0, 0.919362, 5.12927, -4.75719, -13.6487)
+
+[node name="wooden_box2" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("25_74dtd")]
+transform = Transform3D(0.747152, 0, 1.21929, 0, 1.43, 0, -1.21929, 0, 0.747152, 2.42779, -4.70741, -8.37096)
+
+[node name="metal_box" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("26_whx0y")]
+transform = Transform3D(1.6747, 0, -0.699718, 0, 1.815, 0, 0.699718, 0, 1.6747, 5.37662, -4.74887, -10.1997)
+
+[node name="banana_peel" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("27_el6ni")]
+transform = Transform3D(0.948546, 0.100466, -0.300277, -0.0957812, 0.994941, 0.030321, 0.301804, 0, 0.95337, 5.74288, -4.76975, -11.4549)
+
+[node name="largeHvackUnit" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("28_yrovu")]
+transform = Transform3D(-0.961761, 0, -0.273892, 0, 1, 0, 0.273892, 0, -0.961761, 10.9304, -1.30621, -15.9993)
+
+[node name="hammer" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("29_dhlgl")]
+transform = Transform3D(0.0662649, -0.781278, -0.620655, 0.996422, 0.0845126, 0, 0.0524532, -0.618435, 0.784084, 15.5307, -11.6344, -8.71348)
+
+[node name="screwdriver" parent="world/facilityModel/catwalks/decorations" instance=ExtResource("30_7sssl")]
+transform = Transform3D(0.941347, 0, -0.33744, -0.0598889, 0.984124, -0.16707, 0.332083, 0.17748, 0.926403, 15.2052, -11.6231, -8.77363)
 
 [node name="mainSupports" type="Node3D" parent="world/facilityModel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -36.6145)

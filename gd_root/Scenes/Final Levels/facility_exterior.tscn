@@ -298,6 +298,65 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpvtb"]
+size = Vector3(15, 0.3, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gufqm"]
+transparency = 1
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_gfmt2"]
+material = SubResource("StandardMaterial3D_gufqm")
+size = Vector3(15, 0.3, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gnwd5"]
+size = Vector3(3, 0.5, 15.6611)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prgmg"]
+transparency = 1
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_881vr"]
+material = SubResource("StandardMaterial3D_prgmg")
+size = Vector3(3, 0.3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwtlt"]
+transparency = 1
+albedo_texture = ExtResource("9_psfmp")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vjulk"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(4, 0.3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hrsm"]
+size = Vector3(3, 0.4, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aow4s"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(20, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2kg4"]
+size = Vector3(4, 0.4, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hqv2q"]
+material = SubResource("StandardMaterial3D_dwtlt")
+size = Vector3(9, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yktpf"]
+size = Vector3(4, 0.4, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ooad8"]
+albedo_texture = ExtResource("7_vlv12")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u228j"]
 albedo_texture = ExtResource("6_ebpvy")
 uv1_scale = Vector3(0.25, 0.25, 0.25)

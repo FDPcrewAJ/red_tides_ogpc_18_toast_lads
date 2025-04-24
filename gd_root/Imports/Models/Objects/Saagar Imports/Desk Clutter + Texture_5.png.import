@@ -2,23 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqsk7iggiysnu"
-path="res://.godot/imported/Desk Clutter + Texture_5.png-411822b3c55a520a9f824a5561470f12.ctex"
+uid="uid://2nsuu2kx37ir"
+path.s3tc="res://.godot/imported/Desk Clutter + Texture_5.png-411822b3c55a520a9f824a5561470f12.s3tc.ctex"
 metadata={
-"vram_texture": false
-}
-generator_parameters={
-"md5": "c34cbaa3de185c232fc1ad7f33d42d55"
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Imports/Models/Objects/Saagar Imports/Desk Clutter + Texture_5.png"
-dest_files=["res://.godot/imported/Desk Clutter + Texture_5.png-411822b3c55a520a9f824a5561470f12.ctex"]
+dest_files=["res://.godot/imported/Desk Clutter + Texture_5.png-411822b3c55a520a9f824a5561470f12.s3tc.ctex"]
 
 [params]
 
-compress/mode=3
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

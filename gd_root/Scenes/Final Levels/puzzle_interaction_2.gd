@@ -13,6 +13,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	pass
 	# Puzzle Control
 	
 	# Boat Part appear once puzzle complete

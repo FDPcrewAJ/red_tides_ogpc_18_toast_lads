@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=69 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Script" path="res://Scenes/Final Levels/control_floor.gd" id="1_so3s2"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="6_048w4"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="6_avn6a"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="7_rdx40"]
+[ext_resource type="Texture2D" uid="uid://3j8uiy55pl54" path="res://Textures/Interior Textures/Ceilings/wooden_planks.png" id="8_rs1q4"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="10_ca3rm"]
 [ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="10_t4ucj"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="11_i2ung"]
@@ -56,7 +57,16 @@ material = SubResource("StandardMaterial3D_gpb7g")
 size = Vector2(50, 32)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fynni"]
-size = Vector3(52.7714, 1, 41.5254)
+size = Vector3(50, 1, 32)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcobt"]
+albedo_texture = ExtResource("8_rs1q4")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8x2bl"]
+material = SubResource("StandardMaterial3D_rcobt")
+size = Vector2(50, 32)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x4i2q"]
 size = Vector3(50, 1, 32)
@@ -185,8 +195,6 @@ transform = Transform3D(1, 0, -1.69407e-21, 0, 1, 0, 1.69407e-21, 0, 1, 0.072557
 shape = SubResource("BoxShape3D_gak6s")
 
 [node name="building" type="Node3D" parent="world"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="floor" type="StaticBody3D" parent="world/building"]
 
@@ -195,7 +203,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_440p2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.131927, 0, 3.72461)
+shape = SubResource("BoxShape3D_fynni")
+
+[node name="ceiling2" type="StaticBody3D" parent="world/building"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/ceiling2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PlaneMesh_8x2bl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/ceiling2"]
 shape = SubResource("BoxShape3D_fynni")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
@@ -1221,6 +1238,7 @@ transform = Transform3D(-5.87772e-08, 0, 1.34466, 0, 1.34466, 0, -1.34466, 0, -5
 
 [node name="stairWell" parent="world/decor" instance=ExtResource("14_1sk4w")]
 transform = Transform3D(-2.18505e-07, 0, -4.9988, 0, 4.9988, 0, 4.9988, 0, -2.18505e-07, 0.144998, 0.5, 11.5259)
+visible = false
 
 [node name="wooden_desk_1" parent="." instance=ExtResource("10_ca3rm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.411568, 0.5, -11.3381)

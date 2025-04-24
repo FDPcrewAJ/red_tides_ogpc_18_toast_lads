@@ -12,13 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="5_yb4ao"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="5_yfgx1"]
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_ised5"]
-[ext_resource type="Texture2D" uid="uid://dsbw0l54evj28" path="res://Textures/Interior Textures/c_wall_undamaged_3.png" id="7_m7n5d"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_xwmpc"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="9_tepa8"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="10_yhc4x"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_j4fym"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="12_wqc51"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="13_8ta0j"]
+[ext_resource type="Texture2D" uid="uid://3j8uiy55pl54" path="res://Textures/Interior Textures/Ceilings/wooden_planks.png" id="13_geu2g"]
 [ext_resource type="PackedScene" uid="uid://jtf8g1dwclif" path="res://Assets/Objects/MiscFurnature/bunk_bed.tscn" id="14_hwenw"]
 [ext_resource type="PackedScene" uid="uid://cjw1epxc7yxt4" path="res://Assets/Objects/MiscFurnature/metal_locker.tscn" id="14_o33fy"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="16_3k7gm"]
@@ -128,13 +128,13 @@ size = Vector2(23.5, 17)
 material = SubResource("StandardMaterial3D_enovm")
 size = Vector2(16, 7)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5r67"]
-albedo_texture = ExtResource("7_m7n5d")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhl1e"]
+albedo_texture = ExtResource("13_geu2g")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_36h8k"]
-material = SubResource("StandardMaterial3D_n5r67")
+material = SubResource("StandardMaterial3D_dhl1e")
 size = Vector2(72, 48)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sp58d"]
@@ -1091,30 +1091,6 @@ transform = Transform3D(1.55, 0, -5.90104e-08, 0, 1.35, 0, -5.14563e-08, 0, 1.35
 [node name="server_room_door" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
 transform = Transform3D(-1.55, 0, 1.18021e-07, 0, 1.35, 0, -1.35505e-07, 0, -1.35, -1.97011, 0.5, -3.47647)
 
-[node name="med_bay_door" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(-1.55, 0, 1.18021e-07, 0, 1.35, 0, -1.35505e-07, 0, -1.35, 33.2133, 0.5, -6.47647)
-
-[node name="med_bay_door2" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(2.03258e-07, 0, 1.35, 0, 1.35, 0, -1.55, 0, 1.77031e-07, 17.4442, 0.5, -14.4925)
-
-[node name="restroom_door" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(-1.55, 0, 1.18021e-07, 0, 1.35, 0, -1.35505e-07, 0, -1.35, -21.198, 0.5, -4.39338)
-
-[node name="restroom_door2" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(-1.55, 0, 1.18021e-07, 0, 1.35, 0, -1.35505e-07, 0, -1.35, -12.198, 0.5, -4.39338)
-
-[node name="restroom_door3" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(2.03258e-07, 0, 1.35, 0, 1.35, 0, -1.55, 0, 1.77031e-07, -4.7, 0.5, 14.5)
-
-[node name="restroom_door4" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(-3.38763e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, -2.95052e-07, 10.2781, 0.5, 13.6749)
-
-[node name="showerhouse_door" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(2.03258e-07, 0, 1.35, 0, 1.35, 0, -1.55, 0, 1.77031e-07, -9.34068, 0.5, 4.72085)
-
-[node name="showerhouse_door2" parent="world/building/doors" instance=ExtResource("8_xwmpc")]
-transform = Transform3D(-3.38763e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, -2.95052e-07, 10.2601, 0.5, 4.71288)
-
 [node name="exit_door_1" parent="world/building/doors" instance=ExtResource("9_tepa8")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -9.72635, 0.5, 15.3303)
 
@@ -1123,6 +1099,30 @@ transform = Transform3D(-5.90104e-08, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.90104e-0
 
 [node name="exit_door_4" parent="world/building/doors" instance=ExtResource("9_tepa8")]
 transform = Transform3D(-5.94291e-10, 0, -1.35, 0, 1.35, 0, 1.35, 0, -5.94291e-10, 10.6676, 0.5, -18.6938)
+
+[node name="restroom_door" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -12.1935, 0.5, -4.4554)
+
+[node name="restroom_door3" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(-6.77526e-08, 0, -1.35, 0, 1.35, 0, 1.55, 0, -5.90104e-08, -4.62094, 0.5, 14.496)
+
+[node name="restroom_door4" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(2.03258e-07, 0, 1.35, 0, 1.35, 0, -1.55, 0, 1.77031e-07, 10.2082, 0.5, 13.6536)
+
+[node name="showerhouse_door" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(-6.77527e-08, 0, -1.35, 0, 1.35, 0, 1.55, 0, -5.90103e-08, 10.3155, 0.5, 4.73456)
+
+[node name="med_bay_door" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(-1.55, 0, 1.18021e-07, 0, 1.35, 0, -1.35505e-07, 0, -1.35, 33.2312, 0.5, -6.43299)
+
+[node name="med_bay_door2" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(2.03258e-07, 0, 1.35, 0, 1.35, 0, -1.55, 0, 1.77031e-07, 17.4257, 0.5, -14.5085)
+
+[node name="showerhouse_door2" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -9.33966, 0.5, 4.73456)
+
+[node name="restroom_door2" parent="world/building/doors" instance=ExtResource("9_tepa8")]
+transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -21.1854, 0.5, -4.4554)
 
 [node name="lights" type="Node3D" parent="world/building"]
 

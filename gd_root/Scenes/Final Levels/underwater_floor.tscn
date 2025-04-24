@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=90 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
@@ -18,7 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="10_in15x"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reset_button.gd" id="11_404ax"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_label.gd" id="11_uvfqq"]
+[ext_resource type="PackedScene" uid="uid://bmopb4vq72580" path="res://Assets/Objects/Railings/outside_railing_end.tscn" id="12_tqr38"]
+[ext_resource type="PackedScene" uid="uid://crjk80e7qhd08" path="res://Assets/Objects/Railings/outside_railing_1_segement.tscn" id="12_wou82"]
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="14_a3r7g"]
+[ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="15_4dnk1"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="16_6clbt"]
 [ext_resource type="PackedScene" uid="uid://b7rvy4bjmejtb" path="res://Assets/Objects/Pipes/valve.tscn" id="17_0wjdq"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/reactor_puzzle_note.gd" id="17_vul3n"]
@@ -464,73 +467,171 @@ skeleton = NodePath("../../../../../reactor_puzzle")
 [node name="railings" type="Node3D" parent="world/building/catwalk"]
 
 [node name="railing5Segment" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, 19.5914)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, 20.5423)
 
 [node name="railing5Segment3" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, 9.59135)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, 9.26034)
+
+[node name="outsideRailingEnd" parent="world/building/catwalk/railings" instance=ExtResource("12_tqr38")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.50268, 3.08505, 14.2342)
+
+[node name="outsideRailingEnd2" parent="world/building/catwalk/railings" instance=ExtResource("12_tqr38")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.50268, 3.08505, 17.5713)
+
+[node name="outside_railing_1_segement" parent="world/building/catwalk/railings" instance=ExtResource("12_wou82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50268, 3.08505, 12.2453)
+
+[node name="outside_railing_1_segement2" parent="world/building/catwalk/railings" instance=ExtResource("12_wou82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50268, 3.08505, 13.235)
 
 [node name="railing5Segment4" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, 19.5914)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, 19.2301)
 
 [node name="railing5Segment5" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, 14.5914)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, 14.2301)
 
 [node name="railing5Segment6" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, 9.59135)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, 9.26034)
 
 [node name="railing5Segment7" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, -9.68761)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, -9.26042)
 
 [node name="railing5Segment8" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, -14.6876)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, -14.2408)
 
 [node name="railing5Segment9" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, -19.6876)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 3.086, -19.2408)
 
 [node name="railing5Segment10" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, -9.68761)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, -9.26042)
 
 [node name="railing5Segment11" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, -14.6876)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, -14.2408)
 
 [node name="railing5Segment12" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, -19.6876)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 3.086, -19.2408)
 
 [node name="railing5Segment13" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.6395, 3.086, 2.45187)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.2082, 3.086, 2.45187)
 
 [node name="railing5Segment14" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.6395, 3.086, 2.45187)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.2082, 3.086, 2.45187)
 
 [node name="railing5Segment15" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.63948, 3.086, 2.45187)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.25039, 3.086, 2.45187)
 
 [node name="railing5Segment16" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.6395, 3.086, -2.54813)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.2082, 3.086, -2.54813)
 
 [node name="railing5Segment17" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.6395, 3.086, -2.54813)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.2082, 3.086, -2.54813)
 
 [node name="railing5Segment18" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.63948, 3.086, -2.54813)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.25039, 3.086, -2.54813)
 
 [node name="railing5Segment19" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.63948, 3.086, 2.45187)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.28697, 3.086, 2.45187)
 
 [node name="railing5Segment20" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.6395, 3.086, 2.45187)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.2765, 3.086, 2.45187)
 
 [node name="railing5Segment21" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.6395, 3.086, 2.45187)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.2765, 3.086, 2.45187)
 
 [node name="railing5Segment22" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.63948, 3.086, -2.54813)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.28697, 3.086, -2.54813)
 
 [node name="railing5Segment23" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.6395, 3.086, -2.54813)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.2765, 3.086, -2.54813)
 
 [node name="railing5Segment24" parent="world/building/catwalk/railings" instance=ExtResource("9_sal6p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.6395, 3.086, -2.54813)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.2765, 3.086, -2.54813)
+
+[node name="railing_circle" type="Node3D" parent="world/building/catwalk/railings"]
+
+[node name="outside_railing_1_segement" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -5.15, 3.084, 5.15)
+
+[node name="outside_railing_1_segement2" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.15, 3.084, -5.15)
+
+[node name="outside_railing_1_segement3" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 5.15, 3.084, 5.15)
+
+[node name="outside_railing_1_segement4" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -5.15, 3.084, -5.15)
+
+[node name="outside_railing_1_segement5" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.795198, 0, 0.606349, 0, 1, 0, -0.606349, 0, -0.795198, 5.79159, 3.084, 4.41616)
+
+[node name="outside_railing_1_segement6" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.795198, 0, 0.606349, 0, 1, 0, -0.606349, 0, -0.795198, -5.79159, 3.084, -4.41616)
+
+[node name="outside_railing_1_segement7" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.606349, 0, -0.795199, 0, 1, 0, 0.795199, 0, -0.606349, 4.41616, 3.084, -5.79159)
+
+[node name="outside_railing_1_segement8" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.606349, 0, -0.795199, 0, 1, 0, 0.795199, 0, -0.606349, -4.41616, 3.084, 5.79159)
+
+[node name="outside_railing_1_segement9" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(0.494882, 0, 0.86896, 0, 1, 0, -0.86896, 0, 0.494882, -3.60433, 3.084, 6.32881)
+
+[node name="outside_railing_1_segement10" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(0.494882, 0, 0.86896, 0, 1, 0, -0.86896, 0, 0.494882, 3.60433, 3.084, -6.32881)
+
+[node name="outside_railing_1_segement11" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.86896, 0, 0.494882, 0, 1, 0, -0.494882, 0, -0.86896, 6.32881, 3.084, 3.60433)
+
+[node name="outside_railing_1_segement12" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.86896, 0, 0.494882, 0, 1, 0, -0.494882, 0, -0.86896, -6.32881, 3.084, -3.60433)
+
+[node name="outside_railing_1_segement13" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.920587, 0, 0.390538, 0, 1, 0, -0.390538, 0, -0.920587, 6.70482, 3.084, 2.84437)
+
+[node name="outside_railing_1_segement14" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.920587, 0, 0.390538, 0, 1, 0, -0.390538, 0, -0.920587, -6.70482, 3.084, -2.84437)
+
+[node name="outside_railing_1_segement15" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.396827, 0, -0.917893, 0, 1, 0, 0.917893, 0, -0.396827, 2.89017, 3.084, -6.6852)
+
+[node name="outside_railing_1_segement16" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.396827, 0, -0.917893, 0, 1, 0, 0.917893, 0, -0.396827, -2.89017, 3.084, 6.6852)
+
+[node name="outside_railing_1_segement17" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.39561, 0, 0.918419, 0, 1, 0, -0.918419, 0, -0.39561, 2.8813, 3.084, 6.68903)
+
+[node name="outside_railing_1_segement18" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.39561, 0, 0.918419, 0, 1, 0, -0.918419, 0, -0.39561, -2.8813, 3.084, -6.68903)
+
+[node name="outside_railing_1_segement19" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.914593, 0, -0.404376, 0, 1, 0, 0.404376, 0, -0.914593, 6.66116, 3.084, -2.94515)
+
+[node name="outside_railing_1_segement20" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.914593, 0, -0.404376, 0, 1, 0, 0.404376, 0, -0.914593, -6.66116, 3.084, 2.94515)
+
+[node name="outside_railing_1_segement21" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(0.867922, 0, 0.496701, 0, 1, 0, -0.496701, 0, 0.867922, -6.32125, 3.084, 3.61757)
+
+[node name="outside_railing_1_segement22" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(0.867922, 0, 0.496701, 0, 1, 0, -0.496701, 0, 0.867922, 6.32125, 3.084, -3.61757)
+
+[node name="outside_railing_1_segement23" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.496701, 0, 0.867921, 0, 1, 0, -0.867921, 0, -0.496701, 3.61757, 3.084, 6.32125)
+
+[node name="outside_railing_1_segement24" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.496701, 0, 0.867921, 0, 1, 0, -0.867921, 0, -0.496701, -3.61757, 3.084, -6.32125)
+
+[node name="outside_railing_1_segement25" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.608152, 0, 0.793821, 0, 1, 0, -0.793821, 0, -0.608152, 4.42929, 3.084, 5.78156)
+
+[node name="outside_railing_1_segement26" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.608152, 0, 0.793821, 0, 1, 0, -0.793821, 0, -0.608152, -4.42929, 3.084, -5.78156)
+
+[node name="outside_railing_1_segement27" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.793821, 0, -0.608152, 0, 1, 0, 0.608152, 0, -0.793821, 5.78156, 3.084, -4.42929)
+
+[node name="outside_railing_1_segement28" parent="world/building/catwalk/railings/railing_circle" instance=ExtResource("12_wou82")]
+transform = Transform3D(-0.793821, 0, -0.608152, 0, 1, 0, 0.608152, 0, -0.793821, -5.78156, 3.084, 4.42929)
 
 [node name="lights" type="Node3D" parent="world/building"]
 
@@ -577,6 +678,50 @@ omni_range = 9.13347
 
 [node name="long_industrial_light" parent="world/building/lights/long_wall_light_4" instance=ExtResource("5_ipvhp")]
 transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
+
+[node name="wall_light_12" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 6.35275e-21, 1, -4.37114e-08, 0, 2.665, 3.081)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_12" instance=ExtResource("15_4dnk1")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_13" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91069e-15, 4.37114e-08, -3.82138e-15, -1, -4.37114e-08, 0, 2.665, -3.09337)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_13" instance=ExtResource("15_4dnk1")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_14" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(1.91068e-15, -1, 8.74228e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -8.74228e-08, -1, -3.08719, 2.665, -0.00618602)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_14" instance=ExtResource("15_4dnk1")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="wall_light_15" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(1.91069e-15, 1, -2.13163e-14, -1, 1.91069e-15, 4.37114e-08, 4.37114e-08, 2.13163e-14, 1, 3.08719, 2.665, -0.00618575)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/wall_light_15" instance=ExtResource("15_4dnk1")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="staircase" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, -0.987111, 3.51267, 15.9049)

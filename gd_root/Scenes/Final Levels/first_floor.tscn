@@ -1137,8 +1137,6 @@ transform = Transform3D(-1.52847, 0, -1.18021e-07, 0, 1.35, 0, 1.33623e-07, 0, -
 transform = Transform3D(-1.52847, 0, -1.18021e-07, 0, 1.35, 0, 1.33623e-07, 0, -1.35, 4.0184, 0.510783, 8.54946)
 
 [node name="lights" type="Node3D" parent="world"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="red_wall_light" type="OmniLight3D" parent="world/lights"]
 transform = Transform3D(-5.73206e-15, -1, -8.74228e-08, -1, 1.91068e-15, 4.37114e-08, -4.37114e-08, 8.74228e-08, -1, 24.5623, 4.67509, 1.92986)

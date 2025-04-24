@@ -11,6 +11,7 @@ signal allow_boat_movement
 @onready var voice_audio: AudioStreamPlayer = $voice_audio
 @onready var tutorial_text_ui: Control = $tutorial_text_ui
 
+
 # Boat Parts 
 @onready var antennas: Node3D = $world/boat/boat_parts/antennas
 @onready var radar: Node3D = $world/boat/boat_parts/radar
@@ -28,7 +29,7 @@ func _ready():
 	intro_animation_player.play("captain_1")
 
 
-func _process(_delta):
+func _process(delta):
 	#Room Switching
 	if Global.current_object == "doorCol":
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
@@ -72,7 +73,9 @@ func match_voice_line(line_string) -> AudioStream:
 			return load("res://Audio/Tutorial Voice Lines/line_8.mp3")
 		"line_9":
 			return load("res://Audio/Tutorial Voice Lines/line_9.mp3")
-	return load("res://Audio/Tutorial Voice Lines/line_1.mp3")
+		"line_10":
+			return load("res://Audio/Tutorial Voice Lines/line_10.mp3")
+	return load("res://Audio/Tutorial Voice Lines/line_2.mp3")
 
 
 func match_text_display(line_string) -> String:
@@ -80,20 +83,22 @@ func match_text_display(line_string) -> String:
 		"line_1":
 			return "So, you must be excited, not everyone gets an opportunity like this."
 		"line_2":
-			return "A silent type then? That's going to be a *joy* to work with."
+			return ""
 		"line_3":
-			return "Anyway, while we’re approaching the facility, I should probably go through this handy list of propagan-ah- sorry, list of things I should tell you."
+			return "A silent type then? That's going to be a *joy* to work with."
 		"line_4":
-			return "I’m going to assume you know why we’re here. Those filthy pigs over in America drilled too much, and now we have to deal with the consequences."
+			return "Anyway, while we’re approaching the facility, I should probably go through this handy list of propagan-ah- sorry, list of things I should tell you."
 		"line_5":
-			return "Anyway, we’re short staffed right now so you’re going to have to be balancing a lot."
+			return "I’m going to assume you know why we’re here. Those filthy pigs over in America drilled too much, and now we have to deal with the consequences."
 		"line_6":
-			return "The facility requires constant configuration, and it was a challenge to do that with 20 men."
+			return "Anyway, we’re short staffed right now so you’re going to have to be balancing a lot."
 		"line_7":
-			return "Anyway, the government has cut funds, and now we’re just two guys against cyclones."
+			return "The facility requires constant configuration, and it was a challenge to do that with 20 men."
 		"line_8":
-			return "This is going to be so much fun!"
+			return "Anyway, the government has cut funds, and now we’re just two guys against cyclones."
 		"line_9":
+			return "This is going to be so much fun!"
+		"line_10":
 			return "Alright, we’re almost here…"
 	return ""
 
@@ -114,14 +119,17 @@ func _on_intro_animation_player_animation_finished(anim_name: StringName) -> voi
 
 func _on_voice_audio_finished():
 	update_line()
-	if Global.line_num < 10:
+	tutorial_text_ui.show()
+	if Global.line_num < 11:
 		voice_audio.set_stream(match_voice_line(Global.voice_line))
 		voice_audio.play()
 		tutorial_text_ui.set_text(match_text_display(Global.voice_line))
-	if Global.line_num == 3:
+		if Global.line_num == 2:
+			tutorial_text_ui.hide()
+	if Global.line_num == 4:
 		update_boat = true
 		intro_camera.position = Vector3(89.0, 8.0, 83.0)
 		intro_camera.rotation.x = deg_to_rad(10.0)
 		intro_camera.rotation.y = deg_to_rad(58.0)
-	if Global.line_num == 10:
+	if Global.line_num == 11:
 		tutorial_text_ui.hide()

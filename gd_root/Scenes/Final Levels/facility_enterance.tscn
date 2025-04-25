@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="5_3cw6y"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/enterance_door_interaction.gd" id="8_lbbin"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_ltams"]
-[ext_resource type="Texture2D" uid="uid://3j8uiy55pl54" path="res://Textures/Interior Textures/Ceilings/wooden_planks.png" id="8_q8n80"]
+[ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="8_uwt8b"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="9_lgp1y"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="14_0a7uo"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/engineer_lore_note.gd" id="15_w7edc"]
@@ -49,7 +49,7 @@ material = SubResource("StandardMaterial3D_dykxi")
 size = Vector2(10, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5ad5"]
-albedo_texture = ExtResource("8_q8n80")
+albedo_texture = ExtResource("8_uwt8b")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 

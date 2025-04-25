@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="6_048w4"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="6_avn6a"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="7_rdx40"]
-[ext_resource type="Texture2D" uid="uid://3j8uiy55pl54" path="res://Textures/Interior Textures/Ceilings/wooden_planks.png" id="8_rs1q4"]
+[ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="9_pr67u"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="10_ca3rm"]
 [ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="10_t4ucj"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="11_i2ung"]
@@ -65,7 +65,7 @@ size = Vector2(50, 32)
 size = Vector3(50, 1, 32)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcobt"]
-albedo_texture = ExtResource("8_rs1q4")
+albedo_texture = ExtResource("9_pr67u")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 

@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="6_030es"]
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_phydf"]
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="7_hlcmw"]
-[ext_resource type="Texture2D" uid="uid://3j8uiy55pl54" path="res://Textures/Interior Textures/Ceilings/wooden_planks.png" id="7_ors22"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="7_ts188"]
+[ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="9_7iam8"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="9_py12v"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="9_s1ynv"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="10_4jjp2"]
@@ -135,7 +135,7 @@ material = SubResource("StandardMaterial3D_enovm")
 size = Vector2(12.5, 13.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajchr"]
-albedo_texture = ExtResource("7_ors22")
+albedo_texture = ExtResource("9_7iam8")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 

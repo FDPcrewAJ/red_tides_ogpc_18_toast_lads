@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="10_yhc4x"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_j4fym"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="12_wqc51"]
+[ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="13_1q42x"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="13_8ta0j"]
-[ext_resource type="Texture2D" uid="uid://3j8uiy55pl54" path="res://Textures/Interior Textures/Ceilings/wooden_planks.png" id="13_geu2g"]
 [ext_resource type="PackedScene" uid="uid://jtf8g1dwclif" path="res://Assets/Objects/MiscFurnature/bunk_bed.tscn" id="14_hwenw"]
 [ext_resource type="PackedScene" uid="uid://cjw1epxc7yxt4" path="res://Assets/Objects/MiscFurnature/metal_locker.tscn" id="14_o33fy"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="16_3k7gm"]
@@ -129,7 +129,7 @@ material = SubResource("StandardMaterial3D_enovm")
 size = Vector2(16, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhl1e"]
-albedo_texture = ExtResource("13_geu2g")
+albedo_texture = ExtResource("13_1q42x")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 

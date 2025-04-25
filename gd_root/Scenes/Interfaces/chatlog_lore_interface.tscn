@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwyhythj2470"]
+
+[ext_resource type="Script" path="res://Scenes/Interfaces/chatlog_lore_interface.gd" id="1_2cjkr"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_0tama"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_m43fb"]
+
+[node name="chatlog_lore_interface" type="Node2D"]
+script = ExtResource("1_2cjkr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_0tama")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -392.0
+offset_top = 348.0
+offset_right = -174.0
+offset_bottom = 486.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_m43fb")
+theme_override_font_sizes/font_size = 90
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -913.0
+offset_top = -451.0
+offset_right = -628.0
+offset_bottom = -428.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "OGAS Network: Chatlogs, 1963/11/08"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -910.0
+offset_top = -333.0
+offset_right = 304.0
+offset_bottom = -246.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762: I'm worried about our recent test results. We aren't hitting
+our targets."
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -910.0
+offset_top = -203.0
+offset_right = -51.0
+offset_bottom = -161.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295: The politburo doesn't need to know that."
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -910.0
+offset_top = -132.0
+offset_right = 359.0
+offset_bottom = -45.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762: But this is important! These storms could have major impacts
+on a lot of people! We're treating the symptoms and not the cause."
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -910.0
+offset_top = -22.0
+offset_right = 371.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295: The government doesn't want to solve the storm issue. They just
+want a quick band-aid solution so they can declare the whole issue 'solved'. Something 
+that will look impressive on the propaganda reels so the citizenry stops complaining."
+
+[node name="Label6" type="Label" parent="."]
+offset_left = -910.0
+offset_top = 128.0
+offset_right = 359.0
+offset_bottom = 215.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762: That's a bit of a pessimistic look on things."
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -910.0
+offset_top = 189.0
+offset_right = 371.0
+offset_bottom = 276.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295: You get that from working in the DEF."
+
+[node name="Label8" type="Label" parent="."]
+offset_left = -910.0
+offset_top = 258.0
+offset_right = 359.0
+offset_bottom = 345.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Vladimirovich#762 has left."
+
+[node name="Label9" type="Label" parent="."]
+offset_left = -910.0
+offset_top = 319.0
+offset_right = 359.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "User, Yazzov#295 has left."
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

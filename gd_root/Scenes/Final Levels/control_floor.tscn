@@ -1,10 +1,11 @@
-[gd_scene load_steps=69 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=78 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
-[ext_resource type="Script" path="res://Scenes/Final Levels/control_floor.gd" id="1_so3s2"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor.gd" id="1_so3s2"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uwomh"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="2_pcjbw"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="2_vawf6"]
+[ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="3_ppluw"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="4_8dx7g"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="5_7dhnt"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="5_p6jpg"]
@@ -33,7 +34,11 @@
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="21_nd5l7"]
 [ext_resource type="PackedScene" uid="uid://c5chqamjkvdor" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="22_hwmiu"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="23_dj0sv"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_control_note.gd" id="25_u5f2g"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="30_vcgmk"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_puzzles.gd" id="34_x7tm2"]
+[ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="35_a0wxa"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_code_note.gd" id="36_xcfq0"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -163,10 +168,26 @@ size = Vector3(5, 1, 30)
 material = ExtResource("4_8dx7g")
 size = Vector2(5, 30)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s12nq"]
+size = Vector3(1.59655, 1.81104, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1hxg"]
+transparency = 1
+albedo_texture = ExtResource("35_a0wxa")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ke1u7"]
+material = SubResource("StandardMaterial3D_a1hxg")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8icv8"]
+points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
+
 [node name="control_floor" type="Node3D"]
 script = ExtResource("1_so3s2")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_uwomh")]
+
+[node name="MenuPrompt" parent="." instance=ExtResource("3_ppluw")]
 
 [node name="player" parent="." instance=ExtResource("1_rhvyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
@@ -967,11 +988,65 @@ transform = Transform3D(-0.752813, 0, -0.270688, 0, 0.8, 0, 0.270688, 0, -0.7528
 [node name="computer2" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(-0.152126, 0, -0.785403, 0, 0.8, 0, 0.785403, 0, -0.152126, 30.2144, 1.62149, -13.4668)
 
+[node name="control_floor_dial_puzzle" type="StaticBody3D" parent="world/decor/mainHall/tech/computer2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer2/control_floor_dial_puzzle"]
+transform = Transform3D(0.999987, -3.15259e-12, -8.73115e-11, -3.57766e-09, 1, 3.63798e-12, 2.53203e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+shape = SubResource("BoxShape3D_s12nq")
+
+[node name="TilePuzzleControlNote" type="MeshInstance3D" parent="world/decor/mainHall/tech/computer2"]
+transform = Transform3D(0.98695, 0.0260414, 0.158919, -0.00922857, 0.994364, -0.105629, -0.160774, 0.102784, 0.981625, -1.43413, 0.102054, 0.528702)
+mesh = SubResource("PlaneMesh_ke1u7")
+skeleton = NodePath("../..")
+script = ExtResource("25_u5f2g")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/decor/mainHall/tech/computer2/TilePuzzleControlNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="TilePuzzleControlNoteBody" type="StaticBody3D" parent="world/decor/mainHall/tech/computer2/TilePuzzleControlNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer2/TilePuzzleControlNote/TilePuzzleControlNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_8icv8")
+
 [node name="computer3" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(0.189308, 0, 0.777279, 0, 0.8, 0, -0.777279, 0, 0.189308, 29.452, 1.62149, 0.692057)
 
 [node name="computer4" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(0.122306, 0, -0.790596, 0, 0.8, 0, 0.790596, 0, 0.122306, 7.69001, 1.62149, -10.0945)
+
+[node name="control_floor_lore_chatlog" type="StaticBody3D" parent="world/decor/mainHall/tech/computer4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer4/control_floor_lore_chatlog"]
+transform = Transform3D(0.999987, -3.15259e-12, -8.73115e-11, -3.57766e-09, 1, 3.63798e-12, 2.53203e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+shape = SubResource("BoxShape3D_s12nq")
+
+[node name="ChatlogDecorativeLabel" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.288076, 1.14588, 0.430409)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "-----"
+
+[node name="ChatlogDecorativeLabel2" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.180449, 0.985913, 0.447059)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~~"
+
+[node name="ChatlogDecorativeLabel3" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.0862622, 0.891669, 0.46163)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~~~~"
+
+[node name="ChatlogDecorativeLabel4" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.795077, 0.441541)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~"
+
+[node name="ChatlogDecorativeLabel5" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.678863, 0.441541)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~"
 
 [node name="computer5" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(0.0885091, 0, 0.795089, 0, 0.8, 0, -0.795089, 0, 0.0885091, -1.1255, 1.62149, -14.7018)
@@ -1270,5 +1345,31 @@ transform = Transform3D(-2.06242, -1.52221, -9.01512e-08, -1.12047e-07, 4.89774e
 [node name="computer" parent="." instance=ExtResource("11_i2ung")]
 transform = Transform3D(0.178273, 0, 0.779884, 0, 0.8, 0, -0.779884, 0, 0.178273, -4.78158, 1.625, -13.7188)
 
+[node name="control_floor_code" type="StaticBody3D" parent="computer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="computer/control_floor_code"]
+transform = Transform3D(0.999987, -3.15259e-12, -8.73115e-11, -3.57766e-09, 1, 3.63798e-12, 2.53203e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+shape = SubResource("BoxShape3D_s12nq")
+
+[node name="StormCodeNote" type="MeshInstance3D" parent="computer"]
+transform = Transform3D(0.724065, 0.689733, -4.65144e-09, -4.37114e-08, -2.98023e-08, -1, -0.689733, 0.724065, 1.41566e-08, -2.69568, 0.828515, 1.32489)
+mesh = SubResource("PlaneMesh_ke1u7")
+skeleton = NodePath("../..")
+script = ExtResource("36_xcfq0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="computer/StormCodeNote"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.565
+omni_range = 1.29291
+
+[node name="StormCodeNoteBody" type="StaticBody3D" parent="computer/StormCodeNote"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="computer/StormCodeNote/StormCodeNoteBody"]
+shape = SubResource("ConvexPolygonShape3D_8icv8")
+
 [node name="server" parent="." instance=ExtResource("15_jnker")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -4.72093, 0.5, -11.0816)
+
+[node name="puzzle_interaction" type="Node3D" parent="."]
+script = ExtResource("34_x7tm2")

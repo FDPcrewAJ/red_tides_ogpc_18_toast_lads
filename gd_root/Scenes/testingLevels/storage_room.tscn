@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/hub_elevator_doors.gd" id="8_spkit"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="9_5yjub"]
 [ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="10_f3rec"]
-[ext_resource type="Script" path="res://Assets/Objects/Computer/computer.gd" id="10_imu5m"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/computer.gd" id="10_imu5m"]
 [ext_resource type="PackedScene" uid="uid://77pqqyxlsm38" path="res://Assets/Objects/Boxes/wooden_box.tscn" id="11_bbcle"]
 [ext_resource type="PackedScene" uid="uid://b2oxgj7dmcwsc" path="res://Assets/Objects/Clutter/clutter_pile_small.tscn" id="12_6wqnj"]
 [ext_resource type="PackedScene" uid="uid://drxiydnsv34hj" path="res://Assets/Objects/Clutter/intern_sign.tscn" id="13_dtxsf"]

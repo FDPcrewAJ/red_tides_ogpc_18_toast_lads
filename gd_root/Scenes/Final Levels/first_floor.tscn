@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="3_8p1lb"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="4_vj5kr"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="5_w7ncp"]
-[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="5_ye3ct"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="6_030es"]
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_phydf"]
+[ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="7_66k05"]
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="7_hlcmw"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="7_ts188"]
 [ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="9_7iam8"]
@@ -100,7 +100,7 @@ material = SubResource("StandardMaterial3D_381s5")
 size = Vector2(24, 14)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1doj0"]
-albedo_texture = ExtResource("5_ye3ct")
+albedo_texture = ExtResource("7_66k05")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -490,8 +490,6 @@ texture = ExtResource("1_tifgq")
 
 [node name="floor" type="StaticBody3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 0)

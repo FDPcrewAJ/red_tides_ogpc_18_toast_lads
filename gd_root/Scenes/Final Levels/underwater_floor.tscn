@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
-[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_8g0uk"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="2_d2p0f"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="3_gyahu"]
+[ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_r7wcq"]
 [ext_resource type="Shader" path="res://Scripts/Shaders/pixel_water_shader.gdshader" id="5_5gk41"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="5_ipvhp"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="5_n6bfl"]
@@ -43,7 +43,7 @@ adjustment_enabled = true
 adjustment_brightness = 0.75
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w22b8"]
-albedo_texture = ExtResource("2_8g0uk")
+albedo_texture = ExtResource("4_r7wcq")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6lqty"]

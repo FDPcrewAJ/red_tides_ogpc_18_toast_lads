@@ -9,12 +9,12 @@
 [ext_resource type="Script" path="res://Assets/Objects/Boat/Boat Parts/antennas.gd" id="3_yg7qf"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="4_f7qmu"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_ldpmi"]
-[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="5_yb4ao"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="5_yfgx1"]
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_ised5"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_xwmpc"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="9_tepa8"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="10_yhc4x"]
+[ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="11_7tn4x"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_j4fym"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="12_wqc51"]
 [ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="13_1q42x"]
@@ -94,7 +94,7 @@ material = SubResource("StandardMaterial3D_381s5")
 size = Vector2(40, 26)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1doj0"]
-albedo_texture = ExtResource("5_yb4ao")
+albedo_texture = ExtResource("11_7tn4x")
 uv1_triplanar = true
 uv1_world_triplanar = true
 

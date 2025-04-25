@@ -974,13 +974,13 @@ transform = Transform3D(0.767602, 0, -0.640927, 0, 1, 0, 0.640927, 0, 0.767602, 
 transform = Transform3D(0.983851, 0, -0.178991, 0, 1, 0, 0.178991, 0, 0.983851, 43.987, 0.5, -7.4266)
 
 [node name="old_tv" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
-transform = Transform3D(0.869435, 0, -0.494048, 0, 1, 0, 0.494048, 0, 0.869435, 36.1997, 1.65631, -10.027)
+transform = Transform3D(0.521661, 0, -0.296429, 0, 0.6, 0, 0.296429, 0, 0.521661, 36.1997, 1.65631, -10.027)
 
 [node name="old_tv2" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
-transform = Transform3D(-0.966129, 0, -0.25806, 0, 1, 0, 0.25806, 0, -0.966129, 8.99395, 1.65631, -17.6147)
+transform = Transform3D(-0.67629, 0, -0.180642, 0, 0.7, 0, 0.180642, 0, -0.67629, 8.99395, 1.65631, -17.6147)
 
 [node name="old_tv3" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
-transform = Transform3D(-0.138637, 0, 0.990343, 0, 1, 0, -0.990343, 0, -0.138637, 4.5105, 1.62852, 3.62622)
+transform = Transform3D(-0.097046, 0, 0.69324, 0, 0.7, 0, -0.69324, 0, -0.097046, 4.5105, 1.62852, 3.62622)
 
 [node name="computer" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(-0.752813, 0, -0.270688, 0, 0.8, 0, 0.270688, 0, -0.752813, 36.0338, 1.62149, -18.2713)

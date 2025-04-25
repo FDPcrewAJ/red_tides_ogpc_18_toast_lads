@@ -5,12 +5,17 @@ signal allow_boat_movement
 # Nodes to Access
 @onready var player = $player
 @onready var boat = $world/boat
-@onready var intro_camera = $intro_camera
+@onready var intro_camera: Camera3D = $camera_container/intro_camera
+@onready var camera_container: Node3D = $camera_container
 @onready var intro_objects: Node3D = $world/boat/intro_objects
 @onready var intro_animation_player: AnimationPlayer = $intro_animation_player
 @onready var voice_audio: AudioStreamPlayer = $voice_audio
 @onready var tutorial_text_ui: Control = $tutorial_text_ui
 
+@onready var dock_cutscene_objects: Node3D = $world/dock_cutscene_objects
+@onready var boat_parts_dock: Node3D = $world/dock_cutscene_objects/boat_parts_dock
+@onready var boat_parts: Node3D = $world/boat/boat_parts
+@onready var chief_model_dock: Node3D = $world/dock_cutscene_objects/chief_model_dock
 
 # Boat Parts 
 @onready var antennas: Node3D = $world/boat/boat_parts/antennas
@@ -21,6 +26,7 @@ signal allow_boat_movement
 
 var boat_end_pos = -44.0
 var update_boat = false
+var animate_camera = false
 
 func _ready():
 	player.has_control = false
@@ -44,9 +50,15 @@ func _process(delta):
 		else:
 			update_boat = false
 			boat.axis_lock_linear_z = true
-			intro_objects.visible = false
+			intro_objects.hide()
 			intro_camera.current = false
-			player.visible = true
+			player.show()
+			dock_cutscene_objects.show()
+			play_next_line()
+			tutorial_text_ui.show()
+	
+	if animate_camera:
+		camera_container.position.z -= (0.7 * delta)
 
 
 func _on_death_col_area_entered(_area):
@@ -75,6 +87,18 @@ func match_voice_line(line_string) -> AudioStream:
 			return load("res://Audio/Tutorial Voice Lines/line_9.mp3")
 		"line_10":
 			return load("res://Audio/Tutorial Voice Lines/line_10.mp3")
+		"line_11":
+			return load("res://Audio/Tutorial Voice Lines/line_11.mp3")
+		"line_12":
+			return load("res://Audio/Tutorial Voice Lines/line_12.mp3")
+		"line_13":
+			return load("res://Audio/Tutorial Voice Lines/line_13.mp3")
+		"line_14":
+			return load("res://Audio/Tutorial Voice Lines/line_14.mp3")
+		"line_15":
+			return load("res://Audio/Tutorial Voice Lines/line_15.mp3")
+		"line_16":
+			return load("res://Audio/Tutorial Voice Lines/line_16.mp3")
 	return load("res://Audio/Tutorial Voice Lines/line_2.mp3")
 
 
@@ -100,12 +124,30 @@ func match_text_display(line_string) -> String:
 			return "This is going to be so much fun!"
 		"line_10":
 			return "Alright, we’re almost here…"
+		"line_11":
+			return "Alright, as you probably noticed, we’re here. Yippee."
+		"line_12":
+			return " I should probably disclose something… I was ordered to remove a couple vital ship parts once you arrived."
+		"line_13":
+			return "The last recruit deserted, and that was the higher ups’ best idea to prevent that from happening again."
+		"line_14":
+			return "I personally think that’s a terrible idea. What if a really powerful storm came and killed me with a lightning bolt, leaving you stranded here?"
+		"line_15":
+			return "Haha, that would never happen, as long as we put in the right codes..."
+		"line_16":
+			return "Ah well, orders are orders, so I better get to it. Go ahead and explore. I’ll meet you in the control room. NO PEEKING!"
 	return ""
 
 
 func update_line():
 	Global.line_num += 1
 	Global.voice_line = Global.default_audio_name + str(Global.line_num)
+
+
+func play_next_line():
+	voice_audio.set_stream(match_voice_line(Global.voice_line))
+	voice_audio.play()
+	tutorial_text_ui.set_text(match_text_display(Global.voice_line))
 
 
 func _on_intro_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -121,15 +163,31 @@ func _on_voice_audio_finished():
 	update_line()
 	tutorial_text_ui.show()
 	if Global.line_num < 11:
-		voice_audio.set_stream(match_voice_line(Global.voice_line))
-		voice_audio.play()
-		tutorial_text_ui.set_text(match_text_display(Global.voice_line))
+		play_next_line()
 		if Global.line_num == 2:
 			tutorial_text_ui.hide()
+	
 	if Global.line_num == 4:
 		update_boat = true
-		intro_camera.position = Vector3(89.0, 8.0, 83.0)
+		camera_container.position = Vector3(89.0, 8.0, 83.0)
+		animate_camera = true
 		intro_camera.rotation.x = deg_to_rad(10.0)
 		intro_camera.rotation.y = deg_to_rad(58.0)
+	
 	if Global.line_num == 11:
+		tutorial_text_ui.hide()
+	
+	if Global.line_num > 11 and Global.line_num < 17:
+		play_next_line()
+	
+	if Global.line_num == 13:
+		boat_parts.hide()
+		chief_model_dock.position.z += 0.6
+		chief_model_dock.position.x -= 0.2
+		chief_model_dock.rotation.y = deg_to_rad(11.5)
+		boat_parts_dock.show()
+		
+	
+	if Global.line_num == 17:
+		player.has_control = true
 		tutorial_text_ui.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=4 uid="uid://clrvvxkrvp8q5"]
+[gd_scene load_steps=110 format=4 uid="uid://clrvvxkrvp8q5"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/tutorial_facility_exterior.gd" id="1_yh08u"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_2ekho"]
@@ -38,6 +38,11 @@
 [ext_resource type="PackedScene" uid="uid://b2pgdoelxuw2b" path="res://Assets/Objects/MiscFurnature/large_hvack_unit.tscn" id="28_yrovu"]
 [ext_resource type="PackedScene" uid="uid://we1rupekxd1" path="res://Assets/Objects/Tools/hammer.tscn" id="29_dhlgl"]
 [ext_resource type="PackedScene" uid="uid://c2mbh310wamfj" path="res://Assets/Objects/Tools/screwdriver.tscn" id="30_7sssl"]
+[ext_resource type="PackedScene" uid="uid://dqnyt2b1il67q" path="res://Assets/Objects/Boat/Boat Parts/antennas.tscn" id="38_6j3lu"]
+[ext_resource type="PackedScene" uid="uid://dgo4yb6dwugpf" path="res://Assets/Objects/Boat/Boat Parts/radar.tscn" id="39_gdo46"]
+[ext_resource type="PackedScene" uid="uid://dorv7f50mi4pv" path="res://Assets/Objects/Boat/Boat Parts/motor.tscn" id="40_vjvgn"]
+[ext_resource type="PackedScene" uid="uid://cbtn4wxpj2woq" path="res://Assets/Objects/Boat/Boat Parts/battery.tscn" id="41_bntc6"]
+[ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="42_u5k5p"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cwpdp"]
 material = ExtResource("6_h3p85")
@@ -562,11 +567,13 @@ mouse_filter = 1
 [node name="view_interact_menu" type="Node3D" parent="."]
 script = ExtResource("3_p6qhm")
 
-[node name="intro_camera" type="Camera3D" parent="."]
+[node name="camera_container" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.132, 6.27362, 128.852)
 
+[node name="intro_camera" type="Camera3D" parent="camera_container"]
+
 [node name="player" parent="." instance=ExtResource("4_fxw5f")]
-transform = Transform3D(0.707106, 0, -0.707106, 0, 0.999999, 0, 0.707106, 0, 0.707106, 16.5, 3.5, -38)
+transform = Transform3D(0.707106, 0, -0.707106, 0, 0.999999, 0, 0.707106, 0, 0.707106, 15.9213, 3.5, -38.4811)
 collision_layer = 2
 
 [node name="tutorial_text_ui" parent="." instance=ExtResource("5_vqdl3")]
@@ -969,16 +976,16 @@ transform = Transform3D(-3.17865e-08, 0, -1, 0, 1, 0, 1, 0, -3.17865e-08, 14.481
 transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 14.4813, -7.67093, 5.9655)
 
 [node name="outside_railing_1_segement6" parent="world/facilityModel/catwalks/railings" instance=ExtResource("22_dus6u")]
-transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 17.3165, -7.67093, 6.9655)
+transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 17.3165, -7.67093, 6.95658)
 
 [node name="outside_railing_1_segement7" parent="world/facilityModel/catwalks/railings" instance=ExtResource("22_dus6u")]
-transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 16.3542, -7.67093, 6.9655)
+transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 16.3542, -7.67093, 6.95658)
 
 [node name="outside_railing_1_segement8" parent="world/facilityModel/catwalks/railings" instance=ExtResource("22_dus6u")]
-transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 15.4314, -7.67093, 6.9655)
+transform = Transform3D(-2.06632e-07, 0, -1, 0, 1, 0, 1, 0, -2.06632e-07, 15.4314, -7.67093, 6.95658)
 
 [node name="outsideRailingEnd4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("23_v4p3g")]
-transform = Transform3D(1, 0, -1.62921e-07, 0, 1, 0, 1.62921e-07, 0, 1, 18.2075, -7.67093, 6.9655)
+transform = Transform3D(1, 0, -1.62921e-07, 0, 1, 0, 1.62921e-07, 0, 1, 18.2075, -7.67093, 6.95658)
 
 [node name="outside_Railing_90_Corner4" parent="world/facilityModel/catwalks/railings" instance=ExtResource("24_r7d2f")]
 transform = Transform3D(1, 0, 1.19249e-08, 0, 1, 0, -1.19249e-08, 0, 1, 31.4398, -7.67093, 6.75779)
@@ -1327,7 +1334,32 @@ transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -35.356, 0)
 mesh = SubResource("PlaneMesh_h3cy4")
 skeleton = NodePath("../../water_plane")
 
-[node name="sfx_audio" type="AudioStreamPlayer" parent="."]
+[node name="dock_cutscene_objects" type="Node3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6638, 2.48062, -44.8593)
+visible = false
+
+[node name="chief_model_dock" parent="world/dock_cutscene_objects" instance=ExtResource("11_3mwbh")]
+transform = Transform3D(1.1703, 0, 0.768366, 0, 1.4, 0, -0.768366, 0, 1.1703, 0, 0, 0)
+
+[node name="boat_parts_dock" type="Node3D" parent="world/dock_cutscene_objects"]
+visible = false
+
+[node name="antennas" parent="world/dock_cutscene_objects/boat_parts_dock" instance=ExtResource("38_6j3lu")]
+transform = Transform3D(0.83686, 0, -0.547417, 0, 1, 0, 0.547417, 0, 0.83686, -1.33084, -0.122624, 1.56064)
+
+[node name="radar" parent="world/dock_cutscene_objects/boat_parts_dock" instance=ExtResource("39_gdo46")]
+transform = Transform3D(-2.11653, 0, -1.33053, 0, 2.5, 0, 1.33053, 0, -2.11653, -1.00034, -0.154418, -2.58885)
+
+[node name="motor" parent="world/dock_cutscene_objects/boat_parts_dock" instance=ExtResource("40_vjvgn")]
+transform = Transform3D(0.126623, -0.796943, -0.590634, 0.987612, 0.156917, 1.49125e-07, 0.0926805, -0.583317, 0.80694, 1.61526, -0.0794077, 4.62112)
+
+[node name="battery2" parent="world/dock_cutscene_objects/boat_parts_dock" instance=ExtResource("41_bntc6")]
+transform = Transform3D(-0.426238, 0, 0.261383, 0, 0.5, 0, -0.261383, 0, -0.426238, 1.02743, -0.0189683, 0.651318)
+
+[node name="fuel_can2" parent="world/dock_cutscene_objects/boat_parts_dock" instance=ExtResource("42_u5k5p")]
+transform = Transform3D(-0.337342, 0, -0.941382, 0, 1, 0, 0.941382, 0, -0.337342, 0.839331, 0, -1.32738)
+
+[node name="sfx_bg_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_pqi50")
 autoplay = true
 bus = &"Sfx"

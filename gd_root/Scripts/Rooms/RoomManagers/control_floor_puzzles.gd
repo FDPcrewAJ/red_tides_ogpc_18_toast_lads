@@ -9,7 +9,7 @@ func _ready() -> void:
 	Global.list_in_hand = true
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Puzzle Control
 	# Tile Puzzle
 	if Global.current_object == "control_floor_code":

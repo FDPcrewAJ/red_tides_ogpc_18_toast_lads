@@ -53,9 +53,9 @@ points = PackedVector3Array(0.0998541, 0.5, 0.843277, -0.113471, -0.513492, -0.8
 
 [node name="Elevator" type="Node3D"]
 
-[node name="player" parent="." instance=ExtResource("3_5b5p7")]
-
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_uccvb")]
+
+[node name="player" parent="." instance=ExtResource("3_5b5p7")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.64342, 0)

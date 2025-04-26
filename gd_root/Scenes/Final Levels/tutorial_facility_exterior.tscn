@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=4 uid="uid://clrvvxkrvp8q5"]
+[gd_scene load_steps=112 format=4 uid="uid://clrvvxkrvp8q5"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/tutorial_facility_exterior.gd" id="1_yh08u"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_2ekho"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_boat.gd" id="8_035we"]
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="9_7u1tf"]
 [ext_resource type="PackedScene" uid="uid://b4l8vr3cj0tjo" path="res://Assets/Characters/Player/PlayerCharacter.gltf" id="10_6brfq"]
-[ext_resource type="PackedScene" uid="uid://dla2hvgojb3x7" path="res://Assets/Characters/Chief/chief_model.gltf" id="11_3mwbh"]
 [ext_resource type="Texture2D" uid="uid://da8cb6nn5qsof" path="res://Imports/Models/Objects/Boat/boat_0.png" id="11_ws8pw"]
 [ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Imports/Models/Objects/Motor/Motor.obj" id="12_a5i01"]
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="13_pokjt"]
@@ -39,7 +38,9 @@
 [ext_resource type="PackedScene" uid="uid://we1rupekxd1" path="res://Assets/Objects/Tools/hammer.tscn" id="29_dhlgl"]
 [ext_resource type="PackedScene" uid="uid://c2mbh310wamfj" path="res://Assets/Objects/Tools/screwdriver.tscn" id="30_7sssl"]
 [ext_resource type="PackedScene" uid="uid://dqnyt2b1il67q" path="res://Assets/Objects/Boat/Boat Parts/antennas.tscn" id="38_6j3lu"]
+[ext_resource type="PackedScene" uid="uid://cgv64q8u2l43c" path="res://Assets/Characters/Chief/Animations/Idle/cptn_idle.gltf" id="38_c7mpg"]
 [ext_resource type="PackedScene" uid="uid://dgo4yb6dwugpf" path="res://Assets/Objects/Boat/Boat Parts/radar.tscn" id="39_gdo46"]
+[ext_resource type="PackedScene" uid="uid://cmc3e8rv2l3v2" path="res://Assets/Characters/Chief/Animations/Talk/cptn_talk.gltf" id="39_up4p7"]
 [ext_resource type="PackedScene" uid="uid://dorv7f50mi4pv" path="res://Assets/Objects/Boat/Boat Parts/motor.tscn" id="40_vjvgn"]
 [ext_resource type="PackedScene" uid="uid://cbtn4wxpj2woq" path="res://Assets/Objects/Boat/Boat Parts/battery.tscn" id="41_bntc6"]
 [ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="42_u5k5p"]
@@ -498,64 +499,67 @@ albedo_color = Color(0, 0, 0, 1)
 material = SubResource("StandardMaterial3D_ma47x")
 size = Vector2(1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_76mh2"]
+size = Vector3(0.530151, 1.49051, 0.28418)
+
 [sub_resource type="Animation" id="Animation_mlvh2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("world/boat/intro_objects/chief_model:position")
+tracks/0/path = NodePath("world/boat/intro_objects/boat_cptn_talk:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.134857, 2.51471, -0.445374)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("world/boat/intro_objects/chief_model:rotation")
+tracks/1/path = NodePath("world/boat/intro_objects/boat_cptn_talk:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.14159, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fqr41"]
-resource_name = "1_captain_turn"
+[sub_resource type="Animation" id="Animation_hbl05"]
+resource_name = "cheif_intro_turn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("world/boat/intro_objects/chief_model:position")
+tracks/0/path = NodePath("world/boat/intro_objects/boat_cptn_talk:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.134857, 2.51471, -0.445374), Vector3(-0.425034, 2.51471, -0.445374), Vector3(-0.645466, 2.51471, -0.445374)]
+"values": [Vector3(-0.134857, 2.51471, -0.445374), Vector3(-0.425, 2.515, -0.445), Vector3(-0.645, 2.515, -0.445)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("world/boat/intro_objects/chief_model:rotation")
+tracks/1/path = NodePath("world/boat/intro_objects/boat_cptn_talk:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -2.92807, 0), Vector3(0.130704, -1.22048, 0.0475853), Vector3(-0.0531148, 0.364428, 0.138285)]
+"values": [Vector3(0, -2.92807, 0), Vector3(0.1309, -1.21999, 0.0471239), Vector3(-0.0523599, 0.364774, 0.137881)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ndrbm"]
 _data = {
 "RESET": SubResource("Animation_mlvh2"),
-"captain_1": SubResource("Animation_fqr41")
+"cheif_intro_turn": SubResource("Animation_hbl05")
 }
 
 [node name="facility_exterior" type="Node3D"]
@@ -599,7 +603,7 @@ mesh = SubResource("QuadMesh_cwpdp")
 script = ExtResource("7_fjtud")
 
 [node name="death_col" type="Area3D" parent="world"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.6686, 31.7192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.3676, 31.7192)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/death_col"]
 shape = SubResource("BoxShape3D_dq8vp")
@@ -662,8 +666,8 @@ transform = Transform3D(1, 0, 3.38813e-21, 0, 1, 0, -3.38813e-21, 0, 1, -4, 0.48
 [node name="player_model" parent="world/boat/intro_objects" instance=ExtResource("10_6brfq")]
 transform = Transform3D(-1.4, 0, 1.22392e-07, 0, 1.4, 0, -1.22392e-07, 0, -1.4, -3.22514e-08, 2.44869, 2.07685)
 
-[node name="chief_model" parent="world/boat/intro_objects" instance=ExtResource("11_3mwbh")]
-transform = Transform3D(-1.4, 0, 3.54925e-06, 0, 1.4, 0, -3.54925e-06, 0, -1.4, -0.134857, 2.51471, -0.445374)
+[node name="boat_cptn_talk" parent="world/boat/intro_objects" instance=ExtResource("39_up4p7")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 
 [node name="boat_parts" type="Node3D" parent="world/boat"]
 
@@ -1336,10 +1340,23 @@ skeleton = NodePath("../../water_plane")
 
 [node name="dock_cutscene_objects" type="Node3D" parent="world"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6638, 2.48062, -44.8593)
+
+[node name="chief_container" type="Node3D" parent="world/dock_cutscene_objects"]
 visible = false
 
-[node name="chief_model_dock" parent="world/dock_cutscene_objects" instance=ExtResource("11_3mwbh")]
-transform = Transform3D(1.1703, 0, 0.768366, 0, 1.4, 0, -0.768366, 0, 1.1703, 0, 0, 0)
+[node name="chief_col" type="StaticBody3D" parent="world/dock_cutscene_objects/chief_container"]
+transform = Transform3D(1.1703, 0, 0.768366, 0, 1.4, 0, -0.768366, 0, 1.1703, 0, -0.130706, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/dock_cutscene_objects/chief_container/chief_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09795, 0.725021, -0.128889)
+shape = SubResource("BoxShape3D_76mh2")
+
+[node name="cptn_idle" parent="world/dock_cutscene_objects/chief_container" instance=ExtResource("38_c7mpg")]
+transform = Transform3D(1.1703, 0, 0.768366, 0, 1.4, 0, -0.768366, 0, 1.1703, -0.191183, -0.130706, -0.291191)
+visible = false
+
+[node name="cptn_talk" parent="world/dock_cutscene_objects/chief_container" instance=ExtResource("39_up4p7")]
+transform = Transform3D(1.1703, 0, 0.768366, 0, 1.4, 0, -0.768366, 0, 1.1703, 0, -0.130706, 0)
 
 [node name="boat_parts_dock" type="Node3D" parent="world/dock_cutscene_objects"]
 visible = false

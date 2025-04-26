@@ -15,7 +15,15 @@ signal allow_boat_movement
 @onready var dock_cutscene_objects: Node3D = $world/dock_cutscene_objects
 @onready var boat_parts_dock: Node3D = $world/dock_cutscene_objects/boat_parts_dock
 @onready var boat_parts: Node3D = $world/boat/boat_parts
-@onready var chief_model_dock: Node3D = $world/dock_cutscene_objects/chief_model_dock
+
+# Chief Models and Animations
+@onready var chief_container: Node3D = $world/dock_cutscene_objects/chief_container
+@onready var cptn_idle: Node3D = $world/dock_cutscene_objects/chief_container/cptn_idle
+@onready var cptn_talk: Node3D = $world/dock_cutscene_objects/chief_container/cptn_talk
+@onready var boat_cptn_talk: Node3D = $world/boat/intro_objects/boat_cptn_talk
+var chief_talk_anim
+var chief_idle_anim
+var boat_cptn_anim
 
 # Boat Parts 
 @onready var antennas: Node3D = $world/boat/boat_parts/antennas
@@ -32,7 +40,10 @@ func _ready():
 	player.has_control = false
 	boat.axis_lock_linear_x = true
 	update_line()
-	intro_animation_player.play("captain_1")
+	intro_animation_player.play("cheif_intro_turn")
+	
+	chief_talk_anim = cptn_talk.get_child(1)
+	chief_idle_anim = cptn_idle.get_child(1)
 
 
 func _process(delta):
@@ -52,6 +63,7 @@ func _process(delta):
 			boat.axis_lock_linear_z = true
 			intro_objects.hide()
 			intro_camera.current = false
+			chief_container.show()
 			player.show()
 			dock_cutscene_objects.show()
 			play_next_line()
@@ -151,12 +163,12 @@ func play_next_line():
 
 
 func _on_intro_animation_player_animation_finished(anim_name: StringName) -> void:
-	match anim_name:
-		"captain_1":
-			voice_audio.set_stream(match_voice_line(Global.voice_line))
-			voice_audio.play()
-			tutorial_text_ui.show()
-			tutorial_text_ui.set_text(match_text_display(Global.voice_line))
+	boat_cptn_anim = boat_cptn_talk.get_child(1)
+	boat_cptn_anim.play("animation")
+	voice_audio.set_stream(match_voice_line(Global.voice_line))
+	voice_audio.play()
+	tutorial_text_ui.show()
+	tutorial_text_ui.set_text(match_text_display(Global.voice_line))
 
 
 func _on_voice_audio_finished():
@@ -164,8 +176,10 @@ func _on_voice_audio_finished():
 	tutorial_text_ui.show()
 	if Global.line_num < 11:
 		play_next_line()
+		boat_cptn_anim.play("animation")
 		if Global.line_num == 2:
 			tutorial_text_ui.hide()
+			boat_cptn_anim.stop()
 	
 	if Global.line_num == 4:
 		update_boat = true
@@ -176,18 +190,21 @@ func _on_voice_audio_finished():
 	
 	if Global.line_num == 11:
 		tutorial_text_ui.hide()
+		chief_talk_anim.play("animation")
 	
 	if Global.line_num > 11 and Global.line_num < 17:
 		play_next_line()
 	
 	if Global.line_num == 13:
 		boat_parts.hide()
-		chief_model_dock.position.z += 0.6
-		chief_model_dock.position.x -= 0.2
-		chief_model_dock.rotation.y = deg_to_rad(11.5)
+		chief_container.position.z += 0.8
+		chief_container.position.x -= 0.3
+		chief_container.rotation.y = deg_to_rad(1)
 		boat_parts_dock.show()
-		
 	
 	if Global.line_num == 17:
 		player.has_control = true
+		cptn_talk.queue_free()
+		cptn_idle.show()
+		chief_idle_anim.play("animation")
 		tutorial_text_ui.hide()

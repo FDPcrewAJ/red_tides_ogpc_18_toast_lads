@@ -42,6 +42,7 @@ func _input(_event) -> void:
 func _physics_process(delta: float) -> void:
 	#Countdown activation
 	if Global.timer_active:
+		stopwatch_dial.show()
 		count_down(delta)
 	update_list()
 

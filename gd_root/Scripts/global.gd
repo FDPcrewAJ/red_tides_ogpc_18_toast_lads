@@ -61,7 +61,7 @@ var new_position = 0
 
 var in_menu = false
 
-var floor = "null"
+var next_floor = "null"
 
 var reactorStable = false
 

@@ -205,7 +205,7 @@ texture = ExtResource("2_pcjbw")
 [node name="world" type="Node3D" parent="."]
 
 [node name="elevator" parent="world" instance=ExtResource("5_7dhnt")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 1.12846)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.500947, 1.12846)
 script = ExtResource("5_p6jpg")
 
 [node name="facility_elevator" type="StaticBody3D" parent="world/elevator"]
@@ -510,7 +510,7 @@ mesh = SubResource("PlaneMesh_0bm48")
 [node name="lights" type="Node3D" parent="world/building"]
 
 [node name="red_wall_light" type="OmniLight3D" parent="world/building/lights"]
-transform = Transform3D(-4.37115e-08, -4.37115e-08, 1, -1, 1.91069e-15, -4.37115e-08, 0, -1, -4.37115e-08, 0, 4, 0.780266)
+transform = Transform3D(-4.37115e-08, -4.37115e-08, 1, -1, 1.91069e-15, -4.37115e-08, 0, -1, -4.37115e-08, 0, 4.66859, 0.780266)
 light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
 light_energy = 0.621
 light_size = 0.922

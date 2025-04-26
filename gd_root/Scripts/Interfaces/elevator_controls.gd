@@ -6,27 +6,27 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	Global.floor = "Water Processing"
+	Global.next_floor = "Water Processing"
 
 
 func _on_button_2_pressed() -> void:
-	Global.floor = "Electrical"
+	Global.next_floor = "Electrical"
 
 
 func _on_button_3_pressed() -> void:
-	Global.floor = "Entrance"
+	Global.next_floor = "Entrance"
 
 
 func _on_button_4_pressed() -> void:
-	Global.floor = "First Floor"
+	Global.next_floor = "First Floor"
 
 
 func _on_button_5_pressed() -> void:
-	Global.floor = "Second Floor"
+	Global.next_floor = "Second Floor"
 
 
 func _on_button_6_pressed() -> void:
-	Global.floor = "Control"
+	Global.next_floor = "Control"
 
 
 func _on_exit_button_pressed() -> void:

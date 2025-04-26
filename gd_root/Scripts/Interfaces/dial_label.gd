@@ -1,16 +1,15 @@
 extends Label
 
+@onready var dial_1_sprite: Sprite2D = $"../Dial1Sprite"
+@onready var dial_2_sprite: Sprite2D = $"../../Dial2/Dial2Sprite"
+@onready var dial_3_sprite: Sprite2D = $"../../Dial3/Dial3Sprite"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if self.name == "Dial1Label":
-		text = str(int($"../Sprite2D1".rotation_degrees))
-	if self.name == "Dial2Label":
-		text = str(int($"../Sprite2D2".rotation_degrees))
-	if self.name == "Dial3Label":
-		text = str(int($"../Sprite2D3".rotation_degrees))
+	match self.name:
+		"Dial1Label":
+			text = str(int(dial_1_sprite.rotation_degrees))
+		"Dial2Label":
+			text = str(int(dial_2_sprite.rotation_degrees))
+		"Dial3Label":
+			text = str(int(dial_3_sprite.rotation_degrees))

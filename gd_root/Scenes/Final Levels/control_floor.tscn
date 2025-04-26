@@ -761,6 +761,33 @@ transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07,
 [node name="bossesOffice" type="Node3D" parent="world/decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.361412, 1.41879, -11.5668)
 
+[node name="wooden_desk_1" parent="world/decor/bossesOffice" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.050156, -0.91879, 0.2287)
+
+[node name="wooden_desk_2" parent="world/decor/bossesOffice" instance=ExtResource("10_ca3rm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.04351, -0.91879, -1.4393)
+
+[node name="wooden_chair" parent="world/decor/bossesOffice" instance=ExtResource("18_4xbtj")]
+transform = Transform3D(0.740136, 0, -0.672457, 0, 1, 0, 0.672457, 0, 0.740136, 0.19662, -0.91879, 6.11545)
+
+[node name="wooden_chair2" parent="world/decor/bossesOffice" instance=ExtResource("18_4xbtj")]
+transform = Transform3D(0.833095, 0, 0.55313, 0, 1, 0, -0.55313, 0, 0.833095, 0.402514, -0.91879, 3.59765)
+
+[node name="wooden_chair3" parent="world/decor/bossesOffice" instance=ExtResource("18_4xbtj")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -2.23883, -0.91879, 4.08027)
+
+[node name="portable_chair" parent="world/decor/bossesOffice" instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.849644, 0, 0.527356, 0, 1, 0, -0.527356, 0, 0.849644, -3.93407, -0.91879, -2.1561)
+
+[node name="portable_chair2" parent="world/decor/bossesOffice" instance=ExtResource("19_fwduh")]
+transform = Transform3D(0.974299, 0, -0.225257, 0, 1, 0, 0.225257, 0, 0.974299, 0.355014, -0.91879, -1.207)
+
+[node name="spinnyChair" parent="world/decor/bossesOffice" instance=ExtResource("23_dj0sv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292239, -0.91879, 1.4382)
+
+[node name="pen" parent="world/decor/bossesOffice" instance=ExtResource("30_vcgmk")]
+transform = Transform3D(-2.06242, -1.52221, -9.01512e-08, -1.12047e-07, 4.89774e-15, 2.56334, -1.52221, 2.06242, -6.65381e-08, 0.358311, 0.24915, 0.1933)
+
 [node name="mainHall" type="Node3D" parent="world/decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8548, -1.90735e-06, 7.77037)
 
@@ -991,7 +1018,7 @@ transform = Transform3D(-0.152126, 0, -0.785403, 0, 0.8, 0, 0.785403, 0, -0.1521
 [node name="control_floor_dial_puzzle" type="StaticBody3D" parent="world/decor/mainHall/tech/computer2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer2/control_floor_dial_puzzle"]
-transform = Transform3D(0.999987, -3.15259e-12, -8.73115e-11, -3.57766e-09, 1, 3.63798e-12, 2.53203e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
 shape = SubResource("BoxShape3D_s12nq")
 
 [node name="TilePuzzleControlNote" type="MeshInstance3D" parent="world/decor/mainHall/tech/computer2"]
@@ -1020,7 +1047,7 @@ transform = Transform3D(0.122306, 0, -0.790596, 0, 0.8, 0, 0.790596, 0, 0.122306
 [node name="control_floor_lore_chatlog" type="StaticBody3D" parent="world/decor/mainHall/tech/computer4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer4/control_floor_lore_chatlog"]
-transform = Transform3D(0.999987, -3.15259e-12, -8.73115e-11, -3.57766e-09, 1, 3.63798e-12, 2.53203e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
 shape = SubResource("BoxShape3D_s12nq")
 
 [node name="ChatlogDecorativeLabel" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
@@ -1315,40 +1342,13 @@ transform = Transform3D(-5.87772e-08, 0, 1.34466, 0, 1.34466, 0, -1.34466, 0, -5
 transform = Transform3D(-2.18505e-07, 0, -4.9988, 0, 4.9988, 0, 4.9988, 0, -2.18505e-07, 0.144998, 0.5, 11.5259)
 visible = false
 
-[node name="wooden_desk_1" parent="." instance=ExtResource("10_ca3rm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.411568, 0.5, -11.3381)
-
-[node name="wooden_desk_2" parent="." instance=ExtResource("10_ca3rm")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.6821, 0.5, -13.0061)
-
-[node name="wooden_chair" parent="." instance=ExtResource("18_4xbtj")]
-transform = Transform3D(0.740136, 0, -0.672457, 0, 1, 0, 0.672457, 0, 0.740136, 0.558032, 0.5, -5.45135)
-
-[node name="wooden_chair2" parent="." instance=ExtResource("18_4xbtj")]
-transform = Transform3D(0.833095, 0, 0.55313, 0, 1, 0, -0.55313, 0, 0.833095, 0.763926, 0.5, -7.96915)
-
-[node name="wooden_chair3" parent="." instance=ExtResource("18_4xbtj")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -1.87742, 0.5, -7.48653)
-
-[node name="portable_chair" parent="." instance=ExtResource("19_fwduh")]
-transform = Transform3D(0.849644, 0, 0.527356, 0, 1, 0, -0.527356, 0, 0.849644, -3.57266, 0.5, -13.7229)
-
-[node name="portable_chair2" parent="." instance=ExtResource("19_fwduh")]
-transform = Transform3D(0.974299, 0, -0.225257, 0, 1, 0, 0.225257, 0, 0.974299, 0.716426, 0.5, -12.7738)
-
-[node name="spinnyChair" parent="." instance=ExtResource("23_dj0sv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653651, 0.5, -10.1286)
-
-[node name="pen" parent="." instance=ExtResource("30_vcgmk")]
-transform = Transform3D(-2.06242, -1.52221, -9.01512e-08, -1.12047e-07, 4.89774e-15, 2.56334, -1.52221, 2.06242, -6.65381e-08, 0.719723, 1.66794, -11.3735)
-
 [node name="computer" parent="." instance=ExtResource("11_i2ung")]
 transform = Transform3D(0.178273, 0, 0.779884, 0, 0.8, 0, -0.779884, 0, 0.178273, -4.78158, 1.625, -13.7188)
 
 [node name="control_floor_code" type="StaticBody3D" parent="computer"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/control_floor_code"]
-transform = Transform3D(0.999987, -3.15259e-12, -8.73115e-11, -3.57766e-09, 1, 3.63798e-12, 2.53203e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
 shape = SubResource("BoxShape3D_s12nq")
 
 [node name="StormCodeNote" type="MeshInstance3D" parent="computer"]

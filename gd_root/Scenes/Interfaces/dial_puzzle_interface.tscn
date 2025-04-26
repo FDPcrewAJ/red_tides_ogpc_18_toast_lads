@@ -33,7 +33,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ceuvr")
 flat = true
 script = ExtResource("3_oet22")
 
-[node name="Sprite2D1" type="Sprite2D" parent="Dial"]
+[node name="Dial1Sprite" type="Sprite2D" parent="Dial"]
 position = Vector2(100, 100)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")
@@ -61,7 +61,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_pux5x")
 flat = true
 script = ExtResource("3_oet22")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Dial2"]
+[node name="Dial2Sprite" type="Sprite2D" parent="Dial2"]
 position = Vector2(100, 100)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")
@@ -89,7 +89,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_aos3k")
 flat = true
 script = ExtResource("3_oet22")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Dial3"]
+[node name="Dial3Sprite" type="Sprite2D" parent="Dial3"]
 position = Vector2(100, 100)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")

@@ -12,7 +12,9 @@ func _process(_delta):
 	mouse_offset_x = get_global_mouse_position().x
 	
 func _rotate():
-	rotation_degrees += (mouse_offset_x - get_global_mouse_position().x) / 2
+	rotate(get_angle_to(get_global_mouse_position()))
+	
+	#rotation_degrees += (mouse_offset_x - get_global_mouse_position().x) / 5
 	if rotation_degrees < 0:
 		rotation_degrees = 0
 	if rotation_degrees > 360:

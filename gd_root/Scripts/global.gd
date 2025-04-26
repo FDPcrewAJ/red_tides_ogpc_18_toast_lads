@@ -8,9 +8,9 @@ var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
 
 # Storm system control 
 var time_left = 20
-var timer_active = false
+var timer_active = true
 var needle_rotation = 1
-var watch_collected = false
+var watch_collected = true
 
 #List pickup boolean
 var list_in_hand = true

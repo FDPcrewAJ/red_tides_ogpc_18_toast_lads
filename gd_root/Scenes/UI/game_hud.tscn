@@ -23,7 +23,6 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("1_m2c60")
 
 [node name="stopwatch_dial" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

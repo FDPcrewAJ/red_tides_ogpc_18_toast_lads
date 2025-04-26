@@ -9,7 +9,8 @@ func _ready() -> void:
 
 
 func _process(_delta):
-	mouse_offset_x = get_global_mouse_position().x
+	pass
+	#mouse_offset_x = get_global_mouse_position().x
 	
 func _rotate():
 	rotate(get_angle_to(get_global_mouse_position()))

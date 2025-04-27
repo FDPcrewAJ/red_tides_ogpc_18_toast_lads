@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=47 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_vsjom"]
@@ -12,18 +12,21 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_5.gd" id="8_4rpbl"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
+[ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="8_48i45"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="14_318wx"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/mc_guffin.gd" id="15_ht1ol"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="17_ld0ud"]
+[ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="19_g163y"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/stop_fire.gd" id="19_sursw"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="21_4woo7"]
 [ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="21_nmg6w"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_puzzle_note.gd" id="22_7ep3d"]
 [ext_resource type="PackedScene" uid="uid://odho4730c5y5" path="res://Imports/Models/Objects/Elevator/Elevator.gltf" id="22_ad8m1"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_elevator_doors.gd" id="23_lcn6t"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="25_x8pim"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
 albedo_texture = ExtResource("4_a3jpa")
@@ -76,14 +79,7 @@ points = PackedVector3Array(4.78818, 0.5, 4.78724, -5.07837, -0.579365, -5.07738
 [sub_resource type="BoxShape3D" id="BoxShape3D_5nlea"]
 size = Vector3(75, 80, 50)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aksqs"]
-albedo_color = Color(1, 1, 0, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_xbqch"]
-material = SubResource("StandardMaterial3D_aksqs")
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0nmmd"]
-points = PackedVector3Array(0.457871, 0.198079, 0.0157824, -0.48874, -0.0916874, -0.0451868, -0.471509, -0.137027, -0.0907015, 0.0763591, -0.333275, 0.364179, 0.136569, -0.332425, -0.346906, -0.151617, 0.471982, -0.0602459, -0.105347, 0.211936, 0.43966, -0.0450169, 0.198098, -0.456416, 0.409077, -0.151168, 0.242516, -0.271376, -0.377761, 0.181871, 0.41148, -0.075981, -0.27324, 0.198197, -0.456161, -0.044931, -0.240641, -0.331674, -0.285768, 0.227137, 0.25672, 0.363041, 0.227522, 0.423604, -0.135488, -0.37899, 0.0607022, 0.319462, -0.406747, 0.181049, -0.225691, -0.0146313, -0.0917695, 0.490229, -0.377855, 0.302793, 0.121712, 0.0462323, 0.456011, 0.198185, -0.227464, -0.0607863, -0.440348, 0.228455, 0.0607228, -0.439887, -0.0911376, -0.489246, -0.045174, 0.441865, -0.228216, -0.0449581, 0.317179, 0.241214, -0.300812, -0.0448487, 0.394737, -0.302955, -0.316348, -0.196222, 0.332551, 0.198442, -0.0304293, 0.457237, 0.0614714, -0.152246, -0.471307, 0.363089, 0.256708, 0.227079, 0.152134, -0.439489, 0.182379, -0.210725, 0.362276, 0.27223)
+[sub_resource type="BoxShape3D" id="BoxShape3D_4l86t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndkrc"]
 transparency = 1
@@ -557,6 +553,28 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
+[node name="red_wall_light" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37115e-08, 1.31134e-07, -1, -1, -5.73208e-15, 4.37115e-08, 0, 1, 1.31134e-07, -1.63093e-06, 4.69135, -34.5759)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="Rooms/hub_room/RoomParts/lights/red_wall_light" instance=ExtResource("8_48i45")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="red_wall_light2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37115e-08, -2.18557e-07, 1, -1, 9.55345e-15, -4.37115e-08, 0, -1, -2.18557e-07, 3.52067e-06, 5.0574, 4.55709)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="Rooms/hub_room/RoomParts/lights/red_wall_light2" instance=ExtResource("8_48i45")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
 [node name="Fire" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
 mesh = SubResource("BoxMesh_psncc")
@@ -700,15 +718,17 @@ transform = Transform3D(26.6667, 0, -1.36424e-12, 0, 26.6667, 0, 1.36424e-12, 0,
 [node name="player" parent="." instance=ExtResource("8_7j12s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22705, 3.32548)
 
-[node name="McGuffin" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -31)
-mesh = SubResource("SphereMesh_xbqch")
-script = ExtResource("15_ht1ol")
+[node name="stop_fire" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 3.8395e-07, 2.08903, -34.9261)
+script = ExtResource("19_sursw")
 
-[node name="Area3D" type="Area3D" parent="McGuffin"]
+[node name="lightSwitch" parent="stop_fire" instance=ExtResource("19_g163y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="McGuffin/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_0nmmd")
+[node name="end_fire_switch" type="StaticBody3D" parent="stop_fire"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stop_fire/end_fire_switch"]
+shape = SubResource("BoxShape3D_4l86t")
 
 [node name="metal_box" parent="." instance=ExtResource("21_nmg6w")]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -2.6, 0.5, -1.4366)
@@ -744,11 +764,18 @@ font_size = 100
 
 [node name="Label3D3" type="Label3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 32.7217, 1.7789, 0.366403)
-text = "3"
+text = "2"
 font_size = 100
 
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 0, 2.84097, -34.994)
+modulate = Color(0.780392, 0, 0, 1)
+text = "Emergency Fire Supression"
+font = ExtResource("25_x8pim")
+font_size = 50
+
 [node name="fire_elevator_doors" parent="." instance=ExtResource("22_ad8m1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164738, 0.0152773, 4.93826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 4.938)
 script = ExtResource("23_lcn6t")
 
 [node name="ElevatorDoorBody" type="StaticBody3D" parent="fire_elevator_doors"]
@@ -764,4 +791,3 @@ shape = SubResource("BoxShape3D_3g427")
 [connection signal="area_entered" from="Rooms/hub_room/Fire4/StaticBody3D/Area3D" to="Rooms/hub_room/Fire4" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire5/StaticBody3D/Area3D" to="Rooms/hub_room/Fire5" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire6/StaticBody3D/Area3D" to="Rooms/hub_room/Fire6" method="_on_area_3d_area_entered"]
-[connection signal="area_entered" from="McGuffin/Area3D" to="McGuffin" method="_on_area_3d_area_entered"]

@@ -1,7 +1,7 @@
 extends Label
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Global.one_watered == true:
 		if self.name == "fire_info_label1":
 			text = "Watered by: Terminal " + str(Global.one_fire_acess)

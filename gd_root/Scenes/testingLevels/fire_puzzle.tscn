@@ -647,6 +647,24 @@ script = ExtResource("9_dy4x5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire6/StaticBody3D/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_ylig5")
 
+[node name="wooden_desk_1" parent="Rooms/hub_room" instance=ExtResource("14_318wx")]
+transform = Transform3D(-4.37115e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37115e-08, -0.491439, -0.00580204, -1.3059)
+
+[node name="computer" parent="Rooms/hub_room" instance=ExtResource("15_jt1wt")]
+transform = Transform3D(0.800001, 0, -4.14483e-14, 0, 0.800001, 0, 4.14483e-14, 0, 0.800001, 0.416409, 1.11142, -1.55172)
+
+[node name="wooden_desk_2" parent="Rooms/hub_room" instance=ExtResource("14_318wx")]
+transform = Transform3D(-0.999999, 0, -8.74229e-08, 0, 0.999999, 0, 8.74229e-08, 0, -0.999999, -23.6842, -0.00838792, 0.441419)
+
+[node name="computer2" parent="Rooms/hub_room" instance=ExtResource("15_jt1wt")]
+transform = Transform3D(-3.49692e-08, 0, 0.800001, 0, 0.800001, 0, -0.800001, 0, -3.49692e-08, -23.93, 1.10883, -0.466429)
+
+[node name="wooden_desk_3" parent="Rooms/hub_room" instance=ExtResource("14_318wx")]
+transform = Transform3D(0.999999, 0, 1.06581e-13, 0, 0.999999, 0, -1.06581e-13, 0, 0.999999, 33.7555, -0.032799, -0.441419)
+
+[node name="computer3" parent="Rooms/hub_room" instance=ExtResource("15_jt1wt")]
+transform = Transform3D(-3.49692e-08, 0, -0.800001, 0, 0.800001, 0, 0.800001, 0, -3.49692e-08, 34.0013, 1.08442, 0.466429)
+
 [node name="FireConsole" type="CSGMesh3D" parent="Rooms/hub_room"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 1.5, -1.5)
 script = ExtResource("11_i3baf")
@@ -663,14 +681,13 @@ shape = SubResource("BoxShape3D_5nlea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_5nlea")
 
-[node name="wooden_desk_1" parent="Rooms/hub_room/FireConsole" instance=ExtResource("14_318wx")]
-transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1.45705e-06, -16.3813, -50.1934, 6.47015)
-
-[node name="computer" parent="Rooms/hub_room/FireConsole" instance=ExtResource("15_jt1wt")]
-transform = Transform3D(26.6667, 0, -1.38161e-12, 0, 26.6667, 0, 1.38161e-12, 0, 26.6667, 13.8803, -12.9527, -1.72409)
+[node name="Label3D" type="Label3D" parent="Rooms/hub_room/FireConsole"]
+transform = Transform3D(33.3333, 0, 0, 0, 33.3333, 0, 0, 0, 33.3333, 13.7416, 9.29667, 9.611)
+text = "1"
+font_size = 100
 
 [node name="FireConsole2" type="CSGMesh3D" parent="Rooms/hub_room"]
-transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 33, 1.5, 0)
+transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, -23.8783, 1.5, -0.05002)
 script = ExtResource("11_i3baf")
 
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/FireConsole2"]
@@ -685,14 +702,13 @@ shape = SubResource("BoxShape3D_5nlea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_5nlea")
 
-[node name="wooden_desk_1" parent="Rooms/hub_room/FireConsole2" instance=ExtResource("14_318wx")]
-transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1.45705e-06, -16.3813, -50.2796, 6.47009)
-
-[node name="computer" parent="Rooms/hub_room/FireConsole2" instance=ExtResource("15_jt1wt")]
-transform = Transform3D(26.6667, 0, -1.47793e-12, 0, 26.6667, 0, 1.47793e-12, 0, 26.6667, 13.8803, -13.0389, -1.72412)
+[node name="Label3D3" type="Label3D" parent="Rooms/hub_room/FireConsole2"]
+transform = Transform3D(33.3333, 0, 5.82818e-06, 0, 33.3333, 0, -5.82818e-06, 0, 33.3333, 13.9596, 9.29667, 9.27673)
+text = "2"
+font_size = 100
 
 [node name="FireConsole3" type="CSGMesh3D" parent="Rooms/hub_room"]
-transform = Transform3D(-1.31134e-09, 0, 0.03, 0, 0.03, 0, -0.03, 0, -1.31134e-09, -23, 1.5, 0)
+transform = Transform3D(-1.31134e-09, 0, -0.03, 0, 0.03, 0, 0.03, 0, -1.31134e-09, 33.9496, 1.5, 0.05002)
 script = ExtResource("11_i3baf")
 
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/FireConsole3"]
@@ -707,11 +723,10 @@ shape = SubResource("BoxShape3D_5nlea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.32163, -8.42009, 0)
 shape = SubResource("BoxShape3D_5nlea")
 
-[node name="wooden_desk_1" parent="Rooms/hub_room/FireConsole3" instance=ExtResource("14_318wx")]
-transform = Transform3D(-1.45705e-06, 0, 33.3333, 0, 33.3333, 0, -33.3333, 0, -1.45705e-06, -16.3813, -51.0933, 6.47021)
-
-[node name="computer" parent="Rooms/hub_room/FireConsole3" instance=ExtResource("15_jt1wt")]
-transform = Transform3D(26.6667, 0, -1.36424e-12, 0, 26.6667, 0, 1.36424e-12, 0, 26.6667, 13.8803, -13.8527, -1.72412)
+[node name="Label3D2" type="Label3D" parent="Rooms/hub_room/FireConsole3"]
+transform = Transform3D(33.3333, 0, 2.16005e-12, 0, 33.3333, 0, -2.16005e-12, 0, 33.3333, 14.2571, 9.29667, 9.19672)
+text = "3"
+font_size = 100
 
 [node name="MenuPrompt" parent="." instance=ExtResource("17_ld0ud")]
 
@@ -752,22 +767,7 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FirePuzzleNote/FirePuzzleNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_i6sqg")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.433788, 1.7789, -1.21167)
-text = "1"
-font_size = 100
-
-[node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -22.7241, 1.7789, -0.396719)
-text = "3"
-font_size = 100
-
-[node name="Label3D3" type="Label3D" parent="."]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 32.7217, 1.7789, 0.366403)
-text = "2"
-font_size = 100
-
-[node name="Label3D4" type="Label3D" parent="."]
+[node name="emergency_fire_suppression" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 0, 2.84097, -34.994)
 modulate = Color(0.780392, 0, 0, 1)
 text = "Emergency Fire Supression"
@@ -791,3 +791,9 @@ shape = SubResource("BoxShape3D_3g427")
 [connection signal="area_entered" from="Rooms/hub_room/Fire4/StaticBody3D/Area3D" to="Rooms/hub_room/Fire4" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire5/StaticBody3D/Area3D" to="Rooms/hub_room/Fire5" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire6/StaticBody3D/Area3D" to="Rooms/hub_room/Fire6" method="_on_area_3d_area_entered"]
+[connection signal="fire_stopped" from="stop_fire" to="Rooms/hub_room/Fire" method="_on_stop_fire_fire_stopped"]
+[connection signal="fire_stopped" from="stop_fire" to="Rooms/hub_room/Fire2" method="_on_stop_fire_fire_stopped"]
+[connection signal="fire_stopped" from="stop_fire" to="Rooms/hub_room/Fire3" method="_on_stop_fire_fire_stopped"]
+[connection signal="fire_stopped" from="stop_fire" to="Rooms/hub_room/Fire4" method="_on_stop_fire_fire_stopped"]
+[connection signal="fire_stopped" from="stop_fire" to="Rooms/hub_room/Fire5" method="_on_stop_fire_fire_stopped"]
+[connection signal="fire_stopped" from="stop_fire" to="Rooms/hub_room/Fire6" method="_on_stop_fire_fire_stopped"]

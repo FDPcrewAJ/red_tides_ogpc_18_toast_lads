@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=54 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_vsjom"]
@@ -49,8 +49,15 @@ uv1_world_triplanar = true
 material = SubResource("StandardMaterial3D_yqy73")
 size = Vector2(60, 10)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3csc1"]
-points = PackedVector3Array(30.2027, -0.202703, 5.33784, -30.2027, -0.202703, -5.2027, 30.2027, -0.202703, -5.2027, -30.2027, -0.202703, 5.33784)
+[sub_resource type="BoxShape3D" id="BoxShape3D_83aqj"]
+size = Vector3(60, 1, 10)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0jhhl"]
+material = SubResource("StandardMaterial3D_yqy73")
+size = Vector2(30, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wott5"]
+size = Vector3(30, 1, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
 material = ExtResource("6_u01vf")
@@ -73,8 +80,23 @@ albedo_color = Color(0.784092, 0, 0.128263, 1)
 material = SubResource("StandardMaterial3D_2ccjm")
 size = Vector3(10, 1, 10)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ylig5"]
-points = PackedVector3Array(4.78818, 0.5, 4.78724, -5.07837, -0.579365, -5.07738, -5.07837, -0.579365, 5.07738, 5.07837, -0.579365, -5.07738, -4.78818, 0.5, -4.78724, 5.07837, -0.579365, 5.07738, -4.78818, 0.5, 4.78724, 4.78818, 0.5, -4.78724)
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ieqx"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnhlj"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0krpe"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ni1ut"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wuh5f"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_38w1i"]
+size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5nlea"]
 size = Vector3(75, 80, 50)
@@ -212,17 +234,19 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/hub_room/RoomParts/Ceiling"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/RoomParts/Ceiling/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_3csc1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_83aqj")
 
 [node name="Ceiling2" type="MeshInstance3D" parent="Rooms/hub_room/RoomParts"]
-transform = Transform3D(4.37114e-08, 5.21079e-15, 1, 1.19209e-07, -1, 0, 1, 1.19209e-07, -4.37114e-08, 0, 6.51265, -10)
-mesh = SubResource("PlaneMesh_e6bkn")
+transform = Transform3D(4.37114e-08, 5.21079e-15, 1, 1.19209e-07, -1, 0, 1, 1.19209e-07, -4.37114e-08, 0, 6.51265, -20)
+mesh = SubResource("PlaneMesh_0jhhl")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Rooms/hub_room/RoomParts/Ceiling2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/RoomParts/Ceiling2/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_3csc1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_wott5")
 
 [node name="Wall" type="MeshInstance3D" parent="Rooms/hub_room/RoomParts"]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, -1, 0, 1, 1.19249e-08, 0, 5, -35)
@@ -585,7 +609,7 @@ script = ExtResource("4_rnf6b")
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_ylig5")
+shape = SubResource("BoxShape3D_2ieqx")
 
 [node name="Fire2" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 0, 0)
@@ -597,7 +621,7 @@ script = ExtResource("5_yh3cq")
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire2/StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire2/StaticBody3D/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_ylig5")
+shape = SubResource("BoxShape3D_tnhlj")
 
 [node name="Fire3" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 0)
@@ -609,7 +633,7 @@ script = ExtResource("6_vdwiv")
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire3/StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire3/StaticBody3D/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_ylig5")
+shape = SubResource("BoxShape3D_0krpe")
 
 [node name="Fire4" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.5)
@@ -621,7 +645,7 @@ script = ExtResource("7_miv6a")
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire4/StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire4/StaticBody3D/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_ylig5")
+shape = SubResource("BoxShape3D_ni1ut")
 
 [node name="Fire5" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21)
@@ -633,7 +657,7 @@ script = ExtResource("8_4rpbl")
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire5/StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire5/StaticBody3D/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_ylig5")
+shape = SubResource("BoxShape3D_wuh5f")
 
 [node name="Fire6" type="MeshInstance3D" parent="Rooms/hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.5)
@@ -645,7 +669,7 @@ script = ExtResource("9_dy4x5")
 [node name="Area3D" type="Area3D" parent="Rooms/hub_room/Fire6/StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rooms/hub_room/Fire6/StaticBody3D/Area3D"]
-shape = SubResource("ConvexPolygonShape3D_ylig5")
+shape = SubResource("BoxShape3D_38w1i")
 
 [node name="wooden_desk_1" parent="Rooms/hub_room" instance=ExtResource("14_318wx")]
 transform = Transform3D(-4.37115e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37115e-08, -0.491439, -0.00580204, -1.3059)

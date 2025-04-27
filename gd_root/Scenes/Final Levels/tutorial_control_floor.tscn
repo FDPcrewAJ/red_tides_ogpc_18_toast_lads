@@ -762,7 +762,11 @@ transform = Transform3D(-6.77529e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90101e-0
 [node name="office_door2" parent="world/building/doors" instance=ExtResource("13_5cw6g")]
 transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07, -5.7079, 0.5, -7.04945)
 
-[node name="wood_door_closed" parent="world/building/doors" instance=ExtResource("14_dc48g")]
+[node name="fire_door_open" parent="world/building/doors" instance=ExtResource("13_5cw6g")]
+transform = Transform3D(-6.77527e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.80647, 0.5, 10.7411)
+visible = false
+
+[node name="fire_door_closed" parent="world/building/doors" instance=ExtResource("14_dc48g")]
 transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.80647, 0.5, 10.7411)
 
 [node name="interactables" type="Node3D" parent="world"]

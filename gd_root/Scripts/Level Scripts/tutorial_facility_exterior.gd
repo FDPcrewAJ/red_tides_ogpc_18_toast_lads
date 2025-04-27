@@ -135,17 +135,17 @@ func match_text_display(line_string) -> String:
 		"line_9":
 			return "This is going to be so much fun!"
 		"line_10":
-			return "Alright, we’re almost here…"
+			return "Alright, we’re almost there…"
 		"line_11":
 			return "Alright, as you probably noticed, we’re here. Yippee."
 		"line_12":
-			return " I should probably disclose something… I was ordered to remove a couple vital ship parts once you arrived."
+			return "I should probably disclose something… I was ordered to remove a couple vital ship parts once you arrived."
 		"line_13":
 			return "The last recruit deserted, and that was the higher ups’ best idea to prevent that from happening again."
 		"line_14":
 			return "I personally think that’s a terrible idea. What if a really powerful storm came and killed me with a lightning bolt, leaving you stranded here?"
 		"line_15":
-			return "Haha, that would never happen, as long as we put in the right codes..."
+			return "Ha! that would never happen, as long as we put in the right codes..."
 		"line_16":
 			return "Ah well, orders are orders, so I better get to it. Go ahead and explore. I’ll meet you in the control room. NO PEEKING!"
 	return ""

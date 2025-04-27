@@ -162,7 +162,7 @@ func play_next_line():
 	tutorial_text_ui.set_text(match_text_display(Global.voice_line))
 
 
-func _on_intro_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_intro_animation_player_animation_finished(_anim_name: StringName) -> void:
 	boat_cptn_anim = boat_cptn_talk.get_child(1)
 	boat_cptn_anim.play("animation")
 	voice_audio.set_stream(match_voice_line(Global.voice_line))

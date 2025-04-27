@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://bcrwco2xn1qus"]
+[gd_scene load_steps=23 format=3 uid="uid://bcrwco2xn1qus"]
 
 [ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_h6pvi"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uccvb"]
 [ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="2_6o8v6"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_5b5p7"]
+[ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="3_ufpcx"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="5_u4hxr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_controls.gd" id="6_2wut2"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_doors.gd" id="6_uubdo"]
+[ext_resource type="Texture2D" uid="uid://iop1l5r2tkky" path="res://Imports/images/elevator_panel.png" id="8_mr1e1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw7hu"]
 albedo_texture = ExtResource("1_h6pvi")
@@ -60,6 +62,16 @@ points = PackedVector3Array(0.0998541, 0.5, 0.843277, -0.113471, -0.513492, -0.8
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.64342, 0)
 light_color = Color(1, 1, 0.635294, 1)
+
+[node name="long_wall_light_1" type="OmniLight3D" parent="."]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, 1, -2.98023e-08, -1, -4.37114e-08, 1, -2.98023e-08, 4.37114e-08, -0.0873753, 3.71298, 0)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light" parent="long_wall_light_1" instance=ExtResource("3_ufpcx")]
+transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15575e-07, 1.42109e-14, 2.15575e-07, 0.7, 0, -1.2735, 0)
 
 [node name="Cabin" type="Node3D" parent="."]
 
@@ -148,3 +160,7 @@ script = ExtResource("6_2wut2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Controls/ElevatorControls/ControlBody"]
 shape = SubResource("ConvexPolygonShape3D_a0u2t")
+
+[node name="Sprite3D" type="Sprite3D" parent="Controls/ElevatorControls"]
+transform = Transform3D(-3.66457e-08, 0, 1, 0, 1, 0, -0.838355, 0, -4.37114e-08, -0.11, 0, 0)
+texture = ExtResource("8_mr1e1")

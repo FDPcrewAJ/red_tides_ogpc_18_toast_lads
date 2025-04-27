@@ -1,8 +1,9 @@
-[gd_scene load_steps=78 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=79 format=3 uid="uid://dqf6otyy7labd"]
 
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor.gd" id="1_1cixc"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="3_ydh84"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/cntrl_floor_view_interact_menu.gd" id="4_u34bp"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_we0lx"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="5_wxha2"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="6_hhiki"]
@@ -183,12 +184,15 @@ size = Vector2(0.7, 0.7)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8icv8"]
 points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
 
-[node name="control_floor" type="Node3D"]
-script = ExtResource("1_1cixc")
+[node name="tutorial_control_floor" type="Node3D"]
+script = ExtResource("1_lar5y")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("2_jk8qq")]
 
 [node name="MenuPrompt" parent="." instance=ExtResource("3_ydh84")]
+
+[node name="view_interact_menu" type="Node3D" parent="."]
+script = ExtResource("4_u34bp")
 
 [node name="player" parent="." instance=ExtResource("4_we0lx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
@@ -213,7 +217,7 @@ script = ExtResource("7_if7oh")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/elevator/facility_elevator"]
-transform = Transform3D(1, 0, -1.69407e-21, 0, 1, 0, 1.69407e-21, 0, 1, 0.0725574, 1.75, 0)
+transform = Transform3D(1, 0, 3.19744e-13, 0, 1, 0, -3.19744e-13, 0, 1, 0.0725575, 1.75, 0)
 shape = SubResource("BoxShape3D_gak6s")
 
 [node name="building" type="Node3D" parent="world"]
@@ -229,6 +233,7 @@ shape = SubResource("BoxShape3D_fynni")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -528,6 +533,17 @@ omni_range = 9.13347
 [node name="small_industrial_light" parent="world/building/lights/red_wall_light" instance=ExtResource("11_rmawu")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
+[node name="red_wall_light2" type="OmniLight3D" parent="world/building/lights"]
+transform = Transform3D(1.91069e-15, -1, -8.74229e-08, -1, 1.91069e-15, -4.37115e-08, 4.37115e-08, 8.74229e-08, -1, -6.46445, 4.66859, 10.7641)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/lights/red_wall_light2" instance=ExtResource("11_rmawu")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
 [node name="wall_light_18" type="OmniLight3D" parent="world/building/lights"]
 transform = Transform3D(-4.37114e-08, -2.18557e-07, -1, -1, 1.91067e-15, 4.37114e-08, -7.64274e-15, 1, -2.18557e-07, 20.8454, 4.67509, 2.19955)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
@@ -762,11 +778,7 @@ transform = Transform3D(-6.77529e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90101e-0
 [node name="office_door2" parent="world/building/doors" instance=ExtResource("13_5cw6g")]
 transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07, -5.7079, 0.5, -7.04945)
 
-[node name="fire_door_open" parent="world/building/doors" instance=ExtResource("13_5cw6g")]
-transform = Transform3D(-6.77527e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.80647, 0.5, 10.7411)
-visible = false
-
-[node name="fire_door_closed" parent="world/building/doors" instance=ExtResource("14_dc48g")]
+[node name="fire_door" parent="world/building/doors" instance=ExtResource("14_dc48g")]
 transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.80647, 0.5, 10.7411)
 
 [node name="interactables" type="Node3D" parent="world"]

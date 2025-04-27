@@ -1,13 +1,13 @@
-[gd_scene load_steps=49 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=46 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
-[ext_resource type="Texture2D" uid="uid://dfnxif0aibw3t" path="res://Textures/Interior Textures/Floors/floor_tile_wethered.png" id="2_k2snt"]
 [ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_vsjom"]
-[ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="3_omovr"]
-[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="4_2d4v5"]
+[ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire.gd" id="4_rnf6b"]
+[ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="5_kukqc"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_2.gd" id="5_yh3cq"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="6_2u4dh"]
+[ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="6_u01vf"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_3.gd" id="6_vdwiv"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_5.gd" id="8_4rpbl"]
@@ -19,12 +19,14 @@
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="17_ld0ud"]
+[ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="21_4woo7"]
 [ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="21_nmg6w"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_puzzle_note.gd" id="22_7ep3d"]
+[ext_resource type="PackedScene" uid="uid://odho4730c5y5" path="res://Imports/Models/Objects/Elevator/Elevator.gltf" id="22_ad8m1"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_elevator_doors.gd" id="23_lcn6t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
-albedo_texture = ExtResource("2_k2snt")
+albedo_texture = ExtResource("4_a3jpa")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xoadi"]
@@ -35,8 +37,10 @@ size = Vector2(10, 10)
 points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqy73"]
-albedo_texture = ExtResource("3_omovr")
+albedo_texture = ExtResource("5_kukqc")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e6bkn"]
 material = SubResource("StandardMaterial3D_yqy73")
@@ -45,25 +49,15 @@ size = Vector2(60, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3csc1"]
 points = PackedVector3Array(30.2027, -0.202703, 5.33784, -30.2027, -0.202703, -5.2027, 30.2027, -0.202703, -5.2027, -30.2027, -0.202703, 5.33784)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aive5"]
-albedo_texture = ExtResource("4_2d4v5")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ftc0"]
-material = SubResource("StandardMaterial3D_aive5")
+material = ExtResource("6_u01vf")
 size = Vector2(10, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qnkde"]
 points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3k1h"]
-albedo_texture = ExtResource("4_2d4v5")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_ruxwr"]
-material = SubResource("StandardMaterial3D_k3k1h")
+material = ExtResource("6_u01vf")
 size = Vector2(60, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ylkc8"]
@@ -92,7 +86,8 @@ material = SubResource("StandardMaterial3D_aksqs")
 points = PackedVector3Array(0.457871, 0.198079, 0.0157824, -0.48874, -0.0916874, -0.0451868, -0.471509, -0.137027, -0.0907015, 0.0763591, -0.333275, 0.364179, 0.136569, -0.332425, -0.346906, -0.151617, 0.471982, -0.0602459, -0.105347, 0.211936, 0.43966, -0.0450169, 0.198098, -0.456416, 0.409077, -0.151168, 0.242516, -0.271376, -0.377761, 0.181871, 0.41148, -0.075981, -0.27324, 0.198197, -0.456161, -0.044931, -0.240641, -0.331674, -0.285768, 0.227137, 0.25672, 0.363041, 0.227522, 0.423604, -0.135488, -0.37899, 0.0607022, 0.319462, -0.406747, 0.181049, -0.225691, -0.0146313, -0.0917695, 0.490229, -0.377855, 0.302793, 0.121712, 0.0462323, 0.456011, 0.198185, -0.227464, -0.0607863, -0.440348, 0.228455, 0.0607228, -0.439887, -0.0911376, -0.489246, -0.045174, 0.441865, -0.228216, -0.0449581, 0.317179, 0.241214, -0.300812, -0.0448487, 0.394737, -0.302955, -0.316348, -0.196222, 0.332551, 0.198442, -0.0304293, 0.457237, 0.0614714, -0.152246, -0.471307, 0.363089, 0.256708, 0.227079, 0.152134, -0.439489, 0.182379, -0.210725, 0.362276, 0.27223)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndkrc"]
-albedo_color = Color(1, 1, 0, 1)
+transparency = 1
+albedo_texture = ExtResource("21_4woo7")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2x4r8"]
 material = SubResource("StandardMaterial3D_ndkrc")
@@ -101,18 +96,8 @@ size = Vector2(0.7, 0.7)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i6sqg"]
 points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
 
-[sub_resource type="BoxMesh" id="BoxMesh_3w4c4"]
-size = Vector3(3, 4, 0.2)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rtas8"]
-points = PackedVector3Array(1.51557, 2.03175, 0.122173, -1.53145, -2.03175, -0.131696, -1.53145, -2.03175, 0.122173, -1.53145, 2.03175, -0.131696, 1.51557, -2.03175, -0.131696, 1.51557, -2.03175, 0.122173, -1.53145, 2.03175, 0.122173, 1.51557, 2.03175, -0.131696)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2yq8"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_vwyme"]
-material = SubResource("StandardMaterial3D_d2yq8")
-size = Vector2(0.1, 4)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3g427"]
+size = Vector3(2.5, 3, 0.5)
 
 [node name="FirePuzzleRoom" type="Node3D"]
 
@@ -127,46 +112,6 @@ environment = ExtResource("2_vsjom")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 0.162
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.7871, 0)
-light_color = Color(1, 1, 0.698039, 1)
-light_energy = 16.0
-shadow_enabled = true
-spot_range = 13.4022
-spot_angle = 43.3159
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.7871, -15)
-light_color = Color(1, 1, 0.698039, 1)
-light_energy = 16.0
-shadow_enabled = true
-spot_range = 13.4022
-spot_angle = 43.3159
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.07777, -30)
-light_color = Color(0.854902, 0, 0, 1)
-light_energy = 16.0
-shadow_enabled = true
-spot_range = 13.4022
-spot_angle = 43.3159
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 10.7871, 0)
-light_color = Color(1, 1, 0.698039, 1)
-light_energy = 16.0
-shadow_enabled = true
-spot_range = 13.4022
-spot_angle = 43.3159
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -15, 10.7871, 0)
-light_color = Color(1, 1, 0.698039, 1)
-light_energy = 16.0
-shadow_enabled = true
-spot_range = 13.4022
-spot_angle = 43.3159
 
 [node name="Rooms" type="Node" parent="."]
 
@@ -264,7 +209,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_rb3fy")
 
 [node name="Ceiling" type="MeshInstance3D" parent="Rooms/hub_room/RoomParts"]
-transform = Transform3D(-1, -1.19209e-07, 0, 1.19209e-07, -1, 0, 0, 0, 1, 5, 6.97254, 0)
+transform = Transform3D(-1, -1.19209e-07, 0, 1.19209e-07, -1, 0, 0, 0, 1, 5, 6.48713, 0)
 mesh = SubResource("PlaneMesh_e6bkn")
 skeleton = NodePath("../..")
 
@@ -274,7 +219,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_3csc1")
 
 [node name="Ceiling2" type="MeshInstance3D" parent="Rooms/hub_room/RoomParts"]
-transform = Transform3D(4.37114e-08, 5.21079e-15, 1, 1.19209e-07, -1, 0, 1, 1.19209e-07, -4.37114e-08, 0, 6.97254, -10)
+transform = Transform3D(4.37114e-08, 5.21079e-15, 1, 1.19209e-07, -1, 0, 1, 1.19209e-07, -4.37114e-08, 0, 6.51265, -10)
 mesh = SubResource("PlaneMesh_e6bkn")
 skeleton = NodePath("../..")
 
@@ -434,6 +379,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_ylkc8")
 
 [node name="lights" type="Node3D" parent="Rooms/hub_room/RoomParts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20701, 0)
 
 [node name="long_industrial_light" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
 transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, -8.3672, 5.70242, -4.92067)
@@ -479,10 +425,65 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
+[node name="long_industrial_light12" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, 9.27359, 5.70242, 5.02089)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights/long_industrial_light12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light13" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, 21.8325, 5.70242, 5.02089)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights/long_industrial_light13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light14" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, -20.9261, 5.70242, 5.02089)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights/long_industrial_light14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light15" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, -8.36718, 5.70242, 5.02089)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights/long_industrial_light15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
 [node name="long_industrial_light5" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
 transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, 30.7215, 5.70242, -4.92067)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights/long_industrial_light5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+light_color = Color(0.997931, 0.817462, 0.416284, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="long_industrial_light16" parent="Rooms/hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, 30.7215, 5.70242, 5.0067)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms/hub_room/RoomParts/lights/long_industrial_light16"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
@@ -716,14 +717,14 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114
 transform = Transform3D(1.57239e-08, 0.35972, 0.93306, 1, -4.37114e-08, 0, 4.07854e-08, 0.93306, -0.35972, -2.6, 1.5, -1.4366)
 
 [node name="FirePuzzleNote" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.74537e-08, 0.399293, 0.916823, 1, -4.37114e-08, 0, 4.00756e-08, 0.916823, -0.399293, -2.47845, 1.5, -0.325563)
+transform = Transform3D(0.932153, 0.360219, 0.0365008, -4.65661e-08, 0.100813, -0.994905, -0.362064, 0.927404, 0.0939732, -2.2467, 1.61862, -0.463123)
 mesh = SubResource("PlaneMesh_2x4r8")
 script = ExtResource("22_7ep3d")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="FirePuzzleNote"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564079, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, -0.016324, -0.0179489)
 light_color = Color(0.94902, 0.956863, 0, 1)
-light_energy = 0.565
+light_energy = 0.205
 omni_range = 1.29291
 
 [node name="FirePuzzleNoteBody" type="StaticBody3D" parent="FirePuzzleNote"]
@@ -746,19 +747,16 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 32.7217,
 text = "3"
 font_size = 100
 
-[node name="FireElevatorDoors" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -1.04397e-07, 2, 5)
-mesh = SubResource("BoxMesh_3w4c4")
+[node name="fire_elevator_doors" parent="." instance=ExtResource("22_ad8m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.164738, 0.0152773, 4.93826)
 script = ExtResource("23_lcn6t")
 
-[node name="ElevatorDoorBody" type="StaticBody3D" parent="FireElevatorDoors"]
+[node name="ElevatorDoorBody" type="StaticBody3D" parent="fire_elevator_doors"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 1.97837, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FireElevatorDoors/ElevatorDoorBody"]
-shape = SubResource("ConvexPolygonShape3D_rtas8")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.965926, -0.258819, 1.13133e-08, -1.04222e-22, -4.37114e-08, -1, 0.258819, -0.965926, 4.2222e-08, 1.00672e-07, 2, 4.87213)
-mesh = SubResource("PlaneMesh_vwyme")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fire_elevator_doors/ElevatorDoorBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00991821, -0.534271, 0.0154724)
+shape = SubResource("BoxShape3D_3g427")
 
 [connection signal="area_entered" from="Rooms/hub_room/Fire/Area3D" to="Rooms/hub_room/Fire" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="Rooms/hub_room/Fire2/StaticBody3D/Area3D" to="Rooms/hub_room/Fire2" method="_on_area_3d_area_entered"]

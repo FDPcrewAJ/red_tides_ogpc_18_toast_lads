@@ -5,4 +5,4 @@ func _ready():
 		queue_free()
 
 func _on_area_3d_area_entered(_area):
-	get_tree().change_scene_to_file("res://Scenes/Testing Rooms/pipe_puzzle_test.tscn")
+	get_tree().change_scene_to_file("res://Scenes/testingLevels/fire_puzzle.tscn")

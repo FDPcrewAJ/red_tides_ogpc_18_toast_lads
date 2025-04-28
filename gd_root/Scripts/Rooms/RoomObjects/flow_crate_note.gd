@@ -11,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#This needs to correspond to the note's body node
-	if Global.current_object == "FlowPuzzleNoteBody":
+	if Global.current_object == "FlowCrateNoteBody":
 		#Must correspond to the interactables display node in the current scene
 		interactables_display._show_interactable()
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):

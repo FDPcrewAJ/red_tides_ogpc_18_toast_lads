@@ -1775,7 +1775,7 @@ transform = Transform3D(-0.492143, 0, -4.30245e-08, 3.76132e-15, -0.492143, -4.3
 transform = Transform3D(-0.492143, 0, -4.30245e-08, 3.76132e-15, -0.492143, -4.30245e-08, -4.30245e-08, -4.30245e-08, 0.492143, 4.76691, 4.1562, -0.751549)
 
 [node name="metal_box" parent="world/decorations/waterPump" instance=ExtResource("17_r33p1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76256, 0.447815, 1.1754)
+transform = Transform3D(1, 0, 0, 0, 1.49332, 0, 0, 0, 1, -3.76256, 0.447815, 1.1754)
 script = ExtResource("34_3jexe")
 
 [node name="FlowPuzzleNote" type="MeshInstance3D" parent="world/decorations/waterPump"]
@@ -1796,7 +1796,7 @@ omni_range = 1.29291
 shape = SubResource("ConvexPolygonShape3D_x1e8i")
 
 [node name="FlowCrateNote" type="MeshInstance3D" parent="world/decorations/waterPump"]
-transform = Transform3D(-0.80069, 0.599081, 1.47336e-08, -4.37114e-08, -2.98023e-08, -1, -0.599081, -0.80069, 2.22877e-09, -3.04241, 2.01552, 1.71106)
+transform = Transform3D(-0.0614484, 0.998112, 7.8357e-09, -4.37114e-08, -2.98023e-08, -1, -0.998112, -0.0614484, 1.26747e-08, -5.47142, 2.01552, 0.00666809)
 mesh = SubResource("PlaneMesh_jrgv2")
 skeleton = NodePath("../..")
 script = ExtResource("37_c0bo3")

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dixq4mqfagy4a" path="res://Imports/Models/Objects/Battery/BoatBatteryNew.gltf" id="1_5eueo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l4f5b"]
-size = Vector3(1.18652, 0.836945, 0.828552)
+size = Vector3(1.18652, 2.90058, 0.828552)
 
 [node name="battery" instance=ExtResource("1_5eueo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -11,5 +11,5 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 [node name="battery_col" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="battery_col" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00146484, 0.412674, 0.121735)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00146484, 1.44449, 0.121735)
 shape = SubResource("BoxShape3D_l4f5b")

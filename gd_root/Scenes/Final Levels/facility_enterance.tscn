@@ -153,6 +153,8 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -7.48814, 0.5, 9.40793)
 
 [node name="floor" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.55372)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/floor"]
 shape = SubResource("BoxShape3D_qv5ek")
@@ -163,6 +165,8 @@ mesh = SubResource("PlaneMesh_tifrv")
 
 [node name="floor2" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49086, 0, -10.9398)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/floor2"]
 shape = SubResource("BoxShape3D_segfs")
@@ -173,6 +177,9 @@ mesh = SubResource("PlaneMesh_dbij8")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+visible = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/ceiling"]
 shape = SubResource("BoxShape3D_qv5ek")
@@ -182,6 +189,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_4qnlk")
 
 [node name="walls" type="Node3D" parent="world/building"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="wall" type="StaticBody3D" parent="world/building/walls"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -10, 3, 1.46416)
@@ -298,6 +307,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_e3fvd")
 
 [node name="lights" type="Node3D" parent="world/building"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="wall_light_1" type="OmniLight3D" parent="world/building/lights"]
 transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -2.39869, 4.67509, -2.0474)
@@ -400,6 +411,8 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="doors" type="Node3D" parent="world/building"]
 script = ExtResource("8_lbbin")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="open_generator_door" parent="world/building/doors" instance=ExtResource("8_ltams")]
 transform = Transform3D(1.5, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -7.5, 0.5, -7.5)

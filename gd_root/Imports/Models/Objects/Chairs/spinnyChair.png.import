@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/spinnyChair.png-9b7c30e14f4617e2e8acb46e65cb0
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

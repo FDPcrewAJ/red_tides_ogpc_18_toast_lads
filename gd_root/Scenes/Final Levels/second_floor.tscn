@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ea5nc6kal33" path="res://Imports/images/layouts/floor_2_schematic.png" id="2_2sv3j"]
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="3_6sppc"]
 [ext_resource type="PackedScene" uid="uid://dqnyt2b1il67q" path="res://Assets/Objects/Boat/Boat Parts/antennas.tscn" id="3_h8ph8"]
-[ext_resource type="Script" path="res://Assets/Objects/Boat/Boat Parts/antennas.gd" id="3_yg7qf"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/antennas.gd" id="3_yg7qf"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="4_f7qmu"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_ldpmi"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="5_yfgx1"]

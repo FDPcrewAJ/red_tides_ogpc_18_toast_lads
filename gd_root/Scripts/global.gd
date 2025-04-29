@@ -8,11 +8,12 @@ var previous_scene = "res://Scenes/Menus/title_screen.tscn"
 
 # Storm system control 
 var time_left = 20
+var watch_collected = false
 var timer_active = false
 var needle_rotation = 1
 
 #List pickup boolean
-var list_in_hand = true
+var list_collected= true
 
 # Player ray cast collision range for interaction
 var current_object = "none"
@@ -76,8 +77,8 @@ var radar_collected = false
 
 # Tutorial Control var
 var default_audio_name = "line_"
-var line_num = 0
-var voice_line = ""
+var line_num = 17
+var voice_line = "line_17"
 
 var entry_position = true
 

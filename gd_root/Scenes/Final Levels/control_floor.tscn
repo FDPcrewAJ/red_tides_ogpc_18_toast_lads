@@ -989,7 +989,7 @@ transform = Transform3D(0.951089, 0, -0.308917, 0, 1, 0, 0.308917, 0, 0.951089, 
 [node name="misc" type="Node3D" parent="world/decor/mainHall"]
 
 [node name="fridge" parent="world/decor/mainHall/misc" instance=ExtResource("14_ecxhl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.282, 0.43245, -12.7865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.282, 0.43245, -17.4897)
 
 [node name="fridge2" parent="world/decor/mainHall/misc" instance=ExtResource("14_ecxhl")]
 transform = Transform3D(-0.161776, 0, -0.986827, 0, 1, 0, 0.986827, 0, -0.161776, 35.0936, 0.43245, -21.5871)

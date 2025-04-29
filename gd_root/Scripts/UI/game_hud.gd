@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 func _input(_event) -> void:
-	if Global.list_in_hand:
+	if Global.list_collected:
 		if Input.is_action_just_pressed("open_list"):
 			if list.visible:
 				list.visible = false
@@ -40,10 +40,13 @@ func _input(_event) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Watch Visibility Control
+	if Global.watch_collected:
+		stopwatch_dial.show()
 	#Countdown activation
 	if Global.timer_active:
-		stopwatch_dial.show()
 		count_down(delta)
+	
 	update_list()
 
 

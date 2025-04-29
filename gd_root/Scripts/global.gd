@@ -4,7 +4,7 @@ var new_game = false
 
 var room_completed = false
 
-var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
+var previous_scene = "res://Scenes/Menus/title_screen.tscn"
 
 # Storm system control 
 var time_left = 20

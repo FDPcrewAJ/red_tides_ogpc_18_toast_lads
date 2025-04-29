@@ -31,7 +31,7 @@ texture = ExtResource("5_2ipfb")
 [node name="TilePuzzleInterface" type="Node2D"]
 script = ExtResource("1_306ms")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_gtnnh")
 

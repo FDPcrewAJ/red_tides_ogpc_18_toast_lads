@@ -1071,37 +1071,6 @@ transform = Transform3D(0.189308, 0, 0.777279, 0, 0.8, 0, -0.777279, 0, 0.189308
 [node name="computer4" parent="world/decor/mainHall/tech" instance=ExtResource("27_xa3je")]
 transform = Transform3D(0.122306, 0, -0.790596, 0, 0.8, 0, 0.790596, 0, 0.122306, 7.69001, 1.62149, -10.0945)
 
-[node name="control_floor_lore_chatlog" type="StaticBody3D" parent="world/decor/mainHall/tech/computer4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer4/control_floor_lore_chatlog"]
-transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
-shape = SubResource("BoxShape3D_s12nq")
-
-[node name="ChatlogDecorativeLabel" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.288076, 1.14588, 0.430409)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "-----"
-
-[node name="ChatlogDecorativeLabel2" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.180449, 0.985913, 0.447059)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~~"
-
-[node name="ChatlogDecorativeLabel3" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.0862622, 0.891669, 0.46163)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~~~~"
-
-[node name="ChatlogDecorativeLabel4" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.795077, 0.441541)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~"
-
-[node name="ChatlogDecorativeLabel5" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.678863, 0.441541)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~"
-
 [node name="computer5" parent="world/decor/mainHall/tech" instance=ExtResource("27_xa3je")]
 transform = Transform3D(0.0885091, 0, 0.795089, 0, 0.8, 0, -0.795089, 0, 0.0885091, -1.1255, 1.62149, -14.7018)
 
@@ -1393,3 +1362,5 @@ shape = SubResource("ConvexPolygonShape3D_8icv8")
 
 [node name="puzzle_interaction" type="Node3D" parent="."]
 script = ExtResource("38_cxfwe")
+
+[node name="tutorial_sequence" type="Node3D" parent="."]

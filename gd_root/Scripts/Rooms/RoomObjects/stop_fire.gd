@@ -1,13 +1,12 @@
 extends Node3D
 
-@onready var interactables_display: Control = $"../InteractablesDisplay"
-@onready var fire_console: CSGMesh3D = $"../Rooms/hub_room/FireConsole"
-@onready var fire_console_2: CSGMesh3D = $"../Rooms/hub_room/FireConsole2"
-@onready var fire_console_3: CSGMesh3D = $"../Rooms/hub_room/FireConsole3"
-
-
-
 signal fire_stopped
+
+@onready var interactables_display: Control = $"../InteractablesDisplay"
+@onready var fire_console: CSGMesh3D = $"../hub_room/FireConsole"
+@onready var fire_console_2: CSGMesh3D = $"../hub_room/FireConsole2"
+@onready var fire_console_3: CSGMesh3D = $"../hub_room/FireConsole3"
+
 
 func _process(_delta: float) -> void:
 	if not Global.fire_puzzle_completed:

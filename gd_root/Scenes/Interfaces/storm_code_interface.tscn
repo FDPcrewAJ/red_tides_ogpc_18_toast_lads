@@ -1,9 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqamg7hyrm2a7"]
+[gd_scene load_steps=13 format=3 uid="uid://cqamg7hyrm2a7"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/storm_code_interface.gd" id="1_12d1d"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_k4clt"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/storm_code_label.gd" id="4_krqfg"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="5_s2sqo"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_iscsx"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="6_mc7th"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vs43l"]
+texture = ExtResource("5_s2sqo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akabv"]
+texture = ExtResource("6_mc7th")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ujvd5"]
+texture = ExtResource("5_s2sqo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltb3q"]
+texture = ExtResource("5_s2sqo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnaad"]
+texture = ExtResource("6_mc7th")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie40k"]
+texture = ExtResource("5_s2sqo")
 
 [node name="storm_code_interface" type="Node2D"]
 script = ExtResource("1_12d1d")
@@ -15,17 +35,22 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_k4clt")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -393.0
-offset_top = 287.0
-offset_right = -175.0
-offset_bottom = 425.0
+offset_left = -412.0
+offset_top = 304.0
+offset_right = -173.0
+offset_bottom = 419.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("6_iscsx")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxTexture_vs43l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_akabv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ujvd5")
 text = "Back"
 
 [node name="StormCodeLabel" type="Label" parent="."]
@@ -41,18 +66,23 @@ text = "Incorrect Calibration"
 script = ExtResource("4_krqfg")
 
 [node name="SearchButton" type="Button" parent="."]
-offset_left = -850.0
+offset_left = -768.0
 offset_top = 100.0
-offset_right = 277.0
+offset_right = 204.0
 offset_bottom = 238.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("6_iscsx")
-theme_override_font_sizes/font_size = 90
-text = "Search for Storm Origin"
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = SubResource("StyleBoxTexture_ltb3q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jnaad")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ie40k")
+text = "Search For Storm Origin"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SearchButton" to="." method="_on_search_button_pressed"]

@@ -5,14 +5,13 @@ var goalPositionX = 0
 var goalPositionY = 0
 var puzzle_complete = false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	goalPositionX = RandomNumberGenerator.new().randf_range(200, 1800)
 	goalPositionY = RandomNumberGenerator.new().randf_range(200, 800)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if mouse_touching == true:
 		if Input.is_action_pressed("left_click"):
 			position = get_global_mouse_position()
@@ -31,6 +30,7 @@ func _process(delta: float) -> void:
 					texture = load("res://Imports/images/radarDot-removebg-preview-orange.png")
 			else:
 				texture = load("res://Imports/images/radarDot-removebg-preview-red.png")
+
 
 func _on_area_2d_mouse_entered() -> void:
 	mouse_touching = true

@@ -1,18 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://chsm0jgs0uxer"]
+[gd_scene load_steps=13 format=3 uid="uid://chsm0jgs0uxer"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_puzzle_interface.gd" id="1_17h1u"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_dot.gd" id="2_1a1eu"]
 [ext_resource type="Texture2D" uid="uid://c4vdr6qghii0t" path="res://Imports/images/radarDot-removebg-preview-green.png" id="2_glelx"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_mwute"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_label.gd" id="4_dbtnt"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_d8ij4"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="7_dk8js"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="8_hvcfd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5yf3"]
 radius = 323.883
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7syiq"]
+texture = ExtResource("7_dk8js")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6gk8p"]
+texture = ExtResource("8_hvcfd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5al50"]
+texture = ExtResource("7_dk8js")
+
 [node name="RadarPuzzleInterface" type="Node2D"]
 script = ExtResource("1_17h1u")
 
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_mwute")
+
 [node name="RadarDot" type="Sprite2D" parent="."]
-position = Vector2(1000, 500)
+position = Vector2(655, 500)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_glelx")
 script = ExtResource("2_1a1eu")
@@ -27,19 +45,35 @@ position = Vector2(1774, 239)
 scale = Vector2(0.3, 0.3)
 
 [node name="RadarLabel" type="Label" parent="."]
-offset_right = 1919.0
-offset_bottom = 96.0
-theme_override_font_sizes/font_size = 70
+offset_left = 44.0
+offset_top = 95.0
+offset_right = 1322.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_d8ij4")
+theme_override_font_sizes/font_size = 65
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_dbtnt")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = 900.0
-offset_top = 930.0
-offset_right = 1116.0
-offset_bottom = 1068.0
-theme_override_font_sizes/font_size = 90
+offset_left = 516.0
+offset_top = 881.0
+offset_right = 787.0
+offset_bottom = 998.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_d8ij4")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/hover = SubResource("StyleBoxTexture_7syiq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6gk8p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5al50")
 text = "Back"
 
 [connection signal="mouse_entered" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_entered"]

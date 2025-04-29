@@ -118,7 +118,6 @@ points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.005555
 size = Vector3(1.36, 2.25, 0.5)
 
 [node name="FirePuzzleRoom" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("16_xrgdq")]
 metadata/_edit_use_anchors_ = true

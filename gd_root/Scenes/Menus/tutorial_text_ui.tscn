@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddrrxe3s68yt0"]
+[gd_scene load_steps=5 format=3 uid="uid://ddrrxe3s68yt0"]
 
-[ext_resource type="Texture2D" uid="uid://jt8oaj3swl30" path="res://Imports/images/dialog_box.png" id="1_gonh1"]
 [ext_resource type="Script" path="res://Scripts/Menus/tutorial_text.gd" id="1_ha42g"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_o4hge"]
+[ext_resource type="Texture2D" uid="uid://rrxml8cu3iom" path="res://Imports/images/UI/wide_dialog_box.png" id="3_6spmo"]
+[ext_resource type="Texture2D" uid="uid://dkkdu6rdaequh" path="res://Imports/images/UI/star.png" id="4_f1cg3"]
 
 [node name="tutorial_text_ui" type="Control"]
 layout_mode = 3
@@ -15,10 +16,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ha42g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 361)
-scale = Vector2(11.2422, 4.5625)
-texture = ExtResource("1_gonh1")
+[node name="text_bg" type="Sprite2D" parent="."]
+position = Vector2(-0.499986, 361)
+scale = Vector2(5.62109, 4.5625)
+texture = ExtResource("3_6spmo")
+
+[node name="star" type="Sprite2D" parent="."]
+position = Vector2(660, 450)
+scale = Vector2(5, 5)
+texture = ExtResource("4_f1cg3")
 
 [node name="text_label" type="Label" parent="."]
 layout_mode = 1

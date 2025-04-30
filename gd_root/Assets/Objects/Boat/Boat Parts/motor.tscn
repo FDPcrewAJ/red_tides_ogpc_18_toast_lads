@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dorv7f50mi4pv"]
+
+[ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Imports/Models/Objects/Motor/Motor.obj" id="1_n4krx"]
+[ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="2_md055"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hfbh"]
+size = Vector3(0.550171, 1.6, 0.65)
+
+[node name="motor" type="Node3D"]
+
+[node name="Motor_model" type="CSGMesh3D" parent="."]
+mesh = ExtResource("1_n4krx")
+material = ExtResource("2_md055")
+
+[node name="motor_col" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="motor_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00262451, 1.0588, -0.134277)
+shape = SubResource("BoxShape3D_1hfbh")

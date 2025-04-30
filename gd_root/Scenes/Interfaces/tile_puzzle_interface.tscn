@@ -1,352 +1,474 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckhlefc2g5yes"]
+[gd_scene load_steps=16 format=3 uid="uid://ckhlefc2g5yes"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_button.gd" id="1_4ebpr"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_interface.gd" id="1_306ms"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_gtnnh"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_level_label.gd" id="3_07w82"]
+[ext_resource type="Texture2D" uid="uid://dkb0l02iowwp3" path="res://Textures/UI/square_button.png" id="3_s47j1"]
+[ext_resource type="Texture2D" uid="uid://burwpr3uj5wxy" path="res://Textures/UI/square_button_pressed.png" id="4_0p3x6"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="4_v8csq"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="5_2ipfb"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="7_vrk10"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ysxfl"]
+texture = ExtResource("3_s47j1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i5mct"]
+texture = ExtResource("4_0p3x6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1fll"]
+texture = ExtResource("3_s47j1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mf7y"]
+texture = ExtResource("5_2ipfb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8e5xa"]
+texture = ExtResource("7_vrk10")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x5tj2"]
+texture = ExtResource("5_2ipfb")
 
 [node name="TilePuzzleInterface" type="Node2D"]
 script = ExtResource("1_306ms")
 
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_gtnnh")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TileButton" type="Button" parent="."]
-offset_left = -516.0
-offset_top = -200.0
-offset_right = -416.0
-offset_bottom = -100.0
+offset_left = -791.0
+offset_top = -215.0
+offset_right = -691.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton2" type="Button" parent="."]
-offset_left = -516.0
-offset_top = -90.0
-offset_right = -416.0
-offset_bottom = 10.0
+offset_left = -791.0
+offset_top = -105.0
+offset_right = -691.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton3" type="Button" parent="."]
-offset_left = -516.0
-offset_top = 20.0
-offset_right = -416.0
-offset_bottom = 120.0
+offset_left = -791.0
+offset_top = 5.0
+offset_right = -691.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
+toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton4" type="Button" parent="."]
-offset_left = -516.0
-offset_top = 130.0
-offset_right = -416.0
-offset_bottom = 230.0
+offset_left = -791.0
+offset_top = 115.0
+offset_right = -691.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton5" type="Button" parent="."]
-offset_left = -399.0
-offset_top = -200.0
-offset_right = -299.0
-offset_bottom = -100.0
+offset_left = -674.0
+offset_top = -215.0
+offset_right = -574.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton6" type="Button" parent="."]
-offset_left = -399.0
-offset_top = -90.0
-offset_right = -299.0
-offset_bottom = 10.0
+offset_left = -674.0
+offset_top = -105.0
+offset_right = -574.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton7" type="Button" parent="."]
-offset_left = -399.0
-offset_top = 20.0
-offset_right = -299.0
-offset_bottom = 120.0
+offset_left = -674.0
+offset_top = 5.0
+offset_right = -574.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton8" type="Button" parent="."]
-offset_left = -399.0
-offset_top = 130.0
-offset_right = -299.0
-offset_bottom = 230.0
+offset_left = -674.0
+offset_top = 115.0
+offset_right = -574.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton9" type="Button" parent="."]
-offset_left = -281.0
-offset_top = -200.0
-offset_right = -181.0
-offset_bottom = -100.0
+offset_left = -556.0
+offset_top = -215.0
+offset_right = -456.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton10" type="Button" parent="."]
-offset_left = -281.0
-offset_top = -90.0
-offset_right = -181.0
-offset_bottom = 10.0
+offset_left = -556.0
+offset_top = -105.0
+offset_right = -456.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton11" type="Button" parent="."]
-offset_left = -281.0
-offset_top = 20.0
-offset_right = -181.0
-offset_bottom = 120.0
+offset_left = -556.0
+offset_top = 5.0
+offset_right = -456.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton12" type="Button" parent="."]
-offset_left = -281.0
-offset_top = 130.0
-offset_right = -181.0
-offset_bottom = 230.0
+offset_left = -556.0
+offset_top = 115.0
+offset_right = -456.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton13" type="Button" parent="."]
-offset_left = -165.0
-offset_top = -200.0
-offset_right = -65.0
-offset_bottom = -100.0
+offset_left = -440.0
+offset_top = -215.0
+offset_right = -340.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton14" type="Button" parent="."]
-offset_left = -165.0
-offset_top = -90.0
-offset_right = -65.0
-offset_bottom = 10.0
+offset_left = -440.0
+offset_top = -105.0
+offset_right = -340.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton15" type="Button" parent="."]
-offset_left = -165.0
-offset_top = 20.0
-offset_right = -65.0
-offset_bottom = 120.0
+offset_left = -440.0
+offset_top = 5.0
+offset_right = -340.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton16" type="Button" parent="."]
-offset_left = -165.0
-offset_top = 130.0
-offset_right = -65.0
-offset_bottom = 230.0
+offset_left = -440.0
+offset_top = 115.0
+offset_right = -340.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton17" type="Button" parent="."]
-offset_left = -50.0
-offset_top = -200.0
-offset_right = 50.0
-offset_bottom = -100.0
+offset_left = -325.0
+offset_top = -215.0
+offset_right = -225.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton18" type="Button" parent="."]
-offset_left = -50.0
-offset_top = -90.0
-offset_right = 50.0
-offset_bottom = 10.0
+offset_left = -325.0
+offset_top = -105.0
+offset_right = -225.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton19" type="Button" parent="."]
-offset_left = -50.0
-offset_top = 20.0
-offset_right = 50.0
-offset_bottom = 120.0
+offset_left = -325.0
+offset_top = 5.0
+offset_right = -225.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton20" type="Button" parent="."]
-offset_left = -50.0
-offset_top = 130.0
-offset_right = 50.0
-offset_bottom = 230.0
+offset_left = -325.0
+offset_top = 115.0
+offset_right = -225.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton21" type="Button" parent="."]
-offset_left = 66.0
-offset_top = -200.0
-offset_right = 166.0
-offset_bottom = -100.0
+offset_left = -209.0
+offset_top = -215.0
+offset_right = -109.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton22" type="Button" parent="."]
-offset_left = 66.0
-offset_top = -90.0
-offset_right = 166.0
-offset_bottom = 10.0
+offset_left = -209.0
+offset_top = -105.0
+offset_right = -109.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton23" type="Button" parent="."]
-offset_left = 66.0
-offset_top = 20.0
-offset_right = 166.0
-offset_bottom = 120.0
+offset_left = -209.0
+offset_top = 5.0
+offset_right = -109.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton24" type="Button" parent="."]
-offset_left = 66.0
-offset_top = 130.0
-offset_right = 166.0
-offset_bottom = 230.0
+offset_left = -209.0
+offset_top = 115.0
+offset_right = -109.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton25" type="Button" parent="."]
-offset_left = 180.0
-offset_top = -200.0
-offset_right = 280.0
-offset_bottom = -100.0
+offset_left = -95.0
+offset_top = -215.0
+offset_right = 5.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton26" type="Button" parent="."]
-offset_left = 180.0
-offset_top = -90.0
-offset_right = 280.0
-offset_bottom = 10.0
+offset_left = -95.0
+offset_top = -105.0
+offset_right = 5.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton27" type="Button" parent="."]
-offset_left = 180.0
-offset_top = 20.0
-offset_right = 280.0
-offset_bottom = 120.0
+offset_left = -95.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton28" type="Button" parent="."]
-offset_left = 180.0
-offset_top = 130.0
-offset_right = 280.0
-offset_bottom = 230.0
+offset_left = -95.0
+offset_top = 115.0
+offset_right = 5.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton29" type="Button" parent="."]
-offset_left = 297.0
-offset_top = -200.0
-offset_right = 397.0
-offset_bottom = -100.0
+offset_left = 22.0
+offset_top = -215.0
+offset_right = 122.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton30" type="Button" parent="."]
-offset_left = 297.0
-offset_top = -90.0
-offset_right = 397.0
-offset_bottom = 10.0
+offset_left = 22.0
+offset_top = -105.0
+offset_right = 122.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton31" type="Button" parent="."]
-offset_left = 297.0
-offset_top = 20.0
-offset_right = 397.0
-offset_bottom = 120.0
+offset_left = 22.0
+offset_top = 5.0
+offset_right = 122.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton32" type="Button" parent="."]
-offset_left = 297.0
-offset_top = 130.0
-offset_right = 397.0
-offset_bottom = 230.0
+offset_left = 22.0
+offset_top = 115.0
+offset_right = 122.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton33" type="Button" parent="."]
-offset_left = 407.0
-offset_top = -200.0
-offset_right = 507.0
-offset_bottom = -100.0
+offset_left = 132.0
+offset_top = -215.0
+offset_right = 232.0
+offset_bottom = -115.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton34" type="Button" parent="."]
-offset_left = 407.0
-offset_top = -90.0
-offset_right = 507.0
-offset_bottom = 10.0
+offset_left = 132.0
+offset_top = -105.0
+offset_right = 232.0
+offset_bottom = -5.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton35" type="Button" parent="."]
-offset_left = 407.0
-offset_top = 20.0
-offset_right = 507.0
-offset_bottom = 120.0
+offset_left = 132.0
+offset_top = 5.0
+offset_right = 232.0
+offset_bottom = 105.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton36" type="Button" parent="."]
-offset_left = 407.0
-offset_top = 130.0
-offset_right = 507.0
-offset_bottom = 230.0
+offset_left = 132.0
+offset_top = 115.0
+offset_right = 232.0
+offset_bottom = 215.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_ysxfl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_i5mct")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r1fll")
 toggle_mode = true
 script = ExtResource("1_4ebpr")
-metadata/_edit_use_anchors_ = true
 
 [node name="TileButton37" type="Button" parent="."]
-offset_left = -150.0
-offset_top = 300.0
-offset_right = 150.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 25
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = 294.0
+offset_right = -116.0
+offset_bottom = 394.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_v8csq")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = SubResource("StyleBoxTexture_7mf7y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8e5xa")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x5tj2")
 toggle_mode = true
 text = "Back"
-metadata/_edit_use_anchors_ = true
+icon_alignment = 1
 
 [node name="TilePuzzleLevelLabel" type="Label" parent="."]
-offset_left = -950.0
-offset_top = -525.0
-offset_right = -910.0
-offset_bottom = -388.0
+offset_left = -895.0
+offset_top = -439.0
+offset_right = -855.0
+offset_bottom = -302.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_v8csq")
 theme_override_font_sizes/font_size = 100
 script = ExtResource("3_07w82")
 

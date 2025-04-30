@@ -1,36 +1,66 @@
-[gd_scene load_steps=35 format=4 uid="uid://b5jdi5yv070sr"]
+[gd_scene load_steps=65 format=4 uid="uid://b5jdi5yv070sr"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="17_kx1ri"]
-[ext_resource type="PackedScene" uid="uid://dggnp0mkk8pgu" path="res://Imports/Models/Objects/Box/WoodenBox.gltf" id="20_1e0bp"]
-[ext_resource type="PackedScene" uid="uid://b58leoi83gsdb" path="res://Imports/Models/Objects/Box/MetalBox.gltf" id="21_xxu8m"]
-[ext_resource type="PackedScene" uid="uid://cgulikcbwdefo" path="res://Imports/Models/Objects/Tables/circular_table.gltf" id="22_2xxq5"]
+[ext_resource type="PackedScene" uid="uid://dig306bgkj8vt" path="res://Assets/Objects/Railings/railing_5_segment.tscn" id="23_ab0a3"]
 [ext_resource type="PackedScene" uid="uid://wwlxchixubor" path="res://Imports/Models/Objects/Clutter/bananaPeel.gltf" id="23_nlpkp"]
 [ext_resource type="PackedScene" uid="uid://c3qp0csungpo3" path="res://Imports/Models/Objects/Clutter/clutterPileSmall.gltf" id="24_8wd8n"]
+[ext_resource type="PackedScene" uid="uid://dljfc2pqkh4ce" path="res://Assets/Objects/Computer/server.tscn" id="24_w1qi2"]
 [ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="25_cchwj"]
+[ext_resource type="PackedScene" uid="uid://b2xw7k4d8fr1r" path="res://Assets/Objects/Pipes/pipe_junc_cross.tscn" id="25_cs84h"]
+[ext_resource type="PackedScene" uid="uid://bwmyiotwhjhy6" path="res://Assets/Objects/Pipes/pipe_junc_t.tscn" id="26_cyuld"]
 [ext_resource type="Material" uid="uid://dvh7acn33xrb2" path="res://Assets/Materials/FuelCan.tres" id="26_it72r"]
-[ext_resource type="PackedScene" uid="uid://tuvhpvgqnvix" path="res://Imports/Models/Objects/Desks/desk.gltf" id="26_n0n3e"]
 [ext_resource type="PackedScene" uid="uid://cbuon457absyv" path="res://Imports/Models/Objects/Clutter/dangerInternSign.gltf" id="26_xh1v8"]
 [ext_resource type="PackedScene" uid="uid://cc03hrl2t43kc" path="res://Imports/Models/Objects/Computer/ComputerScreen.gltf" id="27_3te7t"]
 [ext_resource type="PackedScene" uid="uid://c3vjpa8mtw18c" path="res://Imports/Models/Objects/Clutter/sodaCup.gltf" id="27_noxka"]
-[ext_resource type="PackedScene" uid="uid://bxjfsda88ml7g" path="res://Imports/Models/Objects/Chairs/spinnyChair.gltf" id="28_33olt"]
+[ext_resource type="PackedScene" uid="uid://c7vsjp7ma7tyt" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="27_ui8ww"]
+[ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="28_778c7"]
 [ext_resource type="ArrayMesh" uid="uid://db82olf7uacur" path="res://Imports/Models/Objects/Motor/Motor.obj" id="29_h0fxu"]
 [ext_resource type="PackedScene" uid="uid://dg236qj65r1bv" path="res://Imports/Models/Objects/Kitchen Items/toast_lads_toaster.gltf" id="29_oqijh"]
+[ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="29_pwdsk"]
 [ext_resource type="Material" uid="uid://cvlxarnisvwt0" path="res://Assets/Materials/motor.tres" id="30_eifxb"]
 [ext_resource type="PackedScene" uid="uid://ddqmjn6j77v1q" path="res://Imports/Models/Objects/Clutter/wetFloorSign.gltf" id="30_jvgn2"]
-[ext_resource type="PackedScene" uid="uid://8l1ltdwbe0cx" path="res://Imports/Models/Objects/Pipes/pipe_junction_cross.gltf" id="31_j3k20"]
+[ext_resource type="PackedScene" uid="uid://c5chqamjkvdor" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="30_nf2jd"]
+[ext_resource type="PackedScene" uid="uid://bllhjpheko4qy" path="res://Assets/Objects/Electrical/backup_generator.tscn" id="31_j8jo8"]
 [ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="31_kumtv"]
+[ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="32_3ykyi"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="32_8j3kc"]
-[ext_resource type="PackedScene" uid="uid://cuoa2vj8p07s8" path="res://Imports/Models/Objects/Pipes/pipe_junction_t.gltf" id="32_d3jgn"]
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="33_21cgc"]
-[ext_resource type="PackedScene" uid="uid://dowyy8sd08g1b" path="res://Imports/Models/Objects/Pipes/pipe_lever.gltf" id="33_50ega"]
-[ext_resource type="PackedScene" uid="uid://bx2c5x7ee2tfp" path="res://Imports/Models/Objects/Pipes/pipe_straight.gltf" id="34_lb4ss"]
-[ext_resource type="PackedScene" uid="uid://di3mhbndwet00" path="res://Imports/Models/Objects/Pipes/pipe_turn.gltf" id="35_oyy0f"]
+[ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="33_h7xkm"]
+[ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="34_ke1c7"]
+[ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="35_u3kj3"]
+[ext_resource type="PackedScene" uid="uid://b7rvy4bjmejtb" path="res://Assets/Objects/Pipes/valve.tscn" id="36_0m5nk"]
 [ext_resource type="PackedScene" uid="uid://1hchnovgiiof" path="res://Imports/Models/Objects/Boat/boat.gltf" id="36_hrt4v"]
-[ext_resource type="PackedScene" uid="uid://beh0pqc46hmku" path="res://Imports/Models/Objects/Pipes/pipe_valve.gltf" id="36_i0pwb"]
 [ext_resource type="Texture2D" uid="uid://cpgalsytd85jv" path="res://Assets/Textures/concreteTexture.png" id="36_rved8"]
 [ext_resource type="PackedScene" uid="uid://ppc0n5mmy0xc" path="res://Imports/Models/Objects/Lights/v1_industrial_light.gltf" id="37_ln1xf"]
+[ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="37_v0d77"]
 [ext_resource type="PackedScene" uid="uid://cisw4yc3qdyjb" path="res://Imports/Models/Objects/Lights/v2_industrial_light.gltf" id="38_krue1"]
+[ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="38_wda1v"]
 [ext_resource type="PackedScene" uid="uid://dpydj22yxt4ef" path="res://Imports/Models/Objects/Lights/v3_industrial_light.gltf" id="39_4vs5a"]
+[ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="39_rfvr8"]
+[ext_resource type="PackedScene" uid="uid://k3ygya7ok4mf" path="res://Imports/Models/Objects/Antennas/Antennas.gltf" id="40_4jm2i"]
+[ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="40_ip4fa"]
+[ext_resource type="PackedScene" uid="uid://dixq4mqfagy4a" path="res://Imports/Models/Objects/Battery/BoatBatteryNew.gltf" id="41_whhue"]
+[ext_resource type="PackedScene" uid="uid://0x1hlqecfvof" path="res://Assets/Objects/MiscFurnature/fridge.tscn" id="41_yp8wg"]
+[ext_resource type="PackedScene" uid="uid://bep0drqignitx" path="res://Imports/Models/Objects/radar/radar.gltf" id="42_iuoou"]
+[ext_resource type="PackedScene" uid="uid://bvu4gclkjq2yb" path="res://Assets/Objects/MiscFurnature/info_board.tscn" id="42_xulot"]
+[ext_resource type="PackedScene" uid="uid://cjw1epxc7yxt4" path="res://Assets/Objects/MiscFurnature/metal_locker.tscn" id="43_7ubsb"]
+[ext_resource type="PackedScene" uid="uid://qfc6y2fal6no" path="res://Assets/Objects/MiscFurnature/old_tv.tscn" id="44_w7eyq"]
+[ext_resource type="PackedScene" uid="uid://jtf8g1dwclif" path="res://Assets/Objects/MiscFurnature/bunk_bed.tscn" id="45_vpx3l"]
+[ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="46_1trds"]
+[ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="47_5aoyv"]
+[ext_resource type="PackedScene" uid="uid://is0ykt0qbb7l" path="res://Imports/Models/Objects/Saagar Imports/Exterior HVAC unit + Texture (1).gltf" id="48_8yudt"]
+[ext_resource type="PackedScene" uid="uid://b2pgdoelxuw2b" path="res://Assets/Objects/MiscFurnature/large_hvack_unit.tscn" id="49_5w2i5"]
+[ext_resource type="PackedScene" uid="uid://g8pkwlkfydl4" path="res://Assets/Objects/Electrical/large_power_gen.tscn" id="50_syd3r"]
+[ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="51_eo7fw"]
+[ext_resource type="PackedScene" uid="uid://crjk80e7qhd08" path="res://Assets/Objects/Railings/outside_railing_1_segement.tscn" id="52_j143g"]
+[ext_resource type="PackedScene" uid="uid://ckouqjf2ccc10" path="res://Assets/Objects/Railings/outside_railing_90_corner.tscn" id="53_vxu32"]
+[ext_resource type="PackedScene" uid="uid://bmopb4vq72580" path="res://Assets/Objects/Railings/outside_railing_end.tscn" id="54_5r0x4"]
+[ext_resource type="PackedScene" uid="uid://ugkmpmeoiwca" path="res://Assets/Objects/MiscFurnature/marble_counter.tscn" id="55_4jgc1"]
+[ext_resource type="PackedScene" uid="uid://cw864vn6mgor3" path="res://Imports/Models/Objects/Saagar Imports/weatherRadarModel.gltf" id="56_45maj"]
+[ext_resource type="PackedScene" uid="uid://bbni1p6h70qah" path="res://Imports/Models/Objects/Saagar Imports/Generic Machine #2.gltf" id="57_dlckl"]
+[ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="57_s134a"]
+[ext_resource type="PackedScene" uid="uid://cy1o5dhqbkkyh" path="res://Imports/Models/Objects/Saagar Imports/Microwave.gltf" id="58_0uch7"]
+[ext_resource type="PackedScene" uid="uid://77pqqyxlsm38" path="res://Assets/Objects/Boxes/wooden_box.tscn" id="58_1dj2t"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_kg6tg"]
 _surfaces = [{
@@ -72,17 +102,17 @@ texture_filter = 0
 transform = Transform3D(1.07579, 0, 0, 0, 1.07579, 0, 0, 0, 1.07579, 2.34332, 1, 11.6245)
 
 [node name="FuelCan" type="CSGMesh3D" parent="."]
-transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 3.82095, -4.76837e-07, 9.75233)
+transform = Transform3D(0.521704, 0, 0, 0, 0.521704, 0, 0, 0, 0.521704, 13.2491, -4.76837e-07, 9.75233)
 mesh = SubResource("ArrayMesh_kg6tg")
 material = ExtResource("26_it72r")
 
 [node name="Motor" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32497, -0.0302026, 9.00021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5246, -0.0302026, 9.00021)
 mesh = ExtResource("29_h0fxu")
 material = ExtResource("30_eifxb")
 
 [node name="DoorFacility" parent="." instance=ExtResource("32_8j3kc")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 9.88888, 0, 9.77634)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 9.4367, 0, 10.298)
 
 [node name="DoorFacilityOpen" parent="." instance=ExtResource("33_21cgc")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 9.436, 0, 12.6218)
@@ -104,20 +134,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65436, 0, 2.84233)
 [node name="wide_industrial_light" parent="." instance=ExtResource("39_4vs5a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85648, 0, 2.88343)
 
-[node name="wooden_desk" parent="." instance=ExtResource("26_n0n3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7174, -9.53674e-07, 6.57247)
-
 [node name="computer" parent="." instance=ExtResource("27_3te7t")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.35101, 1.2744, 9.9908)
-
-[node name="wooden_box" parent="." instance=ExtResource("20_1e0bp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21871, -4.76837e-07, 13.6045)
-
-[node name="metal_box" parent="." instance=ExtResource("21_xxu8m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92899, 0, 13.5896)
-
-[node name="lunch_table" parent="." instance=ExtResource("22_2xxq5")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.50709, 0, 9.51018)
 
 [node name="banana_peel" parent="." instance=ExtResource("23_nlpkp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36866, 0, 7.13193)
@@ -134,33 +152,138 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56969, 1.19209e-07, 4.60994
 [node name="soda_cup" parent="." instance=ExtResource("27_noxka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75292, 0, 6.19055)
 
-[node name="spinny_chair" parent="." instance=ExtResource("28_33olt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60543, 2.38419e-07, 10.6181)
-
 [node name="toaster" parent="." instance=ExtResource("29_oqijh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353883, 0, 4.37899)
 
 [node name="wet_floor_sign" parent="." instance=ExtResource("30_jvgn2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87329, 0, 3.8124)
 
-[node name="blockbench_export10" parent="." instance=ExtResource("31_j3k20")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.61074, 0, 15.8884)
-
-[node name="blockbench_export11" parent="." instance=ExtResource("32_d3jgn")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.05696, 0, 15.8911)
-
-[node name="blockbench_export12" parent="." instance=ExtResource("33_50ega")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.148409, 0, 15.8978)
-
-[node name="blockbench_export13" parent="." instance=ExtResource("34_lb4ss")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.932317, 0, 15.8752)
-
-[node name="blockbench_export14" parent="." instance=ExtResource("35_oyy0f")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.65194, 0, 15.8327)
-
-[node name="blockbench_export15" parent="." instance=ExtResource("36_i0pwb")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.81289, 0, 15.8868)
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88512, 3.65669, 0)
 texture = ExtResource("31_kumtv")
+
+[node name="railing5Segment" parent="." instance=ExtResource("23_ab0a3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61192, 1.19209e-07, -6.24725)
+
+[node name="server" parent="." instance=ExtResource("24_w1qi2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27743, 0, 8.32352)
+
+[node name="pipe_junc_cross" parent="." instance=ExtResource("25_cs84h")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -2.02073, 0, 21.8301)
+
+[node name="pipe_junc_t" parent="." instance=ExtResource("26_cyuld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67705, 0, 21.8301)
+
+[node name="pipe_lever" parent="." instance=ExtResource("27_ui8ww")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.58802, 0, 21.8301)
+
+[node name="pipe_straight" parent="." instance=ExtResource("28_778c7")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 5.62232, 0, 21.8301)
+
+[node name="pipe_turn" parent="." instance=ExtResource("29_pwdsk")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.282191, 0, 21.8301)
+
+[node name="pipe_valve" parent="." instance=ExtResource("30_nf2jd")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.32661, 0, 21.8301)
+
+[node name="backupGenerator" parent="." instance=ExtResource("31_j8jo8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03514, 0, 3.77233)
+
+[node name="spinnyChair" parent="." instance=ExtResource("32_3ykyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.66502, 0, 6.78012)
+
+[node name="wooden_desk_1" parent="." instance=ExtResource("33_h7xkm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2783, 0, 1.29977)
+
+[node name="circular_table" parent="." instance=ExtResource("34_ke1c7")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 1.41647, 0, 10.0748)
+
+[node name="elevator" parent="." instance=ExtResource("35_u3kj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
+
+[node name="pipeValve" parent="." instance=ExtResource("36_0m5nk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73407, 0, 1.48032)
+
+[node name="wooden_chair" parent="." instance=ExtResource("37_v0d77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.87809, 0, 9.12777)
+
+[node name="portable_chair" parent="." instance=ExtResource("38_wda1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38928, 0, 11.5375)
+
+[node name="clock" parent="." instance=ExtResource("39_rfvr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80858, 0, 0.109151)
+
+[node name="antennas" parent="." instance=ExtResource("40_4jm2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0637, 0, 9.43506)
+
+[node name="battery" parent="." instance=ExtResource("41_whhue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9547, 0, 9.04835)
+
+[node name="radar" parent="." instance=ExtResource("42_iuoou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1812, 4.76837e-07, 9.32944)
+
+[node name="genericMachine" parent="." instance=ExtResource("40_ip4fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98145, 0, -1.13536)
+
+[node name="fridge" parent="." instance=ExtResource("41_yp8wg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49876, 0, -2.3974)
+
+[node name="infoBoard" parent="." instance=ExtResource("42_xulot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22811, 0, -0.950195)
+
+[node name="metal_locker" parent="." instance=ExtResource("43_7ubsb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08965, 0, -3.48593)
+
+[node name="old_tv" parent="." instance=ExtResource("44_w7eyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.78944, 0, 1.22145)
+
+[node name="bunkBed" parent="." instance=ExtResource("45_vpx3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63902, 0, -3.07355)
+
+[node name="pen" parent="." instance=ExtResource("46_1trds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4042, 0, -1.61218)
+
+[node name="lightSwitch" parent="." instance=ExtResource("47_5aoyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.71466, 0, 3.03801)
+
+[node name="vent" parent="." instance=ExtResource("48_8yudt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7646, 1.19209e-07, 6.61698)
+
+[node name="largeHvackUnit" parent="." instance=ExtResource("49_5w2i5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0636, 0, 2.49476)
+
+[node name="largePowerGen" parent="." instance=ExtResource("50_syd3r")]
+transform = Transform3D(1.82325, 0, 0, 0, 1.82325, 0, 0, 0, 1.82325, 14.9135, 0, 12.103)
+
+[node name="computer2" parent="." instance=ExtResource("51_eo7fw")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.79499, 0, 15.6721)
+
+[node name="outside_railing_1_segement" parent="." instance=ExtResource("52_j143g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.636117, 0, -7.10311)
+
+[node name="outside_Railing_90_Corner" parent="." instance=ExtResource("53_vxu32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20994, 0, -7.40305)
+
+[node name="outsideRailingEnd" parent="." instance=ExtResource("54_5r0x4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42777, 0, -8.15696)
+
+[node name="marbleCounter" parent="." instance=ExtResource("55_4jgc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07185, 0, -9.38749)
+
+[node name="radar2" parent="." instance=ExtResource("56_45maj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8634, 0, -5.82306)
+
+[node name="control_panel" parent="." instance=ExtResource("57_dlckl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0132, 0, -7.68142)
+
+[node name="microwave" parent="." instance=ExtResource("58_0uch7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8048, 0, -6.90981)
+
+[node name="metal_box2" parent="." instance=ExtResource("57_s134a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87501, 0, 10.9005)
+
+[node name="wooden_box2" parent="." instance=ExtResource("58_1dj2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02539, 0, 10.9005)
+
+[node name="genericMachine2" parent="." instance=ExtResource("40_ip4fa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3934, 0, 7.39848)

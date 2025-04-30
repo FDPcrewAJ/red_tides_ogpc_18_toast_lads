@@ -1,0 +1,263 @@
+[gd_scene load_steps=14 format=3 uid="uid://2o7tnodsbjo"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/storage_puzzle_interface.gd" id="1_arey5"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/keypad_label.gd" id="2_0xx60"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_s45ta"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/result_label.gd" id="3_pwbdf"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="5_2a346"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="6_aei2n"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="7_g4bho"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdgu5"]
+texture = ExtResource("6_aei2n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hxh1r"]
+texture = ExtResource("7_g4bho")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odag0"]
+texture = ExtResource("6_aei2n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ss2qk"]
+texture = ExtResource("6_aei2n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbqvg"]
+texture = ExtResource("7_g4bho")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6k3e"]
+texture = ExtResource("6_aei2n")
+
+[node name="StoragePuzzleInterface" type="Node2D"]
+script = ExtResource("1_arey5")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_s45ta")
+
+[node name="KeypadLabel" type="Label" parent="."]
+offset_left = 707.0
+offset_top = 479.0
+offset_right = 1307.0
+offset_bottom = 698.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 160
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_0xx60")
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = 709.0
+offset_top = 113.0
+offset_right = 1309.0
+offset_bottom = 332.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_pwbdf")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 112.0
+offset_top = 275.0
+offset_right = 262.0
+offset_bottom = 425.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 275.0
+offset_right = 461.0
+offset_bottom = 425.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "2"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 510.0
+offset_top = 275.0
+offset_right = 660.0
+offset_bottom = 425.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "3"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 112.0
+offset_top = 478.0
+offset_right = 262.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "4"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 478.0
+offset_right = 461.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "5"
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 510.0
+offset_top = 478.0
+offset_right = 660.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "6"
+
+[node name="Button7" type="Button" parent="."]
+offset_left = 112.0
+offset_top = 677.0
+offset_right = 262.0
+offset_bottom = 827.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "7"
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 677.0
+offset_right = 461.0
+offset_bottom = 827.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "8"
+
+[node name="Button9" type="Button" parent="."]
+offset_left = 510.0
+offset_top = 677.0
+offset_right = 660.0
+offset_bottom = 827.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_jdgu5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxh1r")
+theme_override_styles/normal = SubResource("StyleBoxTexture_odag0")
+text = "9"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 869.0
+offset_top = 828.0
+offset_right = 1257.0
+offset_bottom = 978.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_2a346")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/hover = SubResource("StyleBoxTexture_ss2qk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gbqvg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h6k3e")
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

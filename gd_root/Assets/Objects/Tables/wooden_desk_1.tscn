@@ -1,5 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://748edak1pdw5"]
+[gd_scene load_steps=3 format=3 uid="uid://748edak1pdw5"]
 
 [ext_resource type="PackedScene" uid="uid://tuvhpvgqnvix" path="res://Imports/Models/Objects/Desks/desk.gltf" id="1_8qnh0"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t88sf"]
+points = PackedVector3Array(-1.74833, 0, 0.642901, -0.517934, 1.125, 2.89334, -0.503578, 0, 2.9196, -1.74833, 0, 2.9196, -0.503578, 0, 0.642901, -1.73397, 1.125, 0.669159, -1.73397, 1.125, 2.89334, -0.517934, 1.125, 0.669159)
+
 [node name="wooden_desk_1" instance=ExtResource("1_8qnh0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/cuboid" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/cuboid/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_t88sf")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgo4yb6dwugpf"]
+
+[ext_resource type="PackedScene" uid="uid://bep0drqignitx" path="res://Imports/Models/Objects/radar/radar.gltf" id="1_h2s8s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ajo1a"]
+size = Vector3(0.458984, 0.351501, 0.250122)
+
+[node name="radar" instance=ExtResource("1_h2s8s")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="radar_col" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="radar_col" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000976563, 0.172028, -0.0130005)
+shape = SubResource("BoxShape3D_ajo1a")

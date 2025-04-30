@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4j6k3kptq054"]
 
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_timer_external.gd" id="1_dpbmb"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm.gd" id="1_lyl70"]
+[ext_resource type="Script" uid="uid://d0ty768x0qedw" path="res://Scripts/Rooms/RoomObjects/storm_timer_external.gd" id="1_dpbmb"]
+[ext_resource type="Script" uid="uid://ci07wg38gdlyh" path="res://Scripts/Rooms/RoomObjects/storm.gd" id="1_lyl70"]
 [ext_resource type="PackedScene" uid="uid://dfuyp25nf60m1" path="res://Scenes/Menus/hud.tscn" id="2_ix7o0"]
 
 [node name="StormTimer" type="Control"]

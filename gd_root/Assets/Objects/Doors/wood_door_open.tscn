@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://lpwe413bhd4c"]
+[gd_scene load_steps=4 format=3 uid="uid://lpwe413bhd4c"]
 
 [ext_resource type="ArrayMesh" uid="uid://01br3q5xxc0y" path="res://Imports/Models/Objects/Doors/doorFacilityOpen.obj" id="1_48kir"]
 [ext_resource type="Material" uid="uid://co7oqg42mkhwi" path="res://Assets/Materials/doorFacility.tres" id="2_mhbah"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxvxj"]
+size = Vector3(1, 2, 0.12)
+
 [node name="DoorFacilityOpen" type="CSGMesh3D"]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0, 0, 0)
 mesh = ExtResource("1_48kir")
 material = ExtResource("2_mhbah")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.258448, 0, -0.966025, 0, 1, 0, 0.966025, 0, 0.258448, 0.565695, 1.02327, 0.562616)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_bxvxj")

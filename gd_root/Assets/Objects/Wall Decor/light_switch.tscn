@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkg0tfmxvs6tg"]
+
+[ext_resource type="PackedScene" uid="uid://bnu53ayyf3njk" path="res://Imports/Models/Objects/Wall Decor/lightSwitch.gltf" id="1_cb8ro"]
+
+[node name="lightSwitch" instance=ExtResource("1_cb8ro")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="cuboid" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.647615, -0.761968, 0, 0.761968, 0.647615, 0, 0.75, -0.125)

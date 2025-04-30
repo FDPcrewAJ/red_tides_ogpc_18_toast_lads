@@ -1,0 +1,167 @@
+[gd_scene load_steps=22 format=3 uid="uid://blpljk5u3hc1k"]
+
+[ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_iuea6"]
+[ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_jqf5o"]
+[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="4_2fk4h"]
+[ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="5_nhmnr"]
+[ext_resource type="Shader" uid="uid://vvin5ees2f00" path="res://Scripts/Shaders/random_texture_tiler.tres" id="6_4niii"]
+[ext_resource type="Script" uid="uid://bd0qvm5ponlnc" path="res://Scripts/Rooms/RoomObjects/hub_elevator_doors.gd" id="8_bw2f4"]
+[ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="11_0pu5r"]
+[ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="12_5mymx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41vkj"]
+albedo_texture = ExtResource("4_2fk4h")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_il4vk"]
+material = SubResource("StandardMaterial3D_41vkj")
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dqc6t"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6m0m"]
+albedo_texture = ExtResource("5_nhmnr")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0fpid"]
+material = SubResource("StandardMaterial3D_t6m0m")
+size = Vector2(6, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xthiq"]
+points = PackedVector3Array(-3.07937, -0.079334, -5.07738, 3.11111, 0.079334, 5.07738, 3.11111, -0.079334, 5.07738, 3.11111, 0.079334, -5.07738, -3.07937, 0.079334, 5.07738, -3.07937, -0.079334, 5.07738, 3.11111, -0.079334, -5.07738, -3.07937, 0.079334, -5.07738)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wllt6"]
+render_priority = 0
+shader = ExtResource("6_4niii")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_clxpn"]
+material = SubResource("ShaderMaterial_wllt6")
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xvc6t"]
+points = PackedVector3Array(5.07738, 0.079334, 5.07738, -5.07738, -0.079334, -5.07738, -5.07738, 0.079334, -5.07738, 5.07738, -0.079334, -5.07738, -5.07738, -0.079334, 5.07738, -5.07738, 0.079334, 5.07738, 5.07738, 0.079334, -5.07738, 5.07738, -0.079334, 5.07738)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g54j4"]
+size = Vector3(3, 4, 0.2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u0ud2"]
+points = PackedVector3Array(1.51557, 2.03175, 0.122173, -1.53145, -2.03175, -0.131696, -1.53145, -2.03175, 0.122173, -1.53145, 2.03175, -0.131696, 1.51557, -2.03175, -0.131696, 1.51557, -2.03175, 0.122173, -1.53145, 2.03175, 0.122173, 1.51557, 2.03175, -0.131696)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7d10r"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uo70g"]
+material = SubResource("StandardMaterial3D_7d10r")
+size = Vector2(0.1, 4)
+
+[node name="StorageRoom" type="Node3D"]
+
+[node name="InteractablesDisplay" parent="." instance=ExtResource("1_iuea6")]
+
+[node name="player" parent="." instance=ExtResource("3_jqf5o")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, -4)
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00261986, 0.0021944, -0.00164986)
+mesh = SubResource("PlaneMesh_il4vk")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_dqc6t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -5, 3, 0)
+mesh = SubResource("PlaneMesh_0fpid")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xthiq")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0, 3, -5)
+mesh = SubResource("PlaneMesh_0fpid")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xthiq")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 0, 3.82137e-15, -8.74228e-08, -1, 5, 3, 0)
+mesh = SubResource("PlaneMesh_0fpid")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xthiq")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(-5.73206e-15, 1.31134e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, 1.31134e-07, 0, 3, 5)
+mesh = SubResource("PlaneMesh_0fpid")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xthiq")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+mesh = SubResource("PlaneMesh_clxpn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xvc6t")
+
+[node name="HubElevatorDoors" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
+mesh = SubResource("BoxMesh_g54j4")
+script = ExtResource("8_bw2f4")
+
+[node name="ElevatorDoorBody" type="StaticBody3D" parent="HubElevatorDoors"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HubElevatorDoors/ElevatorDoorBody"]
+shape = SubResource("ConvexPolygonShape3D_u0ud2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -4.85)
+mesh = SubResource("PlaneMesh_uo70g")
+
+[node name="Items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="computer2" parent="Items" instance=ExtResource("11_0pu5r")]
+transform = Transform3D(-8, 0, 4.52987e-07, 0, 5, 0, -1.20797e-06, 0, -3, -0.138333, -0.634969, 16.108)
+
+[node name="wooden_desk_3" parent="Items" instance=ExtResource("12_5mymx")]
+transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 3.57355, 0, 14)
+
+[node name="wooden_desk_4" parent="Items" instance=ExtResource("12_5mymx")]
+transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, 1.57355, 0, 14)
+
+[node name="wooden_desk_5" parent="Items" instance=ExtResource("12_5mymx")]
+transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, -0.426446, 0, 14)
+
+[node name="wooden_desk_6" parent="Items" instance=ExtResource("12_5mymx")]
+transform = Transform3D(-8.9407e-08, 0, -1, 0, 1, 0, 1, 0, -8.9407e-08, -2.42645, 0, 14)
+
+[node name="Label3D" type="Label3D" parent="Items"]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -0.0964773, 3.48948, 14.8701)
+modulate = Color(1, 0.0392157, 0, 1)
+text = "STORM PREVENTION
+SYSTEMS COMPROMISED
+
+BACKUP SYSTEMS AT 22.8%
+CAPACITY"
+font_size = 100
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Items"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3555, 13.0469)
+light_color = Color(1, 0, 0.168627, 1)
+omni_range = 11.4666

@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df3yxw0ak01n8"
-path.s3tc="res://.godot/imported/coffeeCup_0.png-0cc12bf3a3aa81a6a7352c8718a0ee72.s3tc.ctex"
+path="res://.godot/imported/coffeeCup_0.png-0cc12bf3a3aa81a6a7352c8718a0ee72.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "8c1a3a404437bd440a31ab10c4427440"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Imports/Models/Objects/Kitchen Items/coffeeCup_0.png"
-dest_files=["res://.godot/imported/coffeeCup_0.png-0cc12bf3a3aa81a6a7352c8718a0ee72.s3tc.ctex"]
+dest_files=["res://.godot/imported/coffeeCup_0.png-0cc12bf3a3aa81a6a7352c8718a0ee72.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clgttbebmbc6a"]
+[gd_scene load_steps=7 format=3 uid="uid://clgttbebmbc6a"]
 
 [ext_resource type="Texture2D" uid="uid://b0sg2jme0f0x3" path="res://Imports/ui/stopwatch_dial.png" id="1_ie0vo"]
 [ext_resource type="Script" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
 [ext_resource type="Texture2D" uid="uid://bdxp3k3edhv5b" path="res://Imports/ui/stopwatch_needle.png" id="2_v440k"]
+[ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="4_j1ngf"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="5_wy6gk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo3mm"]
 
@@ -22,22 +24,22 @@ scale = Vector2(0.9, 0.9)
 script = ExtResource("1_m2c60")
 
 [node name="stopwatch_dial" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -151.0
-offset_top = -151.0
-offset_right = 152.0
-offset_bottom = 152.0
+offset_left = -151.5
+offset_top = -151.5
+offset_right = 151.5
+offset_bottom = 151.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_ie0vo")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="stopwatch_needle" type="Sprite2D" parent="stopwatch_dial"]
 position = Vector2(151.5, 151.5)
@@ -56,3 +58,164 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_oo3mm")
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="checklist" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="parts_list" type="Sprite2D" parent="checklist"]
+position = Vector2(-1725.56, 740)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_j1ngf")
+
+[node name="title" type="Label" parent="checklist/parts_list"]
+offset_left = -176.296
+offset_top = -237.963
+offset_right = 177.704
+offset_bottom = -195.963
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "BOAT REPAIR CHECKLIST"
+
+[node name="antenna_label" type="Label" parent="checklist/parts_list"]
+offset_left = -104.63
+offset_top = -140.741
+offset_right = 249.37
+offset_bottom = -98.7407
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Antennas"
+
+[node name="antenna_check" type="Label" parent="checklist/parts_list"]
+visible = false
+offset_left = -160.185
+offset_top = -143.519
+offset_right = 193.815
+offset_bottom = -101.519
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="battery_label" type="Label" parent="checklist/parts_list"]
+offset_left = -105.556
+offset_top = -63.8889
+offset_right = 248.444
+offset_bottom = -21.8889
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Battery"
+
+[node name="battery_check" type="Label" parent="checklist/parts_list"]
+visible = false
+offset_left = -165.741
+offset_top = -61.1111
+offset_right = 188.259
+offset_bottom = -19.1111
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="fuel_can_label" type="Label" parent="checklist/parts_list"]
+offset_left = -107.407
+offset_top = 11.1111
+offset_right = 246.593
+offset_bottom = 53.1111
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Fuel Can"
+
+[node name="fuel_can_check" type="Label" parent="checklist/parts_list"]
+visible = false
+offset_left = -158.333
+offset_top = 14.8148
+offset_right = 195.667
+offset_bottom = 56.8148
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="motor_label" type="Label" parent="checklist/parts_list"]
+offset_left = -110.185
+offset_top = 92.5926
+offset_right = 243.815
+offset_bottom = 134.593
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Motor"
+
+[node name="motor_check" type="Label" parent="checklist/parts_list"]
+visible = false
+offset_left = -167.593
+offset_top = 90.7408
+offset_right = 186.407
+offset_bottom = 132.741
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="radar_label" type="Label" parent="checklist/parts_list"]
+offset_left = -112.963
+offset_top = 178.704
+offset_right = 241.037
+offset_bottom = 220.704
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "Radar Dish"
+
+[node name="radar_check" type="Label" parent="checklist/parts_list"]
+visible = false
+offset_left = -162.037
+offset_top = 184.259
+offset_right = 191.963
+offset_bottom = 226.259
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="checklist_tabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1495.56
+offset_top = 994.445
+offset_right = -1143.56
+offset_bottom = 1022.44
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_wy6gk")
+theme_override_font_sizes/font_size = 25
+text = "Press TAB to open checklist"

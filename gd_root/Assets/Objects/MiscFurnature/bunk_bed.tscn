@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jtf8g1dwclif"]
+
+[ext_resource type="PackedScene" uid="uid://b7upgwpupieqq" path="res://Imports/Models/Objects/Misc Furnature/bunkBed.gltf" id="1_60ep8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujdvl"]
+size = Vector3(1.49976, 0.95105, 3.00735)
+
+[node name="bunkBed" instance=ExtResource("1_60ep8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.00125, 0, 0, 0, 1.00125, 0, 0, 0, 1.00125, 0.00744629, 0.472107, 0.00718689)
+shape = SubResource("BoxShape3D_ujdvl")

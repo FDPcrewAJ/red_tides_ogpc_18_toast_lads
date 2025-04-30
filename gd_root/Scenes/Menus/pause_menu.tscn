@@ -1,15 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyuhtn3qc3lec"]
+[gd_scene load_steps=4 format=3 uid="uid://dyuhtn3qc3lec"]
+
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="1_8ksy8"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_o8k7t"]
 
 [sub_resource type="GDScript" id="GDScript_q6bu8"]
 script/source = "extends Control
 
+@onready var player: Player = $\"..\"
 @onready var menu = $\".\"
+@onready var settings: Control = $\"../settings\"
+@onready var confirm_prompt = $confirm_prompt
+
+var pause_open = false
+
+var go_main_menu = false
+var go_quit = false
+
 
 func _unhandled_key_input(event):
-	if event.is_action_pressed(\"exit\"):
-		if Global.in_menu == false:
-			menu.show()
-			pause()
+	if player.has_control:
+		if event.is_action_pressed(\"exit\"):
+			if Global.in_menu == false:
+				if pause_open == true and settings.visible == false:
+					menu.hide()
+					unpause()
+					pause_open = false
+				else:
+					menu.show()
+					pause()
+					pause_open = true
 
 func pause():
 	get_tree().paused = true
@@ -27,34 +46,45 @@ func _on_resume_pressed():
 
 
 func _on_save_game_pressed():
-	pass 
+	pass
 
 
 func _on_settings_pressed():
-	pass
-	#unpause()
-	#Global.previous_scene = get_tree().current_scene.scene_file_path
-	#get_tree().change_scene_to_file(\"res://Scenes/Menus/settings.tscn\")
+	settings.visible = true
 
 
 func _on_main_menu_pressed():
-	unpause()
-	get_tree().change_scene_to_file(\"res://Scenes/Menus/title_screen.tscn\")
+	go_main_menu = true
+	confirm_prompt.show()
 
 
 func _on_quit_game_pressed():
-	get_tree().quit()
+	go_quit = true
+	confirm_prompt.show()
+	
+
+
+func _on_yes_pressed():
+	if go_main_menu:
+		unpause()
+		get_tree().change_scene_to_file(\"res://Scenes/Menus/title_screen.tscn\")
+	if go_quit:
+		get_tree().quit()
+
+
+func _on_no_pressed():
+	go_main_menu = false
+	go_quit = false
+	confirm_prompt.hide()
 "
 
 [node name="pause_menu" type="Control"]
 process_mode = 3
 visible = false
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_q6bu8")
@@ -67,10 +97,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -1232.0
+offset_top = -751.0
+offset_right = 1275.0
+offset_bottom = 810.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.411765)
@@ -82,13 +112,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -165.5
-offset_top = -508.0
-offset_right = 165.5
-offset_bottom = -439.0
+offset_left = -298.0
+offset_top = -495.0
+offset_right = 299.0
+offset_bottom = -426.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_8ksy8")
+theme_override_font_sizes/font_size = 80
 text = "Game Paused"
 
 [node name="Resume" type="Button" parent="."]
@@ -100,37 +132,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -178.0
-offset_top = -215.0
+offset_top = -177.0
 offset_right = 178.0
-offset_bottom = -138.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
 theme_override_font_sizes/font_size = 50
 text = "Resume Game"
-flat = true
-
-[node name="SaveGame" type="Button" parent="."]
-process_mode = 3
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -178.0
-offset_top = -123.0
-offset_right = 178.0
-offset_bottom = -46.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
-theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 50
-text = "Save Game"
 flat = true
 
 [node name="Settings" type="Button" parent="."]
@@ -142,14 +154,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -178.0
-offset_top = -28.0
+offset_top = -86.0
 offset_right = 178.0
-offset_bottom = 49.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 flat = true
@@ -163,14 +176,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -178.0
-offset_top = 71.0
+offset_top = 11.0
 offset_right = 178.0
-offset_bottom = 148.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
 theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 flat = true
@@ -184,20 +198,141 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -178.0
-offset_top = 163.0
+offset_top = 103.0
 offset_right = 178.0
-offset_bottom = 240.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_hover_color = Color(0.493545, 0.493546, 0.493546, 1)
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
 theme_override_font_sizes/font_size = 50
 text = "Quit Game"
 flat = true
 
+[node name="SaveGame" type="Button" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -123.0
+offset_right = 178.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 50
+text = "Save Game"
+flat = true
+
+[node name="confirm_prompt" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseBG2" type="ColorRect" parent="confirm_prompt"]
+custom_minimum_size = Vector2(900, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -250.0
+offset_right = 450.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.94902)
+
+[node name="PauseLabel2" type="Label" parent="confirm_prompt"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.5
+offset_top = -196.0
+offset_right = 298.5
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 60
+text = "Are you Sure?
+
+All Progress will
+be LOST!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="confirm_prompt"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = 127.0
+offset_right = -94.0
+offset_bottom = 204.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 50
+text = "Yes"
+flat = true
+
+[node name="no" type="Button" parent="confirm_prompt"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 97.0
+offset_top = 127.0
+offset_right = 285.0
+offset_bottom = 204.0
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_o8k7t")
+theme_override_font_sizes/font_size = 50
+text = "No"
+flat = true
+
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="confirm_prompt/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="confirm_prompt/no" to="." method="_on_no_pressed"]

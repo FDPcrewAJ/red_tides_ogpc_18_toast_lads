@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqnyt2b1il67q"]
+
+[ext_resource type="PackedScene" uid="uid://k3ygya7ok4mf" path="res://Imports/Models/Objects/Antennas/Antennas.gltf" id="1_xy4v8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4n3ov"]
+size = Vector3(0.936523, 1.29095, 1.09937)
+
+[node name="antennas" instance=ExtResource("1_xy4v8")]
+
+[node name="antennas_col" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="antennas_col" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132324, 0.645477, -0.0657959)
+shape = SubResource("BoxShape3D_4n3ov")

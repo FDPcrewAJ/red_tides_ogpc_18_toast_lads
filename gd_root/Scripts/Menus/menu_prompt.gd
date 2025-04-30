@@ -7,9 +7,10 @@ func _ready() -> void:
 	$CloseButton.hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_released("exit"):
+		if Global.in_menu == true:
+			_on_close_button_pressed()
 
 func pause():
 	get_tree().paused = true
@@ -25,6 +26,7 @@ func _set_label_prompt_text(new_text):
 	$PromptLabel._set_prompt_text(new_text)
 	$PromptLabel.show()
 	$CloseButton.show()
+	$PauseBG.show()
 	Global.in_menu = true
 	pause()
 
@@ -32,5 +34,6 @@ func _on_close_button_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$PromptLabel.hide()
 	$CloseButton.hide()
+	$PauseBG.hide()
 	Global.in_menu = false
 	unpause()

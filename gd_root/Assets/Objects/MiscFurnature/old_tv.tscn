@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://qfc6y2fal6no"]
+
+[ext_resource type="PackedScene" uid="uid://donb6kwx3hx2h" path="res://Imports/Models/Objects/Saagar Imports/Old TV + Texture.gltf" id="1_s5mls"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dee7t"]
+size = Vector3(2.05164, 1.43738, 1.16699)
+
+[node name="old_tv" instance=ExtResource("1_s5mls")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.614026, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1474, 0.0800171, 0.116699)
+shape = SubResource("BoxShape3D_dee7t")

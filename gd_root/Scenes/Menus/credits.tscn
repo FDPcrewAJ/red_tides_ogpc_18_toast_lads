@@ -1,0 +1,205 @@
+[gd_scene load_steps=5 format=3 uid="uid://cviafdl3wf71t"]
+
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="1_85jop"]
+[ext_resource type="Script" path="res://Scripts/Menus/credits.gd" id="1_ys5qh"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="2_ryx1u"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_t5bso"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ys5qh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -658.0
+offset_top = -440.0
+offset_right = 671.0
+offset_bottom = 516.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("1_85jop")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1300, 1000)
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 95
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="created_by" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ryx1u")
+theme_override_font_sizes/font_size = 50
+text = "Created By:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ryx1u")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="toast_lads" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ryx1u")
+theme_override_font_sizes/font_size = 60
+text = "THE TOAST LADS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "AJ - Team Lead / Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Joshua (Connor) - Art lead"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "William - Art / Animations"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name4" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Adam - Programming"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name5" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Amari - Art / Music / Sound"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name6" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Saagar - 3D Models"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name7" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Sam - Art / 3D Models"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="spacer2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ryx1u")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="special_thanks" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ryx1u")
+theme_override_font_sizes/font_size = 50
+text = "Special Thanks:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="winikka" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Mr. Winikka"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="adams_dad" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Adam's Dad"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name8" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t5bso")
+theme_override_font_sizes/font_size = 60
+text = "Jason P"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 131.0
+offset_top = 903.0
+offset_right = 335.0
+offset_bottom = 1007.0
+grow_horizontal = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ryx1u")
+theme_override_font_sizes/font_size = 70
+text = "BACK"
+flat = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

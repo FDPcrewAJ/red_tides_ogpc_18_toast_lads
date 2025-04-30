@@ -1,10 +1,7 @@
-[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://vvin5ees2f00"]
+[gd_resource type="VisualShader" load_steps=14 format=3 uid="uid://vvin5ees2f00"]
 
 [ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="1_7qxto"]
 [ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="2_j6rop"]
-
-[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_q6wpf"]
-input_name = "uv"
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_yxoqm"]
 constant = 3.0
@@ -26,7 +23,16 @@ noise = SubResource("FastNoiseLite_bprnb")
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_o17is"]
 texture = SubResource("NoiseTexture2D_jm00n")
 
-[sub_resource type="VisualShaderNodeTransformConstant" id="VisualShaderNodeTransformConstant_1fsiy"]
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_cnl56"]
+size = Vector2(760, 440)
+expression = "vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos) {
+	vec4 samp = vec4(0.0);
+	samp += texture(p_sampler, p_triplanar_pos.xy) * p_weights.z;
+	samp += texture(p_sampler, p_triplanar_pos.xz) * p_weights.y;
+	samp += texture(p_sampler, p_triplanar_pos.zy * vec2(-1.0, 1.0)) * p_weights.x;
+	return samp;
+}
+"
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_rqw11"]
 texture = ExtResource("1_7qxto")
@@ -35,9 +41,6 @@ texture_type = 1
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_e31x5"]
 texture = ExtResource("2_j6rop")
 texture_type = 1
-
-[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_2ig83"]
-input_name = "uv"
 
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_7pbe1"]
 function = 1
@@ -98,27 +101,34 @@ void fragment() {
 "
 flags/world_vertex_coords = true
 flags/ensure_correct_normals = true
-nodes/fragment/0/position = Vector2(280, 380)
+nodes/fragment/0/position = Vector2(880, 200)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_rqw11")
 nodes/fragment/2/position = Vector2(-720, 200)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_e31x5")
 nodes/fragment/3/position = Vector2(-720, 500)
-nodes/fragment/7/node = SubResource("VisualShaderNodeInput_2ig83")
-nodes/fragment/7/position = Vector2(-1580, 320)
 nodes/fragment/8/node = SubResource("VisualShaderNodeUVFunc_7pbe1")
 nodes/fragment/8/position = Vector2(-1140, 320)
 nodes/fragment/9/node = SubResource("VisualShaderNodeFloatConstant_172wt")
 nodes/fragment/9/position = Vector2(-1500, 480)
-nodes/fragment/10/node = SubResource("VisualShaderNodeInput_q6wpf")
-nodes/fragment/10/position = Vector2(-1580, 600)
 nodes/fragment/11/node = SubResource("VisualShaderNodeFloatConstant_yxoqm")
-nodes/fragment/11/position = Vector2(-1500, 760)
+nodes/fragment/11/position = Vector2(-1520, 760)
 nodes/fragment/12/node = SubResource("VisualShaderNodeUVFunc_rvpxp")
-nodes/fragment/12/position = Vector2(-1140, 600)
+nodes/fragment/12/position = Vector2(-1160, 600)
 nodes/fragment/13/node = SubResource("VisualShaderNodeMix_lykjn")
 nodes/fragment/13/position = Vector2(-160, 400)
 nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_o17is")
-nodes/fragment/14/position = Vector2(-660, 820)
-nodes/fragment/15/node = SubResource("VisualShaderNodeTransformConstant_1fsiy")
-nodes/fragment/15/position = Vector2(-1440, 900)
-nodes/fragment/connections = PackedInt32Array(9, 0, 8, 1, 11, 0, 12, 1, 2, 0, 13, 0, 3, 0, 13, 1, 14, 0, 13, 2, 8, 0, 2, 0, 12, 0, 3, 0, 13, 0, 0, 0)
+nodes/fragment/14/position = Vector2(-760, 820)
+nodes/fragment/17/node = SubResource("VisualShaderNodeExpression_cnl56")
+nodes/fragment/17/position = Vector2(1280, 600)
+nodes/fragment/17/size = Vector2(760, 440)
+nodes/fragment/17/input_ports = "0,8,p_sampler;1,4,p_weights;2,4,p_triplanar_pos;"
+nodes/fragment/17/output_ports = "0,5,samp;"
+nodes/fragment/17/expression = "vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos) {
+	vec4 samp = vec4(0.0);
+	samp += texture(p_sampler, p_triplanar_pos.xy) * p_weights.z;
+	samp += texture(p_sampler, p_triplanar_pos.xz) * p_weights.y;
+	samp += texture(p_sampler, p_triplanar_pos.zy * vec2(-1.0, 1.0)) * p_weights.x;
+	return samp;
+}
+"
+nodes/fragment/connections = PackedInt32Array(2, 0, 13, 0, 3, 0, 13, 1, 14, 0, 13, 2, 8, 0, 2, 0, 12, 0, 3, 0, 9, 0, 8, 1, 11, 0, 12, 1, 13, 0, 0, 0)

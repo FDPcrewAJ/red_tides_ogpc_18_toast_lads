@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2pgdoelxuw2b"]
+
+[ext_resource type="PackedScene" uid="uid://cb73pnfx0s07g" path="res://Imports/Models/Objects/Saagar Imports/Large Hvac Unit.gltf" id="1_dhhn2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nb1wv"]
+size = Vector3(2.04944, 1.1864, 1.37085)
+
+[node name="largeHvackUnit" instance=ExtResource("1_dhhn2")]
+
+[node name="cuboid" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.369235, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00335693, 0.583923, -0.0279541)
+shape = SubResource("BoxShape3D_nb1wv")

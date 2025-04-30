@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://u36whol7rmjh"]
+
+[ext_resource type="PackedScene" uid="uid://odho4730c5y5" path="res://Imports/Models/Objects/Elevator/Elevator.gltf" id="1_djglq"]
+
+[node name="elevator" instance=ExtResource("1_djglq")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)

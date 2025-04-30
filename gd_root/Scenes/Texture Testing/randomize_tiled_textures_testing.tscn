@@ -1,6 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcu03dn8gc5nk"]
+[gd_scene load_steps=14 format=3 uid="uid://bcu03dn8gc5nk"]
 
 [ext_resource type="Shader" uid="uid://vvin5ees2f00" path="res://Scripts/Shaders/random_texture_tiler.tres" id="1_t7k7j"]
+[ext_resource type="Texture2D" uid="uid://bqftjmygmi6qc" path="res://Textures/Interior Textures/Walls/v1_c_wall_undamage.png" id="2_8ittq"]
+[ext_resource type="Shader" uid="uid://dys0p67t352ej" path="res://Scripts/Shaders/triplanar_wall_with_noise.gdshader" id="2_jsi44"]
+[ext_resource type="Texture2D" uid="uid://0300xekp0xn7" path="res://Textures/Interior Textures/Walls/v2_c_wall_undamage.png" id="3_7a4a7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ib6nx"]
 render_priority = 0
@@ -10,7 +13,7 @@ shader = ExtResource("1_t7k7j")
 material = SubResource("ShaderMaterial_ib6nx")
 size = Vector2(50, 50)
 
-[sub_resource type="Shader" id="Shader_4ljra"]
+[sub_resource type="Shader" id="Shader_cao5m"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
 
 shader_type spatial;
@@ -36,6 +39,10 @@ uniform vec3 uv1_scale;
 uniform vec3 uv1_offset;
 uniform vec3 uv2_scale;
 uniform vec3 uv2_offset;
+
+uniform sampler2D texture_1 : source_color;
+uniform sampler2D texture_2 : source_color;
+uniform sampler2D tex_frg_14;
 
 void vertex() {
 	vec3 normal = NORMAL;
@@ -66,8 +73,44 @@ vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos
 }
 
 void fragment() {
+	// FloatConstant:9
+	float n_out9p0 = 5.000000;
+
+
+// UVFunc:8
+	vec2 n_in8p2 = vec2(0.00000, 0.00000);
+	vec2 n_out8p0 = (UV - n_in8p2) * vec2(n_out9p0) + n_in8p2;
+
+
+// Texture2D:2
+	vec4 n_out2p0 = texture(texture_1, n_out8p0);
+
+
+// FloatConstant:11
+	float n_out11p0 = 3.000000;
+
+
+// UVFunc:12
+	vec2 n_in12p2 = vec2(0.00000, 0.00000);
+	vec2 n_out12p0 = (UV - n_in12p2) * vec2(n_out11p0) + n_in12p2;
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(texture_2, n_out12p0);
+
+
+// Texture2D:14
+	vec4 n_out14p0 = texture(tex_frg_14, UV);
+
+
+// Mix:13
+	vec3 mixed_tex = mix(vec3(n_out2p0.xyz), vec3(n_out3p0.xyz), vec3(n_out14p0.xyz));
+
+
+// Output:0
+	ALBEDO = mixed_tex * uv1_triplanar_pos.rgb;
 	vec4 albedo_tex = triplanar_texture(texture_albedo, uv1_power_normal, uv1_triplanar_pos);
-	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	//ALBEDO = mixed_tex * albedo_tex.rgb;
 
 	float metallic_tex = dot(triplanar_texture(texture_metallic, uv1_power_normal, uv1_triplanar_pos), metallic_texture_channel);
 	METALLIC = metallic_tex * metallic;
@@ -79,13 +122,19 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlrk6"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eles6"]
+frequency = 0.0049
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aopqd"]
+noise = SubResource("FastNoiseLite_eles6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qahnd"]
 render_priority = 0
-shader = SubResource("Shader_4ljra")
+shader = SubResource("Shader_cao5m")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = null
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
 shader_parameter/uv1_blend_sharpness = 1.0
@@ -93,9 +142,30 @@ shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_1 = ExtResource("2_8ittq")
+shader_parameter/texture_2 = ExtResource("3_7a4a7")
+shader_parameter/tex_frg_14 = SubResource("NoiseTexture2D_aopqd")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_so422"]
-material = SubResource("ShaderMaterial_tlrk6")
+[sub_resource type="PlaneMesh" id="PlaneMesh_bhrxp"]
+material = SubResource("ShaderMaterial_qahnd")
+size = Vector2(50, 50)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aktnx"]
+render_priority = 0
+shader = ExtResource("2_jsi44")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/uv1_blend_sharpness = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_blj8i"]
+material = SubResource("ShaderMaterial_aktnx")
 size = Vector2(50, 50)
 
 [node name="randomize_tiled_textures_testing" type="Node3D"]
@@ -104,7 +174,10 @@ size = Vector2(50, 50)
 transform = Transform3D(-4.38413e-08, 1.00297, 0, -1.00297, -4.38413e-08, 0, 0, 0, 1.00297, 0, 39.0548, 0)
 mesh = SubResource("PlaneMesh_p5fn7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.38413e-08, 1.00297, 0, -1.00297, -4.38413e-08, 0, 0, 0, 1.00297, 0.00554657, 39.4282, -72.0001)
-mesh = SubResource("PlaneMesh_so422")
-skeleton = NodePath("../attempt 1")
+[node name="attempt 2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.38413e-08, 1.00297, 0, -1.00297, -4.38413e-08, 0, 0, 0, 1.00297, 0, 39.0548, -86.8431)
+mesh = SubResource("PlaneMesh_bhrxp")
+
+[node name="attempt 3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.38413e-08, 1.00297, 0, -1.00297, -4.38413e-08, 0, 0, 0, 1.00297, 0, 39.0548, 72.686)
+mesh = SubResource("PlaneMesh_blj8i")

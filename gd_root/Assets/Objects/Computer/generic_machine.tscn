@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ic2judcj7o1"]
+
+[ext_resource type="PackedScene" uid="uid://bmmr35vn0rn0t" path="res://Imports/Models/Objects/Saagar Imports/Generic Machine.gltf" id="1_rn6n5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5k4ht"]
+size = Vector3(1.12921, 1.25482, 2.25732)
+
+[node name="genericMachine" instance=ExtResource("1_rn6n5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0697327, 0.629486, -0.00561523)
+shape = SubResource("BoxShape3D_5k4ht")

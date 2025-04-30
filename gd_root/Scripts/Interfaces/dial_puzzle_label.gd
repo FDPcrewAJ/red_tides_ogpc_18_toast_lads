@@ -1,12 +1,19 @@
 extends Label
 
+@onready var dial_1_sprite: Sprite2D = $"../Dial/Dial1Sprite"
+@onready var dial_2_sprite: Sprite2D = $"../Dial2/Dial2Sprite"
+@onready var dial_3_sprite: Sprite2D = $"../Dial3/Dial3Sprite"
+
 
 func _process(_delta):
-	if ($"../Dial/Sprite2D1".rotation_degrees < -85 and $"../Dial/Sprite2D1".rotation_degrees > -95) and ($"../Dial2/Sprite2D2".rotation_degrees < -40 and $"../Dial2/Sprite2D2".rotation_degrees > -50) and ($"../Dial3/Sprite2D3".rotation_degrees < -175 and $"../Dial3/Sprite2D3".rotation_degrees > -185):
-		text = "Calibration Completed"
-		Global.dial_puzzle_completed = true
-		Global.dial_puzzle = true
+	if Global.code_degrees1 == 0 and Global.code_degrees2 == 0 and Global.code_degrees3 == 0:
+		text = "Storm origin not found"
 	else:
-		text = "Incorrect Calibration"
-		Global.dial_puzzle_completed = false
-		Global.dial_puzzle = false
+		if dial_1_sprite.rotation_degrees < Global.code_degrees1 + 2 and dial_1_sprite.rotation_degrees > Global.code_degrees1 - 2:
+			if dial_2_sprite.rotation_degrees < Global.code_degrees2 + 2 and dial_2_sprite.rotation_degrees > Global.code_degrees2 - 2:
+				if dial_3_sprite.rotation_degrees < Global.code_degrees3 + 2 and dial_3_sprite.rotation_degrees > Global.code_degrees3 - 2:
+					text = "Calibration Completed"
+					Global.dial_puzzle_completed = true
+		else:
+			text = "Incorrect Calibration"
+			Global.dial_puzzle_completed = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0vldhh4ok64r"]
+[gd_scene load_steps=4 format=3 uid="uid://0vldhh4ok64r"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/menu_prompt.gd" id="1_subil"]
 [ext_resource type="Script" path="res://Scripts/Menus/prompt_label.gd" id="2_ttcvi"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_xkeqv"]
 
 [node name="MenuPrompt" type="Control"]
 process_mode = 3
@@ -13,12 +14,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_subil")
 
+[node name="PauseBG" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2303.0
+offset_top = -1381.0
+offset_right = 204.0
+offset_bottom = 428.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.83969, 1.49786)
+color = Color(0, 0, 0, 0.411765)
+
 [node name="PromptLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 100.0
 offset_top = 300.0
 offset_right = 1749.0
 offset_bottom = 369.0
+theme_override_colors/font_color = Color(0.918995, 0.00255322, 0.00139945, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_xkeqv")
 theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -26,9 +49,10 @@ script = ExtResource("2_ttcvi")
 
 [node name="CloseButton" type="Button" parent="."]
 process_mode = 3
+visible = false
 layout_mode = 0
-offset_left = 1800.0
-offset_right = 1900.0
+offset_left = 100.0
+offset_right = 200.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 60
 text = "X"

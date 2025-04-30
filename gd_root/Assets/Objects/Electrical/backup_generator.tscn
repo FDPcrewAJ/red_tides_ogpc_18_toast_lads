@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bllhjpheko4qy"]
+
+[ext_resource type="PackedScene" uid="uid://dbw3j71s1y8e3" path="res://Imports/Models/Objects/Backup Generator/backup generator.gltf" id="1_uuhye"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cktoj"]
+size = Vector3(1.53528, 2.33099, 2.83551)
+
+[node name="backupGenerator" instance=ExtResource("1_uuhye")]
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(0.515271, 0, 0, 0, 0.515271, 0, 0, 0, 0.515271, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(0.515271, 0, 0, 0, 0.515271, 0, 0, 0, 0.515271, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72699, 1.23178, -0.018219)
+shape = SubResource("BoxShape3D_cktoj")

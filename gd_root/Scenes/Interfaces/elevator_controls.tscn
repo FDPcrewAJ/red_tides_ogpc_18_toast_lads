@@ -1,85 +1,162 @@
-[gd_scene load_steps=4 format=3 uid="uid://bswr51itc8015"]
+[gd_scene load_steps=10 format=3 uid="uid://bswr51itc8015"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/elevator_controls.gd" id="1_ovi6k"]
-[ext_resource type="Texture2D" uid="uid://b4v1hk1nehx3r" path="res://Imports/images/elevator_controls.png" id="2_8weko"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/elevator_label.gd" id="2_vdihe"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_h87hg"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="4_5bv0o"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_rrqpn"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_ehvqh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph784"]
+texture = ExtResource("4_rrqpn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1gks"]
+texture = ExtResource("5_ehvqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrkg8"]
+texture = ExtResource("4_rrqpn")
 
 [node name="ElevatorControls" type="Node2D"]
 script = ExtResource("1_ovi6k")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_8weko")
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("4_5bv0o")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 150.0
-offset_top = 200.0
-offset_right = 450.0
-offset_bottom = 350.0
+[node name="underwater_floor_button" type="Button" parent="."]
+offset_left = 725.0
+offset_top = 550.0
+offset_right = 1059.0
+offset_bottom = 712.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Water
 Processing"
 
-[node name="Button2" type="Button" parent="."]
-offset_left = 750.0
-offset_top = 200.0
-offset_right = 1050.0
-offset_bottom = 350.0
-theme_override_font_sizes/font_size = 50
-text = "Electrical"
-
-[node name="Button3" type="Button" parent="."]
-offset_left = 1400.0
-offset_top = 200.0
-offset_right = 1700.0
-offset_bottom = 350.0
-theme_override_font_sizes/font_size = 50
-text = "Entrance"
-
-[node name="Button4" type="Button" parent="."]
-offset_left = 150.0
+[node name="enterance_floor_button" type="Button" parent="."]
+offset_left = 314.0
 offset_top = 550.0
-offset_right = 450.0
-offset_bottom = 700.0
+offset_right = 648.0
+offset_bottom = 712.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
+text = "Enterance
+Floor"
+
+[node name="floor_1_button" type="Button" parent="."]
+offset_left = 930.0
+offset_top = 275.0
+offset_right = 1264.0
+offset_bottom = 437.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Floor 1"
 
-[node name="Button5" type="Button" parent="."]
-offset_left = 750.0
-offset_top = 550.0
-offset_right = 1050.0
-offset_bottom = 700.0
+[node name="floor_2_button" type="Button" parent="."]
+offset_left = 516.0
+offset_top = 275.0
+offset_right = 850.0
+offset_bottom = 437.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Floor 2"
 
-[node name="Button6" type="Button" parent="."]
-offset_left = 1400.0
-offset_top = 550.0
-offset_right = 1700.0
-offset_bottom = 700.0
+[node name="control_floor_button" type="Button" parent="."]
+offset_left = 101.0
+offset_top = 275.0
+offset_right = 435.0
+offset_bottom = 437.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
 theme_override_font_sizes/font_size = 50
-text = "Facility
-Control"
+theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
+text = "Control
+Floor"
 
-[node name="ExitButton" type="Button" parent="."]
-offset_left = 700.0
+[node name="exit_button" type="Button" parent="."]
+offset_left = 521.0
 offset_top = 800.0
-offset_right = 1100.0
-offset_bottom = 1000.0
-theme_override_font_sizes/font_size = 100
+offset_right = 855.0
+offset_bottom = 962.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Exit"
 
 [node name="ElevatorLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 50
-text = "Your current floor is: "
+offset_left = 58.0
+offset_top = 100.0
+offset_right = 644.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_h87hg")
+theme_override_font_sizes/font_size = 65
+text = "Your floor is: "
 script = ExtResource("2_vdihe")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
-[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
-[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="underwater_floor_button" to="." method="_on_underwater_floor_button_pressed"]
+[connection signal="pressed" from="enterance_floor_button" to="." method="_on_enterance_floor_button_pressed"]
+[connection signal="pressed" from="floor_1_button" to="." method="_on_floor_1_button_pressed"]
+[connection signal="pressed" from="floor_2_button" to="." method="_on_floor_2_button_pressed"]
+[connection signal="pressed" from="control_floor_button" to="." method="_on_control_floor_button_pressed"]
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]

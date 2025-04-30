@@ -1,17 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://bcrwco2xn1qus"]
+[gd_scene load_steps=25 format=3 uid="uid://bcrwco2xn1qus"]
 
-[ext_resource type="Texture2D" uid="uid://dypunbyc3lxhe" path="res://Textures/Interior Textures/Floors/FLOOR_TILE_V2.png" id="1_h6pvi"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uccvb"]
-[ext_resource type="Texture2D" uid="uid://6n4mfa4xpfi5" path="res://Textures/Interior Textures/c_wall_undamaged_2.png" id="2_6o8v6"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_5b5p7"]
 [ext_resource type="PackedScene" uid="uid://bbbq5y4o8457k" path="res://Assets/Objects/Lights/long_industrial_light.tscn" id="3_ufpcx"]
+[ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_6msk4"]
+[ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="5_qiads"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="5_u4hxr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_controls.gd" id="6_2wut2"]
+[ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_h7a3b"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_doors.gd" id="6_uubdo"]
-[ext_resource type="Texture2D" uid="uid://iop1l5r2tkky" path="res://Imports/images/elevator_panel.png" id="8_mr1e1"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="10_y7h3h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw7hu"]
-albedo_texture = ExtResource("1_h6pvi")
+albedo_texture = ExtResource("4_6msk4")
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4e5cs"]
@@ -21,12 +22,8 @@ size = Vector2(5, 5)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mbc6a"]
 points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.53869, -2.53869, 0.039667, -2.53869, 2.53869, -0.039667, -2.53869, -2.53869, -0.039667, 2.53869, -2.53869, 0.039667, 2.53869, 2.53869, 0.039667, -2.53869, 2.53869, -0.039667, 2.53869)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ca4ug"]
-albedo_texture = ExtResource("2_6o8v6")
-uv1_triplanar = true
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_f6g8b"]
-material = SubResource("StandardMaterial3D_ca4ug")
+material = ExtResource("5_qiads")
 size = Vector2(5, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cb15y"]
@@ -34,6 +31,15 @@ points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bti6p"]
 points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.53869, -2.53869, 0.039667, -2.53869, 2.53869, -0.039667, -2.53869, -2.53869, -0.039667, 2.53869, -2.53869, 0.039667, 2.53869, 2.53869, 0.039667, -2.53869, 2.53869, -0.039667, 2.53869)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgp3o"]
+albedo_texture = ExtResource("6_h7a3b")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pxffy"]
+material = SubResource("StandardMaterial3D_rgp3o")
+size = Vector2(5, 5)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qbmh7"]
 points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.53869, -2.53869, 0.039667, -2.53869, 2.53869, -0.039667, -2.53869, -2.53869, -0.039667, 2.53869, -2.53869, 0.039667, 2.53869, 2.53869, 0.039667, -2.53869, 2.53869, -0.039667, 2.53869)
@@ -48,7 +54,7 @@ points = PackedVector3Array(2.53869, 0.039667, 2.53869, -2.53869, -0.039667, -2.
 points = PackedVector3Array(1.51557, 2.03175, 0.122173, -1.53145, -2.03175, -0.131696, -1.53145, -2.03175, 0.122173, -1.53145, 2.03175, -0.131696, 1.51557, -2.03175, -0.131696, 1.51557, -2.03175, 0.122173, -1.53145, 2.03175, 0.122173, 1.51557, 2.03175, -0.131696)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qrp0s"]
-size = Vector3(0.2, 1, 1.7)
+size = Vector3(0.2, 1.2, 1.7)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a0u2t"]
 points = PackedVector3Array(0.0998541, 0.5, 0.843277, -0.113471, -0.513492, -0.863323, 0.0995199, -0.5, -0.840604, -0.113471, -0.513492, 0.863323, -0.113471, 0.511905, -0.863323, -0.113471, 0.511905, 0.863323, 0.0998541, 0.5, -0.843277, 0.0995199, -0.5, 0.840604)
@@ -106,7 +112,7 @@ shape = SubResource("ConvexPolygonShape3D_bti6p")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Cabin"]
 transform = Transform3D(1, 1.39091e-08, 0, 1.39091e-08, -1, 0, 0, 0, -1, 0, 5, 0)
-mesh = SubResource("PlaneMesh_f6g8b")
+mesh = SubResource("PlaneMesh_pxffy")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cabin/MeshInstance3D6"]
@@ -162,5 +168,6 @@ script = ExtResource("6_2wut2")
 shape = SubResource("ConvexPolygonShape3D_a0u2t")
 
 [node name="Sprite3D" type="Sprite3D" parent="Controls/ElevatorControls"]
-transform = Transform3D(-3.66457e-08, 0, 1, 0, 1, 0, -0.838355, 0, -4.37114e-08, -0.11, 0, 0)
-texture = ExtResource("8_mr1e1")
+transform = Transform3D(-3.66457e-08, 0, 1, -7.32913e-08, -1, -3.82137e-15, 0.838355, -8.74228e-08, 4.37114e-08, -0.11, 0, 0)
+pixel_size = 0.001
+texture = ExtResource("10_y7h3h")

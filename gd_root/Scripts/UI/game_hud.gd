@@ -12,6 +12,7 @@ extends Control
 @onready var fuel_can_check: Label = $checklist/parts_list/fuel_can_check
 @onready var motor_check: Label = $checklist/parts_list/motor_check
 @onready var radar_check: Label = $checklist/parts_list/radar_check
+@onready var checklist_tabel: Label = $checklist_tabel
 
 #These variables are for the stopwatch
 var rotation_speed = TAU / 60
@@ -23,6 +24,7 @@ var list_open = true
 
 
 func _ready() -> void:
+	checklist_tabel.text = update_text()
 	set_time()
 	
 	if double_digit <= 0:
@@ -41,6 +43,8 @@ func _input(_event) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Global.list_collected:
+		checklist_tabel.show()
 	# Watch Visibility Control
 	if Global.watch_collected:
 		stopwatch_dial.show()
@@ -88,3 +92,10 @@ func update_list():
 		motor_check.visible = true
 	if Global.radar_collected:
 		radar_check.visible = true
+
+
+func update_text() -> String:
+	var event_array = InputMap.action_get_events("open_list")
+	var event = event_array[0]
+	var open_list_key = OS.get_keycode_string(event.physical_keycode)
+	return "Press " + str(open_list_key) + " to open checklist"

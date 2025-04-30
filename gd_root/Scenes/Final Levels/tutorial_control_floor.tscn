@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=104 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -51,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="44_uy123"]
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_fire_container.gd" id="51_otypp"]
+[ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="52_et7kt"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -283,6 +284,9 @@ size = Vector3(4, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8020b"]
 size = Vector3(4, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ic2i"]
+size = Vector3(1, 1.4375, 1)
 
 [node name="tutorial_control_floor" type="Node3D"]
 script = ExtResource("1_lar5y")
@@ -1673,6 +1677,24 @@ mesh = SubResource("BoxMesh_lagky")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_d45qq")
+
+[node name="checklist_pick_up" type="StaticBody3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41007, 0.695435, 1.92876)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21875, 0)
+shape = SubResource("BoxShape3D_2ic2i")
+
+[node name="Sprite3D" type="Sprite3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
+transform = Transform3D(-0.347943, 0.462282, -0.815617, 0.0282009, -0.864422, -0.501975, -0.937091, -0.19766, 0.287733, 0, 0, 0)
+pixel_size = 0.0008
+texture = ExtResource("52_et7kt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, -0.016324, -0.0179489)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.205
+omni_range = 1.29291
 
 [connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
 [connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]

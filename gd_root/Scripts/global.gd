@@ -13,7 +13,7 @@ var timer_active = false
 var needle_rotation = 1
 
 #List pickup boolean
-var list_collected= true
+var list_collected = false
 
 # Player ray cast collision range for interaction
 var current_object = "none"

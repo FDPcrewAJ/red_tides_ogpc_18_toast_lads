@@ -14,6 +14,10 @@ signal interaction_ready
 @onready var lightning_strike: Node3D = $cheif_container/lightning_strike
 @onready var lighting_timer: Timer = $cheif_container/lighting_timer
 @onready var cheif_fling_animator: AnimationPlayer = $cheif_fling_animator
+@onready var black_screen: ColorRect = $black_screen/black_screen_rect
+@onready var blackout_timer: Timer = $black_screen/blackout_timer
+@onready var wake_up_label: Label = $black_screen/wake_up_label
+
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -200,7 +204,8 @@ func _on_lighting_timer_timeout() -> void:
 	lightning_strike.hide()
 	lightning_count += 1
 	if lightning_count == 2:
-		print("cut to black")
+		black_screen.show()
+		blackout_timer.start()
 
 
 func _on_cheif_fling_animator_animation_finished(_anim_name: StringName) -> void:
@@ -209,3 +214,17 @@ func _on_cheif_fling_animator_animation_finished(_anim_name: StringName) -> void
 	chief_fling_end.play("animation")
 	lightning_strike.show()
 	lighting_timer.start()
+
+
+func _on_blackout_timer_timeout() -> void:
+	print(lightning_count)
+	if lightning_count == 2:
+		wake_up_label.show()
+		lightning_count += 1
+		blackout_timer.start()
+	else:
+		cinimatic_cam.current = false
+		player.show()
+		black_screen.hide()
+		wake_up_label.hide()
+		player.has_control = true

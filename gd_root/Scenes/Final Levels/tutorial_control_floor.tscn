@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=94 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://c2kx3372m0i4f" path="res://Assets/Characters/Chief/Animations/Fling/Fling Main/cptn_fling_loop.gltf" id="44_aq61p"]
 [ext_resource type="PackedScene" uid="uid://bsxurjif22kpd" path="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptn_fling_end.gltf" id="44_kg4td"]
 [ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="44_uy123"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -1558,6 +1559,43 @@ libraries = {
 "": SubResource("AnimationLibrary_3wn7i")
 }
 
+[node name="black_screen" type="Node3D" parent="tutorial_sequence"]
+
+[node name="black_screen_rect" type="ColorRect" parent="tutorial_sequence/black_screen"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -324.0
+offset_right = 385.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="wake_up_label" type="Label" parent="tutorial_sequence/black_screen"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("50_mshvd")
+theme_override_font_sizes/font_size = 150
+text = "Wake Up, Comrade"
+
+[node name="blackout_timer" type="Timer" parent="tutorial_sequence/black_screen"]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
 [connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]
 [connection signal="interaction_ready" from="tutorial_sequence" to="puzzle_interaction" method="_on_tutorial_sequence_interaction_ready"]
@@ -1565,3 +1603,4 @@ libraries = {
 [connection signal="finished" from="tutorial_sequence/cheif_container/voice_audio" to="tutorial_sequence" method="_on_voice_line_player_finished"]
 [connection signal="timeout" from="tutorial_sequence/cheif_container/lighting_timer" to="tutorial_sequence" method="_on_lighting_timer_timeout"]
 [connection signal="animation_finished" from="tutorial_sequence/cheif_fling_animator" to="tutorial_sequence" method="_on_cheif_fling_animator_animation_finished"]
+[connection signal="timeout" from="tutorial_sequence/black_screen/blackout_timer" to="tutorial_sequence" method="_on_blackout_timer_timeout"]

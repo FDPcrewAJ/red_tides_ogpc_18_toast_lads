@@ -6,9 +6,9 @@ signal interaction_ready
 @onready var player: Player = $"../player"
 @onready var voice_audio: AudioStreamPlayer3D = $cheif_container/voice_audio
 @onready var tutorial_text_ui: Control = $"../tutorial_text_ui"
-@onready var player_look_at: Node3D = $player_look_at
 
 @onready var initiator: Area3D = $initiator
+@onready var dial_puzzle_interface: Node2D = $"../puzzle_interaction/dial_puzzle_interface"
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -56,8 +56,8 @@ func _on_voice_line_player_finished() -> void:
 	if Global.line_num == 20:
 		Global.watch_collected = true
 		# Update player position and rotation
-		player.position.x = cinimatic_cam.position.x - 0.2
-		player.position.z = cinimatic_cam.position.z
+		player.position.x = camera_container.position.x - 0.2
+		player.position.z = camera_container.position.z
 		player.rotation.y = -90
 		player.velocity = Vector3.ZERO
 		# Clear initiator to prevent activation
@@ -72,7 +72,6 @@ func _on_voice_line_player_finished() -> void:
 		cheif_container.position = Vector3(9.1, 0.5, -4.55)
 		cheif_container.rotation.y = -122
 		
-		interaction_ready.emit()
 	
 	# Autoplay the caller line
 	if Global.line_num == 21:
@@ -85,12 +84,27 @@ func _on_voice_line_player_finished() -> void:
 		cptn_idle.show()
 		cptn_talk.hide()
 		chief_idle_anim.play("animation")
+		interaction_ready.emit()
+	
+	if Global.line_num > 22 and Global.line_num < 24:
+		play_next_line()
+	
+	if Global.line_num == 24 or Global.line_num == 25:
+		tutorial_text_ui.hide()
 
 func play_next_line():
 	voice_audio.set_stream(match_voice_line(Global.voice_line))
 	voice_audio.play()
 	tutorial_text_ui.set_text(match_text_display(Global.voice_line))
 
+
+func play_death_cutscene():
+	player.has_control = false
+	player.hide()
+	cinimatic_cam.current = true
+	dial_puzzle_interface.hide()
+	tutorial_text_ui.show()
+	play_next_line()
 
 func update_line():
 	Global.line_num += 1
@@ -137,3 +151,12 @@ func match_text_display(line_string) -> String:
 		"line_24":
 			return "*sigh* ok that was the right code, i was worried for some reason. or, ok, and we should be good… wait NO!!--"
 	return ""
+
+
+func _on_puzzle_interaction_start_dial_voice_lines() -> void:
+	play_next_line()
+	tutorial_text_ui.show()
+
+
+func _on_dial_puzzle_interface_dial_puzzle_completed() -> void:
+	play_death_cutscene()

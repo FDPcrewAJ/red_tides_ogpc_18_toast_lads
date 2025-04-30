@@ -212,11 +212,11 @@ visible = false
 [node name="storm_code_interface" parent="puzzle_interaction" instance=ExtResource("41_7v22k")]
 visible = false
 
-[node name="view_interact_menu" type="Node3D" parent="."]
-script = ExtResource("4_u34bp")
-
 [node name="tutorial_text_ui" parent="." instance=ExtResource("6_sqsti")]
 visible = false
+
+[node name="view_interact_menu" type="Node3D" parent="."]
+script = ExtResource("4_u34bp")
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2iafm")
@@ -1384,9 +1384,6 @@ shape = SubResource("ConvexPolygonShape3D_8icv8")
 [node name="tutorial_sequence" type="Node3D" parent="."]
 script = ExtResource("40_doj3g")
 
-[node name="player_look_at" type="Node3D" parent="tutorial_sequence"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18866, 0.865541, -6.27396)
-
 [node name="initiator" type="Area3D" parent="tutorial_sequence"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51715, 2, -12.1653)
 
@@ -1394,9 +1391,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51715, 2, -12.1653)
 shape = SubResource("BoxShape3D_tl44k")
 
 [node name="camera_container" type="Node3D" parent="tutorial_sequence"]
+transform = Transform3D(0.206204, 0, 0.978509, 0, 1, 0, -0.978509, 0, 0.206204, -0.952, 2.414, -11.673)
 
 [node name="cinimatic_cam" type="Camera3D" parent="tutorial_sequence/camera_container"]
-transform = Transform3D(0.206956, 0, 0.97835, 0, 1, 0, -0.97835, 0, 0.206956, -0.952398, 2.41446, -11.6728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="cheif_container" type="Node3D" parent="tutorial_sequence"]
 transform = Transform3D(0.292555, 0, 0.956249, 0, 1, 0, -0.956249, 0, 0.292555, -3.35048, 0.5, -12.4535)
@@ -1413,6 +1411,8 @@ transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 1.04308e-08, 0, -0.3513
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 visible = false
 
+[connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
+[connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]
 [connection signal="interaction_ready" from="tutorial_sequence" to="puzzle_interaction" method="_on_tutorial_sequence_interaction_ready"]
 [connection signal="area_entered" from="tutorial_sequence/initiator" to="tutorial_sequence" method="_on_initiator_area_entered"]
 [connection signal="finished" from="tutorial_sequence/cheif_container/voice_audio" to="tutorial_sequence" method="_on_voice_line_player_finished"]

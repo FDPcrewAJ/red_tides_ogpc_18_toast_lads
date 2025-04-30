@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_label.gd" id="7_ibn1a"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="8_c6b22"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="9_63tul"]
-[ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="10_ncgyf"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/tutorial_dial_puzzle_label.gd" id="10_6k52o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 
@@ -146,6 +146,6 @@ theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("6_l7hl5")
 theme_override_font_sizes/font_size = 100
 text = "Incorrect Calibration"
-script = ExtResource("10_ncgyf")
+script = ExtResource("10_6k52o")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

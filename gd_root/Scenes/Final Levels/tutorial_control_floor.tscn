@@ -1462,7 +1462,7 @@ transform = Transform3D(0.206204, 0, 0.978509, 0, 1, 0, -0.978509, 0, 0.206204, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="cheif_container" type="Node3D" parent="tutorial_sequence"]
-transform = Transform3D(-0.529919, 0, -0.848048, 0, 1, 0, 0.848048, 0, -0.529919, 9.1, 0.5, -4.55)
+transform = Transform3D(0.292372, 0, 0.956305, 0, 1, 0, -0.956305, 0, 0.292372, -3.35, 0.5, -12.453)
 
 [node name="voice_audio" type="AudioStreamPlayer3D" parent="tutorial_sequence/cheif_container"]
 transform = Transform3D(0.292555, 0, -0.956249, 0, 1, 0, 0.956249, 0, 0.292555, 0, 1.79337, 0)
@@ -1553,6 +1553,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="cheif_fling_animator" type="AnimationPlayer" parent="tutorial_sequence"]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_3wn7i")
 }

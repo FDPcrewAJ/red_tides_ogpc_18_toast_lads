@@ -119,6 +119,7 @@ func _on_voice_line_player_finished() -> void:
 		cptn_fling_loop.show()
 		lightning_strike.show()
 		lighting_timer.start()
+		cheif_fling_animator.active = true
 		cheif_fling_animator.play("chief_fling")
 
 func play_next_line():

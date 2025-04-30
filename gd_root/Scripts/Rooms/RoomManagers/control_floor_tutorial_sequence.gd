@@ -3,7 +3,7 @@ extends Node3D
 signal interaction_ready
 
 # Core access nodes
-@onready var player: Player = $"../player"
+@onready var player = $"../player"
 @onready var voice_audio: AudioStreamPlayer3D = $cheif_container/voice_audio
 @onready var tutorial_text_ui: Control = $"../tutorial_text_ui"
 
@@ -137,6 +137,9 @@ func play_death_cutscene():
 	player.hide()
 	camera_container.position = Vector3(7.545, 2.414, -6.614)
 	camera_container.rotation.y = deg_to_rad(-157)
+	player.position.x = camera_container.position.x
+	player.position.z = camera_container.position.z
+	player.rotation.y = camera_container.rotation.y
 	cinimatic_cam.current = true
 	cptn_idle.hide()
 	cptn_talk.show()
@@ -194,9 +197,11 @@ func match_text_display(line_string) -> String:
 func _on_puzzle_interaction_start_dial_voice_lines() -> void:
 	play_next_line()
 	tutorial_text_ui.show()
+	player.has_control = false
 
 
 func _on_dial_puzzle_interface_dial_puzzle_completed() -> void:
+	print("signal not emmiting right")
 	play_death_cutscene()
 
 

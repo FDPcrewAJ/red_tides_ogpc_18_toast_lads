@@ -6,7 +6,7 @@
 [sub_resource type="GDScript" id="GDScript_q6bu8"]
 script/source = "extends Control
 
-
+@onready var player: Player = $\"..\"
 @onready var menu = $\".\"
 @onready var settings: Control = $\"../settings\"
 @onready var confirm_prompt = $confirm_prompt
@@ -18,16 +18,17 @@ var go_quit = false
 
 
 func _unhandled_key_input(event):
-	if event.is_action_pressed(\"exit\"):
-		if Global.in_menu == false:
-			if pause_open == true and settings.visible == false:
-				menu.hide()
-				unpause()
-				pause_open = false
-			else:
-				menu.show()
-				pause()
-				pause_open = true
+	if player.has_control:
+		if event.is_action_pressed(\"exit\"):
+			if Global.in_menu == false:
+				if pause_open == true and settings.visible == false:
+					menu.hide()
+					unpause()
+					pause_open = false
+				else:
+					menu.show()
+					pause()
+					pause_open = true
 
 func pause():
 	get_tree().paused = true

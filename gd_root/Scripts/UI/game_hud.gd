@@ -1,5 +1,6 @@
 extends Control
 
+
 @onready var stopwatch_dial: TextureRect = $stopwatch_dial
 @onready var label = $stopwatch_dial/stopwatch_countdown
 @onready var needle = $stopwatch_dial/stopwatch_needle

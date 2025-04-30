@@ -198,6 +198,33 @@ points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.005555
 [sub_resource type="BoxShape3D" id="BoxShape3D_tl44k"]
 size = Vector3(3, 4, 4)
 
+[sub_resource type="Animation" id="Animation_5qdi3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cheif_container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.1, 0.5, -4.55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cheif_container:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.1293, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_q1618"]
 resource_name = "chief_fling"
 length = 0.5
@@ -224,33 +251,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -2.1293, 0), Vector3(0, -2.80645, 0), Vector3(0, -3.13309, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_5qdi3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("cheif_container:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(9.1, 0.5, -4.55)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("cheif_container:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -2.1293, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3wn7i"]
@@ -1460,7 +1460,6 @@ shape = SubResource("BoxShape3D_tl44k")
 transform = Transform3D(0.206204, 0, 0.978509, 0, 1, 0, -0.978509, 0, 0.206204, -0.952, 2.414, -11.673)
 
 [node name="cinimatic_cam" type="Camera3D" parent="tutorial_sequence/camera_container"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="cheif_container" type="Node3D" parent="tutorial_sequence"]
 transform = Transform3D(0.292372, 0, 0.956305, 0, 1, 0, -0.956305, 0, 0.292372, -3.35, 0.5, -12.453)

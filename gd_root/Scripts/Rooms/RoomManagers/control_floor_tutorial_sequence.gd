@@ -18,6 +18,7 @@ signal interaction_ready
 @onready var blackout_timer: Timer = $black_screen/blackout_timer
 @onready var wake_up_label: Label = $black_screen/wake_up_label
 
+@onready var fire_container: Node3D = $fire_container
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -201,7 +202,6 @@ func _on_puzzle_interaction_start_dial_voice_lines() -> void:
 
 
 func _on_dial_puzzle_interface_dial_puzzle_completed() -> void:
-	print("signal not emmiting right")
 	play_death_cutscene()
 
 
@@ -222,7 +222,6 @@ func _on_cheif_fling_animator_animation_finished(_anim_name: StringName) -> void
 
 
 func _on_blackout_timer_timeout() -> void:
-	print(lightning_count)
 	if lightning_count == 2:
 		wake_up_label.show()
 		lightning_count += 1
@@ -232,4 +231,5 @@ func _on_blackout_timer_timeout() -> void:
 		player.show()
 		black_screen.hide()
 		wake_up_label.hide()
+		fire_container.position.y = 0
 		player.has_control = true

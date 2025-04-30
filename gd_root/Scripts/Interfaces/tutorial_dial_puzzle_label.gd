@@ -13,7 +13,6 @@ func _process(_delta):
 			if dial_3_sprite.rotation_degrees < 126 + 2 and dial_3_sprite.rotation_degrees > 126 - 2:
 				text = "Calibration Completed"
 				if call_once:
-					print("called incorectly")
 					dial_puzzle_interface.dial_puzzle_complete = true
 					call_once = false
 	else:

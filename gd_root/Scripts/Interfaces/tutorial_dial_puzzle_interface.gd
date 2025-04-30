@@ -11,6 +11,5 @@ func _on_back_button_pressed() -> void:
 	player.has_control = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if dial_puzzle_complete:
-		print("button check is broken")
 		dial_puzzle_completed.emit()
 		dial_puzzle_complete = false

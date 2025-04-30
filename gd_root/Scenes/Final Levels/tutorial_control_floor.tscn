@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=102 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -50,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://bsxurjif22kpd" path="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptn_fling_end.gltf" id="44_kg4td"]
 [ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="44_uy123"]
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_fire_container.gd" id="51_otypp"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -258,6 +259,30 @@ _data = {
 "RESET": SubResource("Animation_5qdi3"),
 "chief_fling": SubResource("Animation_q1618")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohuts"]
+albedo_color = Color(0.726223, 3.41728e-06, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aveqi"]
+material = SubResource("StandardMaterial3D_ohuts")
+size = Vector3(4, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_chsse"]
+size = Vector3(4, 5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lagky"]
+material = SubResource("StandardMaterial3D_ohuts")
+size = Vector3(4, 1, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d45qq"]
+size = Vector3(4, 5, 12.4044)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbb0f"]
+material = SubResource("StandardMaterial3D_ohuts")
+size = Vector3(4, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8020b"]
+size = Vector3(4, 5, 5)
 
 [node name="tutorial_control_floor" type="Node3D"]
 script = ExtResource("1_lar5y")
@@ -1595,6 +1620,60 @@ text = "Wake Up, Comrade"
 wait_time = 5.0
 one_shot = true
 
+[node name="fire_container" type="Node3D" parent="tutorial_sequence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+script = ExtResource("51_otypp")
+
+[node name="fire" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(0.797279, 0, -0.603612, 0, 1, 0, 0.603612, 0, 0.797279, 9.63407, 0.5, 2.60786)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire"]
+mesh = SubResource("BoxMesh_aveqi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_chsse")
+
+[node name="fire2" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(0.99895, 0, 0.0458164, 0, 1, 0, -0.0458164, 0, 0.99895, 11.9146, 0.5, -7.5716)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire2"]
+mesh = SubResource("BoxMesh_lagky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 2.5, -1.29782)
+shape = SubResource("BoxShape3D_d45qq")
+
+[node name="fire3" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(-0.999939, 0, 0.0110477, 0, 1, 0, -0.0110477, 0, -0.999939, 3.43779, 0.5, -7.24776)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire3"]
+mesh = SubResource("BoxMesh_gbb0f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_8020b")
+
+[node name="fire4" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(-0.0110477, 0, -0.999939, 0, 1, 0, 0.999939, 0, -0.0110477, -0.0583895, 0.5, 0.770368)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire4"]
+mesh = SubResource("BoxMesh_gbb0f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_8020b")
+
+[node name="fire5" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(0.708746, 0, -0.705464, 0, 1, 0, 0.705464, 0, 0.708746, -12.1671, 0.5, -0.471357)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire5"]
+mesh = SubResource("BoxMesh_lagky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_d45qq")
+
 [connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
 [connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]
 [connection signal="interaction_ready" from="tutorial_sequence" to="puzzle_interaction" method="_on_tutorial_sequence_interaction_ready"]
@@ -1603,3 +1682,8 @@ one_shot = true
 [connection signal="timeout" from="tutorial_sequence/cheif_container/lighting_timer" to="tutorial_sequence" method="_on_lighting_timer_timeout"]
 [connection signal="animation_finished" from="tutorial_sequence/cheif_fling_animator" to="tutorial_sequence" method="_on_cheif_fling_animator_animation_finished"]
 [connection signal="timeout" from="tutorial_sequence/black_screen/blackout_timer" to="tutorial_sequence" method="_on_blackout_timer_timeout"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire" to="tutorial_sequence/fire_container" method="_on_fire_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire2" to="tutorial_sequence/fire_container" method="_on_fire_2_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire3" to="tutorial_sequence/fire_container" method="_on_fire_3_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire4" to="tutorial_sequence/fire_container" method="_on_fire_4_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire5" to="tutorial_sequence/fire_container" method="_on_fire_5_area_entered"]

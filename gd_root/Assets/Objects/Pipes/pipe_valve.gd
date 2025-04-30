@@ -21,46 +21,47 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:
-	if Global.current_object == "ValveBody":
-		#Must correspond to the interactables display node in the current scene
-		interactables_display._show_interactable()
-		if !valve_anims.is_playing():
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				if coolantProvided < maxCoolant:
-					if self.name == "pipe_valve":
-						valve_anims.play("pipe_1_turn")
-						reactor_label.coolant += 10
-						coolantProvided += 10
-	if Global.current_object == "ValveBody2":
-		#Must correspond to the interactables display node in the current scene
-		interactables_display._show_interactable()
-		if !valve_anims.is_playing():
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				if coolantProvided < maxCoolant:
-					if self.name == "pipe_valve2":
-						valve_anims.play("pipe_2_turn")
-						reactor_label.coolant += 15
-						coolantProvided += 15
-	if Global.current_object == "ValveBody3":
-		#Must correspond to the interactables display node in the current scene
-		interactables_display._show_interactable()
-		if !valve_anims.is_playing():
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				if coolantProvided < maxCoolant:
-					if self.name == "pipe_valve3":
-						valve_anims.play("pipe_3_turn")
-						reactor_label.coolant += 2
-						coolantProvided += 2
-	if Global.current_object == "ValveBody4":
-		#Must correspond to the interactables display node in the current scene
-		interactables_display._show_interactable()
-		if !valve_anims.is_playing():
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				if coolantProvided < maxCoolant:
-					if self.name == "pipe_valve4":
-						valve_anims.play("pipe_4_turn")
-						reactor_label.coolant += 20
-						coolantProvided += 20
+	if Global.fire_puzzle_completed:
+		if Global.current_object == "ValveBody":
+			#Must correspond to the interactables display node in the current scene
+			interactables_display._show_interactable()
+			if !valve_anims.is_playing():
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					if coolantProvided < maxCoolant:
+						if self.name == "pipe_valve":
+							valve_anims.play("pipe_1_turn")
+							reactor_label.coolant += 10
+							coolantProvided += 10
+		if Global.current_object == "ValveBody2":
+			#Must correspond to the interactables display node in the current scene
+			interactables_display._show_interactable()
+			if !valve_anims.is_playing():
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					if coolantProvided < maxCoolant:
+						if self.name == "pipe_valve2":
+							valve_anims.play("pipe_2_turn")
+							reactor_label.coolant += 15
+							coolantProvided += 15
+		if Global.current_object == "ValveBody3":
+			#Must correspond to the interactables display node in the current scene
+			interactables_display._show_interactable()
+			if !valve_anims.is_playing():
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					if coolantProvided < maxCoolant:
+						if self.name == "pipe_valve3":
+							valve_anims.play("pipe_3_turn")
+							reactor_label.coolant += 2
+							coolantProvided += 2
+		if Global.current_object == "ValveBody4":
+			#Must correspond to the interactables display node in the current scene
+			interactables_display._show_interactable()
+			if !valve_anims.is_playing():
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					if coolantProvided < maxCoolant:
+						if self.name == "pipe_valve4":
+							valve_anims.play("pipe_4_turn")
+							reactor_label.coolant += 20
+							coolantProvided += 20
 
 func reset_pipe():
 	coolantProvided = 0

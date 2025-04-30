@@ -10,12 +10,13 @@ extends MeshInstance3D
 
 
 func _process(_delta: float) -> void:
-	if Global.current_object == "ButtonBody":
-		#Must correspond to the interactables display node in the current scene
-		interactables_display._show_interactable()
-		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-			pipe_valve.reset_pipe()
-			pipe_valve_2.reset_pipe()
-			pipe_valve_3.reset_pipe()
-			pipe_valve_4.reset_pipe()
-			reactor_label.coolant = 0
+	if Global.fire_puzzle_completed:
+		if Global.current_object == "ButtonBody":
+			#Must correspond to the interactables display node in the current scene
+			interactables_display._show_interactable()
+			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+				pipe_valve.reset_pipe()
+				pipe_valve_2.reset_pipe()
+				pipe_valve_3.reset_pipe()
+				pipe_valve_4.reset_pipe()
+				reactor_label.coolant = 0

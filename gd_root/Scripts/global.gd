@@ -4,15 +4,19 @@ var new_game = false
 
 var room_completed = false
 
-var previous_scene = "res://Scenes/Testing Rooms/dev_testing_room.tscn"
+var previous_scene = "res://Scenes/Menus/title_screen.tscn"
 
 # Storm system control 
-var time_left = 20
+var time_left = 8
+var watch_collected = false
 var timer_active = false
 var needle_rotation = 1
 
 #List pickup boolean
-var list_in_hand = true
+var list_collected = false
+
+
+var tutorial_completed = false
 
 # Player ray cast collision range for interaction
 var current_object = "none"

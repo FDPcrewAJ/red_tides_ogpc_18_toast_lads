@@ -51,12 +51,12 @@ func _on_boat_repair_col_area_entered(_area) -> void:
 	var event = event_array[0]
 	var interact_key = OS.get_keycode_string(event.physical_keycode)
 	boat_repair_label.text = "Press " + str(interact_key) + " or Left Mouse to repair"
-	if Global.list_in_hand:
+	if Global.list_collected:
 		boat_repair_mode = true
 		boat_repair_label.visible = true
 
 
 func _on_boat_repair_col_area_exited(_area) -> void:
-	if Global.list_in_hand:
+	if Global.list_collected:
 		boat_repair_mode = false
 		boat_repair_label.visible = false

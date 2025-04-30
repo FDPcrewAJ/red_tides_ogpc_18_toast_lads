@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=107 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/cntrl_floor_view_interact_menu.gd" id="4_u34bp"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_we0lx"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="5_wxha2"]
+[ext_resource type="PackedScene" uid="uid://b07kvqsnajhdg" path="res://Scenes/Interfaces/tutorial_dial_puzzle_interface.tscn" id="6_gpdhb"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="6_hhiki"]
+[ext_resource type="PackedScene" uid="uid://ddrrxe3s68yt0" path="res://Scenes/Menus/tutorial_text_ui.tscn" id="6_sqsti"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="7_if7oh"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="8_ngpsw"]
 [ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="9_cne0e"]
@@ -17,10 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_dc48g"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="15_ffkmp"]
 [ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="16_5p66g"]
+[ext_resource type="Texture2D" uid="uid://myl1rx4q43cv" path="res://Imports/images/lightning bolt.png" id="16_qxvbs"]
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="17_bcyat"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="18_k7vkn"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="19_fvb40"]
 [ext_resource type="PackedScene" uid="uid://dljfc2pqkh4ce" path="res://Assets/Objects/Computer/server.tscn" id="20_1b6gy"]
+[ext_resource type="PackedScene" uid="uid://b1rmgbys07i4h" path="res://Imports/Models/Objects/Doors/doorFacility.gltf" id="20_pbmpa"]
 [ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="21_dkw88"]
 [ext_resource type="PackedScene" uid="uid://0x1hlqecfvof" path="res://Assets/Objects/MiscFurnature/fridge.tscn" id="22_pia2e"]
 [ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="23_tb8m8"]
@@ -38,7 +42,17 @@
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="35_46pru"]
 [ext_resource type="PackedScene" uid="uid://c5chqamjkvdor" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="36_vo6dm"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_code_note.gd" id="37_qapwa"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_puzzles.gd" id="38_cxfwe"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_tutorial_sequence.gd" id="40_doj3g"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor_puzzle_interaction.gd" id="40_xpubd"]
+[ext_resource type="PackedScene" uid="uid://cgv64q8u2l43c" path="res://Assets/Characters/Chief/Animations/Idle/cptn_idle.gltf" id="41_4wqrs"]
+[ext_resource type="PackedScene" uid="uid://ie8j1xin4y6i" path="res://Scenes/Interfaces/tutorial_storm_code_interface.tscn" id="41_7v22k"]
+[ext_resource type="PackedScene" uid="uid://cmc3e8rv2l3v2" path="res://Assets/Characters/Chief/Animations/Talk/cptn_talk.gltf" id="42_vl0ci"]
+[ext_resource type="PackedScene" uid="uid://c2kx3372m0i4f" path="res://Assets/Characters/Chief/Animations/Fling/Fling Main/cptn_fling_loop.gltf" id="44_aq61p"]
+[ext_resource type="PackedScene" uid="uid://bsxurjif22kpd" path="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptn_fling_end.gltf" id="44_kg4td"]
+[ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="44_uy123"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_fire_container.gd" id="51_otypp"]
+[ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="52_et7kt"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -170,6 +184,9 @@ size = Vector3(5, 1, 30)
 material = ExtResource("10_qhohb")
 size = Vector2(5, 30)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6fxx"]
+size = Vector3(1.35706, 2.72144, 0.580078)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_s12nq"]
 size = Vector3(1.59655, 1.81104, 2)
 
@@ -184,6 +201,100 @@ size = Vector2(0.7, 0.7)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8icv8"]
 points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tl44k"]
+size = Vector3(3, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4xs8"]
+size = Vector3(0.661133, 2.60001, 0.397461)
+
+[sub_resource type="Animation" id="Animation_5qdi3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cheif_container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.1, 0.5, -4.55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cheif_container:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.1293, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q1618"]
+resource_name = "chief_fling"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cheif_container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(9.1, 0.5, -4.55), Vector3(4.911, 0.5, 3.696)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cheif_container:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -2.1293, 0), Vector3(0, -2.80645, 0), Vector3(0, -3.13309, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3wn7i"]
+_data = {
+"RESET": SubResource("Animation_5qdi3"),
+"chief_fling": SubResource("Animation_q1618")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohuts"]
+albedo_color = Color(0.726223, 3.41728e-06, 5.77569e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aveqi"]
+material = SubResource("StandardMaterial3D_ohuts")
+size = Vector3(4, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_chsse"]
+size = Vector3(4, 5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lagky"]
+material = SubResource("StandardMaterial3D_ohuts")
+size = Vector3(4, 1, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d45qq"]
+size = Vector3(4, 5, 12.4044)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbb0f"]
+material = SubResource("StandardMaterial3D_ohuts")
+size = Vector3(4, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8020b"]
+size = Vector3(4, 5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ic2i"]
+size = Vector3(0.626465, 1.4375, 0.663452)
+
 [node name="tutorial_control_floor" type="Node3D"]
 script = ExtResource("1_lar5y")
 
@@ -191,11 +302,23 @@ script = ExtResource("1_lar5y")
 
 [node name="MenuPrompt" parent="." instance=ExtResource("3_ydh84")]
 
-[node name="view_interact_menu" type="Node3D" parent="."]
-script = ExtResource("4_u34bp")
-
 [node name="player" parent="." instance=ExtResource("4_we0lx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="puzzle_interaction" type="Node3D" parent="."]
+script = ExtResource("40_xpubd")
+
+[node name="dial_puzzle_interface" parent="puzzle_interaction" instance=ExtResource("6_gpdhb")]
+visible = false
+
+[node name="storm_code_interface" parent="puzzle_interaction" instance=ExtResource("41_7v22k")]
+visible = false
+
+[node name="tutorial_text_ui" parent="." instance=ExtResource("6_sqsti")]
+visible = false
+
+[node name="view_interact_menu" type="Node3D" parent="."]
+script = ExtResource("4_u34bp")
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_2iafm")
@@ -233,7 +356,6 @@ shape = SubResource("BoxShape3D_fynni")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -779,7 +901,16 @@ transform = Transform3D(-6.77529e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90101e-0
 transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07, -5.7079, 0.5, -7.04945)
 
 [node name="fire_door" parent="world/building/doors" instance=ExtResource("14_dc48g")]
+transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.806, -10, 10.741)
+
+[node name="blank door" parent="world/building/doors" instance=ExtResource("20_pbmpa")]
 transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.80647, 0.5, 10.7411)
+
+[node name="door_blocker" type="StaticBody3D" parent="world/building/doors/blank door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/doors/blank door/door_blocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 7.10543e-15, 0, 1, 0.00909376, 0.860718, 0.209961)
+shape = SubResource("BoxShape3D_c6fxx")
 
 [node name="interactables" type="Node3D" parent="world"]
 
@@ -789,7 +920,7 @@ transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.361412, 1.41879, -11.5668)
 
 [node name="wooden_desk_1" parent="world/decor/bossesOffice" instance=ExtResource("15_ffkmp")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.050156, -0.91879, 0.2287)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.737512, -0.91879, 0.2287)
 
 [node name="wooden_desk_2" parent="world/decor/bossesOffice" instance=ExtResource("15_ffkmp")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.04351, -0.91879, -1.4393)
@@ -807,13 +938,13 @@ transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -2.23883
 transform = Transform3D(0.849644, 0, 0.527356, 0, 1, 0, -0.527356, 0, 0.849644, -3.93407, -0.91879, -2.1561)
 
 [node name="portable_chair2" parent="world/decor/bossesOffice" instance=ExtResource("17_bcyat")]
-transform = Transform3D(0.974299, 0, -0.225257, 0, 1, 0, 0.225257, 0, 0.974299, 0.355014, -0.91879, -1.207)
+transform = Transform3D(0.974299, 0, -0.225257, 0, 1, 0, 0.225257, 0, 0.974299, 1.04237, -0.91879, -1.207)
 
 [node name="spinnyChair" parent="world/decor/bossesOffice" instance=ExtResource("18_k7vkn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292239, -0.91879, 1.4382)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.979595, -0.91879, 1.4382)
 
 [node name="pen" parent="world/decor/bossesOffice" instance=ExtResource("19_fvb40")]
-transform = Transform3D(-2.06242, -1.52221, -9.01512e-08, -1.12047e-07, 4.89774e-15, 2.56334, -1.52221, 2.06242, -6.65381e-08, 0.358311, 0.24915, 0.1933)
+transform = Transform3D(-2.06242, -1.52221, -9.01512e-08, -1.12047e-07, 4.89774e-15, 2.56334, -1.52221, 2.06242, -6.65381e-08, 1.04567, 0.24915, 0.1933)
 
 [node name="server" parent="world/decor/bossesOffice" instance=ExtResource("20_1b6gy")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -5.08234, -0.91879, 0.4852)
@@ -1005,7 +1136,7 @@ transform = Transform3D(0.951089, 0, -0.308917, 0, 1, 0, 0.308917, 0, 0.951089, 
 [node name="misc" type="Node3D" parent="world/decor/mainHall"]
 
 [node name="fridge" parent="world/decor/mainHall/misc" instance=ExtResource("22_pia2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.282, 0.43245, -12.7865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.282, 0.43245, -17.3319)
 
 [node name="fridge2" parent="world/decor/mainHall/misc" instance=ExtResource("22_pia2e")]
 transform = Transform3D(-0.161776, 0, -0.986827, 0, 1, 0, 0.986827, 0, -0.161776, 35.0936, 0.43245, -21.5871)
@@ -1070,37 +1201,6 @@ transform = Transform3D(0.189308, 0, 0.777279, 0, 0.8, 0, -0.777279, 0, 0.189308
 
 [node name="computer4" parent="world/decor/mainHall/tech" instance=ExtResource("27_xa3je")]
 transform = Transform3D(0.122306, 0, -0.790596, 0, 0.8, 0, 0.790596, 0, 0.122306, 7.69001, 1.62149, -10.0945)
-
-[node name="control_floor_lore_chatlog" type="StaticBody3D" parent="world/decor/mainHall/tech/computer4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer4/control_floor_lore_chatlog"]
-transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
-shape = SubResource("BoxShape3D_s12nq")
-
-[node name="ChatlogDecorativeLabel" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.288076, 1.14588, 0.430409)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "-----"
-
-[node name="ChatlogDecorativeLabel2" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.180449, 0.985913, 0.447059)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~~"
-
-[node name="ChatlogDecorativeLabel3" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.0862622, 0.891669, 0.46163)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~~~~"
-
-[node name="ChatlogDecorativeLabel4" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.795077, 0.441541)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~"
-
-[node name="ChatlogDecorativeLabel5" type="Label3D" parent="world/decor/mainHall/tech/computer4"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.678863, 0.441541)
-modulate = Color(1, 0.0980392, 0, 1)
-text = "- ~~~"
 
 [node name="computer5" parent="world/decor/mainHall/tech" instance=ExtResource("27_xa3je")]
 transform = Transform3D(0.0885091, 0, 0.795089, 0, 0.8, 0, -0.795089, 0, 0.0885091, -1.1255, 1.62149, -14.7018)
@@ -1391,5 +1491,256 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/StormCodeNote/StormCodeNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_8icv8")
 
-[node name="puzzle_interaction" type="Node3D" parent="."]
-script = ExtResource("38_cxfwe")
+[node name="screensaver_pl_1" type="Label3D" parent="computer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0255667, 0.786069, 0.409056)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("50_mshvd")
+font_size = 150
+
+[node name="screensaver_pl_2" type="Label3D" parent="computer"]
+transform = Transform3D(-0.999775, 0, -0.0212042, 0, 1, 0, 0.0212042, 0, -0.999775, -5.58742, 0.786069, 20.2739)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("50_mshvd")
+font_size = 150
+
+[node name="tutorial_sequence" type="Node3D" parent="."]
+script = ExtResource("40_doj3g")
+
+[node name="initiator" type="Area3D" parent="tutorial_sequence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51715, 2, -12.1653)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/initiator"]
+shape = SubResource("BoxShape3D_tl44k")
+
+[node name="camera_container" type="Node3D" parent="tutorial_sequence"]
+transform = Transform3D(0.206204, 0, 0.978509, 0, 1, 0, -0.978509, 0, 0.206204, -0.952, 2.414, -11.673)
+
+[node name="cinimatic_cam" type="Camera3D" parent="tutorial_sequence/camera_container"]
+
+[node name="cheif_container" type="Node3D" parent="tutorial_sequence"]
+transform = Transform3D(0.292372, 0, 0.956305, 0, 1, 0, -0.956305, 0, 0.292372, -3.35, 0.5, -12.453)
+
+[node name="cheif_col" type="StaticBody3D" parent="tutorial_sequence/cheif_container"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/cheif_container/cheif_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105467, 0.800003, -0.219238)
+shape = SubResource("BoxShape3D_m4xs8")
+
+[node name="voice_audio" type="AudioStreamPlayer3D" parent="tutorial_sequence/cheif_container"]
+transform = Transform3D(0.292555, 0, -0.956249, 0, 1, 0, 0.956249, 0, 0.292555, 0, 1.79337, 0)
+autoplay = true
+bus = &"Voice"
+
+[node name="cptn_dead" parent="tutorial_sequence/cheif_container" instance=ExtResource("44_uy123")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="cptn_fling_end" parent="tutorial_sequence/cheif_container" instance=ExtResource("44_kg4td")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="cptn_fling_loop" parent="tutorial_sequence/cheif_container" instance=ExtResource("44_aq61p")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="cptn_idle" parent="tutorial_sequence/cheif_container" instance=ExtResource("41_4wqrs")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 1.04308e-08, 0, -0.351343)
+
+[node name="cptn_talk" parent="tutorial_sequence/cheif_container" instance=ExtResource("42_vl0ci")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="lightning_strike" type="Node3D" parent="tutorial_sequence/cheif_container"]
+visible = false
+
+[node name="lightning" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(0.923036, -0.384714, 0, 0.384714, 0.923036, 0, 0, 0, 1, -0.981771, 3.56911, -2.16067e-07)
+pixel_size = 0.0356
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning6" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(-0.444525, 0.859117, 0.253606, -0.888153, -0.459549, 0, 0.116544, -0.225241, 0.967308, -1.80046, 3.56797, 0.214642)
+pixel_size = 0.0231
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning2" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(-0.890212, 0.36721, 0.269592, 0.381329, 0.92444, 3.36328e-08, -0.249222, 0.102803, -0.962975, 0.676964, 2.52795, 0.0903759)
+pixel_size = 0.0231
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning4" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(-0.748932, 0.605327, 0.269592, 0.628601, 0.777728, 2.98023e-08, -0.209669, 0.169466, -0.962974, 1.86436, 4.6186, 0.422798)
+pixel_size = 0.0231
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning3" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(0.646215, 0.713952, 0.269592, 0.741402, -0.671061, 2.98023e-08, 0.180913, 0.199876, -0.962975, 0.187514, 3.7919, -0.0466505)
+pixel_size = 0.0191
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning5" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(0.35669, -0.814184, 0.458122, -0.915957, -0.401277, 4.54989e-08, 0.183834, -0.41962, -0.888889, 1.56463, 2.58713, 0.467555)
+pixel_size = 0.0191
+texture = ExtResource("16_qxvbs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.946357, 3.18123, -1.49012e-07)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 1.653
+light_size = 0.584
+light_specular = 2.519
+omni_range = 2.775
+omni_attenuation = -0.121
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.472279, 1.73727, 0.134287)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 1.558
+light_size = 0.584
+light_specular = 2.519
+omni_range = 2.775
+omni_attenuation = -0.121
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159235, 1.30006, 0.134288)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 9.813
+light_size = 0.584
+light_specular = 2.519
+omni_range = 1.674
+omni_attenuation = -0.121
+
+[node name="lighting_timer" type="Timer" parent="tutorial_sequence/cheif_container"]
+wait_time = 0.3
+one_shot = true
+
+[node name="cheif_fling_animator" type="AnimationPlayer" parent="tutorial_sequence"]
+active = false
+libraries = {
+"": SubResource("AnimationLibrary_3wn7i")
+}
+
+[node name="black_screen" type="Node3D" parent="tutorial_sequence"]
+
+[node name="black_screen_rect" type="ColorRect" parent="tutorial_sequence/black_screen"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -415.0
+offset_top = -324.0
+offset_right = 385.0
+offset_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="wake_up_label" type="Label" parent="tutorial_sequence/black_screen"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_fonts/font = ExtResource("50_mshvd")
+theme_override_font_sizes/font_size = 150
+text = "Wake Up, Comrade"
+
+[node name="blackout_timer" type="Timer" parent="tutorial_sequence/black_screen"]
+wait_time = 5.0
+one_shot = true
+
+[node name="fire_container" type="Node3D" parent="tutorial_sequence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+script = ExtResource("51_otypp")
+
+[node name="fire" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(0.797279, 0, -0.603612, 0, 1, 0, 0.603612, 0, 0.797279, 9.63407, 0.5, 2.60786)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire"]
+mesh = SubResource("BoxMesh_aveqi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_chsse")
+
+[node name="fire2" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(0.99895, 0, 0.0458164, 0, 1, 0, -0.0458164, 0, 0.99895, 11.9146, 0.5, -7.5716)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire2"]
+mesh = SubResource("BoxMesh_lagky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 2.5, -1.29782)
+shape = SubResource("BoxShape3D_d45qq")
+
+[node name="fire3" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(-0.999939, 0, 0.0110477, 0, 1, 0, -0.0110477, 0, -0.999939, 3.43779, 0.5, -7.24776)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire3"]
+mesh = SubResource("BoxMesh_gbb0f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_8020b")
+
+[node name="fire4" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(-0.0110477, 0, -0.999939, 0, 1, 0, 0.999939, 0, -0.0110477, -0.0583895, 0.5, 0.770368)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire4"]
+mesh = SubResource("BoxMesh_gbb0f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_8020b")
+
+[node name="fire5" type="Area3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(0.708746, 0, -0.705464, 0, 1, 0, 0.705464, 0, 0.708746, -12.1671, 0.5, -0.471357)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="tutorial_sequence/fire_container/fire5"]
+mesh = SubResource("BoxMesh_lagky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_d45qq")
+
+[node name="checklist_pick_up" type="StaticBody3D" parent="tutorial_sequence/fire_container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41007, 0.695435, 1.92876)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0310059, 0.21875, 0.00262451)
+shape = SubResource("BoxShape3D_2ic2i")
+
+[node name="Sprite3D" type="Sprite3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
+transform = Transform3D(-0.347943, 0.462282, -0.815617, 0.0282009, -0.864422, -0.501975, -0.937091, -0.19766, 0.287733, 0, 0, 0)
+pixel_size = 0.0008
+texture = ExtResource("52_et7kt")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, -0.016324, -0.0179489)
+light_color = Color(0.94902, 0.956863, 0, 1)
+light_energy = 0.205
+omni_range = 1.29291
+
+[connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
+[connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]
+[connection signal="interaction_ready" from="tutorial_sequence" to="puzzle_interaction" method="_on_tutorial_sequence_interaction_ready"]
+[connection signal="area_entered" from="tutorial_sequence/initiator" to="tutorial_sequence" method="_on_initiator_area_entered"]
+[connection signal="finished" from="tutorial_sequence/cheif_container/voice_audio" to="tutorial_sequence" method="_on_voice_line_player_finished"]
+[connection signal="timeout" from="tutorial_sequence/cheif_container/lighting_timer" to="tutorial_sequence" method="_on_lighting_timer_timeout"]
+[connection signal="animation_finished" from="tutorial_sequence/cheif_fling_animator" to="tutorial_sequence" method="_on_cheif_fling_animator_animation_finished"]
+[connection signal="timeout" from="tutorial_sequence/black_screen/blackout_timer" to="tutorial_sequence" method="_on_blackout_timer_timeout"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire" to="tutorial_sequence/fire_container" method="_on_fire_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire2" to="tutorial_sequence/fire_container" method="_on_fire_2_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire3" to="tutorial_sequence/fire_container" method="_on_fire_3_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire4" to="tutorial_sequence/fire_container" method="_on_fire_4_area_entered"]
+[connection signal="area_entered" from="tutorial_sequence/fire_container/fire5" to="tutorial_sequence/fire_container" method="_on_fire_5_area_entered"]

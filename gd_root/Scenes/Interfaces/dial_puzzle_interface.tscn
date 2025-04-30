@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=17 format=3 uid="uid://cvp6iu0ltf4p5"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_en7eb"]
@@ -8,12 +8,23 @@
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_label.gd" id="5_com21"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_n8whq"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_label.gd" id="7_4v4vi"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="8_6a52l"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="9_ilg65"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pux5x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aos3k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur123"]
+texture = ExtResource("8_6a52l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uqrc2"]
+texture = ExtResource("9_ilg65")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_artrl"]
+texture = ExtResource("8_6a52l")
 
 [node name="dial_puzzle_interface" type="Node2D"]
 script = ExtResource("1_7i68q")
@@ -34,6 +45,7 @@ flat = true
 script = ExtResource("3_oet22")
 
 [node name="Dial1Sprite" type="Sprite2D" parent="Dial"]
+unique_name_in_owner = true
 position = Vector2(100, 100)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_4aejo")
@@ -109,10 +121,10 @@ text = "123"
 script = ExtResource("7_4v4vi")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -393.0
-offset_top = 287.0
-offset_right = -175.0
-offset_bottom = 425.0
+offset_left = -414.0
+offset_top = 293.0
+offset_right = -147.0
+offset_bottom = 410.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -120,6 +132,9 @@ theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("6_n8whq")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_ur123")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uqrc2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_artrl")
 text = "Back"
 
 [node name="DialPuzzleLabel" type="Label" parent="."]

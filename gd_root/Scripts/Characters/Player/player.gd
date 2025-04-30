@@ -12,10 +12,6 @@ const mouse_sens = 0.5
 # Player animation nodes
 @onready var walk: Node3D = $playerModel/animation_container/walk
 
-
-
-
-
 # If player can move or not (intro/cutscene control)
 var has_control = true
 
@@ -47,10 +43,11 @@ func _ready():
 
 
 func _input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
-		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
-		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-60),deg_to_rad(89))
+	if has_control:
+		if event is InputEventMouseMotion:
+			rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
+			head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
+			head.rotation.x = clamp(head.rotation.x,deg_to_rad(-60),deg_to_rad(89))
 
 
 func _physics_process(delta):

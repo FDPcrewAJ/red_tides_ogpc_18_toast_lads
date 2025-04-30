@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=105 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -199,6 +199,9 @@ points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.005555
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tl44k"]
 size = Vector3(3, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4xs8"]
+size = Vector3(0.661133, 2.60001, 0.397461)
 
 [sub_resource type="Animation" id="Animation_5qdi3"]
 length = 0.001
@@ -1492,6 +1495,12 @@ transform = Transform3D(0.206204, 0, 0.978509, 0, 1, 0, -0.978509, 0, 0.206204, 
 
 [node name="cheif_container" type="Node3D" parent="tutorial_sequence"]
 transform = Transform3D(0.292372, 0, 0.956305, 0, 1, 0, -0.956305, 0, 0.292372, -3.35, 0.5, -12.453)
+
+[node name="cheif_col" type="StaticBody3D" parent="tutorial_sequence/cheif_container"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/cheif_container/cheif_col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105467, 0.800003, -0.219238)
+shape = SubResource("BoxShape3D_m4xs8")
 
 [node name="voice_audio" type="AudioStreamPlayer3D" parent="tutorial_sequence/cheif_container"]
 transform = Transform3D(0.292555, 0, -0.956249, 0, 1, 0, 0.956249, 0, 0.292555, 0, 1.79337, 0)

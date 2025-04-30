@@ -15,6 +15,9 @@ var needle_rotation = 1
 #List pickup boolean
 var list_collected = false
 
+
+var tutorial_completed = false
+
 # Player ray cast collision range for interaction
 var current_object = "none"
 var current_object_parent = "none"

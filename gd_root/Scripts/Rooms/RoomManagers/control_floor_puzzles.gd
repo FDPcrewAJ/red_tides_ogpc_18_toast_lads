@@ -5,10 +5,6 @@ extends Node3D
 @onready var interactables_display: Control = $"../InteractablesDisplay"
 
 
-func _ready() -> void:
-	Global.list_collected = true
-
-
 func _process(_delta: float) -> void:
 	# Puzzle Control
 	# Tile Puzzle

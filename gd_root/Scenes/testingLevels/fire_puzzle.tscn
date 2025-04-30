@@ -805,7 +805,7 @@ transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -6.37157, -0.017246,
 script = ExtResource("23_lcn6t")
 
 [node name="ElevatorDoorBody" type="StaticBody3D" parent="fire_puzzle_door"]
-transform = Transform3D(1, 0, 3.42175e-08, 0, 1, 0, -3.42175e-08, 0, 1, 0, 1.48935, 0.0257399)
+transform = Transform3D(1, 0, 3.42175e-08, 0, 1, 0, -3.42175e-08, 0, 1, 0, 1.5, 0.026)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fire_puzzle_door/ElevatorDoorBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0.023163, -0.356963, 0.0154724)

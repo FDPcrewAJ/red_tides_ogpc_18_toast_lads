@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=107 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="18_k7vkn"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="19_fvb40"]
 [ext_resource type="PackedScene" uid="uid://dljfc2pqkh4ce" path="res://Assets/Objects/Computer/server.tscn" id="20_1b6gy"]
+[ext_resource type="PackedScene" uid="uid://b1rmgbys07i4h" path="res://Imports/Models/Objects/Doors/doorFacility.gltf" id="20_pbmpa"]
 [ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="21_dkw88"]
 [ext_resource type="PackedScene" uid="uid://0x1hlqecfvof" path="res://Assets/Objects/MiscFurnature/fridge.tscn" id="22_pia2e"]
 [ext_resource type="PackedScene" uid="uid://dvaqdhmixfi41" path="res://Assets/Objects/Boxes/metal_box.tscn" id="23_tb8m8"]
@@ -183,6 +184,9 @@ size = Vector3(5, 1, 30)
 material = ExtResource("10_qhohb")
 size = Vector2(5, 30)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6fxx"]
+size = Vector3(1.35706, 2.72144, 0.580078)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_s12nq"]
 size = Vector3(1.59655, 1.81104, 2)
 
@@ -289,7 +293,7 @@ size = Vector3(4, 1, 5)
 size = Vector3(4, 5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ic2i"]
-size = Vector3(1, 1.4375, 1)
+size = Vector3(0.626465, 1.4375, 0.663452)
 
 [node name="tutorial_control_floor" type="Node3D"]
 script = ExtResource("1_lar5y")
@@ -898,7 +902,17 @@ transform = Transform3D(-6.77529e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90101e-0
 transform = Transform3D(2.03258e-07, 0, -1.35, 0, 1.35, 0, 1.55, 0, 1.77031e-07, -5.7079, 0.5, -7.04945)
 
 [node name="fire_door" parent="world/building/doors" instance=ExtResource("14_dc48g")]
+transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.806, -10, 10.741)
+
+[node name="blank door" parent="world/building/doors" instance=ExtResource("20_pbmpa")]
 transform = Transform3D(-6.77526e-08, 0, 1.35, 0, 1.35, 0, -1.55, 0, -5.90104e-08, -5.80647, 0.5, 10.7411)
+
+[node name="door_blocker" type="StaticBody3D" parent="world/building/doors/blank door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/doors/blank door/door_blocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 7.10543e-15, 0, 1, 0.00909376, 0.860718, 0.209961)
+shape = SubResource("BoxShape3D_c6fxx")
 
 [node name="interactables" type="Node3D" parent="world"]
 
@@ -1479,6 +1493,20 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/StormCodeNote/StormCodeNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_8icv8")
 
+[node name="screensaver_pl_1" type="Label3D" parent="computer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0255667, 0.786069, 0.409056)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("50_mshvd")
+font_size = 150
+
+[node name="screensaver_pl_2" type="Label3D" parent="computer"]
+transform = Transform3D(-0.999775, 0, -0.0212042, 0, 1, 0, 0.0212042, 0, -0.999775, -5.58742, 0.786069, 20.2739)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("50_mshvd")
+font_size = 150
+
 [node name="tutorial_sequence" type="Node3D" parent="."]
 script = ExtResource("40_doj3g")
 
@@ -1691,7 +1719,7 @@ shape = SubResource("BoxShape3D_d45qq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41007, 0.695435, 1.92876)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21875, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0310059, 0.21875, 0.00262451)
 shape = SubResource("BoxShape3D_2ic2i")
 
 [node name="Sprite3D" type="Sprite3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]

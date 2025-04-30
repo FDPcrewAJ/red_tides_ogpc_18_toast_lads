@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=81 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor.gd" id="1_so3s2"]
@@ -38,6 +38,8 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_puzzles.gd" id="34_x7tm2"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="35_a0wxa"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_code_note.gd" id="36_xcfq0"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="38_ck3o2"]
+[ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="40_oh6ej"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -182,6 +184,9 @@ size = Vector2(0.7, 0.7)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8icv8"]
 points = PackedVector3Array(0.355556, 0.00555556, 0.355556, -0.355556, -0.00555556, -0.355556, -0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, -0.355556, -0.355556, -0.00555556, 0.355556, -0.355556, 0.00555556, 0.355556, 0.355556, 0.00555556, -0.355556, 0.355556, -0.00555556, 0.355556)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fc30n"]
+size = Vector3(0.563232, 1.53766, 0.340454)
 
 [node name="control_floor" type="Node3D"]
 script = ExtResource("1_so3s2")
@@ -1375,5 +1380,28 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/StormCodeNote/StormCodeNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_8icv8")
 
+[node name="screensaver_pl_1" type="Label3D" parent="computer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.45058e-09, 0.79681, 0.42444)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("38_ck3o2")
+font_size = 140
+
+[node name="screensaver_pl_2" type="Label3D" parent="computer"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.58429, 0.785028, 20.2759)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("38_ck3o2")
+font_size = 140
+
 [node name="puzzle_interaction" type="Node3D" parent="."]
 script = ExtResource("34_x7tm2")
+
+[node name="cptn_dead" parent="." instance=ExtResource("40_oh6ej")]
+transform = Transform3D(-1.4, 0, 1.22392e-07, 0, 1.4, 0, -1.22392e-07, 0, -1.4, 4.98535, 0.5, 3.57528)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cptn_dead"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cptn_dead/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0848389, 0.766449, -0.162292)
+shape = SubResource("BoxShape3D_fc30n")

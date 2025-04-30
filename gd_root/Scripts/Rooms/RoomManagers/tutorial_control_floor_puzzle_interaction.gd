@@ -20,11 +20,11 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if interaction_ready:
-		if Global.current_object == "control_floor_code":
-			interactables_display._show_interactable()
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				storm_code_interface.show()
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#if Global.current_object == "control_floor_code":
+			#interactables_display._show_interactable()
+			#if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+				#storm_code_interface.show()
+				#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 		if Global.current_object == "control_floor_dial_puzzle":
 			interactables_display._show_interactable()

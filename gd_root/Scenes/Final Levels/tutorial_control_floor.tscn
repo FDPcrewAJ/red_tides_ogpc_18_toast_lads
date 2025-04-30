@@ -356,7 +356,6 @@ shape = SubResource("BoxShape3D_fynni")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

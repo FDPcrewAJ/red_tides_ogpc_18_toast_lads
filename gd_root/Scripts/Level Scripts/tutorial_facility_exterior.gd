@@ -139,7 +139,7 @@ func match_text_display(line_string) -> String:
 		"line_11":
 			return "Alright, as you probably noticed, we’re here. Yippee."
 		"line_12":
-			return "I should probably disclose something… I was ordered to remove a couple vital ship parts once you arrived."
+			return "I should probably disclose something… I was ordered to remove a couple vital ship parts once we arrived."
 		"line_13":
 			return "The last recruit deserted, and that was the higher ups’ best idea to prevent that from happening again."
 		"line_14":

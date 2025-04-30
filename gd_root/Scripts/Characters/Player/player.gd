@@ -12,10 +12,6 @@ const mouse_sens = 0.5
 # Player animation nodes
 @onready var walk: Node3D = $playerModel/animation_container/walk
 
-
-
-
-
 # If player can move or not (intro/cutscene control)
 var has_control = true
 

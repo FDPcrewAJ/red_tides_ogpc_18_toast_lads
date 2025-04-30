@@ -77,6 +77,7 @@ func _on_voice_line_player_finished() -> void:
 	# Allow player to move to next section after line 20
 	if Global.line_num == 20:
 		Global.watch_collected = true
+		Global.timer_active = true
 		# Update player position and rotation
 		player.position.x = camera_container.position.x - 0.2
 		player.position.z = camera_container.position.z

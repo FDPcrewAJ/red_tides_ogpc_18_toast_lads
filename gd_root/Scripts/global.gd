@@ -7,7 +7,7 @@ var room_completed = false
 var previous_scene = "res://Scenes/Menus/title_screen.tscn"
 
 # Storm system control 
-var time_left = 10
+var time_left = 8
 var watch_collected = false
 var timer_active = false
 var needle_rotation = 1

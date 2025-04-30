@@ -50,7 +50,7 @@ func _process(delta):
 	#Room Switching
 	if Global.current_object == "doorCol":
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-			Global.next_floor = "Hub"
+			Global.next_floor = "Entrance"
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/Final Levels/facility_enterance.tscn")
 	
 	# Boat Movement Control

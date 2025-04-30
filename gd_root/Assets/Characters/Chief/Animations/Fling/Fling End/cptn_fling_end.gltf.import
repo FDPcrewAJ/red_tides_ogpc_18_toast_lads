@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bsxurjif22kpd"
-path="res://.godot/imported/cptnfling_end.gltf-25d096ba4c6577f73e49f1e66852f93f.scn"
+path="res://.godot/imported/cptn_fling_end.gltf-a901e5323d860dee389ddb8064854c4d.scn"
 
 [deps]
 
-source_file="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptnfling_end.gltf"
-dest_files=["res://.godot/imported/cptnfling_end.gltf-25d096ba4c6577f73e49f1e66852f93f.scn"]
+source_file="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptn_fling_end.gltf"
+dest_files=["res://.godot/imported/cptn_fling_end.gltf-a901e5323d860dee389ddb8064854c4d.scn"]
 
 [params]
 

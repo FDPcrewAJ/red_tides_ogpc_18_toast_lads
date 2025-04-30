@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=90 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_dc48g"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="15_ffkmp"]
 [ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="16_5p66g"]
+[ext_resource type="Texture2D" uid="uid://myl1rx4q43cv" path="res://Imports/images/lightning bolt.png" id="16_qxvbs"]
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="17_bcyat"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="18_k7vkn"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="19_fvb40"]
@@ -45,6 +46,9 @@
 [ext_resource type="PackedScene" uid="uid://cgv64q8u2l43c" path="res://Assets/Characters/Chief/Animations/Idle/cptn_idle.gltf" id="41_4wqrs"]
 [ext_resource type="PackedScene" uid="uid://ie8j1xin4y6i" path="res://Scenes/Interfaces/tutorial_storm_code_interface.tscn" id="41_7v22k"]
 [ext_resource type="PackedScene" uid="uid://cmc3e8rv2l3v2" path="res://Assets/Characters/Chief/Animations/Talk/cptn_talk.gltf" id="42_vl0ci"]
+[ext_resource type="PackedScene" uid="uid://c2kx3372m0i4f" path="res://Assets/Characters/Chief/Animations/Fling/Fling Main/cptn_fling_loop.gltf" id="44_aq61p"]
+[ext_resource type="PackedScene" uid="uid://bsxurjif22kpd" path="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptn_fling_end.gltf" id="44_kg4td"]
+[ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="44_uy123"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -1404,6 +1408,18 @@ transform = Transform3D(0.292555, 0, -0.956249, 0, 1, 0, 0.956249, 0, 0.292555, 
 autoplay = true
 bus = &"Voice"
 
+[node name="cptn_dead" parent="tutorial_sequence/cheif_container" instance=ExtResource("44_uy123")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="cptn_fling_end" parent="tutorial_sequence/cheif_container" instance=ExtResource("44_kg4td")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
+[node name="cptn_fling_loop" parent="tutorial_sequence/cheif_container" instance=ExtResource("44_aq61p")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+visible = false
+
 [node name="cptn_idle" parent="tutorial_sequence/cheif_container" instance=ExtResource("41_4wqrs")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 1.04308e-08, 0, -0.351343)
 
@@ -1411,8 +1427,75 @@ transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 1.04308e-08, 0, -0.3513
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 visible = false
 
+[node name="lightning_strike" type="Node3D" parent="tutorial_sequence/cheif_container"]
+visible = false
+
+[node name="lightning" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(0.923036, -0.384714, 0, 0.384714, 0.923036, 0, 0, 0, 1, -0.981771, 3.56911, -2.16067e-07)
+pixel_size = 0.0356
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning6" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(-0.444525, 0.859117, 0.253606, -0.888153, -0.459549, 0, 0.116544, -0.225241, 0.967308, -1.80046, 3.56797, 0.214642)
+pixel_size = 0.0231
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning2" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(-0.890212, 0.36721, 0.269592, 0.381329, 0.92444, 3.36328e-08, -0.249222, 0.102803, -0.962975, 0.676964, 2.52795, 0.0903759)
+pixel_size = 0.0231
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning4" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(-0.748932, 0.605327, 0.269592, 0.628601, 0.777728, 2.98023e-08, -0.209669, 0.169466, -0.962974, 1.86436, 4.6186, 0.422798)
+pixel_size = 0.0231
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning3" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(0.646215, 0.713952, 0.269592, 0.741402, -0.671061, 2.98023e-08, 0.180913, 0.199876, -0.962975, 0.187514, 3.7919, -0.0466505)
+pixel_size = 0.0191
+texture = ExtResource("16_qxvbs")
+
+[node name="lightning5" type="Sprite3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(0.35669, -0.814184, 0.458122, -0.915957, -0.401277, 4.54989e-08, 0.183834, -0.41962, -0.888889, 1.56463, 2.58713, 0.467555)
+pixel_size = 0.0191
+texture = ExtResource("16_qxvbs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.946357, 3.18123, -1.49012e-07)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 1.653
+light_size = 0.584
+light_specular = 2.519
+omni_range = 2.775
+omni_attenuation = -0.121
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.472279, 1.73727, 0.134287)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 1.558
+light_size = 0.584
+light_specular = 2.519
+omni_range = 2.775
+omni_attenuation = -0.121
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="tutorial_sequence/cheif_container/lightning_strike"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159235, 1.30006, 0.134288)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 9.813
+light_size = 0.584
+light_specular = 2.519
+omni_range = 1.674
+omni_attenuation = -0.121
+
+[node name="lighting_timer" type="Timer" parent="tutorial_sequence/cheif_container"]
+wait_time = 0.4
+one_shot = true
+
+[node name="cheif_fling" type="AnimationPlayer" parent="tutorial_sequence"]
+
 [connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
 [connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]
 [connection signal="interaction_ready" from="tutorial_sequence" to="puzzle_interaction" method="_on_tutorial_sequence_interaction_ready"]
 [connection signal="area_entered" from="tutorial_sequence/initiator" to="tutorial_sequence" method="_on_initiator_area_entered"]
 [connection signal="finished" from="tutorial_sequence/cheif_container/voice_audio" to="tutorial_sequence" method="_on_voice_line_player_finished"]
+[connection signal="timeout" from="tutorial_sequence/cheif_container/lighting_timer" to="tutorial_sequence" method="_on_lighting_timer_timeout"]

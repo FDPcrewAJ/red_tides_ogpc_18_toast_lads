@@ -10,6 +10,10 @@ signal interaction_ready
 @onready var initiator: Area3D = $initiator
 @onready var dial_puzzle_interface: Node2D = $"../puzzle_interaction/dial_puzzle_interface"
 
+@onready var lightning_strike: Node3D = $cheif_container/lightning_strike
+@onready var lighting_timer: Timer = $cheif_container/lighting_timer
+
+
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
 @onready var cinimatic_cam: Camera3D = $camera_container/cinimatic_cam
@@ -18,10 +22,17 @@ signal interaction_ready
 @onready var cheif_container: Node3D = $cheif_container
 @onready var cptn_idle: Node3D = $cheif_container/cptn_idle
 @onready var cptn_talk: Node3D = $cheif_container/cptn_talk
+@onready var cptn_fling_loop: Node3D = $cheif_container/cptn_fling_loop
+@onready var cptn_fling_end: Node3D = $cheif_container/cptn_fling_end
+@onready var cptn_dead: Node3D = $cheif_container/cptn_dead
+
 
 # Chief Animation access
 var chief_talk_anim
 var chief_idle_anim
+var chief_fling_loop
+var chief_fling_end
+var chief_dead
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("devKey"):
@@ -31,6 +42,9 @@ func _unhandled_input(_event: InputEvent) -> void:
 func _ready() -> void:
 	chief_talk_anim = cptn_talk.get_child(1)
 	chief_idle_anim = cptn_idle.get_child(1)
+	chief_fling_loop = cptn_fling_loop.get_child(1)
+	chief_fling_end = cptn_fling_end.get_child(1)
+	chief_dead = cptn_dead.get_child(1)
 	chief_idle_anim.play("animation")
 
 
@@ -89,8 +103,15 @@ func _on_voice_line_player_finished() -> void:
 	if Global.line_num > 22 and Global.line_num < 24:
 		play_next_line()
 	
-	if Global.line_num == 24 or Global.line_num == 25:
+	if Global.line_num == 24:
 		tutorial_text_ui.hide()
+	
+	if Global.line_num == 25:
+		cptn_talk.hide()
+		chief_fling_loop.play("animation")
+		cptn_fling_loop.show()
+		lightning_strike.show()
+		lighting_timer.start()
 
 func play_next_line():
 	voice_audio.set_stream(match_voice_line(Global.voice_line))
@@ -101,7 +122,11 @@ func play_next_line():
 func play_death_cutscene():
 	player.has_control = false
 	player.hide()
+	camera_container.position = Vector3(7.545, 2.414, -6.614)
+	camera_container.rotation.y = deg_to_rad(-157)
 	cinimatic_cam.current = true
+	cptn_idle.hide()
+	cptn_talk.show()
 	dial_puzzle_interface.hide()
 	tutorial_text_ui.show()
 	play_next_line()
@@ -149,7 +174,7 @@ func match_text_display(line_string) -> String:
 		"line_23":
 			return "What was the code again…? I think it’s 254, 78, 126"
 		"line_24":
-			return "*sigh* ok that was the right code, i was worried for some reason. or, ok, and we should be good… wait NO!!--"
+			return "*sigh* ok that was the right code, I was worried for some reason. or, ok, and we should be good… wait NO!!--"
 	return ""
 
 
@@ -160,3 +185,7 @@ func _on_puzzle_interaction_start_dial_voice_lines() -> void:
 
 func _on_dial_puzzle_interface_dial_puzzle_completed() -> void:
 	play_death_cutscene()
+
+
+func _on_lighting_timer_timeout() -> void:
+	lightning_strike.hide()

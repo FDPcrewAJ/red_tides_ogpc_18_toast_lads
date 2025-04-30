@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://ie8j1xin4y6i"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/tutorial_storm_code_interface.gd" id="1_7c3s0"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_2ltkw"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_1jsot"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_emqrj"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_4khxb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vs43l"]
+texture = ExtResource("4_emqrj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akabv"]
+texture = ExtResource("5_4khxb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ujvd5"]
+texture = ExtResource("4_emqrj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ltb3q"]
+texture = ExtResource("4_emqrj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnaad"]
+texture = ExtResource("5_4khxb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie40k"]
+texture = ExtResource("4_emqrj")
+
+[node name="storm_code_interface" type="Node2D"]
+script = ExtResource("1_7c3s0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_2ltkw")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 544.0
+offset_top = 847.0
+offset_right = 783.0
+offset_bottom = 962.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1jsot")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxTexture_vs43l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_akabv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ujvd5")
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="StormCodeLabel" type="Label" parent="."]
+offset_left = 97.0
+offset_top = 117.0
+offset_right = 1254.0
+offset_bottom = 530.0
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1jsot")
+theme_override_font_sizes/font_size = 100
+text = "Calibration Needed:
+#1: 254 Degrees
+#2: 78 Degrees
+#3: 126 Degrees"
+metadata/_edit_use_anchors_ = true
+
+[node name="SearchButton" type="Button" parent="."]
+offset_left = 188.0
+offset_top = 643.0
+offset_right = 1160.0
+offset_bottom = 781.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1jsot")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = SubResource("StyleBoxTexture_ltb3q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jnaad")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ie40k")
+text = "Search For Storm Origin"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

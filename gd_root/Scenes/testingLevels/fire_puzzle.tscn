@@ -601,7 +601,7 @@ omni_range = 9.13347
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="Fire" type="MeshInstance3D" parent="hub_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, -1.76654, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
 mesh = SubResource("BoxMesh_psncc")
 script = ExtResource("4_rnf6b")
 
@@ -613,7 +613,7 @@ script = ExtResource("4_rnf6b")
 shape = SubResource("BoxShape3D_2ieqx")
 
 [node name="Fire2" type="MeshInstance3D" parent="hub_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, -1.76654, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 0, 0)
 mesh = SubResource("BoxMesh_psncc")
 script = ExtResource("5_yh3cq")
 
@@ -625,7 +625,7 @@ script = ExtResource("5_yh3cq")
 shape = SubResource("BoxShape3D_tnhlj")
 
 [node name="Fire3" type="MeshInstance3D" parent="hub_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, -1.76654, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 0)
 mesh = SubResource("BoxMesh_psncc")
 script = ExtResource("6_vdwiv")
 
@@ -637,7 +637,7 @@ script = ExtResource("6_vdwiv")
 shape = SubResource("BoxShape3D_0krpe")
 
 [node name="Fire4" type="MeshInstance3D" parent="hub_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.76654, -10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.5)
 mesh = SubResource("BoxMesh_psncc")
 script = ExtResource("7_miv6a")
 
@@ -649,7 +649,7 @@ script = ExtResource("7_miv6a")
 shape = SubResource("BoxShape3D_ni1ut")
 
 [node name="Fire5" type="MeshInstance3D" parent="hub_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.76654, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21)
 mesh = SubResource("BoxMesh_psncc")
 script = ExtResource("8_4rpbl")
 
@@ -661,7 +661,7 @@ script = ExtResource("8_4rpbl")
 shape = SubResource("BoxShape3D_wuh5f")
 
 [node name="Fire6" type="MeshInstance3D" parent="hub_room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.76654, -31.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.5)
 mesh = SubResource("BoxMesh_psncc")
 script = ExtResource("9_dy4x5")
 

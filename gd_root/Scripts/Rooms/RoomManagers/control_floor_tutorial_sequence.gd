@@ -1,5 +1,6 @@
 extends Node3D
 
+signal interaction_ready
 
 # Core access nodes
 @onready var player: Player = $"../player"
@@ -70,6 +71,8 @@ func _on_voice_line_player_finished() -> void:
 		# Move captain to new area
 		cheif_container.position = Vector3(9.1, 0.5, -4.55)
 		cheif_container.rotation.y = -122
+		
+		interaction_ready.emit()
 	
 	# Autoplay the caller line
 	if Global.line_num == 21:

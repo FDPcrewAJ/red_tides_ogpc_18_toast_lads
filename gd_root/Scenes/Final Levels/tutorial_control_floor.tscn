@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=86 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/cntrl_floor_view_interact_menu.gd" id="4_u34bp"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_we0lx"]
 [ext_resource type="Texture2D" uid="uid://cq4rrxryk32n5" path="res://Imports/images/layouts/control_floor_schematic.png" id="5_wxha2"]
+[ext_resource type="PackedScene" uid="uid://b07kvqsnajhdg" path="res://Scenes/Interfaces/tutorial_dial_puzzle_interface.tscn" id="6_gpdhb"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="6_hhiki"]
 [ext_resource type="PackedScene" uid="uid://ddrrxe3s68yt0" path="res://Scenes/Menus/tutorial_text_ui.tscn" id="6_sqsti"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="7_if7oh"]
@@ -39,9 +40,10 @@
 [ext_resource type="PackedScene" uid="uid://b1lmt8g3vnnis" path="res://Assets/Objects/Pipes/pipe_turn.tscn" id="35_46pru"]
 [ext_resource type="PackedScene" uid="uid://c5chqamjkvdor" path="res://Assets/Objects/Pipes/pipe_valve.tscn" id="36_vo6dm"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/storm_code_note.gd" id="37_qapwa"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_puzzles.gd" id="38_cxfwe"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_tutorial_sequence.gd" id="40_doj3g"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor_puzzle_interaction.gd" id="40_xpubd"]
 [ext_resource type="PackedScene" uid="uid://cgv64q8u2l43c" path="res://Assets/Characters/Chief/Animations/Idle/cptn_idle.gltf" id="41_4wqrs"]
+[ext_resource type="PackedScene" uid="uid://ie8j1xin4y6i" path="res://Scenes/Interfaces/tutorial_storm_code_interface.tscn" id="41_7v22k"]
 [ext_resource type="PackedScene" uid="uid://cmc3e8rv2l3v2" path="res://Assets/Characters/Chief/Animations/Talk/cptn_talk.gltf" id="42_vl0ci"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
@@ -198,11 +200,20 @@ script = ExtResource("1_lar5y")
 
 [node name="MenuPrompt" parent="." instance=ExtResource("3_ydh84")]
 
-[node name="view_interact_menu" type="Node3D" parent="."]
-script = ExtResource("4_u34bp")
-
 [node name="player" parent="." instance=ExtResource("4_we0lx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="puzzle_interaction" type="Node3D" parent="."]
+script = ExtResource("40_xpubd")
+
+[node name="dial_puzzle_interface" parent="puzzle_interaction" instance=ExtResource("6_gpdhb")]
+visible = false
+
+[node name="storm_code_interface" parent="puzzle_interaction" instance=ExtResource("41_7v22k")]
+visible = false
+
+[node name="view_interact_menu" type="Node3D" parent="."]
+script = ExtResource("4_u34bp")
 
 [node name="tutorial_text_ui" parent="." instance=ExtResource("6_sqsti")]
 visible = false
@@ -1370,9 +1381,6 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/StormCodeNote/StormCodeNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_8icv8")
 
-[node name="puzzle_interaction" type="Node3D" parent="."]
-script = ExtResource("38_cxfwe")
-
 [node name="tutorial_sequence" type="Node3D" parent="."]
 script = ExtResource("40_doj3g")
 
@@ -1405,5 +1413,6 @@ transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 1.04308e-08, 0, -0.3513
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 visible = false
 
+[connection signal="interaction_ready" from="tutorial_sequence" to="puzzle_interaction" method="_on_tutorial_sequence_interaction_ready"]
 [connection signal="area_entered" from="tutorial_sequence/initiator" to="tutorial_sequence" method="_on_initiator_area_entered"]
 [connection signal="finished" from="tutorial_sequence/cheif_container/voice_audio" to="tutorial_sequence" method="_on_voice_line_player_finished"]

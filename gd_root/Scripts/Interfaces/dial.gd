@@ -1,6 +1,6 @@
 extends Button
 
-@onready var dial_1_sprite: Sprite2D = $Dial1Sprite
+@onready var dial_1_sprite: Sprite2D = %Dial1Sprite
 @onready var dial_2_sprite: Sprite2D = $"../Dial2/Dial2Sprite"
 @onready var dial_3_sprite: Sprite2D = $"../Dial3/Dial3Sprite"
 

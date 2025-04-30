@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=170 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -34,7 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://bllhjpheko4qy" path="res://Assets/Objects/Electrical/backup_generator.tscn" id="26_ujxie"]
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="27_lcun5"]
 [ext_resource type="PackedScene" uid="uid://bw3vtqs02fnpv" path="res://Assets/Objects/Clutter/soda_cup.tscn" id="28_w666b"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/computer.gd" id="29_lk0e2"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="29_y2a48"]
 [ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="30_87ia1"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="30_mm3nu"]
@@ -1651,7 +1650,6 @@ transform = Transform3D(0.9262, 0, -0.377033, 0, 1, 0, 0.377033, 0, 0.9262, -12.
 
 [node name="StorageComputer" parent="world/decorations/largeStorage" instance=ExtResource("29_y2a48")]
 transform = Transform3D(-0.8, 0, 1.50996e-08, 0, 0.8, 0, -1.20797e-07, 0, -0.1, -10, 1.95871, -5.15841)
-script = ExtResource("29_lk0e2")
 
 [node name="StorageComputerBody" type="StaticBody3D" parent="world/decorations/largeStorage/StorageComputer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.988472)

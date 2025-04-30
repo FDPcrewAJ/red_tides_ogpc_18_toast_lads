@@ -10,9 +10,10 @@ signal interaction_ready
 @onready var initiator: Area3D = $initiator
 @onready var dial_puzzle_interface: Node2D = $"../puzzle_interaction/dial_puzzle_interface"
 
+# Death animation control
 @onready var lightning_strike: Node3D = $cheif_container/lightning_strike
 @onready var lighting_timer: Timer = $cheif_container/lighting_timer
-
+@onready var cheif_fling_animator: AnimationPlayer = $cheif_fling_animator
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -33,6 +34,8 @@ var chief_idle_anim
 var chief_fling_loop
 var chief_fling_end
 var chief_dead
+
+var lightning_count = 0
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("devKey"):
@@ -100,18 +103,23 @@ func _on_voice_line_player_finished() -> void:
 		chief_idle_anim.play("animation")
 		interaction_ready.emit()
 	
+	# Play lines inside the Puzzle UI
 	if Global.line_num > 22 and Global.line_num < 24:
 		play_next_line()
 	
+	# Hide UI text after puzzle voice lines finish
 	if Global.line_num == 24:
 		tutorial_text_ui.hide()
 	
+	# finish the death cutscene after the final voice line
 	if Global.line_num == 25:
+		tutorial_text_ui.hide()
 		cptn_talk.hide()
 		chief_fling_loop.play("animation")
 		cptn_fling_loop.show()
 		lightning_strike.show()
 		lighting_timer.start()
+		cheif_fling_animator.play("chief_fling")
 
 func play_next_line():
 	voice_audio.set_stream(match_voice_line(Global.voice_line))
@@ -189,3 +197,14 @@ func _on_dial_puzzle_interface_dial_puzzle_completed() -> void:
 
 func _on_lighting_timer_timeout() -> void:
 	lightning_strike.hide()
+	lightning_count += 1
+	if lightning_count == 2:
+		print("cut to black")
+
+
+func _on_cheif_fling_animator_animation_finished(_anim_name: StringName) -> void:
+	cptn_fling_loop.hide()
+	cptn_fling_end.show()
+	chief_fling_end.play("animation")
+	lightning_strike.show()
+	lighting_timer.start()

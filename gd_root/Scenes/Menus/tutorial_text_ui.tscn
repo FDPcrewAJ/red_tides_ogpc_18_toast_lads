@@ -26,6 +26,11 @@ position = Vector2(-0.499986, 361)
 scale = Vector2(5.62109, 4.5625)
 texture = ExtResource("3_6spmo")
 
+[node name="text_bg3" type="Sprite2D" parent="."]
+position = Vector2(-0.499986, 361)
+scale = Vector2(5.62109, 4.5625)
+texture = ExtResource("3_6spmo")
+
 [node name="star" type="Sprite2D" parent="."]
 position = Vector2(660, 450)
 scale = Vector2(5, 5)

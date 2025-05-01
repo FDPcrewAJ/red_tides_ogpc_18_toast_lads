@@ -84,7 +84,7 @@ theme_override_font_sizes/font_size = 70
 theme_override_styles/hover = SubResource("StyleBoxTexture_ltb3q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnaad")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ie40k")
-text = "Search For Storm Origin"
+text = "Storm Origin Found"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,7 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
-[ext_resource type="Environment" uid="uid://lgnmv52m7tvi" path="res://Scenes/Enviroments/inside_env.tres" id="2_vsjom"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire.gd" id="4_rnf6b"]
 [ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="5_kukqc"]
@@ -27,6 +26,15 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_elevator_doors.gd" id="23_lcn6t"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="25_x8pim"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="26_c86vd"]
+
+[sub_resource type="Environment" id="Environment_bhl03"]
+ambient_light_sky_contribution = 0.0
+reflected_light_source = 1
+fog_light_energy = 0.1
+fog_sun_scatter = 1.0
+fog_density = 0.007
+adjustment_enabled = true
+adjustment_brightness = 0.75
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21ts2"]
 albedo_texture = ExtResource("4_a3jpa")
@@ -126,12 +134,8 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37157, 0, 6.60987)
 script = ExtResource("1_2g241")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_vsjom")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-light_energy = 0.162
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bhl03")
 
 [node name="hub_room" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37157, 0, 6.60987)

@@ -188,7 +188,7 @@ size = Vector2(5, 30)
 size = Vector3(1.35706, 2.72144, 0.580078)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s12nq"]
-size = Vector3(1.59655, 1.81104, 2)
+size = Vector3(1.79974, 1.81104, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1hxg"]
 transparency = 1
@@ -1471,7 +1471,7 @@ transform = Transform3D(0.178273, 0, 0.779884, 0, 0.8, 0, -0.779884, 0, 0.178273
 [node name="control_floor_code" type="StaticBody3D" parent="computer"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/control_floor_code"]
-transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+transform = Transform3D(1, 3.57771e-09, -1.04308e-07, -3.57771e-09, 1, 2.24645e-10, 1.04308e-07, -2.24643e-10, 1, 0.0162706, 0.575928, -9.53674e-07)
 shape = SubResource("BoxShape3D_s12nq")
 
 [node name="StormCodeNote" type="MeshInstance3D" parent="computer"]
@@ -1493,6 +1493,13 @@ shape = SubResource("ConvexPolygonShape3D_8icv8")
 
 [node name="screensaver_pl_2" type="Label3D" parent="computer"]
 transform = Transform3D(-0.999775, 0, -0.0212042, 0, 1, 0, 0.0212042, 0, -0.999775, -5.58742, 0.786069, 20.2739)
+modulate = Color(1, 0, 0, 1)
+text = "!"
+font = ExtResource("50_mshvd")
+font_size = 150
+
+[node name="screensaver_pl_3" type="Label3D" parent="computer"]
+transform = Transform3D(-0.999775, 0, -0.0212042, 0, 1, 0, 0.0212042, 0, -0.999775, -0.0127696, 0.786069, 0.420873)
 modulate = Color(1, 0, 0, 1)
 text = "!"
 font = ExtResource("50_mshvd")

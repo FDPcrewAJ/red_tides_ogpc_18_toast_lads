@@ -575,6 +575,7 @@ script = ExtResource("3_p6qhm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.132, 6.27362, 128.852)
 
 [node name="intro_camera" type="Camera3D" parent="camera_container"]
+current = true
 
 [node name="player" parent="." instance=ExtResource("4_fxw5f")]
 transform = Transform3D(0.869339, 0, -0.494214, 0, 0.999999, 0, 0.494214, 0, 0.869339, 15.9213, 3.5, -38.4811)

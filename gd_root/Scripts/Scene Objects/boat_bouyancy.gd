@@ -17,7 +17,8 @@ func _physics_process(_delta):
 		var depth = water.get_height(p.global_position) - p.global_position.y 
 		if depth > 0:
 			submerged = true
-			apply_force(Vector3.UP * float_force * gravity * depth, p.global_position - global_position)
+			apply_force(Vector3.UP * float_force * gravity * depth,
+						p.global_position - global_position)
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	if submerged:

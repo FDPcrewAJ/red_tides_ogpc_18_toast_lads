@@ -20,26 +20,27 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if interaction_ready:
-		if Global.current_object == "control_floor_code":
-			interactables_display._show_interactable()
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				storm_code_interface.show()
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
-		if Global.current_object == "control_floor_dial_puzzle":
-			interactables_display._show_interactable()
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				dial_puzzle_interface.show()
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				if first_puzzle_interaction:
-					start_dial_voice_lines.emit()
-					first_puzzle_interaction = false
-		
-		if Global.current_object == "checklist_pick_up":
-			interactables_display._show_interactable()
-			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-				checklist_pick_up.position.y = -10
-				Global.list_collected = true
+		match Global.current_object:
+			"control_floor_code":
+				interactables_display._show_interactable()
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					storm_code_interface.show()
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+					player.has_control = false
+			"control_floor_dial_puzzle":
+				interactables_display._show_interactable()
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					dial_puzzle_interface.show()
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+					player.has_control = false
+					if first_puzzle_interaction:
+						start_dial_voice_lines.emit()
+						first_puzzle_interaction = false
+			"checklist_pick_up":
+				interactables_display._show_interactable()
+				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+					checklist_pick_up.position.y = -10
+					Global.list_collected = true
 
 
 func _on_tutorial_sequence_interaction_ready() -> void:

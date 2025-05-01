@@ -80,7 +80,7 @@ var radar_collected = false
 
 # Tutorial Control var
 var default_audio_name = "line_"
-var line_num = 0
+var line_num =0
 var voice_line = ""
 
 var entry_position = true

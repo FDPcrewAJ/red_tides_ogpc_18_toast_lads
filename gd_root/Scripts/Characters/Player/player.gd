@@ -38,8 +38,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	var walk_anim = walk.get_child(1)
 	walk_anim.play("PlayerAction")
-	
-	
 
 
 func _input(event):
@@ -117,6 +115,7 @@ func _physics_process(delta):
 
 func _set_last_pos():
 	position = Global.lastpos
+
 
 func _set_new_pos():
 	position = Global.new_position

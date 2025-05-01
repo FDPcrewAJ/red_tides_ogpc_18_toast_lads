@@ -44,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="34_0c1x2"]
 [ext_resource type="Script" path="res://Assets/Objects/MiscFurnature/tile_locker.gd" id="34_t8nb8"]
 [ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="35_ayxof"]
-[ext_resource type="Texture2D" uid="uid://tc7aqgqbdlyh" path="res://Imports/images/Maps/enterance_floor_map.png" id="36_2g2e7"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_2_computer.gd" id="37_c0v26"]
 [ext_resource type="Texture2D" uid="uid://by1uf674640ou" path="res://Imports/images/Maps/first_floor_map.png" id="37_sog28"]
 [ext_resource type="Texture2D" uid="uid://dubkb05koepuv" path="res://Imports/images/Maps/second_floor_map.png" id="38_2x5e0"]
@@ -53,6 +52,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_locker_note.gd" id="43_7cpfe"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_note.gd" id="44_nhkwn"]
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="45_5m64c"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="51_semq0"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -2040,25 +2040,38 @@ transform = Transform3D(0.258819, 0, -0.965926, -0.25, 0.965926, -0.0669873, 0.9
 
 [node name="maps" type="Node3D" parent="world/decorations"]
 
-[node name="enterance_floor" type="Sprite3D" parent="world/decorations/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 1.76254, 3.73045)
-pixel_size = 0.0025
-texture = ExtResource("36_2g2e7")
-
-[node name="first_floor" type="Sprite3D" parent="world/decorations/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 1.76429, 1.00437)
-pixel_size = 0.0025
-texture = ExtResource("37_sog28")
-
 [node name="second_floor" type="Sprite3D" parent="world/decorations/maps"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 3.63814, 3.12271)
 pixel_size = 0.0025
 texture = ExtResource("38_2x5e0")
 
+[node name="Label3D" type="Label3D" parent="world/decorations/maps/second_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0994143, 0.939467, 0)
+modulate = Color(0.88047, 0, 0.256182, 1)
+text = "2nd Floor (You Are Here)"
+font = ExtResource("51_semq0")
+
+[node name="first_floor" type="Sprite3D" parent="world/decorations/maps"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 1.76429, 2.00472)
+pixel_size = 0.0025
+texture = ExtResource("37_sog28")
+
+[node name="Label3D" type="Label3D" parent="world/decorations/maps/first_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.118993, 0.946774, -0.00170326)
+modulate = Color(0.88047, 0, 0.256182, 1)
+text = "1st Floor"
+font = ExtResource("51_semq0")
+
 [node name="control_floor" type="Sprite3D" parent="world/decorations/maps"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 3.58876, -0.19704)
 pixel_size = 0.0025
 texture = ExtResource("39_heqtb")
+
+[node name="Label3D" type="Label3D" parent="world/decorations/maps/control_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.748767, 0.939467, 0)
+modulate = Color(0.88047, 0, 0.256182, 1)
+text = "Control Floor"
+font = ExtResource("51_semq0")
 
 [node name="interactables" type="Node3D" parent="world"]
 

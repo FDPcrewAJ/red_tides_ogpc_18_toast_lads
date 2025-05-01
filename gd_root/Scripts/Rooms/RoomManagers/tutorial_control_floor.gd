@@ -14,6 +14,5 @@ func _process(_delta: float) -> void:
 	# Switch to Fire Puzzle Room
 	if Global.current_object == "doorCol":
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
-			Global.next_floor = "Hub"
 			Global.lastpos = player.position
 			get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")

@@ -1491,13 +1491,6 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="computer/StormCodeNote/StormCodeNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_8icv8")
 
-[node name="screensaver_pl_1" type="Label3D" parent="computer"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0255667, 0.786069, 0.409056)
-modulate = Color(1, 0, 0, 1)
-text = "!"
-font = ExtResource("50_mshvd")
-font_size = 150
-
 [node name="screensaver_pl_2" type="Label3D" parent="computer"]
 transform = Transform3D(-0.999775, 0, -0.0212042, 0, 1, 0, 0.0212042, 0, -0.999775, -5.58742, 0.786069, 20.2739)
 modulate = Color(1, 0, 0, 1)

@@ -7,15 +7,11 @@ var puzzle_complete = false
 
 
 func _ready() -> void:
-	goalPositionX = RandomNumberGenerator.new().randf_range(200, 1800)
-	goalPositionY = RandomNumberGenerator.new().randf_range(200, 800)
+	goalPositionX = RandomNumberGenerator.new().randf_range(60, 1300)
+	goalPositionY = RandomNumberGenerator.new().randf_range(100, 1000)
 
 
 func _process(_delta: float) -> void:
-	if mouse_touching == true:
-		if Input.is_action_pressed("left_click"):
-			position = get_global_mouse_position()
-	
 	if position.x < goalPositionX + 30 and position.x > goalPositionX - 30:
 		if position.y < goalPositionY + 30 and position.y > goalPositionY - 30:
 			texture = load("res://Imports/images/radarDot-removebg-preview-green.png")
@@ -30,6 +26,12 @@ func _process(_delta: float) -> void:
 					texture = load("res://Imports/images/radarDot-removebg-preview-orange.png")
 			else:
 				texture = load("res://Imports/images/radarDot-removebg-preview-red.png")
+	
+	if mouse_touching == true:
+		if Input.is_action_pressed("left_click"):
+			if get_global_mouse_position().x > 60 and get_global_mouse_position().x < 1300:
+				if get_global_mouse_position().y > 100 and get_global_mouse_position().y < 1000:
+					position = get_global_mouse_position()
 
 
 func _on_area_2d_mouse_entered() -> void:

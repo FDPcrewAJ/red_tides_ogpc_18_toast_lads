@@ -45,8 +45,9 @@ var chief_dead
 var lightning_count = 0
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("devKey"):
-		_on_voice_line_player_finished()
+	pass
+	#if Input.is_action_just_pressed("devKey"):
+		#_on_voice_line_player_finished()
 
 
 func _ready() -> void:

@@ -174,26 +174,38 @@ func match_voice_line(line_string) -> AudioStream:
 			return load("res://Audio/Tutorial Voice Lines/line_23.mp3")
 		"line_24":
 			return load("res://Audio/Tutorial Voice Lines/line_24.mp3")
-	return load("res://Audio/Tutorial Voice Lines/line_2.mp3")
+		"line_25":
+			return load("res://Audio/Tutorial Voice Lines/line_25.mp3")
+		"line_26":
+			return load("res://Audio/Tutorial Voice Lines/line_26.mp3")
+		"line_27":
+			load("res://Audio/Tutorial Voice Lines/line_27.mp3")
+	return load("res://Audio/Tutorial Voice Lines/line_23.mp3")
 
 
 func match_text_display(line_string) -> String:
 	match line_string:
 		"line_17":
-			return "Took you long enough... So I’m supposed to tell you something, but I don’t know what it means. Ah Well"
+			return "Took you long enough..."
 		"line_18":
-			return "'E'/'Left Click' to interact with terminals, 'Left Click' to interact in the puzzles, 'E'/'ESC' to exit"
+			return "The computers on this floor allow us to push back the incoming storms, so that they don't destroy the facility and kill us."
 		"line_19":
-			return "Oh! I almost forgot! Take this stopwatch, it's linked to the systems so you know when to reconfigure."
+			return "The terminal behind me finds coordinates of incoming storms. You use these coordinates to calibrate the systems at the other machine."
 		"line_20":
-			return ""
+			return "I have already found coordinates of an incoming storm, so come meet me at the other computer."
 		"line_21":
-			return "Ok, come over here and “interact” with this machine."
+			return "Oh, I almost forgot, take this stopwatch."
 		"line_22":
-			return "A cloud has appeared above us, so we need to act fast."
+			return "It's linked to the systems so that you know how much time you have left before a storm reaches us."
 		"line_23":
-			return "What was the code again…? I think it’s 254, 78, 126"
+			return ""
 		"line_24":
+			return "Ok, come over here and interact with this machine."
+		"line_25":
+			return "A cloud has appeared above us, so we need to act fast."
+		"line_26":
+			return "What was the code again…? I think it’s 254, 78, 126"
+		"line_27":
 			return "*sigh* ok that was the right code, I was worried for some reason. or, ok, and we should be good… wait NO!!--"
 	return ""
 

@@ -45,7 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://bvu4gclkjq2yb" path="res://Assets/Objects/MiscFurnature/info_board.tscn" id="34_ohyuh"]
 [ext_resource type="Script" path="res://Assets/Objects/MiscFurnature/tile_locker.gd" id="34_t8nb8"]
 [ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="35_ayxof"]
-[ext_resource type="Texture2D" uid="uid://tc7aqgqbdlyh" path="res://Imports/images/Maps/enterance_floor_map.png" id="36_2g2e7"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="36_t6m53"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_2_computer.gd" id="37_c0v26"]
 [ext_resource type="Texture2D" uid="uid://by1uf674640ou" path="res://Imports/images/Maps/first_floor_map.png" id="37_sog28"]
 [ext_resource type="Texture2D" uid="uid://dubkb05koepuv" path="res://Imports/images/Maps/second_floor_map.png" id="38_2x5e0"]
@@ -2626,30 +2626,47 @@ transform = Transform3D(5.21541e-08, 9.31323e-09, -0.40232, -0.0759252, 0.395091
 texture = ExtResource("26_pfpy0")
 
 [node name="infoBoard" parent="world/decorations/commons" instance=ExtResource("34_ohyuh")]
-transform = Transform3D(-7.04981e-08, 0, 1.61281, 0, 1.61281, 0, -1.61281, 0, -7.04981e-08, -7.50593, 0.5, 2.18417)
+transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -7.50593, -1.03849, 2.18417)
 
 [node name="maps" type="Node3D" parent="world/decorations/commons/infoBoard"]
-transform = Transform3D(-1.8638e-08, 0, -0.426388, 0, 0.426388, 0, 0.426388, 0, -1.8638e-08, -0.00972331, 0.835559, 0.014389)
-
-[node name="enterance_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 1.76254, 1.49534)
-pixel_size = 0.0025
-texture = ExtResource("36_2g2e7")
+transform = Transform3D(3.01992e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, 3.01992e-08, 0.0878905, 0.934495, -0.0167074)
 
 [node name="first_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 1.76429, -1.23074)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 1.55633, -0.0755389)
 pixel_size = 0.0025
 texture = ExtResource("37_sog28")
 
+[node name="Label3D" type="Label3D" parent="world/decorations/commons/infoBoard/maps/first_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.959861, 0)
+modulate = Color(1, 0, 0, 1)
+text = "First Floor"
+font = ExtResource("36_t6m53")
+font_size = 60
+
 [node name="second_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 3.63814, 0.887602)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 3.3365, 1.02735)
 pixel_size = 0.0025
 texture = ExtResource("38_2x5e0")
 
+[node name="Label3D2" type="Label3D" parent="world/decorations/commons/infoBoard/maps/second_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155921, 0.978868, 0)
+modulate = Color(1, 0, 0, 1)
+text = "Second Floor
+(You are Here)"
+font = ExtResource("36_t6m53")
+font_size = 50
+
 [node name="control_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 3.58876, -2.43215)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 3.32192, -2.5431)
 pixel_size = 0.0025
 texture = ExtResource("39_heqtb")
+
+[node name="Label3D3" type="Label3D" parent="world/decorations/commons/infoBoard/maps/control_floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852046, 0.904721, 0)
+modulate = Color(1, 0, 0, 1)
+text = "Control Floor"
+font = ExtResource("36_t6m53")
+font_size = 50
 
 [node name="serverRoom" type="Node3D" parent="world/decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56426, 0, -7.21148)

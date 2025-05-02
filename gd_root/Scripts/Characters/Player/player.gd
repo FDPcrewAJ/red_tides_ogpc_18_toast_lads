@@ -12,17 +12,14 @@ const mouse_sens = 0.5
 # Player animation GLTF nodes
 @onready var walk: Node3D = $animation_container/walk
 @onready var crouch: Node3D = $animation_container/crouch
-@onready var interact: Node3D = $animation_container/interact
 @onready var jump: Node3D = $animation_container/jump
 @onready var crouch_walk: Node3D = $animation_container/crouch_walk
 @onready var standing: Node3D = $animation_container/standing
 
 
-
 # Player animation player nodes
 var walk_anim
 var crouch_anim
-var interact_anim
 var jump_anim
 var crouch_walk_anim
 
@@ -58,13 +55,11 @@ func _ready():
 	
 	walk_anim = walk.get_child(1)
 	crouch_anim = crouch.get_child(1)
-	interact_anim = interact.get_child(1)
 	jump_anim = jump.get_child(1)
 	crouch_walk_anim = crouch_walk.get_child(1)
 	
 	walk_anim.play("PlayerAction")
 	crouch_anim.play("PlayerAction")
-	interact_anim.play("PlayerAction")
 	jump_anim.play("PlayerAction")
 	crouch_walk_anim.play("PlayerAction")
 	
@@ -209,7 +204,6 @@ func new_anim_vis(new_anim):
 	crouch_walk.hide()
 	jump.hide()
 	standing.hide()
-	interact.hide()
 	
 	match new_anim:
 		walk:
@@ -221,8 +215,6 @@ func new_anim_vis(new_anim):
 		jump:
 			new_anim.show()
 		standing:
-			new_anim.show()
-		interact:
 			new_anim.show()
 
 

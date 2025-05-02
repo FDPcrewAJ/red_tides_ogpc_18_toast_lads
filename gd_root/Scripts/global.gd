@@ -93,7 +93,7 @@ var code_degrees3 = 0
 func _process(_delta):
 	if timer_active && time_left == 0:
 		queue_free()
-		get_tree().change_scene_to_file("res://Scenes/Menus/title_screen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Menus/death.tscn")
 	if new_game == true:
 		room_completed = false
 		new_game = false

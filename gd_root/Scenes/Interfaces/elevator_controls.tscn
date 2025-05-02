@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bswr51itc8015"]
+[gd_scene load_steps=12 format=3 uid="uid://bswr51itc8015"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/elevator_controls.gd" id="1_ovi6k"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/elevator_label.gd" id="2_vdihe"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="4_5bv0o"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_rrqpn"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_ehvqh"]
+[ext_resource type="Texture2D" uid="uid://b00u38dajxxf2" path="res://Imports/images/button_highlight.png" id="6_2nul1"]
+[ext_resource type="Script" path="res://Scenes/Interfaces/highlight.gd" id="7_ypq8u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph784"]
 texture = ExtResource("4_rrqpn")
@@ -25,10 +27,10 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("4_5bv0o")
 
 [node name="underwater_floor_button" type="Button" parent="."]
-offset_left = 725.0
-offset_top = 550.0
-offset_right = 1059.0
-offset_bottom = 712.0
+offset_left = 101.0
+offset_top = 275.0
+offset_right = 435.0
+offset_bottom = 437.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -45,10 +47,10 @@ text = "Water
 Processing"
 
 [node name="enterance_floor_button" type="Button" parent="."]
-offset_left = 314.0
-offset_top = 550.0
-offset_right = 648.0
-offset_bottom = 712.0
+offset_left = 516.0
+offset_top = 275.0
+offset_right = 850.0
+offset_bottom = 437.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -61,7 +63,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxTexture_ph784")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
 theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
-text = "Enterance
+text = "Entrance
 Floor"
 
 [node name="floor_1_button" type="Button" parent="."]
@@ -84,10 +86,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Floor 1"
 
 [node name="floor_2_button" type="Button" parent="."]
-offset_left = 516.0
-offset_top = 275.0
-offset_right = 850.0
-offset_bottom = 437.0
+offset_left = 314.0
+offset_top = 550.0
+offset_right = 648.0
+offset_bottom = 712.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -103,10 +105,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Floor 2"
 
 [node name="control_floor_button" type="Button" parent="."]
-offset_left = 101.0
-offset_top = 275.0
-offset_right = 435.0
-offset_bottom = 437.0
+offset_left = 725.0
+offset_top = 550.0
+offset_right = 1059.0
+offset_bottom = 712.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -121,6 +123,12 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_b1gks")
 theme_override_styles/normal = SubResource("StyleBoxTexture_nrkg8")
 text = "Control
 Floor"
+
+[node name="highlight" type="Sprite2D" parent="control_floor_button"]
+visible = false
+position = Vector2(167, 81)
+texture = ExtResource("6_2nul1")
+script = ExtResource("7_ypq8u")
 
 [node name="exit_button" type="Button" parent="."]
 offset_left = 521.0

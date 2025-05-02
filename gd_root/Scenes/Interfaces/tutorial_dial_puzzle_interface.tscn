@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b07kvqsnajhdg"]
+[gd_scene load_steps=18 format=3 uid="uid://b07kvqsnajhdg"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/tutorial_dial_puzzle_interface.gd" id="1_4im1h"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_lv12j"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="8_c6b22"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="9_63tul"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/tutorial_dial_puzzle_label.gd" id="10_6k52o"]
+[ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="11_wr42s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 
@@ -147,5 +148,19 @@ theme_override_fonts/font = ExtResource("6_l7hl5")
 theme_override_font_sizes/font_size = 100
 text = "Incorrect Calibration"
 script = ExtResource("10_6k52o")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1681, 1220)
+rotation = -0.120428
+texture = ExtResource("11_wr42s")
+
+[node name="Label" type="Label" parent="Sprite2D2"]
+offset_left = -185.0
+offset_top = -226.0
+offset_right = 184.0
+offset_bottom = -167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "254, 78, 126"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

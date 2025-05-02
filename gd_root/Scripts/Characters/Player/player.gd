@@ -9,8 +9,26 @@ const mouse_sens = 0.5
 @onready var standing_collision = $StandingCollision
 @onready var crouching_collision = $CrouchingCollision
 
-# Player animation nodes
-@onready var walk: Node3D = $playerModel/animation_container/walk
+# Player animation GLTF nodes
+@onready var walk: Node3D = $animation_container/walk
+@onready var crouch: Node3D = $animation_container/crouch
+@onready var interact: Node3D = $animation_container/interact
+@onready var jump: Node3D = $animation_container/jump
+@onready var crouch_walk: Node3D = $animation_container/crouch_walk
+@onready var standing: Node3D = $animation_container/standing
+
+
+
+# Player animation player nodes
+var walk_anim
+var crouch_anim
+var interact_anim
+var jump_anim
+var crouch_walk_anim
+
+var cur_anim
+var play_jump_once = false
+var load_in_air = false
 
 # If player can move or not (intro/cutscene control)
 var has_control = true
@@ -26,6 +44,7 @@ var stand_height = 0.8
 var walking = false
 var sprinting = false
 var crouching = false
+var jumping = false
 
 # Constants for player speed and jump
 const walk_speed = 3.0
@@ -36,8 +55,20 @@ const jump_velocity = 4.5
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	var walk_anim = walk.get_child(1)
+	
+	walk_anim = walk.get_child(1)
+	crouch_anim = crouch.get_child(1)
+	interact_anim = interact.get_child(1)
+	jump_anim = jump.get_child(1)
+	crouch_walk_anim = crouch_walk.get_child(1)
+	
 	walk_anim.play("PlayerAction")
+	crouch_anim.play("PlayerAction")
+	interact_anim.play("PlayerAction")
+	jump_anim.play("PlayerAction")
+	crouch_walk_anim.play("PlayerAction")
+	
+	cur_anim = standing
 
 
 func _input(event):
@@ -53,10 +84,19 @@ func _physics_process(delta):
 		# Add gravity while player isnt on the floor
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+			if load_in_air:
+				jumping = true
+		else:
+			load_in_air = true
+			jumping = false
+			jump.hide()
 		
 		# Jump, but only when the player is on the floor
 		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = jump_velocity
+			if !crouching:
+				velocity.y = jump_velocity
+				jumping = true
+				play_jump_once = true
 		
 		# Crouch State Control
 		if Input.is_action_pressed("crouch"):
@@ -98,9 +138,13 @@ func _physics_process(delta):
 		
 		if crouching:
 			current_speed = crouch_speed
+			walking = false
 		elif Input.is_action_pressed("sprint"):
 			current_speed = sprint_speed
+			sprinting = true
+			walking = false
 		else:
+			walking = true
 			current_speed = walk_speed
 		
 		if direction:
@@ -110,8 +154,76 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, current_speed)
 			velocity.z = move_toward(velocity.z, 0, current_speed)
 		
+		if abs(velocity.x) >= 0.2 or abs(velocity.z) >= 0.2:
+			crouch.hide()
+			if crouching:
+				new_anim_vis(crouch_walk)
+			else:
+				crouch_walk.hide()
+				if !jumping:
+					new_anim_vis(walk)
+					walk_anim.play("PlayerAction")
+					set_cur_anim(walk)
+				else:
+					walking = false
+					walk_anim.stop()
+					new_anim_vis(jump)
+					set_cur_anim(jump)
+					if play_jump_once:
+						jump_anim.play("PlayerAction")
+						play_jump_once = false
+		else:
+			if crouching:
+				new_anim_vis(crouch)
+			else:
+				if jumping:
+					walking = false
+					walk_anim.stop()
+					new_anim_vis(jump)
+					set_cur_anim(jump)
+					if play_jump_once:
+						jump_anim.play("PlayerAction")
+						play_jump_once = false
+				else:
+					crouch.hide()
+					walking = false
+					walk_anim.stop()
+					new_anim_vis(standing)
+					set_cur_anim(standing)
 		
+		#print("jumping: " + str(jumping))
+		#print("Load in Air: " + str(load_in_air))
+		#print(crouch.visible)
+		#print("walking: " + str(walking))
+		#print("Jumping: " + str(jumping))
 		move_and_slide()
+
+
+func set_cur_anim(anim):
+	cur_anim = anim
+
+
+func new_anim_vis(new_anim):
+	walk.hide()
+	crouch.hide()
+	crouch_walk.hide()
+	jump.hide()
+	standing.hide()
+	interact.hide()
+	
+	match new_anim:
+		walk:
+			new_anim.show()
+		crouch:
+			new_anim.show()
+		crouch_walk:
+			new_anim.show()
+		jump:
+			new_anim.show()
+		standing:
+			new_anim.show()
+		interact:
+			new_anim.show()
 
 
 func _set_last_pos():

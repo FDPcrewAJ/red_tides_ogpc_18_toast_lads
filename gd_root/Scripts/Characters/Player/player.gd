@@ -50,14 +50,15 @@ func _input(event):
 
 func _physics_process(delta):
 	if has_control:
-		# Add gravity
+		# Add gravity while player isnt on the floor
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 		
-		# Jump
+		# Jump, but only when the player is on the floor
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y = jump_velocity
 		
+		# Crouch State Control
 		if Input.is_action_pressed("crouch"):
 			crouching = true
 		if Input.is_action_just_released("crouch"):

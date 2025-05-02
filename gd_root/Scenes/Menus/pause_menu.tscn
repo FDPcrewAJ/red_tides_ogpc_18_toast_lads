@@ -21,7 +21,7 @@ func _unhandled_key_input(event):
 	if player.has_control:
 		if event.is_action_pressed(\"exit\"):
 			if Global.in_menu == false:
-				if pause_open == true and settings.visible == false:
+				if pause_open and settings.visible == false:
 					menu.hide()
 					unpause()
 					pause_open = false

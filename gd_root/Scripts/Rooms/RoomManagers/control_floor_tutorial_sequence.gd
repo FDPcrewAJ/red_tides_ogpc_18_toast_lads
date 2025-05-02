@@ -73,20 +73,23 @@ func _on_initiator_area_entered(_area: Area3D) -> void:
 
 func _on_voice_line_player_finished() -> void:
 	update_line()
-	if Global.line_num < 20:
+	if Global.line_num < 22:
 		play_next_line()
 	
 	# Allow player to move to next section after line 20
-	if Global.line_num == 20:
+	if Global.line_num == 22:
 		Global.watch_collected = true
 		Global.timer_active = true
+		play_next_line()
+		
+	if Global.line_num == 23:
+		# Clear initiator to prevent activation
+		initiator.position.y = -20
 		# Update player position and rotation
 		player.position.x = camera_container.position.x - 0.2
 		player.position.z = camera_container.position.z
 		player.rotation.y = -90
 		player.velocity = Vector3.ZERO
-		# Clear initiator to prevent activation
-		initiator.position.y = -20
 		# Change back to player cam and hide UI
 		player.show()
 		cinimatic_cam.current = false
@@ -99,12 +102,12 @@ func _on_voice_line_player_finished() -> void:
 		
 	
 	# Autoplay the caller line
-	if Global.line_num == 21:
+	if Global.line_num == 24:
 		play_next_line()
 		tutorial_text_ui.show()
 	
 	# Hide text UI after caller line
-	if Global.line_num == 22:
+	if Global.line_num == 25:
 		tutorial_text_ui.hide()
 		cptn_idle.show()
 		cptn_talk.hide()
@@ -112,15 +115,15 @@ func _on_voice_line_player_finished() -> void:
 		interaction_ready.emit()
 	
 	# Play lines inside the Puzzle UI
-	if Global.line_num > 22 and Global.line_num < 24:
+	if Global.line_num > 25 and Global.line_num < 27:
 		play_next_line()
 	
 	# Hide UI text after puzzle voice lines finish
-	if Global.line_num == 24:
+	if Global.line_num == 27:
 		tutorial_text_ui.hide()
 	
 	# finish the death cutscene after the final voice line
-	if Global.line_num == 25:
+	if Global.line_num == 28:
 		tutorial_text_ui.hide()
 		cptn_talk.hide()
 		chief_fling_loop.play("animation")
@@ -179,7 +182,7 @@ func match_voice_line(line_string) -> AudioStream:
 		"line_26":
 			return load("res://Audio/Tutorial Voice Lines/line_26.mp3")
 		"line_27":
-			load("res://Audio/Tutorial Voice Lines/line_27.mp3")
+			return load("res://Audio/Tutorial Voice Lines/line_27.mp3")
 	return load("res://Audio/Tutorial Voice Lines/line_23.mp3")
 
 
@@ -224,6 +227,7 @@ func _on_lighting_timer_timeout() -> void:
 	lightning_strike.hide()
 	lightning_count += 1
 	if lightning_count == 2:
+		player.has_control = false
 		black_screen.show()
 		blackout_timer.start()
 

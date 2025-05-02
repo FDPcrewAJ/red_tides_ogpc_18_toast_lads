@@ -22,3 +22,4 @@ func close_menu():
 	if dial_puzzle_complete:
 		dial_puzzle_completed.emit()
 		dial_puzzle_complete = false
+		player.has_control = false

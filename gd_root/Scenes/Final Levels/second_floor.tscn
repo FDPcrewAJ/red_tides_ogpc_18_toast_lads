@@ -1,4 +1,4 @@
-[gd_scene load_steps=265 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=264 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/second_floor.gd" id="1_0ggiq"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_0q36q"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://bydyub6003sef" path="res://Assets/Objects/Clutter/banana_peel.tscn" id="32_xjavu"]
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="33_5kl4k"]
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="34_0c1x2"]
+[ext_resource type="PackedScene" uid="uid://bvu4gclkjq2yb" path="res://Assets/Objects/MiscFurnature/info_board.tscn" id="34_ohyuh"]
 [ext_resource type="Script" path="res://Assets/Objects/MiscFurnature/tile_locker.gd" id="34_t8nb8"]
 [ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="35_ayxof"]
 [ext_resource type="Texture2D" uid="uid://tc7aqgqbdlyh" path="res://Imports/images/Maps/enterance_floor_map.png" id="36_2g2e7"]
@@ -320,13 +321,6 @@ size = Vector3(0.5, 5, 7)
 [sub_resource type="BoxMesh" id="BoxMesh_3ql4h"]
 material = ExtResource("3_6sppc")
 size = Vector3(0.5, 5, 7)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4par8"]
-size = Vector3(0.5, 5, 6)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tllql"]
-material = ExtResource("3_6sppc")
-size = Vector3(0.5, 5, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqle2"]
 size = Vector3(0.5, 5, 8)
@@ -1241,6 +1235,8 @@ transform = Transform3D(1, 0, -1.69407e-21, 0, 1, 0, 1.69407e-21, 0, 1, 0.072557
 shape = SubResource("BoxShape3D_k4iod")
 
 [node name="building" type="Node3D" parent="world"]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="floor" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
@@ -1659,15 +1655,6 @@ shape = SubResource("BoxShape3D_ctocw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/walls/interior_walls/top_restrooms/sep_wall31"]
 mesh = SubResource("BoxMesh_3ql4h")
-
-[node name="map_wall" type="StaticBody3D" parent="world/building/walls/interior_walls/top_restrooms"]
-transform = Transform3D(0.999998, 0, 0.00195477, 0, 1, 0, -0.00195477, 0, 0.999998, -26.2567, 3, 2.96441)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="world/building/walls/interior_walls/top_restrooms/map_wall"]
-shape = SubResource("BoxShape3D_4par8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/walls/interior_walls/top_restrooms/map_wall"]
-mesh = SubResource("BoxMesh_tllql")
 
 [node name="sep_wall32" type="StaticBody3D" parent="world/building/walls/interior_walls/top_restrooms"]
 transform = Transform3D(0.999998, 0, 0.00195477, 0, 1, 0, -0.00195477, 0, 0.999998, -19.2399, 3, 1.99471)
@@ -2638,6 +2625,32 @@ texture = ExtResource("25_2omkb")
 transform = Transform3D(5.21541e-08, 9.31323e-09, -0.40232, -0.0759252, 0.395091, -6.63759e-09, 0.395091, 0.0759252, 5.96046e-08, 15.5774, 3.41814, -0.0637348)
 texture = ExtResource("26_pfpy0")
 
+[node name="infoBoard" parent="world/decorations/commons" instance=ExtResource("34_ohyuh")]
+transform = Transform3D(-7.04981e-08, 0, 1.61281, 0, 1.61281, 0, -1.61281, 0, -7.04981e-08, -7.50593, 0.5, 2.18417)
+
+[node name="maps" type="Node3D" parent="world/decorations/commons/infoBoard"]
+transform = Transform3D(-1.8638e-08, 0, -0.426388, 0, 0.426388, 0, 0.426388, 0, -1.8638e-08, -0.00972331, 0.835559, 0.014389)
+
+[node name="enterance_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 1.76254, 1.49534)
+pixel_size = 0.0025
+texture = ExtResource("36_2g2e7")
+
+[node name="first_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 1.76429, -1.23074)
+pixel_size = 0.0025
+texture = ExtResource("37_sog28")
+
+[node name="second_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 3.63814, 0.887602)
+pixel_size = 0.0025
+texture = ExtResource("38_2x5e0")
+
+[node name="control_floor" type="Sprite3D" parent="world/decorations/commons/infoBoard/maps"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.118093, 3.58876, -2.43215)
+pixel_size = 0.0025
+texture = ExtResource("39_heqtb")
+
 [node name="serverRoom" type="Node3D" parent="world/decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56426, 0, -7.21148)
 
@@ -2803,28 +2816,6 @@ mesh = SubResource("PlaneMesh_junkh")
 
 [node name="hammer" parent="world/decorations" instance=ExtResource("31_ngdac")]
 transform = Transform3D(0.258819, 0, -0.965926, -0.25, 0.965926, -0.0669873, 0.933013, 0.258819, 0.25, 6.78459, 0.5, -5.6175)
-
-[node name="maps" type="Node3D" parent="world/decorations"]
-
-[node name="enterance_floor" type="Sprite3D" parent="world/decorations/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 1.76254, 3.73045)
-pixel_size = 0.0025
-texture = ExtResource("36_2g2e7")
-
-[node name="first_floor" type="Sprite3D" parent="world/decorations/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 1.76429, 1.00437)
-pixel_size = 0.0025
-texture = ExtResource("37_sog28")
-
-[node name="second_floor" type="Sprite3D" parent="world/decorations/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 3.63814, 3.12271)
-pixel_size = 0.0025
-texture = ExtResource("38_2x5e0")
-
-[node name="control_floor" type="Sprite3D" parent="world/decorations/maps"]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 17.512, 3.58876, -0.19704)
-pixel_size = 0.0025
-texture = ExtResource("39_heqtb")
 
 [node name="interactables" type="Node3D" parent="world"]
 

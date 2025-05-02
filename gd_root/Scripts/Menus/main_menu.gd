@@ -3,6 +3,7 @@ extends Control
 @onready var devTools: Button = $"MarginContainer/HBoxContainer/VBoxContainer/Level Select"
 @onready var settings: Control = $settings
 @onready var credits = $credits
+@onready var tutorial_skip: Control = $tutorial_skip
 
 
 func _ready() -> void:
@@ -21,8 +22,7 @@ func _on_quit_pressed() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Final Levels/tutorial_facility_exterior.tscn")
-	Global.new_game = true
+	tutorial_skip.show()
 
 
 func _on_continue_pressed() -> void:
@@ -42,3 +42,15 @@ func _on_level_select_pressed() -> void:
 
 func _on_credits_pressed():
 	credits.visible = true
+
+
+func _on_yes_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/testingLevels/fire_puzzle.tscn")
+	Global.list_collected = true
+	Global.watch_collected = true
+	Global.timer_active = true
+
+
+func _on_no_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Final Levels/tutorial_facility_exterior.tscn")
+	Global.new_game = true

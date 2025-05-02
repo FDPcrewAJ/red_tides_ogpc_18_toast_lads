@@ -55,6 +55,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_boyo4")
@@ -66,6 +67,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_boyo4")
@@ -77,6 +79,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_boyo4")
@@ -88,6 +91,7 @@ flat = true
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_boyo4")
@@ -104,6 +108,103 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Level Select (For Testing!!!)"
+flat = true
+
+[node name="tutorial_skip" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="tutorial_skip"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.0
+offset_top = -198.5
+offset_right = 483.0
+offset_bottom = 198.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.752941)
+
+[node name="Label" type="Label" parent="tutorial_skip"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -663.0
+offset_top = -132.0
+offset_right = 663.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_boyo4")
+theme_override_font_sizes/font_size = 50
+text = "Do you want to skip the tutorial? 
+(Not Reccomended)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="yes" type="Button" parent="tutorial_skip"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = 55.0
+offset_right = -76.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
+theme_override_font_sizes/font_size = 50
+text = "Yes"
+flat = true
+
+[node name="no" type="Button" parent="tutorial_skip"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 81.0
+offset_top = 55.0
+offset_right = 239.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 0.180392, 0.129412, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_boyo4")
+theme_override_font_sizes/font_size = 50
+text = "No"
 flat = true
 
 [node name="settings" parent="." instance=ExtResource("4_cpotp")]
@@ -130,3 +231,5 @@ layout_mode = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="tutorial_skip/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="tutorial_skip/no" to="." method="_on_no_pressed"]

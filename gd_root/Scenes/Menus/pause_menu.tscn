@@ -18,17 +18,26 @@ var go_quit = false
 
 
 func _unhandled_key_input(event):
-	if player.has_control:
+	if Global.next_floor == \"Control\":
+		if player.has_control:
+			if event.is_action_pressed(\"exit\"):
+				toggle_pause_menu()
+	else:
 		if event.is_action_pressed(\"exit\"):
-			if Global.in_menu == false:
-				if pause_open and settings.visible == false:
-					menu.hide()
-					unpause()
-					pause_open = false
-				else:
-					menu.show()
-					pause()
-					pause_open = true
+			toggle_pause_menu()
+
+
+func toggle_pause_menu():
+	if Global.in_menu == false:
+		if pause_open and settings.visible == false:
+			menu.hide()
+			unpause()
+			pause_open = false
+		else:
+			menu.show()
+			pause()
+			pause_open = true
+
 
 func pause():
 	get_tree().paused = true

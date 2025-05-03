@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://i54i4wmroxw1"]
+[gd_scene load_steps=52 format=3 uid="uid://i54i4wmroxw1"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/facility_enterance.gd" id="1_6wbl2"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://lpwe413bhd4c" path="res://Assets/Objects/Doors/wood_door_open.tscn" id="8_ltams"]
 [ext_resource type="Texture2D" uid="uid://dphdae6dpvhm8" path="res://Textures/Interior Textures/Ceilings/wood_planks_darker.png" id="8_uwt8b"]
 [ext_resource type="PackedScene" uid="uid://u36whol7rmjh" path="res://Assets/Objects/Elevator/elevator.tscn" id="9_lgp1y"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/lights_control.gd" id="11_kdnfk"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="14_0a7uo"]
 [ext_resource type="PackedScene" uid="uid://bllhjpheko4qy" path="res://Assets/Objects/Electrical/backup_generator.tscn" id="14_tu7ve"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/engineer_lore_note.gd" id="15_w7edc"]
@@ -310,7 +311,19 @@ shape = SubResource("BoxShape3D_eby80")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_e3fvd")
 
+[node name="red_wall_light" type="OmniLight3D" parent="world/building"]
+transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91068e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, -7.48558, 4.67509, 9.04457)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="world/building/red_wall_light" instance=ExtResource("5_3cw6y")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
 [node name="lights" type="Node3D" parent="world/building"]
+script = ExtResource("11_kdnfk")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -400,17 +413,6 @@ light_bake_mode = 1
 omni_range = 9.13347
 
 [node name="small_industrial_light" parent="world/building/lights/wall_light_9" instance=ExtResource("5_3cw6y")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
-
-[node name="wall_light_7" type="OmniLight3D" parent="world/building/lights"]
-transform = Transform3D(4.37114e-08, -4.37114e-08, 1, -1, 1.91068e-15, 4.37114e-08, -3.82137e-15, -1, -4.37114e-08, -7.48558, 4.67509, 9.04457)
-light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
-light_energy = 0.621
-light_size = 0.922
-light_bake_mode = 1
-omni_range = 9.13347
-
-[node name="small_industrial_light" parent="world/building/lights/wall_light_7" instance=ExtResource("5_3cw6y")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="doors" type="Node3D" parent="world/building"]

@@ -1,5 +1,8 @@
 extends Node
 
+signal make_lights_red
+signal make_lights_normal
+
 var new_game = false
 
 var room_completed = false
@@ -7,7 +10,7 @@ var room_completed = false
 var previous_scene = "res://Scenes/Menus/title_screen.tscn"
 
 # Storm system control 
-var time_left = 10
+var time_left = 10: set = _set_time_left
 var watch_collected = false
 var timer_active = false
 var needle_rotation = 1
@@ -97,3 +100,11 @@ func _process(_delta):
 	if new_game == true:
 		room_completed = false
 		new_game = false
+
+
+func _set_time_left(new_time):
+	time_left = new_time
+	if time_left <= 2:
+		make_lights_red.emit()
+	else:
+		make_lights_normal.emit()

@@ -71,7 +71,7 @@ func count_down(delta):
 	if needle.rotation_degrees >= 360.0:
 		needle.rotation_degrees = 1
 		double_digit -= 1
-		Global.time_left = double_digit
+		Global._set_time_left(double_digit)
 		if double_digit <= 0:
 			label.text = "00"
 		elif double_digit < 10:

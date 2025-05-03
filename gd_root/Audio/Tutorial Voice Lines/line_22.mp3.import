@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://m4hf6m3sji4n"
-path="res://.godot/imported/line_22.mp3-571c8bd38ae9d3ce021ec34bd64cdbb4.mp3str"
+path="res://.godot/imported/Line_22.mp3-f61b2fe9f2b113fda569aa69a0a17346.mp3str"
 
 [deps]
 
-source_file="res://Audio/Tutorial Voice Lines/line_22.mp3"
-dest_files=["res://.godot/imported/line_22.mp3-571c8bd38ae9d3ce021ec34bd64cdbb4.mp3str"]
+source_file="res://Audio/Tutorial Voice Lines/Line_22.mp3"
+dest_files=["res://.godot/imported/Line_22.mp3-f61b2fe9f2b113fda569aa69a0a17346.mp3str"]
 
 [params]
 

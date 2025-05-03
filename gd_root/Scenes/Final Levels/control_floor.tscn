@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=192 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor.gd" id="1_so3s2"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="10_t4ucj"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="11_i2ung"]
 [ext_resource type="PackedScene" uid="uid://oticnan11gwu" path="res://Assets/Objects/Tables/circular_table.tscn" id="11_mrpe1"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/lights_control.gd" id="11_n82le"]
 [ext_resource type="PackedScene" uid="uid://bllhjpheko4qy" path="res://Assets/Objects/Electrical/backup_generator.tscn" id="12_2bmyb"]
 [ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="13_4hgnl"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="14_60ayi"]
@@ -1285,9 +1286,7 @@ shape = SubResource("BoxShape3D_esl8h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_0bm48")
 
-[node name="lights" type="Node3D" parent="world/building"]
-
-[node name="red_wall_light" type="OmniLight3D" parent="world/building/lights"]
+[node name="red_wall_light" type="OmniLight3D" parent="world/building"]
 transform = Transform3D(-4.37115e-08, -4.37115e-08, 1, -1, 1.91069e-15, -4.37115e-08, 0, -1, -4.37115e-08, 0, 4.66859, 0.780266)
 light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
 light_energy = 0.621
@@ -1295,8 +1294,11 @@ light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="small_industrial_light" parent="world/building/lights/red_wall_light" instance=ExtResource("6_048w4")]
+[node name="small_industrial_light" parent="world/building/red_wall_light" instance=ExtResource("6_048w4")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="lights" type="Node3D" parent="world/building"]
+script = ExtResource("11_n82le")
 
 [node name="wall_light_18" type="OmniLight3D" parent="world/building/lights"]
 transform = Transform3D(-4.37114e-08, -2.18557e-07, -1, -1, 1.91067e-15, 4.37114e-08, -7.64274e-15, 1, -2.18557e-07, 20.8454, 4.67509, 2.19955)

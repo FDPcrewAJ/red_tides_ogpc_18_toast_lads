@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=61 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="8_48i45"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
+[ext_resource type="Script" path="res://Scenes/testingLevels/sprinkler.gd" id="13_na0ow"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="14_318wx"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]
@@ -81,6 +82,21 @@ size = Vector2(60, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ylkc8"]
 points = PackedVector3Array(30.2027, -0.202703, 5.33784, -30.2027, -0.202703, -5.2027, 30.2027, -0.202703, -5.2027, -30.2027, -0.202703, 5.33784)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w6ogy"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 4.0
+emission_ring_inner_radius = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_equum"]
+albedo_color = Color(0.12549, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_y77kv"]
+material = SubResource("StandardMaterial3D_equum")
+radius = 0.1
+height = 0.2
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ccjm"]
 albedo_color = Color(0.784092, 0, 0.128263, 1)
 
@@ -90,6 +106,19 @@ size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ieqx"]
 size = Vector3(10, 1, 10)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v3t3t"]
+emission_shape = 1
+emission_sphere_radius = 7.17
+gravity = Vector3(0, 4, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6707"]
+albedo_color = Color(0.976471, 0.262745, 0.0196078, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a75d1"]
+material = SubResource("StandardMaterial3D_m6707")
+radius = 0.1
+height = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnhlj"]
 size = Vector3(10, 1, 10)
@@ -604,6 +633,12 @@ omni_range = 9.13347
 [node name="small_industrial_light" parent="hub_room/RoomParts/lights/red_wall_light2" instance=ExtResource("8_48i45")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
+[node name="Sprinkler1" type="GPUParticles3D" parent="hub_room"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.5, 5.35099, 0)
+process_material = SubResource("ParticleProcessMaterial_w6ogy")
+draw_pass_1 = SubResource("SphereMesh_y77kv")
+script = ExtResource("13_na0ow")
+
 [node name="Fire" type="MeshInstance3D" parent="hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 0)
 mesh = SubResource("BoxMesh_psncc")
@@ -615,6 +650,17 @@ script = ExtResource("4_rnf6b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/Fire/Area3D"]
 shape = SubResource("BoxShape3D_2ieqx")
+
+[node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_v3t3t")
+draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+
+[node name="Sprinkler2" type="GPUParticles3D" parent="hub_room"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.6, 5.35099, 0)
+process_material = SubResource("ParticleProcessMaterial_w6ogy")
+draw_pass_1 = SubResource("SphereMesh_y77kv")
+script = ExtResource("13_na0ow")
 
 [node name="Fire2" type="MeshInstance3D" parent="hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1, 0, 0)
@@ -628,6 +674,17 @@ script = ExtResource("5_yh3cq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/Fire2/StaticBody3D/Area3D"]
 shape = SubResource("BoxShape3D_tnhlj")
 
+[node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_v3t3t")
+draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+
+[node name="Sprinkler3" type="GPUParticles3D" parent="hub_room"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6, 5.2542, -0.499999)
+process_material = SubResource("ParticleProcessMaterial_w6ogy")
+draw_pass_1 = SubResource("SphereMesh_y77kv")
+script = ExtResource("13_na0ow")
+
 [node name="Fire3" type="MeshInstance3D" parent="hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, 0)
 mesh = SubResource("BoxMesh_psncc")
@@ -639,6 +696,17 @@ script = ExtResource("6_vdwiv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/Fire3/StaticBody3D/Area3D"]
 shape = SubResource("BoxShape3D_0krpe")
+
+[node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_v3t3t")
+draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+
+[node name="Sprinkler4" type="GPUParticles3D" parent="hub_room"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4.76837e-07, 5.12167, -11)
+process_material = SubResource("ParticleProcessMaterial_w6ogy")
+draw_pass_1 = SubResource("SphereMesh_y77kv")
+script = ExtResource("13_na0ow")
 
 [node name="Fire4" type="MeshInstance3D" parent="hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.5)
@@ -652,6 +720,17 @@ script = ExtResource("7_miv6a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/Fire4/StaticBody3D/Area3D"]
 shape = SubResource("BoxShape3D_ni1ut")
 
+[node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_v3t3t")
+draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+
+[node name="Sprinkler5" type="GPUParticles3D" parent="hub_room"]
+transform = Transform3D(1, 0, 3.49691e-07, 0, 1, 0, -3.49691e-07, 0, 1, -2.86102e-06, 5.24335, -21)
+process_material = SubResource("ParticleProcessMaterial_w6ogy")
+draw_pass_1 = SubResource("SphereMesh_y77kv")
+script = ExtResource("13_na0ow")
+
 [node name="Fire5" type="MeshInstance3D" parent="hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21)
 mesh = SubResource("BoxMesh_psncc")
@@ -664,6 +743,17 @@ script = ExtResource("8_4rpbl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/Fire5/StaticBody3D/Area3D"]
 shape = SubResource("BoxShape3D_wuh5f")
 
+[node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_v3t3t")
+draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+
+[node name="Sprinkler6" type="GPUParticles3D" parent="hub_room"]
+transform = Transform3D(1, 0, 6.99382e-07, 0, 1, 0, -6.99382e-07, 0, 1, -1.28746e-05, 5.48669, -31)
+process_material = SubResource("ParticleProcessMaterial_w6ogy")
+draw_pass_1 = SubResource("SphereMesh_y77kv")
+script = ExtResource("13_na0ow")
+
 [node name="Fire6" type="MeshInstance3D" parent="hub_room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.5)
 mesh = SubResource("BoxMesh_psncc")
@@ -675,6 +765,11 @@ script = ExtResource("9_dy4x5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/Fire6/StaticBody3D/Area3D"]
 shape = SubResource("BoxShape3D_38w1i")
+
+[node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_v3t3t")
+draw_pass_1 = SubResource("CapsuleMesh_a75d1")
 
 [node name="wooden_desk_1" parent="hub_room" instance=ExtResource("14_318wx")]
 transform = Transform3D(-4.37115e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37115e-08, -0.491439, -0.00580204, -1.3059)

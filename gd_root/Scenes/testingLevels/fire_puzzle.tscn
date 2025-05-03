@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=63 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -27,6 +27,8 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_elevator_doors.gd" id="23_lcn6t"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="25_x8pim"]
 [ext_resource type="PackedScene" uid="uid://cf5tpp3js1gl3" path="res://Assets/Objects/Doors/wood_door_closed.tscn" id="26_c86vd"]
+[ext_resource type="PackedScene" uid="uid://b2xw7k4d8fr1r" path="res://Assets/Objects/Pipes/pipe_junc_cross.tscn" id="28_f0i4l"]
+[ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="29_vd0gy"]
 
 [sub_resource type="Environment" id="Environment_bhl03"]
 ambient_light_sky_contribution = 0.0
@@ -63,7 +65,7 @@ size = Vector3(60, 1, 10)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0jhhl"]
 material = SubResource("StandardMaterial3D_yqy73")
-size = Vector2(30, 10)
+size = Vector2(31, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wott5"]
 size = Vector3(30, 1, 10)
@@ -909,6 +911,385 @@ transform = Transform3D(1, 0, 3.42175e-08, 0, 1, 0, -3.42175e-08, 0, 1, 0, 1.5, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fire_puzzle_door/ElevatorDoorBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -3.55271e-15, 0, 1, 0.023163, -0.356963, 0.0154724)
 shape = SubResource("BoxShape3D_3g427")
+
+[node name="pipes" type="Node3D" parent="."]
+
+[node name="fire_cross" type="Node3D" parent="pipes"]
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
+
+[node name="fire_cross2" type="Node3D" parent="pipes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5752, 0, 0)
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross2" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross2" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
+
+[node name="fire_cross3" type="Node3D" parent="pipes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4084, 0, 0)
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross3" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross3" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
+
+[node name="fire_cross4" type="Node3D" parent="pipes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4044, 0, -10.6804)
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross4" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross4" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
+
+[node name="fire_cross5" type="Node3D" parent="pipes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4044, 0, -21.5028)
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross5" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross5" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
+
+[node name="fire_cross6" type="Node3D" parent="pipes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4044, 0, -32.1903)
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross6" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross6" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
+
+[node name="fire_cross7" type="Node3D" parent="pipes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4044, 0, -0.00932837)
+
+[node name="pipe_junc_cross" parent="pipes/fire_cross7" instance=ExtResource("28_f0i4l")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -16.844, 6.23877, 5.93189)
+
+[node name="pipe_straight" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 5.96348)
+
+[node name="pipe_straight2" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 4.76745)
+
+[node name="pipe_straight3" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 3.57497)
+
+[node name="pipe_straight4" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 2.39215)
+
+[node name="pipe_straight5" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 12.0403)
+
+[node name="pipe_straight6" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 10.8443)
+
+[node name="pipe_straight7" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 9.65177)
+
+[node name="pipe_straight8" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, -16.8458, 6.23612, 8.46895)
+
+[node name="pipe_straight9" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -16.2168, 6.23612, 6.61677)
+
+[node name="pipe_straight10" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -15.0208, 6.23612, 6.61677)
+
+[node name="pipe_straight11" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -13.8283, 6.23612, 6.61677)
+
+[node name="pipe_straight12" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -12.6455, 6.23612, 6.61677)
+
+[node name="pipe_straight13" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -22.2936, 6.23612, 6.61677)
+
+[node name="pipe_straight14" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -21.0976, 6.23612, 6.61677)
+
+[node name="pipe_straight15" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -19.9051, 6.23612, 6.61677)
+
+[node name="pipe_straight16" parent="pipes/fire_cross7" instance=ExtResource("29_vd0gy")]
+transform = Transform3D(-1.74846e-08, 0.4, 1.74846e-08, 0, -1.74846e-08, 0.4, 0.4, 1.74846e-08, 7.64274e-16, -18.7223, 6.23612, 6.61677)
 
 [connection signal="area_entered" from="hub_room/Fire/Area3D" to="hub_room/Fire" method="_on_area_3d_area_entered"]
 [connection signal="area_entered" from="hub_room/Fire2/StaticBody3D/Area3D" to="hub_room/Fire2" method="_on_area_3d_area_entered"]

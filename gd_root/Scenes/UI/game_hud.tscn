@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://clgttbebmbc6a"]
+[gd_scene load_steps=7 format=3 uid="uid://clgttbebmbc6a"]
 
 [ext_resource type="Script" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
 [ext_resource type="Texture2D" uid="uid://kdpik3k7oauh" path="res://Imports/ui/stopwatch_2.png" id="2_chul5"]
 [ext_resource type="Texture2D" uid="uid://bdxp3k3edhv5b" path="res://Imports/ui/stopwatch_needle.png" id="2_v440k"]
 [ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="4_j1ngf"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="5_wy6gk"]
+[ext_resource type="Script" path="res://Scripts/UI/checklist_label_text.gd" id="6_0wk31"]
 
 [node name="game_hud" type="Control"]
 layout_mode = 3
@@ -57,6 +58,28 @@ theme_override_font_sizes/font_size = 43
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="open_list_label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1977.78
+offset_top = 992.942
+offset_right = -1543.78
+offset_bottom = 1023.94
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_wy6gk")
+theme_override_font_sizes/font_size = 30
+text = "Press TAB to open list"
+script = ExtResource("6_0wk31")
 
 [node name="checklist" type="Control" parent="."]
 visible = false
@@ -198,23 +221,22 @@ theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 30
 text = "X"
 
-[node name="checklist_tabel" type="Label" parent="."]
-visible = false
+[node name="close_list_label" type="Label" parent="checklist"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1495.56
-offset_top = 994.445
-offset_right = -1143.56
-offset_bottom = 1022.44
+offset_left = -1496.67
+offset_top = 992.942
+offset_right = -1062.67
+offset_bottom = 1023.94
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_wy6gk")
-theme_override_font_sizes/font_size = 25
-text = "Press TAB to open checklist"
+theme_override_font_sizes/font_size = 30
+script = ExtResource("6_0wk31")

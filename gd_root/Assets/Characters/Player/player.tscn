@@ -12,11 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://c168umaksjc1t" path="res://Assets/Characters/Player/animation_files/Idle/standing.gltf" id="11_hr111"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
-radius = 0.38
+radius = 0.4
 height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6ler"]
-radius = 0.38
+radius = 0.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
 

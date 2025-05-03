@@ -215,7 +215,7 @@ material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5dnhj"]
-size = Vector3(0.5, 5, 4)
+size = Vector3(0.5, 5, 5.54175)
 
 [sub_resource type="BoxMesh" id="BoxMesh_je318"]
 material = ExtResource("4_vj5kr")
@@ -1443,6 +1443,7 @@ mesh = SubResource("BoxMesh_cth3t")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.25, 3, 12.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00109863)
 shape = SubResource("BoxShape3D_5dnhj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall4"]

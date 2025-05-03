@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2hbqkilggbke"]
+[gd_scene load_steps=4 format=3 uid="uid://cn2indkw7dlog"]
 
-[ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_wbipx"]
-[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_oqqvj"]
-[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_taadc"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_ps65x"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_tf6qe"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_qyk3e"]
 
 [node name="chatlog_lore_interface" type="Node2D"]
-script = ExtResource("1_wbipx")
+script = ExtResource("1_ps65x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.08, 1.08)
-texture = ExtResource("2_oqqvj")
+texture = ExtResource("2_tf6qe")
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = -392.0
@@ -23,7 +23,7 @@ theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("3_taadc")
+theme_override_fonts/font = ExtResource("3_qyk3e")
 theme_override_font_sizes/font_size = 90
 text = "Back"
 
@@ -34,7 +34,7 @@ offset_right = -628.0
 offset_bottom = -428.0
 theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "OGAS Network: Chatlogs, 1978/11/08"
+text = "OGAS Network: Chatlogs, 1983/11/08"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -921.0
@@ -43,15 +43,14 @@ offset_right = 368.0
 offset_bottom = 564.0
 theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "User, Unnamed#011: Ok, so let me get something straight
-User, Unnamed#001: Go ahead
-User, Unnamed#011: So, US oil fracking has sent vibrations underground, forming “cracks” in the ocean floor. At this point, everyone knows that.
-User, Unnamed#001: mhm
-User, Unnamed#011: But they’ve been worsening and have been releasing MAGMA into the ocean?
-User, Unnamed#001: Yep
-User, Unnamed#011: That sounds bad.
-User, Unnamed#001: Oh yeah, you have no idea. So the magma is gonna cause temperature and pressure changes, allowing arctic cyclones to form in the Bering Strait.
-User, Unnamed#011: Oh. oh no"
+text = "User, Unnamed#001: System should be working now. Try starting up your machines.
+User, Unnamed#012: Yep, everything’s up and running
+User, Unnamed#027: Same over here.
+User, Unnamed#005: Awesome. I’m going to take a nap. I don’t think I’ve gotten a full night of sleep since the Americans started drilling.
+User, Unnamed#012: Dang, are you okay?
+User, Unnamed#005: Honestly? No. Not at all. The fact we even have to fix the problems the USA causes is upsetting on its own.
+User, Unnamed#005 has left.
+"
 autowrap_mode = 3
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -999,6 +999,7 @@ shape = SubResource("BoxShape3D_fynni")
 
 [node name="ceiling" type="StaticBody3D" parent="world/building"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6, 0)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/building/ceiling"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -1790,9 +1791,6 @@ transform = Transform3D(-0.67629, 0, -0.180642, 0, 0.7, 0, 0.180642, 0, -0.67629
 [node name="old_tv3" parent="world/decor/mainHall/tech" instance=ExtResource("18_1b1pf")]
 transform = Transform3D(-0.097046, 0, 0.69324, 0, 0.7, 0, -0.69324, 0, -0.097046, 4.5105, 1.62852, 3.62622)
 
-[node name="computer" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
-transform = Transform3D(-0.752813, 0, -0.270688, 0, 0.8, 0, 0.270688, 0, -0.752813, 36.0338, 1.62149, -18.2713)
-
 [node name="computer2" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(-0.152126, 0, -0.785403, 0, 0.8, 0, 0.785403, 0, -0.152126, 30.2144, 1.62149, -13.4668)
 
@@ -1890,6 +1888,40 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.21612
 modulate = Color(1, 0.0980392, 0, 1)
 text = "- ~~~"
 
+[node name="computer8" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
+transform = Transform3D(-0.796655, 0, 0.07309, 0, 0.8, 0, -0.07309, 0, -0.796655, 35.6436, 1.62149, -18.2957)
+
+[node name="lore_chatlog_03" type="StaticBody3D" parent="world/decor/mainHall/tech/computer8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/mainHall/tech/computer8/lore_chatlog_03"]
+transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+shape = SubResource("BoxShape3D_s12nq")
+
+[node name="ChatlogDecorativeLabel" type="Label3D" parent="world/decor/mainHall/tech/computer8"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.288076, 1.14588, 0.430409)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "-----"
+
+[node name="ChatlogDecorativeLabel2" type="Label3D" parent="world/decor/mainHall/tech/computer8"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.180449, 0.985913, 0.447059)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~~"
+
+[node name="ChatlogDecorativeLabel3" type="Label3D" parent="world/decor/mainHall/tech/computer8"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.0862622, 0.891669, 0.46163)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~~~~"
+
+[node name="ChatlogDecorativeLabel4" type="Label3D" parent="world/decor/mainHall/tech/computer8"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.795077, 0.441541)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~"
+
+[node name="ChatlogDecorativeLabel5" type="Label3D" parent="world/decor/mainHall/tech/computer8"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.678863, 0.441541)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~"
+
 [node name="computer5" parent="world/decor/mainHall/tech" instance=ExtResource("11_i2ung")]
 transform = Transform3D(0.0885091, 0, 0.795089, 0, 0.8, 0, -0.795089, 0, 0.0885091, -1.1255, 1.62149, -14.7018)
 
@@ -1916,6 +1948,40 @@ transform = Transform3D(-1.3414, 0, 0.63973, 0, 1.48614, 0, -0.63973, 0, -1.3414
 
 [node name="serverRoom" type="Node3D" parent="world/decor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8548, -1.90735e-06, 7.77037)
+
+[node name="computer6" parent="world/decor/serverRoom" instance=ExtResource("11_i2ung")]
+transform = Transform3D(0.122306, 0, -0.790596, 0, 0.8, 0, 0.790596, 0, 0.122306, 40.7858, 1.75221, 4.28819)
+
+[node name="lore_logs_01" type="StaticBody3D" parent="world/decor/serverRoom/computer6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/decor/serverRoom/computer6/lore_logs_01"]
+transform = Transform3D(1, 3.57771e-09, -2.53206e-09, -3.57771e-09, 1, 2.24645e-10, 2.53206e-09, -2.24645e-10, 1, 0.117865, 0.575928, 0)
+shape = SubResource("BoxShape3D_s12nq")
+
+[node name="ChatlogDecorativeLabel" type="Label3D" parent="world/decor/serverRoom/computer6"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.288076, 1.14588, 0.430409)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "-----"
+
+[node name="ChatlogDecorativeLabel2" type="Label3D" parent="world/decor/serverRoom/computer6"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.180449, 0.985913, 0.447059)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~~"
+
+[node name="ChatlogDecorativeLabel3" type="Label3D" parent="world/decor/serverRoom/computer6"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.0862622, 0.891669, 0.46163)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~~~~"
+
+[node name="ChatlogDecorativeLabel4" type="Label3D" parent="world/decor/serverRoom/computer6"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.795077, 0.441541)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~"
+
+[node name="ChatlogDecorativeLabel5" type="Label3D" parent="world/decor/serverRoom/computer6"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216123, 0.678863, 0.441541)
+modulate = Color(1, 0.0980392, 0, 1)
+text = "- ~~~"
 
 [node name="wooden_chair" parent="world/decor/serverRoom" instance=ExtResource("18_4xbtj")]
 transform = Transform3D(-0.618175, 0, -0.78604, 0, 1, 0, 0.78604, 0, -0.618175, 37.1758, 0.500001, -0.777313)
@@ -1948,10 +2014,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.1726, 0.500002, 3.95501)
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 41.203, 0.500002, 3.95501)
 
 [node name="computer" parent="world/decor/serverRoom" instance=ExtResource("11_i2ung")]
-transform = Transform3D(-0.772741, 0, 0.207055, 0, 0.8, 0, -0.207055, 0, -0.772741, 40.7432, 1.7569, -1.28244)
-
-[node name="computer2" parent="world/decor/serverRoom" instance=ExtResource("11_i2ung")]
-transform = Transform3D(0.145596, 0, 0.78664, 0, 0.8, 0, -0.78664, 0, 0.145596, 40.8658, 1.7569, 2.82987)
+transform = Transform3D(-0.772741, 0, 0.207055, 0, 0.8, 0, -0.207055, 0, -0.772741, 40.7432, 1.75095, -1.28244)
 
 [node name="backupGenerator" parent="world/decor/serverRoom" instance=ExtResource("12_2bmyb")]
 transform = Transform3D(0.595033, 0, -0.803701, 0, 1, 0, 0.803701, 0, 0.595033, 37.682, 0.500002, -4.49214)

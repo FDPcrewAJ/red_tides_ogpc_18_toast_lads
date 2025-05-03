@@ -114,11 +114,11 @@ emission_shape = 1
 emission_sphere_radius = 7.17
 gravity = Vector3(0, 4, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6707"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npvf1"]
 albedo_color = Color(0.976471, 0.262745, 0.0196078, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_a75d1"]
-material = SubResource("StandardMaterial3D_m6707")
+material = SubResource("StandardMaterial3D_npvf1")
 radius = 0.1
 height = 0.3
 

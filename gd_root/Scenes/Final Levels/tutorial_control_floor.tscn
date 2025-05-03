@@ -1,4 +1,4 @@
-[gd_scene load_steps=218 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=227 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -1044,6 +1044,19 @@ size = Vector3(4, 1, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_chsse"]
 size = Vector3(4, 5, 10)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y08w3"]
+emission_shape = 1
+emission_sphere_radius = 7.17
+gravity = Vector3(0, 4, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m6707"]
+albedo_color = Color(0.976471, 0.262745, 0.0196078, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_po7uk"]
+material = SubResource("StandardMaterial3D_m6707")
+radius = 0.1
+height = 0.3
+
 [sub_resource type="BoxMesh" id="BoxMesh_lagky"]
 material = SubResource("StandardMaterial3D_ohuts")
 size = Vector3(4, 1, 15)
@@ -1057,6 +1070,36 @@ size = Vector3(4, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8020b"]
 size = Vector3(4, 5, 5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_13ao3"]
+emission_shape = 1
+emission_sphere_radius = 3.77
+gravity = Vector3(0, 4, 0)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_007to"]
+material = SubResource("StandardMaterial3D_m6707")
+radius = 0.1
+height = 0.3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0j87i"]
+emission_shape = 1
+emission_sphere_radius = 4.07
+gravity = Vector3(0, 4, 0)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jvfwi"]
+material = SubResource("StandardMaterial3D_m6707")
+radius = 0.1
+height = 0.3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ldqrx"]
+emission_shape = 1
+emission_sphere_radius = 4.02
+gravity = Vector3(0, 4, 0)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l8g17"]
+material = SubResource("StandardMaterial3D_m6707")
+radius = 0.1
+height = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ic2i"]
 size = Vector3(0.626465, 1.4375, 0.663452)
@@ -2428,7 +2471,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="fire_container" type="Node3D" parent="tutorial_sequence"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 script = ExtResource("51_otypp")
 
 [node name="fire" type="Area3D" parent="tutorial_sequence/fire_container"]
@@ -2441,6 +2484,11 @@ mesh = SubResource("BoxMesh_aveqi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_chsse")
 
+[node name="FireParticles" type="GPUParticles3D" parent="tutorial_sequence/fire_container/fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_y08w3")
+draw_pass_1 = SubResource("CapsuleMesh_po7uk")
+
 [node name="fire2" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(0.99895, 0, 0.0458164, 0, 1, 0, -0.0458164, 0, 0.99895, 11.9146, 0.5, -7.5716)
 
@@ -2450,6 +2498,11 @@ mesh = SubResource("BoxMesh_lagky")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 2.5, -1.29782)
 shape = SubResource("BoxShape3D_d45qq")
+
+[node name="FireParticles" type="GPUParticles3D" parent="tutorial_sequence/fire_container/fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_y08w3")
+draw_pass_1 = SubResource("CapsuleMesh_po7uk")
 
 [node name="fire3" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(-0.999939, 0, 0.0110477, 0, 1, 0, -0.0110477, 0, -0.999939, 3.43779, 0.5, -7.24776)
@@ -2461,6 +2514,11 @@ mesh = SubResource("BoxMesh_gbb0f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_8020b")
 
+[node name="FireParticles" type="GPUParticles3D" parent="tutorial_sequence/fire_container/fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_13ao3")
+draw_pass_1 = SubResource("CapsuleMesh_007to")
+
 [node name="fire4" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(-0.0110477, 0, -0.999939, 0, 1, 0, 0.999939, 0, -0.0110477, -0.0583895, 0.5, 0.770368)
 
@@ -2471,6 +2529,11 @@ mesh = SubResource("BoxMesh_gbb0f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_8020b")
 
+[node name="FireParticles" type="GPUParticles3D" parent="tutorial_sequence/fire_container/fire4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
+process_material = SubResource("ParticleProcessMaterial_0j87i")
+draw_pass_1 = SubResource("CapsuleMesh_jvfwi")
+
 [node name="fire5" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(0.708746, 0, -0.705464, 0, 1, 0, 0.705464, 0, 0.708746, -12.1671, 0.5, -0.471357)
 
@@ -2480,6 +2543,16 @@ mesh = SubResource("BoxMesh_lagky")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tutorial_sequence/fire_container/fire5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_d45qq")
+
+[node name="FireParticles" type="GPUParticles3D" parent="tutorial_sequence/fire_container/fire5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 4.67768)
+process_material = SubResource("ParticleProcessMaterial_ldqrx")
+draw_pass_1 = SubResource("CapsuleMesh_l8g17")
+
+[node name="FireParticles2" type="GPUParticles3D" parent="tutorial_sequence/fire_container/fire5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, -3.77813)
+process_material = SubResource("ParticleProcessMaterial_ldqrx")
+draw_pass_1 = SubResource("CapsuleMesh_l8g17")
 
 [node name="checklist_pick_up" type="StaticBody3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41007, 0.695435, 1.92876)

@@ -62,8 +62,6 @@ func _ready():
 	crouch_anim.play("PlayerAction")
 	jump_anim.play("PlayerAction")
 	crouch_walk_anim.play("PlayerAction")
-	
-	cur_anim = standing
 
 
 func _input(event):
@@ -79,6 +77,7 @@ func _physics_process(delta):
 		# Add gravity while player isnt on the floor
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+			# Prevents jumping animation playing when player first loads
 			if load_in_air:
 				jumping = true
 		else:
@@ -99,6 +98,7 @@ func _physics_process(delta):
 		if Input.is_action_just_released("crouch"):
 			crouching = false
 		
+		# Update hitbox and camera to crouching or not crouching
 		if crouching:
 			standing_collision.disabled = true
 			crouching_collision.disabled = false
@@ -121,16 +121,19 @@ func _physics_process(delta):
 		## (Is not the players actual velocity, that is different and gets put in later)
 		## Lerp: goes from first input to second input smoothly
 		## [Input 1]: Current direction of the player, changes as the player moves. (in Vector3)
-		## [Input 2]: Mouse position of the player (transform.basis), gets where the player is looking, 
-		## (in Vector3) so that we know what direction we need to move in. This is then multiplied by a
-		## Vector3 conversion of the input direction, with y being 0 as we are not moving vertical.
-		## All of that is then normalized, which sets the distance of the vector3 to one.
-		## [Input 3]: The rate of change is the set lerp speed, effects how slowly or quickly you speed 
-		## up, multiplied by delta so that it sticks with frame time and does not go out of sync.
+		## [Input 2]: Mouse position of the player (transform.basis), gets where the player is 
+		## looking, (in Vector3) so that we know what direction we need to move in. This is then 
+		## multiplied by a Vector3 conversion of the input direction, with y being 0 as we are 
+		## not moving vertical. All of that is then normalized, which sets the distance of the 
+		## vector3 to one.
+		## [Input 3]: The rate of change is the set lerp speed, effects how slowly or quickly 
+		## you speed up, multiplied by delta so that it sticks with frame time and does not go 
+		## out of sync.
 		direction = lerp(direction,
 						(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), 
 						delta * move_lerp_speed)
 		
+		# Update player speed, croch has priortity over sprint which has priority over walk
 		if crouching:
 			current_speed = crouch_speed
 			walking = false
@@ -142,6 +145,7 @@ func _physics_process(delta):
 			walking = true
 			current_speed = walk_speed
 		
+		# if the player is pressing a move key, move in that direction
 		if direction:
 			velocity.x = direction.x * current_speed
 			velocity.z = direction.z * current_speed
@@ -149,62 +153,60 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, current_speed)
 			velocity.z = move_toward(velocity.z, 0, current_speed)
 		
+		## Player animation Main Control
+		# if the player is moving, then play a moving animation
 		if abs(velocity.x) >= 0.2 or abs(velocity.z) >= 0.2:
-			crouch.hide()
+			# Load crouch walk animation
 			if crouching:
 				new_anim_vis(crouch_walk)
 			else:
 				crouch_walk.hide()
+				# Load walk animation if not jumping and not crouching
 				if !jumping:
 					new_anim_vis(walk)
 					walk_anim.play("PlayerAction")
-					set_cur_anim(walk)
+				# Load jump animation if jumping is true
 				else:
 					walking = false
 					walk_anim.stop()
 					new_anim_vis(jump)
-					set_cur_anim(jump)
+					# Only play jump animation once and hold until player his the floor
 					if play_jump_once:
 						jump_anim.play("PlayerAction")
 						play_jump_once = false
+		# If the player is not playing, load an idle animation
 		else:
+			# Load crouch idle
 			if crouching:
 				new_anim_vis(crouch)
 			else:
+				# If jumping play jump animation
 				if jumping:
 					walking = false
 					walk_anim.stop()
 					new_anim_vis(jump)
-					set_cur_anim(jump)
 					if play_jump_once:
 						jump_anim.play("PlayerAction")
 						play_jump_once = false
 				else:
+					# Load standing idle animation
 					crouch.hide()
 					walking = false
 					walk_anim.stop()
 					new_anim_vis(standing)
-					set_cur_anim(standing)
 		
-		#print("jumping: " + str(jumping))
-		#print("Load in Air: " + str(load_in_air))
-		#print(crouch.visible)
-		#print("walking: " + str(walking))
-		#print("Jumping: " + str(jumping))
 		move_and_slide()
 
 
-func set_cur_anim(anim):
-	cur_anim = anim
-
-
 func new_anim_vis(new_anim):
+	# Hide all animations
 	walk.hide()
 	crouch.hide()
 	crouch_walk.hide()
 	jump.hide()
 	standing.hide()
 	
+	# Show only the new amination that needs to be played
 	match new_anim:
 		walk:
 			new_anim.show()

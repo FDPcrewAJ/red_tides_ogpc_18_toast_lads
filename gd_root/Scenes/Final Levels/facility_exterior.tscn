@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=4 uid="uid://cu8sd2enacj3e"]
+[gd_scene load_steps=103 format=4 uid="uid://cu8sd2enacj3e"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/facility_exterior.gd" id="1_mup67"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_1n4xm"]
@@ -372,30 +372,41 @@ material = SubResource("StandardMaterial3D_mh5f6")
 left_to_right = 0.0
 size = Vector3(20, 20, 110)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o15p3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aj3h"]
 albedo_texture = ExtResource("8_6dvrx")
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_fe38a"]
-material = SubResource("StandardMaterial3D_o15p3")
+material = SubResource("StandardMaterial3D_3aj3h")
 top_radius = 12.0
 bottom_radius = 12.0
 height = 12.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8g83"]
-albedo_texture = ExtResource("7_y44iw")
-emission = Color(0, 0.440284, 0.396889, 1)
-emission_energy_multiplier = 0.0
-backlight_enabled = true
-backlight = Color(0, 0.439216, 0.396078, 1)
-uv1_scale = Vector3(0.05, 0.05, 0.05)
-uv1_triplanar = true
-
 [sub_resource type="SphereMesh" id="SphereMesh_5q6ys"]
-material = SubResource("StandardMaterial3D_e8g83")
 radius = 25.0
 height = 50.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24wvi"]
+albedo_texture = ExtResource("7_y44iw")
+emission_enabled = true
+emission = Color(0.239706, 0.652647, 0.61351, 1)
+emission_energy_multiplier = 12.22
+uv1_scale = Vector3(0.055, 0.055, 0.055)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x0r37"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("7_y44iw")
+uv1_scale = Vector3(0.035, 0.035, 0.035)
+uv1_triplanar = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_3bg80"]
+material = SubResource("StandardMaterial3D_x0r37")
+radius = 27.0
+height = 54.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6mpu"]
 albedo_color = Color(0.851769, 0.851769, 0.851769, 1)
@@ -724,26 +735,11 @@ mesh = SubResource("CylinderMesh_fe38a")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
 mesh = SubResource("SphereMesh_5q6ys")
+surface_material_override/0 = SubResource("StandardMaterial3D_24wvi")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome/MeshInstance3D2"]
-transform = Transform3D(-0.236824, 0.792264, 0.562346, -0.904783, 0.0310208, -0.424741, -0.353951, -0.60939, 0.70948, 31.4881, -10.9782, 41.7834)
-light_color = Color(0, 0.501961, 0.501961, 1)
-light_energy = 200.0
-light_size = 0.798
-light_bake_mode = 1
-spot_range = 133.294
-spot_angle = 39.5384
-spot_angle_attenuation = 1e-05
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome/MeshInstance3D2"]
-transform = Transform3D(0.214062, 0.895324, -0.390605, -0.904783, 0.0310208, -0.424741, -0.368164, 0.444334, 0.816715, -27.9565, -10.9782, 47.4884)
-light_color = Color(0, 0.501961, 0.501961, 1)
-light_energy = 200.0
-light_size = 0.798
-light_bake_mode = 1
-spot_range = 133.294
-spot_angle = 39.5384
-spot_angle_attenuation = 1e-05
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="world/facilityModel/mainBuilding/towerWalls/Dome"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
+mesh = SubResource("SphereMesh_3bg80")
 
 [node name="detailPillars" type="Node3D" parent="world/facilityModel/mainBuilding/towerWalls"]
 

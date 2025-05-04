@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://xuwf5i5dlbun"]
+[gd_scene load_steps=21 format=3 uid="uid://xuwf5i5dlbun"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/flow_puzzle_interface.gd" id="1_wyrge"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_5aifb"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/pipe_button.gd" id="2_qtumd"]
 [ext_resource type="Texture2D" uid="uid://ckko0stcu2qk" path="res://Imports/images/straight_pipe-1.png" id="3_c71xk"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/flow_area.gd" id="3_ebcrh"]
@@ -12,16 +13,32 @@
 [ext_resource type="Script" path="res://Scripts/Interfaces/end_area_2d.gd" id="7_kknyb"]
 [ext_resource type="Texture2D" uid="uid://bjpk4bdy30mv3" path="res://Imports/images/cross_pipe-1.png" id="8_ok570"]
 [ext_resource type="Texture2D" uid="uid://bflr3klbsncvs" path="res://Imports/images/turn_flip_pipe-1.png" id="9_j6cto"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="11_slx4p"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="12_jaawv"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="13_fhr8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lc7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_osbw1"]
+texture = ExtResource("12_jaawv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hx5fy"]
+texture = ExtResource("13_fhr8r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3vy7c"]
+texture = ExtResource("12_jaawv")
 
 [node name="FlowPuzzleInterface" type="Node2D"]
 script = ExtResource("1_wyrge")
 
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_5aifb")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PipeButtonNode" type="Node2D" parent="."]
-position = Vector2(-225, -300)
+position = Vector2(-509, -213)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton" type="Button" parent="PipeButtonNode"]
@@ -52,7 +69,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode2" type="Node2D" parent="."]
-position = Vector2(-75, -300)
+position = Vector2(-359, -213)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton2" type="Button" parent="PipeButtonNode2"]
@@ -89,7 +106,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode3" type="Node2D" parent="."]
-position = Vector2(75, -300)
+position = Vector2(-209, -213)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton3" type="Button" parent="PipeButtonNode3"]
@@ -119,7 +136,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode4" type="Node2D" parent="."]
-position = Vector2(225, -300)
+position = Vector2(-59, -213)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton4" type="Button" parent="PipeButtonNode4"]
@@ -165,7 +182,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode5" type="Node2D" parent="."]
-position = Vector2(-225, -150)
+position = Vector2(-509, -63)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton5" type="Button" parent="PipeButtonNode5"]
@@ -195,7 +212,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode6" type="Node2D" parent="."]
-position = Vector2(-75, -150)
+position = Vector2(-359, -63)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton6" type="Button" parent="PipeButtonNode6"]
@@ -225,7 +242,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode7" type="Node2D" parent="."]
-position = Vector2(75, -150)
+position = Vector2(-209, -63)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton7" type="Button" parent="PipeButtonNode7"]
@@ -255,7 +272,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode8" type="Node2D" parent="."]
-position = Vector2(225, -150)
+position = Vector2(-59, -63)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton8" type="Button" parent="PipeButtonNode8"]
@@ -284,53 +301,8 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode8/PipeButton8/Area2D2"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
-[node name="PipeButtonNode9" type="Node2D" parent="."]
-position = Vector2(-225, 0)
-script = ExtResource("2_qtumd")
-
-[node name="PipeButton9" type="Button" parent="PipeButtonNode9"]
-offset_left = -75.0
-offset_top = -75.0
-offset_right = 75.0
-offset_bottom = 75.0
-theme_override_font_sizes/font_size = 103
-icon = ExtResource("8_ok570")
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("3_uvasq")
-metadata/_edit_use_anchors_ = true
-
-[node name="Area2D" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
-position = Vector2(0, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D2" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
-position = Vector2(75, 150)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D2"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D3" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
-position = Vector2(150, 75)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D3"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
-[node name="Area2D4" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
-y_sort_enabled = true
-position = Vector2(75, 0)
-script = ExtResource("3_ebcrh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D4"]
-shape = SubResource("RectangleShape2D_s2lc7")
-
 [node name="PipeButtonNode10" type="Node2D" parent="."]
-position = Vector2(-75, 0)
+position = Vector2(-359, 87)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton10" type="Button" parent="PipeButtonNode10"]
@@ -360,7 +332,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode11" type="Node2D" parent="."]
-position = Vector2(75, 0)
+position = Vector2(-209, 87)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton11" type="Button" parent="PipeButtonNode11"]
@@ -405,7 +377,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode12" type="Node2D" parent="."]
-position = Vector2(225, 0)
+position = Vector2(-59, 87)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton12" type="Button" parent="PipeButtonNode12"]
@@ -442,7 +414,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode13" type="Node2D" parent="."]
-position = Vector2(-225, 150)
+position = Vector2(-509, 237)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton13" type="Button" parent="PipeButtonNode13"]
@@ -472,7 +444,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode14" type="Node2D" parent="."]
-position = Vector2(-75, 150)
+position = Vector2(-359, 237)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton14" type="Button" parent="PipeButtonNode14"]
@@ -502,7 +474,7 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="PipeButtonNode15" type="Node2D" parent="."]
-position = Vector2(75, 150)
+position = Vector2(-209, 237)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton15" type="Button" parent="PipeButtonNode15"]
@@ -538,8 +510,53 @@ script = ExtResource("3_ebcrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode15/PipeButton15/Area2D3"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
+[node name="PipeButtonNode9" type="Node2D" parent="."]
+position = Vector2(-509, 87)
+script = ExtResource("2_qtumd")
+
+[node name="PipeButton9" type="Button" parent="PipeButtonNode9"]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 103
+icon = ExtResource("8_ok570")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_uvasq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+position = Vector2(0, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D2" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+position = Vector2(75, 150)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D2"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D3" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+position = Vector2(150, 75)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D3"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="Area2D4" type="Area2D" parent="PipeButtonNode9/PipeButton9"]
+y_sort_enabled = true
+position = Vector2(75, 0)
+script = ExtResource("3_ebcrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeButtonNode9/PipeButton9/Area2D4"]
+shape = SubResource("RectangleShape2D_s2lc7")
+
 [node name="PipeButtonNode16" type="Node2D" parent="."]
-position = Vector2(225, 150)
+position = Vector2(-59, 237)
 script = ExtResource("2_qtumd")
 
 [node name="PipeButton16" type="Button" parent="PipeButtonNode16"]
@@ -569,50 +586,71 @@ script = ExtResource("3_ebcrh")
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="ExitButton" type="Button" parent="."]
-offset_left = -150.0
-offset_top = 300.0
-offset_right = 150.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 25
+offset_left = -434.0
+offset_top = 359.0
+offset_right = -134.0
+offset_bottom = 459.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("11_slx4p")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxTexture_osbw1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hx5fy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3vy7c")
 toggle_mode = true
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
 [node name="FlowPuzzleLevelLabel" type="Label" parent="."]
-offset_left = -950.0
-offset_top = -525.0
-offset_right = -910.0
-offset_bottom = -388.0
+offset_left = -910.0
+offset_top = -438.0
+offset_right = -870.0
+offset_bottom = -301.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("11_slx4p")
 theme_override_font_sizes/font_size = 80
 script = ExtResource("5_dgjef")
 
 [node name="StartLabel" type="Label" parent="."]
-offset_left = -432.0
-offset_top = -429.0
-offset_right = -282.0
-offset_bottom = -260.0
+offset_left = -775.0
+offset_top = -299.0
+offset_right = -606.0
+offset_bottom = -130.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("11_slx4p")
 theme_override_font_sizes/font_size = 60
 text = "Start
-     >"
+        >"
 
 [node name="StartArea2D" type="Area2D" parent="."]
-position = Vector2(-300, -300)
+position = Vector2(-584, -213)
 script = ExtResource("5_271uy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartArea2D"]
 shape = SubResource("RectangleShape2D_s2lc7")
 
 [node name="EndLabel" type="Label" parent="."]
-offset_left = 316.0
-offset_top = 22.0
-offset_right = 466.0
-offset_bottom = 191.0
+offset_left = 35.0
+offset_top = 152.0
+offset_right = 185.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("11_slx4p")
 theme_override_font_sizes/font_size = 60
 text = "End
 <"
 
 [node name="EndArea2D" type="Area2D" parent="."]
-position = Vector2(300, 150)
+position = Vector2(16, 237)
 script = ExtResource("7_kknyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea2D"]
@@ -626,12 +664,12 @@ shape = SubResource("RectangleShape2D_s2lc7")
 [connection signal="pressed" from="PipeButtonNode6/PipeButton6" to="PipeButtonNode6" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode7/PipeButton7" to="PipeButtonNode7" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode8/PipeButton8" to="PipeButtonNode8" method="_on_pipe_button_pressed"]
-[connection signal="pressed" from="PipeButtonNode9/PipeButton9" to="PipeButtonNode9" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode10/PipeButton10" to="PipeButtonNode10" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode11/PipeButton11" to="PipeButtonNode11" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode12/PipeButton12" to="PipeButtonNode12" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode13/PipeButton13" to="PipeButtonNode13" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode14/PipeButton14" to="PipeButtonNode14" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode15/PipeButton15" to="PipeButtonNode15" method="_on_pipe_button_pressed"]
+[connection signal="pressed" from="PipeButtonNode9/PipeButton9" to="PipeButtonNode9" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode16/PipeButton16" to="PipeButtonNode16" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

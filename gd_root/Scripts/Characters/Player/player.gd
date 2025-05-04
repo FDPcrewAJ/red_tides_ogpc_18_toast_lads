@@ -25,7 +25,6 @@ var crouch_walk_anim
 
 var cur_anim
 var play_jump_once = false
-var load_in_air = false
 
 # If player can move or not (intro/cutscene control)
 var has_control = true
@@ -77,13 +76,8 @@ func _physics_process(delta):
 		# Add gravity while player isnt on the floor
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-			# Prevents jumping animation playing when player first loads
-			if load_in_air:
-				jumping = true
 		else:
-			load_in_air = true
 			jumping = false
-			jump.hide()
 		
 		# Jump, but only when the player is on the floor
 		if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -133,7 +127,8 @@ func _physics_process(delta):
 						(transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), 
 						delta * move_lerp_speed)
 		
-		# Update player speed, croch has priortity over sprint which has priority over walk
+		# Update player speed
+		#crouch has priortity over sprint which has priority over walk
 		if crouching:
 			current_speed = crouch_speed
 			walking = false
@@ -153,6 +148,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, current_speed)
 			velocity.z = move_toward(velocity.z, 0, current_speed)
 		
+		
 		## Player animation Main Control
 		# if the player is moving, then play a moving animation
 		if abs(velocity.x) >= 0.2 or abs(velocity.z) >= 0.2:
@@ -160,20 +156,13 @@ func _physics_process(delta):
 			if crouching:
 				new_anim_vis(crouch_walk)
 			else:
-				crouch_walk.hide()
-				# Load walk animation if not jumping and not crouching
+				# Load walk animation if not jumping
 				if !jumping:
 					new_anim_vis(walk)
 					walk_anim.play("PlayerAction")
 				# Load jump animation if jumping is true
 				else:
-					walking = false
-					walk_anim.stop()
-					new_anim_vis(jump)
-					# Only play jump animation once and hold until player his the floor
-					if play_jump_once:
-						jump_anim.play("PlayerAction")
-						play_jump_once = false
+					play_jump_anim()
 		# If the player is not playing, load an idle animation
 		else:
 			# Load crouch idle
@@ -182,17 +171,9 @@ func _physics_process(delta):
 			else:
 				# If jumping play jump animation
 				if jumping:
-					walking = false
-					walk_anim.stop()
-					new_anim_vis(jump)
-					if play_jump_once:
-						jump_anim.play("PlayerAction")
-						play_jump_once = false
+					play_jump_anim()
 				else:
 					# Load standing idle animation
-					crouch.hide()
-					walking = false
-					walk_anim.stop()
 					new_anim_vis(standing)
 		
 		move_and_slide()
@@ -218,6 +199,14 @@ func new_anim_vis(new_anim):
 			new_anim.show()
 		standing:
 			new_anim.show()
+
+
+func play_jump_anim():
+	new_anim_vis(jump)
+	# Only play jump animation once and hold until player his the floor
+	if play_jump_once:
+		jump_anim.play("PlayerAction")
+		play_jump_once = false
 
 
 func _set_last_pos():

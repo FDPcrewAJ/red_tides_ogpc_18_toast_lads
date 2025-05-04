@@ -1,4 +1,4 @@
-[gd_scene load_steps=282 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=283 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -215,10 +215,10 @@ size = Vector3(0.5, 5, 6)
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 6)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5dnhj"]
-size = Vector3(0.5, 5, 4)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g0ws"]
+size = Vector3(0.5, 5, 5.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_je318"]
+[sub_resource type="BoxMesh" id="BoxMesh_6rj6k"]
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 5, 5.5)
 
@@ -263,6 +263,9 @@ size = Vector3(0.5, 2, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_fmfi2"]
 material = ExtResource("4_vj5kr")
 size = Vector3(0.5, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5dnhj"]
+size = Vector3(0.5, 5, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m3o74"]
 material = ExtResource("4_vj5kr")
@@ -1315,8 +1318,6 @@ mesh = SubResource("PlaneMesh_36h8k")
 transform = Transform3D(-8.10817e-08, 0, 1.85493, 0, 1.85493, 0, -1.85493, 0, -8.10817e-08, 4.34113, -5.5, 19.8655)
 
 [node name="walls" type="Node3D" parent="world"]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="exterior_walls" type="Node3D" parent="world/walls"]
 
@@ -1444,10 +1445,10 @@ mesh = SubResource("BoxMesh_cth3t")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 18.25, 3, 12.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall4"]
-shape = SubResource("BoxShape3D_5dnhj")
+shape = SubResource("BoxShape3D_6g0ws")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="world/walls/interior_walls/top_left_rooms/sep_wall4"]
-mesh = SubResource("BoxMesh_je318")
+mesh = SubResource("BoxMesh_6rj6k")
 
 [node name="sep_wall5" type="StaticBody3D" parent="world/walls/interior_walls/top_left_rooms"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.75, 3, 12.5)

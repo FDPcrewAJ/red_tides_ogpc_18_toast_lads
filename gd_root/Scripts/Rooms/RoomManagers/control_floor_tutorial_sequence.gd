@@ -19,8 +19,6 @@ signal interaction_ready
 @onready var wake_up_label: Label = $black_screen/wake_up_label
 
 @onready var fire_container: Node3D = $fire_container
-@onready var blank_door: Node3D = $"../world/building/doors/blank door"
-@onready var fire_door: CSGMesh3D = $"../world/building/doors/fire_door"
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -45,8 +43,9 @@ var chief_dead
 var lightning_count = 0
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("devKey"):
-		_on_voice_line_player_finished()
+	pass
+	#if Input.is_action_just_pressed("devKey"):
+		#_on_voice_line_player_finished()
 
 
 func _ready() -> void:
@@ -252,5 +251,3 @@ func _on_blackout_timer_timeout() -> void:
 		wake_up_label.hide()
 		fire_container.position.y = 0
 		player.has_control = true
-		blank_door.queue_free()
-		fire_door.position.y = 0.5

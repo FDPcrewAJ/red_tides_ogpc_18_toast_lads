@@ -11,6 +11,10 @@ signal start_dial_voice_lines
 @onready var dial_puzzle_interface: Node2D = $dial_puzzle_interface
 @onready var checklist_pick_up: StaticBody3D = $"../tutorial_sequence/fire_container/checklist_pick_up"
 
+@onready var blank_door: Node3D = $"../world/building/doors/blank door"
+@onready var fire_door: CSGMesh3D = $"../world/building/doors/fire_door"
+
+
 var interaction_ready = false
 var first_puzzle_interaction = true
 
@@ -41,6 +45,8 @@ func _process(_delta: float) -> void:
 				if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 					checklist_pick_up.position.y = -10
 					Global.list_collected = true
+					blank_door.queue_free()
+					fire_door.position.y = 0.5
 
 
 func _on_tutorial_sequence_interaction_ready() -> void:

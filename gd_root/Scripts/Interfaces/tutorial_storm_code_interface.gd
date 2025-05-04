@@ -4,8 +4,9 @@ extends Node2D
 
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("exit"):
-		close_menu()
+	if self.visible:
+		if Input.is_action_just_pressed("exit"):
+			close_menu()
 
 
 func _on_back_button_pressed() -> void:

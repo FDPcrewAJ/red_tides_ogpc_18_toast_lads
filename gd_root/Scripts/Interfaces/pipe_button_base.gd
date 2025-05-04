@@ -12,9 +12,6 @@ var neighbor3
 var reset = false
 var children = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
 
 func reset_water():
 	children = get_child_count()
@@ -26,8 +23,8 @@ func reset_water():
 	active3 = false
 	active4 = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	
 	if startFull == true:
 		full = true

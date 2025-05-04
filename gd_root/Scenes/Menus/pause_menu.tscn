@@ -18,7 +18,7 @@ var go_quit = false
 
 
 func _unhandled_key_input(event):
-	if Global.next_floor == \"Control\":
+	if !Global.fire_puzzle_completed:
 		if player.has_control:
 			if event.is_action_pressed(\"exit\"):
 				toggle_pause_menu()

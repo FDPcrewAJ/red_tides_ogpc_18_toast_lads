@@ -15,7 +15,6 @@ extends Control
 @onready var radar_check: Label = $checklist/parts_list/radar_check
 @onready var open_list_label: Label = $open_list_label
 
-
 #These variables are for the stopwatch
 var rotation_speed = TAU / 60
 var double_digit = 0

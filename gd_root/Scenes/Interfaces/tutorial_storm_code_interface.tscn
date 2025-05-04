@@ -19,7 +19,7 @@ texture = ExtResource("4_emqrj")
 texture = ExtResource("4_emqrj")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnaad"]
-texture = ExtResource("5_4khxb")
+texture = ExtResource("4_emqrj")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ie40k"]
 texture = ExtResource("4_emqrj")
@@ -68,12 +68,12 @@ text = "Calibration Needed:
 metadata/_edit_use_anchors_ = true
 
 [node name="SearchButton" type="Button" parent="."]
-offset_left = 188.0
+offset_left = 272.0
 offset_top = 643.0
-offset_right = 1160.0
+offset_right = 1063.0
 offset_bottom = 781.0
-theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.737255, 0, 0, 1)
 theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
@@ -85,6 +85,5 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ltb3q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnaad")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ie40k")
 text = "Storm Origin Found"
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

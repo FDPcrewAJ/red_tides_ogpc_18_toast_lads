@@ -86,3 +86,4 @@ text = "Search For Storm Origin"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SearchButton" to="." method="_on_search_button_pressed"]
+[connection signal="pressed" from="SearchButton" to="StormCodeLabel" method="_on_search_button_pressed"]

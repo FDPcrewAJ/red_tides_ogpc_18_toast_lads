@@ -154,8 +154,7 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, current_speed)
 			velocity.z = move_toward(velocity.z, 0, current_speed)
-		
-		
+	
 		## Player animation Main Control
 		# if the player is moving, then play a moving animation
 		if abs(velocity.x) >= 0.2 or abs(velocity.z) >= 0.2:
@@ -194,8 +193,10 @@ func _physics_process(delta):
 				else:
 					# Load standing idle animation
 					new_anim_vis(standing)
-		
 		move_and_slide()
+	else:
+		footsteps.stop()
+		
 
 
 func new_anim_vis(new_anim):

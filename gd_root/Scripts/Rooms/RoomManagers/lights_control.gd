@@ -1,6 +1,7 @@
 extends Node3D
 
 var lights
+var skip_song_change = false
 
 
 func _ready() -> void:
@@ -17,9 +18,10 @@ func reset_lights():
 	for l in lights:
 		l.light_color = Color(0.998, 0.817, 0.416)
 		new_color = l.light_color
-	
-	if !(old_color == new_color):
-		Global.music_control.get_stream_playback().switch_to_clip(3)
+	if skip_song_change:
+		if !(old_color == new_color):
+			Global.music_control.get_stream_playback().switch_to_clip(3)
+	skip_song_change = true
 
 
 func red_lights():
@@ -29,6 +31,7 @@ func red_lights():
 	for l in lights:
 		l.light_color = Color(0.775, 0.084, 0)
 		new_color = l.light_color
-	
-	if !(old_color == new_color):
-		Global.music_control.get_stream_playback().switch_to_clip(2)
+	if skip_song_change:
+		if !(old_color == new_color):
+			Global.music_control.get_stream_playback().switch_to_clip(2)
+	skip_song_change = true

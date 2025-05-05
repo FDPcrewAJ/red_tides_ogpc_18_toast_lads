@@ -1321,4 +1321,5 @@ parameters/looping = true
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_r1v8l")
 volume_db = -10.0
+autoplay = true
 bus = &"Music"

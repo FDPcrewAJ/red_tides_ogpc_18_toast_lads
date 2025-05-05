@@ -59,6 +59,7 @@ func _ready() -> void:
 
 func _on_initiator_area_entered(_area: Area3D) -> void:
 	player.has_control = false
+	player.velocity = Vector3.ZERO
 	player.hide()
 	cinimatic_cam.current = true
 	tutorial_text_ui.show()

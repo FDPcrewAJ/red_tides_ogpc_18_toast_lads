@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=63 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -9,7 +9,6 @@
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="6_u01vf"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_3.gd" id="6_vdwiv"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/lights_control.gd" id="7_xjoil"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_5.gd" id="8_4rpbl"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="8_48i45"]
@@ -459,7 +458,6 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 
 [node name="lights" type="Node3D" parent="hub_room/RoomParts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20701, 0)
-script = ExtResource("7_xjoil")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
 transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -8.36591, 5.69252, -4.25243)

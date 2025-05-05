@@ -8,6 +8,7 @@ extends Control
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Global.music_control.playing = false
 
 
 func _process(_delta):
@@ -50,7 +51,7 @@ func _on_yes_pressed() -> void:
 	Global.watch_collected = true
 	Global.timer_active = true
 	Global.music_control.playing = true
-	Global.music_control.get_stream_playback().switch_to_clip(2)
+	Global.music_control.get_stream_playback().switch_to_clip(3)
 
 
 func _on_no_pressed() -> void:

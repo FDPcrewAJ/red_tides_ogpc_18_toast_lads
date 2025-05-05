@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://b8vtkqpn3qy2b"
+uid="uid://bo5taoae28mb6"
 path="res://.godot/imported/time_bad.mp3-8c7762298a5d0a22a9922b1d4af17f81.mp3str"
 
 [deps]
@@ -14,6 +14,6 @@ dest_files=["res://.godot/imported/time_bad.mp3-8c7762298a5d0a22a9922b1d4af17f81
 
 loop=true
 loop_offset=0.0
-bpm=85.0
+bpm=105.0
 beat_count=0
 bar_beats=4

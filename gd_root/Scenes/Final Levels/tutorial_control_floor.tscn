@@ -1,4 +1,4 @@
-[gd_scene load_steps=227 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=228 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="15_ffkmp"]
 [ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="16_5p66g"]
 [ext_resource type="Texture2D" uid="uid://myl1rx4q43cv" path="res://Imports/images/lightning bolt.png" id="16_qxvbs"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor_tutorial_lights.gd" id="16_xsmjc"]
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="17_bcyat"]
 [ext_resource type="PackedScene" uid="uid://njv446pupgiu" path="res://Assets/Objects/Office/spinny_chair.tscn" id="18_k7vkn"]
 [ext_resource type="PackedScene" uid="uid://cduireclqq8xq" path="res://Assets/Objects/Office/pen.tscn" id="19_fvb40"]
@@ -1452,6 +1453,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("PlaneMesh_0bm48")
 
 [node name="lights" type="Node3D" parent="world/building"]
+script = ExtResource("16_xsmjc")
 
 [node name="red_wall_light" type="OmniLight3D" parent="world/building/lights"]
 transform = Transform3D(-4.37115e-08, -4.37115e-08, 1, -1, 1.91069e-15, -4.37115e-08, 0, -1, -4.37115e-08, 0, 4.66859, 0.780266)

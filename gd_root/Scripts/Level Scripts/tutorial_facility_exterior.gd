@@ -129,7 +129,7 @@ func match_text_display(line_string) -> String:
 		"line_6":
 			return "Anyway, we’re short staffed right now so you’re going to have to be balancing a lot."
 		"line_7":
-			return "The facility requires constant configuration, and it was a challenge to do that with 20 men."
+			return "The facility requires constant configuration, and it was a challenge to do that with twenty men."
 		"line_8":
 			return "Anyway, the government has cut funds, and now we’re just two guys against cyclones."
 		"line_9":

@@ -19,6 +19,7 @@ signal interaction_ready
 @onready var wake_up_label: Label = $black_screen/wake_up_label
 
 @onready var fire_container: Node3D = $fire_container
+@onready var lights: Node3D = $"../world/building/lights"
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -248,6 +249,7 @@ func _on_blackout_timer_timeout() -> void:
 	else:
 		cinimatic_cam.current = false
 		player.show()
+		lights.red_lights()
 		black_screen.hide()
 		wake_up_label.hide()
 		fire_container.position.y = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=265 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=266 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/second_floor.gd" id="1_0ggiq"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_0q36q"]
@@ -57,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://b6yxt1d06ca4i" path="res://Imports/images/Puzzle2Poster.png" id="45_5m64c"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/screensaver_container.gd" id="54_8l3j6"]
 [ext_resource type="Texture2D" uid="uid://bsfugcylu6jhq" path="res://Textures/Screensaver/screensaver_sprite_sheet.png" id="55_8veyu"]
+[ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="58_yy2l0"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -2850,3 +2851,11 @@ frame_progress = 0.353127
 
 [node name="server" parent="." instance=ExtResource("30_j0oha")]
 transform = Transform3D(-1.47917, 0, -0.0130376, 0, 1.47923, 0, 0.0130376, 0, -1.47917, 6.92766, 0.5, -9.49497)
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="bg_hum" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("58_yy2l0")
+volume_db = -10.0
+autoplay = true
+bus = &"Sfx"

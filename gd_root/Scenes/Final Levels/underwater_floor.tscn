@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=97 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/invisible_walls.gd" id="26_l2xjk"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/underwater_puzzle_interactions.gd" id="28_3qpr4"]
 [ext_resource type="PackedScene" uid="uid://dorv7f50mi4pv" path="res://Assets/Objects/Boat/Boat Parts/motor.tscn" id="28_ksw5j"]
+[ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="34_0fbe0"]
 
 [sub_resource type="Environment" id="Environment_34okx"]
 ambient_light_sky_contribution = 0.0
@@ -1216,3 +1217,11 @@ omni_range = 0.687
 libraries = {
 "": SubResource("AnimationLibrary_lrtsm")
 }
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="bg_hum" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("34_0fbe0")
+volume_db = -10.0
+autoplay = true
+bus = &"Sfx"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://eghpo28o77o5"]
+[gd_scene load_steps=194 format=3 uid="uid://eghpo28o77o5"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_rhvyr"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/control_floor.gd" id="1_so3s2"]
@@ -42,6 +42,8 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/screensaver_container.gd" id="38_cjjhw"]
 [ext_resource type="Texture2D" uid="uid://bsfugcylu6jhq" path="res://Textures/Screensaver/screensaver_sprite_sheet.png" id="38_frk43"]
 [ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="40_oh6ej"]
+[ext_resource type="AudioStream" uid="uid://ck6ee1yir7ymi" path="res://Audio/Sounds/misc/buzzing.mp3" id="43_c5ja7"]
+[ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="44_h5dcb"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -2268,3 +2270,18 @@ transform = Transform3D(-1.4, 0, 1.22392e-07, 0, 1.4, 0, -1.22392e-07, 0, -1.4, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cptn_dead/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0848389, 0.766449, -0.162292)
 shape = SubResource("BoxShape3D_fc30n")
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="flies_buzzing" type="AudioStreamPlayer3D" parent="audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.125, 0.36156, 5.28373)
+stream = ExtResource("43_c5ja7")
+volume_db = -20.0
+autoplay = true
+bus = &"Sfx"
+
+[node name="bg_hum" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("44_h5dcb")
+volume_db = -10.0
+autoplay = true
+bus = &"Sfx"

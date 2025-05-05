@@ -1,4 +1,4 @@
-[gd_scene load_steps=228 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=230 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -56,6 +56,8 @@
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_fire_container.gd" id="51_otypp"]
 [ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="52_et7kt"]
+[ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="57_c5evp"]
+[ext_resource type="AudioStream" uid="uid://ck6ee1yir7ymi" path="res://Audio/Sounds/misc/buzzing.mp3" id="58_7x0cs"]
 
 [sub_resource type="Environment" id="Environment_2iafm"]
 ambient_light_sky_contribution = 0.0
@@ -2573,6 +2575,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, -0.016324, -0.01
 light_color = Color(0.94902, 0.956863, 0, 1)
 light_energy = 0.205
 omni_range = 1.29291
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="bg_hum" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("57_c5evp")
+volume_db = -10.0
+autoplay = true
+bus = &"Sfx"
+
+[node name="flies_buzzing" type="AudioStreamPlayer3D" parent="audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.125, 0.36156, 5.28373)
+stream = ExtResource("58_7x0cs")
+volume_db = -20.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="start_dial_voice_lines" from="puzzle_interaction" to="tutorial_sequence" method="_on_puzzle_interaction_start_dial_voice_lines"]
 [connection signal="dial_puzzle_completed" from="puzzle_interaction/dial_puzzle_interface" to="tutorial_sequence" method="_on_dial_puzzle_interface_dial_puzzle_completed"]

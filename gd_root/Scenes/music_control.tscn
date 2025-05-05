@@ -36,6 +36,6 @@ Vector2i(3, 2): {
 
 [node name="music_control" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamInteractive_ox70c")
-volume_db = -8.0
+volume_db = -6.0
 autoplay = true
 bus = &"Music"

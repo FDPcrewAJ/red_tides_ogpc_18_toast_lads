@@ -1,4 +1,4 @@
-[gd_scene load_steps=283 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=285 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -60,6 +60,8 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/radar_cabinet_note.gd" id="48_1jbl4"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/screensaver_container.gd" id="49_43jih"]
 [ext_resource type="Texture2D" uid="uid://bsfugcylu6jhq" path="res://Textures/Screensaver/screensaver_sprite_sheet.png" id="50_6p8v7"]
+[ext_resource type="AudioStream" uid="uid://ck6ee1yir7ymi" path="res://Audio/Sounds/misc/buzzing.mp3" id="61_dm1th"]
+[ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="62_my0c4"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
 ambient_light_sky_contribution = 0.0
@@ -3044,3 +3046,25 @@ light_energy = 0.729
 light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
+
+[node name="audio" type="Node3D" parent="."]
+
+[node name="flies_buzzing" type="AudioStreamPlayer3D" parent="audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7054, 0.323989, 9.3933)
+stream = ExtResource("61_dm1th")
+volume_db = -20.0
+autoplay = true
+bus = &"Sfx"
+
+[node name="flies_buzzing2" type="AudioStreamPlayer3D" parent="audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0841, 0.323989, -19.7964)
+stream = ExtResource("61_dm1th")
+volume_db = -20.0
+autoplay = true
+bus = &"Sfx"
+
+[node name="bg_hum" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("62_my0c4")
+volume_db = -10.0
+autoplay = true
+bus = &"Sfx"

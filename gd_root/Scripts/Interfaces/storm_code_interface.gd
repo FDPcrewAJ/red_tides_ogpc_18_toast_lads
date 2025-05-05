@@ -12,6 +12,7 @@ func _on_back_button_pressed() -> void:
 
 func _on_search_button_pressed() -> void:
 	if $StormCodeLabel.time_error == false:
-		Global.code_degrees1 = int(RandomNumberGenerator.new().randf_range(10, 350))
-		Global.code_degrees2 = int(RandomNumberGenerator.new().randf_range(10, 350))
-		Global.code_degrees3 = int(RandomNumberGenerator.new().randf_range(10, 350))
+		if Global.code_degrees1 == 0 && Global.code_degrees2 == 0 && Global.code_degrees3 == 0:
+			Global.code_degrees1 = int(RandomNumberGenerator.new().randf_range(10, 350))
+			Global.code_degrees2 = int(RandomNumberGenerator.new().randf_range(10, 350))
+			Global.code_degrees3 = int(RandomNumberGenerator.new().randf_range(10, 350))

@@ -11,7 +11,18 @@ func _process(_delta):
 		match name:
 			"Dial":
 				dial_1_sprite._rotate()
+				dial_1_sprite.selected = true
 			"Dial2":
 				dial_2_sprite._rotate()
+				dial_2_sprite.selected = true
 			"Dial3":
 				dial_3_sprite._rotate()
+				dial_3_sprite.selected = true
+	if button_pressed == false:
+		match name:
+			"Dial":
+				dial_1_sprite.selected = false
+			"Dial2":
+				dial_2_sprite.selected = false
+			"Dial3":
+				dial_3_sprite.selected = false

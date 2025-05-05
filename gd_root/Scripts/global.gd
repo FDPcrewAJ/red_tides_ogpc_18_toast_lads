@@ -54,6 +54,10 @@ var six_fire_acess = 0
 
 var entry_door_open = false
 
+var dial_1_rotation = 0
+var dial_2_rotation = 0
+var dial_3_rotation = 0
+
 # Tile Puzzle
 var tile_puzzle_level = 1
 

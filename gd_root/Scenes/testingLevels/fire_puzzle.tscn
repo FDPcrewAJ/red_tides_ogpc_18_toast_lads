@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="8_48i45"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
-[ext_resource type="Script" path="res://Scenes/testingLevels/sprinkler.gd" id="13_na0ow"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/sprinkler.gd" id="13_na0ow"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="14_318wx"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]

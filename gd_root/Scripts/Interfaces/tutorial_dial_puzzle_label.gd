@@ -8,9 +8,9 @@ extends Label
 var call_once = true
 
 func _process(_delta):
-	if dial_1_sprite.rotation_degrees < 254 + 2 and dial_1_sprite.rotation_degrees > 254 - 2:
-		if dial_2_sprite.rotation_degrees < 78 + 2 and dial_2_sprite.rotation_degrees > 78 - 2:
-			if dial_3_sprite.rotation_degrees < 126 + 2 and dial_3_sprite.rotation_degrees > 126 - 2:
+	if dial_1_sprite.real_rotation < 254 + 2 and dial_1_sprite.real_rotation > 254 - 2:
+		if dial_2_sprite.real_rotation < 78 + 2 and dial_2_sprite.real_rotation > 78 - 2:
+			if dial_3_sprite.real_rotation < 126 + 2 and dial_3_sprite.real_rotation > 126 - 2:
 				text = "Calibration Completed"
 				if call_once:
 					dial_puzzle_interface.dial_puzzle_complete = true

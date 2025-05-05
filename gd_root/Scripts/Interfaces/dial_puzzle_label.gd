@@ -9,9 +9,9 @@ func _process(_delta):
 	if Global.code_degrees1 == 0 and Global.code_degrees2 == 0 and Global.code_degrees3 == 0:
 		text = "Storm origin not found"
 	else:
-		if dial_1_sprite.rotation_degrees < Global.code_degrees1 + 2 and dial_1_sprite.rotation_degrees > Global.code_degrees1 - 2:
-			if dial_2_sprite.rotation_degrees < Global.code_degrees2 + 2 and dial_2_sprite.rotation_degrees > Global.code_degrees2 - 2:
-				if dial_3_sprite.rotation_degrees < Global.code_degrees3 + 2 and dial_3_sprite.rotation_degrees > Global.code_degrees3 - 2:
+		if dial_1_sprite.real_rotation < Global.code_degrees1 + 2 and dial_1_sprite.real_rotation > Global.code_degrees1 - 2:
+			if dial_2_sprite.real_rotation < Global.code_degrees2 + 2 and dial_2_sprite.real_rotation > Global.code_degrees2 - 2:
+				if dial_3_sprite.real_rotation < Global.code_degrees3 + 2 and dial_3_sprite.real_rotation > Global.code_degrees3 - 2:
 					text = "Calibration Completed"
 					Global.dial_puzzle_completed = true
 		else:

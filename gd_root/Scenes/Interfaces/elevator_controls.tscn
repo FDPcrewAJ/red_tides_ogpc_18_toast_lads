@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_rrqpn"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_ehvqh"]
 [ext_resource type="Texture2D" uid="uid://b00u38dajxxf2" path="res://Imports/images/button_highlight.png" id="6_2nul1"]
-[ext_resource type="Script" path="res://Scenes/Interfaces/highlight.gd" id="7_ypq8u"]
+[ext_resource type="Script" path="res://Scripts/Interfaces/highlight.gd" id="7_ypq8u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ph784"]
 texture = ExtResource("4_rrqpn")

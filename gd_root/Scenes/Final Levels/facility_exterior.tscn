@@ -449,45 +449,45 @@ size = Vector2(1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cso4m"]
 size = Vector3(15, 0.3, 12)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sx7u5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvoha"]
 transparency = 1
 albedo_texture = ExtResource("9_psfmp")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_0tb5p"]
-material = SubResource("StandardMaterial3D_sx7u5")
+material = SubResource("StandardMaterial3D_mvoha")
 size = Vector3(15, 0.3, 12)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_riki7"]
 size = Vector3(3, 0.5, 15.6611)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64hld"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvqth"]
 transparency = 1
 albedo_texture = ExtResource("9_psfmp")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_bd65k"]
-material = SubResource("StandardMaterial3D_64hld")
+material = SubResource("StandardMaterial3D_cvqth")
 size = Vector3(3, 0.3, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ct4ov"]
-material = SubResource("StandardMaterial3D_64hld")
+material = SubResource("StandardMaterial3D_cvqth")
 size = Vector3(4, 0.3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6f01"]
 size = Vector3(3, 0.4, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4kpyf"]
-material = SubResource("StandardMaterial3D_64hld")
+material = SubResource("StandardMaterial3D_cvqth")
 size = Vector3(20, 0.3, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3xhdb"]
 size = Vector3(4, 0.4, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r8hpb"]
-material = SubResource("StandardMaterial3D_64hld")
+material = SubResource("StandardMaterial3D_cvqth")
 size = Vector3(9, 0.3, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yxi85"]
@@ -1304,6 +1304,7 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_yic33")
+volume_db = -3.0
 autoplay = true
 bus = &"Sfx"
 parameters/looping = true

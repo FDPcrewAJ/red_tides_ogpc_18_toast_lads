@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbasqcrkefl2n"]
+
+[ext_resource type="AudioStream" uid="uid://dlqnxqc1usrnv" path="res://Audio/Tutorial Voice Lines/line_2.mp3" id="1_6wpi6"]
+[ext_resource type="AudioStream" uid="uid://bo5taoae28mb6" path="res://Audio/Music/time_good.mp3" id="1_dxde2"]
+[ext_resource type="AudioStream" uid="uid://7i6hn2tfmnoq" path="res://Audio/Music/before_tutorial.mp3" id="1_mt15b"]
+[ext_resource type="AudioStream" uid="uid://b8vtkqpn3qy2b" path="res://Audio/Music/time_bad.mp3" id="3_g7hnj"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ox70c"]
+clip_count = 4
+clip_0/name = &"No Sound"
+clip_0/stream = ExtResource("1_6wpi6")
+clip_0/auto_advance = 0
+clip_1/name = &"Before Tutorial"
+clip_1/stream = ExtResource("1_mt15b")
+clip_1/auto_advance = 0
+clip_2/name = &"Time Good"
+clip_2/stream = ExtResource("1_dxde2")
+clip_2/auto_advance = 0
+clip_3/name = &"Time Bad"
+clip_3/stream = ExtResource("3_g7hnj")
+clip_3/auto_advance = 0
+_transitions = {
+Vector2i(2, 3): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(3, 2): {
+"fade_beats": 1,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="music_control" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamInteractive_ox70c")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"

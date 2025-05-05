@@ -3,6 +3,8 @@ extends Node
 signal make_lights_red
 signal make_lights_normal
 
+@onready var music_control = preload("res://Scenes/music_control.tscn").instantiate()
+
 var new_game = false
 
 var room_completed = false
@@ -91,6 +93,18 @@ var entry_position = true
 var code_degrees1 = 0
 var code_degrees2 = 0
 var code_degrees3 = 0
+
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("time_up"):
+		_set_time_left(Global.time_left + 1)
+	if Input.is_action_just_pressed("time_down"):
+		_set_time_left(Global.time_left - 1)
+
+
+func _ready() -> void:
+	add_child(music_control)
+	music_control.playing = false
 
 
 func _process(_delta):

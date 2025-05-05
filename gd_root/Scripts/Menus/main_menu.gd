@@ -49,8 +49,12 @@ func _on_yes_pressed() -> void:
 	Global.list_collected = true
 	Global.watch_collected = true
 	Global.timer_active = true
+	Global.music_control.playing = true
+	Global.music_control.get_stream_playback().switch_to_clip(2)
 
 
 func _on_no_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Final Levels/tutorial_facility_exterior.tscn")
 	Global.new_game = true
+	Global.music_control.playing = true
+	Global.music_control.get_stream_playback().switch_to_clip(1)

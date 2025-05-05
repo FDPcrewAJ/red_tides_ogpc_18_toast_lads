@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=64 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://davrxawn1d8rc" path="res://Scripts/Shaders/blended_wall_texture.tres" id="6_u01vf"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_3.gd" id="6_vdwiv"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_4.gd" id="7_miv6a"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/lights_control.gd" id="7_xjoil"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_5.gd" id="8_4rpbl"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="8_48i45"]
@@ -434,206 +435,207 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hub_room/RoomParts/Wall3/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ylkc8")
 
+[node name="red_wall_light" type="OmniLight3D" parent="hub_room/RoomParts"]
+transform = Transform3D(-4.37115e-08, 1.31134e-07, -1, -1, -5.73206e-15, 4.37115e-08, 0, 1, 1.31134e-07, -1.43051e-06, 3.48434, -34.5759)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="hub_room/RoomParts/red_wall_light" instance=ExtResource("8_48i45")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
+[node name="red_wall_light2" type="OmniLight3D" parent="hub_room/RoomParts"]
+transform = Transform3D(-4.37115e-08, -2.18557e-07, 1, -1, 9.55345e-15, -4.37115e-08, 0, -1, -2.18557e-07, 3.33786e-06, 3.85039, 4.55709)
+light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
+light_energy = 0.621
+light_size = 0.922
+light_bake_mode = 1
+omni_range = 9.13347
+
+[node name="small_industrial_light" parent="hub_room/RoomParts/red_wall_light2" instance=ExtResource("8_48i45")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+
 [node name="lights" type="Node3D" parent="hub_room/RoomParts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20701, 0)
+script = ExtResource("7_xjoil")
 
-[node name="long_industrial_light" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, -8.3672, 5.70242, -4.92067)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -8.36591, 5.69252, -4.25243)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light2" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, -20.9261, 5.70242, -4.92067)
+[node name="long_industrial_light" parent="hub_room/RoomParts/lights/OmniLight3D2" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.22346e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D3" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, -20.9248, 5.69252, -4.25243)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light3" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, 21.8325, 5.70242, -4.92067)
+[node name="long_industrial_light2" parent="hub_room/RoomParts/lights/OmniLight3D3" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.22346e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D4" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 21.8338, 5.69252, -4.25243)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light4" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, 9.27357, 5.70242, -4.92067)
+[node name="long_industrial_light3" parent="hub_room/RoomParts/lights/OmniLight3D4" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.22346e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D5" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 9.27486, 5.69252, -4.25243)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light12" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, 9.27359, 5.70242, 5.02089)
+[node name="long_industrial_light4" parent="hub_room/RoomParts/lights/OmniLight3D5" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.22346e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light12"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D6" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(4.37114e-08, 1.31134e-07, 1, -1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, 1.31134e-07, 9.2723, 5.69252, 4.35265)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light13" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, 21.8325, 5.70242, 5.02089)
+[node name="long_industrial_light12" parent="hub_room/RoomParts/lights/OmniLight3D6" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.75286e-21, 3.50779e-22, 2.11758e-22, 0.7, 0, 3.50779e-22, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D7" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(4.37114e-08, 1.31134e-07, 1, -1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, 1.31134e-07, 21.8312, 5.69252, 4.35265)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light14" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, -20.9261, 5.70242, 5.02089)
+[node name="long_industrial_light13" parent="hub_room/RoomParts/lights/OmniLight3D7" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.75286e-21, 3.50779e-22, 2.11758e-22, 0.7, 0, 3.50779e-22, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D8" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(4.37114e-08, 1.31134e-07, 1, -1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, 1.31134e-07, -20.9274, 5.69252, 4.35265)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light15" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, -8.36718, 5.70242, 5.02089)
+[node name="long_industrial_light14" parent="hub_room/RoomParts/lights/OmniLight3D8" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.75286e-21, 3.50779e-22, 2.11758e-22, 0.7, 0, 3.50779e-22, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D9" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(4.37114e-08, 1.31134e-07, 1, -1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, 1.31134e-07, -8.36847, 5.69252, 4.35265)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light5" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-3.0598e-08, -3.0598e-08, -0.7, -0.7, 1.33748e-15, 3.0598e-08, 0, 0.7, -3.0598e-08, 30.7215, 5.70242, -4.92067)
+[node name="long_industrial_light15" parent="hub_room/RoomParts/lights/OmniLight3D9" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.75286e-21, 3.50779e-22, 2.11758e-22, 0.7, 0, 3.50779e-22, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D10" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 30.7228, 5.69252, -4.25243)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light16" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(3.0598e-08, 9.17939e-08, 0.7, -0.7, 1.33748e-15, 3.0598e-08, 2.67496e-15, -0.7, 9.17939e-08, 30.7215, 5.70242, 5.0067)
+[node name="long_industrial_light5" parent="hub_room/RoomParts/lights/OmniLight3D10" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.22346e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D11" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(4.37114e-08, 1.31134e-07, 1, -1, 1.91069e-15, 4.37114e-08, 3.82137e-15, -1, 1.31134e-07, 30.7202, 5.69252, 4.33846)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light6" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(1.33748e-15, -0.7, 6.11959e-08, -0.7, 1.33748e-15, 3.0598e-08, -3.0598e-08, -6.11959e-08, -0.7, 4.98272, 5.70242, -19.2179)
+[node name="long_industrial_light16" parent="hub_room/RoomParts/lights/OmniLight3D11" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 2.75286e-21, 3.50779e-22, 2.11758e-22, 0.7, 0, 3.50779e-22, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D12" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(1.91069e-15, -1, 8.74227e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -8.74227e-08, -1, 4.31448, 5.69252, -19.2166)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light7" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(1.33748e-15, -0.7, 6.11959e-08, -0.7, 1.33748e-15, 3.0598e-08, -3.0598e-08, -6.11959e-08, -0.7, 4.98273, 5.70242, -31.7768)
+[node name="long_industrial_light6" parent="hub_room/RoomParts/lights/OmniLight3D12" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 4.23516e-22, 0, 2.11758e-22, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D13" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(1.91069e-15, -1, 8.74227e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -8.74227e-08, -1, 4.31449, 5.69252, -31.7755)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light8" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(1.33748e-15, -0.7, 6.11959e-08, -0.7, 1.33748e-15, 3.0598e-08, -3.0598e-08, -6.11959e-08, -0.7, 4.98272, 5.70242, -10.3289)
+[node name="long_industrial_light7" parent="hub_room/RoomParts/lights/OmniLight3D13" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 4.23516e-22, 0, 2.11758e-22, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129318)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D14" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(1.91069e-15, -1, 8.74227e-08, -1, 1.91069e-15, 4.37114e-08, -4.37114e-08, -8.74227e-08, -1, 4.31448, 5.69252, -10.3276)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light9" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-4.01244e-15, 0.7, -1.22392e-07, -0.7, 1.33748e-15, 3.0598e-08, 3.0598e-08, 1.22392e-07, 0.7, -5.01138, 5.70242, -21.6645)
+[node name="long_industrial_light8" parent="hub_room/RoomParts/lights/OmniLight3D14" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 4.23516e-22, 0, 2.11758e-22, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668241, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D15" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-5.73206e-15, 1, -1.74846e-07, -1, 1.9107e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, -4.34314, 5.69252, -21.6658)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light10" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-4.01244e-15, 0.7, -1.22392e-07, -0.7, 1.33748e-15, 3.0598e-08, 3.0598e-08, 1.22392e-07, 0.7, -5.01138, 5.70242, -9.10563)
+[node name="long_industrial_light9" parent="hub_room/RoomParts/lights/OmniLight3D15" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 8.89385e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D16" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-5.73206e-15, 1, -1.74846e-07, -1, 1.9107e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, -4.34314, 5.69252, -9.10692)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="long_industrial_light11" parent="hub_room/RoomParts/lights" instance=ExtResource("6_2u4dh")]
-transform = Transform3D(-4.01244e-15, 0.7, -1.22392e-07, -0.7, 1.33748e-15, 3.0598e-08, 3.0598e-08, 1.22392e-07, 0.7, -5.01137, 5.70242, -30.5535)
+[node name="long_industrial_light10" parent="hub_room/RoomParts/lights/OmniLight3D16" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 8.89385e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668242, 0.00129128)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="hub_room/RoomParts/lights/long_industrial_light11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141468, 0.95463, -0.00184488)
+[node name="OmniLight3D17" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
+transform = Transform3D(-5.73206e-15, 1, -1.74846e-07, -1, 1.9107e-15, 4.37114e-08, 4.37114e-08, 1.74846e-07, 1, -4.34313, 5.69252, -30.5548)
 light_color = Color(0.997931, 0.817462, 0.416284, 1)
 light_energy = 0.621
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
 
-[node name="red_wall_light" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
-transform = Transform3D(-4.37115e-08, 1.31134e-07, -1, -1, -5.73208e-15, 4.37115e-08, 0, 1, 1.31134e-07, -1.63093e-06, 4.69135, -34.5759)
-light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
-light_energy = 0.621
-light_size = 0.922
-light_bake_mode = 1
-omni_range = 9.13347
-
-[node name="small_industrial_light" parent="hub_room/RoomParts/lights/red_wall_light" instance=ExtResource("8_48i45")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
-
-[node name="red_wall_light2" type="OmniLight3D" parent="hub_room/RoomParts/lights"]
-transform = Transform3D(-4.37115e-08, -2.18557e-07, 1, -1, 9.55345e-15, -4.37115e-08, 0, -1, -2.18557e-07, 3.52067e-06, 5.0574, 4.55709)
-light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
-light_energy = 0.621
-light_size = 0.922
-light_bake_mode = 1
-omni_range = 9.13347
-
-[node name="small_industrial_light" parent="hub_room/RoomParts/lights/red_wall_light2" instance=ExtResource("8_48i45")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
+[node name="long_industrial_light11" parent="hub_room/RoomParts/lights/OmniLight3D17" instance=ExtResource("6_2u4dh")]
+transform = Transform3D(0.7, 8.89385e-21, 0, 0, 0.7, 0, 0, 0, 0.7, -0.00990295, -0.668242, 0.00128937)
 
 [node name="Sprinkler1" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.5, 5.35099, 0)

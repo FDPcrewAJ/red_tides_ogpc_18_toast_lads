@@ -16,6 +16,8 @@ const mouse_sens = 0.5
 @onready var crouch_walk: Node3D = $animation_container/crouch_walk
 @onready var standing: Node3D = $animation_container/standing
 
+@onready var footsteps: AudioStreamPlayer = $footsteps
+@onready var footstep_timer: Timer = $footsteps/footstep_timer
 
 # Player animation player nodes
 var walk_anim
@@ -25,6 +27,9 @@ var crouch_walk_anim
 
 var cur_anim
 var play_jump_once = false
+
+var footstep_landed
+var play_new_step = true
 
 # If player can move or not (intro/cutscene control)
 var has_control = true
@@ -132,12 +137,14 @@ func _physics_process(delta):
 		if crouching:
 			current_speed = crouch_speed
 			walking = false
+			sprinting = false
 		elif Input.is_action_pressed("sprint"):
 			current_speed = sprint_speed
 			sprinting = true
 			walking = false
 		else:
 			walking = true
+			sprinting = false
 			current_speed = walk_speed
 		
 		# if the player is pressing a move key, move in that direction
@@ -152,6 +159,16 @@ func _physics_process(delta):
 		## Player animation Main Control
 		# if the player is moving, then play a moving animation
 		if abs(velocity.x) >= 0.2 or abs(velocity.z) >= 0.2:
+			if play_new_step:
+				if is_on_floor():
+					if sprinting:
+						footstep_timer.start(0.3)
+						play_new_step = false
+					else:
+						footstep_timer.start(0.6)
+						play_new_step = false
+				else:
+					footsteps.stop()
 			# Load crouch walk animation
 			if crouching:
 				new_anim_vis(crouch_walk)
@@ -165,6 +182,8 @@ func _physics_process(delta):
 					play_jump_anim()
 		# If the player is not playing, load an idle animation
 		else:
+			footstep_timer.stop()
+			play_new_step = true
 			# Load crouch idle
 			if crouching:
 				new_anim_vis(crouch)
@@ -215,3 +234,8 @@ func _set_last_pos():
 
 func _set_new_pos():
 	position = Global.new_position
+
+
+func _on_footstep_timer_timeout() -> void:
+	footsteps.play()
+	play_new_step = true

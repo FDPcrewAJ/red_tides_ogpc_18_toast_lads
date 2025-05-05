@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://ci723qbyfmgtf"]
+[gd_scene load_steps=82 format=4 uid="uid://ci723qbyfmgtf"]
 
 [ext_resource type="Texture2D" uid="uid://dm68cmcgoiy31" path="res://Textures/Interior Textures/Concrete undamaged-1.png" id="1_bhrb0"]
 [ext_resource type="Texture2D" uid="uid://c4qnydty8wkwn" path="res://Textures/Exterior Textures/sky_panorama.png" id="1_j1uho"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ub6vt1a1p48n" path="res://Assets/Objects/Boat/boat.tscn" id="10_kvm1t"]
 [ext_resource type="PackedScene" uid="uid://b75p33f38ketc" path="res://Assets/Objects/Lights/wide_industrial_light.tscn" id="11_k617b"]
 [ext_resource type="PackedScene" uid="uid://qm70q85pxxiv" path="res://Scenes/Menus/settings/settings.tscn" id="12_4qr3l"]
+[ext_resource type="AudioStream" uid="uid://rm6ahr224b0x" path="res://Audio/Sounds/ocean/loop_ocean_background.mp3" id="19_uu56s"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hl1ea"]
 panorama = ExtResource("1_j1uho")
@@ -975,3 +976,10 @@ transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 1.91069e-15, 4.37114e-0
 [node name="settings" parent="." instance=ExtResource("12_4qr3l")]
 process_mode = 3
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_uu56s")
+volume_db = -7.0
+autoplay = true
+bus = &"Sfx"
+parameters/looping = true

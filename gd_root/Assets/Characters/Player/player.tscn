@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8nrcyxiviwja"]
+[gd_scene load_steps=21 format=3 uid="uid://c8nrcyxiviwja"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_h3d68"]
 [ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="2_3v3hu"]
@@ -9,7 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://d1gvuomovmdy7" path="res://Assets/Characters/Player/animation_files/walk/walk.gltf" id="7_mr286"]
 [ext_resource type="PackedScene" uid="uid://b8sf1no884b21" path="res://Assets/Characters/Player/animation_files/jump/jump.gltf" id="9_jvfl4"]
 [ext_resource type="PackedScene" uid="uid://dstwmhq0vqbsn" path="res://Assets/Characters/Player/animation_files/walk/crouch_walk/crouch_walk.gltf" id="10_4lnww"]
+[ext_resource type="AudioStream" uid="uid://cclbcgg6lhmf2" path="res://Audio/Sounds/footsteps/footstep_1.mp3" id="11_1h5ng"]
 [ext_resource type="PackedScene" uid="uid://c168umaksjc1t" path="res://Assets/Characters/Player/animation_files/Idle/standing.gltf" id="11_hr111"]
+[ext_resource type="AudioStream" uid="uid://c7p4mwn6nnxee" path="res://Audio/Sounds/footsteps/footstep_2.mp3" id="12_8rhoo"]
+[ext_resource type="AudioStream" uid="uid://0cy5fqwep7wb" path="res://Audio/Sounds/footsteps/footstep_3.mp3" id="13_pjwio"]
+[ext_resource type="AudioStream" uid="uid://clw7qovgbe6lj" path="res://Audio/Sounds/footsteps/footstep_4.mp3" id="14_yntht"]
+[ext_resource type="AudioStream" uid="uid://dfvny05fbqt4b" path="res://Audio/Sounds/footsteps/footstep_5.mp3" id="15_4oymn"]
+[ext_resource type="AudioStream" uid="uid://jgeevskuksmw" path="res://Audio/Sounds/footsteps/footstep_6.mp3" id="16_3ovmg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5nd2e"]
 radius = 0.4
@@ -19,6 +25,16 @@ height = 1.5
 radius = 0.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpw4u"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4xo0j"]
+random_pitch = 1.2
+streams_count = 6
+stream_0/stream = ExtResource("11_1h5ng")
+stream_1/stream = ExtResource("12_8rhoo")
+stream_2/stream = ExtResource("13_pjwio")
+stream_3/stream = ExtResource("14_yntht")
+stream_4/stream = ExtResource("15_4oymn")
+stream_5/stream = ExtResource("16_3ovmg")
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -84,3 +100,13 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 visible = false
 shape = SubResource("CapsuleShape3D_gpw4u")
+
+[node name="footsteps" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_4xo0j")
+volume_db = -10.0
+bus = &"Sfx"
+
+[node name="footstep_timer" type="Timer" parent="footsteps"]
+wait_time = 0.6
+
+[connection signal="timeout" from="footsteps/footstep_timer" to="." method="_on_footstep_timer_timeout"]

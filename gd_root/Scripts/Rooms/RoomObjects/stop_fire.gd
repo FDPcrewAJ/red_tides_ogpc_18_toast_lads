@@ -15,6 +15,7 @@ func _process(_delta: float) -> void:
 			interactables_display._show_interactable()
 			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 				Global.fire_puzzle_completed = true
+				Global.tutorial_completed = true
 				self.rotation.z = deg_to_rad(-180)
 				fire_stopped.emit()
 				fire_console.queue_free()

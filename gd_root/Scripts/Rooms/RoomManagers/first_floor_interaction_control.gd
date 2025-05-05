@@ -61,3 +61,12 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			radar.position = Vector3(0, -10, 0)
 			Global.radar_collected = true
+	
+	if Global.fuel_can_collected == true:
+		fuel_can.position = Vector3(0, -10, 0)
+	
+	if Global.battery_collected == true:
+		battery.position = Vector3(0, -10, 0)
+	
+	if Global.radar_collected == true:
+		radar.position = Vector3(0, -10, 0)

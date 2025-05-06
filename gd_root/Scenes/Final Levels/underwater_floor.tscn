@@ -841,7 +841,7 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -1.19535, 0, 0)
 
 [node name="pipe_valve" parent="reactor_puzzle/Pipeline" instance=ExtResource("6_7rtsi")]
-transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
+transform = Transform3D(-1.74846e-08, -0.4, 0, -0.4, 1.74846e-08, 3.49691e-08, -3.49691e-08, 1.52855e-15, -0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
 [node name="ValveBody" type="StaticBody3D" parent="reactor_puzzle/Pipeline/pipe_valve"]
@@ -919,7 +919,7 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -1.19535, 0, 0)
 
 [node name="pipe_valve3" parent="reactor_puzzle/Pipeline3" instance=ExtResource("6_7rtsi")]
-transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
+transform = Transform3D(-1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
 [node name="ValveBody3" type="StaticBody3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
@@ -958,7 +958,7 @@ transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, 
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -1.19535, 0, 0)
 
 [node name="pipe_valve4" parent="reactor_puzzle/Pipeline4" instance=ExtResource("6_7rtsi")]
-transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -2.39298, 0, 0)
+transform = Transform3D(-1.74846e-08, -0.4, 0, -0.4, 1.74846e-08, 3.49691e-08, -3.49691e-08, 1.52855e-15, -0.4, -2.39298, 0, 0)
 script = ExtResource("7_da12h")
 
 [node name="ValveBody4" type="StaticBody3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]

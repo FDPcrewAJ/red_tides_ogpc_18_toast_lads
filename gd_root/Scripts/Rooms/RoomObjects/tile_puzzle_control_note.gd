@@ -2,6 +2,8 @@ extends MeshInstance3D
 
 
 func _process(_delta):
+	if Global.tutorial_completed == false:
+		queue_free()
 	#This needs to correspond to the note's body node
 	if Global.current_object == "TilePuzzleControlNoteBody":
 		#Must correspond to the interactables display node in the current scene

@@ -6,6 +6,7 @@ extends Node3D
 @onready var floor_3_label: Label3D = $label_sprite/button_3/floor_3_label
 @onready var floor_2_label: Label3D = $label_sprite/button_2/floor_2_label
 @onready var floor_1_label: Label3D = $label_sprite/button_1/floor_1_label
+@onready var floor_x_label: Label3D = $label_sprite/button_x/floor_x_label
 
 # Floor Label
 @onready var floor_label: Label3D = $floor_feedback/floor_label
@@ -60,3 +61,13 @@ func _process(_delta: float) -> void:
 			floor_label.text = "Control"
 	else:
 			floor_5_label.modulate = Color(0.54, 0, 0)
+	
+	# Off Limits FLoor
+	if Global.current_object == "button_x":
+		$"../../InteractablesDisplay"._show_interactable()
+		floor_x_label.modulate = Color(1, 0, 0)
+		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+			Global.next_floor = "null"
+			floor_label.text = ")_%()*%#-0!$"
+	else:
+			floor_x_label.modulate = Color(0.54, 0, 0)

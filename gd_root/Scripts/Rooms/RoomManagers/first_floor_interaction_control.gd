@@ -38,7 +38,20 @@ func _process(_delta: float) -> void:
 				Global.previous_scene = "res://Scenes/Final Levels/first_floor.tscn"
 				Global.lastpos = player.position
 				get_tree().call_deferred("change_scene_to_file", "res://Scenes/Interfaces/storage_puzzle_interface.tscn")
-	
+		#lore
+		if Global.current_object == "lore_rmail_01":
+			interactables_display._show_interactable()
+			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+				Global.lastpos = player.position
+				Global.previous_scene = "res://Scenes/Final Levels/first_floor.tscn"
+				get_tree().call_deferred("change_scene_to_file", "res://Scenes/Interfaces/Lore/rmail_interface_01.tscn")
+		
+		if Global.current_object == "lore_rmail_02":
+			interactables_display._show_interactable()
+			if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+				Global.lastpos = player.position
+				Global.previous_scene = "res://Scenes/Final Levels/first_floor.tscn"
+				get_tree().call_deferred("change_scene_to_file", "res://Scenes/Interfaces/Lore/rmail_interface_02.tscn")
 	
 	# Boat Part Inventory and Interaction
 	# Tile Puzzle / Fuel Can

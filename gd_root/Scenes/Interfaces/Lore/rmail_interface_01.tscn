@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8m556fup1wal"]
+
+[ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_lv0t7"]
+[ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_lvg8f"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_m41ge"]
+
+[node name="chatlog_lore_interface" type="Node2D"]
+script = ExtResource("1_lv0t7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.08, 1.08)
+texture = ExtResource("2_lvg8f")
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = -392.0
+offset_top = 348.0
+offset_right = -174.0
+offset_bottom = 486.0
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_m41ge")
+theme_override_font_sizes/font_size = 90
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -913.0
+offset_top = -451.0
+offset_right = -628.0
+offset_bottom = -409.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "R-MAIL archives"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -921.0
+offset_top = -400.0
+offset_right = 368.0
+offset_bottom = 1487.0
+theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Date sent: 1980/02/20
+-Recipient: (REDACTED)
+Topic: Worsening storms
+	Hello (REDACTED),
+As you requested, I sent a message to the Americans requesting that the drilling ceased. After an unreasonable amount of time, they responded. They deny all correlation between their drilling and the worsening storms.
+
+-Date sent: 1980/02/21
+-Recipient: (REDACTED)
+Topic: Re: Worsening storms
+Rather unfortunate. Tell the engineers to start Plan B.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-Date sent: 1980/07/18
+-Recipient: (REDACTED)
+Topic: Status Report
+	Results have been very promising! We should have final blueprints by the end of the year.
+By the way, the data you sent us from the 1976 weather control experiments were helpful.
+
+-Date sent: 1980/07/18
+-Recipient: (REDACTED)
+Topic: Re: Status Report
+	Glad to hear it. Keep up the good work.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+autowrap_mode = 3
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

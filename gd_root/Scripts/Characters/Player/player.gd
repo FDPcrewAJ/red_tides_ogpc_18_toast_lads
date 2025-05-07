@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-const mouse_sens = 0.5
+const mouse_sens = 0.2
 
 @onready var head = $Head
 @onready var neck = $Head/Neck

@@ -208,3 +208,13 @@ func _on_voice_audio_finished():
 		cptn_idle.show()
 		chief_idle_anim.play("animation")
 		tutorial_text_ui.hide()
+
+
+func _on_sprint_trigger_area_entered(area: Area3D) -> void:
+	$TextPopup._set_text("Hold SHIFT to sprint.")
+	$SprintTrigger.remove_child($SprintTrigger/CollisionShape3D)
+
+
+func _on_sprint_disable_trigger_area_entered(area: Area3D) -> void:
+	$TextPopup._set_text("")
+	$SprintDisableTrigger.remove_child($SprintDisableTrigger/CollisionShape3D)

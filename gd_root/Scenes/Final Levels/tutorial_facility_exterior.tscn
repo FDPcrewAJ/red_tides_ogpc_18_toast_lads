@@ -1,7 +1,8 @@
-[gd_scene load_steps=114 format=4 uid="uid://clrvvxkrvp8q5"]
+[gd_scene load_steps=117 format=4 uid="uid://clrvvxkrvp8q5"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/tutorial_facility_exterior.gd" id="1_yh08u"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_2ekho"]
+[ext_resource type="PackedScene" uid="uid://1vstisoeox23" path="res://Scenes/Objects/text_popup.tscn" id="3_2dv6s"]
 [ext_resource type="Script" path="res://Scripts/Menus/facility_exterior_view_interact_menu.gd" id="3_p6qhm"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="4_fxw5f"]
 [ext_resource type="Environment" uid="uid://dbve5ph7sqr2v" path="res://Scenes/Enviroments/outside_env.tres" id="5_li80c"]
@@ -573,11 +574,19 @@ _data = {
 "cheif_intro_turn": SubResource("Animation_hbl05")
 }
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qsf1g"]
+points = PackedVector3Array(-2.5, -5, -0.5, -2.5, -5, 0.5, -2.5, 5, -0.5, 2.5, -5, -0.5, 2.5, -5, 0.5, -2.5, 5, 0.5, 2.5, 5, -0.5, 2.5, 5, 0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oltih"]
+points = PackedVector3Array(2.5, 4.76966, 0.498076, -2.57937, -5.07738, -0.579365, -2.42971, -4.78724, 0.5, 2.65873, -5.07738, -0.579365, -2.57937, 5.07738, -0.579365, 2.65873, 5.07738, -0.579365, -2.42971, 4.78724, 0.5, 2.5, -4.76966, 0.498076)
+
 [node name="facility_exterior" type="Node3D"]
 script = ExtResource("1_yh08u")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("2_2ekho")]
 mouse_filter = 1
+
+[node name="TextPopup" parent="." instance=ExtResource("3_2dv6s")]
 
 [node name="view_interact_menu" type="Node3D" parent="."]
 script = ExtResource("3_p6qhm")
@@ -1390,7 +1399,21 @@ libraries = {
 [node name="voice_audio" type="AudioStreamPlayer" parent="."]
 bus = &"Voice"
 
+[node name="SprintTrigger" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 4, -40)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SprintTrigger"]
+shape = SubResource("ConvexPolygonShape3D_qsf1g")
+
+[node name="SprintDisableTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SprintDisableTrigger"]
+shape = SubResource("ConvexPolygonShape3D_oltih")
+
 [connection signal="allow_boat_movement" from="." to="world/boat" method="_on_facility_exterior_allow_boat_movement"]
 [connection signal="area_entered" from="world/death_col" to="." method="_on_death_col_area_entered"]
 [connection signal="animation_finished" from="intro_animation_player" to="." method="_on_intro_animation_player_animation_finished"]
 [connection signal="finished" from="voice_audio" to="." method="_on_voice_audio_finished"]
+[connection signal="area_entered" from="SprintTrigger" to="." method="_on_sprint_trigger_area_entered"]
+[connection signal="area_entered" from="SprintDisableTrigger" to="." method="_on_sprint_disable_trigger_area_entered"]

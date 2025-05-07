@@ -452,7 +452,7 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -3.82548
 transform = Transform3D(-0.0190276, -0.688798, -0.724704, -0.999656, -4.3437e-08, 0.0262467, -0.0180787, 0.724954, -0.68856, -3.46802, 0.580891, -12.4602)
 
 [node name="EngineerLoreNote" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0322299, -0.999481, -7.46162e-09, -4.37114e-08, -2.98023e-08, -1, 0.999481, 0.0322299, -1.28984e-08, 9.41396, 1.83738, -1.73129)
+transform = Transform3D(-0.03223, 0.999481, 7.46162e-09, -4.37114e-08, -2.98023e-08, -1, -0.999481, -0.03223, 1.28984e-08, -9.34709, 2.57687, 0.26871)
 mesh = SubResource("PlaneMesh_lwtbi")
 skeleton = NodePath("../..")
 script = ExtResource("15_w7edc")

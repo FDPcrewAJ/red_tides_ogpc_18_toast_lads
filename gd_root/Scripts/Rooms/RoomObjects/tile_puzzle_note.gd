@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Global.tutorial_completed == false:
+		queue_free()
 	#This needs to correspond to the note's body node
 	if Global.current_object == "TilePuzzleNoteBody":
 		#Must correspond to the interactables display node in the current scene

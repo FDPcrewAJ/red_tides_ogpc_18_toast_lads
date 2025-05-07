@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1vstisoeox23"]
+[gd_scene load_steps=5 format=3 uid="uid://1vstisoeox23"]
 
-[ext_resource type="Script" uid="uid://d31ffd0y5qowf" path="res://Scripts/Menus/text_popup.gd" id="1_1ey4t"]
-[ext_resource type="Script" uid="uid://b1xb5uhnuthcs" path="res://Scripts/Menus/popup_label.gd" id="2_b8gy0"]
+[ext_resource type="Script" path="res://Scripts/Menus/text_popup.gd" id="1_1ey4t"]
+[ext_resource type="Script" path="res://Scripts/Menus/popup_label.gd" id="2_b8gy0"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_v7b14"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r3bx2"]
 font_size = 80
@@ -21,6 +22,10 @@ offset_left = -2.0
 offset_top = 784.0
 offset_right = 1918.0
 offset_bottom = 1074.0
+theme_override_colors/font_color = Color(0.384314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_v7b14")
 label_settings = SubResource("LabelSettings_r3bx2")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -32,12 +32,15 @@
 [ext_resource type="PackedScene" uid="uid://b2xw7k4d8fr1r" path="res://Assets/Objects/Pipes/pipe_junc_cross.tscn" id="28_f0i4l"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="29_vd0gy"]
 
-[sub_resource type="Environment" id="Environment_bhl03"]
+[sub_resource type="Environment" id="Environment_4nvna"]
 ambient_light_sky_contribution = 0.0
 reflected_light_source = 1
-fog_light_energy = 0.1
+fog_enabled = true
+fog_light_color = Color(0.464219, 0.2016, 4.81308e-08, 1)
+fog_light_energy = 4.6
 fog_sun_scatter = 1.0
-fog_density = 0.007
+fog_density = 0.03
+fog_height_density = 3.6
 adjustment_enabled = true
 adjustment_brightness = 0.75
 
@@ -348,7 +351,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37157, 0, 6.60987)
 script = ExtResource("1_2g241")
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bhl03")
+environment = SubResource("Environment_4nvna")
 
 [node name="hub_room" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37157, 0, 6.60987)

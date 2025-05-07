@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=63 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="8_7j12s"]
 [ext_resource type="PackedScene" uid="uid://cyvrmh0iub8sg" path="res://Assets/Objects/Lights/small_industrial_light.tscn" id="8_48i45"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_6.gd" id="9_dy4x5"]
+[ext_resource type="QuadMesh" uid="uid://ddhu486bqxxpa" path="res://Scripts/Shaders/water_particle.tres" id="9_oi4se"]
+[ext_resource type="QuadMesh" uid="uid://d3hmb7p3p4wbc" path="res://Scripts/Shaders/fire_particle.tres" id="11_fs6r3"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
 [ext_resource type="AudioStream" uid="uid://c5jbqh6xl7bbj" path="res://Audio/Sounds/Fire/fire.mp3" id="11_no74n"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/sprinkler.gd" id="13_na0ow"]
@@ -96,14 +98,6 @@ emission_ring_height = 1.0
 emission_ring_radius = 4.0
 emission_ring_inner_radius = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_equum"]
-albedo_color = Color(0.12549, 1, 1, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_y77kv"]
-material = SubResource("StandardMaterial3D_equum")
-radius = 0.1
-height = 0.2
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ccjm"]
 albedo_color = Color(0.784092, 0, 0.128263, 1)
 
@@ -118,14 +112,6 @@ size = Vector3(10, 1, 10)
 emission_shape = 1
 emission_sphere_radius = 7.17
 gravity = Vector3(0, 4, 0)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npvf1"]
-albedo_color = Color(0.976471, 0.262745, 0.0196078, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_a75d1"]
-material = SubResource("StandardMaterial3D_npvf1")
-radius = 0.1
-height = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnhlj"]
 size = Vector3(10, 1, 10)
@@ -644,7 +630,7 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.469217, 0)
 [node name="Sprinkler1" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.5, 5.35099, 0)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
-draw_pass_1 = SubResource("SphereMesh_y77kv")
+draw_pass_1 = ExtResource("9_oi4se")
 script = ExtResource("13_na0ow")
 
 [node name="Fire" type="MeshInstance3D" parent="hub_room"]
@@ -662,7 +648,7 @@ shape = SubResource("BoxShape3D_2ieqx")
 [node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
 process_material = SubResource("ParticleProcessMaterial_v3t3t")
-draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+draw_pass_1 = ExtResource("11_fs6r3")
 
 [node name="fire_sound" type="AudioStreamPlayer3D" parent="hub_room/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
@@ -674,7 +660,7 @@ bus = &"Sfx"
 [node name="Sprinkler2" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.6, 5.35099, 0)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
-draw_pass_1 = SubResource("SphereMesh_y77kv")
+draw_pass_1 = ExtResource("9_oi4se")
 script = ExtResource("13_na0ow")
 
 [node name="Fire2" type="MeshInstance3D" parent="hub_room"]
@@ -692,7 +678,7 @@ shape = SubResource("BoxShape3D_tnhlj")
 [node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
 process_material = SubResource("ParticleProcessMaterial_v3t3t")
-draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+draw_pass_1 = ExtResource("11_fs6r3")
 
 [node name="fire_sound" type="AudioStreamPlayer3D" parent="hub_room/Fire2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
@@ -703,7 +689,7 @@ autoplay = true
 [node name="Sprinkler3" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6, 5.2542, -0.499999)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
-draw_pass_1 = SubResource("SphereMesh_y77kv")
+draw_pass_1 = ExtResource("9_oi4se")
 script = ExtResource("13_na0ow")
 
 [node name="Fire3" type="MeshInstance3D" parent="hub_room"]
@@ -721,7 +707,7 @@ shape = SubResource("BoxShape3D_0krpe")
 [node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
 process_material = SubResource("ParticleProcessMaterial_v3t3t")
-draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+draw_pass_1 = ExtResource("11_fs6r3")
 
 [node name="fire_sound" type="AudioStreamPlayer3D" parent="hub_room/Fire3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
@@ -732,7 +718,7 @@ autoplay = true
 [node name="Sprinkler4" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4.76837e-07, 5.12167, -11)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
-draw_pass_1 = SubResource("SphereMesh_y77kv")
+draw_pass_1 = ExtResource("9_oi4se")
 script = ExtResource("13_na0ow")
 
 [node name="Fire4" type="MeshInstance3D" parent="hub_room"]
@@ -750,7 +736,7 @@ shape = SubResource("BoxShape3D_ni1ut")
 [node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
 process_material = SubResource("ParticleProcessMaterial_v3t3t")
-draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+draw_pass_1 = ExtResource("11_fs6r3")
 
 [node name="fire_sound" type="AudioStreamPlayer3D" parent="hub_room/Fire4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
@@ -761,7 +747,7 @@ autoplay = true
 [node name="Sprinkler5" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(1, 0, 3.49691e-07, 0, 1, 0, -3.49691e-07, 0, 1, -2.86102e-06, 5.24335, -21)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
-draw_pass_1 = SubResource("SphereMesh_y77kv")
+draw_pass_1 = ExtResource("9_oi4se")
 script = ExtResource("13_na0ow")
 
 [node name="Fire5" type="MeshInstance3D" parent="hub_room"]
@@ -779,7 +765,7 @@ shape = SubResource("BoxShape3D_wuh5f")
 [node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
 process_material = SubResource("ParticleProcessMaterial_v3t3t")
-draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+draw_pass_1 = ExtResource("11_fs6r3")
 
 [node name="fire_sound" type="AudioStreamPlayer3D" parent="hub_room/Fire5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
@@ -790,7 +776,7 @@ autoplay = true
 [node name="Sprinkler6" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(1, 0, 6.99382e-07, 0, 1, 0, -6.99382e-07, 0, 1, -1.28746e-05, 5.48669, -31)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
-draw_pass_1 = SubResource("SphereMesh_y77kv")
+draw_pass_1 = ExtResource("9_oi4se")
 script = ExtResource("13_na0ow")
 
 [node name="Fire6" type="MeshInstance3D" parent="hub_room"]
@@ -808,7 +794,7 @@ shape = SubResource("BoxShape3D_38w1i")
 [node name="FireParticles" type="GPUParticles3D" parent="hub_room/Fire6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25451, 0)
 process_material = SubResource("ParticleProcessMaterial_v3t3t")
-draw_pass_1 = SubResource("CapsuleMesh_a75d1")
+draw_pass_1 = ExtResource("11_fs6r3")
 
 [node name="fire_sound" type="AudioStreamPlayer3D" parent="hub_room/Fire6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)

@@ -8,6 +8,9 @@ signal fire_stopped
 @onready var fire_console_3: CSGMesh3D = $"../hub_room/FireConsole3"
 @onready var lights: Node3D = $"../lights"
 @onready var world_env: WorldEnvironment = $"../WorldEnv"
+@onready var sprinkler_6: GPUParticles3D = $"../hub_room/Sprinkler6"
+@onready var sprinkler_5: GPUParticles3D = $"../hub_room/Sprinkler5"
+@onready var sprinkler_4: GPUParticles3D = $"../hub_room/Sprinkler4"
 
 
 func _process(_delta: float) -> void:
@@ -26,3 +29,6 @@ func _process(_delta: float) -> void:
 				fire_console.queue_free()
 				fire_console_2.queue_free()
 				fire_console_3.queue_free()
+				sprinkler_4.queue_free()
+				sprinkler_5.queue_free()
+				sprinkler_6.queue_free()

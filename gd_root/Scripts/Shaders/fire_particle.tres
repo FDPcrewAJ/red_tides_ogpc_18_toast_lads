@@ -1,0 +1,11 @@
+[gd_resource type="QuadMesh" load_steps=3 format=3 uid="uid://d3hmb7p3p4wbc"]
+
+[ext_resource type="Texture2D" uid="uid://dnk2ap7m745j" path="res://Textures/Particles/fire_particle.png" id="1_mak51"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fc6eu"]
+transparency = 1
+albedo_texture = ExtResource("1_mak51")
+billboard_mode = 2
+
+[resource]
+material = SubResource("StandardMaterial3D_fc6eu")

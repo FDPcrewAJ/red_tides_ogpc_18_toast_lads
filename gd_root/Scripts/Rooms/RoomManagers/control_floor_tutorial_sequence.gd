@@ -20,6 +20,7 @@ signal interaction_ready
 
 @onready var fire_container: Node3D = $fire_container
 @onready var lights: Node3D = $"../world/building/lights"
+@onready var world_env: WorldEnvironment = $"../WorldEnv"
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -247,6 +248,7 @@ func _on_blackout_timer_timeout() -> void:
 		lightning_count += 1
 		blackout_timer.start()
 	else:
+		world_env.environment.fog_enabled = true
 		cinimatic_cam.current = false
 		player.show()
 		lights.red_lights()

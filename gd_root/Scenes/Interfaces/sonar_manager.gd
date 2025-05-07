@@ -8,7 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print($"../Timer".time_left)
 	if $"../Timer".time_left <= 0:
 		self.play()
 		if $"../RadarDot".status == "green":

@@ -4,6 +4,7 @@ signal make_lights_red
 signal make_lights_normal
 
 @onready var music_control = preload("res://Scenes/music_control.tscn").instantiate()
+var checklist_scratch
 
 var new_game = false
 
@@ -64,10 +65,10 @@ var dial_3_rotation = 0
 var tile_puzzle_level = 1
 
 var dial_puzzle_completed = false
-var tile_puzzle_completed = false
-var radar_puzzle_completed = false
+var tile_puzzle_completed = false : set = _set_tile_puzzle
+var radar_puzzle_completed = false : set = _set_radar_puzzle
 var fire_puzzle_completed = false
-var flow_puzzle_completed = false
+var flow_puzzle_completed = false : set = _set_flow_puzzle
 
 var consistent_positioning = true
 var new_position = 0
@@ -109,6 +110,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 func _ready() -> void:
 	add_child(music_control)
 	music_control.playing = false
+	checklist_scratch = music_control.get_child(0)
 
 
 func _process(_delta):
@@ -119,10 +121,22 @@ func _process(_delta):
 		room_completed = false
 		new_game = false
 
-
+# Setter Functions
 func _set_time_left(new_time):
 	time_left = new_time
 	if time_left <= 2:
 		make_lights_red.emit()
 	else:
 		make_lights_normal.emit()
+
+
+func _set_tile_puzzle(tile_state):
+	tile_puzzle_completed = tile_state
+
+
+func _set_radar_puzzle(radar_state):
+	radar_puzzle_completed = radar_state
+
+
+func _set_flow_puzzle(flow_state):
+	flow_puzzle_completed = flow_state

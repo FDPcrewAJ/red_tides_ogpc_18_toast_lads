@@ -9,6 +9,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			$"../motor".position = Vector3(0, -10, 0)
 			Global.motor_collected = true
+			Global.checklist_scratch.play()
 	
 	if Global.motor_collected == true:
 		$"../motor".position = Vector3(0, -10, 0)

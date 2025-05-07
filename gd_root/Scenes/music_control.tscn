@@ -1,9 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbasqcrkefl2n"]
+[gd_scene load_steps=13 format=3 uid="uid://cbasqcrkefl2n"]
 
 [ext_resource type="AudioStream" uid="uid://dlqnxqc1usrnv" path="res://Audio/Tutorial Voice Lines/line_2.mp3" id="1_6wpi6"]
 [ext_resource type="AudioStream" uid="uid://bo5taoae28mb6" path="res://Audio/Music/time_bad.mp3" id="1_dxde2"]
 [ext_resource type="AudioStream" uid="uid://7i6hn2tfmnoq" path="res://Audio/Music/before_tutorial.mp3" id="1_mt15b"]
 [ext_resource type="AudioStream" uid="uid://b8vtkqpn3qy2b" path="res://Audio/Music/time_good.mp3" id="3_g7hnj"]
+[ext_resource type="AudioStream" uid="uid://d0go1qmawvxd4" path="res://Audio/Sounds/pen_scratch/pen_scratch_1.mp3" id="5_6j5my"]
+[ext_resource type="AudioStream" uid="uid://dpwdm2us3585" path="res://Audio/Sounds/pen_scratch/pen_scratch_2.mp3" id="6_uhjsn"]
+[ext_resource type="AudioStream" uid="uid://doc6xccldj4gw" path="res://Audio/Sounds/pen_scratch/pen_scratch_3.mp3" id="7_x6u8m"]
+[ext_resource type="AudioStream" uid="uid://daoupknl88ylt" path="res://Audio/Sounds/pen_scratch/pen_scratch_4.mp3" id="8_e8q7k"]
+[ext_resource type="AudioStream" uid="uid://b342ymk4afy3b" path="res://Audio/Sounds/pen_scratch/pen_scratch_5.mp3" id="9_1b5j7"]
+[ext_resource type="AudioStream" uid="uid://dy7jritrqlu0v" path="res://Audio/Sounds/pen_scratch/pen_scratch_6.mp3" id="10_dp3bi"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ox70c"]
 clip_count = 4
@@ -34,8 +40,21 @@ Vector2i(3, 2): {
 }
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i5glc"]
+streams_count = 6
+stream_0/stream = ExtResource("5_6j5my")
+stream_1/stream = ExtResource("6_uhjsn")
+stream_2/stream = ExtResource("7_x6u8m")
+stream_3/stream = ExtResource("8_e8q7k")
+stream_4/stream = ExtResource("9_1b5j7")
+stream_5/stream = ExtResource("10_dp3bi")
+
 [node name="music_control" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamInteractive_ox70c")
 volume_db = -6.0
 autoplay = true
 bus = &"Music"
+
+[node name="checklist_scratch" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_i5glc")
+bus = &"Sfx"

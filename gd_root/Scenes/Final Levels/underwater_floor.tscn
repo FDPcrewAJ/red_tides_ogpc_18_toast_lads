@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=106 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
@@ -30,10 +30,18 @@
 [ext_resource type="PackedScene" uid="uid://odho4730c5y5" path="res://Imports/Models/Objects/Elevator/Elevator.gltf" id="21_r24y0"]
 [ext_resource type="Texture2D" uid="uid://ckwi351xwbfxe" path="res://Textures/Exterior Textures/v1_rust.png" id="21_st6xp"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/underwater_elevator_doors.gd" id="22_qid18"]
+[ext_resource type="AudioStream" uid="uid://bx882a7trmyeb" path="res://Audio/Sounds/Valve Squeaks/squeak_1.mp3" id="23_qh6tt"]
+[ext_resource type="AudioStream" uid="uid://blsn52k0lks5m" path="res://Audio/Sounds/Valve Squeaks/squeak_2.mp3" id="24_wmbyb"]
+[ext_resource type="AudioStream" uid="uid://bdvcgk7clhggs" path="res://Audio/Sounds/Valve Squeaks/squeak_3.mp3" id="25_hngkf"]
+[ext_resource type="AudioStream" uid="uid://csq4mc8c28gh5" path="res://Audio/Sounds/Valve Squeaks/squeak_4.mp3" id="26_18ja0"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/invisible_walls.gd" id="26_l2xjk"]
+[ext_resource type="AudioStream" uid="uid://bnfp1gubgvj4k" path="res://Audio/Sounds/Valve Squeaks/squeak_5.mp3" id="27_14ian"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/underwater_puzzle_interactions.gd" id="28_3qpr4"]
 [ext_resource type="PackedScene" uid="uid://dorv7f50mi4pv" path="res://Assets/Objects/Boat/Boat Parts/motor.tscn" id="28_ksw5j"]
+[ext_resource type="AudioStream" uid="uid://w4ho0ysnix08" path="res://Audio/Sounds/Valve Squeaks/squeak_6.mp3" id="28_xmh05"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="34_0fbe0"]
+[ext_resource type="AudioStream" uid="uid://bhsesvnoshbmd" path="res://Audio/Sounds/Water/water_drips.mp3" id="41_0a2io"]
+[ext_resource type="AudioStream" uid="uid://cfvyed5nrirkd" path="res://Audio/Sounds/Water/water_drain.mp3" id="42_sfhcc"]
 
 [sub_resource type="Environment" id="Environment_34okx"]
 ambient_light_sky_contribution = 0.0
@@ -142,6 +150,15 @@ points = PackedVector3Array(25.1773, -0.17727, 5.10638, -25.1773, -0.17727, -5.1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w0wta"]
 points = PackedVector3Array(-0.75, -1.47734, -0.749999, 0.749964, 1.43118, 0.75, 0.75, 1.43125, -0.726227, -0.75, 1.47734, -0.749999, -0.726192, -1.43118, 0.75, 0.75, -1.43125, -0.726227, -0.726192, 1.43118, 0.75, 0.749964, -1.43118, 0.75)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fl8qf"]
+streams_count = 6
+stream_0/stream = ExtResource("23_qh6tt")
+stream_1/stream = ExtResource("24_wmbyb")
+stream_2/stream = ExtResource("25_hngkf")
+stream_3/stream = ExtResource("26_18ja0")
+stream_4/stream = ExtResource("27_14ian")
+stream_5/stream = ExtResource("28_xmh05")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fx0sh"]
 points = PackedVector3Array(-0.34996, -0.496649, -0.35, 0.35, 0.498906, 0.35, -0.35, 0.496706, 0.348453, 0.35, -0.498906, 0.35, 0.348413, 0.496649, -0.35, -0.35, -0.496706, 0.348453, -0.34996, 0.496649, -0.35, 0.348413, -0.496649, -0.35)
@@ -855,6 +872,10 @@ shape = SubResource("ConvexPolygonShape3D_w0wta")
 [node name="pipeValve" parent="reactor_puzzle/Pipeline/pipe_valve/ValveBody" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -5.94105e-10, -0.12091, -0.0430293)
 
+[node name="valve_sound" type="AudioStreamPlayer3D" parent="reactor_puzzle/Pipeline/pipe_valve"]
+stream = SubResource("AudioStreamRandomizer_fl8qf")
+bus = &"Sfx"
+
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
 
@@ -893,6 +914,10 @@ shape = SubResource("ConvexPolygonShape3D_w0wta")
 
 [node name="pipeValve" parent="reactor_puzzle/Pipeline2/pipe_valve2/ValveBody2" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.00177e-09, -0.130237, -0.0430293)
+
+[node name="valve_sound" type="AudioStreamPlayer3D" parent="reactor_puzzle/Pipeline2/pipe_valve2"]
+stream = SubResource("AudioStreamRandomizer_fl8qf")
+bus = &"Sfx"
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline2" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
@@ -933,6 +958,10 @@ shape = SubResource("ConvexPolygonShape3D_w0wta")
 [node name="pipeValve" parent="reactor_puzzle/Pipeline3/pipe_valve3/ValveBody3" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.00177e-09, -0.130237, -0.0430293)
 
+[node name="valve_sound" type="AudioStreamPlayer3D" parent="reactor_puzzle/Pipeline3/pipe_valve3"]
+stream = SubResource("AudioStreamRandomizer_fl8qf")
+bus = &"Sfx"
+
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline3" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
 
@@ -971,6 +1000,10 @@ shape = SubResource("ConvexPolygonShape3D_w0wta")
 
 [node name="pipeValve" parent="reactor_puzzle/Pipeline4/pipe_valve4/ValveBody4" instance=ExtResource("17_0wjdq")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.00177e-09, -0.130237, -0.0430293)
+
+[node name="valve_sound" type="AudioStreamPlayer3D" parent="reactor_puzzle/Pipeline4/pipe_valve4"]
+stream = SubResource("AudioStreamRandomizer_fl8qf")
+bus = &"Sfx"
 
 [node name="pipe_straight4" parent="reactor_puzzle/Pipeline4" instance=ExtResource("5_n6bfl")]
 transform = Transform3D(-1.74845e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0, 0, 0.4, -3.5916, 0, 0)
@@ -1203,7 +1236,7 @@ shape = SubResource("ConvexPolygonShape3D_ob4rn")
 script = ExtResource("28_3qpr4")
 
 [node name="motor" parent="." instance=ExtResource("28_ksw5j")]
-transform = Transform3D(0.452793, -0.891616, -1.97922e-08, -4.37114e-08, 1.91069e-15, -1, 0.891616, 0.452793, -3.89738e-08, -8.9007, 1.20933, 10.096)
+transform = Transform3D(0.157172, -0.877654, 0.452793, 0.984341, 0.176277, -3.72529e-09, -0.0798171, 0.445703, 0.891616, -8.92955, 0.978308, 10.1107)
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="motor"]
 transform = Transform3D(-6.39047e-09, 0.97674, -0.214429, 2.91091e-08, 0.214429, 0.97674, 1, 0, -2.98023e-08, -0.185566, 1.43445, -0.236797)
@@ -1224,4 +1257,13 @@ libraries = {
 stream = ExtResource("34_0fbe0")
 volume_db = -10.0
 autoplay = true
+bus = &"Sfx"
+
+[node name="water_drops" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("41_0a2io")
+autoplay = true
+bus = &"Sfx"
+
+[node name="water_rush" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("42_sfhcc")
 bus = &"Sfx"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blsn52k0lks5m"
+path="res://.godot/imported/squeak_2.mp3-9ce0179385bd62f3225400d7f8bb435a.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds/Valve Squeaks/squeak_2.mp3"
+dest_files=["res://.godot/imported/squeak_2.mp3-9ce0179385bd62f3225400d7f8bb435a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

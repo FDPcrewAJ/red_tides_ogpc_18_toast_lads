@@ -6,7 +6,6 @@ extends Control
 @onready var needle = $stopwatch_dial/stopwatch_needle
 @onready var list: Control = $checklist
 
-
 # Checkboxes for the parts list
 @onready var antenna_check: Label = $checklist/parts_list/antenna_check
 @onready var battery_check: Label = $checklist/parts_list/battery_check

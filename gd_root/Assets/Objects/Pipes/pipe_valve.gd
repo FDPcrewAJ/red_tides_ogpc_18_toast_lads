@@ -3,6 +3,7 @@ extends Node3D
 @onready var interactables_display: Control = $"../../../InteractablesDisplay"
 @onready var reactor_label: Label3D = $"../../../reactor_main/central_column/MeshInstance3D5/ReactorLabel"
 @onready var valve_anims: AnimationPlayer = $"../../../valve_anims"
+@onready var valve_sound: AudioStreamPlayer3D = $valve_sound
 
 var maxCoolant = 0
 var coolantProvided = 0
@@ -30,6 +31,7 @@ func _process(_delta) -> void:
 					if coolantProvided < maxCoolant:
 						if self.name == "pipe_valve":
 							valve_anims.play("pipe_1_turn")
+							valve_sound.play()
 							reactor_label.coolant += 10
 							coolantProvided += 10
 		if Global.current_object == "ValveBody2":
@@ -40,6 +42,7 @@ func _process(_delta) -> void:
 					if coolantProvided < maxCoolant:
 						if self.name == "pipe_valve2":
 							valve_anims.play("pipe_2_turn")
+							valve_sound.play()
 							reactor_label.coolant += 15
 							coolantProvided += 15
 		if Global.current_object == "ValveBody3":
@@ -50,6 +53,7 @@ func _process(_delta) -> void:
 					if coolantProvided < maxCoolant:
 						if self.name == "pipe_valve3":
 							valve_anims.play("pipe_3_turn")
+							valve_sound.play()
 							reactor_label.coolant += 2
 							coolantProvided += 2
 		if Global.current_object == "ValveBody4":
@@ -60,6 +64,7 @@ func _process(_delta) -> void:
 					if coolantProvided < maxCoolant:
 						if self.name == "pipe_valve4":
 							valve_anims.play("pipe_4_turn")
+							valve_sound.play()
 							reactor_label.coolant += 20
 							coolantProvided += 20
 

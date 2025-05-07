@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bcrwco2xn1qus"]
+[gd_scene load_steps=39 format=3 uid="uid://bcrwco2xn1qus"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uccvb"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_5b5p7"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="14_edb8w"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="15_dthkt"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="16_bac6k"]
+[ext_resource type="AudioStream" uid="uid://dehstu4ie8gyk" path="res://Audio/Sounds/Elevator Button Click/elevator_button_sound.mp3" id="17_2xpfb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw7hu"]
 albedo_texture = ExtResource("4_6msk4")
@@ -357,6 +358,11 @@ outline_size = 8
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 pixel_size = 0.0007
 texture = ExtResource("16_bac6k")
+
+[node name="e_button_sound" type="AudioStreamPlayer" parent="Controls/elevator_panel"]
+stream = ExtResource("17_2xpfb")
+volume_db = -10.0
+bus = &"Sfx"
 
 [node name="audio" type="Node3D" parent="."]
 

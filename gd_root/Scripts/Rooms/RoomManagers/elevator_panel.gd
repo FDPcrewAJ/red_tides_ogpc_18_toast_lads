@@ -11,6 +11,9 @@ extends Node3D
 # Floor Label
 @onready var floor_label: Label3D = $floor_feedback/floor_label
 
+# Sound Effect
+@onready var b_sound: AudioStreamPlayer = $e_button_sound
+
 func _process(_delta: float) -> void:
 	if Global.next_floor == "Water Processing":
 		floor_label.text = "Water Pumping"
@@ -31,6 +34,7 @@ func _process(_delta: float) -> void:
 		floor_1_label.modulate = Color(1, 0, 0)
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.next_floor = "Water Processing"
+			b_sound.play()
 	else:
 		floor_1_label.modulate = Color(0.54, 0, 0)
 	
@@ -40,6 +44,7 @@ func _process(_delta: float) -> void:
 		floor_2_label.modulate = Color(1, 0, 0)
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.next_floor = "Entrance"
+			b_sound.play()
 	else:
 		floor_2_label.modulate = Color(0.54, 0, 0)
 	
@@ -49,6 +54,7 @@ func _process(_delta: float) -> void:
 		floor_3_label.modulate = Color(1, 0, 0)
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.next_floor = "First Floor"
+			b_sound.play()
 	else:
 		floor_3_label.modulate = Color(0.54, 0, 0)
 	
@@ -58,6 +64,7 @@ func _process(_delta: float) -> void:
 		floor_4_label.modulate = Color(1, 0, 0)
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.next_floor = "Second Floor"
+			b_sound.play()
 	else:
 		floor_4_label.modulate = Color(0.54, 0, 0)
 	
@@ -67,6 +74,7 @@ func _process(_delta: float) -> void:
 		floor_5_label.modulate = Color(1, 0, 0)
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.next_floor = "Control"
+			b_sound.play()
 	else:
 			floor_5_label.modulate = Color(0.54, 0, 0)
 	
@@ -77,5 +85,6 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
 			Global.next_floor = "null"
 			floor_label.text = ")_%()*%#-0!$"
+			b_sound.play()
 	else:
 			floor_x_label.modulate = Color(0.54, 0, 0)

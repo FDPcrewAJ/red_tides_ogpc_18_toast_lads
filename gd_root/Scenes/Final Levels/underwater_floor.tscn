@@ -1266,4 +1266,5 @@ bus = &"Sfx"
 
 [node name="water_rush" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource("42_sfhcc")
+volume_db = -5.0
 bus = &"Sfx"

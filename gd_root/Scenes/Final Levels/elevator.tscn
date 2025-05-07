@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bcrwco2xn1qus"]
+[gd_scene load_steps=38 format=3 uid="uid://bcrwco2xn1qus"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_uccvb"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="3_5b5p7"]
@@ -10,7 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_h7a3b"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/elevator_doors.gd" id="6_uubdo"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="10_y7h3h"]
+[ext_resource type="Texture2D" uid="uid://ocgi466yh7pm" path="res://Textures/UI/elevator_panel.png" id="11_0m8qv"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/elevator_panel.gd" id="11_ccg0v"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="11_n30du"]
+[ext_resource type="FontFile" uid="uid://yfq8gr7jpx2n" path="res://Imports/fonts/kremlin.ttf" id="13_u8lek"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="14_edb8w"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="15_dthkt"]
+[ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="16_bac6k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw7hu"]
 albedo_texture = ExtResource("4_6msk4")
@@ -60,6 +66,27 @@ size = Vector3(0.2, 1.2, 1.7)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a0u2t"]
 points = PackedVector3Array(0.0998541, 0.5, 0.843277, -0.113471, -0.513492, -0.863323, 0.0995199, -0.5, -0.840604, -0.113471, -0.513492, 0.863323, -0.113471, 0.511905, -0.863323, -0.113471, 0.511905, 0.863323, 0.0998541, 0.5, -0.843277, 0.0995199, -0.5, 0.840604)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_220t2"]
+albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
+metallic = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_yee6k"]
+material = SubResource("StandardMaterial3D_220t2")
+size = Vector3(0.5, 1.7, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vo5tq"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kwjcg"]
+size = Vector3(0.2, 0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os84u"]
+albedo_color = Color(0.362829, 0.362829, 0.362829, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cth4e"]
+material = SubResource("StandardMaterial3D_os84u")
+size = Vector3(0.2, 0.5, 1.25)
+
 [node name="Elevator" type="Node3D"]
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_uccvb")]
@@ -85,6 +112,7 @@ transform = Transform3D(0.7, -8.14518e-15, -7.10543e-15, 9.48266e-15, 0.7, -2.15
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cabin"]
 mesh = SubResource("PlaneMesh_4e5cs")
 skeleton = NodePath("../..")
+metadata/_edit_group_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cabin/MeshInstance3D"]
 
@@ -158,20 +186,177 @@ shape = SubResource("ConvexPolygonShape3D_a24dp")
 
 [node name="Controls" type="Node3D" parent="."]
 
-[node name="ElevatorControls" type="MeshInstance3D" parent="Controls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.5, 0)
+[node name="oldElevatorControls" type="MeshInstance3D" parent="Controls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -3.65322, 0)
+visible = false
 mesh = SubResource("BoxMesh_qrp0s")
 script = ExtResource("6_2wut2")
 
-[node name="ControlBody" type="StaticBody3D" parent="Controls/ElevatorControls"]
+[node name="ControlBody" type="StaticBody3D" parent="Controls/oldElevatorControls"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Controls/ElevatorControls/ControlBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Controls/oldElevatorControls/ControlBody"]
 shape = SubResource("ConvexPolygonShape3D_a0u2t")
 
-[node name="Sprite3D" type="Sprite3D" parent="Controls/ElevatorControls"]
+[node name="Sprite3D" type="Sprite3D" parent="Controls/oldElevatorControls"]
 transform = Transform3D(-3.66457e-08, 0, 1, -7.32913e-08, -1, -3.82137e-15, 0.838355, -8.74228e-08, 4.37114e-08, -0.11, 0, 0)
 pixel_size = 0.001
 texture = ExtResource("10_y7h3h")
+
+[node name="elevator_panel" type="Node3D" parent="Controls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65, 1.85, 0)
+script = ExtResource("11_ccg0v")
+
+[node name="back_mesh" type="MeshInstance3D" parent="Controls/elevator_panel"]
+mesh = SubResource("BoxMesh_yee6k")
+
+[node name="label_sprite" type="Sprite3D" parent="Controls/elevator_panel"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.250259, 0, -0.673109)
+pixel_size = 0.0013
+texture = ExtResource("11_0m8qv")
+
+[node name="button_5" type="Area3D" parent="Controls/elevator_panel/label_sprite"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.278625, 0.229822, 0.107232)
+
+[node name="button_col" type="CollisionShape3D" parent="Controls/elevator_panel/label_sprite/button_5"]
+shape = SubResource("BoxShape3D_vo5tq")
+
+[node name="visualizer_mesh" type="MeshInstance3D" parent="Controls/elevator_panel/label_sprite/button_5"]
+visible = false
+mesh = SubResource("BoxMesh_kwjcg")
+
+[node name="floor_5_label" type="Label3D" parent="Controls/elevator_panel/label_sprite/button_5"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.102632, 0, 0)
+alpha_cut = 1
+modulate = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+text = "5"
+font = ExtResource("13_u8lek")
+
+[node name="button_4" type="Area3D" parent="Controls/elevator_panel/label_sprite"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.286917, -0.130058, 0.107232)
+
+[node name="button_col" type="CollisionShape3D" parent="Controls/elevator_panel/label_sprite/button_4"]
+shape = SubResource("BoxShape3D_vo5tq")
+
+[node name="visualizer_mesh" type="MeshInstance3D" parent="Controls/elevator_panel/label_sprite/button_4"]
+visible = false
+mesh = SubResource("BoxMesh_kwjcg")
+
+[node name="floor_4_label" type="Label3D" parent="Controls/elevator_panel/label_sprite/button_4"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.102632, 0.00589108, 0.00392747)
+alpha_cut = 1
+modulate = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+text = "4"
+font = ExtResource("13_u8lek")
+
+[node name="button_3" type="Area3D" parent="Controls/elevator_panel/label_sprite"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.278625, -0.122203, 0.107232)
+
+[node name="button_col" type="CollisionShape3D" parent="Controls/elevator_panel/label_sprite/button_3"]
+shape = SubResource("BoxShape3D_vo5tq")
+
+[node name="visualizer_mesh" type="MeshInstance3D" parent="Controls/elevator_panel/label_sprite/button_3"]
+visible = false
+mesh = SubResource("BoxMesh_kwjcg")
+
+[node name="floor_3_label" type="Label3D" parent="Controls/elevator_panel/label_sprite/button_3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.102632, 0, 0)
+alpha_cut = 1
+modulate = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+text = "3"
+font = ExtResource("13_u8lek")
+
+[node name="button_2" type="Area3D" parent="Controls/elevator_panel/label_sprite"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.286917, -0.473703, 0.107232)
+
+[node name="button_col" type="CollisionShape3D" parent="Controls/elevator_panel/label_sprite/button_2"]
+shape = SubResource("BoxShape3D_vo5tq")
+
+[node name="visualizer_mesh" type="MeshInstance3D" parent="Controls/elevator_panel/label_sprite/button_2"]
+visible = false
+mesh = SubResource("BoxMesh_kwjcg")
+
+[node name="floor_2_label" type="Label3D" parent="Controls/elevator_panel/label_sprite/button_2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.102632, 0, 0.00392747)
+alpha_cut = 1
+modulate = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+text = "2"
+font = ExtResource("13_u8lek")
+
+[node name="button_1" type="Area3D" parent="Controls/elevator_panel/label_sprite"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.278625, -0.479594, 0.107232)
+
+[node name="button_col" type="CollisionShape3D" parent="Controls/elevator_panel/label_sprite/button_1"]
+shape = SubResource("BoxShape3D_vo5tq")
+
+[node name="visualizer_mesh" type="MeshInstance3D" parent="Controls/elevator_panel/label_sprite/button_1"]
+visible = false
+mesh = SubResource("BoxMesh_kwjcg")
+
+[node name="floor_1_label" type="Label3D" parent="Controls/elevator_panel/label_sprite/button_1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.102632, 0, 0)
+alpha_cut = 1
+modulate = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+text = "1"
+font = ExtResource("13_u8lek")
+
+[node name="button_x" type="Area3D" parent="Controls/elevator_panel/label_sprite"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.286917, 0.23157, 0.107232)
+
+[node name="button_col" type="CollisionShape3D" parent="Controls/elevator_panel/label_sprite/button_x"]
+shape = SubResource("BoxShape3D_vo5tq")
+
+[node name="visualizer_mesh" type="MeshInstance3D" parent="Controls/elevator_panel/label_sprite/button_x"]
+visible = false
+mesh = SubResource("BoxMesh_kwjcg")
+
+[node name="floor_x_label" type="Label3D" parent="Controls/elevator_panel/label_sprite/button_x"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.102632, 0.00589108, 0.00392747)
+alpha_cut = 1
+modulate = Color(0.539863, 1.03481e-06, 2.88785e-07, 1)
+text = "x"
+font = ExtResource("13_u8lek")
+
+[node name="floor_feedback" type="Node3D" parent="Controls/elevator_panel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00739294)
+
+[node name="text_bg" type="MeshInstance3D" parent="Controls/elevator_panel/floor_feedback"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163291, 0.465909, 0.539572)
+mesh = SubResource("BoxMesh_cth4e")
+
+[node name="floor_is" type="Label3D" parent="Controls/elevator_panel/floor_feedback"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.267377, 0.542046, 0.539572)
+modulate = Color(1, 0, 0, 1)
+text = "Your Floor Is:"
+font = ExtResource("14_edb8w")
+font_size = 27
+
+[node name="floor_label" type="Label3D" parent="Controls/elevator_panel/floor_feedback"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.267377, 0.367136, 0.539572)
+modulate = Color(1, 0, 0, 1)
+font = ExtResource("14_edb8w")
+font_size = 27
+
+[node name="sticky_note" type="Node3D" parent="Controls/elevator_panel"]
+transform = Transform3D(1, 0, 0, 0, 0.994035, -0.109058, 0, 0.109058, 0.994035, -0.253029, -0.292589, 0.488688)
+
+[node name="Label3D" type="Label3D" parent="Controls/elevator_panel/sticky_note"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00958633, -0.012596, 0)
+alpha_cut = 1
+modulate = Color(1, 0, 0, 1)
+text = "New Recruits:
+
+Meet the
+Captain 
+in the 
+control floor!"
+font = ExtResource("15_dthkt")
+font_size = 21
+outline_size = 8
+
+[node name="sticky_note_sprite" type="Sprite3D" parent="Controls/elevator_panel/sticky_note"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+pixel_size = 0.0007
+texture = ExtResource("16_bac6k")
 
 [node name="audio" type="Node3D" parent="."]
 

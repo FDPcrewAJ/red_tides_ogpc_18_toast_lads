@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=68 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -20,7 +20,9 @@
 [ext_resource type="AudioStream" uid="uid://c5jbqh6xl7bbj" path="res://Audio/Sounds/Fire/fire.mp3" id="11_no74n"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/sprinkler.gd" id="13_na0ow"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="14_318wx"]
+[ext_resource type="Texture2D" uid="uid://dekvdjamboaf6" path="res://Textures/Interior Textures/Fire/fire-ezgif.com-gif-to-sprite-converter.png" id="14_glk6p"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_sprite.gd" id="15_wcgvl"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="17_ld0ud"]
 [ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="19_g163y"]
@@ -112,6 +114,28 @@ size = Vector3(10, 1, 10)
 emission_shape = 1
 emission_sphere_radius = 7.17
 gravity = Vector3(0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypan8"]
+atlas = ExtResource("14_glk6p")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koqgq"]
+atlas = ExtResource("14_glk6p")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uw27t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypan8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koqgq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnhlj"]
 size = Vector3(10, 1, 10)
@@ -656,6 +680,13 @@ stream = ExtResource("11_no74n")
 volume_db = -5.0
 autoplay = true
 bus = &"Sfx"
+
+[node name="fire_sprite" type="AnimatedSprite3D" parent="hub_room/Fire"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.21478, -1.38856, 0)
+transparency = 0.62
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_uw27t")
+script = ExtResource("15_wcgvl")
 
 [node name="Sprinkler2" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.6, 5.35099, 0)

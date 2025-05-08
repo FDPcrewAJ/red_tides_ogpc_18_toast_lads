@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt450o5oevpq3"]
+[gd_scene load_steps=9 format=3 uid="uid://dt450o5oevpq3"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_i7njs"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_stof0"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_2phxa"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_ka7l1"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_e6ly0"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6r6wu"]
-font_color = Color(1, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vh5v"]
+texture = ExtResource("4_ka7l1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkrc1"]
+texture = ExtResource("5_e6ly0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bnwhd"]
+texture = ExtResource("4_ka7l1")
 
 [node name="chatlog_lore_interface" type="Node2D"]
 script = ExtResource("1_i7njs")
@@ -17,10 +25,10 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_stof0")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -392.0
-offset_top = 348.0
-offset_right = -174.0
-offset_bottom = 486.0
+offset_left = -419.0
+offset_top = 355.0
+offset_right = -157.0
+offset_bottom = 473.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -28,15 +36,18 @@ theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_2phxa")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_5vh5v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hkrc1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bnwhd")
 text = "Back"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = -921.0
 offset_top = -469.0
-offset_right = 368.0
-offset_bottom = 698.0
+offset_right = 116.0
+offset_bottom = 334.0
 theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 text = "--LOG #102208
 --1988/10/02 23:58
 Flow reading lost on {main pump 1} {main pump 3}
@@ -63,7 +74,6 @@ Power diverted from {pyotr’s pinball machine} to {backup pumps}
 --LOG #102212
 --1988/10/03 05:59
 {backup pumps} has regained power"
-label_settings = SubResource("LabelSettings_6r6wu")
 autowrap_mode = 2
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

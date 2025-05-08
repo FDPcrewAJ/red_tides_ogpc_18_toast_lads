@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvwebb2aqnhew"]
+[gd_scene load_steps=9 format=3 uid="uid://bvwebb2aqnhew"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_48rah"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_8qf0j"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_vyw52"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_1vrki"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_rlyh1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p282e"]
+texture = ExtResource("4_1vrki")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_odj0w"]
+texture = ExtResource("5_rlyh1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tlf7l"]
+texture = ExtResource("4_1vrki")
 
 [node name="chatlog_lore_interface" type="Node2D"]
 script = ExtResource("1_48rah")
@@ -14,10 +25,10 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_8qf0j")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -392.0
+offset_left = -432.0
 offset_top = 348.0
-offset_right = -174.0
-offset_bottom = 486.0
+offset_right = -152.0
+offset_bottom = 466.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -25,6 +36,9 @@ theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_vyw52")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_p282e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_odj0w")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tlf7l")
 text = "Back"
 
 [node name="Label" type="Label" parent="."]
@@ -40,16 +54,15 @@ text = "R-MAIL archives"
 offset_left = -921.0
 offset_top = -400.0
 offset_right = 368.0
-offset_bottom = 1487.0
+offset_bottom = -109.0
 theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+theme_override_font_sizes/font_size = 19
+text = "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -Date sent: 1988/12/02
 -Recipient: (REDACTED)
 Topic: Funding
 	Due to “Brezhnev’s failing leadership”, we are cutting funding. We both know the real reason is the data you guys found, but the higher ups want that covered up. The public would not be pleased with us hiding it this long. You still have enough funding to pay 2 men per station, pray that we are not forced to decrease it further.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 "
 autowrap_mode = 3
 

@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn2indkw7dlog"]
+[gd_scene load_steps=9 format=3 uid="uid://cn2indkw7dlog"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_ps65x"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_tf6qe"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_qyk3e"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_7pmu2"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_pwj6g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dynr1"]
+texture = ExtResource("4_7pmu2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3yx5i"]
+texture = ExtResource("5_pwj6g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5qrq"]
+texture = ExtResource("4_7pmu2")
 
 [node name="chatlog_lore_interface" type="Node2D"]
 script = ExtResource("1_ps65x")
@@ -14,10 +25,10 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_tf6qe")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -392.0
-offset_top = 348.0
-offset_right = -174.0
-offset_bottom = 486.0
+offset_left = -419.0
+offset_top = 345.0
+offset_right = -156.0
+offset_bottom = 464.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -25,6 +36,9 @@ theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_qyk3e")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_dynr1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3yx5i")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q5qrq")
 text = "Back"
 
 [node name="Label" type="Label" parent="."]
@@ -37,19 +51,19 @@ theme_override_font_sizes/font_size = 30
 text = "OGAS Network: Chatlogs, 1983/11/08"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -921.0
-offset_top = -333.0
-offset_right = 368.0
-offset_bottom = 564.0
+offset_left = -894.0
+offset_top = -331.0
+offset_right = 371.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "User, Unnamed#001: System should be working now. Try starting up your machines.
-User, Unnamed#012: Yep, everything’s up and running
-User, Unnamed#027: Same over here.
-User, Unnamed#005: Awesome. I’m going to take a nap. I don’t think I’ve gotten a full night of sleep since the Americans started drilling.
-User, Unnamed#012: Dang, are you okay?
-User, Unnamed#005: Honestly? No. Not at all. The fact we even have to fix the problems the USA causes is upsetting on its own.
-User, Unnamed#005 has left.
+text = "User, Emir#001: System should be working now. Try starting up your machines.
+User, Gregor#012: Yep, everything’s up and running
+User, Lara#027: Same over here.
+User, Adrian#005: Awesome. I’m going to take a nap. I don’t think I’ve gotten a full night of sleep since the Americans started drilling.
+User, Gregor#012: Dang, are you okay?
+User, Adrian#005: Honestly? No. Not at all. The fact we even have to fix the problems the USA causes is upsetting on its own.
+User, Adrian#005 has left.
 "
 autowrap_mode = 3
 

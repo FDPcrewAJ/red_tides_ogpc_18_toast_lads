@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8m556fup1wal"]
+[gd_scene load_steps=9 format=3 uid="uid://c8m556fup1wal"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_lv0t7"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_lvg8f"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_m41ge"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_3t11t"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_5j5bb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5s6jw"]
+texture = ExtResource("4_3t11t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayqvy"]
+texture = ExtResource("5_5j5bb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3kv0"]
+texture = ExtResource("4_3t11t")
 
 [node name="chatlog_lore_interface" type="Node2D"]
 script = ExtResource("1_lv0t7")
@@ -14,10 +25,10 @@ scale = Vector2(1.08, 1.08)
 texture = ExtResource("2_lvg8f")
 
 [node name="BackButton" type="Button" parent="."]
-offset_left = -392.0
-offset_top = 348.0
-offset_right = -174.0
-offset_bottom = 486.0
+offset_left = -438.0
+offset_top = 350.0
+offset_right = -165.0
+offset_bottom = 473.0
 theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
 theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
@@ -25,6 +36,9 @@ theme_override_colors/font_color = Color(0.737255, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_m41ge")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxTexture_5s6jw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ayqvy")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b3kv0")
 text = "Back"
 
 [node name="Label" type="Label" parent="."]
@@ -40,21 +54,23 @@ text = "R-MAIL archives"
 offset_left = -921.0
 offset_top = -400.0
 offset_right = 368.0
-offset_bottom = 1487.0
+offset_bottom = 353.0
 theme_override_colors/font_color = Color(0.745098, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+theme_override_font_sizes/font_size = 19
+text = "-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -Date sent: 1980/02/20
 -Recipient: (REDACTED)
 Topic: Worsening storms
 	Hello (REDACTED),
-As you requested, I sent a message to the Americans requesting that the drilling ceased. After an unreasonable amount of time, they responded. They deny all correlation between their drilling and the worsening storms.
+As you requested, I sent a message to the Americans requesting that the drilling ceased. 
+After an unreasonable amount of time, they responded. 
+They deny all correlation between their drilling and the worsening storms.
 
 -Date sent: 1980/02/21
 -Recipient: (REDACTED)
 Topic: Re: Worsening storms
 Rather unfortunate. Tell the engineers to start Plan B.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -Date sent: 1980/07/18
 -Recipient: (REDACTED)
 Topic: Status Report
@@ -65,7 +81,7 @@ By the way, the data you sent us from the 1976 weather control experiments were 
 -Recipient: (REDACTED)
 Topic: Re: Status Report
 	Glad to hear it. Keep up the good work.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 autowrap_mode = 3
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

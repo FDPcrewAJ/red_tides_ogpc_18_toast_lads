@@ -1,4 +1,4 @@
-[gd_scene load_steps=227 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=236 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -50,8 +50,8 @@
 [ext_resource type="PackedScene" uid="uid://cmc3e8rv2l3v2" path="res://Assets/Characters/Chief/Animations/Talk/cptn_talk.gltf" id="42_vl0ci"]
 [ext_resource type="PackedScene" uid="uid://c2kx3372m0i4f" path="res://Assets/Characters/Chief/Animations/Fling/Fling Main/cptn_fling_loop.gltf" id="44_aq61p"]
 [ext_resource type="PackedScene" uid="uid://bsxurjif22kpd" path="res://Assets/Characters/Chief/Animations/Fling/Fling End/cptn_fling_end.gltf" id="44_kg4td"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/screensaver_container.gd" id="44_n6gsj"]
 [ext_resource type="PackedScene" uid="uid://4yaya5m3qwgc" path="res://Assets/Characters/Chief/Animations/Fling/Fling Impact/cptn_dead.gltf" id="44_uy123"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor_screensaver_container.gd" id="45_a50sr"]
 [ext_resource type="Texture2D" uid="uid://bsfugcylu6jhq" path="res://Textures/Screensaver/screensaver_sprite_sheet.png" id="45_kbhlf"]
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_fire_container.gd" id="51_otypp"]
@@ -60,6 +60,9 @@
 [ext_resource type="QuadMesh" uid="uid://d3hmb7p3p4wbc" path="res://Scripts/Shaders/fire_particle.tres" id="56_kr0o1"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="57_c5evp"]
 [ext_resource type="AudioStream" uid="uid://ck6ee1yir7ymi" path="res://Audio/Sounds/misc/buzzing.mp3" id="58_7x0cs"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_sprite_container.gd" id="58_vd3h1"]
+[ext_resource type="Texture2D" uid="uid://dekvdjamboaf6" path="res://Textures/Interior Textures/Fire/fire_1_spritesheet.png" id="59_hf2s4"]
+[ext_resource type="Texture2D" uid="uid://vvh7p5papvvm" path="res://Textures/Interior Textures/Fire/fire_2_spritesheet.png" id="60_nk4b6"]
 
 [sub_resource type="Environment" id="Environment_rimyn"]
 ambient_light_sky_contribution = 0.0
@@ -1042,11 +1045,11 @@ _data = {
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ohuts"]
-albedo_color = Color(0.726223, 3.41728e-06, 5.77569e-07, 1)
+albedo_color = Color(0.74902, 0.301961, 0.0901961, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aveqi"]
 material = SubResource("StandardMaterial3D_ohuts")
-size = Vector3(4, 1, 10)
+size = Vector3(4, 0.1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_chsse"]
 size = Vector3(4, 5, 10)
@@ -1056,16 +1059,60 @@ emission_shape = 1
 emission_sphere_radius = 7.17
 gravity = Vector3(0, 4, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypan8"]
+atlas = ExtResource("59_hf2s4")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koqgq"]
+atlas = ExtResource("59_hf2s4")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32u4x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypan8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koqgq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haswc"]
+atlas = ExtResource("60_nk4b6")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by8dn"]
+atlas = ExtResource("60_nk4b6")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmh43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haswc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by8dn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="BoxMesh" id="BoxMesh_lagky"]
 material = SubResource("StandardMaterial3D_ohuts")
-size = Vector3(4, 1, 15)
+size = Vector3(4, 0.1, 15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d45qq"]
 size = Vector3(4, 5, 12.4044)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gbb0f"]
 material = SubResource("StandardMaterial3D_ohuts")
-size = Vector3(4, 1, 5)
+size = Vector3(4, 0.1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8020b"]
 size = Vector3(4, 5, 5)
@@ -2287,7 +2334,7 @@ shape = SubResource("ConvexPolygonShape3D_8icv8")
 
 [node name="screensaver_container" type="Node3D" parent="computer"]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
-script = ExtResource("44_n6gsj")
+script = ExtResource("45_a50sr")
 
 [node name="screensaver" type="AnimatedSprite3D" parent="computer/screensaver_container"]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -0.000358582, 0.812784, 0.419213)
@@ -2481,6 +2528,48 @@ volume_db = -5.0
 autoplay = true
 max_distance = 12.0
 
+[node name="fire_sprite_container" type="Node3D" parent="tutorial_sequence/fire_container/fire"]
+script = ExtResource("58_vd3h1")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire/fire_sprite_container"]
+transform = Transform3D(1.52083e-15, -0.418712, -4.37114e-08, -3.47924e-08, -1.83025e-08, 1, -0.795958, 0, -4.37114e-08, 0.0126547, 0.0689511, 1.49012e-08)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_32u4x")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.77527e-09, -0.707526, -1.17551, 2.69883)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire/fire_sprite_container"]
+transform = Transform3D(-1.11759e-08, 0, -0.13, -0.0941736, 0.0896177, 6.68065e-09, 0.0896177, 0.0941736, -7.45058e-09, 0.730558, -1.2465, -2.20087)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire/fire_sprite_container"]
+transform = Transform3D(-5.82077e-09, -7.45058e-09, -0.135, -0.134959, -0.00334545, 5.89923e-09, -0.00334545, 0.134959, -1.49012e-08, 0.537963, -0.366388, 1.20514)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire/fire_sprite_container"]
+transform = Transform3D(-9.31323e-09, -3.72529e-09, -0.135, -0.11855, 0.064582, 5.182e-09, 0.064582, 0.11855, -1.49012e-08, -1.33648, -0.97571, -3.62321)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
 [node name="fire2" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(0.99895, 0, 0.0458164, 0, 1, 0, -0.0458164, 0, 0.99895, 11.9146, 0.5, -7.5716)
 
@@ -2502,6 +2591,48 @@ stream = ExtResource("56_5vyhm")
 volume_db = -5.0
 autoplay = true
 max_distance = 12.0
+
+[node name="fire_sprite_container" type="Node3D" parent="tutorial_sequence/fire_container/fire2"]
+script = ExtResource("58_vd3h1")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire2/fire_sprite_container"]
+transform = Transform3D(-7.45058e-09, -0.406896, -4.37114e-08, -5.61994e-08, -1.7786e-08, 1, -1.28569, 0, -4.37114e-08, 0.0126543, 0.0689507, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_32u4x")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire2/fire_sprite_container"]
+transform = Transform3D(-6.98492e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.98492e-09, 0.632255, -1.01346, 4.97392)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire2/fire_sprite_container"]
+transform = Transform3D(-1.07102e-08, 4.65661e-10, -0.13, -0.0941736, 0.0896177, 6.68065e-09, 0.0896177, 0.0941736, -7.45058e-09, -1.29136, -1.2465, -4.29569)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire2/fire_sprite_container"]
+transform = Transform3D(-5.82077e-09, -7.45058e-09, -0.135, -0.134959, -0.00334545, 5.89923e-09, -0.00334545, 0.134959, -1.44355e-08, 0.953882, -0.366388, -5.15655)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire2/fire_sprite_container"]
+transform = Transform3D(-9.31323e-09, -3.72529e-09, -0.135, -0.11855, 0.064582, 5.182e-09, 0.064582, 0.11855, -1.44355e-08, -0.859004, -0.97571, 0.601919)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
 
 [node name="fire3" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(-0.999939, 0, 0.0110477, 0, 1, 0, -0.0110477, 0, -0.999939, 3.43779, 0.5, -7.24776)
@@ -2525,6 +2656,32 @@ volume_db = -5.0
 autoplay = true
 max_distance = 12.0
 
+[node name="fire_sprite_container" type="Node3D" parent="tutorial_sequence/fire_container/fire3"]
+script = ExtResource("58_vd3h1")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire3/fire_sprite_container"]
+transform = Transform3D(0, -0.417045, -4.37114e-08, -2.22534e-08, -1.82296e-08, 1, -0.509099, -4.65661e-10, -4.37114e-08, 0.012655, 0.0689507, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_32u4x")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire3/fire_sprite_container"]
+transform = Transform3D(-6.63567e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.63567e-09, -1.1215, -1.17551, 0.247989)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire3/fire_sprite_container"]
+transform = Transform3D(-1.10595e-08, 0, -0.13, -0.0941736, 0.0896177, 6.68065e-09, 0.0896177, 0.0941736, -7.33417e-09, 0.878009, -1.2465, -1.08997)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
 [node name="fire4" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(-0.0110477, 0, -0.999939, 0, 1, 0, 0.999939, 0, -0.0110477, -0.0583895, 0.5, 0.770368)
 
@@ -2546,6 +2703,34 @@ stream = ExtResource("56_5vyhm")
 volume_db = -5.0
 autoplay = true
 max_distance = 12.0
+
+[node name="fire_sprite_container" type="Node3D" parent="tutorial_sequence/fire_container/fire4"]
+script = ExtResource("58_vd3h1")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire4/fire_sprite_container"]
+transform = Transform3D(0, -0.398747, -4.37114e-08, -2.0428e-08, -1.74298e-08, 1, -0.467338, 4.65661e-10, -4.37114e-08, 0.0763029, 0.0689507, 0.0227478)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_32u4x")
+frame = 1
+frame_progress = 0.475766
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire4/fire_sprite_container"]
+transform = Transform3D(-6.51926e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.51926e-09, -1.11761, -1.17551, 0.0184162)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire4/fire_sprite_container"]
+transform = Transform3D(-1.0943e-08, 0, -0.13, -0.0941736, 0.0896177, 6.68065e-09, 0.0896177, 0.0941736, -7.21775e-09, 0.566139, -1.2465, -0.504449)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
 
 [node name="fire5" type="Area3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(0.708746, 0, -0.705464, 0, 1, 0, 0.705464, 0, 0.708746, -12.1671, 0.5, -0.471357)
@@ -2573,6 +2758,48 @@ stream = ExtResource("56_5vyhm")
 volume_db = -5.0
 autoplay = true
 max_distance = 12.0
+
+[node name="fire_sprite_container" type="Node3D" parent="tutorial_sequence/fire_container/fire5"]
+script = ExtResource("58_vd3h1")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire5/fire_sprite_container"]
+transform = Transform3D(-7.45058e-09, -0.406896, -4.37114e-08, -5.61994e-08, -1.7786e-08, 1, -1.28569, 0, -4.37114e-08, 0.0126543, 0.0689507, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_32u4x")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire5/fire_sprite_container"]
+transform = Transform3D(-6.98492e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.98492e-09, 0.632255, -1.01346, 4.97392)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire5/fire_sprite_container"]
+transform = Transform3D(-1.07102e-08, 4.65661e-10, -0.13, -0.0941736, 0.0896177, 6.68065e-09, 0.0896177, 0.0941736, -7.45058e-09, -1.29136, -1.2465, -4.29569)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire5/fire_sprite_container"]
+transform = Transform3D(-5.82077e-09, -7.45058e-09, -0.135, -0.134959, -0.00334545, 5.89923e-09, -0.00334545, 0.134959, -1.44355e-08, 0.953882, -0.366388, -5.15655)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="tutorial_sequence/fire_container/fire5/fire_sprite_container"]
+transform = Transform3D(-9.31323e-09, -3.72529e-09, -0.135, -0.11855, 0.064582, 5.182e-09, 0.064582, 0.11855, -1.44355e-08, -0.859004, -0.97571, 0.601919)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_qmh43")
 
 [node name="checklist_pick_up" type="StaticBody3D" parent="tutorial_sequence/fire_container"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.41007, 0.695435, 1.92876)

@@ -32,3 +32,7 @@ func _wrong_button_off():
 
 func _on_tile_button_37_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", Global.previous_scene)
+
+func _input(Input):
+	if Input.is_action_pressed("exit"):
+		get_tree().call_deferred("change_scene_to_file", Global.previous_scene)

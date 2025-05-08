@@ -105,3 +105,7 @@ func _on_button_6_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")
+
+func _input(Input):
+	if Input.is_action_pressed("exit"):
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")

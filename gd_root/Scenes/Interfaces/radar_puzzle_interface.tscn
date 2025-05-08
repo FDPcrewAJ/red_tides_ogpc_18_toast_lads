@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://chsm0jgs0uxer"]
+[gd_scene load_steps=15 format=3 uid="uid://chsm0jgs0uxer"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_puzzle_interface.gd" id="1_17h1u"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_dot.gd" id="2_1a1eu"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_d8ij4"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="7_dk8js"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="8_hvcfd"]
+[ext_resource type="AudioStream" uid="uid://d3ti5o3ltrcp4" path="res://Audio/Sounds/UI/sonar_ping.mp3" id="9_532ma"]
+[ext_resource type="Script" path="res://Scenes/Interfaces/sonar_manager.gd" id="10_3sp76"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5yf3"]
 radius = 323.883
@@ -71,6 +73,14 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7syiq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6gk8p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5al50")
 text = "Back"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_532ma")
+volume_db = 1.0
+script = ExtResource("10_3sp76")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="mouse_entered" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_exited"]

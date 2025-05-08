@@ -17,6 +17,6 @@ func _on_search_button_pressed() -> void:
 			Global.code_degrees2 = int(RandomNumberGenerator.new().randf_range(10, 350))
 			Global.code_degrees3 = int(RandomNumberGenerator.new().randf_range(10, 350))
 
-func _input(Input):
+func _input(_event: InputEvent):
 	if Input.is_action_pressed("exit"):
 		get_tree().call_deferred("change_scene_to_file", Global.previous_scene)

@@ -16,7 +16,3 @@ func close_menu():
 	player.has_control = true
 	self.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func _input(Input):
-	if Input.is_action_pressed("exit"):
-		close_menu()

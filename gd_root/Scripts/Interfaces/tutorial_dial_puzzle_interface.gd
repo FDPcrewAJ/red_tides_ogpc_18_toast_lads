@@ -9,7 +9,7 @@ var dial_puzzle_complete = false
 func _on_back_button_pressed() -> void:
 	close_menu()
 
-func _input(Input):
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("exit"):
 		close_menu()
 

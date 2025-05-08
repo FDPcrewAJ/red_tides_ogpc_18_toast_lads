@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dekvdjamboaf6"
-path.s3tc="res://.godot/imported/fire-ezgif.com-gif-to-sprite-converter.png-29218d434e842d62d276d377d97176ec.s3tc.ctex"
+path.s3tc="res://.godot/imported/fire_1_spritesheet.png-ac893aedcad30c1491db838aa5cb822d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Interior Textures/Fire/fire-ezgif.com-gif-to-sprite-converter.png"
-dest_files=["res://.godot/imported/fire-ezgif.com-gif-to-sprite-converter.png-29218d434e842d62d276d377d97176ec.s3tc.ctex"]
+source_file="res://Textures/Interior Textures/Fire/fire_1_spritesheet.png"
+dest_files=["res://.godot/imported/fire_1_spritesheet.png-ac893aedcad30c1491db838aa5cb822d.s3tc.ctex"]
 
 [params]
 

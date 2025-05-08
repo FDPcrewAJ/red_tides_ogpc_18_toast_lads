@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://bpum8nvfm1ph4"]
+[gd_scene load_steps=72 format=3 uid="uid://bpum8nvfm1ph4"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/firepuzzle.gd" id="1_2g241"]
 [ext_resource type="Texture2D" uid="uid://diacdikfiqkcn" path="res://Textures/Interior Textures/Floors/floor_tile.png" id="4_a3jpa"]
@@ -19,10 +19,11 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_console.gd" id="11_i3baf"]
 [ext_resource type="AudioStream" uid="uid://c5jbqh6xl7bbj" path="res://Audio/Sounds/Fire/fire.mp3" id="11_no74n"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/sprinkler.gd" id="13_na0ow"]
+[ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_sprite_container.gd" id="14_11bi2"]
 [ext_resource type="PackedScene" uid="uid://748edak1pdw5" path="res://Assets/Objects/Tables/wooden_desk_1.tscn" id="14_318wx"]
-[ext_resource type="Texture2D" uid="uid://dekvdjamboaf6" path="res://Textures/Interior Textures/Fire/fire-ezgif.com-gif-to-sprite-converter.png" id="14_glk6p"]
+[ext_resource type="Texture2D" uid="uid://dekvdjamboaf6" path="res://Textures/Interior Textures/Fire/fire_1_spritesheet.png" id="14_glk6p"]
 [ext_resource type="PackedScene" uid="uid://cxxav20r04vkn" path="res://Assets/Objects/Computer/computer.tscn" id="15_jt1wt"]
-[ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/fire_sprite.gd" id="15_wcgvl"]
+[ext_resource type="Texture2D" uid="uid://vvh7p5papvvm" path="res://Textures/Interior Textures/Fire/fire_2_spritesheet.png" id="16_6mtvs"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="16_xrgdq"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="17_ld0ud"]
 [ext_resource type="PackedScene" uid="uid://dkg0tfmxvs6tg" path="res://Assets/Objects/Wall Decor/light_switch.tscn" id="19_g163y"]
@@ -101,11 +102,11 @@ emission_ring_radius = 4.0
 emission_ring_inner_radius = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ccjm"]
-albedo_color = Color(0.784092, 0, 0.128263, 1)
+albedo_color = Color(0.750669, 0.303405, 0.0918008, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_psncc"]
 material = SubResource("StandardMaterial3D_2ccjm")
-size = Vector3(10, 1, 10)
+size = Vector3(10, 0.1, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ieqx"]
 size = Vector3(10, 1, 10)
@@ -131,6 +132,28 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_koqgq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haswc"]
+atlas = ExtResource("16_6mtvs")
+region = Rect2(0, 0, 2048, 2048)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by8dn"]
+atlas = ExtResource("16_6mtvs")
+region = Rect2(2048, 0, 2048, 2048)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jklha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_haswc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by8dn")
 }],
 "loop": true,
 "name": &"default",
@@ -630,9 +653,9 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_ylkc8")
 
 [node name="red_wall_light" type="OmniLight3D" parent="hub_room/RoomParts"]
-transform = Transform3D(-4.37115e-08, 1.31134e-07, -1, -1, -5.73206e-15, 4.37115e-08, 0, 1, 1.31134e-07, -1.43051e-06, 3.48434, -34.5759)
+transform = Transform3D(-4.37115e-08, 1.31134e-07, -1, -1, -5.73206e-15, 4.37115e-08, 0, 1, 1.31134e-07, -1.43051e-06, 3.80888, -34.5759)
 light_color = Color(0.774643, 0.0842845, 1.92523e-07, 1)
-light_energy = 0.621
+light_energy = 3.254
 light_size = 0.922
 light_bake_mode = 1
 omni_range = 9.13347
@@ -681,12 +704,55 @@ volume_db = -5.0
 autoplay = true
 bus = &"Sfx"
 
-[node name="fire_sprite" type="AnimatedSprite3D" parent="hub_room/Fire"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.21478, -1.38856, 0)
+[node name="fire_sprite_container" type="Node3D" parent="hub_room/Fire"]
+script = ExtResource("14_11bi2")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="hub_room/Fire/fire_sprite_container"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0.187332, 0.0689511, 0)
 transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
 pixel_size = 0.021
 sprite_frames = SubResource("SpriteFrames_uw27t")
-script = ExtResource("15_wcgvl")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="hub_room/Fire/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.77527e-09, 3.43717, -1.17551, -1.5978)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="hub_room/Fire/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 0, -0.155, -0.112284, 0.106852, 4.90809e-09, 0.106852, 0.112284, -4.67064e-09, -2.68835, -1.06385, 2.72941)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="hub_room/Fire/fire_sprite_container"]
+transform = Transform3D(-5.75118e-09, -6.04542e-09, -0.135, -0.134959, -0.00334545, 5.89923e-09, -0.00334545, 0.134959, -5.90104e-09, 1.66744, -0.366388, 2.73729)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="hub_room/Fire/fire_sprite_container"]
+transform = Transform3D(-7.37354e-09, -2.703e-09, -0.135, -0.11855, 0.064582, 5.182e-09, 0.064582, 0.11855, -5.90104e-09, -1.01793, -0.97571, -2.9722)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side5" type="AnimatedSprite3D" parent="hub_room/Fire/fire_sprite_container"]
+transform = Transform3D(-9.55829e-09, -3.50389e-09, -0.175, -0.153676, 0.0837174, 6.7174e-09, 0.0837174, 0.153676, -7.64949e-09, -4.82834, -0.709636, -2.1316)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
 
 [node name="Sprinkler2" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.6, 5.35099, 0)
@@ -717,6 +783,56 @@ stream = ExtResource("11_no74n")
 volume_db = -5.0
 autoplay = true
 
+[node name="fire_sprite_container" type="Node3D" parent="hub_room/Fire2"]
+script = ExtResource("14_11bi2")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="hub_room/Fire2/fire_sprite_container"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0.187332, 0.0689511, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_uw27t")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="hub_room/Fire2/fire_sprite_container"]
+transform = Transform3D(-9.39795e-09, 0, -0.215, 0, 0.215, 0, 0.215, 0, -9.39795e-09, 3.28656, -1.56037, -0.229235)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="hub_room/Fire2/fire_sprite_container"]
+transform = Transform3D(-5.04182e-09, -9.34442e-10, -0.095, -0.0688192, 0.0654898, 3.00818e-09, 0.0654898, 0.0688192, -4.15258e-09, -2.05918, -0.0607537, 3.15576)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="hub_room/Fire2/fire_sprite_container"]
+transform = Transform3D(-7.24223e-09, -7.61275e-09, -0.17, -0.169948, -0.00421279, 7.42866e-09, -0.00421279, 0.169948, -7.43094e-09, 0.429174, -0.88193, 3.57226)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="hub_room/Fire2/fire_sprite_container"]
+transform = Transform3D(-6.28116e-09, -2.30256e-09, -0.115, -0.100987, 0.0550143, 4.41429e-09, 0.0550143, 0.100987, -5.02681e-09, -0.175842, -0.446598, -3.10664)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side5" type="AnimatedSprite3D" parent="hub_room/Fire2/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.96817e-16, -0.155, -0.136113, 0.0741497, 5.9497e-09, 0.0741497, 0.136113, -3.24119e-09, -3.55144, -0.88193, -2.40008)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
 [node name="Sprinkler3" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.6, 5.2542, -0.499999)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
@@ -745,6 +861,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
 stream = ExtResource("11_no74n")
 volume_db = -5.0
 autoplay = true
+
+[node name="fire_sprite_container" type="Node3D" parent="hub_room/Fire3"]
+script = ExtResource("14_11bi2")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="hub_room/Fire3/fire_sprite_container"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0.187332, 0.0689511, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_uw27t")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="hub_room/Fire3/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.77527e-09, 3.43084, -1.15395, 0.723267)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="hub_room/Fire3/fire_sprite_container"]
+transform = Transform3D(-1.11451e-08, -2.06561e-09, -0.21, -0.152127, 0.144767, 6.64967e-09, 0.144767, 0.152127, -9.17939e-09, -0.175818, -1.09127, 3.05692)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="hub_room/Fire3/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.79614e-16, -0.155, -0.154952, -0.00384106, 6.77318e-09, -0.00384106, 0.154952, 1.67899e-10, 1.10186, -0.424609, -2.85918)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="hub_room/Fire3/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.96817e-16, -0.155, -0.136113, 0.0741497, 5.9497e-09, 0.0741497, 0.136113, -3.24119e-09, -1.77918, -1.1616, -3.58361)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side5" type="AnimatedSprite3D" parent="hub_room/Fire3/fire_sprite_container"]
+transform = Transform3D(-9.55829e-09, -3.50389e-09, -0.175, -0.153676, 0.0837174, 6.7174e-09, 0.0837174, 0.153676, -7.64949e-09, -3.55144, -0.88193, 1.0165)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
 
 [node name="Sprinkler4" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4.76837e-07, 5.12167, -11)
@@ -775,6 +941,56 @@ stream = ExtResource("11_no74n")
 volume_db = -5.0
 autoplay = true
 
+[node name="fire_sprite_container" type="Node3D" parent="hub_room/Fire4"]
+script = ExtResource("14_11bi2")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="hub_room/Fire4/fire_sprite_container"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0.187332, 0.0689511, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_uw27t")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="hub_room/Fire4/fire_sprite_container"]
+transform = Transform3D(-7.86805e-09, 0, -0.18, 0, 0.18, 0, 0.18, 0, -7.86805e-09, 0.549497, -0.88193, 0.672405)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="hub_room/Fire4/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 0, -0.155, -0.112284, 0.106852, 4.90809e-09, 0.106852, 0.112284, -4.67064e-09, -2.78318, -1.379, 2.90802)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="hub_room/Fire4/fire_sprite_container"]
+transform = Transform3D(-7.45523e-09, -7.83665e-09, -0.175, -0.174946, -0.0043367, 7.64714e-09, -0.0043367, 0.174946, -7.64949e-09, 2.326, -1.32872, 3.714)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="hub_room/Fire4/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.96817e-16, -0.155, -0.136113, 0.0741497, 5.9497e-09, 0.0741497, 0.136113, -3.24119e-09, 2.60829, -0.88193, -4.03963)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side5" type="AnimatedSprite3D" parent="hub_room/Fire4/fire_sprite_container"]
+transform = Transform3D(-9.0121e-09, -3.30367e-09, -0.165, -0.144895, 0.0789336, 6.33355e-09, 0.0789336, 0.144895, -7.21238e-09, -2.31912, -0.88193, -1.74669)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
 [node name="Sprinkler5" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(1, 0, 3.49691e-07, 0, 1, 0, -3.49691e-07, 0, 1, -2.86102e-06, 5.24335, -21)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
@@ -804,6 +1020,56 @@ stream = ExtResource("11_no74n")
 volume_db = -5.0
 autoplay = true
 
+[node name="fire_sprite_container" type="Node3D" parent="hub_room/Fire5"]
+script = ExtResource("14_11bi2")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="hub_room/Fire5/fire_sprite_container"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0.187332, 0.0689511, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_uw27t")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="hub_room/Fire5/fire_sprite_container"]
+transform = Transform3D(-7.43094e-09, 0, -0.17, 0, 0.17, 0, 0.17, 0, -7.43094e-09, 3.28656, -0.88193, -0.229235)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="hub_room/Fire5/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 0, -0.155, -0.112284, 0.106852, 4.90809e-09, 0.106852, 0.112284, -4.67064e-09, -2.05918, -0.398945, 3.15576)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="hub_room/Fire5/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.79614e-16, -0.155, -0.154952, -0.00384106, 6.77318e-09, -0.00384106, 0.154952, 1.67899e-10, 0.429174, -1.13279, 3.77942)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="hub_room/Fire5/fire_sprite_container"]
+transform = Transform3D(-9.0121e-09, -3.30367e-09, -0.165, -0.144895, 0.0789336, 6.33355e-09, 0.0789336, 0.144895, -7.21238e-09, -0.175842, -0.88193, -3.10664)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side5" type="AnimatedSprite3D" parent="hub_room/Fire5/fire_sprite_container"]
+transform = Transform3D(-8.19282e-09, -3.00334e-09, -0.15, -0.131723, 0.0717578, 5.75777e-09, 0.0717578, 0.131723, -6.55671e-09, -3.55144, -0.88193, -2.40008)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
 [node name="Sprinkler6" type="GPUParticles3D" parent="hub_room"]
 transform = Transform3D(1, 0, 6.99382e-07, 0, 1, 0, -6.99382e-07, 0, 1, -1.28746e-05, 5.48669, -31)
 process_material = SubResource("ParticleProcessMaterial_w6ogy")
@@ -832,6 +1098,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639484, 0)
 stream = ExtResource("11_no74n")
 volume_db = -5.0
 autoplay = true
+
+[node name="fire_sprite_container" type="Node3D" parent="hub_room/Fire6"]
+script = ExtResource("14_11bi2")
+
+[node name="fire_sprite_ground" type="AnimatedSprite3D" parent="hub_room/Fire6/fire_sprite_container"]
+transform = Transform3D(1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 0.187332, 0.0689511, 0)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.475)
+pixel_size = 0.021
+sprite_frames = SubResource("SpriteFrames_uw27t")
+
+[node name="fire_sprite_side" type="AnimatedSprite3D" parent="hub_room/Fire6/fire_sprite_container"]
+transform = Transform3D(-5.90104e-09, 0, -0.135, 0, 0.135, 0, 0.135, 0, -5.90104e-09, 2.79266, -0.88193, 0.553316)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side2" type="AnimatedSprite3D" parent="hub_room/Fire6/fire_sprite_container"]
+transform = Transform3D(-8.22612e-09, -1.52462e-09, -0.155, -0.112284, 0.106852, 4.90809e-09, 0.106852, 0.112284, -6.77527e-09, -1.73666, -0.88193, 2.41062)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side3" type="AnimatedSprite3D" parent="hub_room/Fire6/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.79614e-16, -0.155, -0.154952, -0.00384106, 6.77318e-09, -0.00384106, 0.154952, 1.67899e-10, 0.806359, -1.16607, 4.03554)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side4" type="AnimatedSprite3D" parent="hub_room/Fire6/fire_sprite_container"]
+transform = Transform3D(-6.77527e-09, 3.96817e-16, -0.155, -0.136113, 0.0741497, 5.9497e-09, 0.0741497, 0.136113, -3.24119e-09, 1.48018, -0.669748, -1.95427)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
+
+[node name="fire_sprite_side5" type="AnimatedSprite3D" parent="hub_room/Fire6/fire_sprite_container"]
+transform = Transform3D(-9.0121e-09, -3.30367e-09, -0.165, -0.144895, 0.0789336, 6.33355e-09, 0.0789336, 0.144895, -7.21238e-09, -3.77824, -0.88193, -1.54045)
+transparency = 0.62
+modulate = Color(1, 1, 1, 0.876)
+pixel_size = 0.021
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_jklha")
 
 [node name="wooden_desk_1" parent="hub_room" instance=ExtResource("14_318wx")]
 transform = Transform3D(-4.37115e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37115e-08, -0.491439, -0.00580204, -1.3059)
@@ -955,11 +1271,11 @@ omni_range = 1.29291
 shape = SubResource("ConvexPolygonShape3D_i6sqg")
 
 [node name="emergency_fire_suppression" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, -6.37157, 2.84097, -28.3841)
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, -6.37157, 3.0277, -28.3841)
 modulate = Color(0.780392, 0, 0, 1)
 text = "Emergency Fire Supression"
 font = ExtResource("25_x8pim")
-font_size = 50
+font_size = 120
 
 [node name="fire_puzzle_door" parent="." instance=ExtResource("26_c86vd")]
 transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -6.37157, -0.017246, 11.5131)

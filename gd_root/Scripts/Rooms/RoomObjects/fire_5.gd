@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_area_3d_area_entered(_area):
-	get_tree().change_scene_to_file("res://Scenes/testingLevels/fire_puzzle.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/testingLevels/fire_puzzle.tscn")
 
 
 func _on_stop_fire_fire_stopped() -> void:

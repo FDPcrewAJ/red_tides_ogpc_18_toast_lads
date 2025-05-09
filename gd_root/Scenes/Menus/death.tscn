@@ -1,25 +1,105 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpoyetj60cw0p"]
+[gd_scene load_steps=11 format=3 uid="uid://cpoyetj60cw0p"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/death.gd" id="1_isog1"]
+[ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_2wg3n"]
+[ext_resource type="VideoStream" path="res://Imports/Videos/death_cutscene_video.ogv" id="2_6subu"]
+[ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="2_mwlbq"]
+[ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="3_pee0u"]
+[ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="4_h76cc"]
+[ext_resource type="AudioStream" uid="uid://dt6ls8vljonrr" path="res://Audio/Music/main_menu.mp3" id="7_7wgk4"]
 
-[node name="Death" type="Node2D"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0qq4"]
+texture = ExtResource("3_pee0u")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpusq"]
+texture = ExtResource("4_h76cc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efwgf"]
+texture = ExtResource("3_pee0u")
+
+[node name="Death" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_isog1")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 550.0
-offset_right = 1350.0
-offset_bottom = 300.0
-theme_override_font_sizes/font_size = 150
-text = "You Died"
+[node name="ending UI" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="background" type="ColorRect" parent="ending UI"]
+offset_left = -339.0
+offset_top = -270.0
+offset_right = 2288.0
+offset_bottom = 1385.0
+color = Color(0, 0, 0, 1)
+
+[node name="text_1" type="Label" parent="ending UI"]
+visible = false
+offset_left = 143.0
+offset_top = 165.0
+offset_right = 1767.0
+offset_bottom = 319.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mwlbq")
+theme_override_font_sizes/font_size = 200
+text = "You Failed Us"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
-offset_left = 800.0
-offset_top = 700.0
-offset_right = 1000.0
-offset_bottom = 800.0
-theme_override_font_sizes/font_size = 30
+[node name="text_2" type="Label" parent="ending UI"]
+visible = false
+offset_left = 338.0
+offset_top = 437.0
+offset_right = 1556.0
+offset_bottom = 591.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mwlbq")
+theme_override_font_sizes/font_size = 200
+text = "Comrade"
+horizontal_alignment = 1
+
+[node name="main_menu_button" type="Button" parent="ending UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 706.0
+offset_top = 911.0
+offset_right = 1148.0
+offset_bottom = 1030.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0.486275, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.12549, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_2wg3n")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = SubResource("StyleBoxTexture_w0qq4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jpusq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_efwgf")
+toggle_mode = true
 text = "Main Menu"
+icon_alignment = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Timer" type="Timer" parent="ending UI"]
+wait_time = 4.0
+
+[node name="death_video" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_6subu")
+autoplay = true
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7wgk4")
+volume_db = -2.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="ending UI/main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="timeout" from="ending UI/Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="death_video" to="." method="_on_death_video_finished"]

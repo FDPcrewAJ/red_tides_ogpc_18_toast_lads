@@ -2,7 +2,9 @@ extends Node
 
 signal make_lights_red
 signal make_lights_normal
+signal update_part_sound(part)
 
+# In game music and checklist scratch off sound
 @onready var music_control = preload("res://Scenes/music_control.tscn").instantiate()
 var checklist_scratch
 
@@ -10,6 +12,7 @@ var new_game = false
 
 var room_completed = false
 
+# Scene to load back into when exiting a UI
 var previous_scene = "res://Scenes/Menus/title_screen.tscn"
 
 # Storm system control 
@@ -21,7 +24,7 @@ var needle_rotation = 1
 #List pickup boolean
 var list_collected = false
 
-
+# If the tutorial is completed control
 var tutorial_completed = false
 
 # Player ray cast collision range for interaction
@@ -55,31 +58,40 @@ var four_fire_acess = 0
 var five_fire_acess = 0
 var six_fire_acess = 0
 
-var entry_door_open = false
-
+# Dial puzzle dial rotation
 var dial_1_rotation = 0
 var dial_2_rotation = 0
 var dial_3_rotation = 0
 
+# Dial Puzzle Codes
+var code_degrees1 = 0
+var code_degrees2 = 0
+var code_degrees3 = 0
+
 # Tile Puzzle
 var tile_puzzle_level = 1
 
+# Puzzle status Control
 var dial_puzzle_completed = false
 var tile_puzzle_completed = false : set = _set_tile_puzzle
 var radar_puzzle_completed = false : set = _set_radar_puzzle
 var fire_puzzle_completed = false
 var flow_puzzle_completed = false : set = _set_flow_puzzle
 
+var entry_door_open = false : set = _set_entry_door
+var reactor_stable = false : set = _set_reactor_state
+
+# Player position update when spawning control
 var consistent_positioning = true
 var new_position = 0
 
+# If player is in a menu
 var in_menu = false
 
+# Floor to load in elevator
 var next_floor = "null"
 
-var reactorStable = false
-
-var keypadPositive = false
+var keypad_positive = false
 
 # Inventory System
 var fuel_can_collected = false
@@ -94,10 +106,6 @@ var line_num = 0
 var voice_line = ""
 
 var entry_position = true
-
-var code_degrees1 = 0
-var code_degrees2 = 0
-var code_degrees3 = 0
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -121,6 +129,7 @@ func _process(_delta):
 		room_completed = false
 		new_game = false
 
+
 # Setter Functions
 func _set_time_left(new_time):
 	time_left = new_time
@@ -132,11 +141,24 @@ func _set_time_left(new_time):
 
 func _set_tile_puzzle(tile_state):
 	tile_puzzle_completed = tile_state
+	emit_signal("update_part_sound", "antennas")
 
 
 func _set_radar_puzzle(radar_state):
 	radar_puzzle_completed = radar_state
+	emit_signal("update_part_sound", "radar")
 
 
 func _set_flow_puzzle(flow_state):
 	flow_puzzle_completed = flow_state
+	emit_signal("update_part_sound", "battery")
+
+
+func _set_entry_door(door_state):
+	entry_door_open = door_state
+	emit_signal("update_part_sound", "fuel")
+
+
+func _set_reactor_state(react_state):
+	reactor_stable = react_state
+	emit_signal("update_part_sound", "motor")

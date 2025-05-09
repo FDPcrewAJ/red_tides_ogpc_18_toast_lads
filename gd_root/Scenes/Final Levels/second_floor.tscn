@@ -1,4 +1,4 @@
-[gd_scene load_steps=266 format=3 uid="uid://n25axs1ovbla"]
+[gd_scene load_steps=267 format=3 uid="uid://n25axs1ovbla"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/second_floor.gd" id="1_0ggiq"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_0q36q"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dqnyt2b1il67q" path="res://Assets/Objects/Boat/Boat Parts/antennas.tscn" id="3_h8ph8"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/antennas.gd" id="3_yg7qf"]
 [ext_resource type="Texture2D" uid="uid://dlq2qjnm8k0lp" path="res://Textures/Interior Textures/Floors/blue_carpet.png" id="4_f7qmu"]
+[ext_resource type="AudioStream" uid="uid://c544lhis5wv41" path="res://Audio/Sounds/Boat Part Sound/boat_part_sound.mp3" id="5_4modi"]
 [ext_resource type="PackedScene" uid="uid://0vldhh4ok64r" path="res://Scenes/Menus/menu_prompt.tscn" id="5_ldpmi"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor2_elevator.gd" id="5_yfgx1"]
 [ext_resource type="Texture2D" uid="uid://etcmvw0av7dj" path="res://Textures/Interior Textures/Floors/linoleum_floor.png" id="6_ised5"]
@@ -1195,19 +1196,21 @@ script = ExtResource("1_0ggiq")
 
 [node name="boat_parts" type="Node3D" parent="puzzle_interaction"]
 
-[node name="inventory_test" type="Node3D" parent="puzzle_interaction/boat_parts"]
-
-[node name="antennas" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("3_h8ph8")]
+[node name="antennas" parent="puzzle_interaction/boat_parts" instance=ExtResource("3_h8ph8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.90311, 0.588913, -7.29034)
 script = ExtResource("3_yg7qf")
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/antennas"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="puzzle_interaction/boat_parts/antennas"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0557384, 0.0866114, -0.0628338)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729
 light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
+
+[node name="boat_part_sound" type="AudioStreamPlayer3D" parent="puzzle_interaction/boat_parts/antennas"]
+stream = ExtResource("5_4modi")
+bus = &"Sfx"
 
 [node name="MenuPrompt" parent="." instance=ExtResource("5_ldpmi")]
 

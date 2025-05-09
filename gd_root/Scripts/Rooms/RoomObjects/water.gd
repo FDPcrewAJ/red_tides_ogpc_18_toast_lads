@@ -5,7 +5,7 @@ extends MeshInstance3D
 var play_once = true
 
 func _process(_delta: float) -> void:
-	if Global.reactorStable == false:
+	if Global.reactor_stable == false:
 		position.y = 2.655
 	else:
 		if play_once:

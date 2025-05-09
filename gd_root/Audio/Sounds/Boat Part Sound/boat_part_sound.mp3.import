@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c544lhis5wv41"
+path="res://.godot/imported/boat_part_sound.mp3-6f5eb0e473a7b9133581382ea787a0c8.mp3str"
+
+[deps]
+
+source_file="res://Audio/Sounds/Boat Part Sound/boat_part_sound.mp3"
+dest_files=["res://.godot/imported/boat_part_sound.mp3-6f5eb0e473a7b9133581382ea787a0c8.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

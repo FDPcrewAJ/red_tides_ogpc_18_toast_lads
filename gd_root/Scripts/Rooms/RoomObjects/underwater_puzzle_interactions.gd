@@ -1,8 +1,11 @@
 extends Node3D
 
+@onready var boat_part_sound: AudioStreamPlayer3D = $"../motor/boat_part_sound"
+
+func _ready() -> void:
+	Global.update_part_sound.connect(on_part_sound)
 
 func _process(_delta: float) -> void:
-		
 		# Motor
 	if Global.current_object == "motor_col":
 		$"../InteractablesDisplay"._show_interactable()
@@ -13,3 +16,9 @@ func _process(_delta: float) -> void:
 	
 	if Global.motor_collected == true:
 		$"../motor".position = Vector3(0, -10, 0)
+		boat_part_sound.stop()
+
+
+func on_part_sound(part_name):
+	if part_name == "motor":
+		boat_part_sound.play()

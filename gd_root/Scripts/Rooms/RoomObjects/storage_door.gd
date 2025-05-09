@@ -2,5 +2,5 @@ extends CSGMesh3D
 
 
 func _process(_delta: float) -> void:
-	if Global.keypadPositive == true:
+	if Global.keypad_positive == true:
 		queue_free()

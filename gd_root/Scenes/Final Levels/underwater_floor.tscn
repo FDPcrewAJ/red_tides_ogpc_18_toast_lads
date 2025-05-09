@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://dld7f50f4ron0"]
+[gd_scene load_steps=107 format=3 uid="uid://dld7f50f4ron0"]
 
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_sf2df"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_tvhvi"]
@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://dorv7f50mi4pv" path="res://Assets/Objects/Boat/Boat Parts/motor.tscn" id="28_ksw5j"]
 [ext_resource type="AudioStream" uid="uid://w4ho0ysnix08" path="res://Audio/Sounds/Valve Squeaks/squeak_6.mp3" id="28_xmh05"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="34_0fbe0"]
+[ext_resource type="AudioStream" uid="uid://c544lhis5wv41" path="res://Audio/Sounds/Boat Part Sound/boat_part_sound.mp3" id="40_n7g78"]
 [ext_resource type="AudioStream" uid="uid://bhsesvnoshbmd" path="res://Audio/Sounds/Water/water_drips.mp3" id="41_0a2io"]
 [ext_resource type="AudioStream" uid="uid://cfvyed5nrirkd" path="res://Audio/Sounds/Water/water_drain.mp3" id="42_sfhcc"]
 
@@ -1245,6 +1246,10 @@ light_energy = 0.729
 light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
+
+[node name="boat_part_sound" type="AudioStreamPlayer3D" parent="motor"]
+stream = ExtResource("40_n7g78")
+bus = &"Sfx"
 
 [node name="valve_anims" type="AnimationPlayer" parent="."]
 libraries = {

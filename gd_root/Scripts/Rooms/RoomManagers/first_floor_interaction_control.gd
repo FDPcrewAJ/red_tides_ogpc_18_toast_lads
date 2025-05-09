@@ -5,10 +5,18 @@ extends Node3D
 @onready var interactables_display: Control = $"../InteractablesDisplay"
 
 # Boat Parts
-@onready var fuel_can: Node3D = $boat_parts/inventory_test/fuel_can
-@onready var battery: Node3D = $boat_parts/inventory_test/battery
-@onready var radar: Node3D = $boat_parts/inventory_test/radar
+@onready var fuel_can: Node3D = $boat_parts/fuel_can
+@onready var battery: Node3D = $boat_parts/battery
+@onready var radar: Node3D = $boat_parts/radar
 
+# Part Sound nodes
+@onready var fuel_can_sound: AudioStreamPlayer3D = $boat_parts/fuel_can/fuel_can_sound
+@onready var battery_sound: AudioStreamPlayer3D = $boat_parts/battery/battery_sound
+@onready var radar_sound: AudioStreamPlayer3D = $boat_parts/radar/radar_sound
+
+var fuel_once = true
+var battery_once = true
+var radar_once = true
 
 func _process(_delta: float) -> void:
 	if Global.fire_puzzle_completed:
@@ -80,9 +88,28 @@ func _process(_delta: float) -> void:
 	
 	if Global.fuel_can_collected == true:
 		fuel_can.position = Vector3(0, -10, 0)
+		fuel_can_sound.stop()
 	
 	if Global.battery_collected == true:
 		battery.position = Vector3(0, -10, 0)
+		battery_sound.stop()
 	
 	if Global.radar_collected == true:
 		radar.position = Vector3(0, -10, 0)
+		radar_sound.stop()
+	
+	# Sound lure control
+	if Global.keypad_positive:
+		if fuel_once:
+			fuel_can_sound.play()
+			fuel_once = false
+	
+	if Global.flow_puzzle_completed:
+		if battery_once:
+			battery_sound.play()
+			battery_once = false
+	
+	if Global.radar_puzzle_completed:
+		if radar_once:
+			radar_sound.play()
+			radar_once = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=333 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=334 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -62,6 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://bsfugcylu6jhq" path="res://Textures/Screensaver/screensaver_sprite_sheet.png" id="50_6p8v7"]
 [ext_resource type="Texture2D" uid="uid://bl012yu4c023n" path="res://Textures/Screensaver/typewriter_screensaver_sprite_sheet.png" id="52_an5mh"]
 [ext_resource type="AudioStream" uid="uid://ck6ee1yir7ymi" path="res://Audio/Sounds/misc/buzzing.mp3" id="61_dm1th"]
+[ext_resource type="AudioStream" uid="uid://c544lhis5wv41" path="res://Audio/Sounds/Boat Part Sound/boat_part_sound.mp3" id="62_8j5ov"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="62_my0c4"]
 
 [sub_resource type="Environment" id="Environment_owamf"]
@@ -2167,8 +2168,6 @@ shape = SubResource("BoxShape3D_8nhga")
 mesh = SubResource("BoxMesh_fmfi2")
 
 [node name="doors" type="Node3D" parent="world"]
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="water_pump_door" parent="world/doors" instance=ExtResource("5_w7ncp")]
 transform = Transform3D(1.55, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 14.5, 0.5, 12.5)
@@ -3365,12 +3364,10 @@ shape = SubResource("ConvexPolygonShape3D_x1e8i")
 
 [node name="boat_parts" type="Node3D" parent="puzzle_interaction"]
 
-[node name="inventory_test" type="Node3D" parent="puzzle_interaction/boat_parts"]
-
-[node name="fuel_can" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("41_3a62q")]
+[node name="fuel_can" parent="puzzle_interaction/boat_parts" instance=ExtResource("41_3a62q")]
 transform = Transform3D(-0.69349, 0, 0.720466, 0, 1, 0, -0.720466, 0, -0.69349, 39.1195, 0.555506, 18.0968)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/fuel_can"]
+[node name="OmniLight3D" type="OmniLight3D" parent="puzzle_interaction/boat_parts/fuel_can"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.431992, 0)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729
@@ -3378,10 +3375,14 @@ light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
 
-[node name="battery" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("43_htaof")]
+[node name="fuel_can_sound" type="AudioStreamPlayer3D" parent="puzzle_interaction/boat_parts/fuel_can"]
+stream = ExtResource("62_8j5ov")
+bus = &"Sfx"
+
+[node name="battery" parent="puzzle_interaction/boat_parts" instance=ExtResource("43_htaof")]
 transform = Transform3D(0.374894, 0, -0.330839, 0, 0.5, 0, 0.330839, 0, 0.374894, 9.39997, 0.472157, 18.3994)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/battery"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="puzzle_interaction/boat_parts/battery"]
 transform = Transform3D(1.32336, 0, -1.49958, 0, 2, 0, 1.49958, 0, 1.32336, -0.0399043, 0.173224, -0.0178004)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729
@@ -3389,16 +3390,24 @@ light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
 
-[node name="radar" parent="puzzle_interaction/boat_parts/inventory_test" instance=ExtResource("45_jfwp7")]
+[node name="battery_sound" type="AudioStreamPlayer3D" parent="puzzle_interaction/boat_parts/battery"]
+stream = ExtResource("62_8j5ov")
+bus = &"Sfx"
+
+[node name="radar" parent="puzzle_interaction/boat_parts" instance=ExtResource("45_jfwp7")]
 transform = Transform3D(-1.93022, 0, 0.523667, 0, 2, 0, -0.523667, 0, -1.93022, -21.5853, 0.641435, 5.02238)
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="puzzle_interaction/boat_parts/inventory_test/radar"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="puzzle_interaction/boat_parts/radar"]
 transform = Transform3D(0.354964, 0, -0.352137, 0, 0.5, 0, 0.352137, 0, 0.354964, 0.000605106, 0.0433062, -0.0108089)
 light_color = Color(1, 1, 0, 1)
 light_energy = 0.729
 light_specular = 0.0
 light_bake_mode = 1
 omni_range = 0.687
+
+[node name="radar_sound" type="AudioStreamPlayer3D" parent="puzzle_interaction/boat_parts/radar"]
+stream = ExtResource("62_8j5ov")
+bus = &"Sfx"
 
 [node name="audio" type="Node3D" parent="."]
 

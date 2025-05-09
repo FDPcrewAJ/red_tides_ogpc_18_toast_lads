@@ -2830,6 +2830,7 @@ omni_range = 1.29291
 
 [node name="lightning_sound" type="AudioStreamPlayer" parent="tutorial_sequence"]
 stream = SubResource("AudioStreamRandomizer_kcxjn")
+bus = &"Sfx"
 
 [node name="audio" type="Node3D" parent="."]
 

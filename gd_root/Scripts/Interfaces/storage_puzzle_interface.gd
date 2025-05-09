@@ -46,6 +46,6 @@ func _on_button_9_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", Global.previous_scene)
 
-func _input(Input):
+func _input(_event: InputEvent):
 	if Input.is_action_pressed("exit"):
 		get_tree().call_deferred("change_scene_to_file", Global.previous_scene)

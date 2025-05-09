@@ -27,6 +27,6 @@ func _on_floor_2_button_pressed() -> void:
 func _on_control_floor_button_pressed() -> void:
 	Global.next_floor = "Control"
 
-func _input(Input):
+func _input(_event: InputEvent):
 	if Input.is_action_pressed("exit"):
 		get_tree().call_deferred("change_scene_to_file", "res://Scenes/Final Levels/elevator.tscn")

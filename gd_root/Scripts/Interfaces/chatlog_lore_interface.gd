@@ -7,3 +7,7 @@ func _ready() -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().call_deferred("change_scene_to_file", Global.previous_scene)
+
+func _input(_event: InputEvent):
+	if Input.is_action_pressed("exit"):
+		get_tree().call_deferred("change_scene_to_file", Global.previous_scene)

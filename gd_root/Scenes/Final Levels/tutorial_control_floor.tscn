@@ -1,4 +1,4 @@
-[gd_scene load_steps=236 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=240 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -63,6 +63,9 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_sprite_container.gd" id="58_vd3h1"]
 [ext_resource type="Texture2D" uid="uid://dekvdjamboaf6" path="res://Textures/Interior Textures/Fire/fire_1_spritesheet.png" id="59_hf2s4"]
 [ext_resource type="Texture2D" uid="uid://vvh7p5papvvm" path="res://Textures/Interior Textures/Fire/fire_2_spritesheet.png" id="60_nk4b6"]
+[ext_resource type="AudioStream" uid="uid://c13s5752rup2x" path="res://Audio/Sounds/Lightning/lightning_1.mp3" id="62_ibvny"]
+[ext_resource type="AudioStream" uid="uid://dbupt7rwa8dir" path="res://Audio/Sounds/Lightning/lightning_2.mp3" id="63_ilers"]
+[ext_resource type="AudioStream" uid="uid://1vnnc8vrqgmo" path="res://Audio/Sounds/Lightning/lightning_3.mp3" id="64_rbwqe"]
 
 [sub_resource type="Environment" id="Environment_rimyn"]
 ambient_light_sky_contribution = 0.0
@@ -1134,6 +1137,12 @@ gravity = Vector3(0, 4, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ic2i"]
 size = Vector3(0.626465, 1.4375, 0.663452)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kcxjn"]
+streams_count = 3
+stream_0/stream = ExtResource("62_ibvny")
+stream_1/stream = ExtResource("63_ilers")
+stream_2/stream = ExtResource("64_rbwqe")
 
 [node name="tutorial_control_floor" type="Node3D"]
 script = ExtResource("1_lar5y")
@@ -2818,6 +2827,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, -0.016324, -0.01
 light_color = Color(0.94902, 0.956863, 0, 1)
 light_energy = 0.205
 omni_range = 1.29291
+
+[node name="lightning_sound" type="AudioStreamPlayer" parent="tutorial_sequence"]
+stream = SubResource("AudioStreamRandomizer_kcxjn")
 
 [node name="audio" type="Node3D" parent="."]
 

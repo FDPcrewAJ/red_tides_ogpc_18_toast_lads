@@ -18,9 +18,11 @@ signal interaction_ready
 @onready var blackout_timer: Timer = $black_screen/blackout_timer
 @onready var wake_up_label: Label = $black_screen/wake_up_label
 
+# Various extra node access
 @onready var fire_container: Node3D = $fire_container
 @onready var lights: Node3D = $"../world/building/lights"
 @onready var world_env: WorldEnvironment = $"../WorldEnv"
+@onready var lightning_sound: AudioStreamPlayer = $lightning_sound
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -33,7 +35,6 @@ signal interaction_ready
 @onready var cptn_fling_loop: Node3D = $cheif_container/cptn_fling_loop
 @onready var cptn_fling_end: Node3D = $cheif_container/cptn_fling_end
 @onready var cptn_dead: Node3D = $cheif_container/cptn_dead
-
 
 # Chief Animation access
 var chief_talk_anim
@@ -131,6 +132,7 @@ func _on_voice_line_player_finished() -> void:
 		chief_fling_loop.play("animation")
 		cptn_fling_loop.show()
 		lightning_strike.show()
+		lightning_sound.play()
 		lighting_timer.start()
 		cheif_fling_animator.active = true
 		cheif_fling_animator.play("chief_fling")
@@ -239,11 +241,13 @@ func _on_cheif_fling_animator_animation_finished(_anim_name: StringName) -> void
 	cptn_fling_end.show()
 	chief_fling_end.play("animation")
 	lightning_strike.show()
+	lightning_sound.play()
 	lighting_timer.start()
 
 
 func _on_blackout_timer_timeout() -> void:
 	if lightning_count == 2:
+		lightning_sound.play()
 		wake_up_label.show()
 		lightning_count += 1
 		blackout_timer.start()

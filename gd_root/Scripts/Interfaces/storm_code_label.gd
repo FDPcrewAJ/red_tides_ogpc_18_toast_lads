@@ -11,4 +11,4 @@ func _process(_delta):
 		else:
 			text = ("Calibration Needed:  \n #1: " + str(Global.code_degrees1) + " degrees \n #2: " + str(Global.code_degrees2) + " degrees \n #3: " + str(Global.code_degrees3) + " degrees")
 	else:
-		text = "Storm is too far away.\nStorm must be less than\n7 minutes away to find\nstorm origin."
+		text = "Storm is too far away.\nStorm must be less than\n6 minutes away to find\nstorm origin."

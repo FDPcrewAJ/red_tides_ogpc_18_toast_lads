@@ -31,7 +31,7 @@ offset_bottom = 428.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.83969, 1.49786)
-color = Color(0, 0, 0, 0.505882)
+color = Color(0, 0, 0, 0.67451)
 
 [node name="PromptLabel" type="Label" parent="."]
 visible = false

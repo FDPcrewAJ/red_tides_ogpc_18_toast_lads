@@ -9,7 +9,7 @@ func _on_back_button_pressed() -> void:
 		Global.radar_puzzle_completed = true
 	get_tree().call_deferred("change_scene_to_file", Global.previous_scene)
 
-func _input(Input):
+func _input(_event: InputEvent):
 	if Input.is_action_pressed("exit"):
 		if $RadarDot.puzzle_complete == true:
 			Global.radar_puzzle_completed = true

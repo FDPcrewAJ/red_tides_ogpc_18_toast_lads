@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://2o7tnodsbjo"]
+[gd_scene load_steps=15 format=3 uid="uid://2o7tnodsbjo"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/storage_puzzle_interface.gd" id="1_arey5"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/keypad_label.gd" id="2_0xx60"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="5_2a346"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="6_aei2n"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="7_g4bho"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="8_y8hfk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jdgu5"]
 texture = ExtResource("6_aei2n")
@@ -250,6 +251,12 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ss2qk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gbqvg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_h6k3e")
 text = "Exit"
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_y8hfk")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

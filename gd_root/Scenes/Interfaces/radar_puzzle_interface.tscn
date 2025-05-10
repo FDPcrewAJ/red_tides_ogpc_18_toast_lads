@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chsm0jgs0uxer"]
+[gd_scene load_steps=16 format=3 uid="uid://chsm0jgs0uxer"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_puzzle_interface.gd" id="1_17h1u"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_dot.gd" id="2_1a1eu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="8_hvcfd"]
 [ext_resource type="AudioStream" uid="uid://d3ti5o3ltrcp4" path="res://Audio/Sounds/UI/sonar_ping.mp3" id="9_532ma"]
 [ext_resource type="Script" path="res://Scenes/Interfaces/sonar_manager.gd" id="10_3sp76"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="11_0sn7h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v5yf3"]
 radius = 323.883
@@ -81,6 +82,12 @@ script = ExtResource("10_3sp76")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_0sn7h")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="mouse_entered" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="RadarDot/Area2D" to="RadarDot" method="_on_area_2d_mouse_exited"]

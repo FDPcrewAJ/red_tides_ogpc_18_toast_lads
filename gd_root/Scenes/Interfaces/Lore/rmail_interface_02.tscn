@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvwebb2aqnhew"]
+[gd_scene load_steps=10 format=3 uid="uid://bvwebb2aqnhew"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_48rah"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_8qf0j"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_vyw52"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_1vrki"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_rlyh1"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="6_n5s5p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p282e"]
 texture = ExtResource("4_1vrki")
@@ -65,5 +66,11 @@ Topic: Funding
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 "
 autowrap_mode = 3
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_n5s5p")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

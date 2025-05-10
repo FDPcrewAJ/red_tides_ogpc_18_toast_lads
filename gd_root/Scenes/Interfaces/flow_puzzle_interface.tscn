@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xuwf5i5dlbun"]
+[gd_scene load_steps=22 format=3 uid="uid://xuwf5i5dlbun"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/flow_puzzle_interface.gd" id="1_wyrge"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_5aifb"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="11_slx4p"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="12_jaawv"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="13_fhr8r"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="17_25k3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2lc7"]
 
@@ -655,6 +656,12 @@ script = ExtResource("7_kknyb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea2D"]
 shape = SubResource("RectangleShape2D_s2lc7")
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_25k3e")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="PipeButtonNode/PipeButton" to="PipeButtonNode" method="_on_pipe_button_pressed"]
 [connection signal="pressed" from="PipeButtonNode2/PipeButton2" to="PipeButtonNode2" method="_on_pipe_button_pressed"]

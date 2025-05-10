@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2hbqkilggbke"]
+[gd_scene load_steps=10 format=3 uid="uid://c2hbqkilggbke"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_wbipx"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_oqqvj"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_taadc"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_ysc7s"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_0062f"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="6_gw8l8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yh13h"]
 texture = ExtResource("4_ysc7s")
@@ -67,5 +68,11 @@ User, Dimitri#024: That sounds bad.
 User, Igorian#362: Oh yeah, you have no idea. So the magma is gonna cause temperature and pressure changes, allowing arctic cyclones to form in the Bering Strait.
 User, Igorian#024: Oh. oh no"
 autowrap_mode = 3
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gw8l8")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=18 format=3 uid="uid://cvp6iu0ltf4p5"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_en7eb"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_label.gd" id="7_4v4vi"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="8_6a52l"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="9_ilg65"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="11_61evj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ceuvr"]
 
@@ -148,5 +149,11 @@ theme_override_fonts/font = ExtResource("6_n8whq")
 theme_override_font_sizes/font_size = 100
 text = "Incorrect Calibration"
 script = ExtResource("5_com21")
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_61evj")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

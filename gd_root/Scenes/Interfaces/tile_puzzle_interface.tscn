@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckhlefc2g5yes"]
+[gd_scene load_steps=17 format=3 uid="uid://ckhlefc2g5yes"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_button.gd" id="1_4ebpr"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/tile_puzzle_interface.gd" id="1_306ms"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="4_v8csq"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="5_2ipfb"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="7_vrk10"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="10_uxugi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ysxfl"]
 texture = ExtResource("3_s47j1")
@@ -471,5 +472,11 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_v8csq")
 theme_override_font_sizes/font_size = 100
 script = ExtResource("3_07w82")
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_uxugi")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="TileButton37" to="." method="_on_tile_button_37_pressed"]

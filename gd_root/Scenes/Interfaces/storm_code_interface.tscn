@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqamg7hyrm2a7"]
+[gd_scene load_steps=14 format=3 uid="uid://cqamg7hyrm2a7"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/storm_code_interface.gd" id="1_12d1d"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_k4clt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="5_s2sqo"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="6_iscsx"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="6_mc7th"]
+[ext_resource type="AudioStream" uid="uid://bl13gse6gsejj" path="res://Audio/Sounds/UI/background_static.mp3" id="7_tmx0k"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vs43l"]
 texture = ExtResource("5_s2sqo")
@@ -83,6 +84,12 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ltb3q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jnaad")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ie40k")
 text = "Search For Storm Origin"
+
+[node name="bg_static" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tmx0k")
+volume_db = 2.0
+autoplay = true
+bus = &"Sfx"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="SearchButton" to="." method="_on_search_button_pressed"]

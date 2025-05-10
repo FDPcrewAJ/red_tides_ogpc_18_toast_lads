@@ -32,8 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://bx24dqk8cxh55" path="res://Assets/Objects/Chairs/wooden_chair.tscn" id="22_nel6y"]
 [ext_resource type="PackedScene" uid="uid://drxiydnsv34hj" path="res://Assets/Objects/Clutter/intern_sign.tscn" id="23_o6myl"]
 [ext_resource type="Texture2D" uid="uid://beyl13aqq2t47" path="res://Assets/Textures/posters/sensePoster.png" id="24_abpck"]
-[ext_resource type="Texture2D" uid="uid://cl35vbp27vjum" path="res://Assets/Textures/posters/bestAssets.png" id="25_2omkb"]
-[ext_resource type="Texture2D" uid="uid://cg1vq7dgi3lok" path="res://Assets/Textures/posters/bringSaftey.png" id="26_pfpy0"]
 [ext_resource type="PackedScene" uid="uid://detuhqp3qxbj8" path="res://Assets/Objects/Pipes/pipe_straight.tscn" id="27_5m6e4"]
 [ext_resource type="Texture2D" uid="uid://b2heqf7suu2aj" path="res://Imports/images/id_card_placeholder.png" id="28_il2qr"]
 [ext_resource type="PackedScene" uid="uid://b7rvy4bjmejtb" path="res://Assets/Objects/Pipes/valve.tscn" id="28_r5kwq"]
@@ -42,10 +40,12 @@
 [ext_resource type="PackedScene" uid="uid://crhlmbfm2nywb" path="res://Assets/Objects/Clutter/wet_floor_sign.tscn" id="31_1sdm1"]
 [ext_resource type="PackedScene" uid="uid://we1rupekxd1" path="res://Assets/Objects/Tools/hammer.tscn" id="31_ngdac"]
 [ext_resource type="PackedScene" uid="uid://bydyub6003sef" path="res://Assets/Objects/Clutter/banana_peel.tscn" id="32_xjavu"]
+[ext_resource type="Texture2D" uid="uid://8c0eog8yspcv" path="res://Assets/Textures/posters/safety Wethered-1.png" id="33_0nbxv"]
 [ext_resource type="PackedScene" uid="uid://dl2t5buhnx35" path="res://Assets/Objects/Chairs/portable_chair.tscn" id="33_5kl4k"]
 [ext_resource type="PackedScene" uid="uid://578v7wa0ivcb" path="res://Assets/Objects/Clutter/tl_toaster.tscn" id="34_0c1x2"]
 [ext_resource type="PackedScene" uid="uid://bvu4gclkjq2yb" path="res://Assets/Objects/MiscFurnature/info_board.tscn" id="34_ohyuh"]
 [ext_resource type="Script" path="res://Assets/Objects/MiscFurnature/tile_locker.gd" id="34_t8nb8"]
+[ext_resource type="Texture2D" uid="uid://d2sp3s8c8lo8y" path="res://Assets/Textures/posters/We're Watching-1.png.png" id="34_xtaaj"]
 [ext_resource type="PackedScene" uid="uid://dmiw008b3p5ih" path="res://Imports/Models/Objects/Kitchen Items/coffeeCup.gltf" id="35_ayxof"]
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="36_t6m53"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tile_puzzle_2_computer.gd" id="37_c0v26"]
@@ -2624,12 +2624,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0.00102974, 1, 4.50116e-11, -1, 0.00
 texture = ExtResource("24_abpck")
 
 [node name="propPoster" type="Sprite3D" parent="world/decorations/commons"]
-transform = Transform3D(-1.7586e-08, 1.30173e-17, 0.40232, 0.0392875, 0.400397, 1.71731e-09, -0.400397, 0.0392875, -1.75019e-08, 7.40582, 3.14435, 3.57454)
-texture = ExtResource("25_2omkb")
+transform = Transform3D(-7.52272e-09, 5.56838e-18, 0.172099, 0.0168059, 0.171277, 7.34609e-10, -0.171277, 0.0168059, -7.48674e-09, 7.40582, 3.14435, 3.57454)
+texture = ExtResource("33_0nbxv")
 
 [node name="propPoster2" type="Sprite3D" parent="world/decorations/commons"]
-transform = Transform3D(5.21541e-08, 9.31323e-09, -0.40232, -0.0759252, 0.395091, -6.63759e-09, 0.395091, 0.0759252, 5.96046e-08, 15.5774, 3.41814, -0.0637348)
-texture = ExtResource("26_pfpy0")
+transform = Transform3D(2.73574e-08, 4.88524e-09, -0.211036, 0.0174535, 0.210314, 5.06636e-09, 0.210314, -0.0174535, 3.10481e-08, 15.5774, 3.41814, -0.0637348)
+texture = ExtResource("34_xtaaj")
 
 [node name="infoBoard" parent="world/decorations/commons" instance=ExtResource("34_ohyuh")]
 transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -7.50593, -1.03849, 2.18417)

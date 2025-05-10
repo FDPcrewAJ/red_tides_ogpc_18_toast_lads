@@ -515,7 +515,7 @@ mouse_filter = 1
 script = ExtResource("3_besqy")
 
 [node name="player" parent="." instance=ExtResource("2_o63d5")]
-transform = Transform3D(-0.999999, 0, 0, 0, 0.999999, 0, 0, 0, -0.999999, 0.00339767, 13.0302, -50.5902)
+transform = Transform3D(-0.999999, 0, 0, 0, 0.999999, 0, 0, 0, -0.999999, 0.00339767, 10.4766, -50.5902)
 collision_layer = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

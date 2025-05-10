@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/UI/game_hud.gd" id="1_m2c60"]
 [ext_resource type="Texture2D" uid="uid://kdpik3k7oauh" path="res://Imports/ui/stopwatch_2.png" id="2_chul5"]
 [ext_resource type="Texture2D" uid="uid://bdxp3k3edhv5b" path="res://Imports/ui/stopwatch_needle.png" id="2_v440k"]
-[ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="4_j1ngf"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="5_wy6gk"]
 [ext_resource type="Script" path="res://Scripts/UI/checklist_label_text.gd" id="6_0wk31"]
+[ext_resource type="Texture2D" uid="uid://deaej70alsqt2" path="res://Textures/UI/boat_part_checklist.png" id="6_vdcfg"]
 
 [node name="game_hud" type="Control"]
 layout_mode = 3
@@ -68,9 +68,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1977.78
-offset_top = 992.942
+offset_top = 936.667
 offset_right = -1543.78
-offset_bottom = 1023.94
+offset_bottom = 967.667
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
@@ -91,15 +91,15 @@ offset_right = 20.0
 offset_bottom = 20.0
 
 [node name="parts_list" type="Sprite2D" parent="checklist"]
-position = Vector2(-1725.56, 740)
+position = Vector2(-1725.56, 731.111)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("4_j1ngf")
+texture = ExtResource("6_vdcfg")
 
 [node name="title" type="Label" parent="checklist/parts_list"]
 offset_left = -176.296
-offset_top = -237.963
+offset_top = -193.518
 offset_right = 177.704
-offset_bottom = -195.963
+offset_bottom = -151.518
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
@@ -229,9 +229,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1496.67
-offset_top = 992.942
+offset_top = 936.667
 offset_right = -1062.67
-offset_bottom = 1023.94
+offset_bottom = 967.667
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.752941, 0, 0, 1)

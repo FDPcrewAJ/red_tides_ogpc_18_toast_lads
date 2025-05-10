@@ -55,7 +55,6 @@
 [ext_resource type="Texture2D" uid="uid://bsfugcylu6jhq" path="res://Textures/Screensaver/screensaver_sprite_sheet.png" id="45_kbhlf"]
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="50_mshvd"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/tutorial_fire_container.gd" id="51_otypp"]
-[ext_resource type="Texture2D" uid="uid://bw0t7o0b3puiq" path="res://Imports/images/temp_checklist_bg.png" id="52_et7kt"]
 [ext_resource type="AudioStream" uid="uid://c5jbqh6xl7bbj" path="res://Audio/Sounds/Fire/fire.mp3" id="56_5vyhm"]
 [ext_resource type="QuadMesh" uid="uid://d3hmb7p3p4wbc" path="res://Scripts/Shaders/fire_particle.tres" id="56_kr0o1"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="57_c5evp"]
@@ -63,6 +62,7 @@
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/fire_sprite_container.gd" id="58_vd3h1"]
 [ext_resource type="Texture2D" uid="uid://dekvdjamboaf6" path="res://Textures/Interior Textures/Fire/fire_1_spritesheet.png" id="59_hf2s4"]
 [ext_resource type="Texture2D" uid="uid://vvh7p5papvvm" path="res://Textures/Interior Textures/Fire/fire_2_spritesheet.png" id="60_nk4b6"]
+[ext_resource type="Texture2D" uid="uid://deaej70alsqt2" path="res://Textures/UI/boat_part_checklist.png" id="61_uvfmg"]
 [ext_resource type="AudioStream" uid="uid://c13s5752rup2x" path="res://Audio/Sounds/Lightning/lightning_1.mp3" id="62_ibvny"]
 [ext_resource type="AudioStream" uid="uid://dbupt7rwa8dir" path="res://Audio/Sounds/Lightning/lightning_2.mp3" id="63_ilers"]
 [ext_resource type="AudioStream" uid="uid://1vnnc8vrqgmo" path="res://Audio/Sounds/Lightning/lightning_3.mp3" id="64_rbwqe"]
@@ -2821,7 +2821,7 @@ shape = SubResource("BoxShape3D_2ic2i")
 [node name="Sprite3D" type="Sprite3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
 transform = Transform3D(-0.347943, 0.462282, -0.815617, 0.0282009, -0.864422, -0.501975, -0.937091, -0.19766, 0.287733, 0, 0, 0)
 pixel_size = 0.0008
-texture = ExtResource("52_et7kt")
+texture = ExtResource("61_uvfmg")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="tutorial_sequence/fire_container/checklist_pick_up"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86265e-09, -0.016324, -0.0179489)

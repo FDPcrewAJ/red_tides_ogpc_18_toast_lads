@@ -211,7 +211,10 @@ func _on_voice_audio_finished():
 
 
 func _on_sprint_trigger_area_entered(_area: Area3D) -> void:
-	$TextPopup._set_text("Hold SHIFT to sprint.")
+	var event_array = InputMap.action_get_events("sprint")
+	var event = event_array[0]
+	var interact_key = OS.get_keycode_string(event.physical_keycode)
+	$TextPopup._set_text("Hold " + str(interact_key) + " to Sprint")
 	$SprintTrigger.remove_child($SprintTrigger/CollisionShape3D)
 
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cn2indkw7dlog"]
+[gd_scene load_steps=11 format=3 uid="uid://cn2indkw7dlog"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/chatlog_lore_interface.gd" id="1_ps65x"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_tf6qe"]
+[ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="2_ybyoo"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="3_qyk3e"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="4_7pmu2"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="5_pwj6g"]
@@ -18,6 +19,10 @@ texture = ExtResource("4_7pmu2")
 
 [node name="chatlog_lore_interface" type="Node2D"]
 script = ExtResource("1_ps65x")
+
+[node name="game_hud" parent="." instance=ExtResource("2_ybyoo")]
+offset_top = -338.92
+offset_bottom = -338.92
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

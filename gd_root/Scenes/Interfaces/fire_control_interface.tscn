@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://bfk2h83axywy1"]
+[gd_scene load_steps=32 format=3 uid="uid://bfk2h83axywy1"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/fire_control_interface.gd" id="1_iliv8"]
+[ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="2_51gw2"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/water_lable.gd" id="2_80cb6"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_w57qc"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="3_jwgpj"]
@@ -75,6 +76,8 @@ texture = ExtResource("4_cbert")
 
 [node name="fire_control_interface" type="Node2D"]
 script = ExtResource("1_iliv8")
+
+[node name="game_hud" parent="." instance=ExtResource("2_51gw2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.08, 1.08)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://chsm0jgs0uxer"]
+[gd_scene load_steps=17 format=3 uid="uid://chsm0jgs0uxer"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_puzzle_interface.gd" id="1_17h1u"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_dot.gd" id="2_1a1eu"]
+[ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="2_3kpsd"]
 [ext_resource type="Texture2D" uid="uid://c4vdr6qghii0t" path="res://Imports/images/radarDot-removebg-preview-green.png" id="2_glelx"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_mwute"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/radar_label.gd" id="4_dbtnt"]
@@ -26,6 +27,10 @@ texture = ExtResource("7_dk8js")
 
 [node name="RadarPuzzleInterface" type="Node2D"]
 script = ExtResource("1_17h1u")
+
+[node name="game_hud" parent="." instance=ExtResource("2_3kpsd")]
+offset_top = -338.92
+offset_bottom = -338.92
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(960, 540)

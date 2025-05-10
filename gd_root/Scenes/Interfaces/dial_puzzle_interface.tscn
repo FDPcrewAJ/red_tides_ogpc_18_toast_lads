@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvp6iu0ltf4p5"]
+[gd_scene load_steps=19 format=3 uid="uid://cvp6iu0ltf4p5"]
 
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_puzzle_interface.gd" id="1_7i68q"]
 [ext_resource type="Texture2D" uid="uid://bh4bk6c6yf6l1" path="res://Imports/images/2d_ui_bg.png" id="2_en7eb"]
+[ext_resource type="PackedScene" uid="uid://clgttbebmbc6a" path="res://Scenes/UI/game_hud.tscn" id="2_isp7e"]
 [ext_resource type="Texture2D" uid="uid://cyl8g6pb7siy7" path="res://Imports/images/Dial-1.png.png" id="3_4aejo"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial.gd" id="3_oet22"]
 [ext_resource type="Script" path="res://Scripts/Interfaces/dial_sprite_2d.gd" id="4_h3xx3"]
@@ -29,6 +30,8 @@ texture = ExtResource("8_6a52l")
 
 [node name="dial_puzzle_interface" type="Node2D"]
 script = ExtResource("1_7i68q")
+
+[node name="game_hud" parent="." instance=ExtResource("2_isp7e")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

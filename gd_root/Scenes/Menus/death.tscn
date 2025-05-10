@@ -26,6 +26,7 @@ script = ExtResource("1_isog1")
 anchors_preset = 0
 
 [node name="background" type="ColorRect" parent="ending UI"]
+layout_mode = 0
 offset_left = -339.0
 offset_top = -270.0
 offset_right = 2288.0
@@ -34,6 +35,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="text_1" type="Label" parent="ending UI"]
 visible = false
+layout_mode = 0
 offset_left = 143.0
 offset_top = 165.0
 offset_right = 1767.0
@@ -46,6 +48,7 @@ horizontal_alignment = 1
 
 [node name="text_2" type="Label" parent="ending UI"]
 visible = false
+layout_mode = 0
 offset_left = 338.0
 offset_top = 437.0
 offset_right = 1556.0
@@ -89,6 +92,7 @@ icon_alignment = 1
 wait_time = 4.0
 
 [node name="death_video" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("2_6subu")

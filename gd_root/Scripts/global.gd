@@ -107,6 +107,8 @@ var voice_line = ""
 
 var entry_position = true
 
+var change_to_death_once = true
+
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("time_up"):
@@ -123,8 +125,9 @@ func _ready() -> void:
 
 func _process(_delta):
 	if timer_active && time_left == 0:
-		queue_free()
-		get_tree().change_scene_to_file("res://Scenes/Menus/death.tscn")
+		if change_to_death_once:
+			get_tree().change_scene_to_file("res://Scenes/Menus/death.tscn")
+			change_to_death_once = false
 	if new_game == true:
 		room_completed = false
 		new_game = false
@@ -223,3 +226,4 @@ func reset_game():
 	line_num = 0
 	voice_line = ""
 	entry_position = true
+	change_to_death_once = true

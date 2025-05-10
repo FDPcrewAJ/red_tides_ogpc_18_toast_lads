@@ -1,4 +1,4 @@
-[gd_scene load_steps=333 format=3 uid="uid://cj5pgxmo6cd4m"]
+[gd_scene load_steps=335 format=3 uid="uid://cj5pgxmo6cd4m"]
 
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_1fwfb"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="1_68wkg"]
@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://c7vsjp7ma7tyt" path="res://Assets/Objects/Pipes/pipe_lever.tscn" id="33_nbwly"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/flow_box.gd" id="34_3jexe"]
 [ext_resource type="PackedScene" uid="uid://c0p23eeeumm8i" path="res://Assets/Objects/Wall Decor/clock.tscn" id="34_cau1u"]
+[ext_resource type="Texture2D" uid="uid://8c0eog8yspcv" path="res://Assets/Textures/posters/safety Wethered-1.png" id="34_kwk8d"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/flow_puzzle_note.gd" id="36_6j5jl"]
 [ext_resource type="Texture2D" uid="uid://f7yo0yo7qpua" path="res://Textures/Interior Textures/Posters/v2_sturgei_poster_weathered_1.png" id="36_413eg"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/flow_crate_note.gd" id="37_c0bo3"]
@@ -53,6 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://ji6a1s8uup3a" path="res://Assets/Objects/Boat/Boat Parts/fuel_can.tscn" id="41_3a62q"]
 [ext_resource type="Script" path="res://Assets/Objects/Elevator/floor1_elevator.gd" id="41_7lmp5"]
 [ext_resource type="PackedScene" uid="uid://cbtn4wxpj2woq" path="res://Assets/Objects/Boat/Boat Parts/battery.tscn" id="43_htaof"]
+[ext_resource type="Texture2D" uid="uid://d2sp3s8c8lo8y" path="res://Assets/Textures/posters/We're Watching-1.png.png" id="43_tjidc"]
 [ext_resource type="PackedScene" uid="uid://dgo4yb6dwugpf" path="res://Assets/Objects/Boat/Boat Parts/radar.tscn" id="45_jfwp7"]
 [ext_resource type="Texture2D" uid="uid://btsxmcohqxr2" path="res://Textures/Interior Textures/sticky_note.png" id="45_mt83g"]
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomObjects/radar_puzzle_note.gd" id="46_f6g2q"]
@@ -1566,6 +1568,7 @@ points = PackedVector3Array(0.74404, 0.0998893, 0.5, -0.761756, -0.111905, -0.51
 points = PackedVector3Array(-0.119841, -1.26934, -0.769841, 0.118254, 1.26934, 0.777778, -0.119841, 1.26934, 0.777778, 0.118254, -1.26934, 0.777778, 0.118254, 1.26934, -0.769841, -0.119841, 1.26934, -0.769841, -0.119841, -1.26934, 0.777778, 0.118254, -1.26934, -0.769841)
 
 [node name="first_floor" type="Node3D"]
+transform = Transform3D(1, 0.000389833, -0.000178904, -0.000389843, 1, -8.00334e-05, 0.000178882, 8.00824e-05, 1, 0, 0, 0)
 script = ExtResource("1_s511m")
 
 [node name="InteractablesDisplay" parent="." instance=ExtResource("1_68wkg")]
@@ -2772,6 +2775,10 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/decorations/largeStorage/StoragePuzzleNote/StoragePuzzleNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_x1e8i")
 
+[node name="prop_poster2" type="Sprite3D" parent="world/decorations/largeStorage"]
+transform = Transform3D(-0.192756, 0.013811, 4.52601e-08, 0.013811, 0.192757, -9.08176e-05, -6.53556e-06, -9.05813e-05, -0.193251, 5.52771, 3.18891, 5.03792)
+texture = ExtResource("34_kwk8d")
+
 [node name="waterPump" type="Node3D" parent="world/decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0687, 0, 17.3366)
 
@@ -2907,6 +2914,10 @@ omni_range = 1.29291
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/decorations/waterPump/FlowCrateNote/FlowCrateNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_x1e8i")
+
+[node name="prop_poster" type="Sprite3D" parent="world/decorations/waterPump"]
+transform = Transform3D(0.192746, -0.0139613, 3.03735e-08, 0.0139613, 0.192746, -5.98846e-05, 4.29598e-06, 5.97294e-05, 0.193251, -1.1645, 3.17887, -4.55768)
+texture = ExtResource("43_tjidc")
 
 [node name="extraStorage" type="Node3D" parent="world/decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8468, 0, 0.475504)

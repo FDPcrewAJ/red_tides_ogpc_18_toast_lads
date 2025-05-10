@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3y2xjdewt3q3"]
+
+[ext_resource type="Script" path="res://Scripts/Menus/game_end.gd" id="1_yr2mj"]
+[ext_resource type="VideoStream" path="res://Imports/Videos/game_end_cutscene.ogv" id="2_gabpa"]
+[ext_resource type="AudioStream" uid="uid://dt6ls8vljonrr" path="res://Audio/Music/main_menu.mp3" id="7_vi7mx"]
+
+[node name="game_end" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yr2mj")
+
+[node name="death_video" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_gabpa")
+volume_db = 2.0
+autoplay = true
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_vi7mx")
+volume_db = -2.0
+bus = &"Music"
+
+[connection signal="finished" from="death_video" to="." method="_on_death_video_finished"]

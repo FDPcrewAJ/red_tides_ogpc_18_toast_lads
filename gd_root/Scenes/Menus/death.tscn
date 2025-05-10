@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpoyetj60cw0p"]
+[gd_scene load_steps=12 format=3 uid="uid://cpoyetj60cw0p"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/death.gd" id="1_isog1"]
 [ext_resource type="FontFile" uid="uid://dcbx28e77cfxv" path="res://Imports/fonts/SpecialElite.ttf" id="2_2wg3n"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://ckayjtxwajf3d" path="res://Imports/fonts/propaganda.ttf" id="2_mwlbq"]
 [ext_resource type="Texture2D" uid="uid://cv1lelcu1ihtx" path="res://Textures/UI/rectangle_button.png" id="3_pee0u"]
 [ext_resource type="Texture2D" uid="uid://dg782bcvxcxuh" path="res://Textures/UI/rectangle_button_pressed.png" id="4_h76cc"]
+[ext_resource type="AudioStream" uid="uid://b8drc1itl2j0t" path="res://Audio/Sounds/text boom/text_boom.mp3" id="6_2xarv"]
 [ext_resource type="AudioStream" uid="uid://dt6ls8vljonrr" path="res://Audio/Music/main_menu.mp3" id="7_7wgk4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w0qq4"]
@@ -90,6 +91,9 @@ icon_alignment = 1
 
 [node name="Timer" type="Timer" parent="ending UI"]
 wait_time = 4.0
+
+[node name="text_boom" type="AudioStreamPlayer" parent="ending UI"]
+stream = ExtResource("6_2xarv")
 
 [node name="death_video" type="VideoStreamPlayer" parent="."]
 layout_mode = 0

@@ -162,3 +162,64 @@ func _set_entry_door(door_state):
 func _set_reactor_state(react_state):
 	reactor_stable = react_state
 	emit_signal("update_part_sound", "motor")
+
+
+# Game Reset Function
+func reset_game():
+	new_game = false
+	room_completed = false
+	previous_scene = "res://Scenes/Menus/title_screen.tscn"
+	time_left = 10
+	watch_collected = false
+	timer_active = false
+	needle_rotation = 1
+	list_collected = false
+	tutorial_completed = false
+	current_object = "none"
+	current_object_parent = "none"
+	one_watered = false
+	two_watered = false
+	three_watered = false
+	four_watered = false
+	five_watered = false
+	six_watered = false
+	lastpos = 0
+	water_amount = 1
+	fire_console_number = 0
+	fire_console_one_water = 1
+	fire_console_two_water = 1
+	fire_console_three_water = 1
+	one_fire_acess = 0
+	two_fire_acess = 0
+	three_fire_acess = 0
+	four_fire_acess = 0
+	five_fire_acess = 0
+	six_fire_acess = 0
+	dial_1_rotation = 0
+	dial_2_rotation = 0
+	dial_3_rotation = 0
+	code_degrees1 = 0
+	code_degrees2 = 0
+	code_degrees3 = 0
+	tile_puzzle_level = 1
+	dial_puzzle_completed = false
+	tile_puzzle_completed = false
+	radar_puzzle_completed = false
+	fire_puzzle_completed = false
+	flow_puzzle_completed = false
+	entry_door_open = false
+	reactor_stable = false
+	consistent_positioning = true
+	new_position = 0
+	in_menu = false
+	next_floor = "null"
+	keypad_positive = false
+	fuel_can_collected = false
+	antennas_collected = false
+	battery_collected = false
+	motor_collected = false
+	radar_collected = false
+	default_audio_name = "line_"
+	line_num = 0
+	voice_line = ""
+	entry_position = true

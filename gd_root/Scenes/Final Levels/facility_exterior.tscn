@@ -1265,6 +1265,10 @@ transform = Transform3D(1, 0, 1.01644e-20, 0, 1, 0, -1.01644e-20, 0, 1, 16.4538,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0927124, 1.17798)
 shape = SubResource("BoxShape3D_tjocb")
 
+[node name="game_end_wait_timer" type="Timer" parent="world/boat_repair_col"]
+wait_time = 3.0
+one_shot = true
+
 [node name="boat_repair_text" type="Control" parent="world"]
 layout_mode = 3
 anchors_preset = 8
@@ -1312,3 +1316,4 @@ parameters/looping = true
 [connection signal="area_entered" from="world/death_col" to="." method="_on_death_col_area_entered"]
 [connection signal="area_entered" from="world/boat_repair_col" to="." method="_on_boat_repair_col_area_entered"]
 [connection signal="area_exited" from="world/boat_repair_col" to="." method="_on_boat_repair_col_area_exited"]
+[connection signal="timeout" from="world/boat_repair_col/game_end_wait_timer" to="." method="_on_game_end_wait_timer_timeout"]

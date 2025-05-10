@@ -14,6 +14,8 @@ var boat_repair_mode = false
 
 
 @onready var boat_repair_label: Label = $world/boat_repair_text/boat_repair_label
+@onready var boat_repair_col: Area3D = $world/boat_repair_col
+@onready var game_end_wait_timer: Timer = $world/boat_repair_col/game_end_wait_timer
 
 
 func _ready():
@@ -30,6 +32,7 @@ func _process(_delta):
 func _unhandled_input(_event) -> void:
 	if boat_repair_mode:
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("left_click"):
+			boat_repair_col.position.y = -100
 			if Global.antennas_collected:
 				antennas.visible = true
 			if Global.radar_collected:
@@ -40,6 +43,13 @@ func _unhandled_input(_event) -> void:
 				battery.visible = true
 			if Global.fuel_can_collected:
 				fuel_can.visible = true
+			
+			if Global.antennas_collected:
+				if Global.radar_collected:
+					if Global.motor_collected:
+						if Global.battery_collected:
+							if Global.fuel_can_collected:
+								game_end_wait_timer.start()
 
 
 func _on_death_col_area_entered(_area):
@@ -60,3 +70,8 @@ func _on_boat_repair_col_area_exited(_area) -> void:
 	if Global.list_collected:
 		boat_repair_mode = false
 		boat_repair_label.visible = false
+
+
+func _on_game_end_wait_timer_timeout() -> void:
+	Global.music_control.playing = false
+	get_tree().change_scene_to_file("res://Scenes/Menus/game_end.tscn")

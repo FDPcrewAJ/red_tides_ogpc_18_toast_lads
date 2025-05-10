@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://dqf6otyy7labd"]
+[gd_scene load_steps=241 format=3 uid="uid://dqf6otyy7labd"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/tutorial_control_floor.gd" id="1_lar5y"]
 [ext_resource type="PackedScene" uid="uid://saucqu061brl" path="res://Scenes/Menus/interactables_display.tscn" id="2_jk8qq"]
@@ -66,6 +66,7 @@
 [ext_resource type="AudioStream" uid="uid://c13s5752rup2x" path="res://Audio/Sounds/Lightning/lightning_1.mp3" id="62_ibvny"]
 [ext_resource type="AudioStream" uid="uid://dbupt7rwa8dir" path="res://Audio/Sounds/Lightning/lightning_2.mp3" id="63_ilers"]
 [ext_resource type="AudioStream" uid="uid://1vnnc8vrqgmo" path="res://Audio/Sounds/Lightning/lightning_3.mp3" id="64_rbwqe"]
+[ext_resource type="AudioStream" uid="uid://b8drc1itl2j0t" path="res://Audio/Sounds/text boom/text_boom.mp3" id="65_0qpvy"]
 
 [sub_resource type="Environment" id="Environment_rimyn"]
 ambient_light_sky_contribution = 0.0
@@ -2831,6 +2832,9 @@ omni_range = 1.29291
 [node name="lightning_sound" type="AudioStreamPlayer" parent="tutorial_sequence"]
 stream = SubResource("AudioStreamRandomizer_kcxjn")
 bus = &"Sfx"
+
+[node name="text_boom" type="AudioStreamPlayer" parent="tutorial_sequence"]
+stream = ExtResource("65_0qpvy")
 
 [node name="audio" type="Node3D" parent="."]
 

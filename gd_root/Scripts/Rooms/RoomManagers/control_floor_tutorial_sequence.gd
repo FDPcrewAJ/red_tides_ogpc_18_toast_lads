@@ -23,6 +23,7 @@ signal interaction_ready
 @onready var lights: Node3D = $"../world/building/lights"
 @onready var world_env: WorldEnvironment = $"../WorldEnv"
 @onready var lightning_sound: AudioStreamPlayer = $lightning_sound
+@onready var text_boom: AudioStreamPlayer = $text_boom
 
 # Cutscene Camera
 @onready var camera_container: Node3D = $camera_container
@@ -247,7 +248,7 @@ func _on_cheif_fling_animator_animation_finished(_anim_name: StringName) -> void
 
 func _on_blackout_timer_timeout() -> void:
 	if lightning_count == 2:
-		lightning_sound.play()
+		text_boom.play()
 		wake_up_label.show()
 		lightning_count += 1
 		blackout_timer.start()

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc14lw17x8576"]
+
+[ext_resource type="PackedScene" uid="uid://xcnchfja8yst" path="res://Imports/Models/Objects/Wall Decor/wallTrimStraight.gltf" id="1_nuu3p"]
+
+[node name="wallTrimStraight" instance=ExtResource("1_nuu3p")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, 0, 0, 0)

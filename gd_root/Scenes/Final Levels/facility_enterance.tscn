@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://i54i4wmroxw1"]
+[gd_scene load_steps=55 format=3 uid="uid://i54i4wmroxw1"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/RoomManagers/facility_enterance.gd" id="1_6wbl2"]
 [ext_resource type="PackedScene" uid="uid://c8nrcyxiviwja" path="res://Assets/Characters/Player/player.tscn" id="1_fe63g"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://dljfc2pqkh4ce" path="res://Assets/Objects/Computer/server.tscn" id="19_gcfge"]
 [ext_resource type="PackedScene" uid="uid://c8ic2judcj7o1" path="res://Assets/Objects/Computer/generic_machine.tscn" id="20_nsjma"]
 [ext_resource type="AudioStream" uid="uid://n8n1a2og5f05" path="res://Audio/Sounds/bcakground_hum/background_hum_main.mp3" id="22_m3dcr"]
+[ext_resource type="PackedScene" uid="uid://bc14lw17x8576" path="res://Assets/Objects/Wall Decor/wall_trim_straight.tscn" id="23_i3ifb"]
+[ext_resource type="PackedScene" uid="uid://bv2nr1fskvfx8" path="res://Assets/Objects/Wall Decor/wall_trim_curve.tscn" id="24_4oaql"]
 
 [sub_resource type="Environment" id="Environment_ncvlc"]
 ambient_light_sky_contribution = 0.0
@@ -443,13 +445,42 @@ shape = SubResource("BoxShape3D_5qlkj")
 
 [node name="decorations" type="Node3D" parent="world/building"]
 
-[node name="interactables" type="Node3D" parent="world"]
+[node name="backupGenerator" parent="world/building/decorations" instance=ExtResource("14_tu7ve")]
+transform = Transform3D(0.923833, 0.382796, -1.67326e-08, 0, -4.37114e-08, -1, -0.382796, 0.923833, -4.0382e-08, -4.46125, 1.19109, -14.4649)
 
-[node name="backupGenerator" parent="world" instance=ExtResource("14_tu7ve")]
+[node name="backupGenerator2" parent="world/building/decorations" instance=ExtResource("14_tu7ve")]
+transform = Transform3D(0.874738, 0, -0.484596, 0, 1, 0, 0.484596, 0, 0.874738, -3.1418, 0.5, -8.56409)
+
+[node name="wooden_desk_1" parent="world/building/decorations" instance=ExtResource("17_s4cg8")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -11.1869, 0.5, -12.9152)
+
+[node name="computer" parent="world/building/decorations" instance=ExtResource("18_4jd56")]
+transform = Transform3D(0.549558, 0, 0.581365, 0, 0.8, 0, -0.581365, 0, 0.549558, -10.985, 1.625, -13.1884)
+
+[node name="server" parent="world/building/decorations" instance=ExtResource("19_gcfge")]
+transform = Transform3D(0.292589, 0, -0.956238, 0, 1, 0, 0.956238, 0, 0.292589, -11.6155, 0.5, -10.797)
+
+[node name="server2" parent="world/building/decorations" instance=ExtResource("19_gcfge")]
+transform = Transform3D(-0.264849, 0, -0.96429, 0, 1, 0, 0.96429, 0, -0.264849, -11.6155, 0.5, -9.36477)
+
+[node name="server3" parent="world/building/decorations" instance=ExtResource("19_gcfge")]
+transform = Transform3D(0.719146, 0, -0.694859, 0, 1, 0, 0.694859, 0, 0.719146, -10.3721, 0.5, -8.37897)
+
+[node name="genericMachine" parent="world/building/decorations" instance=ExtResource("20_nsjma")]
+transform = Transform3D(0.089833, 0, 0.995957, 0, 1, 0, -0.995957, 0, 0.089833, -7.21973, 0.5, -11.1485)
+
+[node name="genericMachine2" parent="world/building/decorations" instance=ExtResource("20_nsjma")]
+transform = Transform3D(-0.042486, 0, -0.999097, 0, 1, 0, 0.999097, 0, -0.042486, -7.1172, 0.5, -12.2277)
+
+[node name="backupGenerator3" parent="world/building/decorations" instance=ExtResource("14_tu7ve")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -3.82548, 0.5, -13.4241)
 
-[node name="backupGenerator2" parent="world" instance=ExtResource("14_tu7ve")]
+[node name="backupGenerator4" parent="world/building/decorations" instance=ExtResource("14_tu7ve")]
 transform = Transform3D(-0.0190276, -0.688798, -0.724704, -0.999656, -4.3437e-08, 0.0262467, -0.0180787, 0.724954, -0.68856, -3.46802, 0.580891, -12.4602)
+
+[node name="wallTrims" type="Node3D" parent="world/building/decorations"]
+
+[node name="interactables" type="Node3D" parent="world"]
 
 [node name="EngineerLoreNote" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.03223, 0.999481, 7.46162e-09, -4.37114e-08, -2.98023e-08, -1, -0.999481, -0.03223, 1.28984e-08, -9.34709, 2.57687, 0.26871)
@@ -468,33 +499,6 @@ omni_range = 1.29291
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EngineerLoreNote/EngineerLoreNoteBody"]
 shape = SubResource("ConvexPolygonShape3D_qdqp3")
 
-[node name="backupGenerator" parent="." instance=ExtResource("14_tu7ve")]
-transform = Transform3D(0.923833, 0.382796, -1.67326e-08, 0, -4.37114e-08, -1, -0.382796, 0.923833, -4.0382e-08, -4.46125, 1.19109, -14.4649)
-
-[node name="backupGenerator2" parent="." instance=ExtResource("14_tu7ve")]
-transform = Transform3D(0.874738, 0, -0.484596, 0, 1, 0, 0.484596, 0, 0.874738, -3.1418, 0.5, -8.56409)
-
-[node name="wooden_desk_1" parent="." instance=ExtResource("17_s4cg8")]
-transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -11.1869, 0.5, -12.9152)
-
-[node name="computer" parent="." instance=ExtResource("18_4jd56")]
-transform = Transform3D(0.549558, 0, 0.581365, 0, 0.8, 0, -0.581365, 0, 0.549558, -10.985, 1.625, -13.1884)
-
-[node name="server" parent="." instance=ExtResource("19_gcfge")]
-transform = Transform3D(0.292589, 0, -0.956238, 0, 1, 0, 0.956238, 0, 0.292589, -11.6155, 0.5, -10.797)
-
-[node name="server2" parent="." instance=ExtResource("19_gcfge")]
-transform = Transform3D(-0.264849, 0, -0.96429, 0, 1, 0, 0.96429, 0, -0.264849, -11.6155, 0.5, -9.36477)
-
-[node name="server3" parent="." instance=ExtResource("19_gcfge")]
-transform = Transform3D(0.719146, 0, -0.694859, 0, 1, 0, 0.694859, 0, 0.719146, -10.3721, 0.5, -8.37897)
-
-[node name="genericMachine" parent="." instance=ExtResource("20_nsjma")]
-transform = Transform3D(0.089833, 0, 0.995957, 0, 1, 0, -0.995957, 0, 0.089833, -7.21973, 0.5, -11.1485)
-
-[node name="genericMachine2" parent="." instance=ExtResource("20_nsjma")]
-transform = Transform3D(-0.042486, 0, -0.999097, 0, 1, 0, 0.999097, 0, -0.042486, -7.1172, 0.5, -12.2277)
-
 [node name="audio" type="Node3D" parent="."]
 
 [node name="bg_hum" type="AudioStreamPlayer" parent="audio"]
@@ -502,3 +506,81 @@ stream = ExtResource("22_m3dcr")
 volume_db = -10.0
 autoplay = true
 bus = &"Sfx"
+
+[node name="wallTrimStraight" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-1.0281e-07, 0, 2.35201, 0, 2.35201, 0, -2.35201, 0, -1.0281e-07, 9.49827, 0.5, -2.0503)
+
+[node name="wallTrimStraight2" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-1.0281e-07, 0, 2.35201, 0, 2.35201, 0, -2.35201, 0, -1.0281e-07, 9.49827, 0.5, 2.05703)
+
+[node name="wallTrimStraight3" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, 3.88432, 0.5, 2.51515)
+
+[node name="wallTrimStraight7" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, 6.23599, 0.5, 2.51515)
+
+[node name="wallTrimStraight8" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, 8.57908, 0.5, 2.51515)
+
+[node name="wallTrimStraight4" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, 1.53906, 0.5, 2.51515)
+
+[node name="wallTrimStraight5" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, -0.810405, 0.5, 2.51515)
+
+[node name="wallTrimStraight6" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(2.35201, 0, 0, 0, 2.35201, 0, 0, 0, 2.35201, -3.15776, 0.5, 2.51515)
+
+[node name="wallTrimCurve" parent="." instance=ExtResource("24_4oaql")]
+transform = Transform3D(2.352, 0, 0, 0, 2.352, 0, 0, 0, 2.352, -5.49974, 0.5, 2.51244)
+
+[node name="wallTrimStraight9" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.35201, 0, -2.05619e-07, 0, 2.35201, 0, 2.05619e-07, 0, -2.35201, 1.54117, 0.5, -2.50189)
+
+[node name="wallTrimStraight10" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.35201, 0, -2.05619e-07, 0, 2.35201, 0, 2.05619e-07, 0, -2.35201, -0.810501, 0.5, -2.50189)
+
+[node name="wallTrimStraight11" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.35201, 0, -2.05619e-07, 0, 2.35201, 0, 2.05619e-07, 0, -2.35201, -3.15359, 0.5, -2.50189)
+
+[node name="wallTrimStraight15" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-1.0281e-07, 0, 2.35201, 0, 2.35201, 0, -2.35201, 0, -1.0281e-07, -5.50273, 0.5, -4.84)
+
+[node name="wallTrimStraight16" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-6.1703e-08, 0, 2.35201, 0, 2.35201, 0, -1.4116, 0, -1.0281e-07, -5.50273, 0.5, -6.71329)
+
+[node name="wallTrimStraight17" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.352, 0, -3.55142e-07, 0, 2.352, 0, 3.55142e-07, 0, -2.352, -5.38068, 0.5, -7.3727)
+
+[node name="wallTrimStraight18" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.352, 0, -3.55142e-07, 0, 2.352, 0, 3.55142e-07, 0, -2.352, -9.65699, 0.5, -7.3727)
+
+[node name="wallTrimStraight19" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(4.57951e-07, 0, -2.352, 0, 2.352, 0, 2.352, 0, 4.57951e-07, -9.48902, 0.5, -6.23489)
+
+[node name="wallTrimStraight20" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(4.57951e-07, 0, -2.352, 0, 2.352, 0, 2.352, 0, 4.57951e-07, -9.48902, 0.5, -3.88858)
+
+[node name="wallTrimStraight21" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(4.57951e-07, 0, -2.352, 0, 2.352, 0, 2.352, 0, 4.57951e-07, -9.48902, 0.5, -1.53785)
+
+[node name="wallTrimStraight22" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(4.57951e-07, 0, -2.352, 0, 2.352, 0, 2.352, 0, 4.57951e-07, -9.48902, 0.5, 0.811062)
+
+[node name="wallTrimStraight23" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(4.57951e-07, 0, -2.352, 0, 2.352, 0, 2.352, 0, 4.57951e-07, -9.48902, 0.5, 3.14955)
+
+[node name="wallTrimStraight24" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(4.57951e-07, 0, -2.352, 0, 2.352, 0, 2.352, 0, 4.57951e-07, -9.48902, 0.5, 5.49266)
+
+[node name="wallTrimStraight12" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.35201, 0, -2.05619e-07, 0, 2.35201, 0, 2.05619e-07, 0, -2.35201, 3.88642, 0.5, -2.50189)
+
+[node name="wallTrimStraight13" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.35201, 0, -2.05619e-07, 0, 2.35201, 0, 2.05619e-07, 0, -2.35201, 6.23589, 0.5, -2.50189)
+
+[node name="wallTrimStraight14" parent="." instance=ExtResource("23_i3ifb")]
+transform = Transform3D(-2.35201, 0, -2.05619e-07, 0, 2.35201, 0, 2.05619e-07, 0, -2.35201, 8.58325, 0.5, -2.50189)
+
+[node name="wallTrimCurve2" parent="." instance=ExtResource("24_4oaql")]
+transform = Transform3D(-1.02809e-07, 0, 2.352, 0, 2.352, 0, -2.352, 0, -1.02809e-07, -5.50231, 0.5, -2.50238)
